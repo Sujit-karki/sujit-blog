@@ -1,0 +1,2 @@
+# ads.txt — Add your AdSense publisher line when ready:
+# google.com, pub-XXXXXXXXXX, DIRECT, f08c47fec0942fa0
