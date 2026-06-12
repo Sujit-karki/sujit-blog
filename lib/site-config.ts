@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Sujit Finance",
-  url: "https://sujitfinance.com", // ← update before going live
+  url: "https://www.sujitkarki.com.np",
   tagline: "Deep market research, investing guides, and money strategies",
   description:
     "In-depth personal finance guides, market analysis, and investing strategies backed by rigorous research.",
