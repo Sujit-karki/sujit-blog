@@ -46,7 +46,7 @@ export default function RoadmapPage() {
     labels: ["Experience", "Expertise", "Authoritativeness", "Trustworthiness"],
     datasets: [
       {
-        label: "Sujit Finance Target",
+        label: "Lampard Target",
         data: [85, 95, 80, 98],
         backgroundColor: "rgba(5, 150, 105, 0.2)",
         borderColor: "#059669",
@@ -160,10 +160,10 @@ export default function RoadmapPage() {
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center text-white font-bold text-xl">
-                S
+                $
               </div>
               <span className="text-xl font-extrabold tracking-tighter text-slate-900">
-                SUJIT<span className="text-emerald-600">FINANCE</span>
+                LAMP<span className="text-emerald-600">ARD</span>
               </span>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -196,7 +196,7 @@ export default function RoadmapPage() {
             The Digital Frontier of <span className="text-emerald-600">Market Intelligence</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            A comprehensive strategic report on building a world-class financial blog using Next.js 15, MDX, and performance-driven SEO.
+            A comprehensive strategic report on building a world-class financial blog using Next.js 16, MDX, and performance-driven SEO.
           </p>
         </div>
       </header>
@@ -208,7 +208,7 @@ export default function RoadmapPage() {
             <div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Executive Strategy</h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Sujit Finance is not just a blog; it is a **high-authority content engine**. In the YMYL (Your Money Your Life) category, Google demands extreme performance and trust. This section outlines the core mission to provide deep market research that impacts global digital finance.
+                Lampard is not just a blog; it is a **high-authority content engine**. In the YMYL (Your Money Your Life) category, Google demands extreme performance and trust. This section outlines the core mission to provide deep market research that impacts global digital finance.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start p-4 bg-emerald-50 rounded-lg border border-emerald-100">
@@ -222,7 +222,7 @@ export default function RoadmapPage() {
                   <span className="text-slate-600 font-bold mr-3">02</span>
                   <div>
                     <h4 className="font-bold text-slate-900">Tech-First SEO</h4>
-                    <p className="text-sm text-slate-600">Using Next.js 15 for near-instant load speeds to boost search visibility.</p>
+                    <p className="text-sm text-slate-600">Using Next.js 16 for near-instant load speeds to boost search visibility.</p>
                   </div>
                 </div>
               </div>
@@ -296,7 +296,7 @@ export default function RoadmapPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { title: "Next.js 15", desc: "Async params & Server Components for maximum speed." },
+                  { title: "Next.js 16", desc: "Async params & Server Components for maximum speed." },
                   { title: "MDX 3.0", desc: "Rich content with React components inside Markdown." },
                   { title: "Tailwind CSS", desc: "Utility-first styling with zero runtime overhead." },
                   { title: "Cloudflare", desc: "Global edge deployment with 100% uptime." },
@@ -367,11 +367,11 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
             <div className="w-6 h-6 bg-emerald-600 rounded flex items-center justify-center text-white font-bold text-sm">
-              S
+              $
             </div>
-            <span className="text-lg font-bold text-white tracking-tight">SUJIT FINANCE</span>
+            <span className="text-lg font-bold text-white tracking-tight">LAMPARD</span>
           </div>
-          <p className="text-sm mb-4">© 2026 Sujit Finance. Built with Next.js 15 & MDX.</p>
+          <p className="text-sm mb-4">© 2026 Lampard. Built with Next.js 16 & MDX.</p>
           <div className="flex justify-center space-x-6 text-xs uppercase tracking-widest font-semibold">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Disclaimer</a>

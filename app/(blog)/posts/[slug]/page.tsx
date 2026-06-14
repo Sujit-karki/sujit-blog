@@ -8,7 +8,7 @@ import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
 import AdSlot from "@/components/AdSlot";
-import CaiUnityAd from "@/components/CaiUnityAd";
+import CaiGlobalAd from "@/components/CaiGlobalAd";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
-    authors: [{ name: post.author }],
+    authors: [{ name: post.author, url: `${siteConfig.url}/about` }],
     keywords: post.tags,
     alternates: { canonical: url },
     openGraph: {
@@ -33,13 +33,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       title: post.title,
       description: post.description,
+      siteName: siteConfig.name,
       images: [{ url: img, width: 1200, height: 630, alt: post.title }],
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
-      authors: [post.author],
+      authors: [`${siteConfig.url}/about`],
       tags: post.tags,
     },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description, images: [img] },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [{ url: img, alt: post.title }],
+    },
   };
 }
 
@@ -62,6 +68,7 @@ export default async function PostPage({ params }: Props) {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${siteConfig.url}/posts/${slug}`,
     headline: post.title,
     description: post.description,
     author: {
@@ -73,6 +80,7 @@ export default async function PostPage({ params }: Props) {
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.name,
       url: siteConfig.url,
     },
@@ -81,6 +89,7 @@ export default async function PostPage({ params }: Props) {
     mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/posts/${slug}` },
     keywords: post.tags?.join(", "),
     articleSection: post.category,
+    inLanguage: "en-US",
     ...(post.coverImage && { image: `${siteConfig.url}${post.coverImage}` }),
   };
 
@@ -101,9 +110,20 @@ export default async function PostPage({ params }: Props) {
   return (
     <>
       <ReadingProgress />
-      <script type="application/ld+json" async dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }} />
-      {faqJsonLd && <script type="application/ld+json" async dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }} />}
-      <script type="application/ld+json" async dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }}
+      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <div className="mb-6">
@@ -168,8 +188,11 @@ export default async function PostPage({ params }: Props) {
               <PostContent />
             </article>
 
+            {/* In-article CAI Global Solutions placement */}
+            <CaiGlobalAd variant="inline" />
+
             {/* Bottom ad slot */}
-            <AdSlot slot="bottom-article" className="h-24 mt-8 mb-6" />
+            <AdSlot slot="bottom-article" className="h-24 mt-4 mb-6" />
 
             {/* Tags */}
             {post.tags?.length > 0 && (
@@ -199,7 +222,7 @@ export default async function PostPage({ params }: Props) {
                   <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
                     Table of Contents
                   </h3>
-                  <nav>
+                  <nav aria-label="Table of contents">
                     <ol className="space-y-1.5">
                       {post.toc.map((item) => (
                         <li key={item.id} className={item.level === 3 ? "pl-4" : ""}>
@@ -216,9 +239,8 @@ export default async function PostPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Sidebar ad */}
-              <CaiUnityAd />
-
+              {/* CAI Global Solutions sidebar ad */}
+              <CaiGlobalAd variant="sidebar" />
             </div>
           </aside>
         </div>

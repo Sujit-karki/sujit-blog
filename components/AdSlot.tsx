@@ -1,12 +1,34 @@
+"use client";
+
+import { useEffect } from "react";
 import { siteConfig } from "@/lib/site-config";
+
+declare global {
+  interface Window {
+    adsbygoogle: unknown[];
+  }
+}
 
 interface AdSlotProps {
   slot: string;
   className?: string;
+  format?: "auto" | "rectangle" | "horizontal" | "vertical";
 }
 
-export default function AdSlot({ slot, className = "" }: AdSlotProps) {
-  if (!siteConfig.adsense.enabled) {
+export default function AdSlot({ slot, className = "", format = "auto" }: AdSlotProps) {
+  const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  const active = siteConfig.adsense.enabled && !!client;
+
+  useEffect(() => {
+    if (!active) return;
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error("AdSense push error:", e);
+    }
+  }, [active]);
+
+  if (!active) {
     return (
       <div
         data-ad-slot={slot}
@@ -17,10 +39,16 @@ export default function AdSlot({ slot, className = "" }: AdSlotProps) {
     );
   }
 
-  // Real AdSense code — swap in when adsense.enabled = true
   return (
-    <div data-ad-slot={slot} className={className}>
-      {/* ins class="adsbygoogle" goes here */}
+    <div className={className}>
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client={client}
+        data-ad-slot={slot}
+        data-ad-format={format}
+        data-full-width-responsive="true"
+      />
     </div>
   );
 }

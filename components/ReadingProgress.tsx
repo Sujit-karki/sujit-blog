@@ -21,10 +21,20 @@ export default function ReadingProgress() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-0.5 z-[200] bg-transparent">
+    <div
+      className="fixed top-0 left-0 right-0 h-[3px] z-[200] bg-transparent"
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(progress)}
+      aria-label="Reading progress"
+    >
       <div
-        className="h-full bg-emerald-500 transition-[width] duration-75"
-        style={{ width: `${progress}%` }}
+        className="h-full transition-[width] duration-75 ease-linear"
+        style={{
+          width: `${progress}%`,
+          background: "linear-gradient(90deg, #059669, #0d9488, #0891b2)",
+        }}
       />
     </div>
   );
