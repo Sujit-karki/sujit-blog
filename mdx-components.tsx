@@ -7,7 +7,6 @@ import ProsCons from "@/components/mdx/ProsCons";
 import ComparisonTable from "@/components/mdx/ComparisonTable";
 import FaqAccordion from "@/components/mdx/FaqAccordion";
 import Sources from "@/components/mdx/Sources";
-import AdSlot from "@/components/AdSlot";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -76,7 +75,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ComparisonTable,
     FaqAccordion,
     Sources,
-    AdSlot,
 
     ...components,
   };

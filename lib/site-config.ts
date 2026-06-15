@@ -25,18 +25,6 @@ export const siteConfig = {
     youtube: "",
     email: "",
   },
-  adsense: {
-    enabled: true,
-    publisherId: "ca-pub-8604899547572044",
-  },
-  caiAd: {
-    enabled: true,
-    url: "https://www.caiunity.com/",
-    name: "CAI Global Solutions",
-    tagline: "Digital marketing solutions for ambitious brands.",
-    facebookUrl: "http://facebook.com/people/Cai-global-solutions-Pvt-Ltd/61587249235797/",
-    instagramUrl: "http://instagram.com/cai_global",
-  },
 } as const;
 
 export const categories = [

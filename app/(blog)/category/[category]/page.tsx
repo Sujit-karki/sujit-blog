@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PostCard from "@/components/PostCard";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
-import CaiGlobalAd from "@/components/CaiGlobalAd";
 import { getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, categoryFromSlug, slugifyCategory } from "@/lib/site-config";
 
@@ -44,9 +43,6 @@ export default async function CategoryPage({ params }: Props) {
     <>
       <script type="application/ld+json" async dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }} />
 
-      {/* Ticker at top of page */}
-      <CaiGlobalAd variant="ticker" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <div className="mb-6">
           <Breadcrumb items={breadcrumbItems} />
@@ -64,9 +60,6 @@ export default async function CategoryPage({ params }: Props) {
           </p>
         </header>
 
-        {/* Banner ad below header */}
-        <CaiGlobalAd variant="banner" className="rounded-xl mb-8 overflow-hidden border border-gray-100 dark:border-gray-800" />
-
         {posts.length > 0 ? (
           <>
             {/* First 3 posts */}
@@ -76,10 +69,8 @@ export default async function CategoryPage({ params }: Props) {
               ))}
             </div>
 
-            {/* Card-grid ad between post rows */}
             {posts.length > 3 && (
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-6">
-                <CaiGlobalAd variant="card-grid" />
                 {posts.slice(3, 5).map((post) => (
                   <PostCard key={post.slug} post={post} />
                 ))}
@@ -95,17 +86,12 @@ export default async function CategoryPage({ params }: Props) {
               </div>
             )}
 
-            {/* Spotlight at bottom */}
-            <CaiGlobalAd variant="spotlight" />
           </>
         ) : (
-          <>
-            <div className="text-center py-16">
-              <p className="text-gray-400 dark:text-gray-500 text-lg mb-2">No articles yet</p>
-              <p className="text-sm text-gray-400 dark:text-gray-600">Check back soon — new {name} content is coming.</p>
-            </div>
-            <CaiGlobalAd variant="spotlight" />
-          </>
+          <div className="text-center py-16">
+            <p className="text-gray-400 dark:text-gray-500 text-lg mb-2">No articles yet</p>
+            <p className="text-sm text-gray-400 dark:text-gray-600">Check back soon — new {name} content is coming.</p>
+          </div>
         )}
       </div>
     </>

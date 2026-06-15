@@ -54,7 +54,8 @@ my-blog/
 │   └── robots.ts                # robots.txt generation
 ├── components/
 │   ├── Header.tsx               # Site navigation
-│   ├── Footer.tsx               # Site footer
+│   ├── Footer.tsx               # Site foot
+er
 │   ├── PostCard.tsx             # Article card (normal + featured variant)
 │   ├── AuthorBio.tsx            # Author bio shown after each post
 │   ├── RelatedPosts.tsx         # Related posts by category

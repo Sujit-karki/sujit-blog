@@ -7,8 +7,6 @@ import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
-import AdSlot from "@/components/AdSlot";
-import CaiGlobalAd from "@/components/CaiGlobalAd";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -125,9 +123,6 @@ export default async function PostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }}
       />
 
-      {/* Ticker ad — full width, top of page */}
-      <CaiGlobalAd variant="ticker" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <div className="mb-6">
           <Breadcrumb items={breadcrumbItems} />
@@ -172,9 +167,6 @@ export default async function PostPage({ params }: Props) {
               </div>
             </header>
 
-            {/* Top ad slot (AdSense) */}
-            <AdSlot slot="top-article" className="h-20 mb-8" />
-
             {/* Article body */}
             <article
               id="article-body"
@@ -190,12 +182,6 @@ export default async function PostPage({ params }: Props) {
             >
               <PostContent />
             </article>
-
-            {/* Mid-article inline ad */}
-            <CaiGlobalAd variant="inline" />
-
-            {/* Bottom ad slot (AdSense) */}
-            <AdSlot slot="bottom-article" className="h-24 mt-4 mb-6" />
 
             {/* Tags */}
             {post.tags?.length > 0 && (
@@ -213,9 +199,6 @@ export default async function PostPage({ params }: Props) {
             )}
 
             <AuthorBio />
-
-            {/* Spotlight ad between author bio and related posts */}
-            <CaiGlobalAd variant="spotlight" />
 
             <RelatedPosts posts={related} category={post.category} />
           </div>
@@ -246,11 +229,6 @@ export default async function PostPage({ params }: Props) {
                 </div>
               )}
 
-              {/* CAI sidebar ad */}
-              <CaiGlobalAd variant="sidebar" />
-
-              {/* Social follow in sidebar below TOC */}
-              <CaiGlobalAd variant="social-follow" />
             </div>
           </aside>
         </div>

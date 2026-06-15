@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
-import CaiGlobalAd from "@/components/CaiGlobalAd";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -32,9 +31,6 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" async dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }} />
-
-      {/* Ticker at very top */}
-      <CaiGlobalAd variant="ticker" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         <div className="mb-6"><Breadcrumb items={breadcrumbItems} /></div>
@@ -78,9 +74,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Spotlight partner ad between sections */}
-        <CaiGlobalAd variant="spotlight" className="mb-10" />
-
         {/* What we cover */}
         <section className="mb-10">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">What We Cover</h2>
@@ -116,9 +109,6 @@ export default function AboutPage() {
             Contact us →
           </Link>
         </section>
-
-        {/* Social follow ad */}
-        <CaiGlobalAd variant="social-follow" className="mb-6" />
 
         {/* Disclaimer */}
         <section className="rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30 p-6">

@@ -1,14 +1,10 @@
 import Link from "next/link";
-import CaiGlobalAd from "./CaiGlobalAd";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 mt-auto">
-      {/* CAI Global Solutions slim banner */}
-      <CaiGlobalAd variant="banner" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}

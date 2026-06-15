@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PostCard from "@/components/PostCard";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
-import CaiGlobalAd from "@/components/CaiGlobalAd";
 import { getAllTags, getPostsByTag } from "@/lib/posts";
 import { siteConfig } from "@/lib/site-config";
 
@@ -38,9 +37,6 @@ export default async function TagPage({ params }: Props) {
     <>
       <script type="application/ld+json" async dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd(breadcrumbItems, siteConfig.url)).replace(/</g, "\\u003c") }} />
 
-      {/* Ticker at very top */}
-      <CaiGlobalAd variant="ticker" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <div className="mb-6"><Breadcrumb items={breadcrumbItems} /></div>
 
@@ -50,17 +46,10 @@ export default async function TagPage({ params }: Props) {
           <p className="text-gray-500 dark:text-gray-400">{posts.length} article{posts.length !== 1 ? "s" : ""}</p>
         </header>
 
-        {/* Inline ad below header */}
-        <CaiGlobalAd variant="inline" className="mb-8" />
-
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => <PostCard key={post.slug} post={post} />)}
         </div>
 
-        {/* Social-follow ad after all posts */}
-        <div className="mt-10 max-w-sm mx-auto">
-          <CaiGlobalAd variant="social-follow" />
-        </div>
       </div>
     </>
   );

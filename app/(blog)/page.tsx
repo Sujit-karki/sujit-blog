@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PostCard from "@/components/PostCard";
-import CaiGlobalAd from "@/components/CaiGlobalAd";
 import FadeIn from "@/components/FadeIn";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
@@ -34,11 +33,6 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Spotlight ad — full width between hero and articles */}
-      <FadeIn delay={0.1}>
-        <CaiGlobalAd variant="spotlight" />
-      </FadeIn>
-
       {/* Latest articles + sidebar */}
       <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10">
         <div>
@@ -58,18 +52,9 @@ export default function HomePage() {
                     <PostCard post={post} />
                   </FadeIn>
                 ))}
-                {/* Card-grid ad injected naturally into the articles grid */}
-                <FadeIn delay={0.4}>
-                  <CaiGlobalAd variant="card-grid" />
-                </FadeIn>
               </div>
             </section>
           )}
-
-          {/* Ticker between latest articles and categories */}
-          <FadeIn delay={0.1}>
-            <CaiGlobalAd variant="ticker" className="rounded-xl mb-10 overflow-hidden" />
-          </FadeIn>
 
           {/* Category sections */}
           {categories.map((cat, catIdx) => {
@@ -95,12 +80,6 @@ export default function HomePage() {
                     </FadeIn>
                   ))}
                 </div>
-                {/* Inline ad after first category section */}
-                {catIdx === 0 && (
-                  <FadeIn delay={0.15}>
-                    <CaiGlobalAd variant="inline" className="mt-6" />
-                  </FadeIn>
-                )}
               </section>
             );
           })}
@@ -109,11 +88,6 @@ export default function HomePage() {
         {/* Sidebar */}
         <aside className="hidden lg:block">
           <div className="sticky top-24 space-y-6">
-            {/* CAI Global Solutions sidebar ad */}
-            <FadeIn delay={0.2}>
-              <CaiGlobalAd variant="sidebar" />
-            </FadeIn>
-
             {/* Browse by category */}
             <FadeIn delay={0.3}>
               <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5">
@@ -141,10 +115,6 @@ export default function HomePage() {
               </div>
             </FadeIn>
 
-            {/* Social follow ad */}
-            <FadeIn delay={0.4}>
-              <CaiGlobalAd variant="social-follow" />
-            </FadeIn>
           </div>
         </aside>
       </div>
