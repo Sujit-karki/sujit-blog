@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
+import CaiGlobalAd from "@/components/CaiGlobalAd";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -45,8 +46,13 @@ export default function ContactPage() {
             please include your publication name and deadline in your message.
           </p>
         </div>
-
       </div>
+
+      {/* Card-grid ad */}
+      <CaiGlobalAd variant="card-grid" className="mb-6" />
+
+      {/* Social follow ad */}
+      <CaiGlobalAd variant="social-follow" />
     </div>
   );
 }

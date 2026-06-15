@@ -27,12 +27,17 @@ export default function HomePage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
 
-      {/* Hero — featured post with CSS animated gradient */}
+      {/* Hero — featured post */}
       {featured && (
-        <section className="mb-14 animate-fade-in-up">
+        <section className="mb-10 animate-fade-in-up">
           <PostCard post={featured} featured />
         </section>
       )}
+
+      {/* Spotlight ad — full width between hero and articles */}
+      <FadeIn delay={0.1}>
+        <CaiGlobalAd variant="spotlight" />
+      </FadeIn>
 
       {/* Latest articles + sidebar */}
       <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10">
@@ -53,9 +58,18 @@ export default function HomePage() {
                     <PostCard post={post} />
                   </FadeIn>
                 ))}
+                {/* Card-grid ad injected naturally into the articles grid */}
+                <FadeIn delay={0.4}>
+                  <CaiGlobalAd variant="card-grid" />
+                </FadeIn>
               </div>
             </section>
           )}
+
+          {/* Ticker between latest articles and categories */}
+          <FadeIn delay={0.1}>
+            <CaiGlobalAd variant="ticker" className="rounded-xl mb-10 overflow-hidden" />
+          </FadeIn>
 
           {/* Category sections */}
           {categories.map((cat, catIdx) => {
@@ -81,6 +95,12 @@ export default function HomePage() {
                     </FadeIn>
                   ))}
                 </div>
+                {/* Inline ad after first category section */}
+                {catIdx === 0 && (
+                  <FadeIn delay={0.15}>
+                    <CaiGlobalAd variant="inline" className="mt-6" />
+                  </FadeIn>
+                )}
               </section>
             );
           })}
@@ -89,7 +109,7 @@ export default function HomePage() {
         {/* Sidebar */}
         <aside className="hidden lg:block">
           <div className="sticky top-24 space-y-6">
-            {/* CAI Global Solutions ad */}
+            {/* CAI Global Solutions sidebar ad */}
             <FadeIn delay={0.2}>
               <CaiGlobalAd variant="sidebar" />
             </FadeIn>
@@ -119,6 +139,11 @@ export default function HomePage() {
                   })}
                 </ul>
               </div>
+            </FadeIn>
+
+            {/* Social follow ad */}
+            <FadeIn delay={0.4}>
+              <CaiGlobalAd variant="social-follow" />
             </FadeIn>
           </div>
         </aside>

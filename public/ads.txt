@@ -1,5 +1,1 @@
-# Google AdSense
-# Replace pub-XXXXXXXXXXXXXXXX with your actual 16-digit publisher ID.
-# Use ONLY the pub- prefix + digits — do NOT include the "ca-" prefix here.
-# Example: google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-8604899547572044, DIRECT, f08c47fec0942fa0

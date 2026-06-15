@@ -123,11 +123,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-full flex flex-col antialiased">
         {children}
-        {/* AdSense auto-ads — only loads when adsense.enabled = true and NEXT_PUBLIC_ADSENSE_CLIENT is set */}
-        {siteConfig.adsense.enabled && process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
+        {/* AdSense auto-ads — production only, skipped during local dev */}
+        {siteConfig.adsense.enabled && process.env.NODE_ENV === "production" && (
           <Script
             async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.publisherId}`}
             crossOrigin="anonymous"
             strategy="afterInteractive"
           />

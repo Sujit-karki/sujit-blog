@@ -26,8 +26,8 @@ export const siteConfig = {
     email: "",
   },
   adsense: {
-    enabled: false,
-    publisherId: "",
+    enabled: true,
+    publisherId: "ca-pub-8604899547572044",
   },
   caiAd: {
     enabled: true,

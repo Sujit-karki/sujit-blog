@@ -16,8 +16,8 @@ interface AdSlotProps {
 }
 
 export default function AdSlot({ slot, className = "", format = "auto" }: AdSlotProps) {
-  const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
-  const active = siteConfig.adsense.enabled && !!client;
+  const { enabled, publisherId } = siteConfig.adsense;
+  const active = enabled && !!publisherId && process.env.NODE_ENV === "production";
 
   useEffect(() => {
     if (!active) return;
@@ -44,7 +44,7 @@ export default function AdSlot({ slot, className = "", format = "auto" }: AdSlot
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
-        data-ad-client={client}
+        data-ad-client={publisherId}
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive="true"
