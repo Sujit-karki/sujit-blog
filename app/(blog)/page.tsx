@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PostCard from "@/components/PostCard";
@@ -102,8 +103,8 @@ export default function HomePage() {
               const catPosts = getPostsByCategory(cat).slice(0, 3);
               if (catPosts.length === 0) return null;
               return (
-                <>
-                  <section key={cat} className="mb-14">
+                <Fragment key={cat}>
+                  <section className="mb-14">
                     <FadeIn delay={catIdx * 0.05}>
                       <div className="flex items-center justify-between mb-6">
                         <h2 className="text-lg font-bold text-gray-900 dark:text-white">{cat}</h2>
@@ -136,7 +137,7 @@ export default function HomePage() {
                       </div>
                     </FadeIn>
                   )}
-                </>
+                </Fragment>
               );
             })}
           </div>
