@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from "react";
 import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate } from "@/lib/posts";
 import { siteConfig, slugifyCategory } from "@/lib/site-config";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
@@ -9,6 +10,9 @@ import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
 import CaiGlobalAd from "@/components/ads/CaiGlobalAd";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
+import AiSummary from "@/components/AiSummary";
+import TocObserver from "@/components/TocObserver";
+import MarketChart from "@/components/financial/MarketChart";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -48,8 +52,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
-
-export const dynamicParams = false;
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
@@ -169,6 +171,11 @@ export default async function PostPage({ params }: Props) {
               </div>
             </header>
 
+            {/* AI Summary */}
+            <Suspense fallback={<div className="skeleton h-32 rounded-2xl mb-8" />}>
+              <AiSummary slug={slug} />
+            </Suspense>
+
             {/* In-content top ad */}
             <div className="mb-8 ad-reveal ad-label relative">
               <GoogleAdSense slot="1122334455" format="horizontal" />
@@ -223,26 +230,13 @@ export default async function PostPage({ params }: Props) {
           {/* Sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-6">
-              {/* Table of contents */}
+              {/* Live market chart */}
+              <MarketChart compact />
+
+              {/* Interactive Table of Contents */}
               {post.toc && post.toc.length > 0 && (
                 <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
-                    Table of Contents
-                  </h3>
-                  <nav aria-label="Table of contents">
-                    <ol className="space-y-1.5">
-                      {post.toc.map((item) => (
-                        <li key={item.id} className={item.level === 3 ? "pl-4" : ""}>
-                          <a
-                            href={`#${item.id}`}
-                            className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors leading-snug block"
-                          >
-                            {item.title}
-                          </a>
-                        </li>
-                      ))}
-                    </ol>
-                  </nav>
+                  <TocObserver toc={post.toc} />
                 </div>
               )}
 

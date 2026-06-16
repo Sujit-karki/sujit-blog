@@ -24,8 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export const dynamicParams = false;
-
 export default async function CategoryPage({ params }: Props) {
   const { category: slug } = await params;
   const name = categoryFromSlug(slug);

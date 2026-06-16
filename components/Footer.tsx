@@ -1,7 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
+import { cacheLife } from "next/cache";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 
-export default function Footer() {
+export default async function Footer() {
+  'use cache'
+  cacheLife('max')
+
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 mt-auto">
@@ -9,11 +14,16 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 text-base font-extrabold text-gray-900 dark:text-white mb-3">
-              <span className="w-6 h-6 rounded bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-black">
-                $
+            <Link href="/" className="inline-flex items-center mb-3" aria-label={siteConfig.name}>
+              <span className="logo-wrap inline-flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt={siteConfig.name}
+                  width={90}
+                  height={33}
+                  className="logo-img object-contain h-7 w-auto"
+                />
               </span>
-              {siteConfig.name}
             </Link>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[200px]">
               {siteConfig.tagline}

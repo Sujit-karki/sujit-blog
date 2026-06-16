@@ -7,6 +7,7 @@ import ProsCons from "@/components/mdx/ProsCons";
 import ComparisonTable from "@/components/mdx/ComparisonTable";
 import FaqAccordion from "@/components/mdx/FaqAccordion";
 import Sources from "@/components/mdx/Sources";
+import CodeBlock from "@/components/mdx/CodeBlock";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -43,11 +44,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       }
       return <code className={className}>{children}</code>;
     },
-    pre: ({ children }) => (
-      <pre className="bg-gray-950 text-gray-100 rounded-xl p-5 overflow-x-auto my-6 text-sm border border-gray-800">
-        {children}
-      </pre>
-    ),
+    pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
     table: ({ children }) => (
       <div className="overflow-x-auto my-6 rounded-xl border border-gray-200 dark:border-gray-700">
         <table className="min-w-full text-sm">{children}</table>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
@@ -11,12 +12,19 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-gray-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors shrink-0"
+          aria-label={`${siteConfig.name} — home`}
+          className="flex items-center gap-2.5 shrink-0 group"
         >
-          <span className="w-7 h-7 rounded-md bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-black shadow-sm">
-            $
+          <span className="logo-wrap inline-flex items-center">
+            <Image
+              src="/logo.png"
+              alt={siteConfig.name}
+              width={108}
+              height={40}
+              priority
+              className="logo-img object-contain h-8 w-auto"
+            />
           </span>
-          {siteConfig.name}
         </Link>
 
         {/* Desktop nav */}

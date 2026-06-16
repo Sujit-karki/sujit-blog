@@ -12,10 +12,10 @@ Lampard is a statically-generated blog in the YMYL (Your Money, Your Life) niche
 
 **Categories covered:**
 - Investing (index funds, ETFs, stock analysis)
-  - Personal Finance (budgeting, saving, debt management)
-  - Crypto (Bitcoin, DeFi, market analysis)
-  - Side Hustles (income strategies)
-  - Market Analysis (macro, Fed policy, global trends)
+- Personal Finance (budgeting, saving, debt management)
+- Crypto (Bitcoin, DeFi, market analysis)
+- Side Hustles (income strategies)
+- Market Analysis (macro, Fed policy, global trends)
 
 ---
 
@@ -53,31 +53,29 @@ my-blog/
 │   ├── sitemap.ts               # Auto-generated XML sitemap
 │   └── robots.ts                # robots.txt generation
 ├── components/
+│   ├── ads/                     # Ad integration components
+│   │   ├── GoogleAdSense.tsx    # Google AdSense unit
+│   │   └── CaiGlobalAd.tsx      # CAI Global ad unit
+│   ├── mdx/                     # Rich content components for MDX
+│   │   ├── KeyTakeaways.tsx     # Highlighted key points box
+│   │   ├── InfoBox.tsx          # Info/warning/tip callout box
+│   │   ├── ProsCons.tsx         # Pros and cons table
+│   │   ├── ComparisonTable.tsx  # Side-by-side comparison
+│   │   ├── FaqAccordion.tsx     # Expandable FAQ section
+│   │   └── Sources.tsx          # Citation/sources list
 │   ├── Header.tsx               # Site navigation
-│   ├── Footer.tsx               # Site foot
-er
+│   ├── Footer.tsx               # Site footer
 │   ├── PostCard.tsx             # Article card (normal + featured variant)
 │   ├── AuthorBio.tsx            # Author bio shown after each post
 │   ├── RelatedPosts.tsx         # Related posts by category
 │   ├── Breadcrumb.tsx           # Breadcrumb nav + JSON-LD generator
 │   ├── ReadingProgress.tsx      # Scroll-based reading progress bar
 │   ├── ThemeToggle.tsx          # Dark/light mode toggle
-│   ├── AdSlot.tsx               # Google AdSense slot placeholder
-│   ├── CaiUnityAd.tsx           # Custom ad unit (CAI Unity)
-│   └── mdx/                     # Rich content components for MDX
-│       ├── KeyTakeaways.tsx     # Highlighted key points box
-│       ├── InfoBox.tsx          # Info/warning/tip callout box
-│       ├── ProsCons.tsx         # Pros and cons table
-│       ├── ComparisonTable.tsx  # Side-by-side comparison
-│       ├── FaqAccordion.tsx     # Expandable FAQ section
-│       └── Sources.tsx          # Citation/sources list
+│   ├── NewsTicker.tsx           # Latest updates ticker
+│   ├── PageTransition.tsx       # Smooth page navigation effects
+│   └── FadeIn.tsx               # Scroll-animation component
 ├── content/
 │   └── posts/                   # All blog posts as .mdx files
-│       ├── understanding-federal-reserve-policy.mdx
-│       ├── emerging-market-opportunities-2026.mdx
-│       ├── index-fund-investing-guide.mdx
-│       ├── budgeting-50-30-20-rule.mdx
-│       └── bitcoin-market-analysis-2026.mdx
 ├── lib/
 │   ├── posts.ts                 # Post reading, sorting, filtering logic
 │   └── site-config.ts           # Site name, author info, categories
@@ -100,12 +98,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```bash
-# Build for production
-npm run build
+### Troubleshooting: Port already in use
 
-# Start production server
-npm start
+If you see an error like `Port 3000 is in use` or `Another next dev server is already running`, you can find and kill the existing process:
+
+**Windows (PowerShell):**
+```powershell
+# Find the PID
+Get-NetTCPConnection -LocalPort 3000 | Select-Object OwningProcess
+
+# Kill the process (replace PID with the number found)
+taskkill /PID <PID> /F
+```
+
+**Linux/macOS:**
+```bash
+lsof -ti:3000 | xargs kill -9
 ```
 
 ---
@@ -223,10 +231,6 @@ export const siteConfig = {
     youtube: "",
     email: "",
   },
-  adsense: {
-    enabled: false,       // flip to true when ready
-    publisherId: "",      // ca-pub-XXXXXXXXXX
-  },
 };
 
 // Add/remove categories here — they appear in nav, sidebar, and homepage
@@ -246,13 +250,13 @@ export const categories = [
 This blog is built SEO-first:
 
 - **Static generation** — every page is pre-rendered at build time (`dynamicParams = false`)
-  - **Structured data (JSON-LD)** — Article, FAQPage, Person, and BreadcrumbList schemas on every post
-  - **Open Graph + Twitter cards** — full social sharing previews with cover images
-  - **Canonical URLs** — prevents duplicate content issues
-  - **XML Sitemap** — auto-generated at `/sitemap.xml`
-  - **RSS Feed** — available at `/feed.xml`
-  - **robots.txt** — auto-generated at `/robots.txt`
-  - **Reading time** — calculated automatically (200 words/min)
+- **Structured data (JSON-LD)** — Article, FAQPage, Person, and BreadcrumbList schemas on every post
+- **Open Graph + Twitter cards** — full social sharing previews with cover images
+- **Canonical URLs** — prevents duplicate content issues
+- **XML Sitemap** — auto-generated at `/sitemap.xml`
+- **RSS Feed** — available at `/feed.xml`
+- **robots.txt** — auto-generated at `/robots.txt`
+- **Reading time** — calculated automatically (200 words/min)
 
 ---
 
@@ -282,17 +286,15 @@ Dark mode is built in via Tailwind CSS. The `ThemeToggle` component in the heade
 
 ## AdSense Integration
 
-AdSense is ready but disabled by default. To activate:
+AdSense is integrated via the `GoogleAdSense` component.
 
-1. Get your publisher ID from Google AdSense (`ca-pub-XXXXXXXXXX`)
-   2. Update `lib/site-config.ts`:
-      ```ts
-      adsense: {
-        enabled: true,
-        publisherId: "ca-pub-XXXXXXXXXX",
-      }
-      ```
-   3. Ad slots are already placed in posts via `<AdSlot slot="top-article" />` and `<AdSlot slot="bottom-article" />`
+1. Components are available in `components/ads/GoogleAdSense.tsx`.
+2. Ad slots can be placed in MDX or TSX files:
+   ```tsx
+   import GoogleAdSense from '@/components/ads/GoogleAdSense'
+   
+   <GoogleAdSense slot="1234567890" />
+   ```
 
 ---
 
@@ -300,13 +302,13 @@ AdSense is ready but disabled by default. To activate:
 
 ### Vercel (recommended)
 1. Push to GitHub
-   2. Import the repo in [vercel.com](https://vercel.com)
-   3. Deploy — zero config needed for Next.js
+2. Import the repo in [vercel.com](https://vercel.com)
+3. Deploy — zero config needed for Next.js
 
 ### Cloudflare Pages
 1. Connect your GitHub repo in Cloudflare Pages
-   2. Build command: `npm run build`
-   3. Output directory: `.next`
+2. Build command: `npm run build`
+3. Output directory: `.next`
 
 ---
 
