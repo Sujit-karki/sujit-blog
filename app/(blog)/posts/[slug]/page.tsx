@@ -7,6 +7,8 @@ import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
+import CaiGlobalAd from "@/components/ads/CaiGlobalAd";
+import GoogleAdSense from "@/components/ads/GoogleAdSense";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -167,6 +169,11 @@ export default async function PostPage({ params }: Props) {
               </div>
             </header>
 
+            {/* In-content top ad */}
+            <div className="mb-8 ad-reveal ad-label relative">
+              <GoogleAdSense slot="1122334455" format="horizontal" />
+            </div>
+
             {/* Article body */}
             <article
               id="article-body"
@@ -182,6 +189,16 @@ export default async function PostPage({ params }: Props) {
             >
               <PostContent />
             </article>
+
+            {/* Mid-article CAI ad */}
+            <div className="my-8">
+              <CaiGlobalAd
+                size="leaderboard"
+                headline="CAI Global — Finance Marketing Experts"
+                ctaText="Work with Us →"
+                className="ad-reveal w-full"
+              />
+            </div>
 
             {/* Tags */}
             {post.tags?.length > 0 && (
@@ -228,6 +245,24 @@ export default async function PostPage({ params }: Props) {
                   </nav>
                 </div>
               )}
+
+              {/* Sidebar CAI ad */}
+              <CaiGlobalAd
+                size="rectangle"
+                headline="Finance Marketing by CAI Global"
+                subtext="Campaigns that convert for finance & crypto brands."
+                ctaText="Get in Touch →"
+                className="ad-reveal"
+              />
+
+              {/* Sidebar AdSense */}
+              <div className="ad-label relative">
+                <GoogleAdSense
+                  slot="5566778899"
+                  format="rectangle"
+                  style={{ minHeight: 250 }}
+                />
+              </div>
 
             </div>
           </aside>
