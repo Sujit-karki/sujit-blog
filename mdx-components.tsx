@@ -8,6 +8,7 @@ import ComparisonTable from "@/components/mdx/ComparisonTable";
 import FaqAccordion from "@/components/mdx/FaqAccordion";
 import Sources from "@/components/mdx/Sources";
 import CodeBlock from "@/components/mdx/CodeBlock";
+import GoogleAdSense from "@/components/ads/GoogleAdSense";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -72,6 +73,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ComparisonTable,
     FaqAccordion,
     Sources,
+    GoogleAdSense,
 
     ...components,
   };
