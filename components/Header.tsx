@@ -25,6 +25,9 @@ export default function Header() {
               className="logo-img object-contain h-8 w-auto"
             />
           </span>
+          <span className="text-xl font-black tracking-tighter uppercase gradient-text transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">
+            Lampard
+          </span>
         </Link>
 
         {/* Desktop nav */}

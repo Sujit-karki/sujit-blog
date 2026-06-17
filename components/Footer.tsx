@@ -14,7 +14,7 @@ export default async function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex items-center mb-3" aria-label={siteConfig.name}>
+            <Link href="/" className="inline-flex items-center gap-2 mb-3 group" aria-label={siteConfig.name}>
               <span className="logo-wrap inline-flex items-center">
                 <Image
                   src="/logo.png"
@@ -23,6 +23,9 @@ export default async function Footer() {
                   height={33}
                   className="logo-img object-contain h-7 w-auto"
                 />
+              </span>
+              <span className="text-lg font-black tracking-tighter uppercase gradient-text transition-all duration-300 group-hover:scale-105">
+                Lampard
               </span>
             </Link>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[200px]">

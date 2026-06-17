@@ -22,7 +22,7 @@ export default function DisclaimerPage() {
       <div className="prose prose-gray dark:prose-invert max-w-none">
         <h2>Not Financial Advice</h2>
         <p>
-          {siteConfig.name} ("{siteConfig.name}", "we", "us") provides content about personal
+          {siteConfig.name} (&quot;{siteConfig.name}&quot;, &quot;we&quot;, &quot;us&quot;) provides content about personal
           finance, investing, and financial markets for general informational and educational
           purposes only. None of the content on this website should be construed as financial,
           investment, tax, or legal advice.

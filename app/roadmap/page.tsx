@@ -124,8 +124,8 @@ export default function RoadmapPage() {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function (value: any) {
-            if (value >= 1000) return value / 1000 + "k";
+          callback: function (value: string | number) {
+            if (typeof value === 'number' && value >= 1000) return value / 1000 + "k";
             return value;
           },
         },
@@ -289,9 +289,9 @@ export default function RoadmapPage() {
         <section id="tech" className="mb-20 scroll-mt-24">
           <div className="bg-slate-900 text-white p-8 md:p-16 rounded-[2rem] overflow-hidden relative shadow-2xl">
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">The "Burning" Tech Stack</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">The &quot;Burning&quot; Tech Stack</h2>
               <p className="text-slate-400 mb-12 max-w-xl">
-                We are utilizing cutting-edge frameworks to ensure the site is recognized by Google's crawlers faster than any WordPress competitor.
+                We are utilizing cutting-edge frameworks to ensure the site is recognized by Google&apos;s crawlers faster than any WordPress competitor.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -371,7 +371,7 @@ export default function RoadmapPage() {
             </div>
             <span className="text-lg font-bold text-white tracking-tight">LAMPARD</span>
           </div>
-          <p className="text-sm mb-4">© 2026 Lampard. Built with Next.js 16 & MDX.</p>
+          <p className="text-sm mb-4">© 2026 Lampard. Built with Next.js 16 &amp; MDX.</p>
           <div className="flex justify-center space-x-6 text-xs uppercase tracking-widest font-semibold">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Disclaimer</a>
