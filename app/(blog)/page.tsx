@@ -47,19 +47,6 @@ export default function HomePage() {
           </section>
         )}
 
-        {/* Leaderboard ad below hero */}
-        <FadeIn delay={0.1}>
-          <div className="mb-10 flex justify-center">
-            <CaiGlobalAd
-              size="leaderboard"
-              headline="Scale Your Brand with CAI Global"
-              subtext="Performance marketing & SEO for finance brands."
-              ctaText="Get Started →"
-              className="w-full ad-reveal"
-            />
-          </div>
-        </FadeIn>
-
         {/* Latest articles + sidebar */}
         <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10">
           <div>
