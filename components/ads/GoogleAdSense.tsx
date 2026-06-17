@@ -20,7 +20,6 @@ export default function GoogleAdSense({ slot, format = 'auto', className = '', s
       window.adsbygoogle = window.adsbygoogle || []
       window.adsbygoogle.push({})
     } catch {}
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uid])
 
   return (

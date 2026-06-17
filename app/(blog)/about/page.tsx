@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
-import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
+import { siteConfig, slugifyCategory } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About",

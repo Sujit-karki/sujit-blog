@@ -22,6 +22,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
   const reduce = useReducedMotion();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false);
   }, [pathname]);
 

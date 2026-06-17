@@ -174,7 +174,7 @@ export default function FifaInteractive() {
           <p className="text-xs text-stone-500 mt-2">Main revenue driver for 2026</p>
         </div>
         <div className="p-6 bg-white dark:bg-gray-900 border border-stone-100 dark:border-gray-800 rounded-2xl shadow-sm">
-          <p className="text-stone-400 text-[10px] font-bold uppercase tracking-widest mb-1">Champion's Prize</p>
+          <p className="text-stone-400 text-[10px] font-bold uppercase tracking-widest mb-1">Champion&apos;s Prize</p>
           <p className="text-3xl font-bold text-yellow-600 dark:text-yellow-500">$50.0M</p>
           <p className="text-xs text-stone-500 mt-2">Highest payout in history</p>
         </div>
@@ -185,7 +185,7 @@ export default function FifaInteractive() {
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold mb-4 font-serif dark:text-white">The Revenue Explosion</h2>
           <p className="text-stone-600 dark:text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
-            FIFA operates on a four-year financial heartbeat. In the early 2000s, revenue sat at just over $2 billion. Today, that number has grown by nearly 500%. Use the chart below to explore the trajectory of FIFA's earnings across the decades.
+            FIFA operates on a four-year financial heartbeat. In the early 2000s, revenue sat at just over $2 billion. Today, that number has grown by nearly 500%. Use the chart below to explore the trajectory of FIFA&apos;s earnings across the decades.
           </p>
         </div>
         
