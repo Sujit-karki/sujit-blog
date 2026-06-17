@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -246,7 +246,7 @@ export default function FifaInteractive() {
             <div>
               <h4 className="text-stone-400 text-[10px] uppercase font-bold mb-3 tracking-widest">Economic Legacy</h4>
               <p className="text-stone-300 leading-relaxed italic text-sm">
-                "{activeData.legacy}"
+                &quot;{activeData.legacy}&quot;
               </p>
               <div className="mt-8 p-4 bg-stone-800/50 rounded-xl border border-stone-700">
                 <p className="text-[10px] text-stone-400 uppercase font-bold mb-1 tracking-widest">Key Takeaway</p>
@@ -266,7 +266,7 @@ export default function FifaInteractive() {
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold mb-4 font-serif dark:text-white">The Gentrification of the Game</h2>
           <p className="text-stone-600 dark:text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
-            The biggest shift for fans in 2026 is the introduction of <strong>Dynamic Pricing</strong>. We compared the 1994 World Cup (last time in North America) with today's figures, and the results are eye-watering.
+            The biggest shift for fans in 2026 is the introduction of <strong>Dynamic Pricing</strong>. We compared the 1994 World Cup (last time in North America) with today&apos;s figures, and the results are eye-watering.
           </p>
         </div>
 
@@ -303,7 +303,7 @@ export default function FifaInteractive() {
 
           <div className="space-y-6">
             <div className="p-6 bg-red-50 dark:bg-red-950/20 rounded-2xl border border-red-100 dark:border-red-900/30">
-              <h4 className="text-red-900 dark:text-red-400 font-bold mb-2 text-sm uppercase tracking-wider">The "Invisible" Markup</h4>
+              <h4 className="text-red-900 dark:text-red-400 font-bold mb-2 text-sm uppercase tracking-wider">The &quot;Invisible&quot; Markup</h4>
               <p className="text-red-800 dark:text-red-300/80 text-xs leading-relaxed">
                 Dynamic pricing allows costs to fluctuate in real-time. Texas investigations are probing algorithms that raised rates by an average of 34% after initial selection.
               </p>
