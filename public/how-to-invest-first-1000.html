@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Invest Your First $1,000: A Step-by-Step Guide for Beginners</title>
+<meta name="description" content="A practical, no-hype walkthrough of exactly what to do with your first $1,000 — with an interactive chart showing what it can grow into over time.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  /* ---- Scoped reset so this drops cleanly into a blog ---- */
+  #sf-root *, #sf-root *::before, #sf-root *::after { box-sizing: border-box; }
+  #sf-root {
+    --ink:    #15202b;
+    --emerald:#16795a;
+    --gold:   #b9852a;
+    --slate:  #9ba6b2;
+    --paper:  #ffffff;
+    --mist:   #f4f7f5;
+    --hair:   #e3e8e5;
+    --muted:  #5a6772;
+
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 22px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 18px;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+  }
+  #sf-root p { margin: 0 0 1.25em; }
+  #sf-root strong { font-weight: 600; }
+
+  /* ---- Masthead ---- */
+  #sf-root .sf-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    margin: 56px 0 18px;
+  }
+  #sf-root h1 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(33px, 6.2vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  #sf-root .sf-dek {
+    font-family: 'Newsreader', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(19px, 3vw, 23px);
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0 0 30px;
+  }
+  #sf-root .sf-byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--hair);
+    margin-bottom: 38px;
+  }
+  #sf-root .sf-byline .sf-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--slate); }
+
+  #sf-root h2 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(25px, 4.2vw, 33px);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin: 52px 0 16px;
+    color: var(--ink);
+  }
+  #sf-root h2 .sf-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55em;
+    color: var(--emerald);
+    vertical-align: 0.18em;
+    margin-right: 0.6em;
+    font-weight: 500;
+  }
+
+  /* ---- Interactive chart panel (the signature element) ---- */
+  #sf-root .sf-viz {
+    margin: 40px 0 14px;
+    padding: 26px 24px 22px;
+    background: var(--mist);
+    border: 1px solid var(--hair);
+    border-radius: 14px;
+  }
+  #sf-root .sf-viz-head {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  #sf-root .sf-viz-title {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  #sf-root .sf-chart-wrap { position: relative; width: 100%; }
+  #sf-root svg.sf-chart { width: 100%; height: auto; display: block; overflow: visible; }
+  #sf-root .sf-grid-line { stroke: var(--hair); stroke-width: 1; }
+  #sf-root .sf-axis-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; fill: var(--muted); }
+  #sf-root .sf-series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  #sf-root .sf-s-cash  { stroke: var(--slate); stroke-dasharray: 2 5; }
+  #sf-root .sf-s-lump  { stroke: var(--emerald); }
+  #sf-root .sf-s-both  { stroke: var(--gold); stroke-width: 3; }
+  #sf-root .sf-guide   { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; opacity: .35; }
+  #sf-root .sf-dot     { stroke: #fff; stroke-width: 2; }
+
+  #sf-root .sf-tip {
+    position: absolute; pointer-events: none; opacity: 0;
+    transform: translate(-50%, -112%);
+    background: var(--ink); color: #fff;
+    border-radius: 8px; padding: 9px 11px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; line-height: 1.5;
+    white-space: nowrap; transition: opacity .12s ease;
+    box-shadow: 0 6px 22px rgba(21,32,43,.22); z-index: 5;
+  }
+  #sf-root .sf-tip .tk { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: 0; }
+
+  /* ---- Controls ---- */
+  #sf-root .sf-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 20px; }
+  #sf-root .sf-ctl label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px;
+  }
+  #sf-root .sf-ctl label b { font-size: 16px; color: var(--ink); letter-spacing: 0; }
+  #sf-root input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 4px; background: var(--hair); outline: none; }
+  #sf-root input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--emerald); cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(21,32,43,.3); }
+  #sf-root input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--emerald); cursor: pointer; border: 3px solid #fff; }
+
+  /* ---- Payoff readout ---- */
+  #sf-root .sf-payoff { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 22px; background: var(--hair); border-radius: 10px; overflow: hidden; }
+  #sf-root .sf-pay { background: var(--paper); padding: 16px 14px; text-align: center; }
+  #sf-root .sf-pay .k { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 7px; }
+  #sf-root .sf-pay .k i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+  #sf-root .sf-pay .v { font-family: 'Newsreader', Georgia, serif; font-size: clamp(20px, 4vw, 27px); font-weight: 600; color: var(--ink); }
+  #sf-root .sf-caption { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--muted); margin: 14px 2px 0; line-height: 1.6; }
+
+  /* ---- Personal-touch callout ---- */
+  #sf-root .sf-note {
+    margin: 34px 0; padding: 20px 22px;
+    border-left: 3px solid var(--gold);
+    background: #fbf7ee; border-radius: 0 10px 10px 0;
+    font-family: 'Newsreader', Georgia, serif; font-style: italic;
+    font-size: 19px; line-height: 1.6; color: #4a4233;
+  }
+
+  /* ---- "Keep reading" gate ---- */
+  #sf-root .sf-more { position: relative; }
+  #sf-root .sf-more.is-collapsed { max-height: 230px; overflow: hidden; }
+  #sf-root .sf-more.is-collapsed::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 150px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), var(--paper));
+  }
+  #sf-root .sf-readmore-wrap { text-align: center; margin: 18px 0 8px; }
+  #sf-root .sf-readmore {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .06em;
+    text-transform: uppercase; cursor: pointer;
+    background: var(--ink); color: #fff; border: none;
+    padding: 13px 26px; border-radius: 999px; transition: transform .15s ease, background .15s ease;
+  }
+  #sf-root .sf-readmore:hover { background: var(--emerald); transform: translateY(-1px); }
+
+  #sf-root .sf-bullets { margin: 0 0 1.25em; padding: 0; list-style: none; }
+  #sf-root .sf-bullets li { position: relative; padding-left: 26px; margin-bottom: 14px; }
+  #sf-root .sf-bullets li::before { content: "→"; position: absolute; left: 0; top: 0; color: var(--emerald); font-weight: 600; }
+
+  #sf-root .sf-disclaimer { margin-top: 50px; padding-top: 22px; border-top: 1px solid var(--hair); font-size: 14px; color: var(--muted); font-style: italic; }
+
+  @media (max-width: 540px) {
+    #sf-root { font-size: 17px; }
+    #sf-root .sf-controls { grid-template-columns: 1fr; gap: 16px; }
+    #sf-root .sf-payoff { grid-template-columns: 1fr; }
+    #sf-root .sf-viz { padding: 20px 16px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #sf-root .sf-series { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<article id="sf-root">
+
+  <p class="sf-eyebrow">Investing · 8 min read</p>
+  <h1>How to Invest Your First $1,000</h1>
+  <p class="sf-dek">A step-by-step guide for beginners — without the hype, the jargon, or the pressure to pick the next big stock.</p>
+  <div class="sf-byline">
+    <span>June 14, 2026</span>
+  </div>
+
+  <p>Your first $1,000 is the hardest money you'll ever invest — not because the process is complicated, but because you have no track record to reassure you. You don't yet know what a 10% drop <em>feels</em> like in your own account. You don't know whether you'll panic and sell. That uncertainty is exactly why this first thousand matters more as a learning experience than as a wealth-building one.</p>
+
+  <p>So let's be honest up front about what $1,000 will and won't do. The real job of this first thousand is to <strong>build the habit and the stomach</strong> — so the next $1,000, and the one after that, go in automatically and stay in when markets get ugly. But "build the habit" is hard to feel. So instead of telling you what compounding does, let me show you. Drag the sliders below.</p>
+
+  <!-- ============ SIGNATURE INTERACTIVE CHART ============ -->
+  <div class="sf-viz">
+    <div class="sf-viz-head">Interactive · drag to explore</div>
+    <div class="sf-viz-title">What your $1,000 can become</div>
+
+    <div class="sf-chart-wrap">
+      <svg class="sf-chart" id="sfChart" viewBox="0 0 720 380" role="img" aria-label="Compound growth chart"></svg>
+      <div class="sf-tip" id="sfTip"></div>
+    </div>
+
+    <div class="sf-controls">
+      <div class="sf-ctl">
+        <label>Added each month <b id="sfPmtLbl">$100</b></label>
+        <input type="range" id="sfPmt" min="0" max="300" step="25" value="100">
+      </div>
+      <div class="sf-ctl">
+        <label>Years invested <b id="sfYrLbl">30</b></label>
+        <input type="range" id="sfYr" min="10" max="40" step="1" value="30">
+      </div>
+    </div>
+
+    <div class="sf-payoff">
+      <div class="sf-pay">
+        <div class="k"><i style="background:#9ba6b2"></i>Cash, not invested</div>
+        <div class="v" id="sfOutCash">$1,000</div>
+      </div>
+      <div class="sf-pay">
+        <div class="k"><i style="background:#16795a"></i>$1,000 invested once</div>
+        <div class="v" id="sfOutLump">$0</div>
+      </div>
+      <div class="sf-pay">
+        <div class="k"><i style="background:#b9852a"></i>$1,000 + monthly</div>
+        <div class="v" id="sfOutBoth">$0</div>
+      </div>
+    </div>
+    <p class="sf-caption">Assumes a 7.5% average annual return, compounded monthly — roughly the long-run average of a broad U.S. stock index. Markets don't move in straight lines; this shows the math of staying invested, not a guarantee.</p>
+  </div>
+
+  <p>That gap between the grey line and the gold one isn't luck, and it isn't picking winners. It's just <strong>time plus consistency</strong>. The single $1,000 grows on its own; adding a little every month is what turns it into a number that actually changes your life. Now here's exactly how to put that first thousand to work.</p>
+
+  <h2><span class="sf-num">01</span>Make sure you should invest this money at all</h2>
+  <p>Before a single dollar goes into the market, run three quick checks. Skipping them is the most expensive mistake beginners make.</p>
+  <p><strong>Do you have high-interest debt?</strong> If you're carrying a credit card balance at 22% APR, paying it down <em>is</em> your best investment. No stock-market return reliably beats a guaranteed 22%. Clear that first.</p>
+  <p><strong>Do you have any emergency cushion?</strong> Investing money you'll need in six months is how you get forced to sell at the worst possible time. You don't need a full emergency fund to start — but keep at least a small buffer in savings so a flat tire doesn't force you to liquidate.</p>
+  <p><strong>Can you leave this money alone for five years or more?</strong> Over any single year the market is close to a coin flip, but the odds shift sharply in your favor the longer you hold. If you might need this $1,000 next year, it belongs in a high-yield savings account, not in stocks.</p>
+
+  <div class="sf-more is-collapsed" id="sfMore">
+
+    <h2><span class="sf-num">02</span>Use the free money before the "smart" money</h2>
+    <p>If your employer offers a 401(k) match, that's where your first investing dollars should go — even before the strategy in the rest of this guide. A typical match is 50 cents to a dollar for every dollar you put in, up to some share of your salary. That's an instant 50–100% return before the market does anything. Nothing else in investing comes close. Contribute at least enough to capture the full match, then come back here.</p>
+
+    <h2><span class="sf-num">03</span>Open the right account</h2>
+    <p>For most beginners investing outside of work, the best home for that first $1,000 is a <strong>Roth IRA</strong> — a retirement account you fund with money you've already paid taxes on, so every dollar of growth comes out completely tax-free in retirement.</p>
+    <p>For 2026 you can contribute up to <strong>$7,500</strong> if you're under 50 (and $8,600 if you're 50 or older), so $1,000 fits easily. One feature nervous beginners love: you can withdraw your <em>contributions</em> — not the earnings — at any time, with no taxes or penalties. The money isn't as locked away as people assume.</p>
+    <p>If retirement feels too far off and you want access sooner, a plain <strong>taxable brokerage account</strong> works too: no contribution limits, no withdrawal rules, you just pay tax on gains when you sell. Either way, open it with a major low-cost broker — Fidelity, Charles Schwab, or Vanguard are the standard picks: no minimums, no commissions on the funds you'll want, and they're not going anywhere.</p>
+
+    <h2><span class="sf-num">04</span>Buy a broad, boring index fund</h2>
+    <p>This is the part beginners overcomplicate. You do not need to pick stocks. You do not need to predict anything.</p>
+    <p>Put your $1,000 into a <strong>low-cost, broadly diversified index fund</strong> — one that owns a slice of hundreds or thousands of companies at once. The two most common starting points are a <strong>total U.S. stock market</strong> fund (it owns essentially the whole market) or an <strong>S&P 500</strong> fund (the 500 largest U.S. companies). Either one instantly spreads your money across the market, so no single company can sink you.</p>
+    <p>Look for an <strong>expense ratio under 0.10%</strong> — that's the annual fee. On a fund like this it should be almost nothing: a 0.03% expense ratio costs you 30 cents a year per $1,000, while a 1% actively managed fund costs $10 and, historically, delivers worse results. One fund is a completely legitimate portfolio for $1,000. You can add bonds and international exposure later as your balance grows.</p>
+
+    <h2><span class="sf-num">05</span>Automate the next contribution, then stop looking</h2>
+    <p>Here's the secret almost no beginner believes until they've lived it: <strong>after you invest, the most profitable thing you can do is nothing.</strong></p>
+    <p>Set up an automatic transfer — even $50 or $100 a month — into the same fund. (That's the gold line you were dragging earlier.) This is called dollar-cost averaging, and it quietly solves the hardest problem in investing: timing. When the market drops, your fixed contribution buys more shares; when it rises, it buys fewer. You never have to guess whether now is a good time, because you're always buying.</p>
+    <p>Then resist the urge to check your balance every day. Studies of real investor behavior keep finding the same thing: the people who trade the most earn the least. Your $1,000 doesn't need management. It needs patience.</p>
+
+    <div class="sf-note">
+      My own first $1,000 went in right before a market dip, and watching it drop taught me more than any article could — I learned I could sit still. [Sujit: swap this line for your real story.]
+    </div>
+
+    <h2>The mistakes that quietly cost beginners the most</h2>
+    <ul class="sf-bullets">
+      <li><strong>Waiting for the "perfect" time to start.</strong> Time in the market beats timing the market. The best day to start was years ago; the second best is today.</li>
+      <li><strong>Chasing whatever went up last year.</strong> Last year's hottest fund or coin is not a strategy. Broad and boring wins over decades.</li>
+      <li><strong>Selling during the first big drop.</strong> A 20% decline will happen — repeatedly — over an investing lifetime. Selling locks in the loss; holding (and ideally buying more) is how index investors win.</li>
+      <li><strong>Paying high fees without realizing it.</strong> A 1% fee can quietly eat a third of your lifetime returns. Keep costs near zero.</li>
+    </ul>
+
+    <h2>The bottom line</h2>
+    <p>Your first $1,000 won't make you rich, and it's not supposed to. Its real job is to turn you into someone who invests — automatically, calmly, and consistently — for the next several decades. Clear your high-interest debt, grab any employer match, open a Roth IRA, buy one broad index fund, automate your next contribution, and then let compounding do the slow, boring, powerful work you saw in that chart.</p>
+    <p>The hardest part isn't the math. It's starting. And if you read this far, you're closer than most.</p>
+
+    <p class="sf-disclaimer">This article is for educational purposes only and is not personalized financial advice. Figures are illustrative; the 2026 contribution limits are current as of publication. Consider consulting a licensed financial professional about your specific situation.</p>
+  </div>
+
+  <div class="sf-readmore-wrap" id="sfReadWrap">
+    <button class="sf-readmore" id="sfReadBtn">Keep reading — the 5 steps ↓</button>
+  </div>
+
+</article>
+
+<script>
+(function () {
+  var svg   = document.getElementById('sfChart');
+  var tip   = document.getElementById('sfTip');
+  var pmtEl = document.getElementById('sfPmt');
+  var yrEl  = document.getElementById('sfYr');
+  var pmtLbl= document.getElementById('sfPmtLbl');
+  var yrLbl = document.getElementById('sfYrLbl');
+  var outCash = document.getElementById('sfOutCash');
+  var outLump = document.getElementById('sfOutLump');
+  var outBoth = document.getElementById('sfOutBoth');
+
+  var W = 720, H = 380, padL = 58, padR = 14, padT = 14, padB = 34;
+  var plotW = W - padL - padR, plotH = H - padT - padB;
+  var rate = 0.075, rm = rate / 12;
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var firstDraw = true;
+
+  function fmtFull(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+  function fmtK(v){
+    if (v >= 1000) { var k = v/1000; return '$' + (k >= 100 ? Math.round(k) : k.toFixed(1).replace(/\.0$/,'')) + 'k'; }
+    return '$' + Math.round(v);
+  }
+  function niceCeil(v){
+    if (v <= 0) return 1;
+    var p = Math.pow(10, Math.floor(Math.log10(v)));
+    var n = v / p, m;
+    if (n <= 1) m = 1; else if (n <= 2) m = 2; else if (n <= 2.5) m = 2.5; else if (n <= 5) m = 5; else m = 10;
+    return m * p;
+  }
+  function el(tag, attrs){ var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  function series(pmt, Y){
+    var cash = [], lump = [], both = [];
+    for (var y = 0; y <= Y; y++){
+      var g = Math.pow(1 + rm, 12 * y);
+      var L = 1000 * g;
+      var A = pmt > 0 ? pmt * ((g - 1) / rm) : 0;
+      cash.push(1000); lump.push(L); both.push(L + A);
+    }
+    return { cash: cash, lump: lump, both: both };
+  }
+
+  var state = {};
+
+  function draw(){
+    var pmt = +pmtEl.value, Y = +yrEl.value;
+    pmtLbl.textContent = '$' + pmt;
+    yrLbl.textContent = Y;
+
+    var s = series(pmt, Y);
+    var yMax = niceCeil(s.both[Y]);
+    state = { s: s, Y: Y, yMax: yMax };
+
+    var X = function(y){ return padL + (y / Y) * plotW; };
+    var Yc = function(v){ return padT + plotH - (v / yMax) * plotH; };
+
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    for (var t = 0; t <= 4; t++){
+      var val = yMax * t / 4;
+      var gy = Yc(val);
+      svg.appendChild(el('line', { x1: padL, y1: gy, x2: W - padR, y2: gy, class: 'sf-grid-line' }));
+      var lab = el('text', { x: padL - 8, y: gy + 3, 'text-anchor': 'end', class: 'sf-axis-label' });
+      lab.textContent = fmtK(val);
+      svg.appendChild(lab);
+    }
+    [0, Math.round(Y/2), Y].forEach(function(yy){
+      var lx = el('text', { x: X(yy), y: H - 12, 'text-anchor': 'middle', class: 'sf-axis-label' });
+      lx.textContent = yy + 'y';
+      svg.appendChild(lx);
+    });
+
+    function path(arr, cls){
+      var d = '';
+      for (var y = 0; y <= Y; y++){ d += (y === 0 ? 'M' : 'L') + X(y).toFixed(1) + ' ' + Yc(arr[y]).toFixed(1); }
+      var p = el('path', { d: d, class: 'sf-series ' + cls });
+      svg.appendChild(p);
+      return p;
+    }
+    var pCash = path(s.cash, 'sf-s-cash');
+    var pLump = path(s.lump, 'sf-s-lump');
+    var pBoth = path(s.both, 'sf-s-both');
+
+    if (firstDraw && !reduceMotion){
+      [pLump, pBoth].forEach(function(p){
+        var len = p.getTotalLength();
+        p.style.transition = 'none';
+        p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+        p.getBoundingClientRect();
+        p.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(.22,.61,.36,1)';
+        p.style.strokeDashoffset = '0';
+      });
+    }
+    firstDraw = false;
+
+    var hit = el('rect', { x: padL, y: padT, width: plotW, height: plotH, fill: 'transparent' });
+    svg.appendChild(hit);
+    var guide = el('line', { class: 'sf-guide', x1: 0, y1: padT, x2: 0, y2: padT + plotH, opacity: 0 });
+    var dC = el('circle', { r: 4, class: 'sf-dot', fill: '#9ba6b2', opacity: 0 });
+    var dL = el('circle', { r: 4, class: 'sf-dot', fill: '#16795a', opacity: 0 });
+    var dB = el('circle', { r: 5, class: 'sf-dot', fill: '#b9852a', opacity: 0 });
+    svg.appendChild(guide); svg.appendChild(dC); svg.appendChild(dL); svg.appendChild(dB);
+
+    function move(clientX){
+      var r = svg.getBoundingClientRect();
+      var px = (clientX - r.left) / r.width * W;
+      var y = Math.round(((px - padL) / plotW) * Y);
+      y = Math.max(0, Math.min(Y, y));
+      var gx = X(y);
+      guide.setAttribute('x1', gx); guide.setAttribute('x2', gx); guide.setAttribute('opacity', 1);
+      dC.setAttribute('cx', gx); dC.setAttribute('cy', Yc(s.cash[y])); dC.setAttribute('opacity', 1);
+      dL.setAttribute('cx', gx); dL.setAttribute('cy', Yc(s.lump[y])); dL.setAttribute('opacity', 1);
+      dB.setAttribute('cx', gx); dB.setAttribute('cy', Yc(s.both[y])); dB.setAttribute('opacity', 1);
+
+      tip.style.opacity = 1;
+      tip.style.left = (gx / W * 100) + '%';
+      tip.style.top = (Yc(s.both[y]) / H * 100) + '%';
+      tip.innerHTML =
+        '<div style="margin-bottom:4px;opacity:.7">Year ' + y + '</div>' +
+        '<div><span class="tk" style="background:#b9852a"></span>' + fmtFull(s.both[y]) + '</div>' +
+        '<div><span class="tk" style="background:#16795a"></span>' + fmtFull(s.lump[y]) + '</div>' +
+        '<div><span class="tk" style="background:#9ba6b2"></span>' + fmtFull(s.cash[y]) + '</div>';
+    }
+    function hide(){ guide.setAttribute('opacity', 0); dC.setAttribute('opacity', 0); dL.setAttribute('opacity', 0); dB.setAttribute('opacity', 0); tip.style.opacity = 0; }
+
+    hit.addEventListener('mousemove', function(e){ move(e.clientX); });
+    hit.addEventListener('mouseleave', hide);
+    hit.addEventListener('touchstart', function(e){ if (e.touches[0]) move(e.touches[0].clientX); }, { passive: true });
+    hit.addEventListener('touchmove',  function(e){ if (e.touches[0]) move(e.touches[0].clientX); }, { passive: true });
+
+    outCash.textContent = fmtFull(s.cash[Y]);
+    outLump.textContent = fmtFull(s.lump[Y]);
+    outBoth.textContent = fmtFull(s.both[Y]);
+  }
+
+  pmtEl.addEventListener('input', draw);
+  yrEl.addEventListener('input', draw);
+  draw();
+
+  var more = document.getElementById('sfMore');
+  var btn  = document.getElementById('sfReadBtn');
+  var wrap = document.getElementById('sfReadWrap');
+  btn.addEventListener('click', function(){
+    more.classList.remove('is-collapsed');
+    wrap.style.display = 'none';
+  });
+})();
+</script>
+</body>
+</html>

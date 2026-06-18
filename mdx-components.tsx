@@ -10,6 +10,7 @@ import Sources from "@/components/mdx/Sources";
 import CodeBlock from "@/components/mdx/CodeBlock";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import FifaInteractive from "@/components/custom/FifaInteractive";
+import CompoundGrowthChart from "@/components/custom/CompoundGrowthChart";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -76,6 +77,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Sources,
     GoogleAdSense,
     FifaInteractive,
+    CompoundGrowthChart,
 
     ...components,
   };
