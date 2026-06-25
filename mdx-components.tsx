@@ -11,6 +11,7 @@ import CodeBlock from "@/components/mdx/CodeBlock";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import FifaInteractive from "@/components/custom/FifaInteractive";
 import CompoundGrowthChart from "@/components/custom/CompoundGrowthChart";
+import RothIraCalculator from "@/components/custom/RothIraCalculator";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -78,6 +79,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     GoogleAdSense,
     FifaInteractive,
     CompoundGrowthChart,
+    RothIraCalculator,
 
     ...components,
   };
