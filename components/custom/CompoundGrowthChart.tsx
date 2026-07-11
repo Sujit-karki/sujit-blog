@@ -220,7 +220,7 @@ export default function CompoundGrowthChart() {
       </div>
 
       <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
-        Assumes a 7.5% average annual return, compounded monthly — roughly the long-run average of a broad U.S. stock index. Markets don't move in straight lines; this shows the math of staying invested, not a guarantee.
+        Assumes a 7.5% average annual return, compounded monthly — roughly the long-run average of a broad U.S. stock index. Markets don&apos;t move in straight lines; this shows the math of staying invested, not a guarantee.
       </p>
     </div>
   )

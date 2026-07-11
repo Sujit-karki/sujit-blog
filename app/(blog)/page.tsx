@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: siteConfig.name }],
+    images: [{ url: "/api/og", width: 1200, height: 630, alt: siteConfig.name }],
   },
 };
 

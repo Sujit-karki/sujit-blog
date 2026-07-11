@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
+import SearchModal from "./search/SearchModal";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 
 export default function Header() {
@@ -39,6 +40,12 @@ export default function Header() {
             Home
           </Link>
           <Link
+            href="/tools"
+            className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            Tools
+          </Link>
+          <Link
             href="/about"
             className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
           >
@@ -53,7 +60,8 @@ export default function Header() {
         </nav>
 
         {/* Right actions */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
+          <SearchModal />
           <ThemeToggle />
           <MobileNav categories={categories} />
         </div>

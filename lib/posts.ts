@@ -1,36 +1,54 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { z } from "zod";
+import { categories } from "./site-config";
 
 const postsDir = path.join(process.cwd(), "content", "posts");
 
-export interface TocItem {
-  id: string;
-  title: string;
-  level?: 2 | 3;
-}
+const tocItemSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  level: z.union([z.literal(2), z.literal(3)]).optional(),
+});
 
-export interface FaqItem {
-  q: string;
-  a: string;
-}
+const faqItemSchema = z.object({
+  q: z.string(),
+  a: z.string(),
+});
 
-export interface PostFrontmatter {
-  title: string;
-  description: string;
-  date: string;
-  updated?: string;
-  tags: string[];
-  category: string;
-  author: string;
-  coverImage?: string;
-  toc?: TocItem[];
-  faq?: FaqItem[];
-}
+const frontmatterSchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  date: z.string(),
+  updated: z.string().optional(),
+  tags: z.array(z.string()).default([]),
+  category: z.enum(categories),
+  author: z.string().min(1),
+  coverImage: z.string().optional(),
+  toc: z.array(tocItemSchema).optional(),
+  faq: z.array(faqItemSchema).optional(),
+});
+
+export type TocItem = z.infer<typeof tocItemSchema>;
+export type FaqItem = z.infer<typeof faqItemSchema>;
+export type PostFrontmatter = z.infer<typeof frontmatterSchema>;
 
 export interface Post extends PostFrontmatter {
   slug: string;
   readingTime: number;
+}
+
+function parseFrontmatter(slug: string, data: unknown): PostFrontmatter {
+  const result = frontmatterSchema.safeParse(data);
+  if (!result.success) {
+    throw new Error(
+      `Invalid frontmatter in content/posts/${slug}.mdx:\n${result.error.issues
+        .map((i) => `  - ${i.path.join(".")}: ${i.message}`)
+        .join("\n")}`
+    );
+  }
+  return result.data;
 }
 
 function calcReadingTime(content: string): number {
@@ -53,7 +71,7 @@ export function getAllPosts(): Post[] {
       return {
         slug,
         readingTime: calcReadingTime(content),
-        ...(data as PostFrontmatter),
+        ...parseFrontmatter(slug, data),
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -67,7 +85,7 @@ export function getPostBySlug(slug: string): Post | null {
   return {
     slug,
     readingTime: calcReadingTime(content),
-    ...(data as PostFrontmatter),
+    ...parseFrontmatter(slug, data),
   };
 }
 

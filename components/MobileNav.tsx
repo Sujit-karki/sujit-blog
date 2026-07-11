@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { m, AnimatePresence, useReducedMotion } from "motion/react";
 import { slugifyCategory } from "@/lib/site-config";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Tools", href: "/tools" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -63,7 +64,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
         {open && (
           <>
             {/* Backdrop */}
-            <motion.div
+            <m.div
               key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -74,7 +75,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
             />
 
             {/* Slide-down panel */}
-            <motion.div
+            <m.div
               key="panel"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto", transition: { duration: dur } }}
@@ -84,7 +85,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
               <nav className="max-w-7xl mx-auto px-4 py-4">
                 <ul className="space-y-1 mb-4">
                   {navLinks.map((link, i) => (
-                    <motion.li
+                    <m.li
                       key={link.href}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{
@@ -99,7 +100,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
                       >
                         {link.label}
                       </Link>
-                    </motion.li>
+                    </m.li>
                   ))}
                 </ul>
 
@@ -109,7 +110,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
                   </p>
                   <ul className="grid grid-cols-2 gap-1">
                     {categories.map((cat, i) => (
-                      <motion.li
+                      <m.li
                         key={cat}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{
@@ -127,12 +128,12 @@ export default function MobileNav({ categories }: MobileNavProps) {
                         >
                           {cat}
                         </Link>
-                      </motion.li>
+                      </m.li>
                     ))}
                   </ul>
                 </div>
               </nav>
-            </motion.div>
+            </m.div>
           </>
         )}
       </AnimatePresence>

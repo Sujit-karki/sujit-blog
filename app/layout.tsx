@@ -4,6 +4,7 @@ import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./(blog)/globals.css";
 import { siteConfig } from "@/lib/site-config";
+import { MotionProvider } from "./providers";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -44,13 +45,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: `${siteConfig.name} — ${siteConfig.tagline}` }],
+    images: [{ url: "/api/og", width: 1200, height: 630, alt: `${siteConfig.name} — ${siteConfig.tagline}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/og-default.jpg", alt: siteConfig.name }],
+    images: [{ url: "/api/og", alt: siteConfig.name }],
     ...(siteConfig.social.twitter ? { site: `@${siteConfig.social.twitter}`, creator: `@${siteConfig.social.twitter}` } : {}),
   },
   robots: {
@@ -102,7 +103,7 @@ const websiteJsonLd = {
   publisher: { "@id": `${siteConfig.url}/#organization` },
   potentialAction: {
     "@type": "SearchAction",
-    target: { "@type": "EntryPoint", urlTemplate: `${siteConfig.url}/?s={search_term_string}` },
+    target: { "@type": "EntryPoint", urlTemplate: `${siteConfig.url}/search?q={search_term_string}` },
     "query-input": "required name=search_term_string",
   },
 };
@@ -130,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" type="application/rss+xml" title={`${siteConfig.name} RSS`} href={`${siteConfig.url}/feed.xml`} />
       </head>
       <body className="min-h-full flex flex-col antialiased">
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <SpeedInsights />
         <Script
           async

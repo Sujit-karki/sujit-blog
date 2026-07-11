@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cacheLife } from "next/cache";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
+import NewsletterSignup from "@/components/newsletter/NewsletterSignup";
 
 export default async function Footer() {
   'use cache'
@@ -11,6 +12,16 @@ export default async function Footer() {
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 mb-8 border-b border-gray-200 dark:border-gray-800">
+          <div>
+            <p className="text-sm font-bold text-gray-900 dark:text-white">Get new posts in your inbox</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">No spam, unsubscribe anytime.</p>
+          </div>
+          <div className="w-full md:w-auto md:min-w-[360px]">
+            <NewsletterSignup variant="footer" />
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
@@ -59,6 +70,7 @@ export default async function Footer() {
             </p>
             <ul className="space-y-2">
               {[
+                { label: "Tools", href: "/tools" },
                 { label: "About", href: "/about" },
                 { label: "Contact", href: "/contact" },
                 { label: "RSS Feed", href: "/feed.xml" },

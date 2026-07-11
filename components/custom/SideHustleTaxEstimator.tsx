@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'motion/react'
+import ChartCard from './ChartCard'
+import AnimatedNumber from './AnimatedNumber'
 
 const SE_TAX_RATE = 0.153
 const NET_EARNINGS_FACTOR = 0.9235
@@ -31,7 +33,7 @@ export default function SideHustleTaxEstimator() {
   ]
 
   return (
-    <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
+    <ChartCard>
       <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
         Interactive · plug in your numbers
       </p>
@@ -79,7 +81,7 @@ export default function SideHustleTaxEstimator() {
       <div className="mb-5">
         <div className="h-9 w-full rounded-lg overflow-hidden flex bg-gray-200 dark:bg-gray-700">
           {segments.map(seg => (
-            <motion.div
+            <m.div
               key={seg.label}
               className="h-full flex items-center justify-center overflow-hidden"
               style={{ background: seg.color }}
@@ -92,7 +94,7 @@ export default function SideHustleTaxEstimator() {
                   {Math.round((seg.val / annual) * 100)}%
                 </span>
               )}
-            </motion.div>
+            </m.div>
           ))}
         </div>
         <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-3">
@@ -109,17 +111,27 @@ export default function SideHustleTaxEstimator() {
       <div className="grid grid-cols-2 gap-px bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
           <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Set aside per quarter</p>
-          <p className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">{money(perQuarter)}</p>
+          <AnimatedNumber
+            value={perQuarter}
+            format={money}
+            startFromZero
+            className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white block"
+          />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
           <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Total tax reserve</p>
-          <p className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">{Math.round(reservePct)}% of profit</p>
+          <AnimatedNumber
+            value={reservePct}
+            format={v => `${Math.round(v)}% of profit`}
+            startFromZero
+            className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white block"
+          />
         </div>
       </div>
 
       <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
-        Simplified estimate: self-employment tax at 15.3% of 92.35% of net profit, plus your selected income-tax bracket applied to the full amount. Ignores deductions, the QBI deduction, and the Social Security wage base cap — a real return will differ. Move a portion into a separate savings account the moment you're paid.
+        Simplified estimate: self-employment tax at 15.3% of 92.35% of net profit, plus your selected income-tax bracket applied to the full amount. Ignores deductions, the QBI deduction, and the Social Security wage base cap — a real return will differ. Move a portion into a separate savings account the moment you&apos;re paid.
       </p>
-    </div>
+    </ChartCard>
   )
 }

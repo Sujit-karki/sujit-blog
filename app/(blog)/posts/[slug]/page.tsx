@@ -10,6 +10,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import TocObserver from "@/components/TocObserver";
 import MarketChart from "@/components/financial/MarketChart";
+import NewsletterSignup from "@/components/newsletter/NewsletterSignup";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -22,7 +23,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `${siteConfig.url}/posts/${slug}`;
-  const img = post.coverImage ?? "/og-default.jpg";
   return {
     title: post.title,
     description: post.description,
@@ -35,7 +35,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.description,
       siteName: siteConfig.name,
-      images: [{ url: img, width: 1200, height: 630, alt: post.title }],
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
       authors: [`${siteConfig.url}/about`],
@@ -45,7 +44,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [{ url: img, alt: post.title }],
     },
   };
 }
@@ -89,7 +87,9 @@ export default async function PostPage({ params }: Props) {
     keywords: post.tags?.join(", "),
     articleSection: post.category,
     inLanguage: "en-US",
-    ...(post.coverImage && { image: `${siteConfig.url}${post.coverImage}` }),
+    // Next generates the file-convention og:image at a content-hashed path we
+    // can't predict here, so JSON-LD points at the stable generated fallback instead.
+    image: `${siteConfig.url}/api/og`,
   };
 
   const faqJsonLd = post.faq?.length
@@ -203,6 +203,14 @@ export default async function PostPage({ params }: Props) {
                 ))}
               </div>
             )}
+
+            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-6 mt-8">
+              <p className="font-bold text-gray-900 dark:text-white mb-1">Get new posts in your inbox</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                No spam, unsubscribe anytime.
+              </p>
+              <NewsletterSignup />
+            </div>
 
             <AuthorBio />
 

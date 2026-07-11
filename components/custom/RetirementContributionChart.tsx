@@ -10,6 +10,7 @@ import {
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import type { ChartData, ChartOptions } from 'chart.js'
+import ChartCard from './ChartCard'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend)
 
@@ -96,7 +97,7 @@ export default function RetirementContributionChart() {
   }
 
   return (
-    <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
+    <ChartCard>
       <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
         Max 2026 contribution by profit level
       </p>
@@ -111,6 +112,6 @@ export default function RetirementContributionChart() {
       <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
         Simplified: SEP IRA modeled as 20% of net profit; Solo 401(k) modeled as a $24,500 employee deferral plus 20% employer contribution, both capped at $72,000 combined and at net profit. The gap is largest at lower profit because the Solo 401(k)&apos;s flat employee deferral doesn&apos;t depend on the 20% employer formula the way SEP contributions do.
       </p>
-    </div>
+    </ChartCard>
   )
 }

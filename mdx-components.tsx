@@ -16,6 +16,9 @@ import SelfEmploymentTaxChart from "@/components/custom/SelfEmploymentTaxChart";
 import SideHustleTaxEstimator from "@/components/custom/SideHustleTaxEstimator";
 import LLCFeesChart from "@/components/custom/LLCFeesChart";
 import RetirementContributionChart from "@/components/custom/RetirementContributionChart";
+import LineChart from "@/components/charts/LineChartLazy";
+import PieChart from "@/components/charts/PieChartLazy";
+import StatCard from "@/components/charts/StatCard";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -88,6 +91,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     SideHustleTaxEstimator,
     LLCFeesChart,
     RetirementContributionChart,
+    LineChart,
+    PieChart,
+    StatCard,
 
     ...components,
   };

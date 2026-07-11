@@ -12,6 +12,16 @@ declare global {
   interface Window { adsbygoogle: unknown[] }
 }
 
+// Reserve roughly the height AdSense will fill in, so the slot doesn't
+// collapse-then-expand and shift content around it (a top CLS contributor).
+const DEFAULT_MIN_HEIGHT: Record<NonNullable<Props['format']>, number> = {
+  auto: 250,
+  rectangle: 250,
+  horizontal: 100,
+  vertical: 600,
+  fluid: 250,
+}
+
 export default function GoogleAdSense({ slot, format = 'auto', className = '', style }: Props) {
   const uid = useId()
 
@@ -22,8 +32,10 @@ export default function GoogleAdSense({ slot, format = 'auto', className = '', s
     } catch {}
   }, [uid])
 
+  const reservedStyle = { minHeight: DEFAULT_MIN_HEIGHT[format], ...style }
+
   return (
-    <div className={`overflow-hidden ${className}`} style={style}>
+    <div className={`overflow-hidden ${className}`} style={reservedStyle}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}

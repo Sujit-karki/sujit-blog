@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
-import { motion } from 'framer-motion'
+import { m } from 'motion/react'
 import type { ChartData, ChartOptions } from 'chart.js'
+import ChartCard from './ChartCard'
+import AnimatedNumber from './AnimatedNumber'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
@@ -56,7 +58,7 @@ export default function SelfEmploymentTaxChart() {
   const activeSlice = hoverIdx !== null ? SLICES[hoverIdx] : null
 
   return (
-    <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
+    <ChartCard>
       <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
         Where the 15.3% goes
       </p>
@@ -69,15 +71,12 @@ export default function SelfEmploymentTaxChart() {
         <div className="relative h-52 sm:h-56 mx-auto w-full max-w-[220px]">
           <Doughnut data={data} options={options} />
           <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <motion.span
-              key={activeSlice?.label ?? 'total'}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
+            <AnimatedNumber
+              value={activeSlice ? activeSlice.pct : 15.3}
+              format={v => `${v.toFixed(1)}%`}
+              startFromZero
               className="font-serif text-3xl font-bold text-gray-900 dark:text-white"
-            >
-              {activeSlice ? `${activeSlice.pct}%` : '15.3%'}
-            </motion.span>
+            />
             <span className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mt-1 text-center px-2">
               {activeSlice ? activeSlice.label : 'Total SE Tax'}
             </span>
@@ -87,7 +86,7 @@ export default function SelfEmploymentTaxChart() {
         {/* Legend + explanation */}
         <div className="space-y-3">
           {SLICES.map((s, i) => (
-            <motion.div
+            <m.div
               key={s.label}
               initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -113,7 +112,7 @@ export default function SelfEmploymentTaxChart() {
               <span className="font-mono text-sm font-bold text-gray-900 dark:text-white shrink-0">
                 {s.pct}%
               </span>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
@@ -121,6 +120,6 @@ export default function SelfEmploymentTaxChart() {
       <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
         Applied to 92.35% of your net self-employment earnings, not the full amount. High earners also owe an extra 0.9% Medicare surtax above $200,000 in net self-employment income (single filers).
       </p>
-    </div>
+    </ChartCard>
   )
 }

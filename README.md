@@ -27,7 +27,10 @@ Lampard is a statically-generated blog in the YMYL (Your Money, Your Life) niche
 | Content | MDX 3 (Markdown + React components) |
 | Styling | Tailwind CSS v4 |
 | Language | TypeScript |
-| Charts | Chart.js via react-chartjs-2 |
+| Charts | Chart.js (react-chartjs-2) + Recharts (MDX chart components) |
+| Animation | Motion (`motion/react`, via a centralized `LazyMotion` provider) |
+| Search | Fuse.js (⌘K modal + `/search` page) |
+| Content validation | Zod (frontmatter schema in `lib/posts.ts`) |
 | Deployment | Cloudflare / Vercel-compatible |
 
 ---
@@ -47,15 +50,22 @@ my-blog/
 │   │   ├── contact/             # Contact page
 │   │   ├── disclaimer/          # Legal disclaimer
 │   │   ├── privacy-policy/      # Privacy policy
+│   │   ├── search/              # /search?q= results page (Fuse.js)
+│   │   ├── tools/                # Standalone calculator hub (/tools, /tools/[slug])
 │   │   └── feed.xml/            # RSS feed route
+│   ├── api/
+│   │   ├── og/route.tsx         # Generated default share image (next/og)
+│   │   ├── search-index/route.ts # Cached JSON index consumed by the search UI
+│   │   ├── newsletter/route.ts  # Buttondown signup proxy
+│   │   └── market-data/route.ts # Live ticker data (CoinGecko/Yahoo Finance)
 │   ├── roadmap/                 # Strategy/roadmap page (standalone layout)
 │   ├── layout.tsx               # Root layout
+│   ├── providers.tsx            # MotionProvider (LazyMotion + MotionConfig)
 │   ├── sitemap.ts               # Auto-generated XML sitemap
 │   └── robots.ts                # robots.txt generation
 ├── components/
 │   ├── ads/                     # Ad integration components
-│   │   ├── GoogleAdSense.tsx    # Google AdSense unit
-│   │   └── CaiGlobalAd.tsx      # CAI Global ad unit
+│   │   └── GoogleAdSense.tsx    # Google AdSense unit
 │   ├── mdx/                     # Rich content components for MDX
 │   │   ├── KeyTakeaways.tsx     # Highlighted key points box
 │   │   ├── InfoBox.tsx          # Info/warning/tip callout box
@@ -63,6 +73,34 @@ my-blog/
 │   │   ├── ComparisonTable.tsx  # Side-by-side comparison
 │   │   ├── FaqAccordion.tsx     # Expandable FAQ section
 │   │   └── Sources.tsx          # Citation/sources list
+│   ├── custom/                  # One-off interactive components used in specific posts
+│   │   ├── ChartCard.tsx        # Shared animated card wrapper (scroll reveal + hover lift)
+│   │   ├── AnimatedNumber.tsx   # Spring-animated count-up number, respects reduced-motion
+│   │   ├── CompoundGrowthChart.tsx      # Interactive compounding visualizer (SVG)
+│   │   ├── RothIraCalculator.tsx        # Roth vs Traditional IRA calculator
+│   │   ├── SelfEmploymentTaxChart.tsx   # Doughnut chart: SE tax breakdown
+│   │   ├── SideHustleTaxEstimator.tsx   # Live tax-reserve estimator (slider-driven)
+│   │   ├── LLCFeesChart.tsx             # Bar chart: LLC filing fees by state
+│   │   ├── RetirementContributionChart.tsx  # SEP IRA vs Solo 401(k) bar chart
+│   │   └── FifaInteractive.tsx  # World Cup finance explorer
+│   ├── charts/                   # Recharts-based MDX chart components
+│   │   ├── LineChart.tsx / LineChartLazy.tsx  # Line/area chart, a11y layer + data-table fallback
+│   │   ├── PieChart.tsx / PieChartLazy.tsx    # Donut chart, a11y layer + data-table fallback
+│   │   ├── StatCard.tsx         # Single-stat tile (string format presets, not a function prop)
+│   │   └── useIsDark.ts         # Tracks the `dark` class on <html> for chart theming
+│   ├── tools/
+│   │   └── EmbedSnippet.tsx     # Copy-to-clipboard iframe embed code for /tools pages
+│   ├── search/                   # ⌘K modal + /search page
+│   │   ├── SearchModal.tsx      # Cmd+K command palette (Motion + Fuse.js)
+│   │   ├── SearchResults.tsx    # /search?q= results list
+│   │   ├── useSearchIndex.ts    # Fetches/caches the search index
+│   │   └── useFuseSearch.ts     # Shared Fuse.js query hook
+│   ├── newsletter/
+│   │   └── NewsletterSignup.tsx # Buttondown signup form (inline + footer variants)
+│   ├── financial/                # Live market data widgets
+│   │   ├── FinancialTicker.tsx  # Scrolling price ticker (CoinGecko/Yahoo Finance)
+│   │   ├── MarketChart.tsx      # SSR-safe dynamic-import wrapper
+│   │   └── MarketChartClient.tsx # Chart.js line chart with live sparkline
 │   ├── Header.tsx               # Site navigation
 │   ├── Footer.tsx               # Site footer
 │   ├── PostCard.tsx             # Article card (normal + featured variant)
@@ -77,8 +115,10 @@ my-blog/
 ├── content/
 │   └── posts/                   # All blog posts as .mdx files
 ├── lib/
-│   ├── posts.ts                 # Post reading, sorting, filtering logic
-│   └── site-config.ts           # Site name, author info, categories
+│   ├── posts.ts                 # Post reading/sorting/filtering + Zod frontmatter validation
+│   ├── site-config.ts           # Site name, author info, categories
+│   ├── tools-config.ts          # /tools registry: copy, FAQ, HowTo steps per calculator
+│   └── motion/tokens.ts         # Shared durations/easings/variants for the Motion provider
 └── public/                      # Static assets
 ```
 
@@ -134,7 +174,7 @@ title: "How Index Funds Beat 90% of Investors"
 description: "A data-backed breakdown of why passive investing outperforms active management over the long term."
 date: "2026-06-14"
 updated: "2026-06-20"       # optional: shows "Updated" date on the post
-author: "Lampard"
+author: "Sujit Karki"
 category: "Investing"       # must match a category from site-config.ts
 tags: ["index funds", "ETFs", "passive investing", "long-term"]
 coverImage: "/images/index-funds.jpg"   # optional
@@ -191,7 +231,7 @@ An index fund tracks a market index like the S&P 500...
 ]} />
 
 <Sources items={[
-  { label: "S&P SPIVA Report 2025", url: "https://www.spglobal.com/spdji/en/research-insights/spiva/" }
+  { title: "S&P SPIVA Report 2025", url: "https://www.spglobal.com/spdji/en/research-insights/spiva/", publisher: "S&P Dow Jones Indices", date: "2026" }
 ]} />
 ```
 
@@ -202,9 +242,37 @@ An index fund tracks a market index like the S&P 500...
 | `<KeyTakeaways items={[...]} />` | Green callout box with bullet-point takeaways |
 | `<InfoBox type="tip/warning/info">` | Colored callout box for emphasis |
 | `<ProsCons pros={[...]} cons={[...]} />` | Side-by-side pros and cons |
-| `<ComparisonTable ... />` | Data comparison table |
+| `<ComparisonTable headers={[...]} rows={[[...]]} highlightCol={n} />` | Data comparison table |
 | `<FaqAccordion items={[{q, a}]} />` | Expandable FAQ section |
-| `<Sources items={[{label, url}]} />` | Formatted source citations |
+| `<Sources items={[{title, url, publisher?, date?}]} />` | Formatted source citations |
+| `<LineChart title data xKey series unit? />` | Recharts line/area chart, a11y layer + data-table fallback |
+| `<PieChart title data unit? />` | Recharts donut chart, a11y layer + data-table fallback |
+| `<StatCard label value format? sublabel? />` | Single-stat tile — `format` is `"number"\|"currency"\|"percent"`, never a function (MDX is server-rendered) |
+
+Post-specific interactive components (charts, calculators) live in `components/custom/` and are registered per-post in `mdx-components.tsx` — see [Interactive Charts & Animation](#interactive-charts--animation) below before adding a new one.
+
+---
+
+## Interactive Charts & Animation
+
+Data-heavy posts use real, sourced numbers rendered as live Chart.js visualizations, not static images — see `content/posts/how-to-start-a-side-hustle.mdx` for a full example (doughnut chart, bar charts, and a slider-driven live calculator).
+
+**Building a new chart component:**
+
+1. Add it under `components/custom/` as a `'use client'` component.
+2. Wrap its root in `<ChartCard>` for a consistent scroll-triggered entrance (spring fade/rise) and hover lift — don't hand-roll this per component.
+3. For any headline number that changes (a stat, a slider result, a percentage), use `<AnimatedNumber value={...} format={...} />` instead of a plain `{value}` — it spring-animates between values and respects `prefers-reduced-motion` automatically.
+4. Register the component in `mdx-components.tsx` so it's usable in MDX without an import.
+5. Cite every number in the chart back to a real source in the post's `<Sources>` block — charts are held to the same no-fabricated-data standard as the prose. See [Writing a Blog Post](#writing-a-blog-post).
+
+**Animation principles used throughout this codebase** (see `FadeIn.tsx`, `PageTransition.tsx`, `ChartCard.tsx`, `AnimatedNumber.tsx`):
+
+- **One centralized system, not inline transitions** — every `motion`/`framer-motion` import goes through `app/providers.tsx` (`LazyMotion domAnimation strict` + `MotionConfig reducedMotion="user"`). `strict` mode means every component must use the lighter `m.*` primitive, never the full `motion.*` one — mixing the two throws at runtime.
+- **Durations/easings/variants live in `lib/motion/tokens.ts`** — reuse `duration`, `ease`, and `variants` instead of hand-writing new transition objects per component.
+- **Scroll-triggered, not autoplay** — `whileInView` with `{ once: true }`, so animations fire once as content enters the viewport instead of replaying or distracting on every scroll.
+- **Springs for interactive elements, easing for decorative ones** — card entrances and hover states use `type: "spring"` with low bounce (`damping` ≥ 20); page-level fades use simple easing curves.
+- **`useReducedMotion()` is mandatory** on every new motion component — check the OS-level reduced-motion preference and fall back to an instant, static state. `MotionConfig reducedMotion="user"` also handles this app-wide.
+- **Numbers animate toward meaning, not noise** — `AnimatedNumber` springs between real computed values (tax owed, contribution limits); it's never used to make a static number look busier than it is.
 
 ---
 
@@ -219,7 +287,7 @@ export const siteConfig = {
   tagline: "...",
   description: "...",
   author: {
-    name: "Lampard",
+    name: "Sujit Karki",
     credentials: "Finance Researcher & Market Analyst",
     bio: "...",
     avatarInitial: "S",
@@ -249,9 +317,9 @@ export const categories = [
 
 This blog is built SEO-first:
 
-- **Static generation** — every page is pre-rendered at build time (`dynamicParams = false`)
-- **Structured data (JSON-LD)** — Article, FAQPage, Person, and BreadcrumbList schemas on every post
-- **Open Graph + Twitter cards** — full social sharing previews with cover images
+- **Static generation** — every page is pre-rendered at build time via `generateStaticParams`, with Partial Prerendering (`cacheComponents: true` in `next.config.mjs`) streaming the few genuinely dynamic bits (the live ticker)
+- **Structured data (JSON-LD)** — Organization, WebSite+SearchAction, Article, Person, FAQPage, HowTo (on `/tools` pages), and BreadcrumbList schemas
+- **Open Graph + Twitter cards** — unique per-post share images generated via `next/og` (`app/(blog)/posts/[slug]/opengraph-image.tsx`), with a site-wide generated fallback at `/api/og`
 - **Canonical URLs** — prevents duplicate content issues
 - **XML Sitemap** — auto-generated at `/sitemap.xml`
 - **RSS Feed** — available at `/feed.xml`
@@ -275,6 +343,9 @@ This blog is built SEO-first:
 | `/feed.xml` | RSS feed |
 | `/sitemap.xml` | XML sitemap for Google |
 | `/roadmap` | Strategic roadmap page with interactive charts |
+| `/tools` | Calculator hub index |
+| `/tools/[slug]` | Standalone interactive calculator (HowTo + FAQ JSON-LD, embed snippet) |
+| `/search` | Search results page (`?q=`), also the `WebSite` JSON-LD `SearchAction` target |
 
 ---
 
@@ -314,7 +385,7 @@ AdSense is integrated via the `GoogleAdSense` component.
 
 ## Author
 
-**Lampard** — Independent finance researcher and market analyst.  
+**Sujit Karki** — Independent finance researcher and market analyst, writing at Lampard.  
 Specialties: macroeconomics, equity markets, monetary policy, personal finance, cryptocurrency.
 
 Website: [sujitkarki.com.np](https://www.sujitkarki.com.np)

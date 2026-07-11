@@ -9,6 +9,8 @@ import {
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import type { ChartData, ChartOptions } from 'chart.js'
+import ChartCard from './ChartCard'
+import AnimatedNumber from './AnimatedNumber'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip)
 
@@ -77,7 +79,7 @@ export default function LLCFeesChart() {
   }
 
   return (
-    <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
+    <ChartCard>
       <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
         14x difference, same paperwork
       </p>
@@ -85,7 +87,7 @@ export default function LLCFeesChart() {
         LLC filing fees by state
       </p>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-        National average: <span className="font-semibold text-gray-700 dark:text-gray-300">${AVG}</span> · lowest: Montana ($35) · highest: Massachusetts ($500)
+        National average: <AnimatedNumber value={AVG} format={v => `$${Math.round(v)}`} startFromZero className="font-semibold text-gray-700 dark:text-gray-300" /> · lowest: Montana ($35) · highest: Massachusetts ($500)
       </p>
 
       <div className="h-64 sm:h-72">
@@ -106,6 +108,6 @@ export default function LLCFeesChart() {
       <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
         One-time formation filing fee only. Some states add ongoing costs on top — California, for example, charges an $800 annual franchise tax regardless of the LLC&apos;s income, separate from its $70 filing fee. Always check your specific state&apos;s ongoing requirements before forming.
       </p>
-    </div>
+    </ChartCard>
   )
 }
