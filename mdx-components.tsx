@@ -12,6 +12,10 @@ import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import FifaInteractive from "@/components/custom/FifaInteractive";
 import CompoundGrowthChart from "@/components/custom/CompoundGrowthChart";
 import RothIraCalculator from "@/components/custom/RothIraCalculator";
+import SelfEmploymentTaxChart from "@/components/custom/SelfEmploymentTaxChart";
+import SideHustleTaxEstimator from "@/components/custom/SideHustleTaxEstimator";
+import LLCFeesChart from "@/components/custom/LLCFeesChart";
+import RetirementContributionChart from "@/components/custom/RetirementContributionChart";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -80,6 +84,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     FifaInteractive,
     CompoundGrowthChart,
     RothIraCalculator,
+    SelfEmploymentTaxChart,
+    SideHustleTaxEstimator,
+    LLCFeesChart,
+    RetirementContributionChart,
 
     ...components,
   };
