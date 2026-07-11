@@ -54,29 +54,30 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">About {siteConfig.name}</h2>
           <div className="prose prose-gray dark:prose-invert max-w-none">
             <p>
-              {siteConfig.name} is an independent personal finance and market analysis publication.
-              Our mission is to demystify financial markets and help everyday people make
-              smarter, more informed money decisions — without the jargon and hidden agendas
-              that plague mainstream financial media.
+              I&apos;m {siteConfig.author.name}, and I write {siteConfig.name}, an independent
+              personal finance and market analysis publication. My mission is to demystify
+              financial markets and help everyday people make smarter, more informed money
+              decisions — without the jargon and hidden agendas that plague mainstream
+              financial media.
             </p>
             <p>
               Every article is thoroughly researched using primary sources: central bank
               communications, official government data, peer-reviewed economic research,
-              and SEC filings. Where we express opinions, we label them clearly. Where we
-              cite data, we link to the original source.
+              and SEC filings. Where I express opinions, I label them clearly. Where I
+              cite data, I link to the original source.
             </p>
             <p>
-              We hold ourselves to the highest E-E-A-T (Experience, Expertise,
+              I hold myself to the highest E-E-A-T (Experience, Expertise,
               Authoritativeness, Trustworthiness) standards — the same standards Google applies
               to YMYL (Your Money or Your Life) content. Finance content carries real-world
-              consequences, and we take that responsibility seriously.
+              consequences, and I take that responsibility seriously.
             </p>
           </div>
         </section>
 
-        {/* What we cover */}
+        {/* What I cover */}
         <section className="mb-10">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">What We Cover</h2>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">What I Cover</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { cat: "Investing", desc: "Index funds, ETFs, stock analysis, and long-term portfolio building." },
@@ -103,7 +104,7 @@ export default function AboutPage() {
         <section className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 mb-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Get in Touch</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-            Questions, collaboration requests, or feedback? We&apos;d love to hear from you.
+            Questions, collaboration requests, or feedback? I&apos;d love to hear from you.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline">
             Contact us →
