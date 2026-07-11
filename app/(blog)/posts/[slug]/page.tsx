@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Suspense } from "react";
 import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate } from "@/lib/posts";
 import { siteConfig, slugifyCategory } from "@/lib/site-config";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
-import CaiGlobalAd from "@/components/ads/CaiGlobalAd";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
-import AiSummary from "@/components/AiSummary";
 import TocObserver from "@/components/TocObserver";
 import MarketChart from "@/components/financial/MarketChart";
 
@@ -171,11 +168,6 @@ export default async function PostPage({ params }: Props) {
               </div>
             </header>
 
-            {/* AI Summary */}
-            <Suspense fallback={<div className="skeleton h-32 rounded-2xl mb-8" />}>
-              <AiSummary slug={slug} />
-            </Suspense>
-
             {/* In-content top ad */}
             <div className="mb-8 ad-reveal ad-label relative">
               <GoogleAdSense slot="1122334455" format="horizontal" />
@@ -196,16 +188,6 @@ export default async function PostPage({ params }: Props) {
             >
               <PostContent />
             </article>
-
-            {/* Mid-article CAI ad */}
-            <div className="my-8">
-              <CaiGlobalAd
-                size="leaderboard"
-                headline="CAI Global — Finance Marketing Experts"
-                ctaText="Work with Us →"
-                className="ad-reveal w-full"
-              />
-            </div>
 
             {/* Tags */}
             {post.tags?.length > 0 && (
@@ -239,15 +221,6 @@ export default async function PostPage({ params }: Props) {
                   <TocObserver toc={post.toc} />
                 </div>
               )}
-
-              {/* Sidebar CAI ad */}
-              <CaiGlobalAd
-                size="rectangle"
-                headline="Finance Marketing by CAI Global"
-                subtext="Campaigns that convert for finance & crypto brands."
-                ctaText="Get in Touch →"
-                className="ad-reveal"
-              />
 
               {/* Sidebar AdSense */}
               <div className="ad-label relative">

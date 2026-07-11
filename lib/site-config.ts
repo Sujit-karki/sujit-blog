@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "In-depth personal finance guides, market analysis, and investing strategies backed by rigorous research.",
   author: {
-    name: "Lampard",
+    name: "Sujit Karki",
     credentials: "Finance Researcher & Market Analyst",
     bio: "Independent finance researcher and market analyst with expertise in macroeconomics, equity markets, and personal finance. I help regular investors make better-informed decisions through rigorous, data-driven analysis.",
     avatarInitial: "S",

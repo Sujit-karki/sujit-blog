@@ -4,7 +4,6 @@ import Link from "next/link";
 import PostCard from "@/components/PostCard";
 import FadeIn from "@/components/FadeIn";
 import NewsTicker from "@/components/NewsTicker";
-import CaiGlobalAd from "@/components/ads/CaiGlobalAd";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
@@ -70,21 +69,6 @@ export default function HomePage() {
               </section>
             )}
 
-            {/* In-feed rectangle ad after latest */}
-            {latestSix.length > 0 && (
-              <FadeIn delay={0.2}>
-                <div className="mb-14 flex justify-center">
-                  <CaiGlobalAd
-                    size="rectangle"
-                    headline="Reach Finance Readers"
-                    subtext="Advertise on Lampard and connect with investors."
-                    ctaText="Advertise with Us →"
-                    className="ad-reveal"
-                  />
-                </div>
-              </FadeIn>
-            )}
-
             {/* Category sections */}
             {categories.map((cat, catIdx) => {
               const catPosts = getPostsByCategory(cat).slice(0, 3);
@@ -132,17 +116,6 @@ export default function HomePage() {
           {/* Sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-6">
-
-              {/* CAI Global half-page ad */}
-              <FadeIn delay={0.15}>
-                <CaiGlobalAd
-                  size="halfpage"
-                  headline="Dominate Digital Marketing"
-                  subtext="CAI Global delivers ROI-driven campaigns for finance, crypto & e-commerce brands worldwide."
-                  ctaText="Partner with Us →"
-                  className="ad-reveal mx-auto"
-                />
-              </FadeIn>
 
               {/* Browse by category */}
               <FadeIn delay={0.3}>
