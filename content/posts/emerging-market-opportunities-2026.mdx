@@ -29,6 +29,8 @@ After years of underperformance relative to U.S. equities, emerging markets are 
 
 But emerging markets are not a monolith. The difference between the best and worst performers can easily span 40-50 percentage points in a given year. This analysis offers a framework for identifying which markets deserve attention and which risks to price carefully.
 
+<StatCard label="Best-vs-Worst EM Spread" value={45} format="percent" sublabel="Midpoint of the typical 40–50pt annual dispersion" />
+
 ## The Dollar Cycle and EM Returns
 
 The single most important macro driver of emerging market equity and debt returns is the U.S. dollar. The relationship is inverse and well-documented:
@@ -86,6 +88,16 @@ For most investors, EM exposure is best accessed through:
 4. **Individual ADRs** for high-conviction single-name positions (requires deeper due diligence)
 
 Position sizing should reflect EM's higher volatility: most financial planners suggest EM constitute 5-20% of an equity allocation depending on risk tolerance and time horizon.
+
+<PieChart
+  title="Illustrative EM Tilt Within an Equity Portfolio"
+  description="Example allocation at the higher end of the commonly suggested 5–20% EM range"
+  unit="%"
+  data={[
+    { label: "Developed Markets", value: 80, color: "#059669" },
+    { label: "Emerging Markets", value: 20, color: "#f59e0b" },
+  ]}
+/>
 
 ## Conclusion
 

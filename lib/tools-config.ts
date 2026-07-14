@@ -76,6 +76,26 @@ export const tools: ToolConfig[] = [
       { q: "How often do I need to pay estimated taxes?", a: "The IRS generally expects self-employed people to pay estimated taxes quarterly (April, June, September, and January) if they expect to owe $1,000 or more for the year." },
     ],
   },
+  {
+    slug: "budget-calculator",
+    title: "50/30/20 Budget Calculator",
+    shortDescription: "Split your monthly income into needs, wants, and savings — and see it in dollars.",
+    intro:
+      "Enter your monthly take-home income and adjust the wants and savings sliders to see how much goes to needs, wants, and savings each month, and how that compares to the classic 50/30/20 rule.",
+    category: "Personal Finance",
+    relatedPosts: [{ slug: "budgeting-50-30-20-rule", title: "The 50/30/20 Budget Rule: How to Budget Your Money Like a Pro" }],
+    howTo: [
+      { name: "Enter your monthly income", text: "Use the slider to set your monthly take-home (after-tax) income." },
+      { name: "Set your wants percentage", text: "Adjust how much of your income goes to discretionary wants like dining out and entertainment." },
+      { name: "Set your savings percentage", text: "Adjust how much goes to savings and extra debt payoff." },
+      { name: "Read the breakdown", text: "Needs is whatever remains after wants and savings. Compare your split to the classic 50/30/20 rule." },
+    ],
+    faq: [
+      { q: "What is the 50/30/20 rule?", a: "A budgeting framework popularized by Senator Elizabeth Warren: 50% of after-tax income goes to needs, 30% to wants, and 20% to savings and debt payoff." },
+      { q: "What counts as a need vs a want?", a: "Needs are expenses required for a basic standard of living — rent, utilities, groceries, minimum debt payments. Wants are discretionary — dining out, streaming services, travel." },
+      { q: "What if my needs are more than 50% of my income?", a: "This is common in high cost-of-living areas. Try reducing the wants percentage in the calculator to see how much that would need to shrink to keep your savings rate intact." },
+    ],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolConfig | undefined {

@@ -3,6 +3,7 @@ import createMDX from "@next/mdx";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   cacheComponents: true,
+  reactCompiler: true,
   cacheLife: {
     // 30-second revalidation window for live market data
     market: {

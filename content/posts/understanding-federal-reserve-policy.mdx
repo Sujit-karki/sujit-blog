@@ -38,6 +38,28 @@ The Fed's primary policy tool is the **federal funds rate** — the overnight le
 - **Real estate:** Mortgage rates track long-term Treasury yields, which typically rise with Fed tightening.
 - **Currency:** Higher rates attract foreign capital, strengthening the dollar and pressuring emerging market assets.
 
+The equity effect is easiest to see by looking at how a higher discount rate shrinks the present value of a cash flow that's further out in time — exactly why long-duration growth stocks are hit hardest:
+
+<LineChart
+  title="Present Value of $1 of Future Cash Flow, by Discount Rate"
+  description="Illustrative example: a higher discount rate compresses the value of cash flows further in the future — the mechanism behind falling P/E multiples for growth stocks"
+  xKey="year"
+  unit="$"
+  data={[
+    { year: "1", low: 0.97, high: 0.94 },
+    { year: "5", low: 0.86, high: 0.75 },
+    { year: "10", low: 0.74, high: 0.56 },
+    { year: "15", low: 0.64, high: 0.42 },
+    { year: "20", low: 0.55, high: 0.31 },
+    { year: "25", low: 0.48, high: 0.23 },
+    { year: "30", low: 0.41, high: 0.17 },
+  ]}
+  series={[
+    { key: "low", label: "3% discount rate", color: "#059669" },
+    { key: "high", label: "6% discount rate", color: "#ef4444" },
+  ]}
+/>
+
 ## The Dot Plot: Reading Fed Intentions
 
 Every quarter the Fed releases its Summary of Economic Projections (SEP), including the famous **dot plot** — a scatter chart showing each FOMC member's rate expectations over the next three years. Markets hang on this document, using it to build rate-path expectations priced into futures contracts.
@@ -51,6 +73,8 @@ Key things to watch in each dot plot:
 ## Quantitative Tightening and the Balance Sheet
 
 Beyond rate changes, the Fed's $7+ trillion balance sheet is a second major lever. During QE (quantitative easing), the Fed buys Treasuries and mortgage-backed securities, injecting liquidity. During QT (quantitative tightening), it lets holdings mature without reinvestment, draining reserves.
+
+<StatCard label="Fed Balance Sheet" value={7} format="currency" decimals={0} sublabel="Trillion+ in Treasury and MBS holdings" />
 
 The practical impact: QT reduces the money supply, pushes up term premiums on long-duration bonds, and can tighten financial conditions even when the policy rate holds steady.
 

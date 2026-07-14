@@ -62,6 +62,12 @@ Key on-chain and market structure indicators suggest we are in the middle stage 
 Bitcoin price prediction is notoriously unreliable, even from sophisticated analysts. This analysis presents a framework for thinking about Bitcoin's macro position, not a price target. Treat all cryptocurrency price forecasts — including those from well-credentialed analysts — with significant skepticism.
 </InfoBox>
 
+The current cycle's defining structural feature is the April 2024 halving, which cut new daily BTC issuance in half:
+
+<StatCard label="Daily New BTC — Pre-Halving" value={900} sublabel="Before April 2024" />
+<StatCard label="Daily New BTC — Post-Halving" value={450} sublabel="Since April 2024" />
+<StatCard label="Supply Cut" value={50} format="percent" sublabel="Reduction in new issuance" />
+
 ## Macro Drivers: What's Moving BTC
 
 ### Interest Rate Cycle
@@ -93,6 +99,19 @@ The launch of spot Bitcoin ETFs in the United States in January 2024 was a struc
     ["MicroStrategy (MSTR)", "Public Company", "$35B+ BTC", "N/A", "Direct custody"],
   ]}
   caption="Major Institutional Bitcoin Products — June 2026"
+/>
+
+<PieChart
+  title="Institutional Bitcoin AUM by Product"
+  description="Approximate assets under management across major regulated Bitcoin vehicles, June 2026"
+  unit="B"
+  data={[
+    { label: "IBIT (BlackRock)", value: 45, color: "#059669" },
+    { label: "MSTR (MicroStrategy)", value: 35, color: "#6366f1" },
+    { label: "GBTC (Grayscale)", value: 22, color: "#f59e0b" },
+    { label: "FBTC (Fidelity)", value: 18, color: "#0d9488" },
+    { label: "ARKB (ARK/21Shares)", value: 4, color: "#ef4444" },
+  ]}
 />
 
 ## Key On-Chain Metrics

@@ -20,9 +20,15 @@ export default function NewsTicker({ posts }: Props) {
 
   const doubled = [...posts, ...posts]
 
+  const BADGE_COLORS = [
+    'bg-emerald-500 group-hover:bg-emerald-400',
+    'bg-blue-500 group-hover:bg-blue-400',
+    'bg-amber-500 group-hover:bg-amber-400',
+  ]
+
   return (
     <div
-      className="relative w-full overflow-hidden bg-emerald-600 dark:bg-emerald-700 text-white"
+      className="relative w-full overflow-hidden bg-gray-900 dark:bg-black text-white"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-label="Latest posts ticker"
@@ -47,7 +53,9 @@ export default function NewsTicker({ posts }: Props) {
                 href={`/posts/${post.slug}`}
                 className="flex items-center gap-2 px-6 py-2.5 whitespace-nowrap text-sm font-medium hover:text-white/80 transition-colors group"
               >
-                <span className="text-[10px] font-black uppercase tracking-widest bg-white/20 px-2 py-0.5 rounded-full group-hover:bg-white/30 transition-colors">
+                <span
+                  className={`text-[10px] font-black uppercase tracking-widest text-white px-2 py-0.5 rounded-full transition-colors ${BADGE_COLORS[i % BADGE_COLORS.length]}`}
+                >
                   {post.category}
                 </span>
                 <span className="group-hover:underline underline-offset-2">{post.title}</span>

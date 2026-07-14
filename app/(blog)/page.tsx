@@ -23,7 +23,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const allPosts = getAllPosts();
-  const [featured, ...rest] = allPosts;
+  const [featuredA, featuredB, featuredC, ...rest] = allPosts;
+  const featuredPosts = [featuredA, featuredB, featuredC].filter(Boolean);
+  const featuredThemes = ["emerald", "violet", "sunset"] as const;
   const latestSix = rest.slice(0, 6);
 
   const tickerPosts = allPosts.slice(0, 8).map((p) => ({
@@ -39,10 +41,12 @@ export default function HomePage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
 
-        {/* Hero — featured post */}
-        {featured && (
-          <section className="mb-10 animate-fade-in-up">
-            <PostCard post={featured} featured />
+        {/* Hero — featured posts, one per premium color theme */}
+        {featuredPosts.length > 0 && (
+          <section className="mb-10 grid gap-5 md:grid-cols-3 items-stretch animate-fade-in-up">
+            {featuredPosts.map((post, i) => (
+              <PostCard key={post.slug} post={post} featured theme={featuredThemes[i]} />
+            ))}
           </section>
         )}
 

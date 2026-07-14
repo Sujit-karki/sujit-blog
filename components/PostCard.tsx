@@ -2,33 +2,36 @@ import Link from "next/link";
 import type { Post } from "@/lib/posts";
 import { formatDate, formatDateShort } from "@/lib/posts";
 import { slugifyCategory } from "@/lib/site-config";
+import { THEME_STYLES, type ThemeName } from "@/lib/category-theme";
 
 interface PostCardProps {
   post: Post;
   featured?: boolean;
+  theme?: ThemeName;
   variant?: "default" | "compact" | "horizontal";
 }
 
-export default function PostCard({ post, featured = false, variant = "default" }: PostCardProps) {
+export default function PostCard({ post, featured = false, theme = "emerald", variant = "default" }: PostCardProps) {
   const categoryHref = `/category/${slugifyCategory(post.category)}`;
 
   if (featured) {
+    const { gradient, shadow } = THEME_STYLES[theme];
     return (
-      <article className="group relative rounded-2xl overflow-hidden hero-gradient text-white shadow-xl shadow-emerald-900/20 card-hover">
-        <Link href={`/posts/${post.slug}`} className="block p-8 sm:p-10 lg:p-12">
-          <div className="mb-5 flex items-center gap-3">
+      <article className={`group relative rounded-2xl overflow-hidden ${gradient} text-white shadow-xl ${shadow} card-hover h-full`}>
+        <Link href={`/posts/${post.slug}`} className="block p-6 sm:p-7 lg:p-8 h-full flex flex-col">
+          <div className="mb-4 flex items-center gap-3">
             <span className="text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
               {post.category}
             </span>
-            <span className="text-emerald-200 text-xs">{post.readingTime} min read</span>
+            <span className="text-white/70 text-xs">{post.readingTime} min read</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight mb-4 group-hover:text-emerald-100 transition-colors max-w-3xl">
+          <h2 className="text-xl sm:text-2xl font-extrabold leading-tight mb-3 group-hover:text-white/90 transition-colors">
             {post.title}
           </h2>
-          <p className="text-emerald-100 text-base leading-relaxed mb-7 max-w-2xl line-clamp-3">
+          <p className="text-white/80 text-sm leading-relaxed mb-6 line-clamp-3">
             {post.description}
           </p>
-          <div className="flex items-center gap-4 text-sm text-emerald-200">
+          <div className="mt-auto flex items-center gap-3 text-sm text-white/70">
             <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">
               {post.author.charAt(0)}
             </div>

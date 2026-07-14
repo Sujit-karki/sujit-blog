@@ -7,7 +7,7 @@ import { tools } from "@/lib/tools-config";
 export const metadata: Metadata = {
   title: "Financial Calculators & Tools",
   description:
-    "Free interactive financial calculators — compound interest, Roth vs Traditional IRA, and self-employment tax estimators.",
+    "Free interactive financial calculators — compound interest, Roth vs Traditional IRA, self-employment tax, and a 50/30/20 budget calculator.",
   alternates: { canonical: `${siteConfig.url}/tools` },
 };
 

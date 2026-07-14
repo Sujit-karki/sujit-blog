@@ -67,6 +67,30 @@ html {
   animation: gradientShift 9s ease infinite;
 }
 
+.hero-gradient-violet {
+  background: linear-gradient(-45deg, #4338ca, #6d28d9, #a21caf, #312e81);
+  background-size: 400% 400%;
+  animation: gradientShift 9s ease infinite;
+}
+
+.hero-gradient-sunset {
+  background: linear-gradient(-45deg, #be123c, #c2410c, #b45309, #7c2d12);
+  background-size: 400% 400%;
+  animation: gradientShift 9s ease infinite;
+}
+
+.hero-gradient-ocean {
+  background: linear-gradient(-45deg, #0e7490, #0369a1, #1e3a8a, #164e63);
+  background-size: 400% 400%;
+  animation: gradientShift 9s ease infinite;
+}
+
+.hero-gradient-gold {
+  background: linear-gradient(-45deg, #ca8a04, #a16207, #854d0e, #713f12);
+  background-size: 400% 400%;
+  animation: gradientShift 9s ease infinite;
+}
+
 /* ── Above-fold CSS fade-in (no JS hydration needed) ────────── */
 @keyframes fadeInUp {
   from {
@@ -296,6 +320,26 @@ canvas {
   }
   .hero-gradient {
     background: #059669;
+    animation: none;
+  }
+
+  .hero-gradient-violet {
+    background: #6d28d9;
+    animation: none;
+  }
+
+  .hero-gradient-sunset {
+    background: #c2410c;
+    animation: none;
+  }
+
+  .hero-gradient-ocean {
+    background: #0369a1;
+    animation: none;
+  }
+
+  .hero-gradient-gold {
+    background: #a16207;
     animation: none;
   }
   .card-hover:hover {

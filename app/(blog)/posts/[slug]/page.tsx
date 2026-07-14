@@ -11,6 +11,7 @@ import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import TocObserver from "@/components/TocObserver";
 import MarketChart from "@/components/financial/MarketChart";
 import NewsletterSignup from "@/components/newsletter/NewsletterSignup";
+import { THEME_STYLES, themeForCategory } from "@/lib/category-theme";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -105,6 +106,7 @@ export default async function PostPage({ params }: Props) {
     : null;
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbItems, siteConfig.url);
+  const { gradient, shadow } = THEME_STYLES[themeForCategory(post.category)];
 
   return (
     <>
@@ -132,40 +134,44 @@ export default async function PostPage({ params }: Props) {
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10 xl:gap-14">
           {/* Main article */}
           <div className="min-w-0">
-            {/* Post header */}
-            <header className="mb-8">
-              <Link
-                href={`/category/${slugifyCategory(post.category)}`}
-                className="inline-block text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 hover:underline mb-3"
-              >
-                {post.category}
-              </Link>
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
-                {post.title}
-              </h1>
-              <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
-                {post.description}
-              </p>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400 pb-5 border-b border-gray-200 dark:border-gray-700">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-bold">
-                    {siteConfig.author.avatarInitial}
+            {/* Post header — animated gradient hero, themed by category */}
+            <header className={`relative overflow-hidden rounded-2xl mb-8 text-white shadow-xl ${gradient} ${shadow}`}>
+              <div className="relative p-6 sm:p-8 lg:p-10">
+                <Link
+                  href={`/category/${slugifyCategory(post.category)}`}
+                  className="inline-block text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full hover:bg-white/30 transition-colors mb-4"
+                >
+                  {post.category}
+                </Link>
+                <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4 max-w-3xl">
+                  {post.title}
+                </h1>
+                <p className="text-lg text-white/85 leading-relaxed mb-5 max-w-2xl">
+                  {post.description}
+                </p>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/70 pt-5 border-t border-white/20">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">
+                      {siteConfig.author.avatarInitial}
+                    </div>
+                    <span className="font-medium text-white">{post.author}</span>
                   </div>
-                  <span className="font-medium text-gray-700 dark:text-gray-300">{post.author}</span>
+                  <span className="text-white/30">|</span>
+                  <time dateTime={post.date}>Published {formatDate(post.date)}</time>
+                  {post.updated && post.updated !== post.date && (
+                    <>
+                      <span className="text-white/30">|</span>
+                      <time dateTime={post.updated} className="text-white font-medium">
+                        Updated {formatDate(post.updated)}
+                      </time>
+                    </>
+                  )}
+                  <span className="text-white/30">|</span>
+                  <span>{post.readingTime} min read</span>
                 </div>
-                <span className="text-gray-300 dark:text-gray-600">|</span>
-                <time dateTime={post.date}>Published {formatDate(post.date)}</time>
-                {post.updated && post.updated !== post.date && (
-                  <>
-                    <span className="text-gray-300 dark:text-gray-600">|</span>
-                    <time dateTime={post.updated} className="text-emerald-600 dark:text-emerald-400">
-                      Updated {formatDate(post.updated)}
-                    </time>
-                  </>
-                )}
-                <span className="text-gray-300 dark:text-gray-600">|</span>
-                <span>{post.readingTime} min read</span>
               </div>
+              {/* Subtle shine overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none" />
             </header>
 
             {/* In-content top ad */}

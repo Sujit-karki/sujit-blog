@@ -80,8 +80,28 @@ The evidence is overwhelming. According to the SPIVA (S&P Indices Versus Active)
 The math is unforgiving: if the market returns 10% and an active fund charges 1% in fees, the manager must achieve 11% gross returns just to match an index fund. Consistently doing this is extremely rare.
 
 <InfoBox type="tip" title="The Compounding Advantage">
-A 0.03% expense ratio vs. a 1% expense ratio on a $100,000 portfolio growing at 8% annually for 30 years creates a difference of approximately $180,000 in final portfolio value. Fees are the single most controllable variable in investing.
+A 0.03% expense ratio vs. a 1% expense ratio on a $100,000 portfolio growing at 8% annually for 30 years creates a large, widening gap in final portfolio value. Fees are the single most controllable variable in investing.
 </InfoBox>
+
+<LineChart
+  title="$100,000 Growing at 8% Annually: Index Fund vs. Active Fund Fees"
+  description="Net-of-fee growth: 7.97% for a 0.03% expense ratio vs. 7% for a 1% expense ratio"
+  xKey="year"
+  unit="$"
+  data={[
+    { year: "0", index: 100000, active: 100000 },
+    { year: "5", index: 146800, active: 140260 },
+    { year: "10", index: 215500, active: 196720 },
+    { year: "15", index: 316300, active: 275900 },
+    { year: "20", index: 464300, active: 386970 },
+    { year: "25", index: 681400, active: 542700 },
+    { year: "30", index: 999500, active: 761300 },
+  ]}
+  series={[
+    { key: "index", label: "Index Fund (0.03% fee)", color: "#059669" },
+    { key: "active", label: "Active Fund (1% fee)", color: "#f59e0b" },
+  ]}
+/>
 
 <ProsCons
   pros={[
@@ -98,6 +118,16 @@ A 0.03% expense ratio vs. a 1% expense ratio on a $100,000 portfolio growing at 
     "Sector concentration risk (S&P 500 is ~30% tech)",
     "No protection against index methodology changes",
     "Requires long time horizon to smooth out volatility"
+  ]}
+/>
+
+<PieChart
+  title="S&P 500 Sector Concentration"
+  description="Roughly a third of the index's weight sits in a single sector — a concentration risk worth knowing about"
+  unit="%"
+  data={[
+    { label: "Technology", value: 30, color: "#6366f1" },
+    { label: "All other sectors", value: 70, color: "#059669" },
   ]}
 />
 
