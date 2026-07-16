@@ -8,6 +8,7 @@ import CompoundGrowthChart from "@/components/custom/CompoundGrowthChart";
 import RothIraCalculator from "@/components/custom/RothIraCalculator";
 import SideHustleTaxEstimator from "@/components/custom/SideHustleTaxEstimator";
 import BudgetCalculator from "@/components/custom/BudgetCalculator";
+import TrumpVs529Calculator from "@/components/custom/TrumpVs529Calculator";
 import { siteConfig } from "@/lib/site-config";
 import { tools, getToolBySlug } from "@/lib/tools-config";
 
@@ -16,6 +17,7 @@ const CALCULATORS: Record<string, React.ComponentType> = {
   "roth-vs-traditional-ira": RothIraCalculator,
   "side-hustle-tax-estimator": SideHustleTaxEstimator,
   "budget-calculator": BudgetCalculator,
+  "trump-account-vs-529": TrumpVs529Calculator,
 };
 
 type Props = { params: Promise<{ slug: string }> };

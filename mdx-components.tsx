@@ -17,6 +17,10 @@ import SideHustleTaxEstimator from "@/components/custom/SideHustleTaxEstimator";
 import LLCFeesChart from "@/components/custom/LLCFeesChart";
 import RetirementContributionChart from "@/components/custom/RetirementContributionChart";
 import BudgetCalculator from "@/components/custom/BudgetCalculator";
+import TrumpVs529Calculator from "@/components/custom/TrumpVs529Calculator";
+import TaxTreatmentChart from "@/components/custom/TaxTreatmentChart";
+import ContributionSourcesChart from "@/components/custom/ContributionSourcesChart";
+import GrowthVsSpendableChart from "@/components/custom/GrowthVsSpendableChart";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import StatCard from "@/components/charts/StatCard";
@@ -93,6 +97,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     LLCFeesChart,
     RetirementContributionChart,
     BudgetCalculator,
+    TrumpVs529Calculator,
+    TaxTreatmentChart,
+    ContributionSourcesChart,
+    GrowthVsSpendableChart,
     LineChart,
     PieChart,
     StatCard,

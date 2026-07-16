@@ -96,6 +96,26 @@ export const tools: ToolConfig[] = [
       { q: "What if my needs are more than 50% of my income?", a: "This is common in high cost-of-living areas. Try reducing the wants percentage in the calculator to see how much that would need to shrink to keep your savings rate intact." },
     ],
   },
+  {
+    slug: "trump-account-vs-529",
+    title: "Trump Account vs 529 Calculator",
+    shortDescription: "Compare what's actually spendable for college: a Trump Account after tax, or a 529 plan.",
+    intro:
+      "Set your annual contribution, years until your kid needs the money, and the tax bracket it'll be withdrawn at. The calculator compares the spendable-for-college value of a Trump Account (basis tax-free, seed and growth taxed as ordinary income) against a 529 plan (100% tax-free for qualified education expenses).",
+    category: "Personal Finance",
+    relatedPosts: [{ slug: "trump-account-vs-529", title: "Trump Account vs 529 Plan: Grab the Free $1,000, But Don't Fall for the Tax Trap" }],
+    howTo: [
+      { name: "Set your annual contribution", text: "Use the slider to set how much you plan to contribute each year, from $0 to $5,000." },
+      { name: "Set your time horizon", text: "Use the slider to choose how many years until your kid needs the money, up to 18." },
+      { name: "Set the withdrawal tax bracket", text: "Use the slider to set the ordinary income tax bracket that will apply when the money is withdrawn." },
+      { name: "Compare the result", text: "The calculator shows which account leaves more spendable money for college, and by how much, even after the Trump Account's free $1,000 seed." },
+    ],
+    faq: [
+      { q: "Why does the 529 usually win even though the Trump Account has a free $1,000?", a: "Because a 529's qualified education withdrawals are 100% tax-free, while a Trump Account only shelters your own after-tax contributions (the basis) — the $1,000 seed and every dollar of investment growth are taxed as ordinary income when withdrawn, which usually outweighs the free seed over any meaningful time horizon." },
+      { q: "What growth rate does this calculator assume?", a: "A 7% average annual return on both accounts, so the comparison isolates the effect of taxes rather than investment performance." },
+      { q: "Does this calculator account for employer contributions or charitable deposits?", a: "No — it models your own annual contribution plus the $1,000 government seed, kept simple so you can see the tax-treatment gap clearly. Employer and charitable deposits would add more to the Trump Account side, but they're also taxed as ordinary income on withdrawal, same as the seed." },
+    ],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolConfig | undefined {
