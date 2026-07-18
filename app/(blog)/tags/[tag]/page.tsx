@@ -2,34 +2,40 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PostCard from "@/components/PostCard";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
-import { getAllTags, getPostsByTag } from "@/lib/posts";
+import { getAllTags, getPostsByTag, slugifyTag, tagFromSlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/site-config";
 
 type Props = { params: Promise<{ tag: string }> };
 
 export async function generateStaticParams() {
-  return getAllTags().map((tag) => ({ tag: encodeURIComponent(tag) }));
+  // Route by slug, not raw tag text — a dynamic segment containing an
+  // encoded space (%20) doesn't reliably match the incoming request URL
+  // under Next 16 Cache Components, 404ing in production even though the
+  // exact route is listed as prerendered. Slugs sidestep that entirely.
+  return getAllTags().map((tag) => ({ tag: slugifyTag(tag) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { tag } = await params;
-  const decoded = decodeURIComponent(tag);
-  const url = `${siteConfig.url}/tags/${tag}`;
+  const { tag: slug } = await params;
+  const tag = tagFromSlug(slug);
+  if (!tag) return {};
+  const url = `${siteConfig.url}/tags/${slug}`;
   return {
-    title: `#${decoded} Articles`,
-    description: `Browse all articles tagged "${decoded}" on ${siteConfig.name}.`,
+    title: `#${tag} Articles`,
+    description: `Browse all articles tagged "${tag}" on ${siteConfig.name}.`,
     alternates: { canonical: url },
-    openGraph: { type: "website", url, title: `#${decoded} | ${siteConfig.name}` },
+    openGraph: { type: "website", url, title: `#${tag} | ${siteConfig.name}` },
   };
 }
 
 export default async function TagPage({ params }: Props) {
-  const { tag } = await params;
-  const decoded = decodeURIComponent(tag);
-  const posts = getPostsByTag(decoded);
+  const { tag: slug } = await params;
+  const tag = tagFromSlug(slug);
+  if (!tag) notFound();
+  const posts = getPostsByTag(tag);
   if (posts.length === 0) notFound();
 
-  const breadcrumbItems = [{ label: "Home", href: "/" }, { label: `#${decoded}` }];
+  const breadcrumbItems = [{ label: "Home", href: "/" }, { label: `#${tag}` }];
 
   return (
     <>
@@ -40,7 +46,7 @@ export default async function TagPage({ params }: Props) {
 
         <header className="mb-6">
           <p className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">Tag</p>
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">#{decoded}</h1>
+          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">#{tag}</h1>
           <p className="text-gray-500 dark:text-gray-400">{posts.length} article{posts.length !== 1 ? "s" : ""}</p>
         </header>
 

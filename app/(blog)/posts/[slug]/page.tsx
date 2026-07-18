@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate, slugifyTag } from "@/lib/posts";
 import { siteConfig, slugifyCategory } from "@/lib/site-config";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import AuthorBio from "@/components/AuthorBio";
@@ -217,7 +217,7 @@ export default async function PostPage({ params }: Props) {
                 {post.tags.map((tag) => (
                   <Link
                     key={tag}
-                    href={`/tags/${encodeURIComponent(tag)}`}
+                    href={`/tags/${slugifyTag(tag)}`}
                     className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
                   >
                     #{tag}

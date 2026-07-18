@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts, getAllTags } from "@/lib/posts";
+import { getAllPosts, getAllTags, slugifyTag } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 
 const url = siteConfig.url;
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
 
     ...tags.map((tag) => ({
-      url: `${url}/tags/${encodeURIComponent(tag)}`,
+      url: `${url}/tags/${slugifyTag(tag)}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.5,

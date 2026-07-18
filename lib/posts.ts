@@ -111,6 +111,23 @@ export function getPostsByTag(tag: string): Post[] {
   return getAllPosts().filter((p) => p.tags?.includes(tag));
 }
 
+// Multi-word tags (e.g. "Market Analysis") need a URL-safe slug instead of a
+// raw, space-containing dynamic segment — percent-encoded spaces in a
+// generateStaticParams-produced route don't reliably match the incoming
+// request URL under Next 16 Cache Components, 404ing in production even
+// though the exact same route is listed as prerendered.
+export function slugifyTag(tag: string): string {
+  return tag
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function tagFromSlug(slug: string): string | undefined {
+  return getAllTags().find((t) => slugifyTag(t) === slug);
+}
+
 export function getPostsByCategory(category: string): Post[] {
   return getAllPosts().filter((p) => p.category === category);
 }
