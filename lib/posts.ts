@@ -51,6 +51,14 @@ function parseFrontmatter(slug: string, data: unknown): PostFrontmatter {
   return result.data;
 }
 
+// coverImage frontmatter often lags behind the actual asset (or was never added) —
+// only expose it when the file genuinely exists, so pages can render it unconditionally.
+function resolveCoverImage(coverImage: string | undefined): string | undefined {
+  if (!coverImage) return undefined;
+  const filePath = path.join(process.cwd(), "public", coverImage);
+  return fs.existsSync(filePath) ? coverImage : undefined;
+}
+
 function calcReadingTime(content: string): number {
   const text = content
     .replace(/---[\s\S]*?---/, "")
@@ -68,10 +76,12 @@ export function getAllPosts(): Post[] {
       const slug = filename.replace(/\.mdx$/, "");
       const raw = fs.readFileSync(path.join(postsDir, filename), "utf-8");
       const { data, content } = matter(raw);
+      const frontmatter = parseFrontmatter(slug, data);
       return {
         slug,
         readingTime: calcReadingTime(content),
-        ...parseFrontmatter(slug, data),
+        ...frontmatter,
+        coverImage: resolveCoverImage(frontmatter.coverImage),
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -82,10 +92,12 @@ export function getPostBySlug(slug: string): Post | null {
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
+  const frontmatter = parseFrontmatter(slug, data);
   return {
     slug,
     readingTime: calcReadingTime(content),
-    ...parseFrontmatter(slug, data),
+    ...frontmatter,
+    coverImage: resolveCoverImage(frontmatter.coverImage),
   };
 }
 
