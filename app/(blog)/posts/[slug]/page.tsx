@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate } from "@/lib/posts";
 import { siteConfig, slugifyCategory } from "@/lib/site-config";
@@ -134,6 +135,21 @@ export default async function PostPage({ params }: Props) {
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10 xl:gap-14">
           {/* Main article */}
           <div className="min-w-0">
+            {/* Hero image — only renders when a post sets coverImage */}
+            {post.coverImage && (
+              <div className="relative mb-6 overflow-hidden rounded-2xl shadow-xl aspect-[1200/630]">
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  priority
+                  unoptimized={post.coverImage.endsWith(".svg")}
+                  sizes="(max-width: 1024px) 100vw, 900px"
+                  className="object-cover"
+                />
+              </div>
+            )}
+
             {/* Post header — animated gradient hero, themed by category */}
             <header className={`relative overflow-hidden rounded-2xl mb-8 text-white shadow-xl ${gradient} ${shadow}`}>
               <div className="relative p-6 sm:p-8 lg:p-10">

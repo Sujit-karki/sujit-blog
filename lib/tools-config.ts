@@ -116,6 +116,25 @@ export const tools: ToolConfig[] = [
       { q: "Does this calculator account for employer contributions or charitable deposits?", a: "No — it models your own annual contribution plus the $1,000 government seed, kept simple so you can see the tax-treatment gap clearly. Employer and charitable deposits would add more to the Trump Account side, but they're also taxed as ordinary income on withdrawal, same as the seed." },
     ],
   },
+  {
+    slug: "bitcoin-drawdown-calculator",
+    title: "Bitcoin DCA vs Lump Sum Calculator",
+    shortDescription: "See what dollar-cost averaging into the 2025-26 Bitcoin crash would actually be worth today.",
+    intro:
+      "Pick when you would have started buying — at the October 2025 peak, after the first crash, or near the low — and a monthly dollar amount. The calculator compares dollar-cost averaging, an all-at-once lump sum, and waiting in cash and buying today, using approximate monthly BTC prices through July 2026.",
+    category: "Crypto",
+    relatedPosts: [{ slug: "bitcoin-crash-2026-buy-or-wait", title: "Bitcoin at $65K: Down 50% From Its Peak — Falling Knife or the Buy of the Cycle?" }],
+    howTo: [
+      { name: "Pick a start point", text: "Choose whether you started buying at the October 2025 peak, after the first crash, or near the 2026 low." },
+      { name: "Set your monthly amount", text: "Use the slider to set how much you'd invest each month, from $50 to $1,000." },
+      { name: "Compare the three strategies", text: "See dollar-cost averaging, an all-at-once lump sum, and waiting in cash side by side, in dollars and percentage gain or loss." },
+    ],
+    faq: [
+      { q: "What price data does this calculator use?", a: "Approximate monthly Bitcoin reference prices from the October 2025 cycle peak (~$126,198) through July 15, 2026 (~$64,975), rounded to illustrate the shape of the crash rather than exact daily closes." },
+      { q: "Does dollar-cost averaging always beat a lump sum?", a: "No. In a rising market, investing a lump sum immediately tends to outperform DCA, since more money spends more time invested. DCA tends to win specifically in choppy, drawn-out drawdowns like this one, because it keeps buying at lower prices as the market falls instead of locking in one entry point." },
+      { q: "Is this financial advice?", a: "No — it's a simplified, illustrative tool using one historical stretch of one asset. It ignores fees, taxes, and the fact that past price action never repeats exactly. Use it to build intuition about how DCA behaves in a drawdown, not to predict returns." },
+    ],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolConfig | undefined {
