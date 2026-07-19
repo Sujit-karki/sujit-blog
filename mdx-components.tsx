@@ -23,6 +23,11 @@ import ContributionSourcesChart from "@/components/custom/ContributionSourcesCha
 import GrowthVsSpendableChart from "@/components/custom/GrowthVsSpendableChart";
 import AssetDrawdownChart from "@/components/custom/AssetDrawdownChart";
 import BitcoinDrawdownCalculator from "@/components/custom/BitcoinDrawdownCalculator";
+import TechConcentrationExplorer from "@/components/custom/TechConcentrationExplorer";
+import AiCapexParadoxFlow from "@/components/custom/AiCapexParadoxFlow";
+import GrowthDivergenceChart from "@/components/custom/GrowthDivergenceChart";
+import ConcentrationGaugeChart from "@/components/custom/ConcentrationGaugeChart";
+import FundTechExposureChart from "@/components/custom/FundTechExposureChart";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import StatCard from "@/components/charts/StatCard";
@@ -105,6 +110,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     GrowthVsSpendableChart,
     AssetDrawdownChart,
     BitcoinDrawdownCalculator,
+    TechConcentrationExplorer,
+    AiCapexParadoxFlow,
+    GrowthDivergenceChart,
+    ConcentrationGaugeChart,
+    FundTechExposureChart,
     LineChart,
     PieChart,
     StatCard,
