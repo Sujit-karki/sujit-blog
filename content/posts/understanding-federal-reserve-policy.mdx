@@ -23,7 +23,24 @@ toc:
   - id: "key-metrics"
     title: "Key Metrics to Watch"
     level: 2
+faq:
+  - q: "How does the Fed's interest rate decision affect the stock market?"
+    a: "Higher rates raise the discount rate used to value future cash flows, which compresses price-to-earnings multiples — growth stocks, which derive more of their value from earnings far in the future, are hit hardest. Lower rates work in reverse, supporting higher valuations."
+  - q: "What is the Fed dot plot?"
+    a: "It's part of the quarterly Summary of Economic Projections: a scatter chart showing each FOMC member's own rate expectations over the next few years. Markets watch the median projection, the dispersion between members, and how it shifted from the prior quarter to gauge the Fed's reaction function."
+  - q: "What is quantitative tightening and how does it affect my portfolio?"
+    a: "Quantitative tightening (QT) is when the Fed lets its Treasury and mortgage-backed securities holdings mature without reinvesting, draining reserves from the financial system. It reduces the money supply and pushes up term premiums on long-duration bonds, tightening financial conditions even if the policy rate itself doesn't move."
+  - q: "How should I position my portfolio around Fed rate cycles?"
+    a: "Historically, caution on growth stocks and reduced bond duration make sense as hikes begin; value tends to outperform and duration becomes attractive near peak rates; growth stocks and bonds both tend to do well once cuts begin. No one times this perfectly — understanding the transmission mechanism matters more than predicting the exact next move."
 ---
+
+<KeyTakeaways items={[
+  "The Fed's federal funds rate ripples through four channels at once: bonds, equities, real estate, and currency",
+  "Higher rates compress equity valuations by raising the discount rate applied to future earnings — growth stocks are hit hardest",
+  "The quarterly dot plot shows each FOMC member's own rate expectations; markets watch the median, the dispersion, and quarter-over-quarter revisions",
+  "Quantitative tightening works alongside rate policy, draining reserves and pushing up term premiums even when the policy rate holds steady",
+  "Different asset classes historically lead at different phases of the rate cycle — caution at the start of hikes, value near the peak, growth once cuts begin"
+]} />
 
 The Federal Reserve — America's central bank — is arguably the single most powerful institution in global financial markets. Its decisions on interest rates, balance sheet size, and forward guidance shape everything from mortgage rates to equity valuations to the U.S. dollar's strength. Yet many retail investors treat Fed decisions as noise, missing their profound impact on portfolio returns.
 
@@ -37,6 +54,8 @@ The Fed's primary policy tool is the **federal funds rate** — the overnight le
 - **Equities:** Higher discount rates compress price-to-earnings multiples. Growth stocks — which derive more value from distant future earnings — are disproportionately affected.
 - **Real estate:** Mortgage rates track long-term Treasury yields, which typically rise with Fed tightening.
 - **Currency:** Higher rates attract foreign capital, strengthening the dollar and pressuring emerging market assets.
+
+<FedTransmissionFlow />
 
 The equity effect is easiest to see by looking at how a higher discount rate shrinks the present value of a cash flow that's further out in time — exactly why long-duration growth stocks are hit hardest:
 
@@ -70,6 +89,10 @@ Key things to watch in each dot plot:
 2. **Dispersion** — wide spread signals uncertainty within the committee
 3. **Revisions from prior quarter** — shifts indicate how the Fed is reading incoming data
 
+<InfoBox type="tip" title="Watch the dots move, not just where they land">
+The absolute level of the median dot matters less than how it shifts between quarters. A committee that quietly removes a projected cut is telegraphing a hawkish shift well before any actual rate decision.
+</InfoBox>
+
 ## Quantitative Tightening and the Balance Sheet
 
 Beyond rate changes, the Fed's $7+ trillion balance sheet is a second major lever. During QE (quantitative easing), the Fed buys Treasuries and mortgage-backed securities, injecting liquidity. During QT (quantitative tightening), it lets holdings mature without reinvestment, draining reserves.
@@ -82,12 +105,32 @@ The practical impact: QT reduces the money supply, pushes up term premiums on lo
 
 Historically, different asset classes outperform at different phases of the rate cycle:
 
-| Phase | Stocks | Bonds | Commodities | Cash |
-|-------|--------|-------|-------------|------|
-| Rate hikes begin | Caution on growth | Sell duration | Neutral | Attractive |
-| Peak rates | Value outperforms | Buy duration | Mixed | Deploy |
-| Rate cuts begin | Growth rallies | Strong returns | Bullish | Reduce |
-| Low rate plateau | Risk-on broadly | Modest returns | Volatile | Minimal |
+<ComparisonTable
+  headers={["Phase", "Stocks", "Bonds", "Commodities", "Cash"]}
+  rows={[
+    ["Rate hikes begin", "Caution on growth", "Sell duration", "Neutral", "Attractive"],
+    ["Peak rates", "Value outperforms", "Buy duration", "Mixed", "Deploy"],
+    ["Rate cuts begin", "Growth rallies", "Strong returns", "Bullish", "Reduce"],
+    ["Low rate plateau", "Risk-on broadly", "Modest returns", "Volatile", "Minimal"]
+  ]}
+/>
+
+<ProsCons
+  prosTitle="Trading the Fed cycle"
+  consTitle="The catch"
+  pros={[
+    "Historical phase patterns give a reasonable starting framework for tilting risk",
+    "Yield curve shape and FCI data are public and updated constantly",
+    "Understanding transmission channels helps you react faster than headline readers",
+    "Position sizing around the cycle beats ignoring rate risk entirely"
+  ]}
+  cons={[
+    "No two cycles play out identically — 2026's AI-capex backdrop differs from prior hiking cycles",
+    "Markets are forward-looking and often price the move before it happens",
+    "Overtrading around FOMC meetings adds cost and whipsaw risk for most retail investors",
+    "The Fed itself frequently revises its own dot-plot projections"
+  ]}
+/>
 
 ## The Key Metrics to Watch
 
@@ -102,4 +145,20 @@ Successful Fed-watching means tracking the same data the FOMC monitors:
 
 The Fed doesn't operate in a vacuum, and neither should your portfolio. Understanding the rate cycle — where we are, where the committee signals we're going, and what the data says — is foundational to informed investing. The investors who navigate rate cycles best aren't those who predict the Fed perfectly, but those who understand the transmission mechanisms and adjust their risk exposures accordingly.
 
-*Disclaimer: This is educational content and does not constitute financial advice. Always consult a qualified financial advisor before making investment decisions.*
+<FaqAccordion items={[
+  {q: "How does the Fed's interest rate decision affect the stock market?", a: "Higher rates raise the discount rate used to value future cash flows, which compresses price-to-earnings multiples — growth stocks, which derive more of their value from earnings far in the future, are hit hardest. Lower rates work in reverse, supporting higher valuations."},
+  {q: "What is the Fed dot plot?", a: "It's part of the quarterly Summary of Economic Projections: a scatter chart showing each FOMC member's own rate expectations over the next few years. Markets watch the median projection, the dispersion between members, and how it shifted from the prior quarter to gauge the Fed's reaction function."},
+  {q: "What is quantitative tightening and how does it affect my portfolio?", a: "Quantitative tightening (QT) is when the Fed lets its Treasury and mortgage-backed securities holdings mature without reinvesting, draining reserves from the financial system. It reduces the money supply and pushes up term premiums on long-duration bonds, tightening financial conditions even if the policy rate itself doesn't move."},
+  {q: "How should I position my portfolio around Fed rate cycles?", a: "Historically, caution on growth stocks and reduced bond duration make sense as hikes begin; value tends to outperform and duration becomes attractive near peak rates; growth stocks and bonds both tend to do well once cuts begin. No one times this perfectly — understanding the transmission mechanism matters more than predicting the exact next move."}
+]} />
+
+<Sources items={[
+  {title: "Federal Open Market Committee", url: "https://www.federalreserve.gov/monetarypolicy/fomc.htm", publisher: "Federal Reserve"},
+  {title: "Summary of Economic Projections", url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm", publisher: "Federal Reserve"},
+  {title: "Factors Affecting Reserve Balances (H.4.1) — Balance Sheet Data", url: "https://www.federalreserve.gov/releases/h41/", publisher: "Federal Reserve"},
+  {title: "Chicago Fed National Financial Conditions Index", url: "https://www.chicagofed.org/research/data/nfci/current-data", publisher: "Federal Reserve Bank of Chicago"}
+]} />
+
+---
+
+*This is educational content, not financial advice. Always consult a qualified financial advisor before making investment decisions. See the [full disclaimer](/disclaimer).*

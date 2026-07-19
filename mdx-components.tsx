@@ -28,6 +28,12 @@ import AiCapexParadoxFlow from "@/components/custom/AiCapexParadoxFlow";
 import GrowthDivergenceChart from "@/components/custom/GrowthDivergenceChart";
 import ConcentrationGaugeChart from "@/components/custom/ConcentrationGaugeChart";
 import FundTechExposureChart from "@/components/custom/FundTechExposureChart";
+import DollarCycleFlow from "@/components/custom/DollarCycleFlow";
+import FedTransmissionFlow from "@/components/custom/FedTransmissionFlow";
+import RothVsTraditionalScenarioChart from "@/components/custom/RothVsTraditionalScenarioChart";
+import FirstDollarStepFlow from "@/components/custom/FirstDollarStepFlow";
+import OnChainMetricsDashboard from "@/components/custom/OnChainMetricsDashboard";
+import BudgetSplitDonutChart from "@/components/custom/BudgetSplitDonutChart";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import StatCard from "@/components/charts/StatCard";
@@ -115,6 +121,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     GrowthDivergenceChart,
     ConcentrationGaugeChart,
     FundTechExposureChart,
+    DollarCycleFlow,
+    FedTransmissionFlow,
+    RothVsTraditionalScenarioChart,
+    FirstDollarStepFlow,
+    OnChainMetricsDashboard,
+    BudgetSplitDonutChart,
     LineChart,
     PieChart,
     StatCard,
