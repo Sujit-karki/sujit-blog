@@ -1,0 +1,78 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">The Fed's 2026 rate path forks three ways: hike, hold, or cut</title>
+  <desc id="desc">Stylized chart showing a single rate line at 3.5-3.75% forking into three possible 2026 paths — a hike, a hold, and a cut — with the Fed funds rate and FOMC meeting date labeled.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="40%" stop-color="#3730a3" />
+      <stop offset="75%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="18%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Watermark percent glyph -->
+  <text x="1150" y="600" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="380" font-weight="700" fill="#ffffff" opacity="0.06">%</text>
+
+  <!-- Faint grid -->
+  <line x1="60" y1="180" x2="1140" y2="180" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="270" x2="1140" y2="270" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="360" x2="1140" y2="360" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="450" x2="1140" y2="450" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- Shared historical line into the fork point -->
+  <polyline points="90,360 250,352 410,344 570,338 630,336" fill="none" stroke="#e0e7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)" opacity="0.95" />
+
+  <!-- Fork point marker -->
+  <circle cx="630" cy="336" r="7" fill="#ffffff" />
+  <circle cx="630" cy="336" r="13" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2" />
+
+  <!-- Hike path (up, red) -->
+  <polyline points="630,336 760,300 890,255 1020,205 1120,168" fill="none" stroke="#f87171" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 10" opacity="0.95" />
+  <circle cx="1120" cy="168" r="6" fill="#f87171" />
+
+  <!-- Hold path (flat, gray) -->
+  <polyline points="630,336 760,336 890,334 1020,336 1120,335" fill="none" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 10" opacity="0.85" />
+  <circle cx="1120" cy="335" r="6" fill="#cbd5e1" />
+
+  <!-- Cut path (down, green) -->
+  <polyline points="630,336 760,368 890,410 1020,455 1120,492" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 10" opacity="0.95" />
+  <circle cx="1120" cy="492" r="6" fill="#34d399" />
+
+  <!-- Path labels -->
+  <g transform="translate(1120, 150)">
+    <text text-anchor="end" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#fca5a5" letter-spacing="0.4">HIKE</text>
+  </g>
+  <g transform="translate(1120, 320)">
+    <text text-anchor="end" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#e2e8f0" letter-spacing="0.4">HOLD</text>
+  </g>
+  <g transform="translate(1120, 510)">
+    <text text-anchor="end" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#a7f3d0" letter-spacing="0.4">CUT</text>
+  </g>
+
+  <!-- Current rate badge -->
+  <g transform="translate(230, 130)">
+    <rect x="-100" y="-24" width="200" height="48" rx="24" fill="#0b1120" fill-opacity="0.6" stroke="#93c5fd" stroke-opacity="0.5" />
+    <text x="0" y="6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="700" fill="#bfdbfe" letter-spacing="0.3">FED FUNDS 3.50-3.75%</text>
+  </g>
+
+  <!-- Dot plot badge -->
+  <g transform="translate(230, 500)">
+    <rect x="-118" y="-24" width="236" height="48" rx="24" fill="#0b1120" fill-opacity="0.6" stroke="#f87171" stroke-opacity="0.5" />
+    <text x="0" y="6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="700" fill="#fecaca" letter-spacing="0.3">9 OF 18 EYE A HIKE</text>
+  </g>
+
+  <!-- Meeting date badge -->
+  <g transform="translate(600, 566)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#c7d2fe" letter-spacing="1.2" opacity="0.85">FOMC MEETS JULY 28-29, 2026</text>
+  </g>
+</svg>
