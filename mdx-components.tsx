@@ -34,8 +34,13 @@ import RothVsTraditionalScenarioChart from "@/components/custom/RothVsTraditiona
 import FirstDollarStepFlow from "@/components/custom/FirstDollarStepFlow";
 import OnChainMetricsDashboard from "@/components/custom/OnChainMetricsDashboard";
 import BudgetSplitDonutChart from "@/components/custom/BudgetSplitDonutChart";
+import RateScenarioSimulator from "@/components/custom/RateScenarioSimulator";
+import StudentLoanPlanComparator from "@/components/custom/StudentLoanPlanComparator";
+import GoldPortfolioSimulator from "@/components/custom/GoldPortfolioSimulator";
+import SideHustleROICalculator from "@/components/custom/SideHustleROICalculator";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
+import BarChart from "@/components/charts/BarChartLazy";
 import StatCard from "@/components/charts/StatCard";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -127,8 +132,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     FirstDollarStepFlow,
     OnChainMetricsDashboard,
     BudgetSplitDonutChart,
+    RateScenarioSimulator,
+    StudentLoanPlanComparator,
+    GoldPortfolioSimulator,
+    SideHustleROICalculator,
     LineChart,
     PieChart,
+    BarChart,
     StatCard,
 
     ...components,
