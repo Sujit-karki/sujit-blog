@@ -1,0 +1,62 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Home and auto insurance premiums are up 46% since 2021</title>
+  <desc id="desc">Stylized house outline with an ascending bar chart behind it, showing home insurance premiums climbing 46% since 2021, with badges for the average premium and the share of ZIP codes affected.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" />
+      <stop offset="45%" stop-color="#164e63" />
+      <stop offset="80%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0c0a09" />
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="18%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Watermark house glyph -->
+  <path d="M980 560 L980 380 L1120 380 L1120 560 Z M950 400 L1050 300 L1150 400 Z" fill="#ffffff" opacity="0.06" />
+
+  <line x1="60" y1="180" x2="1140" y2="180" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="270" x2="1140" y2="270" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="360" x2="1140" y2="360" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="450" x2="1140" y2="450" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- Ascending premium bars -->
+  <g filter="url(#soft)">
+    <rect x="140" y="400" width="70" height="110" rx="6" fill="#38bdf8" opacity="0.85" />
+    <rect x="250" y="368" width="70" height="142" rx="6" fill="#38bdf8" opacity="0.88" />
+    <rect x="360" y="330" width="70" height="180" rx="6" fill="#38bdf8" opacity="0.9" />
+    <rect x="470" y="288" width="70" height="222" rx="6" fill="#38bdf8" opacity="0.93" />
+    <rect x="580" y="230" width="70" height="280" rx="6" fill="#7dd3fc" opacity="0.96" />
+    <rect x="690" y="200" width="70" height="310" rx="6" fill="#bae6fd" />
+  </g>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#e0f2fe" opacity="0.75">
+    <text x="175" y="530" text-anchor="middle">'21</text>
+    <text x="285" y="530" text-anchor="middle">'22</text>
+    <text x="395" y="530" text-anchor="middle">'23</text>
+    <text x="505" y="530" text-anchor="middle">'24</text>
+    <text x="615" y="530" text-anchor="middle">'25</text>
+    <text x="725" y="530" text-anchor="middle">'26</text>
+  </g>
+
+  <g transform="translate(230, 130)">
+    <rect x="-100" y="-24" width="200" height="48" rx="24" fill="#0c0a09" fill-opacity="0.6" stroke="#7dd3fc" stroke-opacity="0.5" />
+    <text x="0" y="6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="700" fill="#e0f2fe" letter-spacing="0.3">+46% SINCE 2021</text>
+  </g>
+
+  <g transform="translate(920, 150)">
+    <rect x="-110" y="-24" width="220" height="48" rx="24" fill="#0c0a09" fill-opacity="0.6" stroke="#fdba74" stroke-opacity="0.5" />
+    <text x="0" y="6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700" fill="#fed7aa" letter-spacing="0.3">$3,057 AVG PREMIUM</text>
+  </g>
+
+  <g transform="translate(600, 566)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#e0f2fe" letter-spacing="1.2" opacity="0.85">95% OF ZIP CODES SAW AN INCREASE</text>
+  </g>
+</svg>

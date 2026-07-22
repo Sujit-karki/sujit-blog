@@ -1,0 +1,152 @@
+---
+title: "Your 'Digital Dollar' Can't Pay You Interest — The GENIUS Act, Explained for Savers"
+description: "Stablecoins hit a $303 billion market cap in 2026, but the GENIUS Act legally bans issuers from paying you interest on them. Here's who's actually earning the yield, why tokenized money-market funds exist instead, and what the gap is really costing you."
+date: "2026-07-22"
+updated: "2026-07-22"
+author: "Sujit Karki"
+category: "Crypto"
+tags: ["stablecoins", "GENIUS Act", "USDC", "USDT", "tokenized money market funds", "crypto 2026"]
+coverImage: "/images/stablecoins-genius-act-savers-2026.svg"
+toc:
+  - { id: "the-303-billion-question", title: "The $303 Billion Question", level: 2 }
+  - { id: "the-genius-act-and-the-yield-ban", title: "The GENIUS Act and the Yield Ban", level: 2 }
+  - { id: "so-where-does-the-yield-actually-go", title: "So Where Does the Yield Actually Go?", level: 2 }
+  - { id: "the-workaround-tokenized-money-market-funds", title: "The Workaround: Tokenized Money-Market Funds", level: 2 }
+  - { id: "the-loophole-and-why-it-might-not-last", title: "The Loophole — And Why It Might Not Last", level: 2 }
+  - { id: "run-the-gap-on-your-own-balance", title: "Run the Gap on Your Own Balance", level: 2 }
+  - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - q: "Do stablecoins pay interest?"
+    a: "No — not the payment stablecoins most people hold, like USDT or USDC. The GENIUS Act, the federal stablecoin law enacted in July 2025, specifically bars payment-stablecoin issuers from paying interest or yield to holders. The issuer still earns yield on the reserves backing your coins; it just legally can't pass that yield to you."
+  - q: "Is USDC or USDT FDIC insured?"
+    a: "No. Stablecoins are not bank deposits and carry no FDIC insurance, regardless of how 'dollar-like' they feel. Their backing depends on the issuer actually holding and managing safe reserves (cash and short-term Treasuries) correctly — a real but different kind of risk than a bank account."
+  - q: "How can BlackRock's BUIDL pay yield if stablecoins can't?"
+    a: "Because BUIDL and similar products (Franklin Templeton's BENJI, Ondo's USDY) are legally structured as tokenized money-market fund shares or notes, not as GENIUS Act payment stablecoins. That classification is exactly why they're allowed to pass Treasury-like yield through to holders — and it's also why most of them require accreditation or large minimums, unlike a stablecoin anyone can hold."
+  - q: "Will stablecoins ever be allowed to pay yield?"
+    a: "Not under the GENIUS Act as written. There's an active policy debate — sometimes called the 'yield loophole' fight — over follow-on legislation like the proposed CLARITY Act that could tighten rules around yield-bearing tokens that aren't formally called stablecoins. Until something changes, the honest baseline is: payment stablecoins pay you nothing, by design."
+---
+
+<KeyTakeaways items={[
+  "Total stablecoin market cap sits around $303 billion in mid-2026, with USDT and USDC alone making up about 83% of it",
+  "The GENIUS Act (2025) legally bars payment-stablecoin issuers from paying interest to holders — a 'digital dollar' that by law can't pay you a dime",
+  "Issuers still earn roughly 4%+ on the Treasuries backing your stablecoins — they keep it, you don't",
+  "Tokenized money-market funds like BlackRock's BUIDL pay real yield precisely because they're legally structured as securities, not stablecoins — usually with high minimums",
+  "Stablecoins are not FDIC-insured and are not money-market funds, no matter how dollar-like they feel"
+]} />
+
+Here's a sentence that should sound stranger than it does: millions of people hold a "digital dollar" that, by federal law, is not allowed to pay them a cent of interest — while the company that issued it quietly earns real yield on the exact same money. That's not a bug. It's the design, written into the GENIUS Act. If you hold stablecoins and didn't know that, this is the post for you.
+
+<StatCard label="Total stablecoin market cap" value={303} format="currency" sublabel="Billion, as of July 12, 2026" />
+<StatCard label="Yield you legally earn on it" value={0} format="percent" sublabel="Payment stablecoins are barred from paying interest" />
+<StatCard label="Approx. yield the issuer earns on reserves" value={4.3} format="percent" sublabel="Roughly what short-term Treasuries pay in 2026" />
+
+## The $303 Billion Question
+
+Stablecoins have quietly become enormous. The total market sits around **$303.2 billion** as of July 12, 2026, per on-chain trackers — with **USDT at $184.2 billion** and **USDC at $73.4 billion** together making up roughly **83%** of the entire market. (You'll see figures anywhere from $290 billion to $321 billion depending on which aggregator and which day — this market moves fast and trackers don't always agree to the dollar.)
+
+<PieChart
+  title="Stablecoin Market Share, July 2026"
+  description="Approximate market cap by issuer (StablecoinBeat/DefiLlama)"
+  data={[
+    { label: "USDT (Tether)", value: 184.2, color: "#059669" },
+    { label: "USDC (Circle)", value: 73.4, color: "#6366f1" },
+    { label: "All others", value: 45.6, color: "#f59e0b" },
+  ]}
+  unit="B"
+/>
+
+People hold these for genuinely good reasons — instant settlement, moving money across borders without a bank, parking cash between trades without touching fiat rails. What a lot of holders don't realize is that the "stable" part is doing a lot of work to obscure a simple fact: **the reserves backing your stablecoin are earning real yield right now, and none of it is contractually yours.**
+
+## The GENIUS Act and the Yield Ban
+
+The GENIUS Act — the federal law establishing a regulatory framework for payment stablecoins, enacted in July 2025 — is explicit on this point: issuers of payment stablecoins are **prohibited from paying interest or yield to holders**, full stop. The rule takes effect the earlier of **January 18, 2027**, or 120 days after final implementing rules, with most of that rulemaking expected around mid-to-late 2026.
+
+The logic behind the ban, as debated in Congress, was mostly about *not* letting stablecoins become unregulated, yield-paying bank competitors overnight — a legitimate financial-stability concern. But the practical effect on an ordinary holder is simple and a little uncomfortable once you say it plainly: **you can hold a coin explicitly pegged to the dollar, backed by interest-bearing Treasuries, and by law receive zero percent of that interest.**
+
+<InfoBox type="warning" title="Not FDIC-Insured, Not a Money-Market Fund">
+It's worth saying directly: stablecoins are neither bank deposits nor money-market fund shares. There's no FDIC insurance if the issuer mismanages reserves or becomes insolvent. Your protection is entirely a function of how well-run and well-audited the issuer actually is — real due diligence, not a government backstop.
+</InfoBox>
+
+## So Where Does the Yield Actually Go?
+
+To the issuer. That's it — that's the whole answer. USDT and USDC reserves are held largely in cash and short-term US Treasuries, which in 2026 pay somewhere in the neighborhood of **4%+** annually. On $303 billion in aggregate stablecoin reserves, even a conservative estimate puts the *industry-wide* reserve income in the billions of dollars per year — money that, under current law, structurally cannot flow back to the people whose dollars are actually generating it.
+
+This is exactly why Tether and Circle are now some of the most profitable financial companies of their size on the planet: they've effectively built a business that borrows from the public at 0% and lends it out (into Treasuries) at market rates. That's not a criticism of either company doing anything illegal — it's precisely what the law permits and, in a sense, requires, since they *can't* pay you back the spread even if they wanted to.
+
+Banks are watching this closely too — and nervously. Congressional Research Service analysis has flagged that roughly **$6.6 trillion in transactional bank deposits** could be at risk of migrating toward stablecoin rails over time, and Citi has projected the stablecoin market could grow to somewhere between **$0.5 and $3.7 trillion by 2030** — a wide range that tells you how genuinely uncertain even sophisticated forecasters are about where this settles.
+
+## The Workaround: Tokenized Money-Market Funds
+
+If payment stablecoins can't pay yield, how does something like **BlackRock's BUIDL fund** advertise a ~4-4.5% return? Because it isn't a payment stablecoin under the law — it's a **tokenized money-market fund**, structured as a security (fund shares represented on a blockchain), not as a GENIUS Act stablecoin. That classification is the entire trick: it's legally a different animal, so the yield ban simply doesn't apply.
+
+<ComparisonTable
+  headers={["Product type", "Example", "Yield to holder", "FDIC insured", "Who can access it"]}
+  rows={[
+    ["Payment stablecoin", "USDT, USDC", "0% (banned by GENIUS Act)", "No", "Anyone"],
+    ["Tokenized money-market fund", "BlackRock BUIDL", "~4-4.5%", "No", "Institutions, $5M minimum"],
+    ["Yield-bearing token", "Ondo USDY", "~4.8%", "No", "Non-US retail in most cases"],
+    ["High-yield savings account", "Top nationally available HYSA", "~4.15% APY", "Yes, up to $250K", "Anyone with a bank account"],
+  ]}
+  highlightCol={3}
+/>
+
+BUIDL itself has grown to roughly **$2.5-2.9 billion** in assets, but it requires a **$5 million minimum** and is restricted to institutional and accredited investors — it was never built for a retail saver parking a few thousand dollars. Franklin Templeton's BENJI charges a modest 0.15% fee and is more broadly accessible; Ondo's USDY targets non-US retail users specifically, sidestepping some of the domestic regulatory friction.
+
+Zoom out and the bigger trend is unmistakable: tokenized US Treasuries have grown from **under $1 billion in early 2024** to **over $15 billion by Q2 2026**, with total tokenized real-world assets (RWA) now exceeding **$30 billion**. Wall Street clearly sees the product-market fit here — it's just not, for now, a product built for the person holding plain USDC in a wallet.
+
+<LineChart
+  title="Tokenized US Treasuries, 2024–2026"
+  description="Total value of on-chain tokenized Treasury products (rwa.xyz / industry estimates)"
+  data={[
+    { period: "Early 2024", value: 0.8 },
+    { period: "Late 2024", value: 2.5 },
+    { period: "Mid 2025", value: 7.0 },
+    { period: "Q2 2026", value: 15.2 },
+  ]}
+  xKey="period"
+  series={[{ key: "value", label: "Tokenized Treasuries ($B)", color: "#8b5cf6" }]}
+  unit="B"
+/>
+
+## The Loophole — And Why It Might Not Last
+
+Here's the part that makes this genuinely unsettled, not just academic. **Yield-bearing tokens** like USDY and sUSDS — products that walk and talk a lot like stablecoins without technically being GENIUS Act payment stablecoins — drove **more than half of all stablecoin-supply growth in Q1 2026** (a 22% quarterly jump, about $4.3 billion), with USDY alone up around 150%. Capital is clearly voting with its feet toward *anything* that can legally pay yield.
+
+Regulators and lawmakers have noticed. There's live discussion around follow-on legislation — sometimes referred to informally as closing the "yield loophole" — that could tighten the definition of what counts as a payment stablecoin, potentially pulling some of these yield-bearing products under the same ban. If that happens, products priced and marketed around their ~4-5% yield could face a real repricing event. I wouldn't treat today's yield-bearing token landscape as a permanent feature of the market — it's a genuinely live regulatory fight, not settled law.
+
+## Run the Gap on Your Own Balance
+
+Numbers make this concrete faster than any explanation. Set your own stablecoin balance and how long you'd hold it, and see roughly what the issuer earns off your money versus what a plain high-yield savings account would have paid you instead.
+
+<StablecoinYieldGapCalculator />
+
+## Here's What I'd Actually Do
+
+If it were my money sitting in stablecoins:
+
+1. **Treat stablecoins as a payment rail, not a savings account.** They're excellent for moving money fast and settling trades — they were never designed to be where your emergency fund lives.
+2. **Don't let idle stablecoin balances sit for months.** If you're not actively about to use it for a trade or a payment, that balance is earning the issuer money and earning you nothing — move it to an FDIC-insured HYSA or a real money-market fund in the meantime.
+3. **If you want yield and qualify for it, understand exactly what you're holding.** A tokenized money-market fund is a security with its own risks and access requirements — read the actual structure, don't assume "it says 4% APY" means it behaves like a savings account.
+4. **Size any yield-bearing token position like the emerging-regulation risk it is.** The "yield loophole" is a live fight in Washington, not a settled feature — a product built entirely around a yield the law might restrict later isn't a place for money you can't afford to see repriced.
+5. **Compare against boring bank yield before you compare against crypto yield.** A 4.15% FDIC-insured HYSA is a genuinely strong baseline in 2026 — any yield-chasing move should have to clear that bar, plus its extra risk, not just beat 0%.
+
+This connects directly to two things I've written before: my [Bitcoin crash and buy-or-wait breakdown](/posts/bitcoin-crash-2026-buy-or-wait) if you're thinking about crypto exposure more broadly, and my [Fed rate hike piece](/posts/fed-rate-hike-2026-savings-mortgage), which is where the 4.15% HYSA benchmark used above comes from. More free tools are at [/tools](/tools).
+
+<FaqAccordion items={[
+  { q: "Do stablecoins pay interest?", a: "No — the GENIUS Act bars payment-stablecoin issuers from paying interest or yield to holders, even though the issuer earns real yield on the reserves backing your coins." },
+  { q: "Is USDC or USDT FDIC insured?", a: "No. Stablecoins are not bank deposits and carry no FDIC insurance." },
+  { q: "How can BlackRock's BUIDL pay yield if stablecoins can't?", a: "BUIDL is legally a tokenized money-market fund, not a GENIUS Act payment stablecoin, so the yield ban doesn't apply — but it requires a $5 million minimum and institutional access." },
+  { q: "Will stablecoins ever be allowed to pay yield?", a: "Not under the GENIUS Act as written. Follow-on legislation like the proposed CLARITY Act could change how yield-bearing tokens are treated, but nothing has changed yet." },
+]} />
+
+<InfoBox type="warning">
+Educational content, not investment or tax advice. Stablecoin regulations, yields, and product structures are evolving rapidly in 2026 — verify current rules and any product's actual structure before relying on it. Not a recommendation to hold any specific stablecoin or tokenized fund.
+</InfoBox>
+
+<Sources items={[
+  { title: "Stablecoin Market Cap Tracker", url: "https://defillama.com/stablecoins", publisher: "DefiLlama", date: "2026-07-12" },
+  { title: "The GENIUS Act: Federal Stablecoin Regulation Explained", url: "https://crsreports.congress.gov/", publisher: "Congressional Research Service, IF13174", date: "2026" },
+  { title: "BlackRock USD Institutional Digital Liquidity Fund (BUIDL)", url: "https://www.blackrock.com/", publisher: "BlackRock", date: "2026" },
+  { title: "Tokenized Treasuries and the Rise of Real-World Assets", url: "https://app.rwa.xyz/treasuries", publisher: "rwa.xyz", date: "2026-Q2" },
+  { title: "Yield-Bearing Stablecoins Drive Q1 2026 Supply Growth", url: "https://www.crypto.news/", publisher: "crypto.news / AssetWhisper", date: "2026" },
+]} />

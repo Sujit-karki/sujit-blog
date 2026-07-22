@@ -1,0 +1,185 @@
+---
+title: "Home and Auto Insurance Are Up 46% Since 2021 — Here's How to Actually Fight the Increase"
+description: "Home insurance premiums are up 46% since 2021 and 95% of ZIP codes saw hikes. Here's why it's happening, which states got hit hardest, and a deductible calculator that tells you exactly when raising it is worth it."
+date: "2026-07-22"
+updated: "2026-07-22"
+author: "Sujit Karki"
+category: "Personal Finance"
+tags: ["home insurance", "auto insurance", "insurance rates 2026", "deductible", "rate increase"]
+coverImage: "/images/insurance-affordability-crisis-2026.svg"
+toc:
+  - { id: "how-bad-its-actually-gotten", title: "How Bad It's Actually Gotten", level: 2 }
+  - { id: "why-your-premium-keeps-climbing", title: "Why Your Premium Keeps Climbing", level: 2 }
+  - { id: "some-states-got-hit-much-harder", title: "Some States Got Hit Much Harder", level: 2 }
+  - { id: "auto-insurance-is-stabilizing-barely", title: "Auto Insurance Is Stabilizing — Barely", level: 2 }
+  - { id: "the-actual-ways-to-fight-a-rate-hike", title: "The Actual Ways to Fight a Rate Hike", level: 2 }
+  - { id: "should-you-raise-your-deductible", title: "Should You Raise Your Deductible?", level: 2 }
+  - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - q: "Why did my homeowners insurance go up so much?"
+    a: "Almost everyone's did — 95% of US ZIP codes saw a premium increase between 2021 and 2024, and the national average is up roughly 46% since 2021. The main drivers are more frequent and severe climate-related losses (wildfire, hurricane, hail), rising construction and materials costs to rebuild homes, and reinsurance (the insurance insurers buy) getting dramatically more expensive."
+  - q: "Is my home insurance increase normal?"
+    a: "If your premium rose somewhere in the 4-12% range in 2026, that roughly matches the national pattern. If you're in Louisiana, Michigan, or Florida, a much bigger jump — 37-58% in some 2026 state averages — is unfortunately closer to normal for your area. Anything far outside those ranges is worth a direct call to your insurer asking for the specific reason."
+  - q: "Does raising my deductible actually save money?"
+    a: "Usually yes, but the real question is whether it saves you more than it costs you the next time you file a claim. Use the breakeven math further down: if you file a claim less often than your deductible's breakeven period, raising it wins. If you file more often, it doesn't."
+  - q: "What's the single best way to lower my insurance bill?"
+    a: "Shopping around at renewal, every year, without exception. Loyalty doesn't get rewarded in this market — new-customer pricing is almost always more competitive than what long-term customers get quietly rolled onto. Bundling home and auto with one insurer is the next-best lever, typically worth 10-25% off."
+---
+
+<KeyTakeaways items={[
+  "Home insurance premiums are up roughly 46% since 2021 — about three times the pace of overall inflation",
+  "95% of US ZIP codes saw a rate increase between 2021 and 2024, with the average policy rising $648 to $3,303",
+  "42% of homeowners say their costs rose 'a lot' and 71% say costs rose at all, per a March 2026 Pew survey",
+  "Louisiana (+58%), Michigan (+48%), and Virginia (+37%) saw the steepest 2026 increases; Florida remains the most expensive state to insure a home",
+  "Auto insurance is finally stabilizing — national 2026 growth is projected under 1% — but high-risk drivers are still paying sharply more"
+]} />
+
+I got a call from a friend in June whose homeowners renewal jumped $900 in a single year, with no claims, no changes to the house, nothing. She wanted to know if her insurer was just ripping her off. The honest answer: probably not specifically her — this is happening to almost everyone, and the reasons are bigger than any one company's pricing decisions. That doesn't make the bill easier to swallow. It does mean there's an actual playbook for pushing back, which is what this post is for.
+
+<StatCard label="Home premium increase since 2021" value={46} format="percent" sublabel="Roughly 3x the pace of inflation over the same period" />
+<StatCard label="2026 average home premium" value={3057} format="currency" sublabel="Insurify national estimate" />
+<StatCard label="ZIP codes that saw an increase" value={95} format="percent" sublabel="2021-2024, Consumer Federation of America" />
+
+## How Bad It's Actually Gotten
+
+The headline number is **46% since 2021** — the average home insurance premium has climbed roughly three times faster than general inflation over that stretch, according to Insurify's 2026 analysis. The 2026 national average sits around **$3,057**, up about 4% from 2025, which itself was a brutal **12% jump** on its own.
+
+A separate look from the Consumer Federation of America, using different methodology, found **95% of US ZIP codes** saw a premium increase between 2021 and 2024, with the average policy climbing **$648 (+24%) to $3,303**. You'll also see figures like $2,543 (Insurance.com, based on a $300K dwelling) or $2,720 (Forbes Advisor, $350K dwelling) — the exact dollar figure shifts with the dwelling-coverage amount each source assumes, but every methodology agrees on the direction and the rough magnitude: this is a real, broad-based increase, not a statistical artifact.
+
+<LineChart
+  title="Average US Home Insurance Premium, 2021–2026"
+  description="Reconstructed from Insurify's cited 46% five-year increase and its reported year-over-year changes"
+  data={[
+    { year: "2021", premium: 2094 },
+    { year: "2022", premium: 2270 },
+    { year: "2023", premium: 2430 },
+    { year: "2024", premium: 2624 },
+    { year: "2025", premium: 2939 },
+    { year: "2026", premium: 3057 },
+  ]}
+  xKey="year"
+  series={[{ key: "premium", label: "Average annual premium", color: "#0284c7" }]}
+  unit="$"
+/>
+
+And it's not an abstraction to the people paying it. In a March 2026 Pew survey of 3,524 US adults, **71% said their homeowners costs rose** over the past few years, and **42% said costs rose "a lot."**
+
+<PieChart
+  title="How Homeowners Describe Their Premium Changes"
+  description="Pew Research survey, March 16-22, 2026"
+  data={[
+    { label: "Rose a lot", value: 42, color: "#ef4444" },
+    { label: "Rose a little", value: 29, color: "#f59e0b" },
+    { label: "Stayed flat or fell", value: 29, color: "#059669" },
+  ]}
+  unit="%"
+/>
+
+## Why Your Premium Keeps Climbing
+
+Three forces, stacked on top of each other:
+
+**Climate losses are more frequent and more expensive.** Wildfire, hurricane, and severe convective storm (hail, tornado) losses have grown both in frequency and in dollar severity over the past several years. Insurers price to the losses they actually expect to pay, and those expectations have risen sharply.
+
+**Rebuilding a home costs more than it used to.** Materials and skilled-labor costs for construction haven't come back down to pre-2021 levels, so even a home with an unchanged risk profile costs more to fully replace after a covered loss — and premiums are priced against replacement cost, not the home's market value.
+
+**Reinsurance got brutally expensive.** Insurers buy their own insurance (reinsurance) to cover catastrophic, portfolio-wide losses. When reinsurance repriced sharply upward after several bad catastrophe years, that cost flowed straight through to what you pay at renewal — it's largely invisible to consumers but it's one of the biggest single line items behind the increases.
+
+<InfoBox type="warning" title="Non-Renewals Are the Quiet Part of This Story">
+It's not just about paying more — in the worst-hit markets, insurers are leaving entirely. Florida non-renewals surged **280% between 2018 and 2023** (Brookings), and State Farm stopped writing new homeowners policies in California in 2023. If your insurer drops you, it's frequently not personal — it's a market-wide retreat from a specific geography or risk type.
+</InfoBox>
+
+## Some States Got Hit Much Harder
+
+National averages hide enormous variation. **Florida remains the most expensive state to insure a home**, with average premiums in the roughly **$7,136 to $8,292** range depending on the source — more than double the national figure. And the steepest 2026 year-over-year *increases* landed somewhere else entirely.
+
+<BarChart
+  title="Steepest 2026 Home-Insurance Rate Increases by State"
+  description="Year-over-year premium increase, Insurify 2026 vs. the national average"
+  data={[
+    { state: "Louisiana", change: 58 },
+    { state: "Michigan", change: 48 },
+    { state: "Virginia", change: 37 },
+    { state: "National avg", change: 4 },
+  ]}
+  xKey="state"
+  series={[{ key: "change", label: "YoY change" }]}
+  unit="%"
+  colorByCategory
+/>
+
+If you live in one of these states, a jump well above the national 4% isn't a sign you're being singled out — it's the regional norm this year.
+
+## Auto Insurance Is Stabilizing — Barely
+
+There's actual good news buried in the auto numbers. Full-coverage auto insurance averages around **$2,539** in 2026 nationally — still roughly 46% higher than a few years ago depending on the state — but the *rate of increase* has genuinely cooled. Insurify projects national 2026 auto premium growth of under 1%, a sharp deceleration from the double-digit annual jumps of 2022-2024.
+
+That stabilization isn't evenly distributed, though. High-risk drivers — recent at-fault accidents, DUIs, a thin credit file in states where credit-based pricing is legal — are still seeing meaningful increases even as the average flattens out. If your driving record and credit are clean, 2026 is a reasonable year to expect your auto renewal to finally behave.
+
+## The Actual Ways to Fight a Rate Hike
+
+<ComparisonTable
+  headers={["Move", "Typical savings", "Effort", "Best for"]}
+  rows={[
+    ["Shop around at every renewal", "5-25%", "Low — 20 minutes, a few quotes", "Everyone, every single year"],
+    ["Bundle home + auto", "10-25%", "Low", "Anyone with both policy types"],
+    ["Raise your deductible", "10-35%", "Low", "Households with 3+ months of the extra deductible saved as an emergency fund"],
+    ["Add telematics / smart-home monitoring", "5-15%", "Medium", "Safe drivers; homes with water-leak or smoke sensors already installed"],
+    ["Improve your credit (where legal)", "Varies, can be large", "High, slow", "States that allow credit-based pricing (banned in CA, HI, MA)"],
+    ["Appeal the increase with documentation", "Sometimes reverses the hike", "Medium", "When the increase looks like an error or outlier vs. your area"],
+  ]}
+  highlightCol={0}
+/>
+
+The single biggest lever is the most boring one: **shop around every year, without exception.** Insurers price aggressively for new customers and much less aggressively for renewals, betting that inertia keeps you from checking. That bet is usually correct — don't let it be correct on your policy.
+
+## Should You Raise Your Deductible?
+
+Raising your deductible is the fastest lever you fully control, but "it lowers your premium" isn't the same as "it's a good trade for you specifically." The real question is whether the annual savings, compounded over the years between claims, beats the extra amount you'll pay out of pocket the one time you do file.
+
+<ProsCons
+  pros={[
+    "Immediate, guaranteed premium reduction — no approval process or waiting period",
+    "Discourages filing small claims that can themselves trigger future rate increases",
+    "The savings compound every year you don't file — often paying for the higher deductible many times over",
+  ]}
+  cons={[
+    "A real cost if you have a claim soon after raising it",
+    "Only makes sense if you have the extra deductible amount sitting in accessible savings",
+    "Doesn't address the underlying reasons rates are rising — it shifts risk to you, it doesn't remove it",
+  ]}
+/>
+
+<InsuranceDeductibleCalculator />
+
+## Here's What I'd Actually Do
+
+In order, if I were staring down a renewal notice:
+
+1. **Get two to three competing quotes before you do anything else.** This alone resolves most "is this normal" anxiety — either your current insurer is roughly in line, or you have leverage to negotiate or switch.
+2. **Call and ask specifically why the premium rose**, and ask for every applicable discount — claims-free, multi-policy, security system, updated roof, paid-in-full. Insurers don't proactively apply every discount you qualify for.
+3. **Raise your deductible only if you can genuinely absorb it.** Run the calculator above with your real claim history — most people file a claim far less often than they assume, which usually tips the math toward raising it.
+4. **Bundle home and auto if you haven't already** — it's close to a free 10-25% with almost no downside.
+5. **Document everything before you appeal an outlier increase.** Photos, prior policy pages, comparable-home quotes. Insurers do sometimes correct genuine pricing errors when shown clear documentation.
+
+If insurance costs are part of a bigger housing decision you're weighing, my [Fed rate hike breakdown](/posts/fed-rate-hike-2026-savings-mortgage) covers where mortgage rates and housing costs stand in 2026, and the [50/30/20 budget guide](/posts/budgeting-50-30-20-rule) is a good framework for deciding how big a deductible cushion you can actually afford. More free tools live at [/tools](/tools).
+
+<FaqAccordion items={[
+  { q: "Why did my homeowners insurance go up so much?", a: "Almost everyone's did — 95% of ZIP codes saw an increase 2021-2024. Drivers are climate losses, higher rebuilding costs, and much pricier reinsurance." },
+  { q: "Is my home insurance increase normal?", a: "A 4-12% rise roughly matches the 2026 national pattern; 37-58% is closer to normal in Louisiana, Michigan, or Virginia this year." },
+  { q: "Does raising my deductible actually save money?", a: "Usually, but it depends on your claim frequency versus the breakeven point — use the calculator above with your real numbers." },
+  { q: "What's the single best way to lower my insurance bill?", a: "Shop around every renewal without exception, then bundle home and auto with one insurer." },
+]} />
+
+<InfoBox type="warning">
+Educational content, not insurance advice. Deductible-tier discounts and savings ranges are illustrative industry-typical figures, not a quote from any specific insurer — actual pricing varies by carrier, state, and your individual risk profile. Get a real quote before changing your policy.
+</InfoBox>
+
+<Sources items={[
+  { title: "2026 Home Insurance Rate Report", url: "https://insurify.com/insurance/home-insurance/rates/", publisher: "Insurify, via Insurance Journal", date: "2026-03-18" },
+  { title: "95% of ZIP Codes Saw Home Insurance Increases", url: "https://www.cnbc.com/2026/05/27/home-insurance-rates.html", publisher: "CNBC, citing Consumer Federation of America", date: "2026-05-27" },
+  { title: "Americans and Rising Home Insurance Costs", url: "https://www.pewresearch.org/", publisher: "Pew Research Center", date: "2026-05-27" },
+  { title: "The Uninsurable Home: Climate Risk and Insurance Retreat", url: "https://www.brookings.edu/", publisher: "Brookings Institution", date: "2025-11" },
+  { title: "2026 Car Insurance Rate Trends", url: "https://www.carinsurance.com/", publisher: "carinsurance.com / Insurify", date: "2026" },
+  { title: "Average Cost of Homeowners Insurance", url: "https://www.forbes.com/advisor/homeowners-insurance/average-homeowners-insurance-cost/", publisher: "Forbes Advisor", date: "2026" },
+]} />

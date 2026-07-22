@@ -38,6 +38,9 @@ import RateScenarioSimulator from "@/components/custom/RateScenarioSimulator";
 import StudentLoanPlanComparator from "@/components/custom/StudentLoanPlanComparator";
 import GoldPortfolioSimulator from "@/components/custom/GoldPortfolioSimulator";
 import SideHustleROICalculator from "@/components/custom/SideHustleROICalculator";
+import DebtPayoffCalculator from "@/components/custom/DebtPayoffCalculator";
+import InsuranceDeductibleCalculator from "@/components/custom/InsuranceDeductibleCalculator";
+import StablecoinYieldGapCalculator from "@/components/custom/StablecoinYieldGapCalculator";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -136,6 +139,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     StudentLoanPlanComparator,
     GoldPortfolioSimulator,
     SideHustleROICalculator,
+    DebtPayoffCalculator,
+    InsuranceDeductibleCalculator,
+    StablecoinYieldGapCalculator,
     LineChart,
     PieChart,
     BarChart,
