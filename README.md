@@ -73,7 +73,7 @@ my-blog/
 │   │   ├── ComparisonTable.tsx  # Side-by-side comparison
 │   │   ├── FaqAccordion.tsx     # Expandable FAQ section
 │   │   └── Sources.tsx          # Citation/sources list
-│   ├── custom/                  # One-off interactive components used in specific posts
+│   ├── custom/                  # One-off interactive components used in specific posts (34 total — a sample below)
 │   │   ├── ChartCard.tsx        # Shared animated card wrapper (scroll reveal + hover lift)
 │   │   ├── AnimatedNumber.tsx   # Spring-animated count-up number, respects reduced-motion
 │   │   ├── CompoundGrowthChart.tsx      # Interactive compounding visualizer (SVG)
@@ -82,7 +82,10 @@ my-blog/
 │   │   ├── SideHustleTaxEstimator.tsx   # Live tax-reserve estimator (slider-driven)
 │   │   ├── LLCFeesChart.tsx             # Bar chart: LLC filing fees by state
 │   │   ├── RetirementContributionChart.tsx  # SEP IRA vs Solo 401(k) bar chart
-│   │   └── FifaInteractive.tsx  # World Cup finance explorer
+│   │   ├── FifaInteractive.tsx  # World Cup finance explorer
+│   │   ├── DebtPayoffCalculator.tsx     # Credit card payoff months/interest, scenario bars
+│   │   ├── InsuranceDeductibleCalculator.tsx  # Deductible-raise savings vs. breakeven claim frequency
+│   │   └── StablecoinYieldGapCalculator.tsx   # Issuer-earned vs. holder-earned stablecoin yield gap
 │   ├── charts/                   # Recharts-based MDX chart components
 │   │   ├── LineChart.tsx / LineChartLazy.tsx  # Line/area chart, a11y layer + data-table fallback
 │   │   ├── PieChart.tsx / PieChartLazy.tsx    # Donut chart, a11y layer + data-table fallback
