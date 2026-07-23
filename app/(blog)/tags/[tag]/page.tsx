@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `Browse all articles tagged "${tag}" on ${siteConfig.name}.`,
     alternates: { canonical: url },
     openGraph: { type: "website", url, title: `#${tag} | ${siteConfig.name}` },
+    robots: { index: false, follow: true },
   };
 }
 

@@ -16,11 +16,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const name = categoryFromSlug(slug);
   if (!name) return {};
   const url = `${siteConfig.url}/category/${slug}`;
+  const isThin = getPostsByCategory(name).length < 3;
   return {
     title: `${name} Articles`,
     description: `Browse all ${name} articles on ${siteConfig.name} — in-depth guides and analysis.`,
     alternates: { canonical: url },
     openGraph: { type: "website", url, title: `${name} | ${siteConfig.name}`, description: `Browse ${name} articles.` },
+    robots: isThin ? { index: false, follow: true } : undefined,
   };
 }
 
