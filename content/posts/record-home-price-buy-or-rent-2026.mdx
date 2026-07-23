@@ -1,0 +1,119 @@
+---
+title: "A Record $440,600 Home at 6.55%: Should You Buy Now or Keep Renting?"
+description: "Home prices hit a record $440,600 in June while mortgage rates rose to 6.55%. Here's the honest buy-vs-rent math for mid-2026, with a break-even calculator."
+date: "2026-07-23"
+author: "Sujit Karki"
+category: "Personal Finance"
+tags: ["housing", "mortgage rates", "home buying", "rent vs buy", "affordability"]
+toc:
+  - { id: "the-numbers-as-of-july-2026", title: "The numbers as of July 2026", level: 2 }
+  - { id: "why-it-feels-worse-than-the-numbers", title: "Why it feels worse than the numbers", level: 2 }
+  - { id: "the-real-buy-vs-rent-question", title: "The real buy-vs-rent question", level: 2 }
+  - { id: "where-a-typical-payment-actually-goes", title: "Where a typical payment actually goes", level: 3 }
+  - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - q: "What's the median home price right now?"
+    a: "A record $440,600 in June 2026 per NAR — the 36th straight month of annual price gains, though sales volume actually dipped 2.4% month-over-month and the annual price growth pace has slowed to 1.8%."
+  - q: "What are mortgage rates in July 2026?"
+    a: "The 30-year fixed averaged 6.55% for the week of July 16, 2026, per Freddie Mac, up from 6.49% the week before and 6.43% at the start of the month."
+  - q: "Is it a good time to buy?"
+    a: "It depends far more on how long you'll stay and your local rent-vs-buy math than on timing the market. The calculator below shows your break-even year."
+---
+
+The housing headlines in July 2026 are contradictory on purpose: "record prices" and "improving affordability" ran in the same week. Both are true, and the gap between them is where your decision actually lives. Let me get past the macro to the one question that matters — should *you* buy right now?
+
+<KeyTakeaways items={[
+  "Median existing-home price hit a record $440,600 in June 2026 (NAR) — up 1.8% year-over-year, even as sales volume dipped 2.4% month-over-month.",
+  "The 30-year fixed mortgage rose to 6.55% for the week of July 16 (Freddie Mac), the highest since August 2025.",
+  "Affordability has slipped several months running as the Iran-war energy spike pushed rates back up, but is still better than a year ago as wages outpaced price growth.",
+  "Inventory is up to a 4.6-month supply — more choice than the frenzy years.",
+  "Your break-even 'buy beats rent' point depends mostly on how long you'll stay, not on today's rate."
+]} />
+
+## The numbers as of July 2026
+
+<ComparisonTable
+  headers={["Metric", "Value", "Source (date)"]}
+  rows={[
+    ["Median existing-home price", "$440,600 (record)", "NAR (June 2026)"],
+    ["Year-over-year price change", "+1.8%", "NAR (June 2026)"],
+    ["Existing-home sales, month-over-month", "-2.4%", "NAR (June 2026)"],
+    ["Inventory supply", "4.6 months", "NAR (June 2026)"],
+    ["30-year fixed mortgage", "6.55%", "Freddie Mac (Jul 16, 2026)"],
+  ]}
+  highlightCol={1}
+/>
+
+Per NAR's July report, the median existing-home price rose to a record **$440,600, up 1.8% from a year earlier — the 36th consecutive month of annual price appreciation** — even as the pace of sales actually fell 2.4% from May, though it's still up 2.8% from June 2025. That 1.8% annual gain is far below the double-digit pandemic-era pace: prices are grinding up, not exploding.
+
+## Why it feels worse than the numbers
+
+Here's a place two statistics genuinely diverge. NAR's chief economist has pointed out that affordability is actually *better* than a year ago because wage growth is outpacing home-price growth — yet several affordability trackers have shown conditions slipping in recent months, largely because the Iran-war energy spike pushed mortgage rates back up from a dip earlier in the year.
+
+<StatCard label="30-year fixed mortgage rate" value={6.55} format="percent" sublabel="Freddie Mac, week of July 16, 2026 — up from 6.43% at the start of the month" />
+
+So which is it? Both: year-over-year, you're modestly better off; month-over-month, the trend has been against you. Don't let either framing alone drive a six-figure decision.
+
+<LineChart
+  title="30-year fixed mortgage rate, July 2026 (Freddie Mac weekly)"
+  data={[
+    { week: "Jul 2", rate: 6.43 },
+    { week: "Jul 9", rate: 6.49 },
+    { week: "Jul 16", rate: 6.55 }
+  ]}
+  xKey="week"
+  series={[{ key: "rate", label: "30-yr fixed %" }]}
+  unit="%"
+/>
+
+## The real buy-vs-rent question
+
+Timing the market is a losing game. The decision that actually matters is **how long you'll stay**, because buying carries big up-front costs — closing costs typically run 2%–5% of the loan — that only amortize over years.
+
+<BuyOrRentDecisionFlow />
+
+### Where a typical payment actually goes
+
+On the median-priced home at today's rate with 20% down, the monthly bill splits like this — and it's less dominated by "the rate" than most people assume:
+
+<PieChart
+  title="Monthly cost of owning the median home ($440,600, 20% down, 6.55%)"
+  data={[
+    { label: "Principal & interest", value: 80.2, color: "#0284c7" },
+    { label: "Property tax", value: 14.5, color: "#f59e0b" },
+    { label: "Homeowners insurance", value: 5.4, color: "#ef4444" }
+  ]}
+  unit="%"
+/>
+
+Property tax and insurance alone are nearly a fifth of the monthly bill on this math — and unlike the mortgage rate, neither one is fixed for 30 years. Insurance in particular has been climbing well ahead of inflation, which is worth factoring in before you anchor a budget purely on the P&I figure a lender quotes you.
+
+<RentVsBuyCalculator />
+
+<InfoBox type="info">
+The break-even year is the honest number. If you'll move in three years, renting usually wins even in a "record" market. If you'll stay eight-plus years, the math often flips — regardless of today's rate.
+</InfoBox>
+
+## Here's What I'd Actually Do
+
+1. **Run your break-even before you tour a single house.** If your horizon is under ~5 years, lean rent.
+2. **Use rising inventory as leverage.** A 4.6-month supply gives buyers more negotiating room than in the frenzy years — ask for concessions.
+3. **Don't wait for a magic rate.** At 6.55% you can refinance later if rates fall; you can't un-overpay for a house bought in a bidding war.
+4. **Protect your emergency fund.** Don't drain savings for a bigger down payment and leave yourself exposed — especially with energy prices volatile right now.
+
+<InfoBox type="tip">
+Rates hinge on the Fed and inflation — see my <a href="/posts/fed-meeting-july-2026-what-a-hold-means">breakdown of the July 29 Fed decision</a>, and factor in <a href="/posts/insurance-affordability-crisis-2026">rising home insurance costs</a> when you budget the true cost of owning.
+</InfoBox>
+
+
+<FaqAccordion items={[
+  { q: "Are home prices going to crash?", a: "The June 2026 data shows deceleration (+1.8% YoY, sales down 2.4% MoM), not a crash. Most forecasts point to modest, below-inflation price growth for the rest of 2026 rather than a collapse." },
+  { q: "Should I wait for rates to drop?", a: "Maybe, but you can refinance a rate later; you can't renegotiate a price you overpaid today. Buy when the total math and your timeline work, not when you're guessing at a bottom." },
+  { q: "How much inventory is there?", a: "A 4.6-month supply as of June 2026 — more choice than a year ago, though still below the 5-to-6-month level considered a balanced market." }
+]} />
+
+<Sources items={[
+  { title: "NAR Existing-Home Sales Report Shows 2.4% Decrease in June", url: "https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-4-decrease-in-june", publisher: "National Association of REALTORS", date: "2026-07-09" },
+  { title: "Mortgage Rates - Freddie Mac Primary Mortgage Market Survey", url: "https://www.freddiemac.com/pmms", publisher: "Freddie Mac", date: "2026-07-16" },
+  { title: "Gas prices top $4 a gallon again as U.S.-Iran conflict escalates", url: "https://www.cbsnews.com/news/gas-prices-iran-war-oil-supply/", publisher: "CBS News", date: "2026-07-20" }
+]} />

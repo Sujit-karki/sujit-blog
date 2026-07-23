@@ -41,6 +41,15 @@ import SideHustleROICalculator from "@/components/custom/SideHustleROICalculator
 import DebtPayoffCalculator from "@/components/custom/DebtPayoffCalculator";
 import InsuranceDeductibleCalculator from "@/components/custom/InsuranceDeductibleCalculator";
 import StablecoinYieldGapCalculator from "@/components/custom/StablecoinYieldGapCalculator";
+import RateHoldCashCalculator from "@/components/custom/RateHoldCashCalculator";
+import ColaBenefitEstimator from "@/components/custom/ColaBenefitEstimator";
+import AcaCliffEstimator from "@/components/custom/AcaCliffEstimator";
+import TipsOvertimeDeductionEstimator from "@/components/custom/TipsOvertimeDeductionEstimator";
+import RentVsBuyCalculator from "@/components/custom/RentVsBuyCalculator";
+import ColaCalculationFlow from "@/components/custom/ColaCalculationFlow";
+import AcaCliffFlow from "@/components/custom/AcaCliffFlow";
+import TipsOvertimeClaimFlow from "@/components/custom/TipsOvertimeClaimFlow";
+import BuyOrRentDecisionFlow from "@/components/custom/BuyOrRentDecisionFlow";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -142,6 +151,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     DebtPayoffCalculator,
     InsuranceDeductibleCalculator,
     StablecoinYieldGapCalculator,
+    RateHoldCashCalculator,
+    ColaBenefitEstimator,
+    AcaCliffEstimator,
+    TipsOvertimeDeductionEstimator,
+    RentVsBuyCalculator,
+    ColaCalculationFlow,
+    AcaCliffFlow,
+    TipsOvertimeClaimFlow,
+    BuyOrRentDecisionFlow,
     LineChart,
     PieChart,
     BarChart,

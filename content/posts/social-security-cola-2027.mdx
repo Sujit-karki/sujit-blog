@@ -1,0 +1,132 @@
+---
+title: "Your 2027 Social Security Raise Is Shaping Up at 3.8% — Here's What That's Really Worth"
+description: "The 2027 Social Security COLA is now estimated at 3.6%–3.8% after June's cooler inflation. Here's the real dollar impact, the Medicare offset, and a calculator."
+date: "2026-07-23"
+author: "Sujit Karki"
+category: "Personal Finance"
+tags: ["Social Security", "COLA", "retirement", "inflation", "Medicare"]
+toc:
+  - { id: "the-number-and-who-says-what", title: "The number, and who says what", level: 2 }
+  - { id: "how-the-number-actually-gets-calculated", title: "How the number actually gets calculated", level: 3 }
+  - { id: "what-38-is-worth-in-dollars", title: "What 3.8% is worth in dollars", level: 2 }
+  - { id: "why-this-number-carries-so-much-weight", title: "Why this number carries so much weight", level: 3 }
+  - { id: "the-medicare-part-b-catch", title: "The Medicare Part B catch", level: 2 }
+  - { id: "the-uncomfortable-trade-off", title: "The uncomfortable trade-off", level: 2 }
+  - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - q: "When is the 2027 COLA official?"
+    a: "The Social Security Administration announces it in October 2026, based on CPI-W data for July, August, and September 2026. Everything before that is an estimate."
+  - q: "How big will the 2027 COLA be?"
+    a: "Current estimates range from 3.6% (AARP) to 3.8% (The Senior Citizens League), with independent analyst Mary Johnson at 3.7% — all up from the 2.8% actual COLA for 2026."
+  - q: "Why do estimates keep changing?"
+    a: "Because they track monthly CPI-W data. June's cooler inflation pulled some forecasts down from spring highs; a renewed energy spike could push them back up before the official October number."
+---
+
+If you or a parent lives on Social Security, the number that matters most each year isn't the stock market — it's the cost-of-living adjustment. And the 2027 estimate just got interesting, because it moved *down* on genuinely good inflation news. Let me translate the percentage into what actually lands in a bank account.
+
+<KeyTakeaways items={[
+  "The 2027 COLA is estimated at 3.6% (AARP) to 3.8% (The Senior Citizens League) as of mid-July 2026, with independent analyst Mary Johnson at 3.7%.",
+  "At 3.8%, the average benefit rises about $73.62 a month — from $1,937.53 to $2,011.15.",
+  "The official number comes in October 2026, based on July–September CPI-W.",
+  "A Medicare Part B premium increase can quietly eat part of the raise.",
+  "A bigger COLA also nudges a key trust fund's insolvency date slightly closer, per CRFB."
+]} />
+
+## The number, and who says what
+
+Three trackers have weighed in as of mid-July 2026, all pointing the same direction but landing on slightly different numbers:
+
+<ComparisonTable
+  headers={["Source", "2027 COLA estimate", "As of"]}
+  rows={[
+    ["The Senior Citizens League (TSCL)", "3.8%", "July 14, 2026"],
+    ["AARP", "3.6%", "July 2026"],
+    ["Mary Johnson (independent analyst)", "3.7%", "July 2026 (down from 4.7% the month before)"],
+    ["Actual 2026 COLA (for comparison)", "2.8%", "January 2026"]
+  ]}
+  highlightCol={1}
+/>
+
+The estimates cooled from spring highs — some had reached 4.2%–4.7% — because June's CPI-W came in softer than expected. This is a rare case where lower inflation is a mixed blessing: better for your grocery bill, but it shrinks next year's raise.
+
+### How the number actually gets calculated
+
+None of these estimates are guesses in the "vibes" sense — they're forecasts of a specific, mechanical formula the SSA has used since 1975:
+
+<ColaCalculationFlow />
+
+## What 3.8% is worth in dollars
+
+Percentages are abstract; dollars aren't. Per TSCL's July 14 estimate, if a 3.8% COLA took effect today, the average retirement benefit would rise **$73.62 a month, from $1,937.53 to $2,011.15**.
+
+<StatCard label="Estimated monthly raise at 3.8%" value={73.62} format="currency" sublabel="Average benefit $1,937.53 → $2,011.15 (TSCL estimate, July 2026)" />
+
+<LineChart
+  title="Social Security COLA, recent years"
+  data={[
+    { year: "2025", cola: 2.5 },
+    { year: "2026", cola: 2.8 },
+    { year: "2027 (est.)", cola: 3.8 }
+  ]}
+  xKey="year"
+  series={[{ key: "cola", label: "COLA %" }]}
+  unit="%"
+/>
+
+<ColaBenefitEstimator />
+
+### Why this number carries so much weight
+
+This isn't a rounding error for most recipients. Per Congressional Research Service data cited by AARP and SSA reliance studies, most beneficiaries lean on Social Security for a large share of their household income:
+
+<PieChart
+  title="How much of retirees' income is Social Security (age 65+)"
+  data={[
+    { label: "Under 50% of income", value: 40, color: "#6366f1" },
+    { label: "50%–89% of income", value: 46, color: "#f59e0b" },
+    { label: "90%+ of income", value: 14, color: "#059669" }
+  ]}
+  unit="%"
+/>
+
+Three in five beneficiaries get *at least half* their income from that check, and roughly one in seven get nearly all of it. That's why a 0.2-point swing in the estimate — 3.6% vs. 3.8% — isn't academic: for the 90%+ group in particular, it's close to their entire raise for the year, full stop.
+
+## The Medicare Part B catch
+
+Here's the part the headline number hides. For most retirees, the Medicare Part B premium is deducted straight from the Social Security check. The 2026 Medicare Trustees Report projects the standard 2027 Part B premium at **around $209.50/month**, up from $202.90 in 2026 — a projection, not a final number. CMS doesn't announce the actual 2027 premium until around November 2026, and past projections have missed (the 2022 premium, for example, was projected at $158.50 but finalized at $170.10).
+
+<InfoBox type="warning">
+Don't budget the full 3.8%. Budget the raise *minus* your expected Medicare premium increase. For lower benefit amounts, the Part B bump can eat a meaningful slice of the COLA — and the real number won't be locked in until November.
+</InfoBox>
+
+## The uncomfortable trade-off
+
+A larger COLA helps recipients now but strains the system. The nonpartisan **Committee for a Responsible Federal Budget (CRFB)** estimated in May that a 3.8% COLA in 2027 would add roughly **$300 billion** to Social Security's fiscal shortfall over the next decade and advance a key trust fund's projected depletion date by about three months, from late 2032. CRFB separately estimates that hitting that insolvency date without Congressional action would force an automatic ~25% across-the-board benefit cut. That's not a reason to root against your own raise — but it's the honest context.
+
+## Here's What I'd Actually Do
+
+1. **Treat the estimate as a range, not a promise.** Plan around 3.6%–3.7%, and treat anything higher as upside. The official number is October.
+2. **Net out Medicare.** Calculate raise minus expected Part B increase for your real spendable change — and don't assume $209.50 is locked in.
+3. **If you're not yet claiming, don't let COLA math rush you.** Delaying benefits still raises your base far more than any single year's COLA.
+4. **Revisit your withdrawal rate.** A higher COLA slightly reduces how much you must pull from savings — recalculate once the official number lands.
+
+<InfoBox type="tip">
+Planning retirement accounts alongside Social Security? See <a href="/posts/roth-ira-vs-traditional-ira">Roth IRA vs Traditional IRA</a> and <a href="/posts/trump-account-vs-529">Trump Account vs 529 Plan</a> for the tax side of the picture.
+</InfoBox>
+
+
+<FaqAccordion items={[
+  { q: "Is 3.8% guaranteed?", a: "No. It's TSCL's estimate as of July 14, 2026. The SSA sets the official figure in October based on Q3 CPI-W, and estimates have moved before." },
+  { q: "Why is AARP's estimate lower?", a: "Different models. AARP's 3.6% blends CPI-W with inflation projections for the remaining months, while TSCL and Mary Johnson weight recent CPI-W prints differently." },
+  { q: "What was the 2026 COLA?", a: "2.8%, which raised the average retired-worker benefit by roughly $56 a month." }
+]} />
+
+<Sources items={[
+  { title: "Congress Reintroduces Social Security 2100 Act as This Year's COLA Projection Holds at 3.8%", url: "https://seniorsleague.org/this-years-cola-projection-holds-at-3-8/", publisher: "The Senior Citizens League", date: "2026-07-14" },
+  { title: "Social Security COLA Preview: Will 2027 Benefits Go Up?", url: "https://www.aarp.org/social-security/cola-2027-increase-estimate/", publisher: "AARP", date: "2026-07-14" },
+  { title: "A Higher 2027 Social Security Raise Could Add $300 Billion to the Program's Shortfall", url: "https://www.aol.com/articles/higher-2027-social-security-raise-102000150.html", publisher: "AOL / CRFB analysis", date: "2026-07" },
+  { title: "Social Security recipients could get a nearly 4% cost-of-living adjustment, forecasters say", url: "https://www.cbsnews.com/news/social-security-2027-cola-inflation-retirees/", publisher: "CBS News", date: "2026-07-14" },
+  { title: "Medicare's 2027 Part B Premium Is Projected to Push Past $215 a Month", url: "https://247wallst.com/personal-finance/2026/07/07/medicares-2027-part-b-premium-is-projected-to-push-past-215-a-month/", publisher: "24/7 Wall St. (citing 2026 Medicare Trustees Report)", date: "2026-07-07" },
+  { title: "Consumer Price Index Summary — June 2026 (CPI-W basis)", url: "https://www.bls.gov/news.release/cpi.nr0.htm", publisher: "U.S. Bureau of Labor Statistics", date: "2026-07-14" },
+  { title: "Income from Social Security", url: "https://pensionrights.org/resource/income-from-social-security/", publisher: "Pension Rights Center (citing CRS/SSA reliance data)", date: "2026" }
+]} />
