@@ -1,0 +1,12 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.idea/
+
+# Claude Code settings
+.claude/
+my-blog/.claude/
