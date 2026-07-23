@@ -145,7 +145,7 @@ export default function StudentLoanPlanComparator() {
       </div>
 
       <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-4">
-        Simplified public estimate only — not your servicer's official calculation. RAP models the 1–10% AGI schedule as marginal $10k brackets, minus $50/month per dependent, with a $10/month floor; IBR approximates 10% of discretionary income above 150% of the poverty line; Standard assumes a 10-year fixed amortization at ~6.53%. Real IBR/Standard/RAP terms vary by loan type, filing status, and servicer — confirm your exact payment at studentaid.gov.
+        Simplified public estimate only — not your servicer&apos;s official calculation. RAP models the 1–10% AGI schedule as marginal $10k brackets, minus $50/month per dependent, with a $10/month floor; IBR approximates 10% of discretionary income above 150% of the poverty line; Standard assumes a 10-year fixed amortization at ~6.53%. Real IBR/Standard/RAP terms vary by loan type, filing status, and servicer — confirm your exact payment at studentaid.gov.
       </p>
     </div>
   )

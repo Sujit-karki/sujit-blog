@@ -30,7 +30,7 @@ export default function SideHustleROICalculator() {
         Interactive · real monthly math
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
-        What's actually left after tools and taxes
+        What&apos;s actually left after tools and taxes
       </p>
 
       <div className="grid sm:grid-cols-3 gap-5 mb-6">
