@@ -31,6 +31,8 @@ Lampard is a statically-generated blog in the YMYL (Your Money, Your Life) niche
 | Animation | Motion (`motion/react`, via a centralized `LazyMotion` provider) |
 | Search | Fuse.js (⌘K modal + `/search` page) |
 | Content validation | Zod (frontmatter schema in `lib/posts.ts`) |
+| Compiler | React Compiler (`babel-plugin-react-compiler`, `reactCompiler: true` in `next.config.mjs`) |
+| Analytics | Vercel Speed Insights |
 | Deployment | Cloudflare / Vercel-compatible |
 
 ---
