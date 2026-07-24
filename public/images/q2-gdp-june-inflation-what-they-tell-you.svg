@@ -1,0 +1,54 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Q2 2026 GDP and June PCE inflation release the same morning</title>
+  <desc id="desc">Two stylized diverging lines representing slowing GDP growth and still-elevated PCE inflation, both dated July 30, 2026.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2a3f" />
+      <stop offset="45%" stop-color="#075985" />
+      <stop offset="80%" stop-color="#0f1a1c" />
+      <stop offset="100%" stop-color="#0a0f11" />
+    </linearGradient>
+    <radialGradient id="glow" cx="76%" cy="16%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <text x="1150" y="600" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="300" font-weight="700" fill="#ffffff" opacity="0.06">%</text>
+
+  <line x1="60" y1="200" x2="1140" y2="200" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="340" x2="1140" y2="340" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="460" x2="1140" y2="460" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- GDP: modest, roughly flat line -->
+  <polyline points="90,380 340,360 590,350 840,340 1100,335"
+    fill="none" stroke="#7dd3fc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)" opacity="0.95" />
+  <!-- PCE: elevated and rising -->
+  <polyline points="90,300 340,270 590,230 840,190 1100,175"
+    fill="none" stroke="#fca5a5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)" opacity="0.95" />
+
+  <circle cx="1100" cy="335" r="7" fill="#7dd3fc" />
+  <circle cx="1100" cy="175" r="7" fill="#fca5a5" />
+
+  <g transform="translate(1000, 355)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#bae6fd" letter-spacing="0.3">GDP +2.1%</text>
+  </g>
+  <g transform="translate(1000, 148)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fecaca" letter-spacing="0.3">PCE +4.1%</text>
+  </g>
+
+  <g transform="translate(230, 130)">
+    <rect x="-150" y="-24" width="300" height="48" rx="24" fill="#0a0f11" fill-opacity="0.6" stroke="#7dd3fc" stroke-opacity="0.5" />
+    <text x="0" y="6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#bae6fd" letter-spacing="0.3">BOTH RELEASE JULY 30</text>
+  </g>
+
+  <g transform="translate(600, 566)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#e0f2fe" letter-spacing="1.2" opacity="0.85">SLOWING GROWTH, INFLATION STILL ABOVE TARGET</text>
+  </g>
+</svg>

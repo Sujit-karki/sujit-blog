@@ -50,6 +50,11 @@ import ColaCalculationFlow from "@/components/custom/ColaCalculationFlow";
 import AcaCliffFlow from "@/components/custom/AcaCliffFlow";
 import TipsOvertimeClaimFlow from "@/components/custom/TipsOvertimeClaimFlow";
 import BuyOrRentDecisionFlow from "@/components/custom/BuyOrRentDecisionFlow";
+import PlatformTaxEstimator from "@/components/custom/PlatformTaxEstimator";
+import CryptoRetirementSimulator from "@/components/custom/CryptoRetirementSimulator";
+import AIExposureCalculator from "@/components/custom/AIExposureCalculator";
+import ElectricBillProjector from "@/components/custom/ElectricBillProjector";
+import RealIncomeCalculator from "@/components/custom/RealIncomeCalculator";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -160,6 +165,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     AcaCliffFlow,
     TipsOvertimeClaimFlow,
     BuyOrRentDecisionFlow,
+    PlatformTaxEstimator,
+    CryptoRetirementSimulator,
+    AIExposureCalculator,
+    ElectricBillProjector,
+    RealIncomeCalculator,
     LineChart,
     PieChart,
     BarChart,
