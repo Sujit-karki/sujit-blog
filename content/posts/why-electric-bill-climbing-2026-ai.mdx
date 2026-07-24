@@ -66,6 +66,20 @@ The policy response is live. The White House signed a pact with several states c
 
 The national average hides enormous variation. As of April 2026, Hawaii's residential rate was about 46.62 cents/kWh while North Dakota's was about 12.35 cents — a nearly 4x spread — against a national residential average near 18.83 cents. If you live in the Mid-Atlantic near "Data Center Alley," your trajectory looks nothing like someone in the wind-powered Plains.
 
+<BarChart
+  title="Residential electricity rates by state, April 2026"
+  description="Hawaii and North Dakota are the two extremes of a roughly 4x national spread — the average alone hides which side of that spread you're actually on."
+  data={[
+    { state: "North Dakota (lowest)", rate: 12.35 },
+    { state: "National average", rate: 18.83 },
+    { state: "Hawaii (highest)", rate: 46.62 }
+  ]}
+  xKey="state"
+  series={[{ key: "rate", label: "Residential price" }]}
+  unit="¢"
+  colorByCategory
+/>
+
 This is a real line item in the household budget, and it compounds with the broader affordability squeeze I documented in [home and auto insurance up 46% since 2021](/posts/insurance-affordability-crisis-2026). For the macro backdrop of why energy fed into inflation this year, see [the Q2 2026 GDP and inflation breakdown](/posts/q2-gdp-june-inflation-what-they-tell-you).
 
 ## Project your annual bill

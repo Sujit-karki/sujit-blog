@@ -55,6 +55,8 @@ import CryptoRetirementSimulator from "@/components/custom/CryptoRetirementSimul
 import AIExposureCalculator from "@/components/custom/AIExposureCalculator";
 import ElectricBillProjector from "@/components/custom/ElectricBillProjector";
 import RealIncomeCalculator from "@/components/custom/RealIncomeCalculator";
+import CryptoRuleTimelineFlow from "@/components/custom/CryptoRuleTimelineFlow";
+import GDPReactionFlow from "@/components/custom/GDPReactionFlow";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -170,6 +172,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     AIExposureCalculator,
     ElectricBillProjector,
     RealIncomeCalculator,
+    CryptoRuleTimelineFlow,
+    GDPReactionFlow,
     LineChart,
     PieChart,
     BarChart,
