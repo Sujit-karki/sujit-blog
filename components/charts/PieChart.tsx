@@ -42,6 +42,7 @@ export default function PieChart({ title, description, data, unit = "", height =
               innerRadius="55%"
               outerRadius="85%"
               paddingAngle={2}
+              isAnimationActive={false}
             >
               {data.map((d, i) => (
                 <Cell key={d.label} fill={d.color ?? PALETTE[i % PALETTE.length]} />

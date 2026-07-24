@@ -87,6 +87,7 @@ export default function LineChart({
                 strokeWidth={2}
                 dot={false}
                 activeDot={{ r: 4 }}
+                isAnimationActive={false}
               />
             ))}
           </RLineChart>

@@ -90,8 +90,7 @@ export default function BarChart({
                 fill={s.color ?? PALETTE[i % PALETTE.length]}
                 radius={[4, 4, 0, 0]}
                 maxBarSize={56}
-                animationDuration={600}
-                animationEasing="ease-out"
+                isAnimationActive={false}
               >
                 {colorByCategory &&
                   data.map((_, di) => (
