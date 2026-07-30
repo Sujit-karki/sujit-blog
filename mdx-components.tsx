@@ -57,6 +57,11 @@ import ElectricBillProjector from "@/components/custom/ElectricBillProjector";
 import RealIncomeCalculator from "@/components/custom/RealIncomeCalculator";
 import CryptoRuleTimelineFlow from "@/components/custom/CryptoRuleTimelineFlow";
 import GDPReactionFlow from "@/components/custom/GDPReactionFlow";
+import RothCatchUpEstimator from "@/components/custom/RothCatchUpEstimator";
+import CarLoanInterestDeductionCalculator from "@/components/custom/CarLoanInterestDeductionCalculator";
+import CryptoBasisGapEstimator from "@/components/custom/CryptoBasisGapEstimator";
+import TreasuryVsBankYieldCalculator from "@/components/custom/TreasuryVsBankYieldCalculator";
+import NewGradIncomeGapCalculator from "@/components/custom/NewGradIncomeGapCalculator";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -174,6 +179,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     RealIncomeCalculator,
     CryptoRuleTimelineFlow,
     GDPReactionFlow,
+    RothCatchUpEstimator,
+    CarLoanInterestDeductionCalculator,
+    CryptoBasisGapEstimator,
+    TreasuryVsBankYieldCalculator,
+    NewGradIncomeGapCalculator,
     LineChart,
     PieChart,
     BarChart,

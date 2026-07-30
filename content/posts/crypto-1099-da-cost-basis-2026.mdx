@@ -1,0 +1,127 @@
+---
+title: "Your First Crypto 1099-DA Is Probably Wrong: What to Do Before You File"
+description: "Brokers sent the first Form 1099-DA for 2025 crypto sales. It reports proceeds but often not cost basis — which can overstate your gain. Here's how to fix it."
+date: "2026-07-30"
+updated: "2026-07-30"
+author: "Sujit Karki"
+category: "Crypto"
+coverImage: "/images/crypto-1099-da-cost-basis-2026.svg"
+tags: ["crypto", "taxes", "Form 1099-DA", "cost basis", "IRS", "digital assets"]
+toc:
+  - { id: "what-just-landed-in-your-inbox", title: "What just landed in your inbox", level: 2 }
+  - { id: "the-missing-basis-trap", title: "The missing-basis trap", level: 2 }
+  - { id: "why-wallet-by-wallet-changed-everything", title: "Why wallet-by-wallet changed everything", level: 2 }
+  - { id: "three-numbers-that-arent-the-same", title: "Three numbers that aren't the same", level: 2 }
+  - { id: "estimate-your-basis-gap", title: "Estimate your basis gap", level: 2 }
+  - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
+  - { id: "faq", title: "FAQ", level: 2 }
+faq:
+  - { q: "Do I owe tax on the proceeds shown on my 1099-DA?", a: "No. You owe tax on your gain — proceeds minus cost basis. For 2025 the form often shows proceeds with $0 or 'unknown' basis, which overstates the gain if you don't correct it." }
+  - { q: "When does cost basis reporting start?", a: "Brokers must report cost basis for covered digital assets acquired on or after January 1, 2026. So the first 1099-DAs with basis arrive in early 2027; the 2025 forms are proceeds-only." }
+  - { q: "What is the wallet-by-wallet rule?", a: "Under Rev. Proc. 2024-28, from January 1, 2025 you must track cost basis separately for each wallet or account. The old 'universal' pooling method is no longer allowed." }
+  - { q: "Do I still have to report if I never got a 1099-DA?", a: "Yes. You must report all taxable digital-asset transactions whether or not you receive a form, including DeFi, self-custody, staking, and airdrops." }
+---
+
+<KeyTakeaways items={[
+  "Brokers issued the first Form 1099-DA in early 2026, covering 2025 crypto sales. For 2025 it reports GROSS PROCEEDS only — not cost basis.",
+  "If the form shows $0 or 'unknown' basis, it can make the IRS think your entire sale was profit. You correct this on Form 8949 using your own records.",
+  "Cost-basis reporting begins for transactions on or after January 1, 2026 — so the first forms with basis arrive in early 2027.",
+  "Since January 1, 2025, you must use wallet-by-wallet accounting (Rev. Proc. 2024-28). The old universal pooling method is gone.",
+  "You still owe tax on transactions that never appear on a 1099-DA — DeFi, self-custody, staking, airdrops."
+]} />
+
+If you sold, swapped, or spent crypto through a U.S. exchange in 2025, you probably received a new tax form early this year: the 1099-DA. It's the crypto cousin of the 1099-B that stock brokers have sent for decades, created by the 2021 infrastructure law. And I want to be blunt about the most important thing: for the 2025 tax year, that form is often incomplete in a way that can cost you real money if you file straight from it.
+
+## What just landed in your inbox
+
+The IRS finalized the digital-asset broker rules under IRC §6045 in July 2024. Custodial brokers — Coinbase, Kraken, Gemini, Robinhood, and others — began issuing Form 1099-DA in early 2026 for calendar-year 2025 transactions. The rollout is phased:
+
+- **2025 tax year:** brokers report **gross proceeds only.**
+- **2026 tax year (transactions on/after Jan 1, 2026):** brokers must also report **cost basis** for covered assets.
+
+So the form you're holding for 2025 is mainly a flag to the IRS that you transacted in crypto. It is not a finished tax calculation.
+
+<InfoBox type="warning">
+The IRS gets a copy of every 1099-DA. If yours shows large proceeds and you don't report the sale, expect an automated notice. But if you report the proceeds without your cost basis, you may overpay — sometimes badly.
+</InfoBox>
+
+## The missing-basis trap
+
+Here's the scenario that will bite thousands of people. Say you bought 1 BTC for $40,000 in 2023, held it in a hardware wallet, then moved it to an exchange and sold it in 2025 for $100,000. The exchange never saw your $40,000 purchase, so your 1099-DA shows $100,000 in proceeds and $0 — or "unknown" — cost basis.
+
+<BarChart
+  title="Proceeds vs. reported basis vs. actual gain"
+  description="One illustrative sale: exchange sees the sale, not the original 2023 purchase"
+  data={[
+    { label: "Proceeds (1099-DA)", value: 100000 },
+    { label: "Basis on form", value: 0 },
+    { label: "Actual gain", value: 60000 }
+  ]}
+  xKey="label"
+  series={[{ key: "value", label: "Amount", color: "#8b5cf6" }]}
+  unit="$"
+/>
+
+Your actual taxable gain is $60,000. But if you or your software take the form at face value, the IRS sees $100,000 of gain. At a 15% long-term rate, that's the difference between roughly $9,000 and $15,000 of tax — $6,000 you don't owe.
+
+## Why wallet-by-wallet changed everything
+
+The other shift most people missed happened January 1, 2025. Under Revenue Procedure 2024-28, the IRS made **wallet-by-wallet** (account-by-account) cost-basis tracking mandatory. The old "universal" method — pooling all your coins across every wallet into one queue — is no longer allowed.
+
+Under the new rule, when you sell from a specific wallet, you can only use cost basis lots that sit in that same wallet. The default method is FIFO within each wallet unless you use specific identification. Rev. Proc. 2024-28 included a one-time safe harbor to allocate your pre-2025 basis across wallets, which had to be locked in by the earlier of your first 2025 disposal or your 2025 return's due date.
+
+<InfoBox type="info">
+If you moved coins between your own wallets, that transfer isn't a taxable sale — but it can break the basis trail your broker sees, which is exactly why the 1099-DA proceeds so often arrive without matching basis.
+</InfoBox>
+
+## Three numbers that aren't the same
+
+This is the crux, and it's where the honesty matters:
+
+<ComparisonTable
+  headers={["Number", "What it is", "Where it lives"]}
+  rows={[
+    ["Gross proceeds", "What you sold for", "Box on 1099-DA (reported for 2025)"],
+    ["Cost basis", "What you paid, plus fees", "Often missing for 2025 — you supply it"],
+    ["Taxable gain/loss", "Proceeds minus basis", "What you actually owe tax on"]
+  ]}
+  highlightCol={2}
+/>
+
+The 1099-DA reliably gives you the first number. For 2025 it frequently omits the second. You are responsible for the third. The reporting path is: 1099-DA → Form 8949 → Schedule D → Form 1040.
+
+<CryptoBasisGapEstimator />
+
+## Estimate your basis gap
+
+The estimator above shows the difference between the tax implied by proceeds-only reporting and the tax on your actual gain once you supply cost basis — so you can see what's at stake if you file straight from the form. It's an estimate, not tax advice.
+
+For the bigger picture on digital assets, see my [Bitcoin macro analysis](/posts/bitcoin-market-analysis-2026) and, if you hold crypto in a retirement account, my breakdown of [crypto coming to 401(k)s](/posts/crypto-coming-to-401k-not-yet).
+
+## Here's What I'd Actually Do
+
+1. **Don't file from the 1099-DA alone.** Treat it as one input, not the answer.
+2. **Reconcile it against your own records** — every exchange, wallet, and transfer. Check for duplicate entries created by moving coins between your own wallets.
+3. **Fill in cost basis for every sale.** If the form shows $0 or "unknown," use your purchase records or reputable crypto tax software to establish basis. Never let a $0 basis stand if you actually paid for the asset.
+4. **Confirm your accounting is wallet-by-wallet** and that you documented a method. If you sold in 2025, the safe harbor window has already closed.
+5. **Report transactions that never appeared on any form** — DeFi, self-custody, staking rewards, airdrops. The absence of a 1099-DA is not the absence of a tax obligation.
+6. **Keep records for at least three years,** because the IRS will be matching these forms against returns.
+
+<FaqAccordion items={[
+  { q: "Do I owe tax on the proceeds shown on my 1099-DA?", a: "No. You owe tax on your gain — proceeds minus cost basis. For 2025 the form often shows proceeds with $0 or 'unknown' basis, which overstates the gain if you don't correct it." },
+  { q: "When does cost basis reporting start?", a: "Brokers must report cost basis for covered digital assets acquired on or after January 1, 2026. So the first 1099-DAs with basis arrive in early 2027; the 2025 forms are proceeds-only." },
+  { q: "What is the wallet-by-wallet rule?", a: "Under Rev. Proc. 2024-28, from January 1, 2025 you must track cost basis separately for each wallet or account. The old 'universal' pooling method is no longer allowed." },
+  { q: "Do I still have to report if I never got a 1099-DA?", a: "Yes. You must report all taxable digital-asset transactions whether or not you receive a form, including DeFi, self-custody, staking, and airdrops." }
+]} />
+
+<Sources items={[
+  { title: "Form 1099-DA Debut Will Test Broker, Taxpayer Readiness in Transition Year", url: "https://tax.thomsonreuters.com/news/form-1099-da-debut-will-test-broker-taxpayer-readiness-in-transition-year/", publisher: "Thomson Reuters Tax", date: "2026" },
+  { title: "IRS Form 1099-DA: Crypto Broker Reporting Explained", url: "https://www.greenbacktaxservices.com/knowledge-center/form-1099-da-digital-asset-reporting/", publisher: "Greenback Tax Services", date: "2026" },
+  { title: "How CoinLedger supports per-wallet cost basis tracking (Rev. Proc. 2024-28)", url: "https://help.coinledger.io/en/articles/10309974-how-will-coinledger-support-new-per-wallet-cost-basis-tracking-rules-irs-rev-proc-2024-28", publisher: "CoinLedger", date: "2025" },
+  { title: "IRS Safe Harbour & Revenue Procedure 2024-28", url: "https://koinly.io/blog/irs-revenue-procedure-crypto-depot/", publisher: "Koinly", date: "2025" },
+  { title: "What Is Form 1099-DA? Crypto Tax Reporting Explained", url: "https://www.hrblock.com/tax-center/irs/forms/form-1099-da/", publisher: "H&R Block", date: "2026" }
+]} />
+
+---
+
+*This is educational content, not financial or tax advice. I'm a researcher, not your advisor, and I don't know your specific transaction history. Crypto tax rules are still evolving. Talk to a licensed tax professional before filing. See the [full disclaimer](/disclaimer).*

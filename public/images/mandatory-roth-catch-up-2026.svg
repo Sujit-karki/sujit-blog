@@ -1,0 +1,53 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">The mandatory Roth catch-up rule for high earners, effective 2026</title>
+  <desc id="desc">Stylized chart showing the SECURE 2.0 FICA wage threshold rising from $145,000 to $150,000 for 2026, with a pre-tax versus Roth catch-up comparison.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46" />
+      <stop offset="45%" stop-color="#059669" />
+      <stop offset="80%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="12%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Watermark coin glyph -->
+  <text x="1160" y="600" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="340" font-weight="700" fill="#ffffff" opacity="0.06">&#128176;</text>
+
+  <!-- Faint grid -->
+  <line x1="60" y1="200" x2="1140" y2="200" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="300" x2="1140" y2="300" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="400" x2="1140" y2="400" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- Threshold step chart: $145k -> $150k -->
+  <g>
+    <rect x="120" y="360" width="220" height="150" rx="8" fill="#6ee7b7" opacity="0.75" />
+    <rect x="380" y="330" width="220" height="180" rx="8" fill="#34d399" opacity="0.9" />
+    <text x="230" y="345" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="800" fill="#022c22">$145,000</text>
+    <text x="490" y="315" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="800" fill="#022c22">$150,000</text>
+    <text x="230" y="545" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#a7f3d0" letter-spacing="0.3">STATUTE (2022)</text>
+    <text x="490" y="545" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#d1fae5" letter-spacing="0.3">INDEXED FOR 2026</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 355 420 L 375 420" stroke="#ecfdf5" stroke-width="4" stroke-linecap="round" />
+  <path d="M 368 412 L 380 420 L 368 428" fill="none" stroke="#ecfdf5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Badge -->
+  <g transform="translate(880, 220)">
+    <rect x="-180" y="-34" width="360" height="68" rx="34" fill="#022c22" fill-opacity="0.55" stroke="#6ee7b7" stroke-opacity="0.5" />
+    <text x="0" y="-4" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="800" fill="#d1fae5" letter-spacing="0.3">CATCH-UP MUST BE ROTH</text>
+    <text x="0" y="20" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#a7f3d0" letter-spacing="0.5" opacity="0.85">FOR WAGES ABOVE THE LINE</text>
+  </g>
+
+  <!-- Effective date -->
+  <g transform="translate(600, 585)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#a7f3d0" letter-spacing="1.2" opacity="0.85">EFFECTIVE JANUARY 1, 2026</text>
+  </g>
+</svg>

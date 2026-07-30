@@ -1,0 +1,56 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Treasury yields and the fixed-income sleeve, higher for longer</title>
+  <desc id="desc">Stylized upward-sloping Treasury yield curve from 2-year to 30-year maturities, with nominal and real yield callouts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e7490" />
+      <stop offset="45%" stop-color="#0369a1" />
+      <stop offset="80%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0c1a3e" />
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="12%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Watermark bank/columns glyph -->
+  <text x="1170" y="600" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="320" font-weight="700" fill="#ffffff" opacity="0.06">&#127974;</text>
+
+  <line x1="60" y1="200" x2="1140" y2="200" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="300" x2="1140" y2="300" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="400" x2="1140" y2="400" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- Yield curve -->
+  <polyline points="120,440 300,410 460,405 620,385 760,360 900,320 1040,300" fill="none" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)" opacity="0.95" />
+  <circle cx="300" cy="410" r="6" fill="#bae6fd" />
+  <circle cx="900" cy="320" r="6" fill="#bae6fd" />
+  <circle cx="1040" cy="300" r="8" fill="#ffffff" />
+
+  <g transform="translate(300, 528)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#bae6fd" letter-spacing="0.3">2-YEAR 4.17%</text>
+  </g>
+  <g transform="translate(900, 528)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#bae6fd" letter-spacing="0.3">10-YEAR 4.48%</text>
+  </g>
+  <g transform="translate(1040, 260)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#e0f2fe" letter-spacing="0.3">30-YEAR 4.97%</text>
+  </g>
+
+  <!-- Badge -->
+  <g transform="translate(300, 220)">
+    <rect x="-150" y="-32" width="300" height="64" rx="32" fill="#0a1530" fill-opacity="0.55" stroke="#7dd3fc" stroke-opacity="0.5" />
+    <text x="0" y="-4" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="800" fill="#e0f2fe" letter-spacing="0.3">10-YR TIPS REAL YIELD</text>
+    <text x="0" y="20" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#bae6fd">~2.26% above inflation</text>
+  </g>
+
+  <g transform="translate(600, 585)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#bae6fd" letter-spacing="1.2" opacity="0.85">TREASURY DAILY PAR YIELD CURVE, JULY 2026</text>
+  </g>
+</svg>

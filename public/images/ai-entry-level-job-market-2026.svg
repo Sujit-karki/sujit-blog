@@ -1,0 +1,51 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI, a cooling labor market, and the entry-level job squeeze</title>
+  <desc id="desc">Stylized bar comparison of recent-graduate unemployment against the national unemployment rate, with computer-science graduates highlighted.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a16207" />
+      <stop offset="45%" stop-color="#ca8a04" />
+      <stop offset="80%" stop-color="#713f12" />
+      <stop offset="100%" stop-color="#422006" />
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="12%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Watermark grad cap glyph -->
+  <text x="1170" y="600" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="320" font-weight="700" fill="#ffffff" opacity="0.06">&#127891;</text>
+
+  <line x1="60" y1="200" x2="1140" y2="200" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="300" x2="1140" y2="300" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+  <line x1="60" y1="400" x2="1140" y2="400" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+  <!-- Bars: national, recent grads, CS grads -->
+  <g>
+    <rect x="150" y="415" width="130" height="95" rx="8" fill="#fde68a" opacity="0.85" />
+    <rect x="340" y="350" width="130" height="160" rx="8" fill="#fbbf24" opacity="0.92" />
+    <rect x="530" y="320" width="130" height="190" rx="8" fill="#f59e0b" opacity="1" />
+  </g>
+  <text x="215" y="400" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="800" fill="#fffbeb">4.2%</text>
+  <text x="405" y="335" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="800" fill="#fffbeb">5.6%</text>
+  <text x="595" y="305" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="800" fill="#fffbeb">6.1%</text>
+
+  <text x="215" y="545" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#fef3c7" letter-spacing="0.3">NATIONAL</text>
+  <text x="405" y="545" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#fef3c7" letter-spacing="0.3">RECENT GRADS</text>
+  <text x="595" y="545" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#fef3c7" letter-spacing="0.3">CS GRADS</text>
+
+  <!-- Badge -->
+  <g transform="translate(940, 220)">
+    <rect x="-160" y="-34" width="320" height="68" rx="34" fill="#2c1a04" fill-opacity="0.55" stroke="#fde68a" stroke-opacity="0.5" />
+    <text x="0" y="-4" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="21" font-weight="800" fill="#fef3c7" letter-spacing="0.3">JUNE PAYROLLS: +57,000</text>
+    <text x="0" y="20" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fde68a" letter-spacing="0.5" opacity="0.85">PRIOR MONTHS REVISED DOWN 74,000</text>
+  </g>
+
+  <g transform="translate(600, 585)">
+    <text text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#fde68a" letter-spacing="1.2" opacity="0.85">NY FED COLLEGE LABOR MARKET DATA</text>
+  </g>
+</svg>
