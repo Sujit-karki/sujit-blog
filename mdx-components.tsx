@@ -62,6 +62,16 @@ import CarLoanInterestDeductionCalculator from "@/components/custom/CarLoanInter
 import CryptoBasisGapEstimator from "@/components/custom/CryptoBasisGapEstimator";
 import TreasuryVsBankYieldCalculator from "@/components/custom/TreasuryVsBankYieldCalculator";
 import NewGradIncomeGapCalculator from "@/components/custom/NewGradIncomeGapCalculator";
+import BackToSchoolBudgetPlanner from "@/components/custom/BackToSchoolBudgetPlanner";
+import CollegeRoiEstimator from "@/components/custom/CollegeRoiEstimator";
+import StudentHustleIncomePlanner from "@/components/custom/StudentHustleIncomePlanner";
+import CreatorPayoutEstimator from "@/components/custom/CreatorPayoutEstimator";
+import TripCostInflationCalculator from "@/components/custom/TripCostInflationCalculator";
+import HouseholdTariffCostEstimator from "@/components/custom/HouseholdTariffCostEstimator";
+import TrueCostOfDrivingCalculator from "@/components/custom/TrueCostOfDrivingCalculator";
+import NoBuySavingsProjector from "@/components/custom/NoBuySavingsProjector";
+import EtfFlowImpactSimulator from "@/components/custom/EtfFlowImpactSimulator";
+import GameLaunchValueCalculator from "@/components/custom/GameLaunchValueCalculator";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -184,6 +194,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     CryptoBasisGapEstimator,
     TreasuryVsBankYieldCalculator,
     NewGradIncomeGapCalculator,
+    BackToSchoolBudgetPlanner,
+    CollegeRoiEstimator,
+    StudentHustleIncomePlanner,
+    CreatorPayoutEstimator,
+    TripCostInflationCalculator,
+    HouseholdTariffCostEstimator,
+    TrueCostOfDrivingCalculator,
+    NoBuySavingsProjector,
+    EtfFlowImpactSimulator,
+    GameLaunchValueCalculator,
     LineChart,
     PieChart,
     BarChart,
