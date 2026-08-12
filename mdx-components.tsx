@@ -42,6 +42,16 @@ import DebtPayoffCalculator from "@/components/custom/DebtPayoffCalculator";
 import InsuranceDeductibleCalculator from "@/components/custom/InsuranceDeductibleCalculator";
 import StablecoinYieldGapCalculator from "@/components/custom/StablecoinYieldGapCalculator";
 import RateHoldCashCalculator from "@/components/custom/RateHoldCashCalculator";
+import FedPathCashCalculator from "@/components/custom/FedPathCashCalculator";
+import BettingHoldCostCalculator from "@/components/custom/BettingHoldCostCalculator";
+import PhoneFinancingCostCalculator from "@/components/custom/PhoneFinancingCostCalculator";
+import EthStakingYieldCalculator from "@/components/custom/EthStakingYieldCalculator";
+import FafsaAidTimingEstimator from "@/components/custom/FafsaAidTimingEstimator";
+import JobLossRunwayCalculator from "@/components/custom/JobLossRunwayCalculator";
+import MedicareColaOffsetCalculator from "@/components/custom/MedicareColaOffsetCalculator";
+import ContributionLimitMaxPlanner from "@/components/custom/ContributionLimitMaxPlanner";
+import SeasonalIncomePlanner from "@/components/custom/SeasonalIncomePlanner";
+import FlipMarginCalculator from "@/components/custom/FlipMarginCalculator";
 import ColaBenefitEstimator from "@/components/custom/ColaBenefitEstimator";
 import AcaCliffEstimator from "@/components/custom/AcaCliffEstimator";
 import TipsOvertimeDeductionEstimator from "@/components/custom/TipsOvertimeDeductionEstimator";
@@ -174,6 +184,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     InsuranceDeductibleCalculator,
     StablecoinYieldGapCalculator,
     RateHoldCashCalculator,
+    FedPathCashCalculator,
+    BettingHoldCostCalculator,
+    PhoneFinancingCostCalculator,
+    EthStakingYieldCalculator,
+    FafsaAidTimingEstimator,
+    JobLossRunwayCalculator,
+    MedicareColaOffsetCalculator,
+    ContributionLimitMaxPlanner,
+    SeasonalIncomePlanner,
+    FlipMarginCalculator,
     ColaBenefitEstimator,
     AcaCliffEstimator,
     TipsOvertimeDeductionEstimator,

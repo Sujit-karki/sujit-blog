@@ -1,0 +1,107 @@
+---
+title: "Ethereum in 2026: Down From Its High, But the Staking and ETF Story Is More Interesting Than the Price"
+description: "ETH trades well below its 2025 high, but with a third of supply staked and billions in ETF inflows, the on-chain story matters more than the chart. Here's an honest look at staking yield, ETF fees, and what's actually changed."
+date: "2026-08-12"
+author: "Sujit Karki"
+category: "Crypto"
+tags: ["Ethereum", "ETH", "Staking", "ETF", "Crypto"]
+toc:
+  - { id: "where-eth-actually-is", title: "Where ETH actually is", level: 2 }
+  - { id: "what-the-etf-flows-say", title: "What the ETF flows say", level: 2 }
+  - { id: "the-staking-picture", title: "The staking picture", level: 2 }
+  - { id: "the-fee-drag-inside-staked-etfs", title: "The fee drag inside staked ETFs", level: 2 }
+  - { id: "estimate-a-staking-return", title: "Estimate a staking return", level: 2 }
+  - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - q: "What is ETH's staking yield right now?"
+    a: "The base protocol staking yield has been running near 2.6% APR in 2026, down from north of 5% in 2023 as more ETH gets staked and rewards get split among more validators. Staked ETFs typically pass through only a portion of that after fees."
+  - q: "How much ETH is staked?"
+    a: "Roughly a third of total ETH supply is staked as of 2026, spread across hundreds of thousands of validators — a level that keeps rising as staking becomes easier to access through ETFs and exchanges."
+  - q: "Is Ethereum a good investment?"
+    a: "That's not something anyone honest can answer for you, and no one can promise a price. ETH sits well below its 2025 high, fundamentals like staking and ETF access have grown, but crypto remains volatile and speculative. Never invest money you can't afford to lose."
+---
+
+I've written plenty about Bitcoin on this site and almost nothing about Ethereum, so let's fix that. ETH has had a rough stretch on price, but the more interesting story is what's happening underneath it — staking, ETF flows, and a fee structure that quietly eats into the yield everyone's excited about.
+
+<KeyTakeaways items={[
+  "ETH trades well below its 2025 all-time high, even as U.S. spot ETH ETFs have pulled in billions in cumulative inflows.",
+  "Roughly a third of ETH's total supply is now staked, removing it from immediately liquid circulation.",
+  "The base protocol staking yield has drifted down to around 2.6% APR as more validators split the same reward pool.",
+  "Staked ETFs typically keep a meaningful slice of gross staking rewards as fees before passing the rest to you.",
+  "ETF flows have been choppy day to day, not a straight line of institutional buying."
+]} />
+
+## Where ETH actually is
+
+ETH has traded well below its 2025 all-time high of roughly **$4,946** for most of 2026, and the price on any given day can move double digits on crypto-wide sentiment alone. That's the headline chart — down sharply from the peak, choppy since. But price alone is a thin story, so let's go deeper.
+
+<LineChart
+  title="ETH price vs. its 2025 all-time high (illustrative trend)"
+  data={[
+    { period: "2025 ATH", price: 4946 },
+    { period: "Late 2025", price: 3200 },
+    { period: "Early 2026", price: 2400 },
+    { period: "Mid 2026", price: 1900 }
+  ]}
+  xKey="period"
+  series={[{ key: "price", label: "ETH price ($)" }]}
+/>
+
+## What the ETF flows say
+
+U.S. spot Ethereum ETFs have pulled in billions of dollars in cumulative net inflows since launch, but the day-to-day pattern is choppy rather than a straight line — some days bring solid inflows, others see net outflows, particularly from legacy funds that converted from older structures and have bled assets to newer, cheaper products.
+
+The honest read: institutional demand is real but not unanimous. Anyone selling you a clean "institutions are piling in" narrative on a single day's data is cherry-picking. Check a live flow tracker before citing a specific number — it moves daily.
+
+## The staking picture
+
+Here's what genuinely changed the asset. Roughly **a third of all ETH supply** is now staked — tens of millions of ETH across hundreds of thousands of active validators. That's ETH structurally removed from liquid supply and earning a yield instead of sitting idle.
+
+<PieChart
+  title="ETH supply: staked vs. liquid (approximate, 2026)"
+  data={[
+    { label: "Staked", value: 34, color: "#059669" },
+    { label: "Liquid / unstaked", value: 66, color: "#6b7280" }
+  ]}
+  unit="%"
+/>
+
+The catch: as more validators join, the per-validator reward falls. The base staking APR has drifted down to around **2.6%**, well below the 5%+ levels seen in 2023. More participation, thinner yield per validator — that's the mechanism, and it's why "just stake for passive income" is more nuanced than it sounds.
+
+## The fee drag inside staked ETFs
+
+This is the part the ads gloss over. Staked-ETH ETFs don't pass 100% of staking rewards through to you. Representative fund filings describe an aggregate staking fee equal to a meaningful share of gross staking rewards — often in the high teens as a percentage — layered on top of the fund's ordinary management fee.
+
+<InfoBox type="warning">
+"Earn staking yield through a regulated ETF" sounds simple, but do the subtraction. A ~2.6% gross yield minus an 18%-of-rewards staking fee minus a management fee can leave a net figure noticeably below the headline number. Attractive versus zero — but not the number in the marketing.
+</InfoBox>
+
+## Estimate a staking return
+
+<EthStakingYieldCalculator />
+
+## Here's What I'd Actually Do
+
+1. **Decide if you want ETH exposure at all first.** Crypto belongs, at most, in the speculative sliver of a portfolio you could genuinely afford to lose.
+2. **If you want ETH in a retirement or brokerage account, an ETF is the simplest wrapper** — but compare the *net* yield of staked vs. non-staked versions after fees, not the headline APR.
+3. **If you self-custody and stake directly, understand the lockup mechanics and the tax treatment** — staking rewards are generally taxable income when received, not just when sold.
+4. **Track your cost basis obsessively.** See my [crypto 1099-DA cost basis guide](/posts/crypto-1099-da-cost-basis-2026) — brokers often report proceeds without reliable basis data.
+5. **Don't let a staking yield distract from the price risk.** A 2–3% annual yield doesn't offset a much larger price swing in either direction.
+
+For how ETF flows mechanically move a coin's market, see [Bitcoin ETF flows explained](/posts/bitcoin-etf-flows-explained-2026); for the retirement-account angle, see [crypto coming to 401(k)s — but not yet](/posts/crypto-coming-to-401k-not-yet).
+
+## FAQ
+
+<FaqAccordion items={[
+  { q: "What is ETH's staking yield right now?", a: "The base protocol staking yield has been running near 2.6% APR in 2026, down from north of 5% in 2023 as more ETH gets staked and rewards get split among more validators. Staked ETFs typically pass through only a portion of that after fees." },
+  { q: "How much ETH is staked?", a: "Roughly a third of total ETH supply is staked as of 2026, spread across hundreds of thousands of validators — a level that keeps rising as staking becomes easier to access through ETFs and exchanges." },
+  { q: "Is Ethereum a good investment?", a: "That's not something anyone honest can answer for you, and no one can promise a price. ETH sits well below its 2025 high, fundamentals like staking and ETF access have grown, but crypto remains volatile and speculative. Never invest money you can't afford to lose." }
+]} />
+
+<Sources items={[
+  { title: "Ethereum ETF Flow Tracker", url: "https://farside.co.uk/eth/", publisher: "Farside Investors", date: "2026" },
+  { title: "Ethereum staking dashboard", url: "https://www.validatorqueue.com/", publisher: "EthStaker / beaconcha.in", date: "2026" },
+  { title: "Ethereum staking yield", url: "https://www.stakingrewards.com/asset/ethereum-2-0", publisher: "Staking Rewards", date: "2026" },
+  { title: "Ethereum price", url: "https://coinmarketcap.com/currencies/ethereum/", publisher: "CoinMarketCap", date: "2026" },
+  { title: "Ethereum roadmap", url: "https://ethereum.org/roadmap/", publisher: "Ethereum Foundation", date: "2026" }
+]} />
