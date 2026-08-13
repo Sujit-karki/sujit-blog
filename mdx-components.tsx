@@ -82,6 +82,16 @@ import TrueCostOfDrivingCalculator from "@/components/custom/TrueCostOfDrivingCa
 import NoBuySavingsProjector from "@/components/custom/NoBuySavingsProjector";
 import EtfFlowImpactSimulator from "@/components/custom/EtfFlowImpactSimulator";
 import GameLaunchValueCalculator from "@/components/custom/GameLaunchValueCalculator";
+import HarvestTaxSavingsCalculator from "@/components/custom/HarvestTaxSavingsCalculator";
+import PaycheckGapPlanner from "@/components/custom/PaycheckGapPlanner";
+import MarginalVsEffectiveTaxViz from "@/components/custom/MarginalVsEffectiveTaxViz";
+import PretaxHealthElectionPlanner from "@/components/custom/PretaxHealthElectionPlanner";
+import StakingEtfNetYieldCalculator from "@/components/custom/StakingEtfNetYieldCalculator";
+import AffiliateNetPayoutEstimator from "@/components/custom/AffiliateNetPayoutEstimator";
+import GigNetHourlyCalculator from "@/components/custom/GigNetHourlyCalculator";
+import WinterHeatingEstimator from "@/components/custom/WinterHeatingEstimator";
+import ConversionCliffEstimator from "@/components/custom/ConversionCliffEstimator";
+import EarningsGrowthVsPriceViz from "@/components/custom/EarningsGrowthVsPriceViz";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -224,6 +234,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     NoBuySavingsProjector,
     EtfFlowImpactSimulator,
     GameLaunchValueCalculator,
+    HarvestTaxSavingsCalculator,
+    PaycheckGapPlanner,
+    MarginalVsEffectiveTaxViz,
+    PretaxHealthElectionPlanner,
+    StakingEtfNetYieldCalculator,
+    AffiliateNetPayoutEstimator,
+    GigNetHourlyCalculator,
+    WinterHeatingEstimator,
+    ConversionCliffEstimator,
+    EarningsGrowthVsPriceViz,
     LineChart,
     PieChart,
     BarChart,

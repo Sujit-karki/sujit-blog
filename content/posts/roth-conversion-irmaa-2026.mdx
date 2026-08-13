@@ -1,0 +1,111 @@
+---
+title: "Roth Conversions and the IRMAA Cliff (2026)"
+description: "A Roth conversion is permanent and counts as income now — and can spike your 2028 Medicare premium. Here's how to size it right."
+date: "2026-08-13"
+author: "Sujit Karki"
+category: "Investing"
+tags: ["Roth Conversion", "IRMAA", "Medicare", "Retirement Planning", "Tax Planning"]
+toc:
+  - { id: "the-news", title: "What actually happened", level: 2 }
+  - { id: "the-math", title: "The math for one person", level: 2 }
+  - { id: "counterpoint", title: "Why converting can still be right", level: 2 }
+  - { id: "calculator", title: "Run your own numbers", level: 2 }
+  - { id: "what-id-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - { q: "Does a Roth conversion affect Medicare premiums?", a: "Yes. A Roth conversion adds to your modified adjusted gross income, and Medicare's IRMAA surcharge uses a two-year lookback — so a 2026 conversion can raise your 2028 Part B and Part D premiums. Because IRMAA is a cliff, crossing a threshold by even $1 triggers the full surcharge for that tier." }
+  - { q: "Can you undo a Roth conversion if it pushes you into a higher IRMAA tier?", a: "No. The Tax Cuts and Jobs Act eliminated Roth recharacterization starting with the 2018 tax year, so a conversion is permanent once completed. This makes sizing the conversion correctly before you execute it far more important than it was under the old, reversible rules." }
+  - { q: "How far in advance does a Roth conversion affect Medicare premiums?", a: "Two years, due to IRMAA's lookback structure — the income reported on your tax return from two years prior determines this year's premium tier. A conversion done in 2026 shows up in your 2028 Medicare premiums, not immediately." }
+---
+
+I've written about Roth conversions and about Medicare separately on this site. This is the post where they collide, because the interaction between the two is exactly the kind of thing a good financial plan accounts for and a rushed year-end conversion often doesn't.
+
+<KeyTakeaways items={[
+  "A Roth conversion adds the full converted amount to your ordinary taxable income in the year you convert — there's no special lower rate for it.",
+  "IRMAA, the Medicare income surcharge, uses a two-year lookback, so a 2026 conversion can raise your Part B and Part D premiums starting in 2028.",
+  "IRMAA works as a cliff, not a gradual slope — crossing a tier threshold by even $1 triggers the full higher surcharge for that tier, not a prorated amount.",
+  "Since the Tax Cuts and Jobs Act eliminated recharacterization, a Roth conversion is permanent — you can't undo it once completed.",
+  "Sizing a conversion to 'fill up' a bracket or stay just under an IRMAA threshold is a standard, deliberate strategy — not something to improvise in December."
+]} />
+
+## What actually happened
+
+Nothing new triggered this post — it's the collision of two things I've covered separately finally getting the joint treatment it deserves. Roth conversions get a lot of attention every fall as a year-end tax-planning move: move money from a traditional IRA or 401(k) into a Roth account, pay ordinary income tax on the converted amount now, and let it grow tax-free from that point forward. For people expecting higher tax rates later, or wanting to reduce future required minimum distributions, that trade can make real sense.
+
+What gets less attention is that the income from a conversion doesn't just affect your tax bracket — it also counts toward your Modified Adjusted Gross Income (MAGI) for Medicare's Income-Related Monthly Adjustment Amount, IRMAA. If you're on Medicare or will be within two years, a conversion sized without checking against IRMAA thresholds can trigger a real, multi-year premium increase that easily outweighs the tax benefit the conversion was supposed to deliver.
+
+<StatCard label="IRMAA lookback period" value={2} format="number" sublabel="Years — 2026 income affects 2028 premiums" />
+<StatCard label="Roth conversion reversibility" value={0} format="number" sublabel="Permanent since TCJA eliminated recharacterization" />
+
+## The math for one person
+
+Two mechanics matter here, and they compound in a way that catches people off guard. First: IRMAA isn't assessed on your current income — it's assessed on a two-year-old tax return. The premium you pay in 2028 is based on the MAGI reported on your 2026 tax return. That lag means a conversion decision made this year has consequences that don't show up in your monthly budget until two full years later, which makes it easy to convert without connecting the dots at the time.
+
+Second, and more consequential: IRMAA is structured as a cliff, not a smooth slope. Medicare defines a series of MAGI thresholds, and each one has an associated flat surcharge added to your Part B and Part D premiums. Land $1 over a threshold, and you pay the full surcharge for that entire tier — not a prorated amount reflecting how far over you are. A conversion that lands you at $1 over a tier boundary costs the same in surcharge as one that lands you $20,000 over it, which is precisely why sizing the conversion precisely, rather than roughly, matters so much.
+
+<InfoBox type="warning">
+Because a Roth conversion is irreversible under current law, an IRMAA-triggering conversion mistake can't be corrected after the fact the way it could before 2018, when recharacterization let you undo a conversion you regretted. Model the MAGI impact before you convert, not after.
+</InfoBox>
+
+<BarChart
+  title="Illustrative: converting $1 more than needed"
+  description="Simplified example — a conversion that just crosses an IRMAA tier boundary triggers the full tier surcharge, not a prorated one."
+  data={[
+    { scenario: "Convert to just under threshold", Surcharge: 0 },
+    { scenario: "Convert $1 over threshold", Surcharge: 888 }
+  ]}
+  xKey="scenario"
+  series={[{ key: "Surcharge", label: "Added annual Part B/D surcharge ($)", color: "#ef4444" }]}
+  unit="$"
+  colorByCategory
+/>
+
+## Why converting can still be right
+
+None of this is an argument against Roth conversions — it's an argument for sizing them deliberately. The standard, well-established version of this strategy is often called "filling up the bracket": convert exactly enough to use up the remaining room in your current tax bracket (or to stay just under an IRMAA threshold), and stop there for the year, potentially spreading a larger total conversion across several years instead of doing it all at once.
+
+<ComparisonTable
+  headers={["Approach", "Tax outcome", "IRMAA outcome"]}
+  rows={[
+    ["Convert the whole balance in one year", "Likely pushes into higher marginal brackets", "High risk of crossing one or more IRMAA tiers"],
+    ["Convert to the top of your current bracket, stop there", "Efficient — no wasted room in a lower bracket", "Can still cross an IRMAA tier if MAGI is already close to one"],
+    ["Convert to just under the nearest IRMAA threshold", "May leave some bracket room unused", "Avoids the surcharge entirely for that MAGI level"],
+    ["Multi-year conversion plan, sized against both bracket and IRMAA thresholds each year", "Most tax-efficient over time", "Deliberately avoids cliffs in most years, by design"]
+  ]}
+  highlightCol={3}
+/>
+
+The years before you or your spouse turn 65 and enroll in Medicare are often the highest-value window for larger conversions, precisely because IRMAA doesn't apply yet — the two-year lookback means conversions done well before Medicare eligibility never trigger a surcharge on your own account at all.
+
+## Run your own numbers
+
+<ConversionCliffEstimator />
+
+For the base mechanics of Roth versus traditional accounts this builds on, see [Roth IRA vs. traditional IRA](/posts/roth-ira-vs-traditional-ira). For what's changing on the Medicare side more broadly, see [Medicare 2027 Part B and open enrollment](/posts/medicare-2027-part-b-open-enrollment). And if the mandatory Roth catch-up rules affect how you're already contributing, [that 2026 rule change](/posts/mandatory-roth-catch-up-2026) is worth reading alongside this.
+
+## Here's What I'd Actually Do
+
+1. **Model your MAGI for the conversion year against current IRMAA thresholds before you convert anything** — not after you file, when it's too late to adjust.
+2. **If you're within two years of Medicare eligibility, treat IRMAA as a hard constraint on conversion size**, not an afterthought to check once the tax math looks good.
+3. **Consider spreading a large conversion across multiple years** instead of one lump sum, to avoid stacking a big one-time MAGI spike against a single year's thresholds.
+4. **Verify current IRMAA thresholds directly at medicare.gov or with a tax professional** before finalizing any conversion amount — thresholds adjust periodically and the exact current figures matter.
+5. **Remember the two-year lag when budgeting** — a 2026 conversion's premium impact shows up in 2028, so don't assume "no change yet" means "no change coming."
+6. **Get a second opinion from a fee-only financial planner or CPA for any conversion above a few tens of thousands of dollars** — the permanence of the decision justifies the cost of a professional review.
+
+## FAQ
+
+<FaqAccordion items={[
+  { q: "Does a Roth conversion affect Medicare premiums?", a: "Yes. A Roth conversion adds to your modified adjusted gross income, and Medicare's IRMAA surcharge uses a two-year lookback — so a 2026 conversion can raise your 2028 Part B and Part D premiums. Because IRMAA is a cliff, crossing a threshold by even $1 triggers the full surcharge for that tier." },
+  { q: "Can you undo a Roth conversion if it pushes you into a higher IRMAA tier?", a: "No. The Tax Cuts and Jobs Act eliminated Roth recharacterization starting with the 2018 tax year, so a conversion is permanent once completed. This makes sizing the conversion correctly before you execute it far more important than it was under the old, reversible rules." },
+  { q: "How far in advance does a Roth conversion affect Medicare premiums?", a: "Two years, due to IRMAA's lookback structure — the income reported on your tax return from two years prior determines this year's premium tier. A conversion done in 2026 shows up in your 2028 Medicare premiums, not immediately." }
+]} />
+
+<InfoBox type="warning">
+This post's calculator uses commonly-cited IRMAA threshold estimates that are not confirmed against CMS's official current tables — treat them as illustrative, and verify exact figures at medicare.gov before converting. Not tax or Medicare advice.
+</InfoBox>
+
+<Sources items={[
+  { title: "Medicare Part B IRMAA overview", url: "https://www.medicare.gov/basics/costs/medicare-costs/higher-income", publisher: "Medicare.gov", date: "2026" },
+  { title: "IRMAA determination and appeals", url: "https://www.ssa.gov/benefits/medicare/medicare-premiums.html", publisher: "Social Security Administration", date: "2026" },
+  { title: "Roth conversion and recharacterization rules post-TCJA", url: "https://www.irs.gov/retirement-plans/roth-iras", publisher: "IRS", date: "2026" },
+  { title: "Roth conversions and the IRMAA cliff", url: "https://www.mercer.com", publisher: "Mercer", date: "2026" }
+]} />

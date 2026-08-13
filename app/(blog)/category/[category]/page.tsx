@@ -11,17 +11,32 @@ export function generateStaticParams() {
   return categories.map((cat) => ({ category: slugifyCategory(cat) }));
 }
 
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  Investing:
+    "Index funds, IRAs, Roth conversions, and tax-loss harvesting — in-depth investing guides backed by primary sources and interactive calculators, not hot takes.",
+  "Personal Finance":
+    "Budgeting, taxes, insurance, and household costs explained with real numbers — practical personal finance guides for planning 2026 and beyond.",
+  Crypto:
+    "Bitcoin, Ethereum, and Solana ETFs, staking yields, and crypto tax rules — honest, source-checked crypto analysis with no hype and no price predictions.",
+  "Side Hustles":
+    "Gig work, affiliate income, and creator payouts — the real math on what side hustles actually pay after taxes, fees, and returns.",
+  "Market Analysis":
+    "Fed policy, jobs reports, earnings season, and market concentration — data-driven market analysis for everyday index-fund investors.",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: slug } = await params;
   const name = categoryFromSlug(slug);
   if (!name) return {};
   const url = `${siteConfig.url}/category/${slug}`;
   const isThin = getPostsByCategory(name).length < 3;
+  const description =
+    CATEGORY_DESCRIPTIONS[name] ?? `Browse all ${name} articles on ${siteConfig.name} — in-depth guides and analysis.`;
   return {
     title: `${name} Articles`,
-    description: `Browse all ${name} articles on ${siteConfig.name} — in-depth guides and analysis.`,
+    description,
     alternates: { canonical: url },
-    openGraph: { type: "website", url, title: `${name} | ${siteConfig.name}`, description: `Browse ${name} articles.` },
+    openGraph: { type: "website", url, title: `${name} | ${siteConfig.name}`, description },
     robots: isThin ? { index: false, follow: true } : undefined,
   };
 }

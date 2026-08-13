@@ -1,0 +1,101 @@
+---
+title: "Solana Staking ETFs: The Yield After Fees (2026)"
+description: "US Solana ETFs launched with staking built in. Here's the real net yield after sponsor and staking fees — and how it compares to holding SOL directly."
+date: "2026-08-13"
+author: "Sujit Karki"
+category: "Crypto"
+tags: ["Solana", "SOL", "Staking", "ETF", "Crypto", "BSOL"]
+toc:
+  - { id: "the-news", title: "What actually happened", level: 2 }
+  - { id: "the-math", title: "The math for one person", level: 2 }
+  - { id: "counterpoint", title: "The case against chasing yield", level: 2 }
+  - { id: "calculator", title: "Run your own numbers", level: 2 }
+  - { id: "what-id-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - { q: "Do Solana ETFs pay staking yield?", a: "Yes. Unlike US Bitcoin and Ethereum ETFs, US spot Solana ETFs launched in October 2025 with staking enabled from day one, so they pass through staking rewards. As of August 2026, Bitwise's BSOL reported a net staking reward rate of 5.84% before its 0.20% sponsor fee." }
+  - { q: "What's the difference between BSOL, VSOL, and GSOL?", a: "They're competing spot Solana ETFs from different issuers — Bitwise (BSOL), VanEck (VSOL), and Grayscale (GSOL) — with different fees, staked percentages, and asset sizes. BSOL and VSOL both stake close to 100% and 72% of assets respectively; fees and net yields vary between them and change over time, so compare current figures rather than relying on any single snapshot." }
+  - { q: "Is staking yield the main reason to buy a Solana ETF?", a: "It shouldn't be. SOL's price has moved by more in single months than a full year of staking yield could offset in either direction. The yield is a real, differentiating feature versus non-staked crypto ETFs, but it's a secondary consideration behind the price and volatility risk of holding SOL at all." }
+---
+
+I've covered Bitcoin's ETF flows and Ethereum's staking economics on this site. Solana's spot ETFs are the newer story, and the interesting part isn't that they exist — it's that they launched with staking built in from day one, which neither of the bigger two managed at launch. That's a real structural difference, and it's worth doing the actual fee math instead of taking the marketing number at face value.
+
+<KeyTakeaways items={[
+  "US spot Solana ETFs began trading October 28, 2025, with staking enabled from launch — a feature Bitcoin and Ethereum ETFs lacked when they first launched.",
+  "Bitwise's BSOL reported a gross staking reward rate of 6.21% and a net rate of 5.84% after its 0.20% sponsor fee, with roughly 100% of assets staked, as of August 2026.",
+  "VanEck's VSOL reported a lower net yield (~4.25%) on a smaller asset base, with a 0.30% expense ratio and about 72% of assets staked.",
+  "Cumulative US Solana ETF net inflows reached roughly $1.1 billion through early August 2026 — real, but a fraction of Bitcoin and Ethereum ETF flows.",
+  "Net staking yield is a genuine differentiator versus non-staked ETFs, but it's small relative to SOL's price volatility and shouldn't drive the buy decision on its own."
+]} />
+
+## What actually happened
+
+US spot Solana ETFs launched October 28, 2025 (Bitwise's BSOL began trading October 23), following the SEC's adoption of generic listing standards for crypto ETFs on September 18, 2025 — a process shift that let issuers list new crypto ETFs faster than the individual-approval path Bitcoin and Ethereum funds went through. The genuinely new part: these funds launched already staking the SOL they hold, passing a share of the protocol-level staking reward through to shareholders as part of the fund's return, something neither the first Bitcoin ETFs (Bitcoin isn't a proof-of-stake asset, so this doesn't apply) nor the first-generation Ethereum ETFs offered at launch.
+
+As of August 2026, three issuers had funds live: Bitwise (BSOL), VanEck (VSOL), and Grayscale (GSOL, converted from an existing product with its fee cut to 0.19% sponsor plus a 7% staking fee effective June 25, 2026). Bitwise's BSOL was the largest, with reported assets around $616 million, a 0.20% sponsor fee, and a net staking reward rate of 5.84% (gross 6.21%) with essentially all fund assets staked. VanEck's VSOL was considerably smaller — around $14.7 million — with a higher 0.30% expense ratio, a lower gross staking yield of 4.46% (net 4.25%), and only about 72% of assets actually staked.
+
+<StatCard label="BSOL net staking yield" value={5.84} format="percent" sublabel="As of 08/10/2026 — bsoletf.com" />
+<StatCard label="BSOL sponsor fee" value={0.20} format="percent" />
+<StatCard label="Cumulative US SOL ETF inflows" value={1122} format="currency" sublabel="Millions, through Aug 4, 2026 (Farside)" />
+
+## The math for one person
+
+The number that gets marketed is the gross staking reward rate — the yield SOL earns natively from validating the network, before any fund-level costs. The number that actually lands in your account is smaller, for two mechanical reasons that stack on top of each other.
+
+First, not every dollar in the fund is staked. BSOL runs close to 100% staked, but VSOL runs closer to 72% — meaning roughly 28% of VSOL's assets earn no staking reward at all, dragging down the blended yield the whole fund actually delivers. Second, whatever staking reward the fund does earn gets reduced by the fund's own expense ratio (and, for some funds, an additional staking-specific fee layered on top of the base management fee). Do both subtractions and BSOL's 6.21% gross becomes 5.84% net; VSOL's 4.46% gross becomes 4.25% net on the staked portion, but the unstaked 28% pulls the fund's overall blended yield lower still.
+
+<InfoBox type="tip">
+When comparing staked crypto ETFs, always ask for three numbers, not one: the gross protocol staking rate, the percentage of fund assets actually staked, and the total fee load (sponsor fee plus any separate staking fee). A fund quoting only the first number is quoting the least useful one.
+</InfoBox>
+
+None of this touches the part of the return that actually dominates: SOL's own price. At roughly $76 as of mid-August 2026 (check a live price before relying on this — it moves daily), SOL's month-to-month price swings have routinely exceeded a full year of staking yield in either direction. A 5%–6% annual yield is a real, incremental benefit over holding a non-yielding crypto ETF. It is not, by itself, an investment thesis.
+
+## The case against chasing yield
+
+The obvious pull here is comparing 5.84% to a savings account or Treasury yield and concluding the "risk-adjusted" case is compelling. It isn't a fair comparison. A staked Solana ETF still carries full exposure to SOL's price, which is dramatically more volatile than either a savings account or a Treasury bond, and the staking yield doesn't hedge that volatility at all — it's additive return on top of a still-fully-exposed principal, not downside protection.
+
+<ComparisonTable
+  headers={["Angle", "What it gets right", "What it misses"]}
+  rows={[
+    ["\"5.84% beats my savings account\"", "The yield is real and paid regularly", "Ignores that SOL's price can move ±30% or more in a single quarter — the yield doesn't offset that"],
+    ["\"Staking is passive income\"", "It is genuinely passive once you own the ETF", "It's taxable income in the year received for direct stakers, and reduces but doesn't eliminate opportunity cost of capital tied up in a volatile asset"],
+    ["\"ETFs are the safe way to get staking exposure\"", "Regulated wrapper, no self-custody or slashing risk to manage yourself", "Still carries fund-specific risk — fee changes, staked-percentage changes, and issuer decisions all affect your actual return"]
+  ]}
+/>
+
+There's also a genuine tradeoff against self-custody staking: doing it yourself typically captures the full gross yield with no fund-level fee drag, but requires understanding lockup and unstaking-queue mechanics, running or delegating to a validator, and managing your own tax reporting — friction a lot of investors reasonably decide isn't worth it for a few percentage points of extra yield.
+
+## Run your own numbers
+
+<StakingEtfNetYieldCalculator />
+
+For the equivalent staking mechanics on Ethereum, where the fee-drag story is similar but the specific numbers differ, see [Ethereum's 2026 staking and ETF picture](/posts/ethereum-2026-staking-etf). For how ETF flows mechanically move a coin's price independent of staking, see [Bitcoin ETF flows explained](/posts/bitcoin-etf-flows-explained-2026). And if you're weighing whether crypto belongs in a retirement account at all, [crypto coming to 401(k)s — but not yet](/posts/crypto-coming-to-401k-not-yet) covers where that stands.
+
+## Here's What I'd Actually Do
+
+1. **Decide on SOL exposure first, staking yield second.** The yield is a real bonus on top of an investment decision, not a reason to make the decision.
+2. **Compare net yield, not gross, across funds** — the staked percentage and total fee load can turn a higher headline number into a lower actual one.
+3. **Re-check current AUM, fees, and staked share before investing** — all three move regularly, and a number from a few months ago can already be stale.
+4. **If you're set on staking yourself instead of through an ETF, understand the unstaking-queue delay** before you need the liquidity.
+5. **Track your cost basis carefully regardless of which route you take** — see my [crypto 1099-DA cost basis guide](/posts/crypto-1099-da-cost-basis-2026) for why this matters more than most investors expect.
+6. **Keep crypto, staked or not, in the speculative slice of your portfolio** — money you could genuinely afford to lose, not your emergency fund or near-term savings.
+
+## FAQ
+
+<FaqAccordion items={[
+  { q: "Do Solana ETFs pay staking yield?", a: "Yes. Unlike US Bitcoin and Ethereum ETFs, US spot Solana ETFs launched in October 2025 with staking enabled from day one, so they pass through staking rewards. As of August 2026, Bitwise's BSOL reported a net staking reward rate of 5.84% before its 0.20% sponsor fee." },
+  { q: "What's the difference between BSOL, VSOL, and GSOL?", a: "They're competing spot Solana ETFs from different issuers — Bitwise (BSOL), VanEck (VSOL), and Grayscale (GSOL) — with different fees, staked percentages, and asset sizes. BSOL and VSOL both stake close to 100% and 72% of assets respectively; fees and net yields vary between them and change over time, so compare current figures rather than relying on any single snapshot." },
+  { q: "Is staking yield the main reason to buy a Solana ETF?", a: "It shouldn't be. SOL's price has moved by more in single months than a full year of staking yield could offset in either direction. The yield is a real, differentiating feature versus non-staked crypto ETFs, but it's a secondary consideration behind the price and volatility risk of holding SOL at all." }
+]} />
+
+<InfoBox type="warning">
+SOL price, fund AUM, fees, and staked percentages all change frequently — every figure here is labeled as-of a specific date and should be re-verified before you rely on it. Not investment advice; crypto is volatile and speculative.
+</InfoBox>
+
+<Sources items={[
+  { title: "BSOL fund data (AUM, fee, staking yield)", url: "https://www.bsoletf.com", publisher: "Bitwise", date: "As of 08/10/2026" },
+  { title: "VSOL fund data", url: "https://www.vaneck.com", publisher: "VanEck", date: "As of 08/12/2026" },
+  { title: "Grayscale Solana Trust ETF fee filing", url: "https://etfs.grayscale.com", publisher: "Grayscale / SEC 424B3", date: "June 25, 2026" },
+  { title: "Solana ETF flow tracker", url: "https://farside.co.uk/sol/", publisher: "Farside Investors", date: "Through Aug 4, 2026" },
+  { title: "SOL price", url: "https://coinmarketcap.com/currencies/solana/", publisher: "CoinMarketCap", date: "Aug 11, 2026" },
+  { title: "SEC generic listing standards for crypto ETPs", url: "https://www.sec.gov", publisher: "SEC", date: "September 18, 2025" }
+]} />

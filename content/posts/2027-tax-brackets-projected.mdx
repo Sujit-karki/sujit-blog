@@ -1,0 +1,98 @@
+---
+title: "2027 Tax Brackets: What's Projected vs. What's Official"
+description: "The IRS sets 2027 brackets in October. Here's the confirmed 2026 baseline, why projections are only estimates, and how marginal rates actually work."
+date: "2026-08-13"
+author: "Sujit Karki"
+category: "Personal Finance"
+tags: ["Tax Brackets", "IRS", "2027 Taxes", "Standard Deduction", "Personal Finance"]
+toc:
+  - { id: "the-news", title: "What actually happened", level: 2 }
+  - { id: "the-math", title: "The math for one person", level: 2 }
+  - { id: "counterpoint", title: "Why projections aren't official", level: 2 }
+  - { id: "calculator", title: "Run your own numbers", level: 2 }
+  - { id: "what-id-do", title: "Here's What I'd Actually Do", level: 2 }
+faq:
+  - { q: "When will the IRS announce 2027 tax brackets?", a: "The IRS typically releases the next year's inflation-adjusted brackets in October, in an annual revenue procedure. The 2026 figures came from Revenue Procedure 2025-32 on October 9, 2025. Until an equivalent 2027 revenue procedure is published, any 2027 threshold you see is a projection, not an official number." }
+  - { q: "What's the difference between marginal and effective tax rate?", a: "Your marginal rate is the rate applied to your last dollar of income — the bracket you're 'in.' Your effective rate is your total tax divided by your total income, which is always lower than your marginal rate because lower brackets and the standard deduction apply to earlier dollars first." }
+  - { q: "What was the 2026 standard deduction?", a: "For 2026, the IRS set the standard deduction at $16,100 for single filers, $32,200 for married filing jointly, and $24,150 for head of household, per Revenue Procedure 2025-32 — roughly a 2.7% increase over 2025's figures." }
+---
+
+Every fall I get the same search traffic spike for "next year's tax brackets," and every fall half the articles that show up are guessing dressed up as reporting. I'd rather tell you plainly what's confirmed, what's projected, and why the gap matters more than people assume.
+
+<KeyTakeaways items={[
+  "The IRS had not released official 2027 tax brackets as of this writing — they typically arrive in an October revenue procedure.",
+  "2026's brackets are confirmed: seven rates (10/12/22/24/32/35/37%) and a standard deduction of $16,100 single, $32,200 married filing jointly, $24,150 head of household.",
+  "The 2025-to-2026 inflation adjustment averaged about 2.7% across brackets and the standard deduction.",
+  "Any 2027 number you see before the official revenue procedure is a projection based on inflation trends, not a citable IRS figure.",
+  "Your marginal rate and your effective rate are different numbers, and confusing them leads to bad decisions about raises, bonuses, and Roth conversions."
+]} />
+
+## What actually happened
+
+Nothing official, and that's the point of this post. The IRS adjusts federal income tax brackets, the standard deduction, and dozens of other thresholds every year for inflation, using a formula tied to the Chained Consumer Price Index. The adjustment for a given tax year is announced the preceding autumn — the 2026 figures came from Revenue Procedure 2025-32, published October 9, 2025. Following that pattern, 2027's figures should land in a similar window, roughly October 2026, likely a few weeks after this post publishes.
+
+That timing gap is exactly why "2027 tax brackets" content proliferates every September before anything is confirmed. Search interest doesn't wait for the IRS's calendar, and neither, unfortunately, does a lot of published "guidance." I'm not going to pretend I know the exact 2027 numbers before the IRS says so. What I can do is show you the confirmed 2026 baseline and how the adjustment mechanism works, so you can sanity-check any "2027 brackets" article you encounter between now and October — including this one, once the real numbers land.
+
+<StatCard label="2026 single standard deduction" value={16100} format="currency" />
+<StatCard label="2026 MFJ standard deduction" value={32200} format="currency" />
+<StatCard label="2025→2026 adjustment" value={2.7} format="percent" sublabel="Approximate average across thresholds" />
+
+## The math for one person
+
+Here's the confirmed 2026 baseline, because it's the number you should actually be using to plan through the rest of this year. Seven marginal rates apply: 10%, 12%, 22%, 24%, 32%, 35%, and 37%. The standard deduction is $16,100 for single filers, $32,200 for married filing jointly, and $24,150 for head of household. Those figures already reflect the roughly 2.7% average bump from 2025 — useful context for guessing at 2027, since recent years' adjustments have clustered in a similar 2.5%–3% range as inflation cooled from its 2022 peak.
+
+The part worth actually internalizing, independent of which year's numbers you're using, is how marginal brackets work. People routinely think a raise that pushes them "into a higher bracket" means all their income gets taxed at the new, higher rate. It doesn't. Only the income that falls within that bracket gets taxed at that bracket's rate — everything below it stays taxed at the lower rates it already qualified for. Your effective rate — total tax divided by total income — is always meaningfully below your marginal rate once you account for the standard deduction and the lower brackets underneath your top one.
+
+<InfoBox type="tip">
+If you're deciding whether to take an extra freelance project, a bonus, or a Roth conversion that might "push you into a higher bracket," the real question is what your marginal rate is on that specific extra income — not what happens to your income overall, which barely moves.
+</InfoBox>
+
+## Why projections aren't official
+
+If you see a "2027 tax brackets" article citing exact dollar thresholds before roughly October 2026, ask where the number came from. There are three legitimate categories, and they're not equally reliable:
+
+<ComparisonTable
+  headers={["Source type", "Reliability", "What it actually is"]}
+  rows={[
+    ["IRS Revenue Procedure", "Official", "The only citable, final number — published once, applies to that tax year"],
+    ["Major tax-research \"first look\" estimates (e.g., Bloomberg Tax, Wolters Kluwer)", "Directionally solid", "Projections using the same CPI formula the IRS uses, usually released in September, close to official but not guaranteed exact"],
+    ["Generic \"2027 tax brackets\" content published mid-year", "Treat with skepticism", "Often a stale rehash of the prior year's numbers with the year changed, or a rough extrapolation with no methodology shown"]
+  ]}
+  highlightCol={0}
+/>
+
+As of this writing, no major forecaster had published complete 2027 threshold tables yet — the "first look" reports from tax-research publishers that do this work seriously typically come out in September, closer to the real announcement. Anything claiming precise 2027 numbers earlier than that deserves real skepticism about its methodology.
+
+## Run your own numbers
+
+<MarginalVsEffectiveTaxViz />
+
+Toggle between the confirmed 2026 figures and the illustrative 2027 projection above — notice the "projected" banner doesn't disappear, on purpose. That's not a bug; it's the whole point of this post. Treat the 2027 tab as a planning estimate, not a number to file with.
+
+Tax brackets interact with a lot of other 2027 numbers that are worth tracking together — see [what no-tax-on-tips-and-overtime means for your actual paycheck](/posts/no-tax-on-tips-overtime-2026) and [the 2027 Social Security COLA](/posts/social-security-cola-2027) for two other inflation-linked figures moving on a similar fall-announcement timeline. If you're weighing whether to accelerate retirement contributions before brackets shift, [the mandatory Roth catch-up rules starting in 2026](/posts/mandatory-roth-catch-up-2026) are worth reading alongside this.
+
+## Here's What I'd Actually Do
+
+1. **Plan the rest of 2026 against the confirmed 2026 brackets, not a guess about 2027.** You know exactly what applies to income you earn through December 31.
+2. **Wait for the actual IRS revenue procedure before making a 2027-specific decision** — like the size of a Roth conversion — that depends on precise threshold numbers.
+3. **If you need a rough 2027 estimate now, apply a 2.5%–3% adjustment to 2026's figures** and treat the result as a planning range, not a fact.
+4. **Recheck this post (or the IRS site directly) in October.** I'll update the "projected" figures the moment the real revenue procedure lands.
+5. **Understand your own marginal vs. effective rate this year** — it's the number that actually drives smart decisions about raises, side income, and conversions, and it doesn't change just because the brackets shift slightly next year.
+
+## FAQ
+
+<FaqAccordion items={[
+  { q: "When will the IRS announce 2027 tax brackets?", a: "The IRS typically releases the next year's inflation-adjusted brackets in October, in an annual revenue procedure. The 2026 figures came from Revenue Procedure 2025-32 on October 9, 2025. Until an equivalent 2027 revenue procedure is published, any 2027 threshold you see is a projection, not an official number." },
+  { q: "What's the difference between marginal and effective tax rate?", a: "Your marginal rate is the rate applied to your last dollar of income — the bracket you're 'in.' Your effective rate is your total tax divided by your total income, which is always lower than your marginal rate because lower brackets and the standard deduction apply to earlier dollars first." },
+  { q: "What was the 2026 standard deduction?", a: "For 2026, the IRS set the standard deduction at $16,100 for single filers, $32,200 for married filing jointly, and $24,150 for head of household, per Revenue Procedure 2025-32 — roughly a 2.7% increase over 2025's figures." }
+]} />
+
+<InfoBox type="warning">
+Every 2027 figure in this post's calculator is explicitly labeled projected, not official. Confirm exact numbers at irs.gov once the 2027 revenue procedure is published, expected around October 2026. Not tax advice.
+</InfoBox>
+
+<Sources items={[
+  { title: "Revenue Procedure 2025-32 (2026 inflation adjustments)", url: "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf", publisher: "IRS", date: "October 9, 2025" },
+  { title: "2026 Tax Brackets", url: "https://taxfoundation.org/data/all/federal/2026-tax-brackets/", publisher: "Tax Foundation", date: "2025-2026" },
+  { title: "IRS Newsroom — annual inflation adjustments", url: "https://www.irs.gov/newsroom", publisher: "IRS", date: "2026" }
+]} />
