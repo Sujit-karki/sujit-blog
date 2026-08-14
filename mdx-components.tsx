@@ -92,6 +92,16 @@ import GigNetHourlyCalculator from "@/components/custom/GigNetHourlyCalculator";
 import WinterHeatingEstimator from "@/components/custom/WinterHeatingEstimator";
 import ConversionCliffEstimator from "@/components/custom/ConversionCliffEstimator";
 import EarningsGrowthVsPriceViz from "@/components/custom/EarningsGrowthVsPriceViz";
+import SaltCapWindowCalculator from "@/components/custom/SaltCapWindowCalculator";
+import SelfEmployedPlanMaxCalculator from "@/components/custom/SelfEmployedPlanMaxCalculator";
+import ClarityActTimeline from "@/components/custom/ClarityActTimeline";
+import IntervalGateExitCalculator from "@/components/custom/IntervalGateExitCalculator";
+import HolidayFareTimingCalculator from "@/components/custom/HolidayFareTimingCalculator";
+import CharitableDeduction2026Estimator from "@/components/custom/CharitableDeduction2026Estimator";
+import BnplScoreImpactEstimator from "@/components/custom/BnplScoreImpactEstimator";
+import Q4SafeHarborCalculator from "@/components/custom/Q4SafeHarborCalculator";
+import QcdRmdSavingsCalculator from "@/components/custom/QcdRmdSavingsCalculator";
+import MedicareTotalCostEstimator from "@/components/custom/MedicareTotalCostEstimator";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -244,6 +254,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     WinterHeatingEstimator,
     ConversionCliffEstimator,
     EarningsGrowthVsPriceViz,
+    SaltCapWindowCalculator,
+    SelfEmployedPlanMaxCalculator,
+    ClarityActTimeline,
+    IntervalGateExitCalculator,
+    HolidayFareTimingCalculator,
+    CharitableDeduction2026Estimator,
+    BnplScoreImpactEstimator,
+    Q4SafeHarborCalculator,
+    QcdRmdSavingsCalculator,
+    MedicareTotalCostEstimator,
     LineChart,
     PieChart,
     BarChart,
