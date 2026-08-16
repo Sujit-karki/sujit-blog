@@ -121,9 +121,12 @@ my-blog/
 │   └── posts/                   # All blog posts as .mdx files
 ├── lib/
 │   ├── posts.ts                 # Post reading/sorting/filtering + Zod frontmatter validation
+│   ├── posts.test.ts            # Vitest unit tests for lib/posts.ts
 │   ├── site-config.ts           # Site name, author info, categories
 │   ├── tools-config.ts          # /tools registry: copy, FAQ, HowTo steps per calculator
+│   ├── category-theme.ts        # Per-category color/icon theming
 │   └── motion/tokens.ts         # Shared durations/easings/variants for the Motion provider
+├── e2e/                          # Playwright end-to-end specs
 └── public/                      # Static assets
 ```
 
@@ -160,6 +163,19 @@ taskkill /PID <PID> /F
 ```bash
 lsof -ti:3000 | xargs kill -9
 ```
+
+---
+
+## Testing
+
+```bash
+npm run lint       # ESLint
+npm run typecheck  # tsc --noEmit
+npm run test:unit  # Vitest (lib/posts.test.ts)
+npm run test:e2e   # Playwright (e2e/*.spec.ts)
+```
+
+Every push/PR to `main` runs lint, typecheck, unit tests, build, and Playwright E2E via GitHub Actions (`.github/workflows/ci.yml`). This workflow is CI-only — it doesn't deploy; production deploys go through Vercel's native Git integration.
 
 ---
 
