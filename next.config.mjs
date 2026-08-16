@@ -13,11 +13,10 @@ const nextConfig = {
     },
   },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "**" },
-    ],
-  },
+  // No remotePatterns: every next/image usage in this codebase (logo, post
+  // coverImage) is a local /public asset. A wildcard hostname here would let
+  // the image optimizer fetch and proxy any attacker-supplied HTTPS URL
+  // through this domain — add a specific hostname if a post ever needs one.
 };
 
 const withMDX = createMDX({
