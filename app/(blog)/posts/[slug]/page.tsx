@@ -25,17 +25,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `${siteConfig.url}/posts/${slug}`;
+  // seoTitle/seoDescription trim the same copy down to fit Google's SERP and
+  // social-card truncation points — the on-page H1 and subtitle always show
+  // the full post.title/post.description, unaffected by these.
+  const metaTitle = post.seoTitle ?? post.title;
+  const metaDescription = post.seoDescription ?? post.description;
   return {
-    title: post.title,
-    description: post.description,
+    title: metaTitle,
+    description: metaDescription,
     authors: [{ name: post.author, url: `${siteConfig.url}/about` }],
     keywords: post.tags,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
       url,
-      title: post.title,
-      description: post.description,
+      title: metaTitle,
+      description: metaDescription,
       siteName: siteConfig.name,
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
@@ -44,8 +49,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: metaTitle,
+      description: metaDescription,
     },
   };
 }

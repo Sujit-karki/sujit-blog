@@ -20,6 +20,12 @@ const faqItemSchema = z.object({
 const frontmatterSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
+  // Optional overrides for the <title> tag / meta description / OG+Twitter cards
+  // only — the on-page H1 and subtitle always render the full `title`/`description`.
+  // Use these when the full title/description reads great on the page but runs
+  // past Google's ~60/~160-char SERP truncation points.
+  seoTitle: z.string().max(70).optional(),
+  seoDescription: z.string().max(170).optional(),
   date: z.string(),
   updated: z.string().optional(),
   tags: z.array(z.string()).default([]),
