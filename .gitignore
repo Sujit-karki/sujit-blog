@@ -6,6 +6,11 @@ __pycache__/
 
 # IDE
 .idea/
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
 
 # Claude Code settings
 .claude/
