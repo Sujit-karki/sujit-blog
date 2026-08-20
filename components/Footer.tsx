@@ -88,13 +88,17 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Trust & Legal */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
-              Legal
+              Trust &amp; Legal
             </p>
             <ul className="space-y-2">
               {[
+                { label: "Editorial Policy", href: "/editorial-policy" },
+                { label: "Methodology", href: "/methodology" },
+                { label: "Corrections", href: "/corrections" },
+                { label: "AI Disclosure", href: "/ai-disclosure" },
                 { label: "Disclaimer", href: "/disclaimer" },
                 { label: "Privacy Policy", href: "/privacy-policy" },
               ].map((l) => (

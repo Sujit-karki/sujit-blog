@@ -34,6 +34,10 @@ const frontmatterSchema = z.object({
   coverImage: z.string().optional(),
   toc: z.array(tocItemSchema).optional(),
   faq: z.array(faqItemSchema).optional(),
+  // Set true to keep a post live (crawlable, linked) but remove it from the
+  // index and the sitemap — for thin/stale/redundant posts triaged out of
+  // the AdSense content audit without breaking existing inbound links.
+  noindex: z.boolean().optional().default(false),
 });
 
 export type TocItem = z.infer<typeof tocItemSchema>;

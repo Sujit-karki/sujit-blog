@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${url}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${url}/editorial-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
+    { url: `${url}/methodology`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
+    { url: `${url}/corrections`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${url}/ai-disclosure`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
     { url: `${url}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
     { url: `${url}/disclaimer`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
     { url: `${url}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
@@ -33,12 +37,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       })),
 
-    ...posts.map((post) => ({
-      url: `${url}/posts/${post.slug}`,
-      lastModified: new Date(post.updated ?? post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    })),
+    ...posts
+      .filter((post) => !post.noindex)
+      .map((post) => ({
+        url: `${url}/posts/${post.slug}`,
+        lastModified: new Date(post.updated ?? post.date),
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+      })),
 
     // Tag archive pages are noindexed (thin content) — excluded from the sitemap.
   ];

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
-import { siteConfig, slugifyCategory } from "@/lib/site-config";
+import { siteConfig, slugifyCategory, authorSameAs } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About",
@@ -24,6 +25,8 @@ const personJsonLd = {
   description: siteConfig.author.bio,
   knowsAbout: siteConfig.author.knowsAbout,
   worksFor: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+  image: `${siteConfig.url}${siteConfig.author.avatarImage}`,
+  sameAs: authorSameAs,
 };
 
 export default function AboutPage() {
@@ -38,8 +41,16 @@ export default function AboutPage() {
         {/* Author hero */}
         <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white p-8 sm:p-10 mb-10">
           <div className="flex items-start gap-6">
-            <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center text-3xl font-black shrink-0">
-              {siteConfig.author.avatarInitial}
+            <div className="relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-white/30 shrink-0">
+              <Image
+                src={siteConfig.author.avatarImage}
+                alt={siteConfig.author.name}
+                fill
+                sizes="80px"
+                className="object-cover"
+                style={{ objectPosition: "50% 60%" }}
+                priority
+              />
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold mb-1">{siteConfig.author.name}</h1>
@@ -95,6 +106,54 @@ export default function AboutPage() {
                   {item.cat}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Connect — only renders links that are actually filled in, so this
+            section is empty (and hidden) rather than showing dead links. */}
+        {authorSameAs.length > 0 && (
+          <section className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 mb-6">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Verify This Is Me</h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+              I write under my real name. Here&apos;s where else you can find me.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {authorSameAs.map((href) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  className="text-sm font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                >
+                  {new URL(href).hostname.replace(/^www\./, "")}
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* How I work — trust-page cross-links */}
+        <section className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 mb-6">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">How I Work</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { href: "/editorial-policy", label: "Editorial Policy", desc: "How posts are researched, sourced, and fact-checked." },
+              { href: "/methodology", label: "Methodology", desc: "How the calculators and data posts are computed." },
+              { href: "/corrections", label: "Corrections", desc: "How mistakes get fixed, and how to report one." },
+              { href: "/ai-disclosure", label: "AI Disclosure", desc: "Where AI tools are and aren't used in this work." },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-lg border border-gray-200 dark:border-gray-700 p-4 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors"
+              >
+                <p className="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  {item.label}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
               </Link>
             ))}
           </div>

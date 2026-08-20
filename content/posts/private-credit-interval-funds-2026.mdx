@@ -4,7 +4,7 @@ seoTitle: "Private Credit: Read the Redemption Terms First"
 description: "Blackstone gated its flagship $79B private credit fund in June 2026 after redemption requests topped 10% of assets. Here's how interval-fund and BDC exit gates actually work."
 seoDescription: "Blackstone gated its flagship $79B private credit fund in June 2026 after redemptions topped 10% of assets. How interval-fund and BDC exit gates work."
 date: "2026-08-14"
-updated: "2026-08-14"
+updated: "2026-08-20"
 author: "Sujit Karki"
 category: "Investing"
 tags: ["private credit", "interval funds", "BDC", "alternative investments", "liquidity risk"]
@@ -65,6 +65,8 @@ These are also generally taxed as ordinary income via 1099s rather than the K-1s
 
 ## Estimate your real quarterly exit
 
+**How I calculated this:** the calculator below models the SEC's own interval-fund mechanics — a repurchase ceiling you set (funds commonly use 5%), applied to the total redemption requests submitted in a quarter. When requests exceed the ceiling, it prorates: your share of the available repurchase amount equals your request divided by total requests, times the ceiling. That's the same math a fund's transfer agent runs, not a simplification of it — see the SEC's own investor bulletin below for the underlying rule.
+
 <IntervalGateExitCalculator />
 
 ## Here's What I'd Actually Do
@@ -84,6 +86,7 @@ Not investment advice — private credit carries real illiquidity and credit ris
 ]} />
 
 <Sources items={[
+  { title: "Investor Bulletin: Interval Funds", url: "https://www.sec.gov/oiea/investor-alerts-and-bulletins/investor-bulletin-interval-funds", publisher: "U.S. Securities and Exchange Commission", date: "2026" },
   { title: "Blackstone Gates BCRED for First Time as Redemption Requests Hit 10%", url: "https://finance.yahoo.com/markets/stocks/articles/blackstone-gates-bcred-first-time-170811900.html", publisher: "Yahoo Finance", date: "2026-06" },
   { title: "Private Credit's 'Leaning Tower' of Liquidity: Blackstone BCRED Navigates Record $3.7 Billion Redemption Wave", url: "https://markets.financialcontent.com/stocks/article/marketminute-2026-4-6-private-credits-leaning-tower-of-liquidity-blackstone-bcred-navigates-record-37-billion-redemption-wave", publisher: "MarketMinute", date: "2026-04-06" },
   { title: "Blackstone BCRED Redemption Cap: Non-Traded BDC Risks", url: "https://angelinvestorsnetwork.com/alternative-investments/blackstone-bcred-redemption-cap-non-traded-private-credit-fund-2026", publisher: "Angel Investors Network", date: "2026" },

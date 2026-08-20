@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useId } from 'react'
+import { ADS_ENABLED } from '@/lib/ads-config'
 
 interface Props {
   slot: string
@@ -26,6 +27,7 @@ export default function GoogleAdSense({ slot, format = 'auto', className = '', s
   const uid = useId()
 
   useEffect(() => {
+    if (!ADS_ENABLED) return
     try {
       window.adsbygoogle = window.adsbygoogle || []
       window.adsbygoogle.push({})
@@ -33,6 +35,8 @@ export default function GoogleAdSense({ slot, format = 'auto', className = '', s
   }, [uid])
 
   const reservedStyle = { minHeight: DEFAULT_MIN_HEIGHT[format], ...style }
+
+  if (!ADS_ENABLED) return null
 
   return (
     <div className={`overflow-hidden ${className}`} style={reservedStyle}>

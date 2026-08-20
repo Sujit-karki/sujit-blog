@@ -4,7 +4,9 @@ import Link from "next/link";
 import PostCard from "@/components/PostCard";
 import FadeIn from "@/components/FadeIn";
 import NewsTicker from "@/components/NewsTicker";
+import FinancialTicker from "@/components/financial/FinancialTicker";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
+import { ADS_ENABLED } from "@/lib/ads-config";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 
@@ -36,6 +38,9 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Live market ticker — homepage only, see layout.tsx for why */}
+      <FinancialTicker />
+
       {/* News Ticker */}
       <NewsTicker posts={tickerPosts} />
 
@@ -101,7 +106,7 @@ export default function HomePage() {
                   </section>
 
                   {/* AdSense in-feed every 2 categories */}
-                  {catIdx % 2 === 1 && (
+                  {ADS_ENABLED && catIdx % 2 === 1 && (
                     <FadeIn delay={0.1}>
                       <div className="mb-14 ad-label relative">
                         <GoogleAdSense
@@ -149,15 +154,17 @@ export default function HomePage() {
               </FadeIn>
 
               {/* Sidebar AdSense */}
-              <FadeIn delay={0.4}>
-                <div className="ad-label relative">
-                  <GoogleAdSense
-                    slot="0987654321"
-                    format="rectangle"
-                    style={{ minHeight: 250 }}
-                  />
-                </div>
-              </FadeIn>
+              {ADS_ENABLED && (
+                <FadeIn delay={0.4}>
+                  <div className="ad-label relative">
+                    <GoogleAdSense
+                      slot="0987654321"
+                      format="rectangle"
+                      style={{ minHeight: 250 }}
+                    />
+                  </div>
+                </FadeIn>
+              )}
 
             </div>
           </aside>

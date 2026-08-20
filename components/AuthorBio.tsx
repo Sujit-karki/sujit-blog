@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
@@ -13,8 +14,15 @@ export default function AuthorBio({ showLink = true }: AuthorBioProps) {
         About the Author
       </p>
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-lg font-bold shrink-0">
-          {author.avatarInitial}
+        <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-white dark:ring-gray-800 shrink-0">
+          <Image
+            src={author.avatarImage}
+            alt={author.name}
+            fill
+            sizes="48px"
+            className="object-cover"
+            style={{ objectPosition: "50% 60%" }}
+          />
         </div>
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-1">

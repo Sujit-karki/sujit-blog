@@ -3,15 +3,17 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate, slugifyTag } from "@/lib/posts";
-import { siteConfig, slugifyCategory } from "@/lib/site-config";
+import { siteConfig, slugifyCategory, authorSameAs } from "@/lib/site-config";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
+import { ADS_ENABLED } from "@/lib/ads-config";
 import TocObserver from "@/components/TocObserver";
 import MarketChart from "@/components/financial/MarketChart";
 import NewsletterSignup from "@/components/newsletter/NewsletterSignup";
+import FaqAccordion from "@/components/mdx/FaqAccordion";
 import { THEME_STYLES, themeForCategory } from "@/lib/category-theme";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -36,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [{ name: post.author, url: `${siteConfig.url}/about` }],
     keywords: post.tags,
     alternates: { canonical: url },
+    robots: post.noindex ? { index: false, follow: true } : undefined,
     openGraph: {
       type: "article",
       url,
@@ -81,6 +84,7 @@ export default async function PostPage({ params }: Props) {
       url: `${siteConfig.url}/about`,
       jobTitle: siteConfig.author.credentials,
       knowsAbout: siteConfig.author.knowsAbout,
+      sameAs: authorSameAs,
     },
     publisher: {
       "@type": "Organization",
@@ -99,18 +103,10 @@ export default async function PostPage({ params }: Props) {
     image: `${siteConfig.url}/api/og`,
   };
 
-  const faqJsonLd = post.faq?.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: post.faq.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      }
-    : null;
-
+  // FAQPage rich results were retired by Google on 2026-05-07 — this no longer
+  // earns a SERP appearance, so we don't emit it as structured data. The FAQ
+  // content itself is still genuinely useful, so it renders visibly below
+  // (see FaqAccordion) instead of living only in unrendered JSON-LD.
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbItems, siteConfig.url);
   const { gradient, shadow } = THEME_STYLES[themeForCategory(post.category)];
 
@@ -121,12 +117,6 @@ export default async function PostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }}
       />
-      {faqJsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
-        />
-      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }}
@@ -172,8 +162,15 @@ export default async function PostPage({ params }: Props) {
                 </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/70 pt-5 border-t border-white/20">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">
-                      {siteConfig.author.avatarInitial}
+                    <div className="relative w-7 h-7 rounded-full overflow-hidden ring-1 ring-white/40 shrink-0">
+                      <Image
+                        src={siteConfig.author.avatarImage}
+                        alt={siteConfig.author.name}
+                        fill
+                        sizes="28px"
+                        className="object-cover"
+                        style={{ objectPosition: "50% 60%" }}
+                      />
                     </div>
                     <span className="font-medium text-white">{post.author}</span>
                   </div>
@@ -195,10 +192,14 @@ export default async function PostPage({ params }: Props) {
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none" />
             </header>
 
-            {/* In-content top ad */}
-            <div className="mb-8 ad-reveal ad-label relative">
-              <GoogleAdSense slot="1122334455" format="horizontal" />
-            </div>
+            {/* In-content top ad — the wrapper (and its "Ad" label) only
+                renders when ads are actually on; otherwise it's just dead
+                space with a misleading label. */}
+            {ADS_ENABLED && (
+              <div className="mb-8 ad-reveal ad-label relative">
+                <GoogleAdSense slot="1122334455" format="horizontal" />
+              </div>
+            )}
 
             {/* Article body */}
             <article
@@ -231,6 +232,8 @@ export default async function PostPage({ params }: Props) {
               </div>
             )}
 
+            {post.faq && post.faq.length > 0 && <FaqAccordion items={post.faq} />}
+
             <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-6 mt-8">
               <p className="font-bold text-gray-900 dark:text-white mb-1">Get new posts in your inbox</p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
@@ -258,13 +261,15 @@ export default async function PostPage({ params }: Props) {
               )}
 
               {/* Sidebar AdSense */}
-              <div className="ad-label relative">
-                <GoogleAdSense
-                  slot="5566778899"
-                  format="rectangle"
-                  style={{ minHeight: 250 }}
-                />
-              </div>
+              {ADS_ENABLED && (
+                <div className="ad-label relative">
+                  <GoogleAdSense
+                    slot="5566778899"
+                    format="rectangle"
+                    style={{ minHeight: 250 }}
+                  />
+                </div>
+              )}
 
             </div>
           </aside>

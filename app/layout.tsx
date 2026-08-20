@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./(blog)/globals.css";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, authorSameAs } from "@/lib/site-config";
 import { MotionProvider } from "./providers";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -86,11 +86,9 @@ const organizationJsonLd = {
     url: `${siteConfig.url}/about`,
     jobTitle: siteConfig.author.credentials,
     knowsAbout: siteConfig.author.knowsAbout,
+    sameAs: authorSameAs,
   },
-  sameAs: [
-    siteConfig.social.twitter ? `https://twitter.com/${siteConfig.social.twitter}` : null,
-    siteConfig.social.linkedin ? `https://linkedin.com/in/${siteConfig.social.linkedin}` : null,
-  ].filter(Boolean),
+  sameAs: authorSameAs,
 };
 
 const websiteJsonLd = {

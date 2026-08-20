@@ -10,7 +10,7 @@ import SideHustleTaxEstimator from "@/components/custom/SideHustleTaxEstimator";
 import BudgetCalculator from "@/components/custom/BudgetCalculator";
 import TrumpVs529Calculator from "@/components/custom/TrumpVs529Calculator";
 import BitcoinDrawdownCalculator from "@/components/custom/BitcoinDrawdownCalculator";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, authorSameAs } from "@/lib/site-config";
 import { tools, getToolBySlug } from "@/lib/tools-config";
 
 const CALCULATORS: Record<string, React.ComponentType> = {
@@ -67,33 +67,33 @@ export default async function ToolPage({ params }: Props) {
   ];
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbItems, siteConfig.url);
 
-  const howToJsonLd = {
+  // HowTo rich results were retired by Google in 2023 and FAQPage on
+  // 2026-05-07 — neither earns a SERP appearance now, so we don't emit them.
+  // The howTo steps and FAQ content still render visibly below. A calculator
+  // this genuinely interactive/free is better represented as a
+  // SoftwareApplication instead — that type is still live.
+  const softwareApplicationJsonLd = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
+    "@type": "SoftwareApplication",
     name: tool.title,
     description: tool.shortDescription,
-    step: tool.howTo.map((s) => ({
-      "@type": "HowToStep",
-      name: s.name,
-      text: s.text,
-    })),
-  };
-
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: tool.faq.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
+    url,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any (web browser)",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    author: {
+      "@type": "Person",
+      name: siteConfig.author.name,
+      url: `${siteConfig.url}/about`,
+      sameAs: authorSameAs,
+    },
+    publisher: { "@type": "Organization", "@id": `${siteConfig.url}/#organization`, name: siteConfig.name },
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd).replace(/</g, "\\u003c") }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd).replace(/</g, "\\u003c") }} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
         <div className="mb-6">
