@@ -4,7 +4,7 @@ description: "GTA 6 launches November 19, 2026 at $79.99. Take-Two's FY2026 net 
 seoDescription: "GTA 6 launches Nov 19, 2026 at $79.99. Take-Two's FY2026 bookings hit $6.72B, guiding to $8B+ for FY2027. What the numbers say — and what's still rumor."
 seoTitle: "GTA 6's $79.99 Price Tag and Take-Two's Big Bet"
 date: "2026-07-31"
-updated: "2026-07-31"
+updated: "2026-08-25"
 author: "Sujit Karki"
 category: "Market Analysis"
 tags: ["GTA 6", "Take-Two Interactive", "TTWO", "Gaming Economics", "Market Analysis", "Video Games"]
@@ -67,6 +67,20 @@ Then came the number that matters most for this piece: Take-Two guided **fiscal 
   highlightCol={2}
 />
 
+<BarChart
+  title="Take-Two Net Bookings: FY2026 Actual vs. FY2027 Guidance"
+  description="FY2027 range is company guidance, not a reported actual — driven overwhelmingly by GTA 6's November launch quarter"
+  data={[
+    { period: "FY2026 (actual)", bookings: 6.72 },
+    { period: "FY2027 (guidance, low)", bookings: 8.0 },
+    { period: "FY2027 (guidance, high)", bookings: 8.2 },
+  ]}
+  xKey="period"
+  series={[{ key: "bookings", label: "Net bookings ($B)", color: "#059669" }]}
+  unit="B"
+  colorByCategory
+/>
+
 That guidance is aggressive but not fantastical — Wall Street has largely bought in. TTWO stock closed around $245 on July 31, 2026, giving the company a market cap in the mid-$40 billions, and at least one analyst (BofA) has set a price target as high as $368 on the strength of expected GTA Online spending growth once GTA 6 launches. I'd treat any individual analyst target the way I treat any crypto price target in my other posts: informative, not gospel. If betting on a single publisher's launch quarter isn't your style, that's a reasonable instinct — it's the same logic behind my [index fund investing guide](/posts/index-fund-investing-guide), which is where I'd point you if you'd rather own the whole gaming and entertainment sector than one earnings report.
 
 ## The "$2 billion" figure: media estimate, not a filed number
@@ -78,6 +92,21 @@ You'll see "$2 billion" attached to GTA 6's development cost constantly. It is *
 <InfoBox type="warning" title="Treat the budget number as a range, not a fact">
 When you see "$2 billion" reported as GTA 6's budget, ask what it's counting. Development-only estimates run lower (~$1–1.5B). Development-plus-marketing-plus-live-service estimates run toward $2B or beyond. Take-Two has confirmed neither figure directly — everything here is outside analyst modeling, not company disclosure.
 </InfoBox>
+
+<BarChart
+  title="GTA 6's Budget, By What's Actually Being Counted"
+  description="None of the GTA 6 figures are confirmed by Take-Two — shown here as the ranges analysts and outlets have reported, next to GTA V's widely-cited historical budget for scale"
+  data={[
+    { scope: "GTA V budget (~2013, cited)", billions: 0.265 },
+    { scope: "GTA 6 development-only (low est.)", billions: 1.0 },
+    { scope: "GTA 6 development-only (high est.)", billions: 1.5 },
+    { scope: "GTA 6 dev + marketing + live-service (est.)", billions: 2.0 },
+  ]}
+  xKey="scope"
+  series={[{ key: "billions", label: "Estimated cost ($B)" }]}
+  unit="B"
+  colorByCategory
+/>
 
 For context, this still dwarfs the roughly **$265 million** commonly cited for GTA V's development budget over a decade ago — though that comparison is also apples-to-oranges, since a decade of AAA game-cost inflation, marketing complexity, and studio headcount growth separates the two. Whatever the real number turns out to be, the point I'd push back on is treating any of these budget figures as audited. They're estimates, reported with varying rigor, and the honest move is to say so every time instead of letting the biggest number stick because it's the most quotable.
 
