@@ -102,6 +102,11 @@ import BnplScoreImpactEstimator from "@/components/custom/BnplScoreImpactEstimat
 import Q4SafeHarborCalculator from "@/components/custom/Q4SafeHarborCalculator";
 import QcdRmdSavingsCalculator from "@/components/custom/QcdRmdSavingsCalculator";
 import MedicareTotalCostEstimator from "@/components/custom/MedicareTotalCostEstimator";
+import RasuwaGlofChainFlow from "@/components/custom/RasuwaGlofChainFlow";
+import RasuwaValleyProfile from "@/components/custom/RasuwaValleyProfile";
+import RasuwaSurgeSimulator from "@/components/custom/RasuwaSurgeSimulator";
+import RasuwaResponseDashboard from "@/components/custom/RasuwaResponseDashboard";
+import RasuwaCrisisTimeline from "@/components/custom/RasuwaCrisisTimeline";
 import LineChart from "@/components/charts/LineChartLazy";
 import PieChart from "@/components/charts/PieChartLazy";
 import BarChart from "@/components/charts/BarChartLazy";
@@ -264,6 +269,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Q4SafeHarborCalculator,
     QcdRmdSavingsCalculator,
     MedicareTotalCostEstimator,
+    RasuwaGlofChainFlow,
+    RasuwaValleyProfile,
+    RasuwaSurgeSimulator,
+    RasuwaResponseDashboard,
+    RasuwaCrisisTimeline,
     LineChart,
     PieChart,
     BarChart,
