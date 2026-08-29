@@ -7,7 +7,6 @@
 // labelled as illustrative on the page.
 
 import { useMemo, useState } from 'react'
-import AnimatedNumber from './AnimatedNumber'
 
 const PEAK_M = 9
 const PEAK_MIN = 30
@@ -102,11 +101,13 @@ export default function RasuwaSurgeSimulator() {
             <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400">
               River level above normal
             </p>
-            <AnimatedNumber
-              value={level}
-              format={(v) => `${v.toFixed(1)} m`}
-              className="font-serif text-3xl font-bold text-gray-900 dark:text-white"
-            />
+            {/* Deliberately not AnimatedNumber: this readout is driven by a
+                slider the reader drags continuously, and a tween leaves the
+                headline number disagreeing with the feet conversion and the
+                submerged list directly beneath it, which reads as a bug. */}
+            <p className="font-serif text-3xl font-bold text-gray-900 dark:text-white">
+              {level.toFixed(1)} m
+            </p>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
               Roughly {(level * 3.28).toFixed(0)} feet of mud, water, boulders and ice — not clear water.
             </p>
