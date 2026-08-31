@@ -43,13 +43,30 @@ const nextConfig = {
     // the only genuine third-party origins are AdSense (script/frame/img —
     // present even while ad *units* are disabled, since the account
     // verification loader in <head> stays) and the Buttondown newsletter API.
+    // React's development build needs eval() for debugging features (it
+    // reconstructs callstacks across environments); production React never
+    // calls eval(). Turbopack's HMR client also opens a WebSocket back to the
+    // dev server. Both are dev-only concessions — the production CSP stays
+    // strict, since these headers ship to real visitors.
+    const isDev = process.env.NODE_ENV === "development";
+    const scriptSrc = [
+      "script-src 'self' 'unsafe-inline'",
+      ...(isDev ? ["'unsafe-eval'"] : []),
+      "https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net",
+    ].join(" ");
+    const connectSrc = [
+      "connect-src 'self'",
+      ...(isDev ? ["ws://localhost:* http://localhost:*"] : []),
+      "https://api.buttondown.email https://*.googlesyndication.com https://*.doubleclick.net",
+    ].join(" ");
+
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net",
+      scriptSrc,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net",
       "font-src 'self' data:",
-      "connect-src 'self' https://api.buttondown.email https://*.googlesyndication.com https://*.doubleclick.net",
+      connectSrc,
       "frame-src https://*.googlesyndication.com https://*.doubleclick.net",
       "object-src 'none'",
       "base-uri 'self'",
