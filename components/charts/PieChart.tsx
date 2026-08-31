@@ -1,7 +1,11 @@
 "use client";
 
-import { PieChart as RPieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import type { ChartData, ChartOptions } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
 import { useIsDark } from "./useIsDark";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 export interface PieSlice {
   label: string;
@@ -22,6 +26,49 @@ const PALETTE = ["#059669", "#f59e0b", "#6366f1", "#0d9488", "#ef4444", "#8b5cf6
 export default function PieChart({ title, description, data, unit = "", height = 320 }: PieChartProps) {
   const isDark = useIsDark();
   const gridColor = isDark ? "#374151" : "#e5e7eb";
+  const textColor = isDark ? "#9ca3af" : "#6b7280";
+
+  const chartData: ChartData<"doughnut"> = {
+    labels: data.map((d) => d.label),
+    datasets: [
+      {
+        data: data.map((d) => d.value),
+        backgroundColor: data.map((d, i) => d.color ?? PALETTE[i % PALETTE.length]),
+        borderWidth: 0,
+        // Stands in for Recharts' paddingAngle: a hairline gap between slices.
+        spacing: 2,
+      },
+    ],
+  };
+
+  const options: ChartOptions<"doughnut"> = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    // Recharts used innerRadius 55% / outerRadius 85% of the container.
+    cutout: "55%",
+    radius: "85%",
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom",
+        labels: { color: textColor, boxWidth: 12, font: { size: 12 } },
+      },
+      tooltip: {
+        backgroundColor: isDark ? "#111827" : "#ffffff",
+        titleColor: isDark ? "#f1f5f9" : "#111827",
+        bodyColor: isDark ? "#f1f5f9" : "#111827",
+        borderColor: gridColor,
+        borderWidth: 1,
+        cornerRadius: 8,
+        titleFont: { size: 12 },
+        bodyFont: { size: 12 },
+        callbacks: {
+          label: (item) => `${item.label}: ${item.formattedValue}${unit}`,
+        },
+      },
+    },
+  };
 
   return (
     <figure className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
@@ -33,35 +80,17 @@ export default function PieChart({ title, description, data, unit = "", height =
       </figcaption>
 
       <div style={{ height }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <RPieChart accessibilityLayer>
-            <Pie
-              data={data}
-              dataKey="value"
-              nameKey="label"
-              innerRadius="55%"
-              outerRadius="85%"
-              paddingAngle={2}
-              isAnimationActive={false}
-            >
-              {data.map((d, i) => (
-                <Cell key={d.label} fill={d.color ?? PALETTE[i % PALETTE.length]} />
-              ))}
-            </Pie>
-            <Tooltip
-              contentStyle={{
-                background: isDark ? "#111827" : "#ffffff",
-                border: `1px solid ${gridColor}`,
-                borderRadius: 8,
-                fontSize: 12,
-              }}
-              formatter={(value, name) => [`${value}${unit}`, String(name)]}
-            />
-            <Legend wrapperStyle={{ fontSize: 12 }} />
-          </RPieChart>
-        </ResponsiveContainer>
+        <Doughnut
+          data={chartData}
+          options={options}
+          role="img"
+          aria-label={`${title} — doughnut chart`}
+        />
       </div>
 
+      {/* Visible data-table fallback. Chart.js draws to <canvas>, which is opaque
+          to screen readers and to anything without JS, so this table is the
+          accessible representation of the data — not a nicety. */}
       <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
         <table className="min-w-full text-sm">
           <caption className="sr-only">{title} — data table</caption>

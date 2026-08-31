@@ -1,16 +1,19 @@
 "use client";
 
 import {
-  LineChart as RLineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-} from "recharts";
+} from "chart.js";
+import type { ChartData, ChartOptions } from "chart.js";
+import { Line } from "react-chartjs-2";
 import { useIsDark } from "./useIsDark";
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 export interface ChartSeries {
   key: string;
@@ -43,6 +46,63 @@ export default function LineChart({
   const gridColor = isDark ? "#374151" : "#e5e7eb";
   const textColor = isDark ? "#9ca3af" : "#6b7280";
 
+  const chartData: ChartData<"line"> = {
+    labels: data.map((row) => String(row[xKey])),
+    datasets: series.map((s, i) => {
+      const color = s.color ?? PALETTE[i % PALETTE.length];
+      return {
+        label: s.label,
+        data: data.map((row) => Number(row[s.key])),
+        borderColor: color,
+        backgroundColor: color,
+        borderWidth: 2,
+        // tension is Chart.js's equivalent of Recharts' type="monotone".
+        tension: 0.4,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+      };
+    }),
+  };
+
+  const options: ChartOptions<"line"> = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    interaction: { mode: "index", intersect: false },
+    plugins: {
+      // Single-series charts label themselves via the figcaption title.
+      legend: {
+        display: series.length > 1,
+        labels: { color: textColor, boxWidth: 12, font: { size: 12 } },
+      },
+      tooltip: {
+        backgroundColor: isDark ? "#111827" : "#ffffff",
+        titleColor: isDark ? "#f1f5f9" : "#111827",
+        bodyColor: isDark ? "#f1f5f9" : "#111827",
+        borderColor: gridColor,
+        borderWidth: 1,
+        cornerRadius: 8,
+        titleFont: { size: 12 },
+        bodyFont: { size: 12 },
+        callbacks: {
+          label: (item) => `${item.dataset.label}: ${item.formattedValue}${unit}`,
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        border: { color: gridColor },
+        ticks: { color: textColor, font: { size: 12 } },
+      },
+      y: {
+        grid: { color: gridColor },
+        border: { display: false },
+        ticks: { color: textColor, font: { size: 12 }, callback: (v) => `${v}${unit}` },
+      },
+    },
+  };
+
   return (
     <figure className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
       <figcaption className="mb-4">
@@ -53,49 +113,12 @@ export default function LineChart({
       </figcaption>
 
       <div style={{ height }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <RLineChart
-            data={data}
-            accessibilityLayer
-            margin={{ top: 8, right: 12, left: -12, bottom: 0 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" stroke={gridColor} vertical={false} />
-            <XAxis
-              dataKey={xKey}
-              tick={{ fill: textColor, fontSize: 12 }}
-              tickLine={false}
-              axisLine={{ stroke: gridColor }}
-            />
-            <YAxis tick={{ fill: textColor, fontSize: 12 }} tickLine={false} axisLine={false} unit={unit} />
-            <Tooltip
-              contentStyle={{
-                background: isDark ? "#111827" : "#ffffff",
-                border: `1px solid ${gridColor}`,
-                borderRadius: 8,
-                fontSize: 12,
-              }}
-              labelStyle={{ color: isDark ? "#f1f5f9" : "#111827" }}
-            />
-            {series.length > 1 && <Legend wrapperStyle={{ fontSize: 12 }} />}
-            {series.map((s, i) => (
-              <Line
-                key={s.key}
-                type="monotone"
-                dataKey={s.key}
-                name={s.label}
-                stroke={s.color ?? PALETTE[i % PALETTE.length]}
-                strokeWidth={2}
-                dot={false}
-                activeDot={{ r: 4 }}
-                isAnimationActive={false}
-              />
-            ))}
-          </RLineChart>
-        </ResponsiveContainer>
+        <Line data={chartData} options={options} role="img" aria-label={`${title} — line chart`} />
       </div>
 
-      {/* Visible data-table fallback: readable without JS/canvas, and screen-reader friendly
-          alongside Recharts' own accessibilityLayer keyboard nav on the chart itself. */}
+      {/* Visible data-table fallback. Chart.js draws to <canvas>, which is opaque
+          to screen readers and to anything without JS, so this table is the
+          accessible representation of the data — not a nicety. */}
       <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
         <table className="min-w-full text-sm">
           <caption className="sr-only">{title} — data table</caption>
