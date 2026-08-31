@@ -25,6 +25,15 @@ const nextConfig = {
         destination: "/posts/bitcoin-crash-2026-buy-or-wait",
         permanent: true,
       },
+      // Orphaned standalone HTML in public/ that duplicated the MDX post at
+      // /posts/how-to-invest-first-1000 (unlinked, absent from the sitemap, but
+      // crawlable). File removed; this folds any existing crawl equity into the
+      // canonical post instead of leaving a 404.
+      {
+        source: "/how-to-invest-first-1000.html",
+        destination: "/posts/how-to-invest-first-1000",
+        permanent: true,
+      },
     ];
   },
   async headers() {
