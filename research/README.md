@@ -78,11 +78,44 @@ resulting tokens/sec on a spilled model is itself a publishable number.
 **Before a long run:** stop the Next.js dev server. With 7.8 GB of system RAM it
 competes with the model for memory.
 
+## Results — first run, 1 September 2026
+
+GTX 1650 Ti (4 GB), 8 GB system RAM, Ollama 0.33.2, Q4_K_M weights, 8 scenarios
+× 10 repetitions = 80 generations per model.
+
+| model | correct | accuracy | median tok/s |
+|---|---|---|---|
+| `qwen2.5:3b` | 60/80 | 75.0% | 52.5 |
+| `phi3.5:3.8b` | 50/80 | 62.5% | 27.8 |
+| `llama3.2:3b` | 30/80 | 37.5% | 47.3 |
+| `gemma2:2b` | 10/80 | 12.5% | 52.3 |
+
+**Every model failed `marginal-tax` and `mortgage-payment`** — the two scenarios
+with real money attached. The ones they get right are largely single
+multiplications.
+
+**Determinism.** 31 of the 32 scenario-model pairs returned an identical answer
+across all 10 repetitions — right or wrong, the models commit. The exception is
+`phi3.5:3.8b` on `mortgage-payment`, which split 9/1 between 1796.39 and
+1795.96; both are wrong. Repeating a prompt is therefore not a usable defence
+against these errors.
+
+**Reproducibility.** Three of the four models were run twice, hours apart, under
+very different system load. All 240 overlapping generations returned identical
+answers, and per-model accuracy was unchanged.
+
+**A caveat the write-up must carry:** tolerances do real work in these numbers.
+`phi3.5:3.8b` answers the compound-interest question with 16288.0 against a true
+16288.95 — scored wrong, and it is wrong, but by 95 cents on a $16,289 balance.
+Anyone quoting the headline accuracy should say where the line was drawn.
+
 ## What gets committed
 
 - the harness and experiment definitions — always
-- `data/numeracy.csv`, the aggregated dataset — once a run is final
-- `data/*-raw.jsonl` — gitignored; regenerate it by rerunning
+- `data/numeracy.csv`, the aggregated dataset
+- `data/numeracy-raw.jsonl`, every raw generation — this is the evidence
+- `data/numeracy-pilot-contended.jsonl`, the earlier run kept for the
+  reproducibility comparison above
 
 ## Adding an experiment
 

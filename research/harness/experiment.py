@@ -121,7 +121,7 @@ class Experiment(abc.ABC):
         done = self._completed_keys()
         total = len(models) * len(scenarios) * reps
         if done:
-            print(f"resuming: {len(done)} of {total} generations already recorded")
+            print(f"resuming: {len(done)} of {total} generations already recorded", flush=True)
 
         for model in models:
             pending = [
@@ -131,10 +131,10 @@ class Experiment(abc.ABC):
                 if (model, s.id, r) not in done
             ]
             if not pending:
-                print(f"{model}: already complete")
+                print(f"{model}: already complete", flush=True)
                 continue
 
-            print(f"\n{model}: {len(pending)} generations to run")
+            print(f"\n{model}: {len(pending)} generations to run", flush=True)
             self._warm_up(model, scenarios[0])
 
             for scenario, rep in pending:
@@ -146,15 +146,15 @@ class Experiment(abc.ABC):
             # Free the card before the next model loads.
             self.client.unload(model)
 
-        print(f"\nwrote {self.results_path}")
+        print(f"\nwrote {self.results_path}", flush=True)
 
     def _warm_up(self, model: str, scenario: Scenario) -> None:
         print("  warm-up (discarded)...", end="", flush=True)
         try:
             self.client.generate(model, scenario.prompt, seed=0)
-            print(" ok")
+            print(" ok", flush=True)
         except OllamaError as exc:
-            print(f" failed: {exc}")
+            print(f" failed: {exc}", flush=True)
 
     def _run_one(self, model: str, scenario: Scenario, rep: int, seed: int) -> None:
         started = time.time()
@@ -179,7 +179,7 @@ class Experiment(abc.ABC):
                     error=str(exc),
                 )
             )
-            print(f"  {scenario.id} rep{rep}: ERROR {exc}")
+            print(f"  {scenario.id} rep{rep}: ERROR {exc}", flush=True)
             return
 
         parsed = self.parse(generation.text)
@@ -209,5 +209,6 @@ class Experiment(abc.ABC):
         mark = "ok " if correct else "MISS"
         print(
             f"  {scenario.id} rep{rep}: {mark} parsed={parsed} expected={scenario.expected} "
-            f"({generation.tokens_per_s:.1f} tok/s)"
+            f"({generation.tokens_per_s:.1f} tok/s)",
+            flush=True,
         )
