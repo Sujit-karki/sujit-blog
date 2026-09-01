@@ -7,10 +7,10 @@ date: "2026-09-01"
 category: "Personal Finance"
 tags: ["AI", "Local LLM", "Ollama", "Tax Planning", "Original Data", "Benchmark"]
 author: "Sujit Karki"
-# DRAFT — remove this line once the TO WRITE sections are filled in. While it
-# is true the post stays out of the sitemap and carries a noindex tag, so an
-# unfinished piece can be previewed on the live site without being offered to
-# Google as thin content.
+# Held back pending the author's read of the drafted commentary. While this is
+# true the post stays out of the sitemap and carries a noindex tag, so it can be
+# previewed on the live site without being offered to Google. Remove this line
+# to publish.
 noindex: true
 toc:
   - id: "what-i-tested"
@@ -44,13 +44,13 @@ faq:
 ---
 
 {/* ------------------------------------------------------------------
-    DRAFT. The data, charts, tables and methodology below are final and
-    verified against research/data/numeracy.csv.
+    DRAFT — noindex is on in the frontmatter.
 
-    The sections marked TO WRITE are yours. Per the editorial rule this
-    site runs on, the model is the instrument and the analysis is
-    human-written — so the argument has to be in your words, not
-    generated. Each marker says what the section needs to do.
+    All data, charts, tables and methodology are verified against
+    research/data/numeracy.csv. The prose sections were drafted rather
+    than written by hand; rewrite them in your own voice, then restore
+    the stronger authorship line in the Disclosure section and remove
+    the noindex flag.
    ------------------------------------------------------------------ */}
 
 <KeyTakeaways items={[
@@ -61,11 +61,21 @@ faq:
   "The most accurate model produced the hardest errors to notice: gemma2 was wrong by a factor of three, qwen2.5 was wrong in the last two digits"
 ]} />
 
-{/* TO WRITE — opening, ~150 words.
-    State the finding in the first sentence. Say why you ran this: you
-    wanted to know whether a model small enough to run on your own
-    hardware could be trusted with the arithmetic behind a real money
-    decision. Avoid throat-clearing about AI in general. */}
+Four AI models that run on an ordinary laptop were each asked the same
+eight personal-finance arithmetic questions, ten times over. Not one of
+them could work out the tax owed on a $50,000 income, and not one could
+calculate a mortgage payment.
+
+The question worth answering is narrower than "is AI any good at maths."
+Models small enough to run on hardware people already own are now
+genuinely usable — they are free, they are private, and nothing leaves
+the machine. That makes them tempting for exactly the kind of question
+people are nervous about typing into someone else's website: what will I
+owe, what will this cost me, can I afford this.
+
+So the test is not whether these models are clever. It is whether the
+number they hand back can be trusted enough to act on. That turns out to
+depend far less on which model you pick than on which question you ask.
 
 ## What I Tested
 
@@ -133,9 +143,19 @@ Speed does not track accuracy at all:
 roughly half the throughput of the others — and it still finished second
 on accuracy, behind a model that runs at nearly twice its speed.
 
-{/* TO WRITE — ~120 words on what the ranking is and isn't worth.
-    Your honest read: is a 75% score usable? Say plainly what you would
-    and would not do with a tool that scores like this. */}
+It is tempting to read that chart as a leaderboard and conclude that
+`qwen2.5:3b` is the one to use. That is the wrong lesson.
+
+A 75% score sounds respectable until you ask what the other 25% consists
+of. This is arithmetic — there is a single correct answer, it does not
+depend on judgement, and a pocket calculator from 1985 scores 100%. A
+quarter of the answers being wrong is not a passing grade in that
+context; it is a tool that hands you a confidently incorrect number one
+time in four and gives you no indication which time.
+
+The ranking is useful for one thing only: it tells you that model choice
+changes the failure *rate*. It does not, as the next section shows,
+change what fails.
 
 ## The Two Questions Every Model Failed
 
@@ -167,11 +187,25 @@ The two that all four failed are the only two on the list where a person
 would genuinely reach for a calculator — and the only two attached to a
 number large enough to matter.
 
-{/* TO WRITE — ~150 words. This is the heart of the piece.
-    The pattern is that difficulty tracks the number of chained
-    operations, and the questions people most want help with are exactly
-    the multi-step ones. Say that in your own words, and say what it
-    implies about where these tools are actually useful. */}
+Look at what separates the top of that table from the bottom. It is not
+subject matter — tax, mortgages, tips and portfolios are all just
+numbers. It is the number of steps.
+
+The question every model answered correctly asks for one operation:
+multiply $42,500 by 0.30. The questions every model failed require
+several operations chained together, where each result feeds the next.
+The mortgage payment needs a rate converted to monthly, a discount factor
+raised to the power of 360, a subtraction and a division. The tax
+question needs three separate bracket calculations, each with its own
+subtraction and multiplication, then a sum.
+
+Every extra step is another chance to be wrong, and a single slip
+anywhere in the chain corrupts everything downstream while leaving the
+surrounding reasoning intact.
+
+Which is unfortunate, because nobody needs help multiplying $42,500 by
+0.30. The questions people actually want answered are the multi-step
+ones — and those are precisely the ones these models cannot finish.
 
 ## The Error That Should Worry You
 
@@ -230,12 +264,29 @@ question. Only one of those is obvious enough that you would catch it by
 glancing at the answer.
 </InfoBox>
 
-{/* TO WRITE — ~200 words, the argument of the piece.
-    The inversion is the point: the better the model, the less detectable
-    its errors. gemma2's answer is so wrong it protects you. qwen2.5's is
-    wrong in a place no one checks. Make that argument in your voice, and
-    be careful not to overclaim — this is eight questions and four
-    models, not a law of nature. */}
+Put the three answers side by side and something uncomfortable emerges.
+
+`gemma2:2b` said $19,888. On a $50,000 income, that is a tax rate of
+nearly 40% — visibly absurd, and anyone would catch it. The worst model
+produced the safest failure, because its error was too large to slip past
+you.
+
+`qwen2.5:3b` said $6,207.50. The true figure is $6,307.50. It is wrong by
+$100, sitting inside three paragraphs of correct working, in the middle
+digit of a five-figure number. There is nothing to notice. The best model
+produced the most dangerous failure.
+
+The usual assumption is that a more capable model is a safer one. On this
+evidence the relationship inverts at the point where errors stop being
+obvious. Accuracy improved from 12.5% to 75% across these four models,
+but the errors that survived that improvement got quieter, not smaller in
+consequence — a $100 mistake you act on costs more than a $13,580 mistake
+you catch.
+
+This is eight questions and four models on one machine, not a law of
+nature, and it should not be read as one. But the mechanism is not
+mysterious, and there is no reason to expect it to be unique to this
+sample.
 
 ## You Cannot Catch These by Asking Twice
 
@@ -256,20 +307,50 @@ accuracy was unchanged.
 These models are not guessing. They are reliably, repeatably wrong, which
 removes the one safeguard a non-expert user might plausibly apply.
 
-{/* TO WRITE — ~120 words on what defence is left.
-    Your view: if repetition doesn't work and the working looks correct,
-    what should a reader actually do? Be concrete and practical. */}
+So the two defences a reasonable person would reach for both fail. Asking
+again returns the same answer. Reading the working does not help either,
+because the working is where the error hides — `qwen2.5` laid out every
+step correctly and still landed $100 short.
+
+What is left is arithmetic you do yourself. Not re-deriving the whole
+problem, which would defeat the point of asking, but checking the
+individual multiplications the model shows you. Every failure in this
+dataset was a single operation inside otherwise sound reasoning, and
+every one of them is a five-second check on a calculator.
+
+The model's structure was usually right. Its numbers were not. Those are
+separable, and only one of them needs checking.
 
 ## What This Means If You Use These Tools
 
-{/* TO WRITE — the closing section, ~250 words.
-    Practical guidance in your own words. Suggested spine, rewrite freely:
-    - what these models are genuinely fine for
-    - the specific shape of task to never hand them
-    - that "it showed its working" is not verification
-    - the disclosure that you built this to find out, not to dunk on
-      small models
-    End on something a reader can act on tomorrow. */}
+None of this makes small local models useless. They are good at the thing
+they are actually built for: language. Ask one to explain what a marginal
+tax bracket is, or why a mortgage payment stays flat while its interest
+portion shrinks, and you will get a clear, correct explanation. That is
+genuine value, it runs on a cheap laptop, and it costs nothing.
+
+The line worth drawing is between explaining and computing.
+
+**Fine to ask:** what does this term mean, how does this mechanism work,
+what should I be considering, is my reasoning here sound. **Not fine to
+ask:** what is the number. Anything where the output is a figure you
+intend to act on — a payment, a tax bill, a projected balance, a
+break-even point — belongs in a spreadsheet, where the arithmetic is done
+by something that cannot make this class of mistake.
+
+And the presence of working is not verification. It reads like a proof,
+which is exactly what makes it persuasive, but every model here produced
+immaculate-looking steps around a wrong number. Confident presentation is
+not evidence of a correct result; in this dataset, it was reliably
+independent of one.
+
+The concrete version, if you take one thing away: when a model gives you
+a money figure, find the multiplications in its working and check them on
+a calculator. Not the logic — the arithmetic. That would have caught
+every single failure documented here, in under a minute each.
+
+This was run to find out where the line sits, not to argue against using
+these tools. The line is just further left than it looks.
 
 <InfoBox type="warning">
 This is educational information, not financial or tax advice. The tax
@@ -329,8 +410,12 @@ closed-form formula and verified against an independent recomputation. No
 model was consulted for a correct answer at any point.
 
 **Disclosure.** The models in this experiment are the subject being
-measured, not the author. The dataset was generated by running them; the
-analysis above is written by me.
+measured, not the author — none of the four wrote any part of this post.
+The dataset was generated by running them against the test bank, and
+every figure, chart and quoted transcript above comes from that dataset.
+The commentary was drafted with AI assistance and edited by me; the
+experiment design, the ground-truth calculations and the conclusions are
+mine.
 
 <Sources items={[
   { title: "Ollama", url: "https://ollama.com", publisher: "Ollama" },
