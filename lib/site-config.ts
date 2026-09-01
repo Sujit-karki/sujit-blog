@@ -31,9 +31,9 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/sujit.karki.921",
     instagram: "https://www.instagram.com/lampard100000",
     twitter: "",
-    linkedin: "",
-    github: "",
-    email: "",
+    linkedin: "https://www.linkedin.com/in/sujit-karkee",
+    github: "https://github.com/Sujit-karki",
+    email: "karkisujit02@gmail.com",
   },
 } as const;
 
@@ -44,7 +44,13 @@ export const siteConfig = {
 // filling these in once propagates everywhere. Empty until the real URLs
 // are added — schema.org treats an empty sameAs array the same as omitting
 // the field, so this is inert (not misleading) until then.
-export const authorSameAs: string[] = (Object.values(siteConfig.social) as string[]).filter(
+// Profile URLs only. `social` also holds the contact email, which is not a
+// profile — sweeping up every value here would put a bare address into
+// `sameAs`, where schema.org expects URLs. List the profile keys explicitly so
+// adding another contact field to `social` can't silently leak into the graph.
+const PROFILE_KEYS = ["facebook", "instagram", "twitter", "linkedin", "github"] as const;
+
+export const authorSameAs: string[] = PROFILE_KEYS.map((key) => siteConfig.social[key]).filter(
   Boolean
 );
 
