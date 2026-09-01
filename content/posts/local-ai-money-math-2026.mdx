@@ -1,0 +1,338 @@
+---
+title: "I Gave Four Local AI Models the Same Eight Money Problems. They All Failed the Two That Mattered."
+description: "A reproducible benchmark of small open models doing personal-finance arithmetic on a 4 GB laptop GPU. Every model got the tax question and the mortgage payment wrong — and the better the model, the harder its errors were to spot."
+seoTitle: "Local AI Models vs Money Math: A 320-Generation Test"
+seoDescription: "Four small open models, eight money problems, 320 generations on a 4 GB laptop GPU. All four failed the tax and mortgage questions."
+date: "2026-09-01"
+category: "Personal Finance"
+tags: ["AI", "Local LLM", "Ollama", "Tax Planning", "Original Data", "Benchmark"]
+author: "Sujit Karki"
+# DRAFT — remove this line once the TO WRITE sections are filled in. While it
+# is true the post stays out of the sitemap and carries a noindex tag, so an
+# unfinished piece can be previewed on the live site without being offered to
+# Google as thin content.
+noindex: true
+toc:
+  - id: "what-i-tested"
+    title: "What I Tested"
+    level: 2
+  - id: "the-results"
+    title: "The Results"
+    level: 2
+  - id: "the-two-questions-every-model-failed"
+    title: "The Two Questions Every Model Failed"
+    level: 2
+  - id: "the-error-that-should-worry-you"
+    title: "The Error That Should Worry You"
+    level: 2
+  - id: "you-cannot-catch-these-by-asking-twice"
+    title: "You Cannot Catch These by Asking Twice"
+    level: 2
+  - id: "what-this-means-if-you-use-these-tools"
+    title: "What This Means If You Use These Tools"
+    level: 2
+  - id: "methodology"
+    title: "Methodology"
+    level: 2
+faq:
+  - q: "Can AI do my taxes?"
+    a: "Not the arithmetic, on the evidence here. All four small open models tested failed a straightforward three-bracket tax calculation, with errors ranging from $7.50 to $13,580 on a $6,307.50 true answer. The models set the problem up correctly and then made arithmetic mistakes inside their own working."
+  - q: "Which small local AI model is best at math?"
+    a: "Of the four tested, qwen2.5:3b was the most accurate at 75% (60 of 80 generations), followed by phi3.5:3.8b at 62.5%, llama3.2:3b at 37.5% and gemma2:2b at 12.5%. All four still failed the tax and mortgage questions."
+  - q: "Does running the prompt again fix a wrong answer?"
+    a: "No. In 31 of 32 model-question pairs, every one of the 10 repetitions returned an identical answer, right or wrong. The models are consistent, not random, so repeating a prompt does not surface the error."
+---
+
+{/* ------------------------------------------------------------------
+    DRAFT. The data, charts, tables and methodology below are final and
+    verified against research/data/numeracy.csv.
+
+    The sections marked TO WRITE are yours. Per the editorial rule this
+    site runs on, the model is the instrument and the analysis is
+    human-written — so the argument has to be in your words, not
+    generated. Each marker says what the section needs to do.
+   ------------------------------------------------------------------ */}
+
+<KeyTakeaways items={[
+  "Four small open models answered the same eight personal-finance arithmetic problems, ten times each — 320 generations in total, on a laptop with a 4 GB GPU",
+  "Accuracy ranged from 12.5% to 75%, but every single model got the tax calculation and the mortgage payment wrong",
+  "qwen2.5:3b set up the tax brackets flawlessly and then computed 33,725 × 0.12 as 3,947 instead of 4,047 — arriving at a confident, fully-worked answer that was $100 short",
+  "In 31 of 32 model-question pairs, all ten repetitions returned the identical answer, so asking again does not reveal the mistake",
+  "The most accurate model produced the hardest errors to notice: gemma2 was wrong by a factor of three, qwen2.5 was wrong in the last two digits"
+]} />
+
+{/* TO WRITE — opening, ~150 words.
+    State the finding in the first sentence. Say why you ran this: you
+    wanted to know whether a model small enough to run on your own
+    hardware could be trusted with the arithmetic behind a real money
+    decision. Avoid throat-clearing about AI in general. */}
+
+## What I Tested
+
+Eight arithmetic problems, each one something a person might actually
+need answered: compound growth on a savings balance, a mortgage payment,
+a percentage change, tax owed across three brackets, splitting a
+restaurant bill, a portfolio allocation, an effective annual rate, and
+whether an annual subscription beats a monthly one.
+
+Every problem has one correct answer, computed by hand from a closed-form
+formula and checked independently. Where a question could have depended
+on current tax law, the brackets are supplied in the prompt itself — the
+test is whether a model can do the arithmetic, not whether it has
+memorised this year's tables.
+
+Each model answered each question ten times, with a different random seed
+each time. That is 80 generations per model and 320 in total.
+
+<InfoBox type="tip">
+The models were run entirely on my own machine through Ollama — an Acer
+Nitro 5 with a GTX 1650 Ti, 4 GB of video memory and 8 GB of system RAM.
+Nothing was sent to an API. Every model here is small enough to fit on
+hardware most people already own, which is the entire point: this is the
+tier a person actually runs at home.
+</InfoBox>
+
+## The Results
+
+<BarChart
+  title="Accuracy on eight money-math problems"
+  description="Percentage of 80 generations that produced the correct answer, per model"
+  data={[
+    { model: "gemma2:2b", accuracy: 12.5 },
+    { model: "llama3.2:3b", accuracy: 37.5 },
+    { model: "phi3.5:3.8b", accuracy: 62.5 },
+    { model: "qwen2.5:3b", accuracy: 75.0 }
+  ]}
+  xKey="model"
+  series={[{ key: "accuracy", label: "Correct answers" }]}
+  unit="%"
+  colorByCategory
+/>
+
+The spread is wide. `qwen2.5:3b` answered three-quarters of the
+generations correctly; `gemma2:2b` managed one question in eight. Both
+are small enough to run on the same 4 GB card.
+
+Speed does not track accuracy at all:
+
+<BarChart
+  title="Generation speed by model"
+  description="Median tokens per second on a GTX 1650 Ti, measured on an otherwise idle machine"
+  data={[
+    { model: "gemma2:2b", speed: 52.3 },
+    { model: "llama3.2:3b", speed: 47.3 },
+    { model: "phi3.5:3.8b", speed: 27.8 },
+    { model: "qwen2.5:3b", speed: 52.5 }
+  ]}
+  xKey="model"
+  series={[{ key: "speed", label: "Tokens per second" }]}
+  colorByCategory
+/>
+
+`phi3.5:3.8b` is the largest model tested and by far the slowest, at
+roughly half the throughput of the others — and it still finished second
+on accuracy, behind a model that runs at nearly twice its speed.
+
+{/* TO WRITE — ~120 words on what the ranking is and isn't worth.
+    Your honest read: is a 75% score usable? Say plainly what you would
+    and would not do with a tool that scores like this. */}
+
+## The Two Questions Every Model Failed
+
+Here is the part the headline accuracy numbers hide. Sorted by how many
+models got each question right:
+
+<ComparisonTable
+  caption="Models answering correctly, out of four"
+  headers={["Question", "Models correct", "What it asks"]}
+  rows={[
+    ["Portfolio allocation", "4 of 4", "30% of $42,500"],
+    ["Percentage increase", "3 of 4", "$85 to $103, as a percent"],
+    ["Compound interest", "2 of 4", "$10,000 at 5% for 10 years"],
+    ["Effective annual rate", "2 of 4", "12% APR compounded monthly"],
+    ["Subscription savings", "2 of 4", "$12.99/month vs $119/year"],
+    ["Tip split three ways", "2 of 4", "$87.40 plus 18%, divided by 3"],
+    ["Mortgage payment", "0 of 4", "$300,000, 30 years, 6%"],
+    ["Tax across three brackets", "0 of 4", "Tax owed on $50,000"]
+  ]}
+  highlightCol={1}
+/>
+
+Because every model answered identically across all ten repetitions on
+these questions, "models correct" means the same thing either way: a
+model either got a question right every time or wrong every time.
+
+The one question all four answered correctly is a single multiplication.
+The two that all four failed are the only two on the list where a person
+would genuinely reach for a calculator — and the only two attached to a
+number large enough to matter.
+
+{/* TO WRITE — ~150 words. This is the heart of the piece.
+    The pattern is that difficulty tracks the number of chained
+    operations, and the questions people most want help with are exactly
+    the multi-step ones. Say that in your own words, and say what it
+    implies about where these tools are actually useful. */}
+
+## The Error That Should Worry You
+
+`qwen2.5:3b` is the most accurate model here. This is its complete answer
+to the tax question:
+
+```text
+To solve this, we need to calculate the tax on the taxable income of $50,000 using the given tax brackets.
+
+1. **Calculate tax on the first bracket (0 to 11000):**
+   - Income: $11,000
+   - Tax rate: 10%
+   - Tax amount: $11,000 * 0.10 = $1,100
+
+2. **Calculate tax on the second bracket (11000 to 44725):**
+   - Income: $33,725 ($44,725 - $11,000)
+   - Tax rate: 12%
+   - Tax amount: $33,725 * 0.12 = $3,947
+
+3. **Calculate tax on the third bracket (44725 to 50000):**
+   - Income: $50,000 - $44,725 = $5,275
+   - Tax rate: 22%
+   - Tax amount: $5,275 * 0.22 = $1,160.50
+
+**Total tax owed:**
+- Tax from first bracket: $1,100
+- Tax from second bracket: $3,947
+- Tax from third bracket: $1,160.50
+
+**Total tax owed: $1,100 + $3,947 + $1,160.50 = $6,207.50**
+
+ANSWER: 6207.50
+```
+
+That is the complete, unedited reply — asterisks and all.
+
+Every structural decision is right. It identified all three brackets,
+subtracted the boundaries correctly, and — the step most people get wrong
+— stopped the top bracket at the taxpayer's actual $50,000 rather than
+running it to the bracket ceiling of $95,375.
+
+Then it computed `33,725 × 0.12` as `3,947`. The answer is `4,047`.
+
+One multiplication, off by exactly $100, buried in the middle of working
+that is otherwise flawless. The final figure of $6,207.50 arrives clean,
+itemised and confident.
+
+`llama3.2:3b` missed the identical multiplication in the other direction,
+giving `4,045`. `gemma2:2b` failed differently and much more loudly — it
+taxed the entire top bracket instead of stopping at $50,000, and returned
+$19,888 against a true $6,307.50.
+
+<InfoBox type="warning">
+The three models produce errors of $100, $7.50 and $13,580 on the same
+question. Only one of those is obvious enough that you would catch it by
+glancing at the answer.
+</InfoBox>
+
+{/* TO WRITE — ~200 words, the argument of the piece.
+    The inversion is the point: the better the model, the less detectable
+    its errors. gemma2's answer is so wrong it protects you. qwen2.5's is
+    wrong in a place no one checks. Make that argument in your voice, and
+    be careful not to overclaim — this is eight questions and four
+    models, not a law of nature. */}
+
+## You Cannot Catch These by Asking Twice
+
+The obvious defence is to run the prompt again and see whether the answer
+changes. It does not.
+
+Across 32 model-question pairs, 31 returned an identical answer in all
+ten repetitions — the same answer every time, whether right or wrong.
+The single exception was `phi3.5:3.8b` on the mortgage question, which
+split nine-to-one between $1,796.39 and $1,795.96. Both are wrong; the
+true payment is $1,798.65.
+
+To check this was not an artefact of one session, three of the four
+models were run twice, hours apart, under very different system load. All
+240 overlapping generations returned identical answers, and each model's
+accuracy was unchanged.
+
+These models are not guessing. They are reliably, repeatably wrong, which
+removes the one safeguard a non-expert user might plausibly apply.
+
+{/* TO WRITE — ~120 words on what defence is left.
+    Your view: if repetition doesn't work and the working looks correct,
+    what should a reader actually do? Be concrete and practical. */}
+
+## What This Means If You Use These Tools
+
+{/* TO WRITE — the closing section, ~250 words.
+    Practical guidance in your own words. Suggested spine, rewrite freely:
+    - what these models are genuinely fine for
+    - the specific shape of task to never hand them
+    - that "it showed its working" is not verification
+    - the disclosure that you built this to find out, not to dunk on
+      small models
+    End on something a reader can act on tomorrow. */}
+
+<InfoBox type="warning">
+This is educational information, not financial or tax advice. The tax
+brackets used above are illustrative figures supplied in the prompt, not
+current IRS brackets, and exist only to test arithmetic. Consult a
+licensed professional before acting on any tax or investment decision.
+</InfoBox>
+
+## Methodology
+
+Every number in this post comes from a dataset I generated and published.
+The harness, the raw generations and the aggregated results are in the
+site's repository under `research/`, and the run is reproducible on any
+machine with Ollama installed.
+
+**Hardware.** Acer Nitro 5, NVIDIA GTX 1650 Ti (4 GB VRAM), 8 GB system
+RAM, Windows 11. All four models ran fully on the GPU, confirmed via
+`ollama ps`.
+
+**Models.** `gemma2:2b`, `llama3.2:3b`, `qwen2.5:3b` and `phi3.5:3.8b`,
+all at Q4_K_M quantisation — the default weights `ollama pull` fetches.
+Ollama 0.33.2.
+
+**Settings.** `temperature 0`, an explicit seed, `num_ctx 2048` and
+`num_predict 1024` on every call. Temperature alone is not deterministic,
+because GPU floating-point reduction order varies between runs, so all of
+them are pinned. The first generation after a model loads behaves
+differently from later ones, so one warm-up call per model was made and
+discarded.
+
+**A bug I found and fixed before publishing.** The first run used
+`num_predict 512`. That silently cut off 20 generations — every one of
+them `phi3.5:3.8b` on the mortgage and tax questions, the two it failed.
+The replies ended on the bare word `ANSWER`, with the number itself lost,
+which meant the most verbose model was being penalised for showing its
+work. I raised the cap to 1024 and re-ran those 20. The answers came back
+identical — 7450.50 on tax all ten times, and the same nine-to-one
+mortgage split — so the scores here are unchanged, but they were briefly
+resting on luck rather than on a sound measurement. The harness now
+records Ollama's `done_reason` on every generation so a truncated reply
+can never again be mistaken for a wrong answer.
+
+**Repetitions.** Ten per question per model, each with a different seed
+(42 through 51). A single sample cannot distinguish a model that is
+reliably correct from one that is occasionally correct.
+
+**Grading.** Prompts require a final `ANSWER: <number>` line; all 320
+generations complied. Answers are compared against a hand-computed value
+within a stated tolerance — one cent for exact arithmetic, wider where a
+formula involves rounding a discount factor. Tolerances matter to the
+result: `phi3.5:3.8b` answers the compound-interest question with
+`16288.0` against a true `16288.95`, which is scored wrong here, and is
+wrong, but only by 95 cents on a $16,289 balance.
+
+**Ground truth.** Every expected value was computed by hand from a
+closed-form formula and verified against an independent recomputation. No
+model was consulted for a correct answer at any point.
+
+**Disclosure.** The models in this experiment are the subject being
+measured, not the author. The dataset was generated by running them; the
+analysis above is written by me.
+
+<Sources items={[
+  { title: "Ollama", url: "https://ollama.com", publisher: "Ollama" },
+  { title: "Harness, raw generations and dataset", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository" }
+]} />

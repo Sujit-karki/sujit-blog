@@ -33,6 +33,14 @@ are all set. Temperature alone is not enough: GPU floating-point reduction order
 varies between runs. Even with all three, occasional divergence is expected —
 which is exactly why each prompt is repeated rather than sampled once.
 
+**Truncation.** `num_predict` is 1024 and every result records Ollama's
+`done_reason`. The first run used 512 and silently cut off 20 generations, all
+of them the most verbose model on the two hardest questions — the replies ended
+on the bare word `ANSWER` with the number lost, so the model was being penalised
+for showing its work. A `truncated` row is a measurement artefact and must never
+be reported as a wrong answer. Re-running those 20 at 1024 returned identical
+answers, so the published figures were unaffected, but only by luck.
+
 **Warm-up discard.** The first generation after a model loads differs from
 later ones, so one throwaway call per model is made and excluded.
 

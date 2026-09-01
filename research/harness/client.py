@@ -40,10 +40,19 @@ class Generation:
     total_s: float
     prompt_tokens: int
     eval_tokens: int
+    #: "stop" when the model finished on its own; "length" when it was cut off
+    #: by num_predict. Recorded because a truncated reply can lose its final
+    #: ANSWER line and be scored as a wrong answer when it is really a
+    #: measurement artefact.
+    done_reason: str = ""
 
     @property
     def tokens_per_s(self) -> float:
         return self.eval_tokens / self.eval_s if self.eval_s > 0 else 0.0
+
+    @property
+    def truncated(self) -> bool:
+        return self.done_reason == "length"
 
 
 class OllamaClient:
@@ -75,7 +84,11 @@ class OllamaClient:
         *,
         seed: int,
         num_ctx: int = 2048,
-        num_predict: int = 512,
+        # 1024, not 512: phi3.5 writes out the full amortisation formula and was
+        # being cut off mid-answer at 512, losing its ANSWER line entirely on
+        # the two hardest questions. A cap that silently truncates the verbose
+        # models biases the result against exactly the ones showing their work.
+        num_predict: int = 1024,
     ) -> Generation:
         """One deterministic-as-possible generation.
 
@@ -109,6 +122,7 @@ class OllamaClient:
             total_s=data.get("total_duration", 0) / NS,
             prompt_tokens=data.get("prompt_eval_count", 0),
             eval_tokens=data.get("eval_count", 0),
+            done_reason=data.get("done_reason", ""),
         )
 
     def available_models(self) -> list[str]:

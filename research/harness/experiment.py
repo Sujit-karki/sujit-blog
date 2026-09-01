@@ -61,6 +61,11 @@ class Result:
     eval_s: float
     tokens_per_s: float
     eval_tokens: int
+    #: "length" means num_predict cut the reply off. Such a row is a
+    #: measurement artefact, not evidence about the model's arithmetic, and
+    #: must not be reported as a wrong answer without saying so.
+    done_reason: str = ""
+    truncated: bool = False
     error: str = ""
     meta: dict = field(default_factory=dict)
 
@@ -200,13 +205,15 @@ class Experiment(abc.ABC):
                 eval_s=round(generation.eval_s, 3),
                 tokens_per_s=round(generation.tokens_per_s, 2),
                 eval_tokens=generation.eval_tokens,
+                done_reason=generation.done_reason,
+                truncated=generation.truncated,
                 meta={
                     "wall_s": round(time.time() - started, 2),
                     "host_os": platform.platform(),
                 },
             )
         )
-        mark = "ok " if correct else "MISS"
+        mark = "CUT " if generation.truncated else ("ok " if correct else "MISS")
         print(
             f"  {scenario.id} rep{rep}: {mark} parsed={parsed} expected={scenario.expected} "
             f"({generation.tokens_per_s:.1f} tok/s)",

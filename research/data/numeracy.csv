@@ -18,8 +18,8 @@ llama3.2:3b,tip-split,percentage,10,0,0.0,1,34.38,34.35,46.16,0.061
 phi3.5:3.8b,allocation,allocation,10,10,1.0,1,12750.0,12750.0,28.16,0.095
 phi3.5:3.8b,compound-interest,growth,10,0,0.0,1,16288.95,16288.0,27.09,0.092
 phi3.5:3.8b,effective-annual-rate,growth,10,10,1.0,1,12.68,12.68,27.88,0.095
-phi3.5:3.8b,marginal-tax,tax,10,0,0.0,1,6307.5,7450.5,26.38,0.094
-phi3.5:3.8b,mortgage-payment,amortization,10,0,0.0,2,1798.65,1796.39,26.27,0.093
+phi3.5:3.8b,marginal-tax,tax,10,0,0.0,1,6307.5,7450.5,25.65,0.101
+phi3.5:3.8b,mortgage-payment,amortization,10,0,0.0,2,1798.65,1796.39,25.82,0.103
 phi3.5:3.8b,percent-increase,percentage,10,10,1.0,1,21.18,21.18,27.91,0.096
 phi3.5:3.8b,subscription-savings,comparison,10,10,1.0,1,36.88,36.88,29.12,0.098
 phi3.5:3.8b,tip-split,percentage,10,10,1.0,1,34.38,34.38,28.16,0.094
