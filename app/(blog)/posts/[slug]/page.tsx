@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts, getPostBySlug, getRelatedPosts, formatDate, slugifyTag } from "@/lib/posts";
+import {
+  getAllPosts,
+  getPostBySlug,
+  getRelatedPosts,
+  formatDate,
+  slugifyTag,
+  tagHasPage,
+} from "@/lib/posts";
 import { siteConfig, slugifyCategory, authorSameAs } from "@/lib/site-config";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import AuthorBio from "@/components/AuthorBio";
@@ -220,15 +227,27 @@ export default async function PostPage({ params }: Props) {
             {/* Tags */}
             {post.tags?.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-                {post.tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    href={`/tags/${slugifyTag(tag)}`}
-                    className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
-                  >
-                    #{tag}
-                  </Link>
-                ))}
+                {post.tags.map((tag) =>
+                  // Tags too rare to have an archive page still show — they
+                  // tell the reader what the piece covers — but as plain text,
+                  // so nothing links to a URL that would only 404.
+                  tagHasPage(tag) ? (
+                    <Link
+                      key={tag}
+                      href={`/tags/${slugifyTag(tag)}`}
+                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                    >
+                      #{tag}
+                    </Link>
+                  ) : (
+                    <span
+                      key={tag}
+                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-500"
+                    >
+                      #{tag}
+                    </span>
+                  )
+                )}
               </div>
             )}
 

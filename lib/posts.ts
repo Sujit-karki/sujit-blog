@@ -117,8 +117,44 @@ export function getAllTags(): string[] {
   return Array.from(tagSet).sort();
 }
 
+// Tags are matched by slug, not by exact string. Frontmatter across the archive
+// uses both "taxes" and "Taxes", "retirement" and "Retirement" — 20 such pairs.
+// An exact-match lookup treats those as different tags while they share one
+// URL, so /tags/taxes was listing only the 4 posts tagged "Taxes" and hiding
+// the 10 tagged "taxes". Matching on the slug merges the variants, which is
+// what a reader landing on that page expects to see.
 export function getPostsByTag(tag: string): Post[] {
-  return getAllPosts().filter((p) => p.tags?.includes(tag));
+  const slug = slugifyTag(tag);
+  return getAllPosts().filter((p) => p.tags?.some((t) => slugifyTag(t) === slug));
+}
+
+// A tag page listing one or two posts is a thin archive: it adds a crawlable
+// URL without adding anything a reader or a crawler wants. 76 posts carried 307
+// distinct tags, 255 of them used exactly once — four crawlable URLs per post,
+// every one of them noindexed. Googlebot still has to discover and fetch each
+// one before being told to ignore it, and on a young domain that crawl budget
+// is better spent on the posts themselves.
+//
+// Tags below this threshold still render on the post (readers see the topic),
+// they just don't get a page, so no link points at a URL that isn't worth
+// crawling. Mirrors the existing rule for thin category pages.
+export const TAG_PAGE_MIN_POSTS = 3;
+
+export function tagHasPage(tag: string): boolean {
+  return getPostsByTag(tag).length >= TAG_PAGE_MIN_POSTS;
+}
+
+// One entry per slug, not per spelling — otherwise "taxes" and "Taxes" would
+// both generate /tags/taxes.
+export function getTagsWithPages(): string[] {
+  const bySlug = new Map<string, string>();
+  for (const tag of getAllTags()) {
+    const slug = slugifyTag(tag);
+    if (bySlug.has(slug) || !tagHasPage(tag)) continue;
+    const canonical = tagFromSlug(slug);
+    if (canonical) bySlug.set(slug, canonical);
+  }
+  return [...bySlug.values()];
 }
 
 // Multi-word tags (e.g. "Market Analysis") need a URL-safe slug instead of a
@@ -134,8 +170,19 @@ export function slugifyTag(tag: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+// Several tags exist in more than one spelling. Resolve a slug to the variant
+// the most posts actually use, so the page heading reads the way the archive
+// does rather than whichever casing happened to sort first.
 export function tagFromSlug(slug: string): string | undefined {
-  return getAllTags().find((t) => slugifyTag(t) === slug);
+  const counts = new Map<string, number>();
+  for (const post of getAllPosts()) {
+    for (const tag of post.tags ?? []) {
+      if (slugifyTag(tag) !== slug) continue;
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+  if (counts.size === 0) return undefined;
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0][0];
 }
 
 export function getPostsByCategory(category: string): Post[] {

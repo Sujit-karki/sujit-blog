@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PostCard from "@/components/PostCard";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
-import { getAllTags, getPostsByTag, slugifyTag, tagFromSlug } from "@/lib/posts";
+import { getPostsByTag, getTagsWithPages, slugifyTag, tagFromSlug, tagHasPage } from "@/lib/posts";
 import { siteConfig } from "@/lib/site-config";
 
 type Props = { params: Promise<{ tag: string }> };
@@ -12,13 +12,16 @@ export async function generateStaticParams() {
   // encoded space (%20) doesn't reliably match the incoming request URL
   // under Next 16 Cache Components, 404ing in production even though the
   // exact route is listed as prerendered. Slugs sidestep that entirely.
-  return getAllTags().map((tag) => ({ tag: slugifyTag(tag) }));
+  // Only tags carrying TAG_PAGE_MIN_POSTS or more get a page — see the note on
+  // getTagsWithPages. Everything else 404s below rather than existing as one
+  // more noindexed URL for Googlebot to fetch and discard.
+  return getTagsWithPages().map((tag) => ({ tag: slugifyTag(tag) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tag: slug } = await params;
   const tag = tagFromSlug(slug);
-  if (!tag) return {};
+  if (!tag || !tagHasPage(tag)) return {};
   const url = `${siteConfig.url}/tags/${slug}`;
   return {
     title: `#${tag} Articles`,
@@ -32,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TagPage({ params }: Props) {
   const { tag: slug } = await params;
   const tag = tagFromSlug(slug);
-  if (!tag) notFound();
+  if (!tag || !tagHasPage(tag)) notFound();
   const posts = getPostsByTag(tag);
   if (posts.length === 0) notFound();
 
