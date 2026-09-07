@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 import { tools } from "@/lib/tools-config";
+import { correctionsByDate } from "@/lib/corrections";
 
 const url = siteConfig.url;
 
@@ -15,7 +16,12 @@ const url = siteConfig.url;
 const ABOUT_UPDATED = new Date("2026-08-20");
 const EDITORIAL_POLICY_UPDATED = new Date("2026-08-20");
 const METHODOLOGY_UPDATED = new Date("2026-08-20");
-const CORRECTIONS_UPDATED = new Date("2026-08-20");
+// Derived rather than hand-set: the corrections page is a live log now, so its
+// lastModified is the date of the most recent correction. A hand-maintained
+// constant here would go stale the first time one is added and forgotten.
+const CORRECTIONS_UPDATED = new Date(
+  `${correctionsByDate()[0]?.date ?? "2026-08-20"}T00:00:00Z`
+);
 const AI_DISCLOSURE_UPDATED = new Date("2026-08-20");
 const CONTACT_UPDATED = new Date("2026-06-15");
 const DISCLAIMER_UPDATED = new Date("2026-06-17");
@@ -40,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${url}/about`, lastModified: ABOUT_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     { url: `${url}/editorial-policy`, lastModified: EDITORIAL_POLICY_UPDATED, changeFrequency: "yearly", priority: 0.5 },
     { url: `${url}/methodology`, lastModified: METHODOLOGY_UPDATED, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${url}/corrections`, lastModified: CORRECTIONS_UPDATED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${url}/corrections`, lastModified: CORRECTIONS_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: `${url}/ai-disclosure`, lastModified: AI_DISCLOSURE_UPDATED, changeFrequency: "yearly", priority: 0.4 },
     { url: `${url}/contact`, lastModified: CONTACT_UPDATED, changeFrequency: "yearly", priority: 0.4 },
     { url: `${url}/disclaimer`, lastModified: DISCLAIMER_UPDATED, changeFrequency: "yearly", priority: 0.3 },
