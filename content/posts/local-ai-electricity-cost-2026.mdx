@@ -1,0 +1,217 @@
+---
+title: "One Rupee Buys You 1.8 Hours of AI: What Running a Model at Home Actually Costs in Electricity"
+description: "Measured GPU power draw across four local models on a 4 GB laptop. Running one costs about 3 rupees per million tokens — and the model that sips the least power is the most expensive to run."
+seoTitle: "What Local AI Actually Costs in Electricity: Measured"
+seoDescription: "Four local models, measured GPU draw. About 3 NPR per million tokens — and the lowest-wattage model turns out to be the priciest per token."
+date: "2026-09-07"
+category: "Personal Finance"
+tags: ["AI", "Local LLM", "Electricity", "Original Data", "Ollama", "Cost of Living"]
+author: "Sujit Karki"
+toc:
+  - { id: "the-number", title: "The number", level: 2 }
+  - { id: "working-it-out-at-your-own-rate", title: "Working it out at your own rate", level: 3 }
+  - { id: "the-counterintuitive-part", title: "The model that sips power costs the most", level: 2 }
+  - { id: "against-the-cloud", title: "Against the cloud, honestly", level: 2 }
+  - { id: "what-this-does-and-does-not-tell-you", title: "What this does and does not tell you", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "How much electricity does it cost to run an AI model at home?"
+    a: "On a laptop with a GTX 1650 Ti, generating a million tokens costs between 3.1 and 5.0 Nepali rupees in GPU electricity, depending on the model — roughly two to three US cents. One rupee buys about 1.8 hours of continuous generation."
+  - q: "Is running AI locally cheaper than a cloud API?"
+    a: "On electricity alone, dramatically. The cheapest model measured costs about $0.021 per million tokens to run, against $5 per million output tokens for Claude Haiku 4.5 and $25 for Claude Opus 5 — a factor of 243 to 1,216. But that compares an electricity bill against a retail price which also covers hardware, training and margin, and the local models are far less capable."
+  - q: "Does a lower-wattage AI model cost less to run?"
+    a: "Not necessarily. phi3.5:3.8b drew the least power of the four models measured, at 35.7 watts against roughly 45 for the others — yet cost the most per token, because it generated at 22 tokens per second against 52. Energy per token is power divided by throughput, so speed matters more than wattage."
+---
+
+<KeyTakeaways items={[
+  "Generating a million tokens on a 4 GB laptop GPU costs 3.1 to 5.0 Nepali rupees in electricity, depending on the model — about two to three US cents.",
+  "One rupee buys roughly 1.8 hours of continuous generation.",
+  "The lowest-wattage model was the most expensive per token: it drew 22% less power but ran 58% slower.",
+  "Against cloud API pricing that is 243x to 1,216x cheaper — but the comparison is electricity against a retail price, and the local models are far weaker.",
+  "Idle GPU draw is 3.51 W; under load it rises to roughly 45 W."
+]} />
+
+Writing about running AI at home usually compares graphics cards, or quotes a
+GPU's rated wattage off a spec sheet. Neither answers the question a person
+actually has, which is: if I use this thing, what happens to my electricity bill?
+
+So I measured it. A background sampler polled the GPU's power draw four times a
+second while four models generated text, on the same laptop used for [the
+numeracy benchmark](/posts/local-ai-money-math-2026) and [the tax
+test](/posts/ai-tax-brackets-more-context-worse-2026) on this site — an Acer
+Nitro 5 with a GTX 1650 Ti.
+
+## The number
+
+At the Nepal Electricity Authority domestic rate of 12 rupees per kilowatt-hour:
+
+<ComparisonTable
+  caption="Measured GPU energy and cost, five generations per model"
+  headers={["Model", "Tokens/sec", "Mean draw", "Wh per 1k tokens", "NPR per 1M tokens"]}
+  rows={[
+    ["qwen2.5:3b", "52.2", "45.5 W", "0.26", "3.12"],
+    ["gemma2:2b", "52.4", "44.7 W", "0.26", "3.17"],
+    ["llama3.2:3b", "46.9", "45.9 W", "0.29", "3.45"],
+    ["phi3.5:3.8b", "22.2", "35.7 W", "0.42", "5.01"]
+  ]}
+  highlightCol={4}
+/>
+
+A million tokens is a great deal of text — roughly seven or eight full-length
+novels. Producing it costs **between three and five rupees**.
+
+Put another way: **one rupee buys about 1.8 hours of continuous generation.** The
+electricity is not the constraint. It is not close to being the constraint.
+
+<StatCard label="Cost per million tokens, cheapest model" value={3.12} format="number" decimals={2} sublabel="NPR, GPU electricity only, at 12 NPR/kWh" />
+
+### Working it out at your own rate
+
+Rupees are the wrong currency for most readers of this site, so here is the part
+that transfers. **Energy per token does not depend on where you live** — only the
+price of that energy does. The measurement is:
+
+> **0.26 watt-hours per 1,000 tokens** on the most efficient model, or **0.42** on
+> the least. Call it **0.26 to 0.42 kWh per million tokens.**
+
+Multiply by whatever you pay per kilowatt-hour. In the United States the average
+residential rate is published monthly by the Energy Information Administration,
+and it varies enough by state that a national average would be misleading for
+anyone in particular — look up yours and multiply. At any residential rate in the
+developed world the answer lands in the same place this one does: a few cents per
+million tokens, which is to say nothing.
+
+## The model that sips power costs the most
+
+Look at the last row of that table again, because it inverts the intuition the
+whole "wattage" framing encourages.
+
+`phi3.5:3.8b` draws **35.7 watts** under load — about 22% *less* than the other
+three, which sit near 45. On a power meter it is the gentle one. Yet it is the
+**most expensive model per token**, by a margin of 61%.
+
+<BarChart
+  title="Energy per 1,000 tokens, by model"
+  description="Marginal watt-hours above idle. Lower is cheaper to run."
+  data={[
+    { model: "qwen2.5:3b", wh: 0.2596 },
+    { model: "gemma2:2b", wh: 0.2643 },
+    { model: "llama3.2:3b", wh: 0.2874 },
+    { model: "phi3.5:3.8b", wh: 0.4172 }
+  ]}
+  xKey="model"
+  series={[{ key: "wh", label: "Wh per 1k tokens" }]}
+  colorByCategory
+/>
+
+The reason is arithmetic. Energy per token is **power divided by throughput**,
+and phi3.5 generates at 22.2 tokens per second against roughly 52 for the
+others. Drawing 22% less power while taking 2.3 times as long is a losing trade.
+It holds the GPU for longer, and duration beats wattage.
+
+<InfoBox type="tip">
+This is why a wattage figure on its own tells you nothing about running cost. A
+model that idles the card at low power for a long time can cost more than one
+that runs it hard and finishes. The number to compare is energy per unit of work,
+not watts.
+</InfoBox>
+
+There is a sharper edge to this. In [the tax
+benchmark](/posts/ai-tax-brackets-more-context-worse-2026), `phi3.5:3.8b` was the
+**only model of the four to score above zero** — 51% correct where the others got
+nothing right. So the one model worth using is also the one that costs the most
+to run. On this hardware, accuracy is not free; it is about 60% more expensive
+per token. It is still five rupees per million.
+
+## Against the cloud, honestly
+
+Converting at the Nepal Rastra Bank rate for 7 September 2026 — 151.48 rupees to
+the dollar, selling — the cheapest model costs **$0.021 per million tokens** in
+electricity.
+
+<ComparisonTable
+  caption="Local electricity cost against published API pricing"
+  headers={["Option", "Per 1M output tokens", "Ratio"]}
+  rows={[
+    ["qwen2.5:3b on this laptop", "$0.021", "baseline"],
+    ["Claude Haiku 4.5", "$5.00", "243x"],
+    ["Claude Sonnet 5", "$10.00", "486x"],
+    ["Claude Opus 5", "$25.00", "1,216x"]
+  ]}
+  highlightCol={1}
+/>
+
+Those ratios are real, and they are also the most misleading numbers in this
+post if left without qualification. Three things they do not account for:
+
+**It is electricity against a retail price.** The API figure covers datacentre
+hardware, model training, serving capacity, bandwidth, support and profit. The
+local figure covers none of those, because you already paid for the laptop. A
+fair comparison would amortise the machine — and at these volumes the hardware
+dominates completely.
+
+**The models are not comparable.** A 3B model quantised to fit 4 GB is not
+Claude Opus 5, and the two previous experiments on this site measured exactly
+how badly these models fail at ordinary money arithmetic. Three of the four
+scored zero on a tax calculation. Cheap output you cannot trust is not a bargain.
+
+**It is GPU-only.** CPU, RAM, display and power-supply losses are real and I have
+no wall-plug meter to capture them, so the true figure is somewhat higher. It is
+a floor, not a total.
+
+## What this does and does not tell you
+
+The defensible claim is narrow: **once you own the hardware, the marginal cost of
+running a model on it rounds to nothing.** Three rupees per million tokens is not
+a budget line. It is not worth thinking about.
+
+That matters because it removes running cost from the decision entirely. If you
+are choosing between a local model and an API, the real questions are capability,
+privacy, and whether you already own a machine that can run it. Electricity is
+not one of the questions, and any argument that leans on it — in either direction
+— is arguing about a number too small to matter.
+
+The corollary is less comfortable. If electricity is free and the hardware is
+already bought, the only remaining cost of a wrong answer is the wrong answer
+itself. On this hardware, [that turns out to be the expensive
+part](/posts/ai-tax-brackets-more-context-worse-2026).
+
+## Methodology
+
+The measurement script and the raw results are in this site's repository under
+`research/`, and the run reproduces on any machine with an NVIDIA GPU and Ollama.
+
+**Hardware.** Acer Nitro 5, NVIDIA GTX 1650 Ti (4 GB VRAM), 8 GB system RAM,
+Ollama 0.33.2. All four models ran fully on the GPU.
+
+**Sampling.** `nvidia-smi` reports instantaneous power draw. A background thread
+polls it every 250 ms for the duration of each generation, so each figure is a
+mean over that specific request rather than a nameplate rating. Five generations
+per model, each producing 608 to 768 tokens.
+
+**Marginal, not total.** The laptop draws power whether or not it is inferring.
+The idle baseline — **3.51 W**, measured before the run — is subtracted, so the
+headline figures are the *additional* energy inference costs. Total draw is
+recorded alongside in the dataset and is roughly 8% higher.
+
+**Rates.** Electricity at 12 NPR/kWh. Currency converted at the Nepal Rastra Bank
+published rate for 7 September 2026 (USD sell 151.48). API prices are Anthropic's
+published per-million-token output rates.
+
+**Limits.** GPU only, as described above. One machine, one GPU, four small
+models — throughput and therefore cost per token will differ on other hardware.
+The script accepts any tariff via `--rate`, so the calculation reproduces at your
+own electricity price rather than mine.
+
+**Disclosure.** The models are the subject being measured, not the author. The
+commentary was drafted with AI assistance; the experiment design, the measurement
+method and the conclusions are mine.
+
+<Sources items={[
+  { title: "Electric Power Monthly — average price of electricity to ultimate customers", url: "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a", publisher: "U.S. Energy Information Administration", date: "2026" },
+  { title: "Electricity prices and factors affecting prices", url: "https://www.eia.gov/energyexplained/electricity/prices-and-factors-affecting-prices.php", publisher: "U.S. Energy Information Administration", date: "2026" },
+  { title: "Measurement script and raw results", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Foreign exchange rates", url: "https://www.nrb.org.np/forex/", publisher: "Nepal Rastra Bank", date: "7 September 2026" },
+  { title: "Claude API pricing", url: "https://www.anthropic.com/pricing", publisher: "Anthropic", date: "2026" },
+  { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" }
+]} />
