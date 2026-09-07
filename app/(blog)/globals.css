@@ -6,6 +6,7 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
@@ -13,11 +14,18 @@
 :root {
   --background: #ffffff;
   --foreground: #111827;
+  /* Hairline used for section rules in article bodies. Defined as a token
+     rather than as a `:where(.dark)` override: that compiles down to a
+     zero-specificity selector the optimiser flattens to the same selector as
+     the light rule, so the dark colour wins in both themes. A variable that
+     flips with the theme cannot lose that way. */
+  --rule: #e5e7eb;
 }
 
 .dark {
   --background: #0c0f14;
   --foreground: #f1f5f9;
+  --rule: #1f2937;
 }
 
 body {
@@ -48,6 +56,68 @@ html {
 }
 .prose :where(h3):not(:where([class~="not-prose"] *)) {
   scroll-margin-top: 6rem;
+}
+
+/* ── Editorial headlines ────────────────────────────────────
+   Source Serif 4 carries the headlines; everything else stays on the sans.
+   Applied by class rather than to every h1-h3 globally, so component headings
+   inside cards, charts and UI keep the sans they were designed with. */
+.font-display {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+#article-body > h2,
+#article-body > h3 {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+/* ── Reading measure ────────────────────────────────────────
+   The article column is about 900px wide, which at prose-lg is 95-100
+   characters a line — comfortable reading is 60-75. Rather than narrowing the
+   column (which would shrink every chart and table with it), the measure is
+   applied to running text only. Block-level components — charts, comparison
+   tables, callouts, the signup blocks — are direct children too, but they are
+   not in this selector list, so they keep the full column width.
+
+   Deliberately scoped to #article-body, not .prose: the same prose classes
+   dress the policy pages, where the container is already narrow. */
+#article-body > p,
+#article-body > ul,
+#article-body > ol,
+#article-body > blockquote,
+#article-body > h2,
+#article-body > h3,
+#article-body > h4 {
+  max-width: 68ch;
+}
+
+/* A hairline above each h2, so a long post reads as a sequence of sections
+   rather than an unbroken column. The rule spans the text measure only, not
+   the full column, so it lines up with the heading beneath it. The first
+   heading gets none — there is nothing above it to separate from. */
+#article-body > h2 {
+  border-top: 1px solid var(--rule);
+}
+#article-body > h2:first-child {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Figures inside the flow still align with the text they explain. */
+#article-body > figure > figcaption {
+  max-width: 68ch;
+}
+
+/* ── Numerals in financial copy ─────────────────────────────
+   This site is mostly tables of money. Lining, tabular figures keep columns
+   aligned and stop digits jittering between rows. */
+#article-body table,
+.tabular {
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 /* ── Animated gradient hero ─────────────────────────────────── */

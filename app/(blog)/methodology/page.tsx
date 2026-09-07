@@ -25,7 +25,7 @@ export default function MethodologyPage() {
           <Breadcrumb items={breadcrumbItems} />
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
+        <h1 className="font-display text-3xl sm:text-4xl text-gray-900 dark:text-white mb-3">
           Methodology
         </h1>
         <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">

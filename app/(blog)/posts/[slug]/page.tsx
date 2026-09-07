@@ -161,7 +161,7 @@ export default async function PostPage({ params }: Props) {
                 >
                   {post.category}
                 </Link>
-                <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4 max-w-3xl">
+                <h1 className="font-display text-3xl sm:text-4xl leading-tight mb-4 max-w-3xl">
                   {post.title}
                 </h1>
                 <p className="text-lg text-white/85 leading-relaxed mb-5 max-w-2xl">
@@ -212,14 +212,17 @@ export default async function PostPage({ params }: Props) {
             <article
               id="article-body"
               className="prose prose-gray dark:prose-invert prose-lg max-w-none
-                prose-headings:font-extrabold prose-headings:tracking-tight
-                prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-                prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-                prose-p:leading-[1.8] prose-p:text-gray-700 dark:prose-p:text-gray-300
+                prose-headings:tracking-tight prose-headings:text-balance
+                prose-h2:text-[1.75rem] prose-h2:leading-snug prose-h2:font-bold
+                prose-h2:mt-14 prose-h2:mb-4 prose-h2:pt-8
+                prose-h3:text-[1.3rem] prose-h3:font-bold prose-h3:mt-9 prose-h3:mb-3
+                prose-p:leading-[1.75] prose-p:text-gray-700 dark:prose-p:text-gray-300
                 prose-a:text-emerald-600 dark:prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-gray-900 dark:prose-strong:text-white
                 prose-li:text-gray-700 dark:prose-li:text-gray-300
-                prose-li:leading-relaxed prose-ul:my-4 prose-ol:my-4"
+                prose-li:leading-relaxed prose-ul:my-4 prose-ol:my-4
+                prose-blockquote:border-l-emerald-500 prose-blockquote:not-italic
+                prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400"
             >
               <PostContent />
             </article>

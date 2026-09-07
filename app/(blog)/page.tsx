@@ -69,7 +69,7 @@ export default function HomePage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 mb-1">
                   Original data
                 </p>
-                <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white">
+                <h2 className="font-display text-xl sm:text-2xl text-gray-900 dark:text-white">
                   Numbers I generated, not numbers I found
                 </h2>
               </div>
