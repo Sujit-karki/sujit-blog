@@ -21,6 +21,7 @@ const CONTACT_UPDATED = new Date("2026-06-15");
 const DISCLAIMER_UPDATED = new Date("2026-06-17");
 const PRIVACY_POLICY_UPDATED = new Date("2026-06-12");
 const TOOLS_INDEX_UPDATED = new Date("2026-07-14");
+const RESEARCH_INDEX_UPDATED = new Date("2026-09-07");
 const TOOLS_CONFIG_UPDATED = new Date("2026-07-18");
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${url}/disclaimer`, lastModified: DISCLAIMER_UPDATED, changeFrequency: "yearly", priority: 0.3 },
     { url: `${url}/privacy-policy`, lastModified: PRIVACY_POLICY_UPDATED, changeFrequency: "yearly", priority: 0.3 },
     { url: `${url}/tools`, lastModified: TOOLS_INDEX_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${url}/research`, lastModified: RESEARCH_INDEX_UPDATED, changeFrequency: "weekly", priority: 0.8 },
 
     ...tools.map((tool) => ({
       url: `${url}/tools/${tool.slug}`,
