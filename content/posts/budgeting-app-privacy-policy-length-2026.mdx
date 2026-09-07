@@ -1,0 +1,185 @@
+---
+title: "You Agreed to 25,000 Words. Reading Them Takes 102 Minutes."
+description: "Four budgeting apps' privacy policies, measured. Empower's runs 11,352 words at a postgraduate reading level. Reading all four takes an hour and 42 minutes — and that is the optimistic estimate."
+seoTitle: "Budgeting App Privacy Policies: 25,000 Words, 102 Minutes"
+seoDescription: "Four budgeting app privacy policies measured for length and reading level. Empower's alone is 11,352 words at grade 16.6."
+date: "2026-09-07"
+category: "Personal Finance"
+tags: ["Privacy", "Budgeting Apps", "Original Data", "Consumer Protection", "Readability"]
+author: "Sujit Karki"
+toc:
+  - { id: "what-you-agreed-to", title: "What you agreed to", level: 2 }
+  - { id: "the-reading-level-is-the-real-barrier", title: "The reading level is the real barrier", level: 2 }
+  - { id: "what-i-deliberately-did-not-measure", title: "What I deliberately did not measure", level: 2 }
+  - { id: "what-to-actually-do", title: "What to actually do", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "How long are budgeting app privacy policies?"
+    a: "Of four measured in September 2026: Empower 11,352 words, YNAB 7,161, Monarch Money 5,890, Goodbudget 1,176. Together 25,579 words, which takes about 102 minutes to read at 250 words per minute."
+  - q: "What reading level are privacy policies written at?"
+    a: "The four measured average Flesch-Kincaid grade 14.8 — roughly a university sophomore. Empower's is grade 16.6, past a bachelor's degree. Goodbudget's is the most accessible at grade 12.9."
+  - q: "Is it realistic to read the privacy policy before signing up?"
+    a: "On these numbers, not really. A single policy runs 5 to 45 minutes at an optimistic reading pace, at a reading level above that of roughly half of US adults, and it can be revised at any time."
+---
+
+<KeyTakeaways items={[
+  "Four budgeting-app privacy policies total 25,579 words — about 102 minutes of reading at a brisk pace.",
+  "Empower's runs 11,352 words at Flesch-Kincaid grade 16.6, past a bachelor's degree.",
+  "The four average grade 14.8, above the reading level of roughly half of US adults.",
+  "Goodbudget's is the outlier at 1,176 words — proof the length is a choice, not a legal necessity.",
+  "This measures length and reading level only. It makes no claim about what the policies permit."
+]} />
+
+A budgeting app wants read access to every transaction you make. In exchange it
+shows you a chart. Before that happens you click a box confirming you have read a
+document.
+
+Nobody reads it. This is a measurement of what "it" actually is.
+
+## What you agreed to
+
+<BarChart
+  title="Privacy policy length, in words"
+  description="Budgeting app privacy policies as published, September 2026"
+  data={[
+    { app: "Empower", words: 11352 },
+    { app: "YNAB", words: 7161 },
+    { app: "Monarch Money", words: 5890 },
+    { app: "Goodbudget", words: 1176 }
+  ]}
+  xKey="app"
+  series={[{ key: "words", label: "Words" }]}
+  colorByCategory
+/>
+
+<ComparisonTable
+  caption="Measured 7 September 2026"
+  headers={["App", "Words", "Reading time", "Reading ease", "Grade level"]}
+  rows={[
+    ["Empower", "11,352", "45.4 min", "22.7", "16.6"],
+    ["YNAB", "7,161", "28.6 min", "29.6", "15.7"],
+    ["Monarch Money", "5,890", "23.6 min", "31.9", "14.2"],
+    ["Goodbudget", "1,176", "4.7 min", "40.6", "12.9"]
+  ]}
+  highlightCol={2}
+/>
+
+**25,579 words. 102 minutes.** That is the reading you consented to having done,
+across four apps that each do roughly the same job.
+
+And 102 minutes is the *optimistic* number. It assumes 250 words a minute, a
+normal pace for ordinary prose. Legal text is slower — you re-read clauses, you
+stop at defined terms. The real figure is higher, and I have used the flattering
+one deliberately so the argument does not depend on a generous assumption.
+
+Empower's policy alone is **45 minutes**. That is a feature-length reading
+commitment attached to a checkbox.
+
+## The reading level is the real barrier
+
+Length is the obvious problem. Difficulty is the more serious one.
+
+<BarChart
+  title="Reading grade level required"
+  description="Flesch-Kincaid. Grade 12 is a high-school senior; grade 16 is a bachelor's degree."
+  data={[
+    { app: "Empower", grade: 16.6 },
+    { app: "YNAB", grade: 15.7 },
+    { app: "Monarch Money", grade: 14.2 },
+    { app: "Goodbudget", grade: 12.9 }
+  ]}
+  xKey="app"
+  series={[{ key: "grade", label: "Grade level" }]}
+  colorByCategory
+/>
+
+The four average **grade 14.8** — a university sophomore. Empower's requires 16.6,
+past a completed bachelor's degree, and scores 22.7 on reading ease, which is
+harder than [every crypto whitepaper I measured last
+week](/posts/crypto-whitepaper-readability-2026) and harder than the US
+Constitution.
+
+Roughly half of US adults read below the level these documents demand. For those
+readers the policy is not merely long — it is not readable at all, in the plain
+sense that the words will not resolve into meaning at any reasonable speed.
+
+<InfoBox type="tip">
+Look at Goodbudget: 1,176 words, grade 12.9, under five minutes. It is a
+budgeting app doing the same category of thing as the others, and its policy is a
+tenth the length of Empower's. **The length is a choice, not a legal
+requirement.** That is the most useful single fact in this post, because it means
+a short policy is possible and most companies are choosing otherwise.
+</InfoBox>
+
+## What I deliberately did not measure
+
+This post does not tell you which app is more invasive, what data each shares, or
+who they sell to. That would be the more useful article, and I am not writing it
+from this data, because I do not have a method I trust.
+
+[The previous experiment on this site](/posts/ai-advice-benchmark-that-failed-2026)
+tried to score qualitative text by keyword matching. It produced confident,
+precise-looking numbers that were wrong in both directions, and I only caught it
+by reading the raw output. Detecting "does this policy permit selling your data"
+by searching for phrases has exactly the same failure mode: a policy can permit
+it without the word "sell" appearing anywhere, and can contain "we do not sell
+your personal information" three clauses before an exception that swallows it.
+
+Word counts and readability formulas are arithmetic over counts. They cannot be
+wrong in that way. So this post reports only what the arithmetic supports, and
+the more interesting claim goes unmade rather than made badly.
+
+## What to actually do
+
+Given that reading them is not realistic, three things that are:
+
+1. **Check what the app connects to, not what it says.** The permissions you grant
+   at the bank-linking step are the actual disclosure. Read-only access to
+   transactions is different from access to move money.
+2. **Prefer the shorter policy, all else equal.** Not because short means safe,
+   but because a company that wrote 1,200 words has made a decision about
+   comprehensibility that a company writing 11,000 has not.
+3. **Disconnect the ones you stopped using.** Access persists after you stop
+   opening the app. Revoke it at your bank, not just in the app.
+
+The honest summary is that the consent model does not work at this length, and no
+amount of diligence on your part fixes that. What you can control is how many of
+these you are signed up to at once.
+
+## Methodology
+
+The script and full results are in this site's repository under `research/`.
+
+**Documents.** Four privacy policies fetched from each company's own domain on 7
+September 2026 — YNAB, Monarch Money, Goodbudget as HTML, Empower as the PDF its
+privacy centre links to.
+
+**A correction caught before publishing.** Empower's `/privacy` page is a privacy
+*centre* — a hub that links to the real document. Scoring it directly gave 629
+words, which would have understated the policy by a factor of eighteen. The
+script now targets the linked PDF. If a figure in a post like this looks
+implausibly small, it usually means the extraction found a landing page.
+
+**Measures.** Word count, Flesch Reading Ease, Flesch-Kincaid Grade Level, and
+reading time at 250 words per minute — a common benchmark for adult reading of
+non-technical prose, and optimistic for legal text.
+
+**Excluded, and why.** PocketGuard blocks automated requests; EveryDollar and
+Copilot's privacy URLs return 404; Mint and Simplifi did not resolve reliably.
+They are listed in the data as exclusions rather than quietly omitted, since an
+unmentioned gap is how a sample gets flattering. Four apps is a small sample and
+this does not claim to characterise the category.
+
+**Limits.** Readability formulas measure sentence and word length, not
+conceptual difficulty. They are a floor: these documents are at least this hard.
+
+**Disclosure.** The commentary was drafted with AI assistance; the document
+selection, the method and the conclusions are mine.
+
+<Sources items={[
+  { title: "Policy length script and results", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Empower privacy policy", url: "https://docs.empower.com/Empower/privacy/Empower-privacy-policy.pdf", publisher: "Empower", date: "Retrieved 7 September 2026" },
+  { title: "YNAB privacy policy", url: "https://www.ynab.com/privacy-policy", publisher: "YNAB", date: "Retrieved 7 September 2026" },
+  { title: "Consumer Alerts", url: "https://consumer.ftc.gov/consumer-alerts", publisher: "Federal Trade Commission", date: "2026" },
+  { title: "Financial privacy resources", url: "https://www.ftc.gov/", publisher: "Federal Trade Commission", date: "2026" }
+]} />

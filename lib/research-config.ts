@@ -20,6 +20,15 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "budgeting-app-privacy-policy-length-2026",
+    title: "You Agreed to 25,000 Words",
+    finding:
+      "Four budgeting-app privacy policies total 25,579 words and 102 minutes of reading, averaging a university-sophomore reading level. Goodbudget's is a tenth the length of Empower's, so the length is a choice.",
+    method: "Fetched policies, word count and Flesch formulas",
+    dataset: true,
+    date: "2026-09-07",
+  },
+  {
     slug: "crypto-whitepaper-readability-2026",
     title: "Every Crypto Whitepaper Is Harder to Read Than the Tax Code",
     finding:
