@@ -77,6 +77,15 @@ python run.py run           # the benchmark; resumable, safe to interrupt
 python run.py summarise     # raw JSONL -> data/numeracy.csv
 ```
 
+`--experiment` selects which test bank runs; `numeracy` is the default.
+
+| `--experiment` | what it measures | dataset |
+|---|---|---|
+| `numeracy` | money arithmetic against closed-form answers | `data/numeracy.csv` |
+| `tax` | progressive tax, brackets supplied in the prompt | `data/tax-accuracy.csv` |
+| `advice` | properties of free-text answers to money questions | `data/advice-raw.jsonl` |
+| `allocation` | which account a model picks, named vs anonymous | `data/allocation.csv` |
+
 Default model set (Q4_K_M, which is what `ollama pull` gives by default):
 
 | model | on-disk | fits 4 GB VRAM |
@@ -92,6 +101,43 @@ resulting tokens/sec on a spilled model is itself a publishable number.
 
 **Before a long run:** stop the Next.js dev server. With 7.8 GB of system RAM it
 competes with the model for memory.
+
+### The paired framing test
+
+`allocation` is shaped differently from the others and the difference is the
+point. Eight savings-account cases are each asked **twice**: once with the
+options carrying their real names — 529 plan, Trump Account, taxable brokerage
+— and once with the identical rules, identical numbers and identical order,
+labelled only Option 1/2/3. Every fact needed to compute the answer is in both
+prompts. Nothing is withheld from the anonymous version.
+
+So a model that computes must answer the two the same way, and the gap between
+them measures how much the label alone moves the answer. That comparison is
+what `data/allocation-pairs.csv` holds: one row per model and case, with both
+answers side by side and a `flipped` column.
+
+Three design choices keep the comparison honest:
+
+- **The option order rotates per case.** If the right answer sat in slot 1
+  throughout, a model that always says "1" would score well and the result
+  would be measuring position bias while claiming to measure reasoning.
+- **The cases straddle the crossover.** Four are won by the Trump Account,
+  because a free $1,000 seed compounding for eighteen years beats the tax drag
+  when contributions are small or the bracket is low; four are won by the 529.
+  Three are decided by under 1% of the balance. A test bank where one answer is
+  always right cannot distinguish computing from reciting, which is the whole
+  question.
+- **`num_predict` is 2048, not 1024.** Valuing three accounts takes more tokens
+  than valuing one, and at 1024 the smoke test truncated the *named* prompts
+  more often than the anonymous ones — the models spend tokens restating
+  account names. Truncation landing harder on one arm of a paired comparison
+  would have manufactured the finding.
+
+The known limitation, which the post states too: anonymising removes the
+*name*, not the recognisability. "Withdrawals for qualified education expenses
+are not taxed" is the 529's defining rule, so a model with any domain knowledge
+can still identify the account from its description. The test bounds the effect
+of the label, not of all prior knowledge.
 
 ### The non-model scripts
 

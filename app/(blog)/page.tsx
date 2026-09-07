@@ -9,6 +9,7 @@ import GoogleAdSense from "@/components/ads/GoogleAdSense";
 import { ADS_ENABLED } from "@/lib/ads-config";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
+import { researchPosts } from "@/lib/research-config";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
@@ -29,6 +30,9 @@ export default function HomePage() {
   const featuredPosts = [featuredA, featuredB, featuredC].filter(Boolean);
   const featuredThemes = ["emerald", "violet", "sunset"] as const;
   const latestSix = rest.slice(0, 6);
+  const newestResearch = [...researchPosts]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
 
   const tickerPosts = allPosts.slice(0, 8).map((p) => ({
     slug: p.slug,
@@ -52,6 +56,60 @@ export default function HomePage() {
             {featuredPosts.map((post, i) => (
               <PostCard key={post.slug} post={post} featured theme={featuredThemes[i]} />
             ))}
+          </section>
+        )}
+
+        {/* Original data — the thing that distinguishes this site from a
+            hundred others summarising the same press releases, and previously
+            reachable only by typing /research into the address bar. */}
+        {newestResearch.length > 0 && (
+          <section className="mb-12 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20 p-6 sm:p-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 mb-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 mb-1">
+                  Original data
+                </p>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white">
+                  Numbers I generated, not numbers I found
+                </h2>
+              </div>
+              <Link
+                href="/research"
+                className="text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:underline shrink-0"
+              >
+                All research &rarr;
+              </Link>
+            </div>
+
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6 max-w-2xl">
+              Every figure in these comes from a script in{" "}
+              <a
+                href="https://github.com/Sujit-karki/sujit-blog#original-data"
+                className="text-emerald-700 dark:text-emerald-400 hover:underline"
+                rel="noopener"
+              >
+                the public repository
+              </a>
+              , and the dataset behind each one is published with the post.
+            </p>
+
+            <ul className="grid gap-4 sm:grid-cols-3 list-none p-0 m-0">
+              {newestResearch.map((r) => (
+                <li key={r.slug}>
+                  <Link
+                    href={`/posts/${r.slug}`}
+                    className="group block h-full rounded-xl bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 p-4 transition-colors hover:border-emerald-400 dark:hover:border-emerald-600"
+                  >
+                    <p className="font-bold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      {r.title}
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                      {r.finding}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 

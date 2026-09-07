@@ -76,6 +76,12 @@ class Experiment(abc.ABC):
     #: Used for output filenames and in the published methodology note.
     name: str = "experiment"
 
+    #: Generation cap. An experiment whose prompts make the models write more
+    #: raises this: a cap that truncates the verbose replies does not just lose
+    #: rows, it loses them non-randomly, and any comparison across prompt
+    #: variants then measures verbosity as much as reasoning.
+    num_predict: int = 1024
+
     def __init__(self, out_dir: Path, client: OllamaClient | None = None) -> None:
         self.out_dir = Path(out_dir)
         self.out_dir.mkdir(parents=True, exist_ok=True)
@@ -94,6 +100,16 @@ class Experiment(abc.ABC):
         """Pull the model's numeric answer out of its prose, or None if it
         never gave one. Kept separate from grading so parse failures are
         distinguishable from wrong answers."""
+
+    def extra_summary(self, rows: list[dict], data_dir: Path) -> None:
+        """Write any aggregate the generic summariser cannot know about.
+
+        The generic summary is per (model, scenario), which is the right shape
+        for an accuracy benchmark. An experiment whose finding lives in the
+        relationship *between* scenarios — a paired comparison, say — overrides
+        this to emit that pairing, so the published figure comes out of the
+        script rather than out of a spreadsheet no reader can see.
+        """
 
     # ---- run loop ----------------------------------------------------------
 
@@ -156,7 +172,7 @@ class Experiment(abc.ABC):
     def _warm_up(self, model: str, scenario: Scenario) -> None:
         print("  warm-up (discarded)...", end="", flush=True)
         try:
-            self.client.generate(model, scenario.prompt, seed=0)
+            self.client.generate(model, scenario.prompt, seed=0, num_predict=self.num_predict)
             print(" ok", flush=True)
         except OllamaError as exc:
             print(f" failed: {exc}", flush=True)
@@ -164,7 +180,9 @@ class Experiment(abc.ABC):
     def _run_one(self, model: str, scenario: Scenario, rep: int, seed: int) -> None:
         started = time.time()
         try:
-            generation = self.client.generate(model, scenario.prompt, seed=seed)
+            generation = self.client.generate(
+                model, scenario.prompt, seed=seed, num_predict=self.num_predict
+            )
         except OllamaError as exc:
             self._append(
                 Result(

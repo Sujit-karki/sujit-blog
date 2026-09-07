@@ -128,6 +128,26 @@ export default function ResearchPage() {
             </Link>{" "}
             pages for how that rule is applied.
           </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
+            Every script that produced these numbers is public in{" "}
+            <a
+              href="https://github.com/Sujit-karki/sujit-blog/tree/main/research"
+              className="text-emerald-600 dark:text-emerald-400 hover:underline"
+              rel="noopener"
+            >
+              the repository
+            </a>
+            , and each post links the raw dataset it is built on. When one of
+            these turns out to be wrong, the fix is logged on the{" "}
+            <Link
+              href="/corrections"
+              className="text-emerald-600 dark:text-emerald-400 hover:underline"
+            >
+              corrections page
+            </Link>{" "}
+            — including the time widening a sample falsified one of these
+            headlines outright.
+          </p>
         </div>
       </div>
     </>

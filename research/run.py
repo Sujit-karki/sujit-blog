@@ -26,11 +26,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 from experiments.numeracy import MoneyMathNumeracy  # noqa: E402
 from experiments.tax_accuracy import TaxAccuracy  # noqa: E402
 from experiments.advice import FinancialAdvice  # noqa: E402
+from experiments.allocation import AccountChoice  # noqa: E402
 from harness.client import OllamaClient, OllamaError  # noqa: E402
 
 # Experiments available to --experiment. Each writes its own raw/aggregate
 # files, so runs never collide.
-EXPERIMENTS = {"numeracy": MoneyMathNumeracy, "tax": TaxAccuracy, "advice": FinancialAdvice}
+EXPERIMENTS = {
+    "numeracy": MoneyMathNumeracy,
+    "tax": TaxAccuracy,
+    "advice": FinancialAdvice,
+    "allocation": AccountChoice,
+}
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -89,7 +95,8 @@ def cmd_run(args: argparse.Namespace) -> int:
 
 
 def cmd_summarise(args: argparse.Namespace) -> int:
-    name = EXPERIMENTS[args.experiment].name
+    experiment = EXPERIMENTS[args.experiment](out_dir=DATA_DIR)
+    name = experiment.name
     raw_path = DATA_DIR / f"{name}-raw.jsonl"
     if not raw_path.exists():
         print(f"No results yet at {raw_path}. Run `python run.py run` first.")
@@ -149,6 +156,8 @@ def cmd_summarise(args: argparse.Namespace) -> int:
         speeds = [r["tokens_per_s"] for r in group if r["tokens_per_s"]]
         speed = f"{statistics.median(speeds):.1f} tok/s" if speeds else "n/a"
         print(f"  {model:<16} {correct:>3}/{len(group):<4} {correct / len(group):>6.1%}   {speed}")
+
+    experiment.extra_summary(rows, DATA_DIR)
     return 0
 
 

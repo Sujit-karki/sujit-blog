@@ -4,6 +4,12 @@ import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
 import SearchModal from "./search/SearchModal";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
+import { navLinks } from "@/lib/nav";
+
+const NAV_LINK_CLASS =
+  "px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 " +
+  "hover:text-gray-900 dark:hover:text-white transition-colors rounded-md " +
+  "hover:bg-gray-100 dark:hover:bg-gray-800";
 
 export default function Header() {
   return (
@@ -33,30 +39,11 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-          <Link
-            href="/"
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            Home
-          </Link>
-          <Link
-            href="/tools"
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            Tools
-          </Link>
-          <Link
-            href="/about"
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className={NAV_LINK_CLASS}>
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Right actions */}

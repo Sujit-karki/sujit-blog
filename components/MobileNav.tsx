@@ -5,13 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { m, AnimatePresence, useReducedMotion } from "motion/react";
 import { slugifyCategory } from "@/lib/site-config";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Tools", href: "/tools" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import { navLinks } from "@/lib/nav";
 
 interface MobileNavProps {
   categories: readonly string[];

@@ -70,6 +70,7 @@ export default async function Footer() {
             </p>
             <ul className="space-y-2">
               {[
+                { label: "Research", href: "/research" },
                 { label: "Tools", href: "/tools" },
                 { label: "About", href: "/about" },
                 { label: "Contact", href: "/contact" },
