@@ -61,10 +61,15 @@ function analyse(file) {
 
   // Strip JSX, code fences and link syntax so component-heavy posts aren't
   // credited for markup as though it were writing.
+  // Order and anchoring both matter here. Paired components are removed first,
+  // with a backreference so </InfoBox> can only close <InfoBox>. Self-closing
+  // components are then matched with [^<] so the pattern cannot run from an
+  // opening tag, past intervening prose, to some later component's "/>" —
+  // which silently ate real paragraphs and under-counted component-heavy posts.
   const prose = body
     .replace(/```[\s\S]*?```/g, " ")
-    .replace(/<[A-Z][\s\S]*?\/>/g, " ")
-    .replace(/<[A-Z][^>]*>[\s\S]*?<\/[A-Z][^>]*>/g, " ")
+    .replace(/<([A-Z][A-Za-z0-9]*)[^<]*?>[\s\S]*?<\/\1>/g, " ")
+    .replace(/<[A-Z][^<]*?\/>/g, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1");
   const words = prose.split(/\s+/).filter((w) => /[a-zA-Z]/.test(w)).length;

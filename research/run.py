@@ -24,7 +24,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from experiments.numeracy import MoneyMathNumeracy  # noqa: E402
+from experiments.tax_accuracy import TaxAccuracy  # noqa: E402
 from harness.client import OllamaClient, OllamaError  # noqa: E402
+
+# Experiments available to --experiment. Each writes its own raw/aggregate
+# files, so runs never collide.
+EXPERIMENTS = {"numeracy": MoneyMathNumeracy, "tax": TaxAccuracy}
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -64,7 +69,7 @@ def cmd_models(_: argparse.Namespace) -> int:
 
 def cmd_run(args: argparse.Namespace) -> int:
     models = args.models or DEFAULT_MODELS
-    experiment = MoneyMathNumeracy(out_dir=DATA_DIR)
+    experiment = EXPERIMENTS[args.experiment](out_dir=DATA_DIR)
     try:
         installed = experiment.client.available_models()
     except OllamaError as exc:
@@ -82,8 +87,9 @@ def cmd_run(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_summarise(_: argparse.Namespace) -> int:
-    raw_path = DATA_DIR / "numeracy-raw.jsonl"
+def cmd_summarise(args: argparse.Namespace) -> int:
+    name = EXPERIMENTS[args.experiment].name
+    raw_path = DATA_DIR / f"{name}-raw.jsonl"
     if not raw_path.exists():
         print(f"No results yet at {raw_path}. Run `python run.py run` first.")
         return 1
@@ -102,7 +108,7 @@ def cmd_summarise(_: argparse.Namespace) -> int:
     for row in rows:
         by_model_scenario[(row["model"], row["scenario_id"])].append(row)
 
-    out_path = DATA_DIR / "numeracy.csv"
+    out_path = DATA_DIR / f"{name}.csv"
     with out_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
         writer.writerow(
@@ -155,9 +161,12 @@ def main() -> int:
     run_parser.add_argument("--models", nargs="*", help="override the default 3-4B model list")
     run_parser.add_argument("--reps", type=int, default=10, help="repetitions per prompt (default 10)")
     run_parser.add_argument("--seed", type=int, default=42, help="base seed (default 42)")
+    run_parser.add_argument("--experiment", choices=sorted(EXPERIMENTS), default="numeracy", help="which experiment to run")
     run_parser.set_defaults(func=cmd_run)
 
-    sub.add_parser("summarise", help="aggregate raw results into dataset.csv").set_defaults(func=cmd_summarise)
+    sum_parser = sub.add_parser("summarise", help="aggregate raw results into dataset.csv")
+    sum_parser.add_argument("--experiment", choices=sorted(EXPERIMENTS), default="numeracy")
+    sum_parser.set_defaults(func=cmd_summarise)
 
     args = parser.parse_args()
     return args.func(args)

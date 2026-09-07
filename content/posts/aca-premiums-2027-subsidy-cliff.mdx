@@ -4,6 +4,7 @@ description: "ACA insurers are proposing a median 14% premium increase for 2027,
 seoDescription: "ACA insurers propose a median 14% premium hike for 2027, and enhanced subsidies are gone. Who gets hit, the 400% cliff, and what to do before enrollment."
 seoTitle: "Obamacare Premiums Jump in 2027 — Subsidy Cliff Returns"
 date: "2026-07-23"
+updated: "2026-09-07"
 author: "Sujit Karki"
 category: "Personal Finance"
 tags: ["health insurance", "ACA", "Obamacare", "open enrollment", "taxes"]
@@ -79,11 +80,69 @@ Breaking the median 14-point increase down into its two drivers makes the split 
 
 ## The subsidy cliff, explained
 
-Here's the mechanic that traps people. With the enhanced credits gone, the old **400%-of-federal-poverty-level cliff is back**. Below 400% FPL, you get a tax credit on a sliding scale. At 400% or above — roughly **$62,600 for a single person** by 2026 FPL figures — you can lose *all* premium assistance and pay the full, unsubsidized rate.
+Here's the mechanic that traps people. With the enhanced credits gone, the old
+**400%-of-federal-poverty-level cliff is back**. Below 400% FPL you get a tax
+credit on a sliding scale. At 400% or above you can lose *all* premium
+assistance and pay the full, unsubsidised rate.
+
+So the number that actually matters is the dollar income where that happens —
+and it depends entirely on how many people are in your household. Marketplace
+eligibility for a coverage year uses the poverty guidelines published the
+*previous* calendar year, so **2027 coverage is governed by the 2026 guidelines**
+the Department of Health and Human Services published in January.
+
+Here is that threshold, worked out for each household size:
+
+<ComparisonTable
+  caption="400% of FPL — the 2027 subsidy cliff, 48 contiguous states and DC"
+  headers={["People in household", "2026 poverty guideline", "400% — the cliff"]}
+  rows={[
+    ["1", "$15,960", "$63,840"],
+    ["2", "$21,640", "$86,560"],
+    ["3", "$27,320", "$109,280"],
+    ["4", "$33,000", "$132,000"],
+    ["5", "$38,680", "$154,720"],
+    ["6", "$44,360", "$177,440"]
+  ]}
+  highlightCol={2}
+/>
+
+Each additional person adds **$5,680** to the guideline, so **$22,720** to the
+cliff. Alaska and Hawaii have their own, higher guidelines — for a single person
+those run $19,950 and $18,360 respectively, pushing the cliff to $79,800 and
+$73,440.
 
 <InfoBox type="warning">
-This is a true cliff, not a ramp. Crossing the threshold by even a small amount can cost you thousands in lost subsidy. If you're near 400% FPL, managing your MAGI (through HSA or retirement contributions) can be worth more than a raise.
+This is a true cliff, not a ramp. A single dollar of extra income across that
+line can cost thousands in lost subsidy — the classic case is a household of one
+at $63,839 versus $63,841. If you are anywhere near the threshold, reducing MAGI
+through HSA or pre-tax retirement contributions can be worth considerably more
+than the raise that pushed you over it.
 </InfoBox>
+
+<InfoBox type="tip">
+**Correction, 7 September 2026.** This post originally gave the single-person
+cliff as "roughly $62,600". The correct figure from the 2026 HHS guidelines is
+**$63,840**. The error mattered in the wrong direction — it would have told
+someone earning $63,000 that they had lost all subsidy when they had not.
+</InfoBox>
+
+There is a second trap underneath the first one, and it catches people who never
+thought the cliff applied to them. The premium tax credit is paid in advance,
+month by month, based on the income you *estimate* when you enrol. It is then
+reconciled against your actual income when you file. If you estimated below 400%
+and finished the year above it, you do not simply lose next year's help — you
+repay the whole advance credit you already received, as a lump sum, at tax time.
+
+That is why this matters to anyone with variable income: freelancers, people on
+commission, anyone who might take on a late-year contract or realise a capital
+gain. A profitable December can retroactively convert a year of subsidised
+premiums into a bill. The people most exposed are precisely those who cannot
+predict their income in November, when they have to state it.
+
+The practical consequence is that if your income is uncertain and might land near
+the threshold, estimating it *high* is often the safer error. Under-claiming
+means a refund when you reconcile. Over-claiming means writing a cheque.
 
 <AcaCliffFlow />
 
@@ -112,6 +171,8 @@ Health costs are part of the broader affordability squeeze — see how it fits w
 ]} />
 
 <Sources items={[
+  { title: "HHS Poverty Guidelines for 2026", url: "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines", publisher: "U.S. Department of Health and Human Services (ASPE)", date: "Retrieved September 7, 2026" },
+  { title: "Federal poverty level (FPL) — glossary", url: "https://www.healthcare.gov/glossary/federal-poverty-level-fpl/", publisher: "HealthCare.gov", date: "2026" },
   { title: "Enhanced Premium Tax Credit and 2026 Exchange Premiums: Frequently Asked Questions", url: "https://www.congress.gov/crs-product/R48290", publisher: "Congressional Research Service, via Congress.gov", date: "2026" },
   { title: "In Preliminary Rate Filings, ACA Marketplace Insurers Largely Propose Double-Digit Premium Increase For 2027", url: "https://www.kff.org/affordable-care-act/in-preliminary-rate-filings-aca-marketplace-insurers-largely-propose-double-digit-premium-increase-for-2027-following-a-steep-climb-this-year/", publisher: "KFF", date: "2026-07-18" },
   { title: "How much and why ACA Marketplace premiums are going up in 2027", url: "https://www.healthsystemtracker.org/brief/how-much-and-why-aca-marketplace-premiums-are-going-up-in-2027/", publisher: "Peterson-KFF Health System Tracker", date: "2026-07-18" },
