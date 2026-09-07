@@ -4,12 +4,14 @@ description: "Milliman projects the 2027 401(k) elective deferral limit at rough
 seoDescription: "Milliman projects the 2027 401(k) deferral limit at ~$25,000, up from $24,500. What's projected vs. official, and how to pace contributions either way."
 seoTitle: "2027 401(k) Limit Projected Near $25,000: How to Plan"
 date: "2026-08-12"
+updated: "2026-09-07"
 author: "Sujit Karki"
 category: "Investing"
 tags: ["401k", "IRA", "Retirement Savings", "Contribution Limits", "Investing"]
 toc:
   - { id: "whats-projected-for-2027", title: "What's projected for 2027", level: 2 }
   - { id: "whats-official-vs-whats-a-forecast", title: "What's official vs. what's a forecast", level: 2 }
+  - { id: "why-im-citing-a-forecast-here-instead-of-computing-it-myself", title: "Why I'm citing a forecast instead of computing it", level: 2 }
   - { id: "the-limit-history-in-context", title: "The limit history in context", level: 2 }
   - { id: "dont-frontload-past-the-match", title: "Don't frontload past the match", level: 2 }
   - { id: "pace-your-per-paycheck-contribution", title: "Pace your per-paycheck contribution", level: 2 }
@@ -55,6 +57,63 @@ It's worth being precise here, because these two categories get blurred in a lot
 <InfoBox type="warning">
 Don't set a permanent payroll contribution percentage based on the 401(k) forecast alone. Actuarial projections are generally close, but they've been revised before once real inflation data came in. Plan around the forecast, then confirm and adjust once the IRS makes it official.
 </InfoBox>
+
+## Why I'm citing a forecast here instead of computing it myself
+
+On [the 2027 tax brackets](/posts/2027-tax-brackets-projected) and [the 2027
+Social Security COLA](/posts/social-security-cola-2027) I ran the government's own
+formula against published inflation data rather than repeating anyone's estimate.
+The obvious question is why I don't do that here.
+
+I tried. It doesn't work, and the reason is worth understanding before you trust
+any "just apply inflation to last year's limit" arithmetic you find elsewhere.
+
+The natural approach is to take the current limit and scale it by the year's
+inflation. Retirement plan limits are indexed to CPI-U measured over the quarter
+ending 30 September, so test that method against a year where the answer is
+already known:
+
+<ComparisonTable
+  caption="Back-test: predicting the known 2026 limit from 2025"
+  headers={["Step", "Value"]}
+  rows={[
+    ["CPI-U, Q3 2024 average", "314.8790"],
+    ["CPI-U, Q3 2025 average", "323.9413"],
+    ["Year-over-year increase", "2.878%"],
+    ["$23,500 × 1.02878", "$24,176"],
+    ["Rounded down to the nearest $500", "$24,000"],
+    ["What the IRS actually announced", "$24,500"]
+  ]}
+  highlightCol={1}
+/>
+
+**Off by $500.** The limit rose 4.26% while CPI-U over the measurement quarter
+rose 2.88% — the increase was roughly half again as large as the inflation that
+supposedly drove it.
+
+That is not an error in the inflation data. It is how the indexing works.
+Retirement limits are not scaled from last year's rounded figure; they are
+computed from a fixed statutory base period and *then* rounded down to a $500
+increment. The remainder that gets truncated away doesn't vanish — it stays in
+the running total and eventually pushes the figure over the next $500 step. So
+the published limits move in lumpy jumps that don't track any single year's
+inflation, and a year-over-year calculation drifts further off with every
+rounding.
+
+<InfoBox type="warning">
+This is the practical lesson: **the same method is not valid for every
+inflation-indexed figure.** The COLA and the tax brackets scale cleanly year over
+year, so anyone can verify them. Retirement contribution limits do not. If you
+see an article projecting next year's 401(k) limit by applying a CPI figure to
+this year's number, it is using a method that demonstrably fails against a year
+we can check — and it will usually be low.
+</InfoBox>
+
+That's why the figure at the top of this post comes from Milliman rather than
+from me. Actuarial firms model the full base-period calculation, and this is a
+case where citing someone with the proper model beats rolling your own
+arithmetic. I'd rather show you a verified reason to trust a source than a
+homemade number that fails its own back-test.
 
 ## The limit history in context
 
@@ -115,5 +174,7 @@ If you're just getting started with investing rather than optimizing an existing
 <Sources items={[
   { title: "Milliman IRS Limits Forecast", url: "https://www.milliman.com/en/insight/irs-limits-forecast", publisher: "Milliman", date: "2026" },
   { title: "Retirement topics — contribution limits", url: "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-contribution-limits", publisher: "Internal Revenue Service", date: "2026" },
-  { title: "2027 HSA contribution limits", url: "https://www.irs.gov/newsroom", publisher: "Internal Revenue Service", date: "2026" }
+  { title: "2027 HSA contribution limits", url: "https://www.irs.gov/newsroom", publisher: "Internal Revenue Service", date: "2026" },
+  { title: "CPI-U, all items, US city average — series CUUR0000SA0", url: "https://data.bls.gov/timeseries/CUUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved September 7, 2026" },
+  { title: "COLA increases for dollar limitations on benefits and contributions", url: "https://www.irs.gov/retirement-plans/cola-increases-for-dollar-limitations-on-benefits-and-contributions", publisher: "Internal Revenue Service", date: "2026" }
 ]} />
