@@ -39,6 +39,60 @@ Christmas and New Year's travel behaves differently because the travel window is
 The practical takeaway: if you're doing both trips, book Thanksgiving first. Its window closes faster and the penalty for waiting is steeper on a percentage basis than Christmas.
 </InfoBox>
 
+## What the official fare data actually shows
+
+Booking advice mostly circulates as folklore passed between travel blogs. There
+is a government series underneath it, though, and it is worth looking at
+directly: the Bureau of Labor Statistics tracks airline fares as a component of
+the Consumer Price Index (series `CUUR0000SETG01`).
+
+Averaging every published month from January 2024 to July 2026 by calendar
+month gives the seasonal shape of airfares:
+
+<BarChart
+  title="Airline fare index by calendar month"
+  description="BLS airline fares CPI component, average of published months Jan 2024 – Jul 2026"
+  data={[
+    { month: "Jan", index: 261.4 },
+    { month: "Feb", index: 268.9 },
+    { month: "Mar", index: 269.8 },
+    { month: "Apr", index: 280.5 },
+    { month: "May", index: 290.4 },
+    { month: "Jun", index: 281.6 },
+    { month: "Jul", index: 268.4 },
+    { month: "Aug", index: 247.0 },
+    { month: "Sep", index: 254.0 },
+    { month: "Oct", index: 265.9 },
+    { month: "Nov", index: 262.1 },
+    { month: "Dec", index: 258.1 }
+  ]}
+  xKey="month"
+  series={[{ key: "index", label: "Fare index" }]}
+  colorByCategory
+/>
+
+The spread between the cheapest and priciest month is **17.6%** — May runs about
+7.9% above the period average, August about 8.2% below. Airfares are a
+strongly seasonal purchase, and the swing is large enough to matter more than
+most of the day-of-week advice you will read.
+
+The counter-intuitive part: **November and December both sit below the average**,
+at −2.6% and −4.1%. That does not mean holiday flights are cheap. It reflects
+that the index covers every route and every traveller, and late-year demand is
+dominated by leisure trips on cheaper routes, while the expensive months are
+driven by peak summer and business travel. A Thanksgiving-week itinerary is not
+the average December ticket.
+
+<InfoBox type="warning">
+Three limits on reading too much into this. The series measures fares
+transacted in each month across all routes, not the price of any specific trip
+or booking window — it tells you what the market did, not when you personally
+should buy. The sample is short, two and a half years, so some months rest on
+only two observations. And **October 2025 is missing from the published series
+entirely**, the same gap that appears across the BLS CPI family that year, so
+October rests on a single observation.
+</InfoBox>
+
 ## Cheapest days to fly
 
 Day of the week still matters as much as booking lead time. Flying **Friday instead of Sunday** can save up to roughly **8%** on the same route, and flying **Tuesday** can run about **14% cheaper than Sunday**. Sunday is consistently the most expensive day around any holiday period because it's the default "back to normal life" travel day for the largest share of travelers.
@@ -78,6 +132,7 @@ Everything above is calibrated to domestic US routes. International holiday trav
 ]} />
 
 <Sources items={[
+  { title: "Airline fares, CPI component — series CUUR0000SETG01", url: "https://data.bls.gov/timeseries/CUUR0000SETG01", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved September 7, 2026" },
   { title: "Domestic Average Air Fares (scheduled service)", url: "https://www.bts.gov/content/domestic-average-air-fares-scheduled-service", publisher: "Bureau of Transportation Statistics", date: "2026" },
   { title: "Best Time to Book Holiday Travel", url: "https://www.nerdwallet.com/", publisher: "NerdWallet", date: "2026" },
   { title: "Best time to book a flight in 2026", url: "https://thepointsguy.com/", publisher: "The Points Guy", date: "2026" },

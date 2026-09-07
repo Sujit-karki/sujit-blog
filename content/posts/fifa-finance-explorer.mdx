@@ -3,7 +3,7 @@ title: "The FIFA Finance Explorer: 1990 - 2026"
 description: "The FIFA World Cup has evolved from a sporting event into a global economic engine. Explore the revenue growth, host costs, and the ticket pricing crisis in this interactive guide."
 seoDescription: "The FIFA World Cup has evolved into a global economic engine. Explore revenue growth, host costs, and the ticket pricing crisis in this interactive guide."
 date: "2026-06-18"
-updated: "2026-06-18"
+updated: "2026-09-07"
 author: "Sujit Karki"
 category: "Investing"
 tags: ["FIFA", "World Cup", "Sports Economics", "Market Analysis", "2026 World Cup"]
@@ -60,6 +60,41 @@ The biggest shift for fans in 2026 is the introduction of **Dynamic Pricing**. T
 
 While median household incomes in the U.S. rose by only 32% since 1994, the cost for the premium final ticket has surged by nearly 1,000%. The World Cup is transitioning from a populist festival to a luxury entertainment product.
 
+### What "1,000%" is actually worth
+
+A percentage that large stops meaning anything without a baseline, so here is
+one. The Consumer Price Index for all urban consumers averaged **148.225** across
+1994. As of July 2026 it stands at **333.918**.
+
+<ComparisonTable
+  caption="1994 to 2026, in constant terms"
+  headers={["Measure", "Change since 1994"]}
+  rows={[
+    ["General price level (CPI-U)", "+125.3%  —  prices x2.25"],
+    ["What $100 in 1994 buys today", "$225.28"],
+    ["Median household income (per the figure above)", "+32%"],
+    ["World Cup final ticket, Category 1", "~+1,000%  —  x11"]
+  ]}
+  highlightCol={1}
+/>
+
+So general prices roughly doubled over those thirty-two years. Strip that out and
+a ticket costing eleven times more in nominal terms is still nearly **five times
+more expensive in real money** — a 388% increase above and beyond inflation.
+
+The income comparison is the part that stings. If prices rose 125% while median
+household income rose 32%, the typical household lost ground against ordinary
+goods before anyone bought a football ticket. The final is not simply keeping
+pace with a more expensive world; it has decoupled from it, and from the wages of
+the people who used to fill the stadium.
+
+That is what dynamic pricing does when applied to a fixed-supply event with
+inelastic demand. There is exactly one World Cup final, its capacity cannot
+expand to meet interest, and an algorithm that prices to willingness-to-pay will
+find the wealthiest buyers every time. The mechanism is working precisely as
+designed. Whether a sport's showpiece event should be priced that way is a
+different question, and not one the algorithm is asked.
+
 <InfoBox type="warning" title="The Trip Cost Factor">
 A family of four visiting a host city like Miami for a single match in 2026 can expect to spend over $5,600 on tickets, travel, and lodging. This represents a significant barrier to entry for the traditional working-class football fan.
 </InfoBox>
@@ -88,6 +123,7 @@ A family of four visiting a host city like Miami for a single match in 2026 can 
 ]} />
 
 <Sources items={[
+  { title: "CPI-U, all items, US city average — series CUUR0000SA0", url: "https://data.bls.gov/timeseries/CUUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved September 7, 2026" },
   { title: "FIFA Financial Report 2023", url: "https://publications.fifa.com/en/annual-report-2023/" },
   { title: "The Economics of Hosting the World Cup (Council on Foreign Relations)", url: "https://www.cfr.org/backgrounder/economics-hosting-world-cup" },
   { title: "World Cup 2026 Economic Impact Study (BCG)", url: "https://www.ussoccer.com/stories/2018/02/economic-impact-of-2026-fifa-world-cup" }
