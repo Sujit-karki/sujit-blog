@@ -25,11 +25,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from experiments.numeracy import MoneyMathNumeracy  # noqa: E402
 from experiments.tax_accuracy import TaxAccuracy  # noqa: E402
+from experiments.advice import FinancialAdvice  # noqa: E402
 from harness.client import OllamaClient, OllamaError  # noqa: E402
 
 # Experiments available to --experiment. Each writes its own raw/aggregate
 # files, so runs never collide.
-EXPERIMENTS = {"numeracy": MoneyMathNumeracy, "tax": TaxAccuracy}
+EXPERIMENTS = {"numeracy": MoneyMathNumeracy, "tax": TaxAccuracy, "advice": FinancialAdvice}
 
 DATA_DIR = Path(__file__).parent / "data"
 

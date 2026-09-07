@@ -20,6 +20,15 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "ai-advice-benchmark-that-failed-2026",
+    title: "The Benchmark Was Wrong, Not the AI",
+    finding:
+      "Automated scoring flagged one model as reckless on dangerous money questions. Reading the answers showed a correct, decisive refusal — the metric was counting words, not meaning.",
+    method: "240 generations, two failed metrics, published anyway",
+    dataset: true,
+    date: "2026-09-07",
+  },
+  {
     slug: "ai-tax-brackets-more-context-worse-2026",
     title: "Showing an AI More of the Tax Code Made It Worse",
     finding:
