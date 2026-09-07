@@ -1,0 +1,181 @@
+---
+title: "Inflation Is 3.4%. It Is Also 25%. Both Numbers Are From the Same Report."
+description: "The headline inflation rate averages categories moving 46 times faster than each other. Airline fares are up 25.6% and education is up 0.6% — in the same month, from the same BLS release."
+seoTitle: "Inflation Is 3.4% and Also 25%: The Category Spread"
+seoDescription: "Headline CPI is 3.4%. Underneath it, airline fares are up 25.6% and education 0.6%. Why the average describes almost nobody."
+date: "2026-09-07"
+category: "Personal Finance"
+tags: ["inflation", "CPI", "cost of living", "Original Data", "Federal Reserve"]
+author: "Sujit Karki"
+toc:
+  - { id: "one-report-twelve-answers", title: "One report, twelve answers", level: 2 }
+  - { id: "why-the-average-describes-nobody", title: "Why the average describes nobody", level: 2 }
+  - { id: "work-out-your-own-rate", title: "Work out your own rate", level: 2 }
+  - { id: "what-this-does-not-mean", title: "What this does not mean", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "What is the current US inflation rate?"
+    a: "The headline CPI-U figure for the 12 months to July 2026 is 3.36%. But that is an average across categories ranging from 0.55% (education and communication) to 25.55% (airline fares), so the headline number describes a spending pattern almost nobody has."
+  - q: "Why does inflation feel higher than the official rate?"
+    a: "Because the official rate is a weighted average and your spending is not the average basket. In the 12 months to July 2026, energy rose 14.7% and gasoline 24.6% while medical care rose 1.7%. Someone who drives a lot experienced far more than 3.4%; someone whose spending is concentrated in medical care and education experienced far less."
+  - q: "Which categories are rising fastest in 2026?"
+    a: "Airline fares at 25.55% and gasoline at 24.64% for the 12 months to July 2026, with energy overall at 14.73%. The slowest are education and communication at 0.55% and medical care at 1.70%."
+---
+
+<KeyTakeaways items={[
+  "Headline inflation for the 12 months to July 2026 is 3.36%.",
+  "Within the same release, airline fares rose 25.55% and education and communication rose 0.55% — a 25-point spread and a 46-fold ratio.",
+  "Gasoline is up 24.64% and energy overall 14.73%, while medical care is up 1.70%.",
+  "Seven of the eleven component categories measured sit below the headline figure. The average is pulled up by a few fast movers.",
+  "Your own inflation rate depends on your spending mix, and can differ from the published number by many points in either direction."
+]} />
+
+Every month a single number gets reported as the inflation rate, and every month
+a large number of people read it and think it is wrong, because it does not match
+what happened to their money.
+
+They are not imagining it. The headline number is an average, and the things it
+averages are moving at wildly different speeds — not by a little, and not
+occasionally.
+
+## One report, twelve answers
+
+These figures are all from the same Bureau of Labor Statistics release, the same
+index basis, the same month:
+
+<BarChart
+  title="12-month change by category, to July 2026"
+  description="CPI-U, US city average, not seasonally adjusted. Headline all-items change is 3.36%."
+  data={[
+    { cat: "Airline fares", yoy: 25.55 },
+    { cat: "Gasoline", yoy: 24.64 },
+    { cat: "Energy", yoy: 14.73 },
+    { cat: "Transportation", yoy: 5.84 },
+    { cat: "Electricity", yoy: 4.20 },
+    { cat: "Apparel", yoy: 3.86 },
+    { cat: "Shelter", yoy: 3.18 },
+    { cat: "Food", yoy: 2.98 },
+    { cat: "Recreation", yoy: 2.58 },
+    { cat: "Medical care", yoy: 1.70 },
+    { cat: "Education & comms", yoy: 0.55 }
+  ]}
+  xKey="cat"
+  series={[{ key: "yoy", label: "12-month change" }]}
+  unit="%"
+  colorByCategory
+/>
+
+The headline figure is **3.36%**. The fastest-moving category is **46 times** the
+slowest. The spread from top to bottom is **25 percentage points**.
+
+<ComparisonTable
+  caption="Same month, same report — the extremes"
+  headers={["Category", "12-month change", "Against the headline"]}
+  rows={[
+    ["Airline fares", "25.55%", "7.6x the headline"],
+    ["Gasoline", "24.64%", "7.3x"],
+    ["Energy", "14.73%", "4.4x"],
+    ["All items (headline)", "3.36%", "—"],
+    ["Medical care", "1.70%", "half the headline"],
+    ["Education and communication", "0.55%", "one sixth"]
+  ]}
+  highlightCol={1}
+/>
+
+## Why the average describes nobody
+
+The headline rate weights each category by how much a statistically average
+household spends on it. That is the right way to build a national index. It is
+also why the result matches almost no individual.
+
+Consider two people in the same city in the same month:
+
+- One drives to work, flies to see family twice a year, and rents. Their basket
+  leans on gasoline (24.6%), airline fares (25.6%) and shelter (3.2%). Their lived
+  inflation is well into double digits.
+- One works from home, owns outright, and spends heavily on healthcare and a
+  child's education. Their basket leans on medical care (1.7%) and education
+  (0.55%). Their lived inflation is close to nothing.
+
+Both read "inflation is 3.4%" and one of them concludes the statistics are lying.
+Neither is wrong about their own experience. **Seven of the eleven component
+categories here sit below the headline** — the average is dragged upward by a
+small number of fast movers, which is exactly the shape that makes a mean
+unrepresentative.
+
+<InfoBox type="tip">
+This is also why "inflation is coming down" and "everything is still expensive"
+are both true at once. A falling *rate* means prices are rising more slowly, not
+that they are falling. Cumulative increases stay in the price level, and in
+categories like airline fares they compound from an already elevated base.
+</InfoBox>
+
+## Work out your own rate
+
+You do not need a model for this, just an honest look at where your money goes.
+
+1. **Take your last three months of spending** and split it into these
+   categories. Rough percentages are fine — this is not accounting.
+2. **Multiply each share by that category's rate** from the chart above.
+3. **Add them up.** That is your personal inflation rate, and it is the number
+   your budget actually experiences.
+
+Someone spending 20% on transport and fuel, 30% on shelter and 15% on food gets
+a very different answer from someone spending 5%, 45% and 10%. The exercise takes
+ten minutes and is more useful than any headline, because it tells you which of
+your own line items is doing the damage.
+
+The practical follow-on: **the fast-moving categories are where substitution
+actually pays.** A 25% rise in airline fares is worth restructuring travel around.
+A 1.7% rise in medical care is not worth reorganising your life over, however
+much the total bill stings.
+
+## What this does not mean
+
+Three honest limits, because this argument gets misused in both directions.
+
+**It does not mean the official figure is wrong or manipulated.** It is a
+correctly constructed weighted average, published transparently with every
+component available for anyone to check — which is exactly how this post was
+written. The problem is in how a single number gets reported, not in how it is
+computed.
+
+**It does not mean your rate is necessarily higher.** The categories running
+hottest here are energy and travel. If you neither drive nor fly much, your
+personal rate this year is likely *below* 3.36%, not above it. The spread cuts
+both ways and people tend to assume only one direction.
+
+**Category rates are not stable.** Energy is the most volatile component in the
+index and its 14.7% could be materially different next month. A personal rate
+computed today is a snapshot, not a trend.
+
+## Methodology
+
+Every figure comes from the BLS public API and reproduces by running one script
+in this site's repository.
+
+**Data.** CPI-U, US city average, not seasonally adjusted — the same basis the
+headline figure is published on, so the comparison is like for like. Twelve
+series: all items, plus eleven components. Twelve-month change is the latest
+published month against the same month a year earlier.
+
+**Period.** Latest available at time of writing is July 2026.
+
+**Reproducing it.** `npm run cpi:categories` in the repository re-fetches from
+BLS and prints the current table. The figures above will age; the command will
+not.
+
+**A gap worth knowing about.** October 2025 is missing from the published CPI
+series entirely — the data jumps from September to November that year. It does
+not affect the 12-month changes reported here, which compare July to July, but it
+is a real hole in the record and it appears across the whole CPI family.
+
+**Disclosure.** The commentary was drafted with AI assistance; the data
+selection, the calculation and the conclusions are mine.
+
+<Sources items={[
+  { title: "CPI-U, all items, US city average — series CUUR0000SA0", url: "https://data.bls.gov/timeseries/CUUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved 7 September 2026" },
+  { title: "Consumer Price Index", url: "https://www.bls.gov/cpi/", publisher: "U.S. Bureau of Labor Statistics", date: "2026" },
+  { title: "BLS Public Data API", url: "https://www.bls.gov/developers/", publisher: "U.S. Bureau of Labor Statistics", date: "2026" },
+  { title: "Category script and output", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/scripts", publisher: "This site's repository", date: "2026" }
+]} />
