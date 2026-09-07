@@ -20,6 +20,15 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "crypto-whitepaper-readability-2026",
+    title: "Every Crypto Whitepaper Is Harder to Read Than the Tax Code",
+    finding:
+      "Five whitepapers scored with standard readability formulas. All five are harder than IRS Publication 17, and the clearest crypto writing in the sample comes from the FTC scam warning.",
+    method: "Flesch formulas over fetched documents",
+    dataset: true,
+    date: "2026-09-07",
+  },
+  {
     slug: "ai-advice-benchmark-that-failed-2026",
     title: "The Benchmark Was Wrong, Not the AI",
     finding:

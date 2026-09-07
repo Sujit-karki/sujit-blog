@@ -1,0 +1,197 @@
+---
+title: "Every Crypto Whitepaper I Measured Is Harder to Read Than the Tax Code"
+description: "Five crypto whitepapers scored with the same readability formulas schools use. All five are harder to read than IRS Publication 17 — the document people cite as a byword for impenetrable prose."
+seoTitle: "Crypto Whitepapers Are Harder to Read Than the Tax Code"
+seoDescription: "Five whitepapers, measured with Flesch readability formulas. All five score harder than IRS Publication 17. Bitcoin's is the most readable, at grade 12."
+date: "2026-09-07"
+category: "Crypto"
+tags: ["Crypto", "Bitcoin", "Ethereum", "Original Data", "Readability", "Investor Protection"]
+author: "Sujit Karki"
+toc:
+  - { id: "the-measurement", title: "The measurement", level: 2 }
+  - { id: "harder-than-the-tax-code", title: "Harder than the tax code", level: 2 }
+  - { id: "why-this-matters-more-than-it-sounds", title: "Why this matters more than it sounds", level: 2 }
+  - { id: "what-the-formulas-cannot-see", title: "What the formulas cannot see", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "How hard is the Bitcoin whitepaper to read?"
+    a: "It scores 47.5 on Flesch Reading Ease and grade 12.2 on Flesch-Kincaid — roughly a high-school-senior reading level. That makes it the most readable of the five crypto whitepapers measured, and still harder than IRS Publication 17."
+  - q: "Which crypto whitepaper is hardest to read?"
+    a: "Of those measured, Cardano's Ouroboros paper, at 27.3 reading ease and grade 14.2, with 27.4% complex words — the highest proportion in the set. Ethereum's requires the highest grade level at 15.9."
+  - q: "Is the crypto whitepaper harder than the tax code?"
+    a: "Yes, for all five measured. IRS Publication 17 scores 49.7 on Flesch Reading Ease; every whitepaper scored lower, meaning harder. The tax code's reputation for impenetrability is worse than its actual sentence construction."
+---
+
+<KeyTakeaways items={[
+  "Five crypto whitepapers measured with standard readability formulas. All five are harder to read than IRS Publication 17.",
+  "Bitcoin's is the most readable at grade 12.2 — still a high-school-senior reading level.",
+  "Cardano's Ouroboros paper is the hardest at 27.3 reading ease, with 27.4% complex words.",
+  "Ethereum's demands the highest grade level, 15.9 — a college junior.",
+  "The formulas measure sentence and word length, not conceptual difficulty, so these are a floor on how hard these documents actually are."
+]} />
+
+"Do your own research" is the standing advice in crypto, and the whitepaper is
+where you are told to start. Every project has one. It is presented as the
+document that lets an ordinary person evaluate the thing before putting money in.
+
+So: can an ordinary person read it? That is a measurable question, and the tools
+for measuring it are older than the internet.
+
+## The measurement
+
+Flesch Reading Ease and Flesch-Kincaid Grade Level are the formulas schools,
+insurers and government plain-language rules have used for decades. They are
+arithmetic over three counts — sentences, words, syllables:
+
+> **Reading Ease** = 206.835 − 1.015 × (words per sentence) − 84.6 × (syllables per word)
+> Higher is easier. 60–70 is considered plain English.
+
+No judgement, no vocabulary list, no model deciding what counts as clear. Anyone
+with the same text gets the same number to the decimal.
+
+I ran five whitepapers through it, alongside four documents whose difficulty you
+already have an intuition for, so the scores land on a scale rather than floating
+free.
+
+## Harder than the tax code
+
+<BarChart
+  title="Flesch Reading Ease — higher is easier"
+  description="Crypto whitepapers against four reference documents. 60–70 is plain English."
+  data={[
+    { doc: "Alice in Wonderland", ease: 73.4 },
+    { doc: "FTC scam guide", ease: 53.4 },
+    { doc: "IRS Pub 17", ease: 49.7 },
+    { doc: "Bitcoin", ease: 47.5 },
+    { doc: "Solana", ease: 45.1 },
+    { doc: "Ripple", ease: 39.6 },
+    { doc: "Ethereum", ease: 34.8 },
+    { doc: "Cardano", ease: 27.3 },
+    { doc: "US Constitution", ease: 23.8 }
+  ]}
+  xKey="doc"
+  series={[{ key: "ease", label: "Flesch Reading Ease" }]}
+  colorByCategory
+/>
+
+<ComparisonTable
+  caption="Full results — whitepapers in bold territory, references for scale"
+  headers={["Document", "Reading ease", "Grade level", "Words/sentence", "Complex words"]}
+  rows={[
+    ["US Constitution", "23.8", "21.5", "46.6", "16.4%"],
+    ["Cardano (Ouroboros)", "27.3", "14.2", "19.3", "27.4%"],
+    ["Ethereum", "34.8", "15.9", "30.2", "18.0%"],
+    ["Ripple", "39.6", "13.8", "24.2", "20.6%"],
+    ["Solana", "45.1", "12.4", "21.9", "16.9%"],
+    ["Bitcoin", "47.5", "12.2", "22.3", "17.2%"],
+    ["IRS Publication 17", "49.7", "10.3", "16.0", "18.4%"],
+    ["FTC crypto scam guide", "53.4", "9.8", "15.9", "15.1%"],
+    ["Alice in Wonderland", "73.4", "7.7", "19.0", "7.0%"]
+  ]}
+  highlightCol={1}
+/>
+
+**Every whitepaper measured is harder to read than IRS Publication 17.**
+
+That is worth sitting with. Publication 17 is the general guide to filing a
+federal tax return — the document people invoke as shorthand for unreadable
+government writing. It scores 49.7. Bitcoin's whitepaper, the most readable of
+the five, scores 47.5.
+
+The best crypto whitepaper is harder going than the tax instructions.
+
+Bitcoin's is the plainest of the group and still asks for a **high-school-senior**
+reading level. Ethereum's asks for a **college junior**. Cardano's Ouroboros
+paper has **27.4% complex words** — more than one word in four with three or more
+syllables, the densest in the entire set including the Constitution.
+
+<InfoBox type="tip">
+Notice which document is easiest after the children's book: the **FTC's guide to
+crypto scams**, at 53.4. The clearest writing about crypto in this sample comes
+from the agency warning people about it, not from the projects asking for their
+money. That is not an accident — plain-language standards are a legal
+requirement for federal consumer material.
+</InfoBox>
+
+## Why this matters more than it sounds
+
+The stock answer is that whitepapers are technical documents and technical
+documents are hard. Fair enough for a cryptography paper aimed at cryptographers.
+
+But that is not the role the whitepaper plays. It is cited to retail buyers as
+the thing that makes an investment legible — *read the whitepaper* is offered as
+the answer to *how do I know this is real*. A document requiring a college
+reading level cannot serve that function for most people, and roughly half of US
+adults read below the level Ethereum's whitepaper demands.
+
+The practical consequence is that "read the whitepaper" functions less as advice
+than as a filter. It sounds like due diligence and mostly produces the appearance
+of it — people skim, recognise a few words, and conclude the project is
+substantial because the document was hard. Difficulty reads as rigour when you
+cannot evaluate the content.
+
+If you cannot get through the whitepaper, that is not a personal failing and it
+is not a reason to buy anyway. It is a reason to treat the "do your own research"
+framing with suspicion, because the research it points at is not written for you.
+
+## What the formulas cannot see
+
+Three limits, and the third is the one that matters most.
+
+**Sample size.** Five whitepapers, not five hundred. These are among the
+best-known projects with stable, publicly fetchable documents. A broader sample
+would likely be worse, since obscure projects have less editorial attention, but
+that is a guess and this does not test it.
+
+**One document failed.** Litecoin's site did not yield enough continuous prose to
+score — its landing page is mostly navigation. It is reported as a failure in the
+data rather than quietly dropped, because a missing row that goes unmentioned is
+how samples get flattering.
+
+**The formulas measure length, not difficulty.** This is the real limitation.
+Flesch counts syllables and sentence length; it has no idea what an elliptic
+curve is. A paper of short sentences about hard mathematics scores as easy, and a
+paper of long sentences about nothing scores as hard. The US Constitution's 23.8
+is largely an artefact of 18th-century sentence construction, not conceptual
+density — which is exactly why it is in the table, as a visible reminder of what
+these numbers can and cannot tell you.
+
+So read the results as a **floor**. The whitepapers are at least this hard. On
+conceptual difficulty — the thing a reader actually runs into — they are
+certainly harder, and no formula in this post can tell you by how much.
+
+## Methodology
+
+The script and the full results are in this site's repository under `research/`,
+and the analysis re-runs against live documents.
+
+**Documents.** Five whitepapers (Bitcoin, Ethereum, Solana, Ripple, Cardano's
+Ouroboros) fetched from each project's own domain, plus four references: the US
+Constitution, IRS Publication 17, the FTC's crypto scam guide, and *Alice in
+Wonderland*.
+
+**Extraction.** PDFs parsed with `pypdf`; HTML stripped of script, style and
+navigation before counting. URLs, citation markers and non-ASCII artefacts are
+removed, since they distort word length without being words anyone reads.
+
+**Formulas.** Flesch Reading Ease and Flesch-Kincaid Grade Level as stated above.
+Syllables counted by the standard vowel-group heuristic with a silent-final-e
+adjustment — approximate, applied identically to every document, so comparisons
+between them hold even where an absolute count is off by a little.
+
+**Why formulas rather than a model.** [The previous experiment on this
+site](/posts/ai-advice-benchmark-that-failed-2026) tried to score qualitative
+text by keyword matching and the metric was wrong in both directions. Readability
+indices are deterministic arithmetic with no vocabulary list and no judgement,
+which is the right instrument for a question like this one.
+
+**Disclosure.** The commentary was drafted with AI assistance; the document
+selection, the method and the conclusions are mine.
+
+<Sources items={[
+  { title: "Readability script and full results", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Bitcoin: A Peer-to-Peer Electronic Cash System", url: "https://bitcoin.org/bitcoin.pdf", publisher: "bitcoin.org", date: "Retrieved 7 September 2026" },
+  { title: "Publication 17, Your Federal Income Tax", url: "https://www.irs.gov/publications/p17", publisher: "Internal Revenue Service", date: "2026" },
+  { title: "What to Know About Cryptocurrency and Scams", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams", publisher: "Federal Trade Commission", date: "2026" },
+  { title: "The Constitution of the United States: A Transcription", url: "https://www.archives.gov/founding-docs/constitution-transcript", publisher: "U.S. National Archives", date: "2026" }
+]} />
