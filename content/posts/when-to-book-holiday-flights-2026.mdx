@@ -46,51 +46,64 @@ is a government series underneath it, though, and it is worth looking at
 directly: the Bureau of Labor Statistics tracks airline fares as a component of
 the Consumer Price Index (series `CUUR0000SETG01`).
 
-Averaging every published month from January 2024 to July 2026 by calendar
-month gives the seasonal shape of airfares:
+Getting the seasonality out of that series takes one careful step. Airfares have
+risen sharply — the index is up **25.5% year on year** as of July 2026 — so simply
+averaging each calendar month across 2024, 2025 and 2026 mixes that trend into
+the answer. Months with a 2026 reading look expensive and months without one look
+cheap, purely because of when the data stops.
+
+The fix is to measure each month against its **own year's** average, then average
+those. That strips the trend out and leaves the seasonal shape:
 
 <BarChart
-  title="Airline fare index by calendar month"
-  description="BLS airline fares CPI component, average of published months Jan 2024 – Jul 2026"
+  title="Airfare seasonality, trend removed"
+  description="Each month against its own year's average, then averaged across years. BLS series CUUR0000SETG01, 2024–2026."
   data={[
-    { month: "Jan", index: 261.4 },
-    { month: "Feb", index: 268.9 },
-    { month: "Mar", index: 269.8 },
-    { month: "Apr", index: 280.5 },
-    { month: "May", index: 290.4 },
-    { month: "Jun", index: 281.6 },
-    { month: "Jul", index: 268.4 },
-    { month: "Aug", index: 247.0 },
-    { month: "Sep", index: 254.0 },
-    { month: "Oct", index: 265.9 },
-    { month: "Nov", index: 262.1 },
-    { month: "Dec", index: 258.1 }
+    { month: "Jan", pct: -4.0 },
+    { month: "Feb", pct: -1.3 },
+    { month: "Mar", pct: -1.1 },
+    { month: "Apr", pct: 2.7 },
+    { month: "May", pct: 6.1 },
+    { month: "Jun", pct: 2.8 },
+    { month: "Jul", pct: -2.0 },
+    { month: "Aug", pct: -4.5 },
+    { month: "Sep", pct: -1.8 },
+    { month: "Oct", pct: 1.7 },
+    { month: "Nov", pct: 1.3 },
+    { month: "Dec", pct: -0.3 }
   ]}
   xKey="month"
-  series={[{ key: "index", label: "Fare index" }]}
+  series={[{ key: "pct", label: "vs that year's average" }]}
+  unit="%"
   colorByCategory
 />
 
-The spread between the cheapest and priciest month is **17.6%** — May runs about
-7.9% above the period average, August about 8.2% below. Airfares are a
-strongly seasonal purchase, and the swing is large enough to matter more than
-most of the day-of-week advice you will read.
+**May is the peak at about 6% above a typical month; August is the trough at
+about 4.5% below.** The whole seasonal swing is roughly **10 percentage points** —
+real, and worth planning around, but smaller than the day-of-week effects
+described below.
 
-The counter-intuitive part: **November and December both sit below the average**,
-at −2.6% and −4.1%. That does not mean holiday flights are cheap. It reflects
-that the index covers every route and every traveller, and late-year demand is
-dominated by leisure trips on cheaper routes, while the expensive months are
-driven by peak summer and business travel. A Thanksgiving-week itinerary is not
-the average December ticket.
+For the holiday months specifically: **November runs slightly above a typical
+month and December is about flat.** Neither is a bargain period, and neither is a
+disaster. The expensive time to fly is late spring, not Christmas.
 
 <InfoBox type="warning">
-Three limits on reading too much into this. The series measures fares
-transacted in each month across all routes, not the price of any specific trip
-or booking window — it tells you what the market did, not when you personally
-should buy. The sample is short, two and a half years, so some months rest on
-only two observations. And **October 2025 is missing from the published series
-entirely**, the same gap that appears across the BLS CPI family that year, so
-October rests on a single observation.
+**Correction, 7 September 2026.** An earlier version of this section averaged the
+raw index by calendar month without removing the price trend, and reported a
+17.6% seasonal spread with November and December both below average. That was
+wrong: airfares rose 25% over the sample, and the months missing a 2026 reading
+were dragged down by its absence. Corrected above — the real spread is about 10
+points, and November is slightly above average, not below.
+</InfoBox>
+
+<InfoBox type="warning">
+Three genuine limits remain. The series measures fares transacted in each month
+across all routes, not the price of any specific trip or booking window — it
+tells you what the market did, not when you personally should buy. The sample is
+short, so the later months rest on only two years. And **October 2025 is missing
+from the published series entirely**, the same gap that appears across the BLS
+CPI family that year, so October rests on a single observation and should be
+treated as the least reliable bar on the chart.
 </InfoBox>
 
 ## Cheapest days to fly
