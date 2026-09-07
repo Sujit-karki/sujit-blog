@@ -1,5 +1,12 @@
 # research/
 
+Public at
+[github.com/Sujit-karki/sujit-blog](https://github.com/Sujit-karki/sujit-blog) —
+every script here produces a dataset that a published post links to, and the
+posts link back to these files by name. The datasets themselves are also served
+from the site under `/data/`, so a reader can take a CSV without cloning
+anything.
+
 Harness for the original-data posts. The model is the **instrument**, never the
 author: this code produces a dataset, and the analysis written around that
 dataset is written by hand. No text produced by a model here is published as

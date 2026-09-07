@@ -53,9 +53,10 @@ const PRIMARY_SOURCES = [
 // grounded on the site, and the checker was marking them the worst.
 //
 // This originally matched a github.com/Sujit-karki/sujit-blog link, which no
-// post carries any more: the repository is private, so those links served a
-// login wall rather than data, and publish-data.mjs replaced them with files
-// copied into public/data/. The pattern therefore never fired once, and
+// post carries any more: the repository was private at the time, so those links
+// served a login wall rather than data, and publish-data.mjs replaced them with
+// files copied into public/data/. It is public now, but the data still ships
+// with the site — a reader should not need GitHub to get a CSV. The pattern therefore never fired once, and
 // local-ai-money-math-2026 — 2,000 words resting entirely on a dataset it
 // publishes and links twice — scored as having no source at all. Match how a
 // post actually publishes data now: a /data/<file> link or the dataFile
@@ -181,6 +182,18 @@ if (args.includes("--json")) {
   }
   console.log(`\n  under 500 words   ${String(posts.filter((p) => p.words < 500).length).padStart(3)}`);
   console.log(`  no primary source ${String(posts.filter((p) => p.primary === 0).length).padStart(3)}`);
+
+  // The band counts above include noindex posts, but the house standard below
+  // exempts them, so the two halves of this report disagreed: a status summary
+  // reading "2 thin" was counting a deliberately-noindexed site-news post that
+  // the standard does not hold to any line. Name the gap rather than hide it.
+  const noindexed = posts.filter((p) => p.noindex);
+  if (noindexed.length > 0) {
+    console.log(
+      `\n  ${noindexed.length} noindex post${noindexed.length === 1 ? "" : "s"} counted in the bands ` +
+        `above but exempt from the standard: ${noindexed.map((p) => p.slug).join(", ")}`
+    );
+  }
 
   const shown = args.includes("--all") ? posts : posts.filter((p) => p.score < 3.5);
   console.log(`\nscore  words  .gov  charts  tools  published    slug`);

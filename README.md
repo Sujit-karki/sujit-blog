@@ -19,6 +19,38 @@ Lampard is a statically-generated blog in the YMYL (Your Money, Your Life) niche
 
 ---
 
+## Original Data
+
+Some posts are built on datasets generated here rather than on someone else's
+reporting. The code that produces them lives in [`research/`](research/) and
+[`scripts/`](scripts/), and every dataset a post cites is served from the site
+itself under `/data/`, so a reader can take the rows without cloning anything.
+
+| What | Script | Dataset |
+|---|---|---|
+| Money-math numeracy benchmark for small local models | [`research/run.py`](research/run.py) | `/data/numeracy.csv` |
+| Tax-bracket accuracy vs. amount of context given | [`research/experiments/tax_accuracy.py`](research/experiments/tax_accuracy.py) | `/data/tax-accuracy.csv` |
+| GPU power draw during local inference | [`research/measure_energy.py`](research/measure_energy.py) | `/data/energy.json` |
+| Crypto whitepaper readability (Flesch) | [`research/readability.py`](research/readability.py) | `/data/readability.json` |
+| Budgeting-app privacy policy length | [`research/policy_length.py`](research/policy_length.py) | `/data/policy-length.json` |
+| CPI by category, from the BLS API | [`scripts/cpi-categories.mjs`](scripts/cpi-categories.mjs) | `/data/cpi-categories.json` |
+| Next year's tax brackets from the statutory chained-CPI formula | [`scripts/project-brackets.mjs`](scripts/project-brackets.mjs) | computed live |
+| Social Security COLA from CPI-W | [`scripts/project-cola.mjs`](scripts/project-cola.mjs) | computed live |
+
+The method notes — including the ones about experiments that failed, and why
+those were published anyway — are in [`research/README.md`](research/README.md).
+
+## Quality Gates
+
+```bash
+npm run audit:check    # every indexed post: >=500 words, >=1 primary source, score >=3.5
+npm run audit:links    # every cited URL still resolves (run by hand, not in CI)
+```
+
+`audit:check` runs in CI, so a thin post cannot reach production by being
+forgotten. `audit:links` is deliberately manual: it depends on third-party hosts
+being up, so as a merge gate it would fail for reasons unrelated to the commit.
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -27,13 +59,13 @@ Lampard is a statically-generated blog in the YMYL (Your Money, Your Life) niche
 | Content | MDX 3 (Markdown + React components) |
 | Styling | Tailwind CSS v4 |
 | Language | TypeScript |
-| Charts | Chart.js (react-chartjs-2) + Recharts (MDX chart components) |
+| Charts | Chart.js 4 (react-chartjs-2) |
 | Animation | Motion (`motion/react`, via a centralized `LazyMotion` provider) |
 | Search | Fuse.js (⌘K modal + `/search` page) |
 | Content validation | Zod (frontmatter schema in `lib/posts.ts`) |
 | Compiler | React Compiler (`babel-plugin-react-compiler`, `reactCompiler: true` in `next.config.mjs`) |
 | Analytics | Vercel Speed Insights |
-| Deployment | Cloudflare / Vercel-compatible |
+| Deployment | Vercel (native Git integration, deploys `main`) |
 
 ---
 
@@ -88,7 +120,7 @@ my-blog/
 │   │   ├── DebtPayoffCalculator.tsx     # Credit card payoff months/interest, scenario bars
 │   │   ├── InsuranceDeductibleCalculator.tsx  # Deductible-raise savings vs. breakeven claim frequency
 │   │   └── StablecoinYieldGapCalculator.tsx   # Issuer-earned vs. holder-earned stablecoin yield gap
-│   ├── charts/                   # Recharts-based MDX chart components
+│   ├── charts/                   # Chart.js-based MDX chart components
 │   │   ├── LineChart.tsx / LineChartLazy.tsx  # Line/area chart, a11y layer + data-table fallback
 │   │   ├── PieChart.tsx / PieChartLazy.tsx    # Donut chart, a11y layer + data-table fallback
 │   │   ├── StatCard.tsx         # Single-stat tile (string format presets, not a function prop)
@@ -266,8 +298,8 @@ An index fund tracks a market index like the S&P 500...
 | `<ComparisonTable headers={[...]} rows={[[...]]} highlightCol={n} />` | Data comparison table |
 | `<FaqAccordion items={[{q, a}]} />` | Expandable FAQ section |
 | `<Sources items={[{title, url, publisher?, date?}]} />` | Formatted source citations |
-| `<LineChart title data xKey series unit? />` | Recharts line/area chart, a11y layer + data-table fallback |
-| `<PieChart title data unit? />` | Recharts donut chart, a11y layer + data-table fallback |
+| `<LineChart title data xKey series unit? />` | Chart.js line/area chart, a11y layer + data-table fallback |
+| `<PieChart title data unit? />` | Chart.js donut chart, a11y layer + data-table fallback |
 | `<StatCard label value format? sublabel? />` | Single-stat tile — `format` is `"number"\|"currency"\|"percent"`, never a function (MDX is server-rendered) |
 
 Post-specific interactive components (charts, calculators) live in `components/custom/` and are registered per-post in `mdx-components.tsx` — see [Interactive Charts & Animation](#interactive-charts--animation) below before adding a new one.
@@ -392,15 +424,16 @@ AdSense is integrated via the `GoogleAdSense` component.
 
 ## Deployment
 
-### Vercel (recommended)
-1. Push to GitHub
-2. Import the repo in [vercel.com](https://vercel.com)
-3. Deploy — zero config needed for Next.js
+Production is Vercel's native Git integration: **every push to `main` deploys**,
+with no GitHub Actions deploy step. CI runs quality gates only (lint, typecheck,
+unit, e2e, content standard).
 
-### Cloudflare Pages
-1. Connect your GitHub repo in Cloudflare Pages
-2. Build command: `npm run build`
-3. Output directory: `.next`
+`npm run build` runs `prebuild` first, which copies `research/data/` into
+`public/data/` and fails the build if any post links a dataset that is not
+there.
+
+To run it somewhere else: it is a standard Next.js 16 app, `npm run build`,
+output in `.next`.
 
 ---
 

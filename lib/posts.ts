@@ -189,10 +189,65 @@ export function getPostsByCategory(category: string): Post[] {
   return getAllPosts().filter((p) => p.category === category);
 }
 
+// Related posts are the archive's main internal-linking mechanism, so which
+// posts this returns decides which posts Google sees as worth indexing.
+//
+// The original implementation took the same-category posts and sliced the first
+// three off a date-descending list, which meant every post in a category linked
+// to the same three newest posts and nothing else. 67 of 82 posts received no
+// related-post link at all, and each new post silently demoted the previous
+// winners to zero. That is the profile Search Console reports as "Crawled -
+// currently not indexed".
+//
+// So one slot is reserved for rotation and the rest are ranked on relatedness.
+// Ranking alone does not fix it: score every candidate and the well-tagged hubs
+// win every slot on every page, which is the same bug wearing a better sort.
+// The reserved slot is what guarantees coverage; the ranked ones are what keep
+// the block worth reading. Same input, same output — the order is fully
+// determined by the posts themselves, so pages stay cacheable.
 export function getRelatedPosts(slug: string, category: string, limit = 3): Post[] {
-  return getAllPosts()
-    .filter((p) => p.slug !== slug && p.category === category)
-    .slice(0, limit);
+  const all = getAllPosts();
+  const selfIndex = all.findIndex((p) => p.slug === slug);
+  const currentTags = new Set((all[selfIndex]?.tags ?? []).map(slugifyTag));
+
+  // A noindex post is deliberately out of the index; spending a related slot on
+  // one passes link equity to a page that cannot rank.
+  const candidates = all
+    .map((post, index) => ({ post, index }))
+    .filter(({ post }) => post.slug !== slug && !post.noindex);
+
+  if (candidates.length === 0) return [];
+
+  // One slot is reserved for the next post in the archive, wrapping at the end.
+  // Relevance ranking alone cannot fix the orphaning: score the candidates and
+  // the well-tagged hubs simply win every slot on every page, which is the
+  // original bug wearing a better sort. Because this pick walks a cycle through
+  // every indexable post, each one is the reserved pick of exactly one other
+  // post, so no post can score its way to zero inbound links.
+  const distance = (index: number) =>
+    selfIndex === -1 ? index : (index - selfIndex + all.length) % all.length;
+  const ring = candidates.reduce((nearest, c) =>
+    distance(c.index) < distance(nearest.index) ? c : nearest
+  );
+
+  // The remaining slots go to genuine relatedness: shared tags outrank a shared
+  // category, since two posts both tagged "Roth IRA" are a closer match than two
+  // unrelated posts filed under Investing. Ties fall back to the same rotation,
+  // so even the relevance slots favour a different slice of the archive on each
+  // page rather than pooling on whatever shipped most recently.
+  const related = candidates
+    .filter((c) => c.post.slug !== ring.post.slug)
+    .map((c) => ({
+      ...c,
+      score:
+        c.post.tags.filter((t) => currentTags.has(slugifyTag(t))).length * 2 +
+        (c.post.category === category ? 1 : 0),
+    }))
+    .sort((a, b) => b.score - a.score || distance(a.index) - distance(b.index))
+    .slice(0, Math.max(0, limit - 1))
+    .map(({ post }) => post);
+
+  return [...related, ring.post];
 }
 
 export function formatDate(dateStr: string): string {

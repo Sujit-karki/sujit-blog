@@ -4,10 +4,11 @@
 // Runs automatically before every build via the `prebuild` script.
 //
 // Why not link to the repository instead. Several posts promised "the raw data
-// is published in the repository" and linked to GitHub. The repository is
-// private, so every one of those links returned 404 to readers — a promise of
-// transparency that delivered a login wall. Serving the files from the site
-// itself makes the claim true without requiring anyone to open the source.
+// is published in the repository" and linked to GitHub while the repository was
+// still private, so every one of those links returned 404 — a promise of
+// transparency that delivered a login wall. The repository is public now, and
+// the posts link to the scripts directly, but the data itself still ships with
+// the site: a reader after one CSV should not have to go and find it.
 //
 // public/data/ is generated, so it is gitignored: research/data/ stays the one
 // copy under version control.
@@ -24,7 +25,7 @@ const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 // Every dataFile="..." a post declares, so a link that would 404 fails the
 // build instead of shipping. This is the whole reason the script is a build
 // step rather than something run by hand: the previous version of these links
-// pointed at a private repository and returned 404 to every reader, and
+// pointed at a then-private repository and returned 404 to every reader, and
 // nothing in the pipeline noticed.
 function referencedDatasets() {
   if (!fs.existsSync(POSTS_DIR)) return new Map();

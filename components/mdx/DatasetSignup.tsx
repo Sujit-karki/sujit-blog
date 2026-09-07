@@ -8,7 +8,8 @@ interface DatasetSignupProps {
   /**
    * Filename of the dataset under /data/, if the rows are published. These are
    * copied out of research/data/ at build time by scripts/publish-data.mjs and
-   * served from this site — not from the source repository, which is private.
+   * served from this site, so a reader gets the data without needing to go to
+   * GitHub at all.
    */
   dataFile?: string;
 }
