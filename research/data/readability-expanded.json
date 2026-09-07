@@ -1,7 +1,4 @@
 {
-  "generatedAt": "2026-09-07T23:42:56",
-  "method": "Flesch Reading Ease and Flesch-Kincaid Grade Level over extracted text",
-  "caveat": "Readability formulas measure sentence and word length, not conceptual difficulty.",
   "documents": [
     {
       "name": "Bitcoin",
@@ -16,18 +13,6 @@
       "flesch_kincaid_grade": 12.2
     },
     {
-      "name": "Solana",
-      "kind": "whitepaper",
-      "url": "https://solana.com/solana-whitepaper.pdf",
-      "words": 7507,
-      "sentences": 343,
-      "words_per_sentence": 21.89,
-      "syllables_per_word": 1.649,
-      "complex_word_pct": 16.9,
-      "flesch_reading_ease": 45.1,
-      "flesch_kincaid_grade": 12.4
-    },
-    {
       "name": "Ethereum",
       "kind": "whitepaper",
       "url": "https://ethereum.org/en/whitepaper/",
@@ -38,6 +23,18 @@
       "complex_word_pct": 18.0,
       "flesch_reading_ease": 34.8,
       "flesch_kincaid_grade": 15.9
+    },
+    {
+      "name": "Solana",
+      "kind": "whitepaper",
+      "url": "https://solana.com/solana-whitepaper.pdf",
+      "words": 7507,
+      "sentences": 343,
+      "words_per_sentence": 21.89,
+      "syllables_per_word": 1.649,
+      "complex_word_pct": 16.9,
+      "flesch_reading_ease": 45.1,
+      "flesch_kincaid_grade": 12.4
     },
     {
       "name": "Ripple",
@@ -98,73 +95,12 @@
       "complex_word_pct": 18.0,
       "flesch_reading_ease": 48.7,
       "flesch_kincaid_grade": 10.9
-    },
-    {
-      "name": "US Constitution",
-      "kind": "reference",
-      "url": "https://www.archives.gov/founding-docs/constitution-transcript",
-      "words": 4707,
-      "sentences": 101,
-      "words_per_sentence": 46.6,
-      "syllables_per_word": 1.605,
-      "complex_word_pct": 16.4,
-      "flesch_reading_ease": 23.8,
-      "flesch_kincaid_grade": 21.5
-    },
-    {
-      "name": "IRS Publication 17",
-      "kind": "reference",
-      "url": "https://www.irs.gov/publications/p17",
-      "words": 144954,
-      "sentences": 9081,
-      "words_per_sentence": 15.96,
-      "syllables_per_word": 1.665,
-      "complex_word_pct": 18.4,
-      "flesch_reading_ease": 49.7,
-      "flesch_kincaid_grade": 10.3
-    },
-    {
-      "name": "FTC crypto scam guide",
-      "kind": "reference",
-      "url": "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams",
-      "words": 2183,
-      "sentences": 137,
-      "words_per_sentence": 15.93,
-      "syllables_per_word": 1.622,
-      "complex_word_pct": 15.1,
-      "flesch_reading_ease": 53.4,
-      "flesch_kincaid_grade": 9.8
-    },
-    {
-      "name": "Wikipedia: Blockchain",
-      "kind": "reference",
-      "url": "https://en.wikipedia.org/wiki/Blockchain",
-      "words": 12923,
-      "sentences": 1078,
-      "words_per_sentence": 11.99,
-      "syllables_per_word": 1.925,
-      "complex_word_pct": 26.4,
-      "flesch_reading_ease": 31.8,
-      "flesch_kincaid_grade": 11.8
-    },
-    {
-      "name": "Alice in Wonderland",
-      "kind": "reference",
-      "url": "https://www.gutenberg.org/cache/epub/11/pg11.txt",
-      "words": 30325,
-      "sentences": 1596,
-      "words_per_sentence": 19.0,
-      "syllables_per_word": 1.349,
-      "complex_word_pct": 7.0,
-      "flesch_reading_ease": 73.4,
-      "flesch_kincaid_grade": 7.7
     }
   ],
   "failures": [
     "Polkadot: HTTPError HTTP Error 404: Not Found",
     "Filecoin: HTTPError HTTP Error 404: Not Found",
-    "Algorand: HTTPError HTTP Error 404: Not Found",
     "Avalanche: too little extractable prose",
-    "Litecoin: too little extractable prose"
+    "Algorand: HTTPError HTTP Error 404: Not Found"
   ]
 }

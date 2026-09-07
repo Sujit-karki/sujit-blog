@@ -6,6 +6,7 @@ import InfoBox from "@/components/mdx/InfoBox";
 import ProsCons from "@/components/mdx/ProsCons";
 import ComparisonTable from "@/components/mdx/ComparisonTable";
 import FaqAccordion from "@/components/mdx/FaqAccordion";
+import DatasetSignup from "@/components/mdx/DatasetSignup";
 import Sources from "@/components/mdx/Sources";
 import CodeBlock from "@/components/mdx/CodeBlock";
 import GoogleAdSense from "@/components/ads/GoogleAdSense";
@@ -174,6 +175,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ProsCons,
     ComparisonTable,
     FaqAccordion,
+    DatasetSignup,
     Sources,
     GoogleAdSense,
     FifaInteractive,

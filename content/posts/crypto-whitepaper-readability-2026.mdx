@@ -1,9 +1,10 @@
 ---
-title: "Every Crypto Whitepaper I Measured Is Harder to Read Than the Tax Code"
-description: "Five crypto whitepapers scored with the same readability formulas schools use. All five are harder to read than IRS Publication 17 — the document people cite as a byword for impenetrable prose."
-seoTitle: "Crypto Whitepapers Are Harder to Read Than the Tax Code"
-seoDescription: "Five whitepapers, measured with Flesch readability formulas. All five score harder than IRS Publication 17. Bitcoin's is the most readable, at grade 12."
+title: "Seven of Eight Crypto Whitepapers Are Harder to Read Than the Tax Code"
+description: "Eight crypto whitepapers scored with the readability formulas schools use. Seven are harder than IRS Publication 17. The one exception is the document explicitly written to teach rather than to establish priority."
+seoTitle: "7 of 8 Crypto Whitepapers Beat the Tax Code for Difficulty"
+seoDescription: "Eight whitepapers measured with Flesch formulas. Seven score harder than IRS Publication 17. Only Monero's teaching text is easier."
 date: "2026-09-07"
+updated: "2026-09-07"
 category: "Crypto"
 tags: ["Crypto", "Bitcoin", "Ethereum", "Original Data", "Readability", "Investor Protection"]
 author: "Sujit Karki"
@@ -15,18 +16,18 @@ toc:
   - { id: "methodology", title: "Methodology", level: 2 }
 faq:
   - q: "How hard is the Bitcoin whitepaper to read?"
-    a: "It scores 47.5 on Flesch Reading Ease and grade 12.2 on Flesch-Kincaid — roughly a high-school-senior reading level. That makes it the most readable of the five crypto whitepapers measured, and still harder than IRS Publication 17."
+    a: "It scores 47.5 on Flesch Reading Ease and grade 12.2 on Flesch-Kincaid — roughly a high-school-senior reading level. That is harder than IRS Publication 17, which scores 49.7."
   - q: "Which crypto whitepaper is hardest to read?"
     a: "Of those measured, Cardano's Ouroboros paper, at 27.3 reading ease and grade 14.2, with 27.4% complex words — the highest proportion in the set. Ethereum's requires the highest grade level at 15.9."
   - q: "Is the crypto whitepaper harder than the tax code?"
-    a: "Yes, for all five measured. IRS Publication 17 scores 49.7 on Flesch Reading Ease; every whitepaper scored lower, meaning harder. The tax code's reputation for impenetrability is worse than its actual sentence construction."
+    a: "For seven of the eight documents measured, yes. IRS Publication 17 scores 49.7 on Flesch Reading Ease; only Monero's Zero to Monero scored higher, at 52.1 — and that is a textbook written to teach, not a whitepaper written to establish a claim."
 ---
 
 <KeyTakeaways items={[
-  "Five crypto whitepapers measured with standard readability formulas. All five are harder to read than IRS Publication 17.",
-  "Bitcoin's is the most readable at grade 12.2 — still a high-school-senior reading level.",
-  "Cardano's Ouroboros paper is the hardest at 27.3 reading ease, with 27.4% complex words.",
-  "Ethereum's demands the highest grade level, 15.9 — a college junior.",
+  "Eight crypto documents measured with standard readability formulas. Seven are harder to read than IRS Publication 17.",
+  "The one exception is Monero's Zero to Monero, at 52.1 — a 55,000-word textbook, not a whitepaper.",
+  "Bitcoin's whitepaper is the most readable of the papers proper, at grade 12.2 — a high-school-senior reading level.",
+  "Cardano's Ouroboros summary is the hardest at 27.3 reading ease, with 27.4% complex words. Ethereum's demands the highest grade level, 15.9.",
   "The formulas measure sentence and word length, not conceptual difficulty, so these are a floor on how hard these documents actually are."
 ]} />
 
@@ -49,23 +50,27 @@ arithmetic over three counts — sentences, words, syllables:
 No judgement, no vocabulary list, no model deciding what counts as clear. Anyone
 with the same text gets the same number to the decimal.
 
-I ran five whitepapers through it, alongside four documents whose difficulty you
-already have an intuition for, so the scores land on a scale rather than floating
-free.
+I ran twelve crypto documents through it — eight resolved — alongside four
+documents whose difficulty you already have an intuition for, so the scores land
+on a scale rather than floating free.
 
 ## Harder than the tax code
 
 <BarChart
   title="Flesch Reading Ease — higher is easier"
-  description="Crypto whitepapers against four reference documents. 60–70 is plain English."
+  description="Eight crypto documents against four references. 60–70 is plain English."
   data={[
     { doc: "Alice in Wonderland", ease: 73.4 },
     { doc: "FTC scam guide", ease: 53.4 },
+    { doc: "Monero", ease: 52.1 },
     { doc: "IRS Pub 17", ease: 49.7 },
+    { doc: "Tezos", ease: 48.7 },
     { doc: "Bitcoin", ease: 47.5 },
     { doc: "Solana", ease: 45.1 },
     { doc: "Ripple", ease: 39.6 },
+    { doc: "Chainlink", ease: 36.0 },
     { doc: "Ethereum", ease: 34.8 },
+    { doc: "Wikipedia: Blockchain", ease: 31.8 },
     { doc: "Cardano", ease: 27.3 },
     { doc: "US Constitution", ease: 23.8 }
   ]}
@@ -75,35 +80,74 @@ free.
 />
 
 <ComparisonTable
-  caption="Full results — whitepapers in bold territory, references for scale"
-  headers={["Document", "Reading ease", "Grade level", "Words/sentence", "Complex words"]}
+  caption="Full results — crypto documents and references for scale"
+  headers={["Document", "Words", "Reading ease", "Grade level"]}
   rows={[
-    ["US Constitution", "23.8", "21.5", "46.6", "16.4%"],
-    ["Cardano (Ouroboros)", "27.3", "14.2", "19.3", "27.4%"],
-    ["Ethereum", "34.8", "15.9", "30.2", "18.0%"],
-    ["Ripple", "39.6", "13.8", "24.2", "20.6%"],
-    ["Solana", "45.1", "12.4", "21.9", "16.9%"],
-    ["Bitcoin", "47.5", "12.2", "22.3", "17.2%"],
-    ["IRS Publication 17", "49.7", "10.3", "16.0", "18.4%"],
-    ["FTC crypto scam guide", "53.4", "9.8", "15.9", "15.1%"],
-    ["Alice in Wonderland", "73.4", "7.7", "19.0", "7.0%"]
+    ["US Constitution", "4,707", "23.8", "21.5"],
+    ["Cardano (Ouroboros)", "888", "27.3", "14.2"],
+    ["Wikipedia: Blockchain", "12,923", "31.8", "11.8"],
+    ["Ethereum", "14,030", "34.8", "15.9"],
+    ["Chainlink", "54,415", "36.0", "13.0"],
+    ["Ripple", "4,721", "39.6", "13.8"],
+    ["Solana", "7,507", "45.1", "12.4"],
+    ["Bitcoin", "3,450", "47.5", "12.2"],
+    ["Tezos", "5,874", "48.7", "10.9"],
+    ["IRS Publication 17", "144,954", "49.7", "10.3"],
+    ["Monero (Zero to Monero)", "55,692", "52.1", "10.7"],
+    ["FTC crypto scam guide", "2,183", "53.4", "9.8"],
+    ["Alice in Wonderland", "30,325", "73.4", "7.7"]
   ]}
-  highlightCol={1}
+  highlightCol={2}
 />
 
-**Every whitepaper measured is harder to read than IRS Publication 17.**
+**Seven of the eight crypto documents are harder to read than IRS Publication
+17.**
 
 That is worth sitting with. Publication 17 is the general guide to filing a
 federal tax return — the document people invoke as shorthand for unreadable
-government writing. It scores 49.7. Bitcoin's whitepaper, the most readable of
-the five, scores 47.5.
+government writing. It scores 49.7. Bitcoin's whitepaper scores 47.5, Ethereum's
+34.8, Cardano's Ouroboros summary 27.3.
 
-The best crypto whitepaper is harder going than the tax instructions.
+Bitcoin's asks for a **high-school-senior** reading level. Ethereum's asks for a
+**college junior**. Cardano's has **27.4% complex words** — more than one word in
+four with three or more syllables, denser than the Constitution.
 
-Bitcoin's is the plainest of the group and still asks for a **high-school-senior**
-reading level. Ethereum's asks for a **college junior**. Cardano's Ouroboros
-paper has **27.4% complex words** — more than one word in four with three or more
-syllables, the densest in the entire set including the Constitution.
+**The exception proves the point rather than undermining it.** The single
+document easier than the tax code is Monero's *Zero to Monero*, at 52.1 — and it
+is not a whitepaper. It is a 55,000-word textbook written to teach the system to
+people who want to understand it, as opposed to a paper written to establish a
+technical claim. Given a document whose purpose is explanation rather than
+priority, crypto can produce prose at a tenth-grade reading level. Almost nobody
+chooses to.
+
+<InfoBox type="warning">
+**Correction, 7 September 2026.** This post was first published with five
+documents and the headline claim that *every* whitepaper measured is harder than
+the tax code. Widening the corpus to twelve attempts, of which eight resolved,
+falsified that: Monero's *Zero to Monero* scores 52.1, above IRS Publication
+17's 49.7. The title, the takeaways and the table have been revised, and the
+finding is now stated as seven of eight. The original five scores are unchanged
+— the claim was too strong for the sample it rested on, which is exactly what a
+wider sample is for.
+</InfoBox>
+
+<DatasetSignup
+  dataset="the readability table"
+  cadence="whenever a project publishes a new whitepaper version"
+  repoPath="research"
+/>
+
+**One reference complicates this, and it belongs in the table.** Wikipedia's
+article on blockchain — written by volunteers for a general audience, with no
+incentive to sound impressive — scores **31.8**, harder than five of the eight
+whitepapers. Writing about this subject is genuinely difficult, and some of what
+the whitepaper scores capture is the topic rather than the authors.
+
+That is a real confounder and it caps how strong the claim can be. What it does
+not explain is the spread. Wikipedia and Ethereum are within three points; Monero
+sits twenty above both, on the same subject matter, because someone set out to
+teach it. The topic sets a floor on difficulty. It does not decide where in the
+twenty-point range above that floor a document lands.
 
 <InfoBox type="tip">
 Notice which document is easiest after the children's book: the **FTC's guide to
@@ -136,17 +180,26 @@ framing with suspicion, because the research it points at is not written for you
 
 ## What the formulas cannot see
 
-Three limits, and the third is the one that matters most.
+Four limits, and the last is the one that matters most.
 
-**Sample size.** Five whitepapers, not five hundred. These are among the
+**Sample size.** Eight documents, not eight hundred. These are among the
 best-known projects with stable, publicly fetchable documents. A broader sample
 would likely be worse, since obscure projects have less editorial attention, but
 that is a guess and this does not test it.
 
-**One document failed.** Litecoin's site did not yield enough continuous prose to
-score — its landing page is mostly navigation. It is reported as a failure in the
-data rather than quietly dropped, because a missing row that goes unmentioned is
-how samples get flattering.
+**Four documents failed.** Polkadot, Filecoin and Algorand returned 404 at the
+URLs their own sites publish; Avalanche's and Litecoin's pages did not yield
+enough continuous prose to score. They are reported as failures in the data
+rather than quietly dropped, because a missing row that goes unmentioned is how
+samples get flattering. That three of twelve official whitepaper links are dead
+is its own small finding about the genre.
+
+**Not every document is the same kind of document.** Two are book-length — *Zero
+to Monero* at 55,692 words and Chainlink's at 54,415 — and are technical guides
+rather than papers. At the other end, Cardano's row is an 888-word summary of
+Ouroboros, not the full academic paper. Reading ease is length-independent, so
+the scores remain comparable, but the documents are not equivalent artefacts and
+the table names what each one is.
 
 **The formulas measure length, not difficulty.** This is the real limitation.
 Flesch counts syllables and sentence length; it has no idea what an elliptic
@@ -165,8 +218,9 @@ certainly harder, and no formula in this post can tell you by how much.
 The script and the full results are in this site's repository under `research/`,
 and the analysis re-runs against live documents.
 
-**Documents.** Five whitepapers (Bitcoin, Ethereum, Solana, Ripple, Cardano's
-Ouroboros) fetched from each project's own domain, plus four references: the US
+**Documents.** Twelve crypto documents attempted, fetched from each project's
+own domain; eight resolved (Bitcoin, Ethereum, Solana, Ripple, Cardano,
+Chainlink, Monero, Tezos) and four failed. Plus four references: the US
 Constitution, IRS Publication 17, the FTC's crypto scam guide, and *Alice in
 Wonderland*.
 

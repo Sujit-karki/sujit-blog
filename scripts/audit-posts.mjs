@@ -34,7 +34,24 @@ const PRIMARY_SOURCES = [
   "census.gov", "bea.gov", "dol.gov", "federalreserve.gov", "fred.stlouisfed.org",
   "newyorkfed.org", "stlouisfed.org", "usa.gov", "healthcare.gov",
   "studentaid.gov", "fdic.gov", "occ.gov", "finra.org", "nber.org", "eia.gov",
+  "usgs.gov", "noaa.gov", "energy.gov", "hud.gov", "sba.gov", "pbgc.gov",
+  // The regulators' own body, which publishes the insurance filings data
+  // rather than summarising someone else's.
+  "naic.org",
+  // This site covers Nepal as well as the US, and the original list silently
+  // scored every Nepali agency as if it were an aggregator. These publish
+  // their own figures exactly as the US agencies above do.
+  "dhm.gov.np", "drrportal.gov.np", "nea.org.np", "nepalarmy.mil.np",
+  "mof.gov.np", "nrb.org.np", "cbs.gov.np", "icimod.org",
+  // Multilateral bodies, included only where they publish the statistics
+  // themselves rather than republishing a member state's.
+  "oecd.org", "imf.org", "worldbank.org", "bis.org",
 ];
+
+// A post that publishes its own dataset is the primary source for it. Scoring
+// those as unsourced was backwards: the original-data posts are the best-
+// grounded on the site, and the checker was marking them the worst.
+const OWN_DATA = /github\.com\/Sujit-karki\/sujit-blog\/(tree|blob)\/main\/(research|scripts)/;
 
 const BANDS = [
   { name: "strong", min: 5 },
@@ -100,7 +117,7 @@ function analyse(file) {
       return false;
     }
     return PRIMARY_SOURCES.some((d) => host === d || host.endsWith("." + d));
-  }).length;
+  }).length + (OWN_DATA.test(body) ? 1 : 0);
 
   const components = [...new Set([...body.matchAll(/<([A-Z][A-Za-z0-9]*)/g)].map((m) => m[1]))];
   const charts = components.filter((c) => /Chart|Viz|Graph|Gauge/.test(c)).length;

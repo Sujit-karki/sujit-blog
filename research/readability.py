@@ -51,6 +51,17 @@ DOCUMENTS = [
     ("Ethereum", "whitepaper", "https://ethereum.org/en/whitepaper/", "html"),
     ("Ripple", "whitepaper", "https://ripple.com/files/ripple_consensus_whitepaper.pdf", "pdf"),
     ("Cardano (Ouroboros)", "whitepaper", "https://cardano.org/ouroboros/", "html"),
+    ("Chainlink", "whitepaper", "https://research.chain.link/whitepaper-v2.pdf", "pdf"),
+    ("Monero", "whitepaper", "https://www.getmonero.org/library/Zero-to-Monero-2-0-0.pdf", "pdf"),
+    ("Tezos", "whitepaper", "https://tezos.com/whitepaper.pdf", "pdf"),
+    # The five below are attempted every run and currently do not resolve. They
+    # stay in the list rather than being deleted: a candidate that 404s is a
+    # result about the genre, and a corpus you can silently prune is a corpus
+    # that drifts towards whatever happens to flatter the argument.
+    ("Polkadot", "whitepaper", "https://polkadot.com/papers/Polkadot-whitepaper.pdf", "pdf"),
+    ("Filecoin", "whitepaper", "https://filecoin.io/filecoin.pdf", "pdf"),
+    ("Algorand", "whitepaper", "https://www.algorand.com/technology", "html"),
+    ("Avalanche", "whitepaper", "https://www.avalabs.org/whitepapers", "html"),
     ("Litecoin", "whitepaper", "https://litecoin.org/", "html"),
 ]
 
