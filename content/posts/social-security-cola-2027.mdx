@@ -1,15 +1,17 @@
 ---
-title: "Your 2027 Social Security Raise Is Shaping Up at 3.8% — Here's What That's Really Worth"
-description: "The 2027 Social Security COLA is now estimated at 3.6%–3.8% after June's cooler inflation. Here's the real dollar impact, the Medicare offset, and a calculator."
-seoTitle: "2027 Social Security COLA Shaping Up at 3.8%"
+title: "The 2027 Social Security COLA, Computed From the Actual CPI-W Data — Not Forecast"
+description: "July's real CPI-W print is in, and it puts the 2027 COLA near 3.1%, below the 3.6%–3.8% summer forecasts. Here's the SSA's own formula run on published data, back-tested against the 2026 COLA it already announced."
+seoTitle: "2027 Social Security COLA: 3.1% on Actual CPI-W Data"
 date: "2026-07-23"
+updated: "2026-09-07"
 author: "Sujit Karki"
 category: "Personal Finance"
 tags: ["Social Security", "COLA", "retirement", "inflation", "Medicare"]
 toc:
-  - { id: "the-number-and-who-says-what", title: "The number, and who says what", level: 2 }
+  - { id: "what-the-actual-data-says", title: "What the actual data says", level: 2 }
+  - { id: "the-number-and-who-says-what", title: "What the forecasters said in July", level: 2 }
   - { id: "how-the-number-actually-gets-calculated", title: "How the number actually gets calculated", level: 3 }
-  - { id: "what-38-is-worth-in-dollars", title: "What 3.8% is worth in dollars", level: 2 }
+  - { id: "what-thats-worth-in-dollars", title: "What that's worth in dollars", level: 2 }
   - { id: "why-this-number-carries-so-much-weight", title: "Why this number carries so much weight", level: 3 }
   - { id: "the-medicare-part-b-catch", title: "The Medicare Part B catch", level: 2 }
   - { id: "the-uncomfortable-trade-off", title: "The uncomfortable trade-off", level: 2 }
@@ -18,22 +20,98 @@ faq:
   - q: "When is the 2027 COLA official?"
     a: "The Social Security Administration announces it in October 2026, based on CPI-W data for July, August, and September 2026. Everything before that is an estimate."
   - q: "How big will the 2027 COLA be?"
-    a: "Current estimates range from 3.6% (AARP) to 3.8% (The Senior Citizens League), with independent analyst Mary Johnson at 3.7% — all up from the 2.8% actual COLA for 2026."
+    a: "Running the SSA formula on published CPI-W data puts it near 3.1%. July 2026 CPI-W came in at 327.104 against a Q3 2025 average of 317.2647; if August and September hold flat, that is a 3.1% COLA. The honest range is 2.7% to 3.7% until those two months publish. Summer forecasts of 3.6% to 3.8% predate the July data."
   - q: "Why do estimates keep changing?"
     a: "Because they track monthly CPI-W data. June's cooler inflation pulled some forecasts down from spring highs; a renewed energy spike could push them back up before the official October number."
 ---
 
-If you or a parent lives on Social Security, the number that matters most each year isn't the stock market — it's the cost-of-living adjustment. And the 2027 estimate just got interesting, because it moved *down* on genuinely good inflation news. Let me translate the percentage into what actually lands in a bank account.
+If you or a parent lives on Social Security, the number that matters most each year isn't the stock market — it's the cost-of-living adjustment. This post originally ran in July with the forecasters' estimates. July's actual inflation data has since been published, so I have replaced the forecast with the arithmetic.
+
+<InfoBox type="tip">
+**Updated 7 September 2026.** When this published in July, the best available
+information was a set of forecasts clustered at 3.6%–3.8%. The July CPI-W print
+has since landed, and running the SSA's own formula on it points closer to
+**3.1%**. The original forecast section is kept below, because how those
+estimates moved is part of the story. The headline number has changed.
+</InfoBox>
 
 <KeyTakeaways items={[
-  "The 2027 COLA is estimated at 3.6% (AARP) to 3.8% (The Senior Citizens League) as of mid-July 2026, with independent analyst Mary Johnson at 3.7%.",
-  "At 3.8%, the average benefit rises about $73.62 a month — from $1,937.53 to $2,011.15.",
-  "The official number comes in October 2026, based on July–September CPI-W.",
-  "A Medicare Part B premium increase can quietly eat part of the raise.",
-  "A bigger COLA also nudges a key trust fund's insolvency date slightly closer, per CRFB."
+  "Running the SSA's formula on published CPI-W data puts the 2027 COLA near 3.1%, below the 3.6%–3.8% that summer forecasters projected.",
+  "The method reproduces the 2026 COLA of 2.8% exactly, which is the reason to trust it.",
+  "Two of the three months that decide the number are still unpublished, so the honest range is 2.7%–3.7%.",
+  "The COLA rests on only three months of data, which is why these estimates swing all summer — unlike tax brackets, which average twelve months and barely move.",
+  "A Medicare Part B premium increase can quietly eat part of whatever the raise turns out to be."
 ]} />
 
-## The number, and who says what
+## What the actual data says
+
+The COLA is not a forecast, a negotiation, or a policy choice. Since 1975 it has
+been one piece of arithmetic: take the average CPI-W for **July, August and
+September**, compare it with the same three months a year earlier, round to the
+nearest tenth of a percent. That is the entire rule.
+
+So rather than repeat someone else's estimate, here is that formula run against
+the published series — CPI-W, BLS series `CWUR0000SA0`.
+
+**First, does the method work?** Before trusting any projection, it should
+reproduce a COLA the SSA has already announced:
+
+<ComparisonTable
+  caption="Back-test: the 2026 COLA, already announced"
+  headers={["Input", "Value"]}
+  rows={[
+    ["Q3 2024 average CPI-W", "308.7290"],
+    ["Q3 2025 average CPI-W", "317.2647"],
+    ["Computed increase", "2.7648% → 2.8%"],
+    ["What the SSA actually announced", "2.8%"]
+  ]}
+  highlightCol={1}
+/>
+
+It matches exactly. That is the only reason the next table is worth reading.
+
+**Now 2027.** The comparison basis is the Q3 2025 average of **317.2647**. Of the
+three months that decide it, only July 2026 has been published: **327.104**.
+August and September are still to come.
+
+<BarChart
+  title="The 2027 COLA depends heavily on two unpublished months"
+  description="Implied COLA under different assumptions for August and September 2026"
+  data={[
+    { assumption: "-0.4% MoM", cola: 2.7 },
+    { assumption: "-0.2% MoM", cola: 2.9 },
+    { assumption: "flat", cola: 3.1 },
+    { assumption: "+0.2% MoM", cola: 3.3 },
+    { assumption: "+0.4% MoM", cola: 3.5 },
+    { assumption: "+0.6% MoM", cola: 3.7 }
+  ]}
+  xKey="assumption"
+  series={[{ key: "cola", label: "Implied 2027 COLA" }]}
+  unit="%"
+  colorByCategory
+/>
+
+If August and September simply hold flat at July's level, the 2027 COLA comes to
+**3.1%**. Reaching the 3.8% the summer forecasts pointed at would need both
+months to run about 0.65% hotter, every month — a real possibility, but not the
+base case the published data supports.
+
+<InfoBox type="warning">
+Notice how wide that spread is: a plausible range of monthly outcomes moves the
+COLA a full point, from 2.7% to 3.7%. That is not sloppiness in the estimates —
+it is arithmetic. The COLA averages **three** months, so each unpublished month
+carries a third of the weight. Compare that with the [2027 tax
+brackets](/posts/2027-tax-brackets-projected), which average twelve months: there,
+the same uncertainty in one month moves the answer by less than a tenth of a
+percent. Same kind of formula, completely different sensitivity — and it is why
+COLA predictions lurch around all summer while bracket projections sit still.
+</InfoBox>
+
+The script that produces these numbers is in this site's repository and re-runs
+against live BLS data, so this section updates as August and September land
+rather than going stale.
+
+## What the forecasters said in July
 
 Three trackers have weighed in as of mid-July 2026, all pointing the same direction but landing on slightly different numbers:
 
@@ -56,18 +134,33 @@ None of these estimates are guesses in the "vibes" sense — they're forecasts o
 
 <ColaCalculationFlow />
 
-## What 3.8% is worth in dollars
+## What that's worth in dollars
 
-Percentages are abstract; dollars aren't. Per TSCL's July 14 estimate, if a 3.8% COLA took effect today, the average retirement benefit would rise **$73.62 a month, from $1,937.53 to $2,011.15**.
+Percentages are abstract; dollars aren't. Against an average retirement benefit
+of $1,937.53, here is what each end of the range actually delivers:
 
-<StatCard label="Estimated monthly raise at 3.8%" value={73.62} format="currency" sublabel="Average benefit $1,937.53 → $2,011.15 (TSCL estimate, July 2026)" />
+<ComparisonTable
+  caption="Monthly increase on an average $1,937.53 benefit"
+  headers={["COLA", "Monthly raise", "New benefit"]}
+  rows={[
+    ["2.7% (cool August/September)", "$52.31", "$1,989.84"],
+    ["3.1% (flat — what July's data implies)", "$60.06", "$1,997.59"],
+    ["3.7% (hot August/September)", "$71.69", "$2,009.22"]
+  ]}
+  highlightCol={1}
+/>
+
+<StatCard label="Monthly raise at 3.1%" value={60.06} format="currency" decimals={2} sublabel="Average benefit $1,937.53 → $1,997.59" />
+
+The gap between the ends of that range is about **$19 a month**. That is the
+practical cost of the two missing data points.
 
 <LineChart
   title="Social Security COLA, recent years"
   data={[
     { year: "2025", cola: 2.5 },
     { year: "2026", cola: 2.8 },
-    { year: "2027 (est.)", cola: 3.8 }
+    { year: "2027 (projected)", cola: 3.1 }
   ]}
   xKey="year"
   series={[{ key: "cola", label: "COLA %" }]}
@@ -90,14 +183,14 @@ This isn't a rounding error for most recipients. Per Congressional Research Serv
   unit="%"
 />
 
-Three in five beneficiaries get *at least half* their income from that check, and roughly one in seven get nearly all of it. That's why a 0.2-point swing in the estimate — 3.6% vs. 3.8% — isn't academic: for the 90%+ group in particular, it's close to their entire raise for the year, full stop.
+Three in five beneficiaries get *at least half* their income from that check, and roughly one in seven get nearly all of it. That's why the full-point spread still on the table — 2.7% vs. 3.7% — isn't academic: for the 90%+ group in particular, it's close to their entire raise for the year, full stop.
 
 ## The Medicare Part B catch
 
 Here's the part the headline number hides. For most retirees, the Medicare Part B premium is deducted straight from the Social Security check. The 2026 Medicare Trustees Report projects the standard 2027 Part B premium at **around $209.50/month**, up from $202.90 in 2026 — a projection, not a final number. CMS doesn't announce the actual 2027 premium until around November 2026, and past projections have missed (the 2022 premium, for example, was projected at $158.50 but finalized at $170.10).
 
 <InfoBox type="warning">
-Don't budget the full 3.8%. Budget the raise *minus* your expected Medicare premium increase. For lower benefit amounts, the Part B bump can eat a meaningful slice of the COLA — and the real number won't be locked in until November.
+Don't budget the full 3.1%. Budget the raise *minus* your expected Medicare premium increase. For lower benefit amounts, the Part B bump can eat a meaningful slice of the COLA — and the real number won't be locked in until November.
 </InfoBox>
 
 ## The uncomfortable trade-off
@@ -106,7 +199,7 @@ A larger COLA helps recipients now but strains the system. The nonpartisan **Com
 
 ## Here's What I'd Actually Do
 
-1. **Treat the estimate as a range, not a promise.** Plan around 3.6%–3.7%, and treat anything higher as upside. The official number is October.
+1. **Treat the estimate as a range, not a promise.** Plan around 3.1%, treat 2.7% as the downside, and treat anything above 3.5% as upside. The official number is October.
 2. **Net out Medicare.** Calculate raise minus expected Part B increase for your real spendable change — and don't assume $209.50 is locked in.
 3. **If you're not yet claiming, don't let COLA math rush you.** Delaying benefits still raises your base far more than any single year's COLA.
 4. **Revisit your withdrawal rate.** A higher COLA slightly reduces how much you must pull from savings — recalculate once the official number lands.
@@ -117,7 +210,7 @@ Planning retirement accounts alongside Social Security? See <a href="/posts/roth
 
 
 <FaqAccordion items={[
-  { q: "Is 3.8% guaranteed?", a: "No. It's TSCL's estimate as of July 14, 2026. The SSA sets the official figure in October based on Q3 CPI-W, and estimates have moved before." },
+  { q: "Is 3.1% guaranteed?", a: "No. It is what the SSA formula returns if August and September 2026 hold flat at July levels. Those two months are a third of the calculation each, so the outcome can still land anywhere from about 2.7% to 3.7%. The SSA sets the official figure in October." },
   { q: "Why is AARP's estimate lower?", a: "Different models. AARP's 3.6% blends CPI-W with inflation projections for the remaining months, while TSCL and Mary Johnson weight recent CPI-W prints differently." },
   { q: "What was the 2026 COLA?", a: "2.8%, which raised the average retired-worker benefit by roughly $56 a month." }
 ]} />
@@ -129,5 +222,7 @@ Planning retirement accounts alongside Social Security? See <a href="/posts/roth
   { title: "Social Security recipients could get a nearly 4% cost-of-living adjustment, forecasters say", url: "https://www.cbsnews.com/news/social-security-2027-cola-inflation-retirees/", publisher: "CBS News", date: "2026-07-14" },
   { title: "Medicare's 2027 Part B Premium Is Projected to Push Past $215 a Month", url: "https://247wallst.com/personal-finance/2026/07/07/medicares-2027-part-b-premium-is-projected-to-push-past-215-a-month/", publisher: "24/7 Wall St. (citing 2026 Medicare Trustees Report)", date: "2026-07-07" },
   { title: "Consumer Price Index Summary — June 2026 (CPI-W basis)", url: "https://www.bls.gov/news.release/cpi.nr0.htm", publisher: "U.S. Bureau of Labor Statistics", date: "2026-07-14" },
+  { title: "CPI-W, all items, US city average — series CWUR0000SA0", url: "https://data.bls.gov/timeseries/CWUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved September 7, 2026" },
+  { title: "Cost-of-Living Adjustment (COLA) Information", url: "https://www.ssa.gov/cola/", publisher: "Social Security Administration", date: "2026" },
   { title: "Income from Social Security", url: "https://pensionrights.org/resource/income-from-social-security/", publisher: "Pension Rights Center (citing CRS/SSA reliance data)", date: "2026" }
 ]} />

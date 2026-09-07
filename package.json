@@ -11,7 +11,8 @@
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "audit:posts": "node scripts/audit-posts.mjs",
-    "project:brackets": "node scripts/project-brackets.mjs"
+    "project:brackets": "node scripts/project-brackets.mjs",
+    "project:cola": "node scripts/project-cola.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
