@@ -1,0 +1,242 @@
+---
+title: "Showing an AI More of the Tax Code Made It Worse: A 400-Generation Test"
+description: "Four local AI models were given the same tax questions with three brackets, then five. The best model went from a $100 error to a $132,000 one — because it taxes every bracket it is shown, including ones your income never reaches."
+seoTitle: "More Tax Brackets Made AI Models Worse: 400 Tests"
+seoDescription: "Four small AI models, 400 tax calculations. Three scored zero. Adding two irrelevant brackets took the best model from nearly right to 22x wrong."
+date: "2026-09-07"
+category: "Personal Finance"
+tags: ["AI", "Local LLM", "Tax Brackets", "Original Data", "Benchmark", "Ollama"]
+author: "Sujit Karki"
+toc:
+  - { id: "three-of-four-scored-zero", title: "Three of four scored zero", level: 2 }
+  - { id: "the-controlled-comparison", title: "The controlled comparison", level: 2 }
+  - { id: "what-they-actually-do-wrong", title: "What they actually do wrong", level: 2 }
+  - { id: "the-one-model-that-half-worked", title: "The one model that half worked", level: 2 }
+  - { id: "what-this-means-in-practice", title: "What this means in practice", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "Can AI calculate my tax bill?"
+    a: "On this evidence, no. Four small open models ran 400 progressive-tax calculations between them and three scored zero out of 100. The best managed 51%. Every model failed the questions requiring several brackets to be summed, which is what an actual tax calculation is."
+  - q: "Does giving an AI more information make its answer better?"
+    a: "Not necessarily. In this test, adding two higher tax brackets to the prompt — brackets the stated income never reached — took the strongest model from an answer $100 off to one $132,524 off on the identical question. It applied every bracket it was shown."
+  - q: "Which small local model is best at tax maths?"
+    a: "phi3.5:3.8b, at 51% correct across 100 generations. The other three tested — qwen2.5:3b, llama3.2:3b and gemma2:2b — each scored zero. phi3.5 was also the slowest at 22.5 tokens per second."
+---
+
+<KeyTakeaways items={[
+  "Four small AI models ran 400 progressive-tax calculations. Three scored exactly zero out of 100.",
+  "The same model, asked the identical question, answered $6,207.50 when shown three tax brackets and $138,832 when shown five. The true answer is $6,307.50.",
+  "The failure is not arithmetic. Models apply every bracket they are shown, taxing income the taxpayer does not have.",
+  "One model computed 50,000 minus 182,100 as 317,900 in order to tax a bracket that did not apply.",
+  "Only phi3.5:3.8b scored above zero, at 51% — and it was the slowest model tested."
+]} />
+
+A [previous test on this site](/posts/local-ai-money-math-2026) found that small
+AI models running on a laptop failed simple money arithmetic. One tax question
+appeared in it, with three brackets, and every model got it wrong. This is the
+follow-up: ten tax questions, four models, ten repetitions each — 400 answers in
+total, all generated locally on a GTX 1650 Ti.
+
+The result was worse than expected, and the reason turned out to be something I
+was not testing for.
+
+## Three of four scored zero
+
+<BarChart
+  title="Correct answers out of 100 progressive-tax calculations"
+  description="Four models, ten scenarios, ten repetitions each"
+  data={[
+    { model: "phi3.5:3.8b", correct: 51 },
+    { model: "qwen2.5:3b", correct: 0 },
+    { model: "llama3.2:3b", correct: 0 },
+    { model: "gemma2:2b", correct: 0 }
+  ]}
+  xKey="model"
+  series={[{ key: "correct", label: "Correct out of 100" }]}
+  colorByCategory
+/>
+
+Not "low accuracy". Zero. Three models produced one hundred answers each and
+none of them was right.
+
+The result that matters most is `qwen2.5:3b` scoring nothing, because on the
+earlier and simpler benchmark it was **the best model tested, at 75%**. Whatever
+happened here is not a matter of one weak model.
+
+## The controlled comparison
+
+Both tests asked the same question: what is the total tax owed on $50,000? The
+true answer is **$6,307.50**. The only difference was how many brackets the
+prompt listed.
+
+<ComparisonTable
+  caption="qwen2.5:3b, identical question, different number of brackets shown"
+  headers={["Brackets in the prompt", "Answer", "Error"]}
+  rows={[
+    ["3", "$6,207.50", "$100 low"],
+    ["5", "$138,832.00", "$132,524.50 high"]
+  ]}
+  highlightCol={1}
+/>
+
+The two extra brackets covered income from $95,375 to $182,100 and above
+$182,100. A person earning $50,000 never reaches either. They are irrelevant
+information — and adding them multiplied the answer by twenty-two.
+
+<InfoBox type="warning">
+This is the opposite of the usual advice about prompting. The instinct is that
+giving a model more of the rule book helps it. Here, every additional rule was
+another thing the model applied whether or not it should have.
+</InfoBox>
+
+## What they actually do wrong
+
+The models show their working, so the failure is visible rather than inferred.
+This is `llama3.2:3b` on the $50,000 question, unedited:
+
+```text
+1. Income from 0 to 11000: 11000 * 0.10 = 1100
+2. Income from 11000 to 44725: 33725 * 0.12 = 4042
+3. Income from 44725 to 95375: 50650 * 0.22 = 11122
+4. Income from 95375 to 182100: 156250 * 0.24 = 37450
+5. Income above 182100: 31750 * 0.32 = 10156
+
+Now, let's add up the taxes:
+1100 + 4042 = 5142
+5142 + 11122 = 16264
+16264 + 37450 = 53714
+53714 + 10156 = 63870
+
+ANSWER: 63870
+```
+
+Read line 4. It taxes $156,250 of income. The taxpayer earns $50,000. The figure
+$50,000 appears nowhere after the first line — the model computed the full width
+of every bracket and added them all up, producing a tax bill larger than the
+income it was calculating tax on.
+
+`qwen2.5:3b` does the same thing and adds an arithmetic invention to reach it:
+
+```text
+5. Income above 182100:
+   - Amount: 50000 - 182100 = 317900
+   - Tax: 317900 x 0.32 = 101728
+```
+
+$50,000 minus $182,100 is negative $132,100. The model returned positive
+$317,900 — wrong in sign and magnitude — apparently because a negative number
+would have made the step obviously impossible, and the step had to happen.
+
+The same pattern held on a $9,000 income. `qwen2.5:3b` correctly noted that the
+second bracket contributed **$0**, then taxed the $44,725–$95,375 and
+$95,375–$182,100 bands anyway, arriving at $16,190 of tax on $9,000 of income.
+
+**The models are not bad at multiplication. They are treating a bracket table as
+a list of things to compute rather than a set of conditions to test.**
+
+## The one model that half worked
+
+`phi3.5:3.8b` scored 51%, and how it splits is the clearest signal in the
+dataset:
+
+<ComparisonTable
+  caption="phi3.5:3.8b by question type"
+  headers={["Question", "Correct", "Steps required"]}
+  rows={[
+    ["Tax on $9,000 (one bracket)", "10/10", "One multiplication"],
+    ["Marginal rate at $75,000", "10/10", "Identify the band"],
+    ["Effective rate at $50,000", "10/10", "One division"],
+    ["Tax on $120,000", "10/10", "Sum of brackets"],
+    ["Tax on $200,000", "10/10", "Sum of brackets"],
+    ["Tax on $50,000", "0/10", "Sum of brackets"],
+    ["Tax on $50,000 after a deduction", "0/10", "Deduct, then sum"],
+    ["Tax at the $95,375 boundary", "0/10", "Exact boundary case"]
+  ]}
+  highlightCol={1}
+/>
+
+It is perfect on anything resolvable in one or two steps and unreliable once
+several brackets must be combined. That threshold is what makes the whole test
+credible: a broken test bank would produce scattered failures, not a clean line
+between simple and compound questions.
+
+It is also worth noting that phi3.5 was **the slowest model tested**, at 22.5
+tokens per second against roughly 50 for the others. The only model that got
+anything right was the one that took twice as long to be wrong less often.
+
+## What this means in practice
+
+The practical rule is narrow and worth stating plainly.
+
+**Do not ask a local model to compute a tax figure you intend to act on.** Not
+because it might be slightly off — three of four models here were not slightly
+off, they were catastrophically off, and the one that worked failed the most
+realistic question in the set.
+
+**And be careful about the assumption that more context is safer.** Pasting the
+full bracket table, the whole policy document, every rule you can find, feels
+like diligence. On this evidence it can make the answer dramatically worse,
+because the model has no reliable mechanism for deciding which of the rules you
+gave it do not apply.
+
+What these models remain genuinely useful for is explanation. Ask one why a
+marginal rate differs from an effective rate and you will get a clear, correct
+answer. The line is between *explaining a rule* and *applying it to your
+numbers*, and it sits further left than most people assume.
+
+<InfoBox type="warning">
+This is educational information, not tax advice. The brackets used throughout
+are illustrative figures supplied inside each prompt, deliberately not any real
+tax year's, so the test measures arithmetic rather than recall. Consult a
+licensed professional before acting on any tax decision.
+</InfoBox>
+
+## Methodology
+
+Everything here comes from a dataset generated for this post. The harness, every
+raw generation and the aggregated results are in this site's repository under
+`research/`, and the run reproduces on any machine with Ollama.
+
+**Hardware.** GTX 1650 Ti, 4 GB VRAM, 8 GB system RAM, Ollama 0.33.2. All four
+models ran fully on the GPU.
+
+**Models.** `phi3.5:3.8b`, `qwen2.5:3b`, `llama3.2:3b`, `gemma2:2b`, all Q4_K_M —
+the default weights `ollama pull` fetches.
+
+**Scenarios.** Ten questions spanning single-bracket cases, multi-bracket sums,
+a deduction applied before the brackets, an exact bracket boundary, effective
+rate and marginal rate. Each ran ten times with a different seed, at
+`temperature 0` and explicit `num_ctx`, with one warm-up generation per model
+discarded.
+
+**Ground truth is generated, not typed.** The bracket structure is defined once
+in code; the prompt text and the expected answer are both derived from it. The
+correct answer therefore cannot disagree with the question asked. Hand-entering
+expected values was the largest error risk in the previous benchmark and this
+removes it.
+
+**Determinism.** 38 of the 40 model-question pairs returned an identical answer
+across all ten repetitions. Asking again does not surface these errors.
+
+**Truncation, disclosed.** Nine generations hit the 1,024-token output cap, all
+of them phi3.5 on a single scenario. None would have been correct regardless;
+excluding them entirely, phi3.5 scores 51/91, or 56%. The headline 51% is the
+conservative figure.
+
+**A limit worth stating.** This is four small models on one machine with one
+bracket structure. It does not establish how larger or hosted models behave, and
+it should not be read as doing so. What it does show is a specific, reproducible
+mechanism — applying every rule presented, regardless of applicability — that is
+visible in the models' own working rather than inferred from a score.
+
+**Disclosure.** The models are the subject being measured, not the author. None
+of them wrote any part of this post. The commentary was drafted with AI
+assistance; the experiment design, the ground-truth computation and the
+conclusions are mine.
+
+<Sources items={[
+  { title: "Harness, raw generations and dataset", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" },
+  { title: "Publication 17, Your Federal Income Tax", url: "https://www.irs.gov/publications/p17", publisher: "Internal Revenue Service", date: "2026" },
+  { title: "IRS Tax Withholding Estimator", url: "https://www.irs.gov/individuals/tax-withholding-estimator", publisher: "Internal Revenue Service", date: "2026" }
+]} />
