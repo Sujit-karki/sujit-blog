@@ -43,6 +43,20 @@ const BANDS = [
   { name: "weakest", min: 0 },
 ];
 
+// The house standard every published post is expected to clear. Set from where
+// the archive actually sits rather than an aspiration: as of September 2026 the
+// median post runs ~830 words and two thirds are "solid" or better, so these are
+// a floor the body of work already meets, not a stretch target.
+//
+// Enforced with `npm run audit:posts -- --check`, which exits non-zero on any
+// indexed post below the line. noindex posts are exempt — they are deliberately
+// out of the index and not held to it.
+const STANDARD = {
+  words: 500, // below this a post reads as a stub regardless of components
+  primarySources: 1, // at least one link to the agency publishing the figures
+  score: 3.5, // the "solid" band
+};
+
 function analyse(file) {
   // Two posts carry a UTF-8 BOM; gray-matter strips it at build time, so the
   // frontmatter regex below has to as well or their dates read as empty.
@@ -163,6 +177,29 @@ if (minScore !== null) {
   if (failing.length > 0) {
     console.error(`\n${failing.length} post(s) below the minimum score of ${minScore}:`);
     for (const p of failing) console.error(`  ${p.score}  ${p.slug}`);
+    process.exit(1);
+  }
+}
+
+if (args.includes("--check")) {
+  const failures = [];
+  for (const post of posts) {
+    if (post.noindex) continue; // deliberately out of the index, exempt
+    const reasons = [];
+    if (post.words < STANDARD.words) reasons.push(`${post.words} words (min ${STANDARD.words})`);
+    if (post.primary < STANDARD.primarySources) reasons.push("no primary source");
+    if (post.score < STANDARD.score) reasons.push(`score ${post.score} (min ${STANDARD.score})`);
+    if (reasons.length) failures.push({ slug: post.slug, reasons });
+  }
+
+  const indexed = posts.filter((p) => !p.noindex).length;
+  if (failures.length === 0) {
+    console.log(`\nhouse standard: all ${indexed} indexed posts pass`);
+    console.log(`  >=${STANDARD.words} words, >=${STANDARD.primarySources} primary source, score >=${STANDARD.score}`);
+  } else {
+    console.error(`\nhouse standard: ${failures.length} of ${indexed} indexed posts below the line`);
+    console.error(`  >=${STANDARD.words} words, >=${STANDARD.primarySources} primary source, score >=${STANDARD.score}\n`);
+    for (const f of failures) console.error(`  ${f.slug}\n      ${f.reasons.join(", ")}`);
     process.exit(1);
   }
 }
