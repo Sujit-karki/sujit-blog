@@ -39,10 +39,19 @@ const OFFICIAL = {
   },
 };
 
-// Observed convention: every 2026 figure above is a multiple of 50, so rounding
-// matches. Flagged in the output because it is inferred from the published
-// numbers rather than read off the statute.
+// 26 U.S.C. 1(f)(7)(A), verbatim: "If any increase determined under paragraph
+// (2)(A), section 63(c)(4), section 68(b)(2) or section 151(d)(4) is not a
+// multiple of $50, such increase shall be rounded to the next lowest multiple
+// of $50."
+//
+// Two things follow that are easy to get wrong, and this script originally got
+// both wrong. The rounding applies to the *increase*, not to the adjusted
+// amount. And it rounds *down* to the next lowest $50, not to the nearest —
+// so a $496 increase becomes $450, not $500.
 const ROUND_TO = 50;
+
+const applyStatutoryRounding = (base, factor) =>
+  base + Math.floor((base * (factor - 1)) / ROUND_TO) * ROUND_TO;
 
 async function fetchSeries(startYear, endYear) {
   const res = await fetch(BLS_API, {
@@ -139,7 +148,7 @@ async function main() {
       projected: Object.fromEntries(
         Object.entries(OFFICIAL.figures).map(([k, v]) => [
           k,
-          Math.round((v * factor) / ROUND_TO) * ROUND_TO,
+          applyStatutoryRounding(v, factor),
         ])
       ),
     };
@@ -166,7 +175,7 @@ async function main() {
     caveats: [
       ...notes,
       "Months flagged Interim or Initial by BLS are subject to revision.",
-      `Rounding to the nearest $${ROUND_TO} is inferred from the published ${OFFICIAL.year} figures, not read off the statute — verify before publishing.`,
+      `Rounding follows 26 U.S.C. 1(f)(7)(A): the increase is rounded to the next lowest multiple of $${ROUND_TO}, then added to the base.`,
       "Standard deduction only. Bracket thresholds require the official current-year thresholds as input.",
     ],
   };
@@ -187,7 +196,7 @@ async function main() {
   }
   if (open.length) console.log(`\noutstanding: ${result.monthsOutstanding.join(", ")}`);
 
-  console.log(`\nAug assumption -> adjustment -> projected ${TARGET_YEAR} (rounded to $${ROUND_TO}):`);
+  console.log(`\nAug assumption -> adjustment -> projected ${TARGET_YEAR} (statutory rounding):`);
   for (const s of scenarios) {
     const figs = Object.values(s.projected)
       .map((v) => `$${v.toLocaleString("en-US")}`)

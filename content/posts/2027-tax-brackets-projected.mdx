@@ -25,7 +25,7 @@ Every fall I get the same search traffic spike for "next year's tax brackets," a
   "The IRS had not released official 2027 tax brackets as of this writing — they typically arrive in an October revenue procedure.",
   "2026's brackets are confirmed: seven rates (10/12/22/24/32/35/37%) and a standard deduction of $16,100 single, $32,200 married filing jointly, $24,150 head of household.",
   "Computing the statutory formula from the actual chained-CPI series puts the 2027 adjustment at 3.0%, and that figure barely moves no matter what the final month does.",
-  "That points to a 2027 standard deduction near $16,600 single and $33,150-$33,200 married filing jointly — a projection, not an IRS figure.",
+  "That points to a 2027 standard deduction of $16,550 single, $33,150 married filing jointly and $24,850 head of household — a projection, not an IRS figure.",
   "One month the formula needs, October 2025, is simply absent from the published BLS series.",
   "Any 2027 number you see before the official revenue procedure is a projection, not a citable IRS figure.",
   "Your marginal rate and your effective rate are different numbers, and confusing them leads to bad decisions about raises, bonuses, and Roth conversions."
@@ -138,30 +138,49 @@ by less than nine hundredths of a percent. That is the arithmetic of a
 twelve-month average: any single month carries one-twelfth of the weight. **The
 2027 adjustment is bounded between 2.999% and 3.086%** across that entire sweep.
 
-Applying that to the confirmed 2026 standard deduction:
+Applying that to the confirmed 2026 standard deduction requires one more step,
+and it is the step most projections get wrong. The statute does not round the
+adjusted amount. **26 U.S.C. §1(f)(7)(A)** says:
+
+> "If any increase determined under paragraph (2)(A), section 63(c)(4)... is not
+> a multiple of $50, such increase shall be **rounded to the next lowest**
+> multiple of $50."
+
+So the *increase* is rounded, not the total — and it rounds **down**, not to the
+nearest. A $496 increase becomes $450, not $500.
 
 <ComparisonTable
   caption="Projected 2027 standard deduction — not official"
-  headers={["Filing status", "2026 (official)", "2027 (projected)"]}
+  headers={["Filing status", "2026 (official)", "Raw increase", "Rounded down", "2027 (projected)"]}
   rows={[
-    ["Single", "$16,100", "$16,600"],
-    ["Married filing jointly", "$32,200", "$33,150 - $33,200"],
-    ["Head of household", "$24,150", "$24,850 - $24,900"]
+    ["Single", "$16,100", "$488", "$450", "$16,550"],
+    ["Married filing jointly", "$32,200", "$977", "$950", "$33,150"],
+    ["Head of household", "$24,150", "$733", "$700", "$24,850"]
   ]}
-  highlightCol={1}
+  highlightCol={4}
 />
 
-The single-filer figure rounds to **$16,600 in every scenario I ran**. The other
-two straddle a rounding boundary, which is why they show a range rather than
-false precision.
+Because the rounding discards the remainder, all three figures are **identical
+across the entire sensitivity sweep** — every August outcome from −0.4% to +0.6%
+produces the same three numbers. The statutory rounding absorbs the uncertainty
+the missing month creates.
 
 <InfoBox type="warning">
-Two things to hold against this. The rounding convention — nearest $50 — is
-inferred from the pattern in the published 2026 figures, not read off the
-statute; if the actual rule differs, the joint and head-of-household numbers
-move by $50. And most months above carry BLS "Interim" or "Initial" flags,
-meaning they are subject to revision. This is a projection with its
-uncertainties stated, which is more than most, but it is still a projection.
+**Correction, 7 September 2026.** This post first gave the single-filer figure as
+$16,600, and showed ranges for the other two. That used rounding to the *nearest*
+$50 applied to the adjusted total — a convention I had inferred from the pattern
+in the published 2026 figures rather than read off the statute. §1(f)(7)(A)
+rounds the *increase* to the *next lowest* $50. The corrected single-filer figure
+is **$16,550**; the joint and head-of-household figures are the low ends of the
+ranges previously shown. The ranges themselves were an artefact of the wrong
+method.
+</InfoBox>
+
+<InfoBox type="warning">
+One genuine uncertainty remains: most months in the table above carry BLS
+"Interim" or "Initial" flags and are subject to revision. This is a projection
+with its uncertainties stated, which is more than most, but it is still a
+projection and the IRS number in October is the only citable one.
 </InfoBox>
 
 The script that produces all of this is in the site's repository and re-runs
@@ -198,6 +217,7 @@ Every 2027 figure in this post's calculator is explicitly labeled projected, not
 
 <Sources items={[
   { title: "Revenue Procedure 2025-32 (2026 inflation adjustments)", url: "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf", publisher: "IRS", date: "October 9, 2025" },
+  { title: "26 U.S.C. 1(f) — inflation adjustments and the rounding rule", url: "https://www.law.cornell.edu/uscode/text/26/1", publisher: "Legal Information Institute, Cornell Law School", date: "2026" },
   { title: "Chained CPI for All Urban Consumers, series SUUR0000SA0", url: "https://data.bls.gov/timeseries/SUUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved September 7, 2026" },
   { title: "BLS Public Data API", url: "https://www.bls.gov/developers/", publisher: "U.S. Bureau of Labor Statistics", date: "2026" },
   { title: "2026 Tax Brackets", url: "https://taxfoundation.org/data/all/federal/2026-tax-brackets/", publisher: "Tax Foundation", date: "2025-2026" },
