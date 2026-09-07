@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "audit:posts": "node scripts/audit-posts.mjs"
+    "audit:posts": "node scripts/audit-posts.mjs",
+    "project:brackets": "node scripts/project-brackets.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

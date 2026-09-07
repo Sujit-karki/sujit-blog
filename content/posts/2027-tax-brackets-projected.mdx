@@ -2,6 +2,7 @@
 title: "2027 Tax Brackets: What's Projected vs. What's Official"
 description: "The IRS sets 2027 brackets in October. Here's the confirmed 2026 baseline, why projections are only estimates, and how marginal rates actually work."
 date: "2026-08-13"
+updated: "2026-09-07"
 author: "Sujit Karki"
 category: "Personal Finance"
 tags: ["Tax Brackets", "IRS", "2027 Taxes", "Standard Deduction", "Personal Finance"]
@@ -9,6 +10,7 @@ toc:
   - { id: "the-news", title: "What actually happened", level: 2 }
   - { id: "the-math", title: "The math for one person", level: 2 }
   - { id: "counterpoint", title: "Why projections aren't official", level: 2 }
+  - { id: "our-projection", title: "So I computed it myself", level: 2 }
   - { id: "calculator", title: "Run your own numbers", level: 2 }
   - { id: "what-id-do", title: "Here's What I'd Actually Do", level: 2 }
 faq:
@@ -22,8 +24,10 @@ Every fall I get the same search traffic spike for "next year's tax brackets," a
 <KeyTakeaways items={[
   "The IRS had not released official 2027 tax brackets as of this writing — they typically arrive in an October revenue procedure.",
   "2026's brackets are confirmed: seven rates (10/12/22/24/32/35/37%) and a standard deduction of $16,100 single, $32,200 married filing jointly, $24,150 head of household.",
-  "The 2025-to-2026 inflation adjustment averaged about 2.7% across brackets and the standard deduction.",
-  "Any 2027 number you see before the official revenue procedure is a projection based on inflation trends, not a citable IRS figure.",
+  "Computing the statutory formula from the actual chained-CPI series puts the 2027 adjustment at 3.0%, and that figure barely moves no matter what the final month does.",
+  "That points to a 2027 standard deduction near $16,600 single and $33,150-$33,200 married filing jointly — a projection, not an IRS figure.",
+  "One month the formula needs, October 2025, is simply absent from the published BLS series.",
+  "Any 2027 number you see before the official revenue procedure is a projection, not a citable IRS figure.",
   "Your marginal rate and your effective rate are different numbers, and confusing them leads to bad decisions about raises, bonuses, and Roth conversions."
 ]} />
 
@@ -63,6 +67,107 @@ If you see a "2027 tax brackets" article citing exact dollar thresholds before r
 
 As of this writing, no major forecaster had published complete 2027 threshold tables yet — the "first look" reports from tax-research publishers that do this work seriously typically come out in September, closer to the real announcement. Anything claiming precise 2027 numbers earlier than that deserves real skepticism about its methodology.
 
+## So I computed it myself
+
+Telling you to be skeptical of other people's projections while offering none of
+my own is a cop-out. So here is the arithmetic, run against the actual data the
+IRS formula uses, with every input published.
+
+**The formula.** The annual adjustment is not driven by the headline inflation
+number you see in the news. That is CPI-U. The bracket adjustment uses the
+**Chained** CPI for All Urban Consumers — C-CPI-U, BLS series `SUUR0000SA0` —
+averaged over the **twelve months ending 31 August** of the preceding year. So
+tax year 2027 depends on the average of September 2025 through August 2026,
+measured against September 2024 through August 2025. Different index, different
+window. An article applying "about 3% inflation" from a news headline is using
+neither.
+
+**The baseline.** The twelve months ending August 2025 average **177.2058**.
+
+**The target window**, as published today:
+
+<ComparisonTable
+  caption="C-CPI-U, Sep 2025 - Aug 2026 (BLS series SUUR0000SA0)"
+  headers={["Month", "Index", "Status"]}
+  rows={[
+    ["Sep 2025", "180.373", "Final"],
+    ["Oct 2025", "180.131", "Absent from the series — interpolated"],
+    ["Nov 2025", "179.889", "Interim"],
+    ["Dec 2025", "179.775", "Interim"],
+    ["Jan 2026", "180.409", "Interim"],
+    ["Feb 2026", "181.258", "Interim"],
+    ["Mar 2026", "183.193", "Interim"],
+    ["Apr 2026", "184.680", "Interim"],
+    ["May 2026", "185.771", "Interim"],
+    ["Jun 2026", "185.172", "Interim"],
+    ["Jul 2026", "185.162", "Initial"],
+    ["Aug 2026", "—", "Not yet published"]
+  ]}
+  highlightCol={2}
+/>
+
+Two of the twelve months the formula needs are not available. August 2026 lands
+in mid-September, which is expected. **October 2025 is simply not in the series
+at all** — the published data jumps from September to November. I interpolated
+it from its neighbours, which is defensible for a month sitting between two
+known values that differ by less than half a point, but it is an assumption and
+you should know it is there.
+
+**The result, and why the missing month barely matters.** Sweeping August 2026
+across a wide range of plausible outcomes:
+
+<BarChart
+  title="The 2027 adjustment is insensitive to the missing month"
+  description="Implied inflation adjustment under different assumptions for August 2026"
+  data={[
+    { assumption: "-0.4% MoM", adjustment: 2.999 },
+    { assumption: "-0.2% MoM", adjustment: 3.016 },
+    { assumption: "flat", adjustment: 3.033 },
+    { assumption: "+0.2% MoM", adjustment: 3.051 },
+    { assumption: "+0.4% MoM", adjustment: 3.068 },
+    { assumption: "+0.6% MoM", adjustment: 3.086 }
+  ]}
+  xKey="assumption"
+  series={[{ key: "adjustment", label: "Implied 2027 adjustment" }]}
+  unit="%"
+  colorByCategory
+/>
+
+A full percentage point of uncertainty in one month moves the annual adjustment
+by less than nine hundredths of a percent. That is the arithmetic of a
+twelve-month average: any single month carries one-twelfth of the weight. **The
+2027 adjustment is bounded between 2.999% and 3.086%** across that entire sweep.
+
+Applying that to the confirmed 2026 standard deduction:
+
+<ComparisonTable
+  caption="Projected 2027 standard deduction — not official"
+  headers={["Filing status", "2026 (official)", "2027 (projected)"]}
+  rows={[
+    ["Single", "$16,100", "$16,600"],
+    ["Married filing jointly", "$32,200", "$33,150 - $33,200"],
+    ["Head of household", "$24,150", "$24,850 - $24,900"]
+  ]}
+  highlightCol={1}
+/>
+
+The single-filer figure rounds to **$16,600 in every scenario I ran**. The other
+two straddle a rounding boundary, which is why they show a range rather than
+false precision.
+
+<InfoBox type="warning">
+Two things to hold against this. The rounding convention — nearest $50 — is
+inferred from the pattern in the published 2026 figures, not read off the
+statute; if the actual rule differs, the joint and head-of-household numbers
+move by $50. And most months above carry BLS "Interim" or "Initial" flags,
+meaning they are subject to revision. This is a projection with its
+uncertainties stated, which is more than most, but it is still a projection.
+</InfoBox>
+
+The script that produces all of this is in the site's repository and re-runs
+against live BLS data, so this section updates as the remaining months land
+rather than going stale.
+
 ## Run your own numbers
 
 <MarginalVsEffectiveTaxViz />
@@ -75,7 +180,7 @@ Tax brackets interact with a lot of other 2027 numbers that are worth tracking t
 
 1. **Plan the rest of 2026 against the confirmed 2026 brackets, not a guess about 2027.** You know exactly what applies to income you earn through December 31.
 2. **Wait for the actual IRS revenue procedure before making a 2027-specific decision** — like the size of a Roth conversion — that depends on precise threshold numbers.
-3. **If you need a rough 2027 estimate now, apply a 2.5%–3% adjustment to 2026's figures** and treat the result as a planning range, not a fact.
+3. **If you need a 2027 estimate now, use 3.0%** — computed above from the actual chained-CPI series rather than guessed from headline inflation — and treat the result as a planning range, not a fact.
 4. **Recheck this post (or the IRS site directly) in October.** I'll update the "projected" figures the moment the real revenue procedure lands.
 5. **Understand your own marginal vs. effective rate this year** — it's the number that actually drives smart decisions about raises, side income, and conversions, and it doesn't change just because the brackets shift slightly next year.
 
@@ -93,6 +198,8 @@ Every 2027 figure in this post's calculator is explicitly labeled projected, not
 
 <Sources items={[
   { title: "Revenue Procedure 2025-32 (2026 inflation adjustments)", url: "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf", publisher: "IRS", date: "October 9, 2025" },
+  { title: "Chained CPI for All Urban Consumers, series SUUR0000SA0", url: "https://data.bls.gov/timeseries/SUUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved September 7, 2026" },
+  { title: "BLS Public Data API", url: "https://www.bls.gov/developers/", publisher: "U.S. Bureau of Labor Statistics", date: "2026" },
   { title: "2026 Tax Brackets", url: "https://taxfoundation.org/data/all/federal/2026-tax-brackets/", publisher: "Tax Foundation", date: "2025-2026" },
   { title: "IRS Newsroom — annual inflation adjustments", url: "https://www.irs.gov/newsroom", publisher: "IRS", date: "2026" }
 ]} />
