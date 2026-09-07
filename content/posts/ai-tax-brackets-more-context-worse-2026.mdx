@@ -167,7 +167,7 @@ anything right was the one that took twice as long to be wrong less often.
 <DatasetSignup
   dataset="the tax-accuracy scores"
   cadence="each time the IRS publishes new bracket figures"
-  repoPath="research"
+  dataFile="tax-accuracy.csv"
 />
 
 ## What this means in practice
@@ -199,9 +199,10 @@ licensed professional before acting on any tax decision.
 
 ## Methodology
 
-Everything here comes from a dataset generated for this post. The harness, every
-raw generation and the aggregated results are in this site's repository under
-`research/`, and the run reproduces on any machine with Ollama.
+Everything here comes from a dataset generated for this post. The aggregated
+results are published with it as [tax-accuracy.csv](/data/tax-accuracy.csv). The
+harness and the raw generations live in this site's repository, which is not
+public yet; the run reproduces on any machine with Ollama.
 
 **Hardware.** GTX 1650 Ti, 4 GB VRAM, 8 GB system RAM, Ollama 0.33.2. All four
 models ran fully on the GPU.
@@ -241,7 +242,7 @@ assistance; the experiment design, the ground-truth computation and the
 conclusions are mine.
 
 <Sources items={[
-  { title: "Harness, raw generations and dataset", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Tax accuracy results (CSV)", url: "/data/tax-accuracy.csv", publisher: "Dataset published with this post", date: "2026" },
   { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" },
   { title: "Publication 17, Your Federal Income Tax", url: "https://www.irs.gov/publications/p17", publisher: "Internal Revenue Service", date: "2026" },
   { title: "IRS Tax Withholding Estimator", url: "https://www.irs.gov/individuals/tax-withholding-estimator", publisher: "Internal Revenue Service", date: "2026" }

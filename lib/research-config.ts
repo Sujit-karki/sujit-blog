@@ -30,10 +30,10 @@ export const researchPosts: ResearchPost[] = [
   },
   {
     slug: "crypto-whitepaper-readability-2026",
-    title: "Every Crypto Whitepaper Is Harder to Read Than the Tax Code",
+    title: "Seven of Eight Crypto Whitepapers Beat the Tax Code",
     finding:
-      "Five whitepapers scored with standard readability formulas. All five are harder than IRS Publication 17, and the clearest crypto writing in the sample comes from the FTC scam warning.",
-    method: "Flesch formulas over fetched documents",
+      "Thirteen documents attempted, eight resolved. Seven are harder than IRS Publication 17; the exception is Monero's textbook, which shows the difficulty is a choice rather than the subject.",
+    method: "Flesch formulas over thirteen fetched documents, five of which 404",
     dataset: true,
     date: "2026-09-07",
   },

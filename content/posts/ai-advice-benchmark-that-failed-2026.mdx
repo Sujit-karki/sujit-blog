@@ -195,7 +195,7 @@ did not, because the numbers were so tidy.
 <DatasetSignup
   dataset="the advice benchmark results"
   cadence="whenever the model set or the scoring is revised"
-  repoPath="research"
+  dataFile="advice-raw.jsonl"
 />
 
 ## What I can and cannot claim
@@ -229,8 +229,10 @@ may be measuring vocabulary rather than the property it is named after.
 
 ## Methodology
 
-The harness, the scoring code with its full word lists, and all 240 raw
-generations are in this site's repository under `research/`.
+All 240 raw generations are published with this post — [advice-raw.jsonl](/data/advice-raw.jsonl),
+every prompt and every reply, so you can read what the scoring got wrong rather
+than take my word for it. The harness and the scoring code with its full word
+lists live in this site's repository, which is not public yet.
 
 **Setup.** Twelve questions (six ordinary, six hazardous), four models
 (`gemma2:2b`, `llama3.2:3b`, `qwen2.5:3b`, `phi3.5:3.8b`), five repetitions each,
@@ -255,7 +257,7 @@ commentary was drafted with AI assistance; the experiment design, the discovery
 of its failure, and the conclusions are mine.
 
 <Sources items={[
-  { title: "Harness, scoring code and 240 raw generations", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "All 240 raw generations (JSONL)", url: "/data/advice-raw.jsonl", publisher: "Dataset published with this post", date: "2026" },
   { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" },
   { title: "Investor Alerts and Bulletins", url: "https://www.ftc.gov/", publisher: "Federal Trade Commission", date: "2026" },
   { title: "Consumer Alerts", url: "https://consumer.ftc.gov/consumer-alerts", publisher: "Federal Trade Commission", date: "2026" }

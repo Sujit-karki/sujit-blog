@@ -314,7 +314,7 @@ separable, and only one of them needs checking.
 <DatasetSignup
   dataset="the numeracy benchmark scores"
   cadence="as new local models are released"
-  repoPath="research"
+  dataFile="numeracy.csv"
 />
 
 ## What This Means If You Use These Tools
@@ -358,9 +358,9 @@ licensed professional before acting on any tax or investment decision.
 ## Methodology
 
 Every number in this post comes from a dataset I generated and published.
-The harness, the raw generations and the aggregated results are in the
-site's repository under `research/`, and the run is reproducible on any
-machine with Ollama installed.
+The aggregated results are here as [numeracy.csv](/data/numeracy.csv). The
+harness and the raw generations are in the site's repository, which is not
+public yet; the run is reproducible on any machine with Ollama installed.
 
 **Hardware.** Acer Nitro 5, NVIDIA GTX 1650 Ti (4 GB VRAM), 8 GB system
 RAM, Windows 11. All four models ran fully on the GPU, confirmed via
@@ -414,5 +414,5 @@ ground-truth calculations and the conclusions are mine.
 
 <Sources items={[
   { title: "Ollama", url: "https://ollama.com", publisher: "Ollama" },
-  { title: "Harness, raw generations and dataset", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository" }
+  { title: "Numeracy benchmark results (CSV)", url: "/data/numeracy.csv", publisher: "Dataset published with this post", date: "2026" }
 ]} />

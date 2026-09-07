@@ -86,6 +86,47 @@ resulting tokens/sec on a spilled model is itself a publishable number.
 **Before a long run:** stop the Next.js dev server. With 7.8 GB of system RAM it
 competes with the model for memory.
 
+### The non-model scripts
+
+Not everything here needs Ollama. `readability.py`, `policy_length.py` and
+`measure_energy.py` measure documents and hardware rather than models, and run
+standalone:
+
+```bash
+python readability.py           # Flesch scores over the whitepaper corpus
+python policy_length.py         # privacy policy length and reading level
+python measure_energy.py        # GPU power draw during generation
+```
+
+**On corpora that fail to resolve.** `readability.py` attempts thirteen crypto
+documents and currently resolves eight. The five that fail — three 404s at the
+URL the project's own site publishes, two pages with too little continuous prose
+— stay in `DOCUMENTS` rather than being deleted. A corpus you quietly prune
+drifts toward whatever happens to support the argument, and here the failures
+are themselves a finding about the genre. The script reports them; the post
+reports them.
+
+This matters more than it sounds. The first version of the readability post ran
+five documents and concluded that *every* whitepaper measured was harder to read
+than the tax code. Widening the corpus to thirteen falsified that within a day:
+Monero's *Zero to Monero* scores above IRS Publication 17. The claim had been
+true of the sample and false of the world, which is the failure mode a small
+convenience sample produces by default. Widen the corpus before publishing the
+strong version of a claim, not after.
+
+## Checking cited sources
+
+```bash
+npm run audit:links             # from the repo root
+```
+
+Verifies every external URL across every post still resolves. Deliberately not a
+CI gate — it depends on third-party hosts being up and not rate-limiting, so as
+a merge gate it would fail for reasons unrelated to the commit. Run it, read it,
+judge each failure. Hosts that refuse automated requests are reported as
+UNVERIFIED rather than BROKEN, because a 403 to a bot is not evidence a page is
+gone.
+
 ## Results — first run, 1 September 2026
 
 GTX 1650 Ti (4 GB), 8 GB system RAM, Ollama 0.33.2, Q4_K_M weights, 8 scenarios

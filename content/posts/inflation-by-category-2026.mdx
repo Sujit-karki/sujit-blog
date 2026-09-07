@@ -133,7 +133,7 @@ much the total bill stings.
 <DatasetSignup
   dataset="the CPI category breakdown"
   cadence="every month, when BLS publishes CPI"
-  repoPath="scripts"
+  dataFile="cpi-categories.json"
 />
 
 ## What this does not mean
@@ -157,8 +157,9 @@ computed today is a snapshot, not a trend.
 
 ## Methodology
 
-Every figure comes from the BLS public API and reproduces by running one script
-in this site's repository.
+Every figure comes from the BLS public API. The computed table is published with
+this post as [cpi-categories.json](/data/cpi-categories.json); the script that
+fetches and computes it is in this site's repository, which is not public yet.
 
 **Data.** CPI-U, US city average, not seasonally adjusted — the same basis the
 headline figure is published on, so the comparison is like for like. Twelve
@@ -183,5 +184,5 @@ selection, the calculation and the conclusions are mine.
   { title: "CPI-U, all items, US city average — series CUUR0000SA0", url: "https://data.bls.gov/timeseries/CUUR0000SA0", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved 7 September 2026" },
   { title: "Consumer Price Index", url: "https://www.bls.gov/cpi/", publisher: "U.S. Bureau of Labor Statistics", date: "2026" },
   { title: "BLS Public Data API", url: "https://www.bls.gov/developers/", publisher: "U.S. Bureau of Labor Statistics", date: "2026" },
-  { title: "Category script and output", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/scripts", publisher: "This site's repository", date: "2026" }
+  { title: "Category dataset (JSON)", url: "/data/cpi-categories.json", publisher: "Dataset published with this post", date: "2026" }
 ]} />

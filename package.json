@@ -14,7 +14,10 @@
     "audit:check": "node scripts/audit-posts.mjs --check",
     "project:brackets": "node scripts/project-brackets.mjs",
     "project:cola": "node scripts/project-cola.mjs",
-    "cpi:categories": "node scripts/cpi-categories.mjs"
+    "cpi:categories": "node scripts/cpi-categories.mjs",
+    "audit:links": "node scripts/check-sources.mjs",
+    "prebuild": "node scripts/publish-data.mjs",
+    "publish:data": "node scripts/publish-data.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

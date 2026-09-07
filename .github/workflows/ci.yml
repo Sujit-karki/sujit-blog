@@ -22,6 +22,22 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+  content-standard:
+    name: Content Standard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # Fails the build if any indexed post falls below the house standard:
+      # >=500 words, >=1 primary source, composite score >=3.5. The point is
+      # that a thin post cannot reach production by being forgotten.
+      - name: Check post quality
+        run: npm run audit:check
+
   unit-tests:
     name: Unit Tests (Vitest)
     runs-on: ubuntu-latest

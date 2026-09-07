@@ -182,7 +182,7 @@ a floor, not a total.
 <DatasetSignup
   dataset="the energy measurements"
   cadence="as new models are added to the bench"
-  repoPath="research"
+  dataFile="energy.json"
 />
 
 ## What this does and does not tell you
@@ -204,8 +204,10 @@ part](/posts/ai-tax-brackets-more-context-worse-2026).
 
 ## Methodology
 
-The measurement script and the raw results are in this site's repository under
-`research/`, and the run reproduces on any machine with an NVIDIA GPU and Ollama.
+The raw power measurements are published with this post as
+[energy.json](/data/energy.json). The measurement script is in this site's
+repository, which is not public yet; the run reproduces on any machine with an
+NVIDIA GPU and Ollama.
 
 **Hardware.** Acer Nitro 5, NVIDIA GTX 1650 Ti (4 GB VRAM), 8 GB system RAM,
 Ollama 0.33.2. All four models ran fully on the GPU.
@@ -237,7 +239,7 @@ method and the conclusions are mine.
   { title: "Average price, electricity per kWh, US city average — series APU000072610", url: "https://data.bls.gov/timeseries/APU000072610", publisher: "U.S. Bureau of Labor Statistics", date: "Retrieved 7 September 2026" },
   { title: "Electric Power Monthly", url: "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a", publisher: "U.S. Energy Information Administration", date: "2026" },
   { title: "Electricity prices and factors affecting prices", url: "https://www.eia.gov/energyexplained/electricity/prices-and-factors-affecting-prices.php", publisher: "U.S. Energy Information Administration", date: "2026" },
-  { title: "Measurement script and raw results", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Power measurements (JSON)", url: "/data/energy.json", publisher: "Dataset published with this post", date: "2026" },
   { title: "Foreign exchange rates", url: "https://www.nrb.org.np/forex/", publisher: "Nepal Rastra Bank", date: "7 September 2026" },
   { title: "Claude API pricing", url: "https://www.anthropic.com/pricing", publisher: "Anthropic", date: "2026" },
   { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" }

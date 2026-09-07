@@ -50,7 +50,7 @@ arithmetic over three counts — sentences, words, syllables:
 No judgement, no vocabulary list, no model deciding what counts as clear. Anyone
 with the same text gets the same number to the decimal.
 
-I ran twelve crypto documents through it — eight resolved — alongside four
+I ran thirteen crypto documents through it — eight resolved — alongside five
 documents whose difficulty you already have an intuition for, so the scores land
 on a scale rather than floating free.
 
@@ -58,7 +58,7 @@ on a scale rather than floating free.
 
 <BarChart
   title="Flesch Reading Ease — higher is easier"
-  description="Eight crypto documents against four references. 60–70 is plain English."
+  description="Eight crypto documents against five references. 60–70 is plain English."
   data={[
     { doc: "Alice in Wonderland", ease: 73.4 },
     { doc: "FTC scam guide", ease: 53.4 },
@@ -123,7 +123,7 @@ chooses to.
 <InfoBox type="warning">
 **Correction, 7 September 2026.** This post was first published with five
 documents and the headline claim that *every* whitepaper measured is harder than
-the tax code. Widening the corpus to twelve attempts, of which eight resolved,
+the tax code. Widening the corpus to thirteen attempts, of which eight resolved,
 falsified that: Monero's *Zero to Monero* scores 52.1, above IRS Publication
 17's 49.7. The title, the takeaways and the table have been revised, and the
 finding is now stated as seven of eight. The original five scores are unchanged
@@ -134,20 +134,22 @@ wider sample is for.
 <DatasetSignup
   dataset="the readability table"
   cadence="whenever a project publishes a new whitepaper version"
-  repoPath="research"
+  dataFile="readability.json"
 />
 
 **One reference complicates this, and it belongs in the table.** Wikipedia's
 article on blockchain — written by volunteers for a general audience, with no
-incentive to sound impressive — scores **31.8**, harder than five of the eight
-whitepapers. Writing about this subject is genuinely difficult, and some of what
-the whitepaper scores capture is the topic rather than the authors.
+incentive to sound impressive — scores **31.8**, harder than seven of the
+eight whitepapers — every one of them except Cardano's. Writing about this
+subject is genuinely difficult, and some of what the whitepaper scores capture
+is the topic rather than the authors.
 
 That is a real confounder and it caps how strong the claim can be. What it does
-not explain is the spread. Wikipedia and Ethereum are within three points; Monero
-sits twenty above both, on the same subject matter, because someone set out to
-teach it. The topic sets a floor on difficulty. It does not decide where in the
-twenty-point range above that floor a document lands.
+not explain is the spread. Wikipedia and Ethereum are within three points of
+each other; Monero sits seventeen to twenty points above both, on the same
+subject matter, because someone set out to teach it. The topic sets a floor on
+difficulty. It does not decide where in the twenty-point range above that floor
+a document lands.
 
 <InfoBox type="tip">
 Notice which document is easiest after the children's book: the **FTC's guide to
@@ -182,16 +184,16 @@ framing with suspicion, because the research it points at is not written for you
 
 Four limits, and the last is the one that matters most.
 
-**Sample size.** Eight documents, not eight hundred. These are among the
+**Sample size.** Eight documents resolved, not eight hundred. These are among the
 best-known projects with stable, publicly fetchable documents. A broader sample
 would likely be worse, since obscure projects have less editorial attention, but
 that is a guess and this does not test it.
 
-**Four documents failed.** Polkadot, Filecoin and Algorand returned 404 at the
+**Five documents failed.** Polkadot, Filecoin and Algorand returned 404 at the
 URLs their own sites publish; Avalanche's and Litecoin's pages did not yield
 enough continuous prose to score. They are reported as failures in the data
 rather than quietly dropped, because a missing row that goes unmentioned is how
-samples get flattering. That three of twelve official whitepaper links are dead
+samples get flattering. That three of thirteen official whitepaper links are dead
 is its own small finding about the genre.
 
 **Not every document is the same kind of document.** Two are book-length — *Zero
@@ -215,14 +217,17 @@ certainly harder, and no formula in this post can tell you by how much.
 
 ## Methodology
 
-The script and the full results are in this site's repository under `research/`,
-and the analysis re-runs against live documents.
+The full results are published with this post as
+[readability.json](/data/readability.json), including the five documents that
+failed to resolve. The script is in this site's repository, which is not public
+yet; it re-runs against live documents, so the numbers here are what it returned
+on the date below rather than a transcription.
 
-**Documents.** Twelve crypto documents attempted, fetched from each project's
+**Documents.** Thirteen crypto documents attempted, fetched from each project's
 own domain; eight resolved (Bitcoin, Ethereum, Solana, Ripple, Cardano,
-Chainlink, Monero, Tezos) and four failed. Plus four references: the US
-Constitution, IRS Publication 17, the FTC's crypto scam guide, and *Alice in
-Wonderland*.
+Chainlink, Monero, Tezos) and five failed. Plus five references: the US
+Constitution, IRS Publication 17, the FTC's crypto scam guide, Wikipedia's
+blockchain article, and *Alice in Wonderland*.
 
 **Extraction.** PDFs parsed with `pypdf`; HTML stripped of script, style and
 navigation before counting. URLs, citation markers and non-ASCII artefacts are
@@ -243,7 +248,7 @@ which is the right instrument for a question like this one.
 selection, the method and the conclusions are mine.
 
 <Sources items={[
-  { title: "Readability script and full results", url: "https://github.com/Sujit-karki/sujit-blog/tree/main/research", publisher: "This site's repository", date: "2026" },
+  { title: "Readability results (JSON)", url: "/data/readability.json", publisher: "Dataset published with this post", date: "2026" },
   { title: "Bitcoin: A Peer-to-Peer Electronic Cash System", url: "https://bitcoin.org/bitcoin.pdf", publisher: "bitcoin.org", date: "Retrieved 7 September 2026" },
   { title: "Publication 17, Your Federal Income Tax", url: "https://www.irs.gov/publications/p17", publisher: "Internal Revenue Service", date: "2026" },
   { title: "What to Know About Cryptocurrency and Scams", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams", publisher: "Federal Trade Commission", date: "2026" },

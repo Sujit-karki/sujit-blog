@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-09-07T18:07:47.152Z",
+  "source": {
+    "publisher": "U.S. Bureau of Labor Statistics",
+    "basis": "CPI-U, US city average, not seasonally adjusted"
+  },
+  "period": "2026-07",
+  "headlineYoyPct": 3.36,
+  "spreadPoints": 25,
+  "fastest": {
+    "name": "Airline fares",
+    "yoyPct": 25.55
+  },
+  "slowest": {
+    "name": "Education and communication",
+    "yoyPct": 0.55
+  },
+  "categories": [
+    {
+      "id": "CUUR0000SETG01",
+      "name": "Airline fares",
+      "latestPeriod": "2026-07",
+      "latest": 311.176,
+      "yearAgo": 247.859,
+      "yoyPct": 25.55,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SETB01",
+      "name": "Gasoline",
+      "latestPeriod": "2026-07",
+      "latest": 350.846,
+      "yearAgo": 281.49,
+      "yoyPct": 24.64,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SA0E",
+      "name": "Energy",
+      "latestPeriod": "2026-07",
+      "latest": 325.15,
+      "yearAgo": 283.395,
+      "yoyPct": 14.73,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SAT",
+      "name": "Transportation",
+      "latestPeriod": "2026-07",
+      "latest": 289.42,
+      "yearAgo": 273.452,
+      "yoyPct": 5.84,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SEHF01",
+      "name": "Electricity",
+      "latestPeriod": "2026-07",
+      "latest": 311.672,
+      "yearAgo": 299.107,
+      "yoyPct": 4.2,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SAA",
+      "name": "Apparel",
+      "latestPeriod": "2026-07",
+      "latest": 134.182,
+      "yearAgo": 129.19,
+      "yoyPct": 3.86,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SA0",
+      "name": "All items (headline)",
+      "latestPeriod": "2026-07",
+      "latest": 333.918,
+      "yearAgo": 323.048,
+      "yoyPct": 3.36,
+      "isHeadline": true
+    },
+    {
+      "id": "CUUR0000SAH1",
+      "name": "Shelter",
+      "latestPeriod": "2026-07",
+      "latest": 429.491,
+      "yearAgo": 416.271,
+      "yoyPct": 3.18,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SAF1",
+      "name": "Food",
+      "latestPeriod": "2026-07",
+      "latest": 350.164,
+      "yearAgo": 340.036,
+      "yoyPct": 2.98,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SAR",
+      "name": "Recreation",
+      "latestPeriod": "2026-07",
+      "latest": 145.242,
+      "yearAgo": 141.587,
+      "yoyPct": 2.58,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SAM",
+      "name": "Medical care",
+      "latestPeriod": "2026-07",
+      "latest": 593.781,
+      "yearAgo": 583.856,
+      "yoyPct": 1.7,
+      "isHeadline": false
+    },
+    {
+      "id": "CUUR0000SAE",
+      "name": "Education and communication",
+      "latestPeriod": "2026-07",
+      "latest": 147.498,
+      "yearAgo": 146.696,
+      "yoyPct": 0.55,
+      "isHeadline": false
+    }
+  ],
+  "notes": []
+}

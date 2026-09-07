@@ -51,7 +51,17 @@ const PRIMARY_SOURCES = [
 // A post that publishes its own dataset is the primary source for it. Scoring
 // those as unsourced was backwards: the original-data posts are the best-
 // grounded on the site, and the checker was marking them the worst.
-const OWN_DATA = /github\.com\/Sujit-karki\/sujit-blog\/(tree|blob)\/main\/(research|scripts)/;
+//
+// This originally matched a github.com/Sujit-karki/sujit-blog link, which no
+// post carries any more: the repository is private, so those links served a
+// login wall rather than data, and publish-data.mjs replaced them with files
+// copied into public/data/. The pattern therefore never fired once, and
+// local-ai-money-math-2026 — 2,000 words resting entirely on a dataset it
+// publishes and links twice — scored as having no source at all. Match how a
+// post actually publishes data now: a /data/<file> link or the dataFile
+// attribute on the download block. publish-data.mjs already fails the build if
+// either points at a file that is not there, so this cannot credit a dead link.
+const OWN_DATA = /\(\/data\/[A-Za-z0-9._-]+|dataFile="[A-Za-z0-9._-]+"/;
 
 const BANDS = [
   { name: "strong", min: 5 },
@@ -121,8 +131,11 @@ function analyse(file) {
 
   const components = [...new Set([...body.matchAll(/<([A-Z][A-Za-z0-9]*)/g)].map((m) => m[1]))];
   const charts = components.filter((c) => /Chart|Viz|Graph|Gauge/.test(c)).length;
+  // Original presentation is not only calculators. A hand-built timeline or
+  // tracker is the same kind of work — something made for this post rather
+  // than prose wrapped around a link — and the original regex missed it.
   const tools = components.filter((c) =>
-    /Calculator|Simulator|Estimator|Planner|Explorer|Interactive|Quiz|Comparison/.test(c)
+    /Calculator|Simulator|Estimator|Planner|Explorer|Interactive|Quiz|Comparison|Timeline|Tracker|Checklist/.test(c)
   ).length;
 
   const depthPts = words >= 1200 ? 2 : words >= 800 ? 1.5 : words >= 500 ? 1 : 0;
