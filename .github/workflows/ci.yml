@@ -11,8 +11,8 @@ jobs:
     name: Lint & Typecheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -26,8 +26,8 @@ jobs:
     name: Content Standard
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -42,8 +42,8 @@ jobs:
     name: Unit Tests (Vitest)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -55,8 +55,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -68,8 +68,8 @@ jobs:
     name: E2E Tests (Playwright)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -80,7 +80,7 @@ jobs:
         run: npm run test:e2e
       - name: Upload Playwright report
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report
           path: playwright-report/
@@ -90,8 +90,8 @@ jobs:
     name: Bundle Budget (size-limit)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -108,8 +108,8 @@ jobs:
     name: Lighthouse (Core Web Vitals budgets)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -127,8 +127,8 @@ jobs:
     name: Dependency Audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -147,14 +147,14 @@ jobs:
     name: Visual Regression (charts)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # Snapshots are per-platform: canvas antialiasing and font rasterisation
       # differ between Windows and Linux, so the committed -win32 baselines can
       # never match this runner. Rather than fail every build until someone
       # records a linux set, this job stays dormant until one is committed.
       #
       # To activate: run the Playwright container locally
-      #   docker run --rm -v ${PWD}:/w -w /w mcr.microsoft.com/playwright:v1.61.1-noble \
+      #   docker run --rm -v ${PWD}:/w -w /w mcr.microsoft.com/playwright:v1.63.0-noble \
       #     sh -c "npm ci && npx playwright test e2e/visual.spec.ts --update-snapshots"
       # then commit the resulting *-linux.png files.
       - name: Check for linux baselines
@@ -166,7 +166,7 @@ jobs:
             echo "found=false" >> "$GITHUB_OUTPUT"
             echo "No linux snapshots committed yet — skipping. See the comment in this job."
           fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.baselines.outputs.found == 'true'
         with:
           node-version-file: .nvmrc
@@ -181,7 +181,7 @@ jobs:
         run: npm run test:visual
       - name: Upload diffs
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: visual-diffs
           path: test-results/
