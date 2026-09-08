@@ -68,8 +68,12 @@ export default async function ToolPage({ params }: Props) {
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbItems, siteConfig.url);
 
   // HowTo rich results were retired by Google in 2023 and FAQPage on
-  // 2026-05-07 — neither earns a SERP appearance now, so we don't emit them.
-  // The howTo steps and FAQ content still render visibly below. A calculator
+  // 2026-05-07 — neither earns a SERP appearance now, so we don't emit them
+  // as structured data. The steps and FAQ are still genuinely useful, so both
+  // render visibly below. Dropping the HowTo JSON-LD originally took the
+  // rendered step list with it, leaving tool.howTo written but unreachable
+  // and these pages at ~300 words of body copy — thin enough that Google
+  // parked half of them in "Discovered - currently not indexed". A calculator
   // this genuinely interactive/free is better represented as a
   // SoftwareApplication instead — that type is still live.
   const softwareApplicationJsonLd = {
@@ -111,6 +115,34 @@ export default async function ToolPage({ params }: Props) {
         </p>
 
         <Calculator />
+
+        {tool.howTo.length > 0 && (
+          <section className="my-8">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">
+              How to use this calculator
+            </h2>
+            <ol className="space-y-4 list-none p-0 m-0">
+              {tool.howTo.map((step, i) => (
+                <li key={step.name} className="flex gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 w-7 h-7 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-sm font-bold flex items-center justify-center"
+                  >
+                    {i + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                      {step.name}
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {step.text}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
         <FaqAccordion items={tool.faq} />
 

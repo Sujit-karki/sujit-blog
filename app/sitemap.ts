@@ -29,7 +29,10 @@ const DISCLAIMER_UPDATED = new Date("2026-06-17");
 const PRIVACY_POLICY_UPDATED = new Date("2026-06-12");
 const TOOLS_INDEX_UPDATED = new Date("2026-07-14");
 const RESEARCH_INDEX_UPDATED = new Date("2026-09-07");
-const TOOLS_CONFIG_UPDATED = new Date("2026-07-18");
+// Bumped 2026-09-08: the how-to step list is rendered on tool pages again
+// (it had been written in tools-config but unreachable), so the body copy on
+// all six genuinely changed.
+const TOOLS_CONFIG_UPDATED = new Date("2026-09-08");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
