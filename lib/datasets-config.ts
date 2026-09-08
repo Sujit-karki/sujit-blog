@@ -16,32 +16,56 @@
 
 // Relative, matching lib/posts.ts: the vitest config resolves no path alias,
 // so a "@/lib/..." import here would compile but fail under test.
+import { z } from "zod";
 import { siteConfig, authorSameAs } from "./site-config";
 
-export interface DatasetFile {
+// Parsed rather than merely typed, for the same reason frontmatter is: the
+// constraints that matter here are ones TypeScript cannot express. A string is
+// a string whether or not it falls inside Dataset Search's 50-5,000 character
+// bound, and an array is an array whether or not it is empty. Validating at
+// module load means a malformed entry fails the build, not a crawler.
+const datasetFileSchema = z.object({
   /** Filename under /data/, which publish-data.mjs copies from research/data. */
-  name: string;
+  name: z.string().regex(
+    /^[A-Za-z0-9][A-Za-z0-9._-]*\.(csv|json|jsonl)$/,
+    "must be a bare csv/json/jsonl filename, no path"
+  ),
   /** IANA media type, for DataDownload.encodingFormat. */
-  encodingFormat: string;
-}
+  encodingFormat: z.string().regex(/^[a-z]+\/[a-z0-9.+-]+$/, "must be a media type"),
+});
 
-export interface DatasetMeta {
+const datasetMetaSchema = z.object({
   /** Human title of the dataset, distinct from the post's headline. */
-  name: string;
+  name: z.string().min(1),
   /**
-   * What the dataset contains. Google Dataset Search requires this to be
-   * between 50 and 5,000 characters and only reads the first 5,000 characters
-   * of any textual property, so it is written to be genuinely descriptive
-   * rather than a restatement of the title. The length rule is enforced by a
-   * unit test, not by hoping.
+   * What the dataset contains. Google Dataset Search requires 50-5,000
+   * characters and reads only the first 5,000 of any textual property, so a
+   * description outside that band is not a style problem — it is an invalid
+   * record, and the bound is enforced here rather than hoped for.
    */
-  description: string;
-  keywords: string[];
+  description: z.string().min(50).max(5000),
+  keywords: z.array(z.string().min(1)).nonempty(),
   /** ISO 8601 interval or year the data covers. */
-  temporalCoverage: string;
+  temporalCoverage: z.string().min(4),
   /** The quantities actually recorded, one per column or field of interest. */
-  variableMeasured: string[];
-  files: DatasetFile[];
+  variableMeasured: z.array(z.string().min(1)).nonempty(),
+  files: z.array(datasetFileSchema).nonempty(),
+});
+
+export type DatasetFile = z.infer<typeof datasetFileSchema>;
+export type DatasetMeta = z.infer<typeof datasetMetaSchema>;
+
+/** Parse the registry, naming the offending slug and field on failure. */
+function parseDatasets(raw: Record<string, unknown>): Record<string, DatasetMeta> {
+  const result = z.record(z.string(), datasetMetaSchema).safeParse(raw);
+  if (!result.success) {
+    throw new Error(
+      `Invalid dataset metadata in lib/datasets-config.ts:\n${result.error.issues
+        .map((i) => `  - ${i.path.join(".")}: ${i.message}`)
+        .join("\n")}`
+    );
+  }
+  return result.data;
 }
 
 const CSV = "text/csv";
@@ -70,7 +94,7 @@ export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
  */
 export const ZENODO_CONCEPT_DOI = "https://doi.org/10.5281/zenodo.22654387";
 
-export const datasets: Record<string, DatasetMeta> = {
+const rawDatasets = {
   "platform-take-rates-2026": {
     name: "Platform take rates and advertised seller fees, FY2025",
     description:
@@ -229,6 +253,13 @@ export const datasets: Record<string, DatasetMeta> = {
     files: [{ name: "cpi-categories.json", encodingFormat: JSON_TYPE }],
   },
 };
+
+/**
+ * The registry, validated. Anything malformed throws here — at import, during
+ * the build — rather than silently producing structured data a crawler will
+ * reject.
+ */
+export const datasets: Record<string, DatasetMeta> = parseDatasets(rawDatasets);
 
 /**
  * schema.org Dataset for a post, or null if the post publishes no rows.

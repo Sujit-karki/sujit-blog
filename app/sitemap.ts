@@ -24,6 +24,7 @@ const CORRECTIONS_UPDATED = new Date(
 );
 const AI_DISCLOSURE_UPDATED = new Date("2026-08-20");
 const CONTACT_UPDATED = new Date("2026-06-15");
+const WORK_WITH_ME_UPDATED = new Date("2026-09-08");
 const DISCLAIMER_UPDATED = new Date("2026-06-17");
 const PRIVACY_POLICY_UPDATED = new Date("2026-06-12");
 const TOOLS_INDEX_UPDATED = new Date("2026-07-14");
@@ -48,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${url}/methodology`, lastModified: METHODOLOGY_UPDATED, changeFrequency: "yearly", priority: 0.5 },
     { url: `${url}/corrections`, lastModified: CORRECTIONS_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: `${url}/ai-disclosure`, lastModified: AI_DISCLOSURE_UPDATED, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${url}/work-with-me`, lastModified: WORK_WITH_ME_UPDATED, changeFrequency: "monthly", priority: 0.7 },
     { url: `${url}/contact`, lastModified: CONTACT_UPDATED, changeFrequency: "yearly", priority: 0.4 },
     { url: `${url}/disclaimer`, lastModified: DISCLAIMER_UPDATED, changeFrequency: "yearly", priority: 0.3 },
     { url: `${url}/privacy-policy`, lastModified: PRIVACY_POLICY_UPDATED, changeFrequency: "yearly", priority: 0.3 },

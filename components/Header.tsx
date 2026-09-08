@@ -8,7 +8,7 @@ import { navLinks } from "@/lib/nav";
 
 const NAV_LINK_CLASS =
   "px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 " +
-  "hover:text-gray-900 dark:hover:text-white transition-colors rounded-md " +
+  "hover:text-gray-900 dark:hover:text-white transition-colors rounded-md whitespace-nowrap " +
   "hover:bg-gray-100 dark:hover:bg-gray-800";
 
 export default function Header() {

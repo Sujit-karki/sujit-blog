@@ -21,6 +21,7 @@ const PAGES: Array<{ name: string; path: string }> = [
   { name: "tools index", path: "/tools" },
   { name: "calculator", path: "/tools/trump-account-vs-529" },
   { name: "about", path: "/about" },
+  { name: "work with me", path: "/work-with-me" },
 ];
 
 for (const { name, path } of PAGES) {
