@@ -20,6 +20,15 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "ai-account-choice-names-2026",
+    title: "I Deleted the Account Names, and the AI Got Better",
+    finding:
+      "The same eight savings cases scored 40.0% with the accounts named and 46.9% with the identical rules unlabelled. Models picked the strictly worst option six times more often when it was called a taxable brokerage account.",
+    method: "320 generations, each case asked twice in arithmetically identical framings",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
     slug: "budgeting-app-privacy-policy-length-2026",
     title: "You Agreed to 25,000 Words",
     finding:

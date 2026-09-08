@@ -1,0 +1,33 @@
+model,case,contribution,years,bracket,correct_option,correct_account,named_answer,anon_answer,flipped,named_correct,anon_correct,named_picked_dominated,anon_picked_dominated,margin_pct_of_winner
+gemma2:2b,seed-only,0,18,0.22,2,Trump Account,1,2,1,0,5,0,0,100.0
+gemma2:2b,small-short,500,5,0.10,1,Trump Account,3,3,0,0,0,0,0,29.87
+gemma2:2b,small-long-low-bracket,500,18,0.10,3,Trump Account,2,2,0,0,0,0,0,11.65
+gemma2:2b,mid-decade,1000,10,0.22,2,Trump Account,1,1,0,0,0,0,0,4.79
+gemma2:2b,mid-long-low-bracket,2000,18,0.10,3,529 college savings plan,1,1,0,0,0,0,0,0.23
+gemma2:2b,standard,2000,18,0.22,2,529 college savings plan,2,2,0,5,5,0,0,6.48
+gemma2:2b,large-short-high-bracket,5000,5,0.32,1,529 college savings plan,1,1,0,5,5,0,0,0.86
+gemma2:2b,large-long-high-bracket,3000,18,0.32,3,529 college savings plan,1,1,0,0,0,0,0,7.06
+llama3.2:3b,seed-only,0,18,0.22,2,Trump Account,1,1,0,0,0,0,0,100.0
+llama3.2:3b,small-short,500,5,0.10,1,Trump Account,2,3,1,0,0,1,0,29.87
+llama3.2:3b,small-long-low-bracket,500,18,0.10,3,Trump Account,2,2,0,0,0,0,0,11.65
+llama3.2:3b,mid-decade,1000,10,0.22,2,Trump Account,2,1,1,5,0,0,0,4.79
+llama3.2:3b,mid-long-low-bracket,2000,18,0.10,3,529 college savings plan,2,3,1,1,5,1,0,0.23
+llama3.2:3b,standard,2000,18,0.22,2,529 college savings plan,2,2,0,5,5,0,0,6.48
+llama3.2:3b,large-short-high-bracket,5000,5,0.32,1,529 college savings plan,2,2,0,0,0,0,0,0.86
+llama3.2:3b,large-long-high-bracket,3000,18,0.32,3,529 college savings plan,2,3,1,0,5,1,0,7.06
+phi3.5:3.8b,seed-only,0,18,0.22,2,Trump Account,3,2,1,0,5,1,0,100.0
+phi3.5:3.8b,small-short,500,5,0.10,1,Trump Account,3,3,0,0,0,0,0,29.87
+phi3.5:3.8b,small-long-low-bracket,500,18,0.10,3,Trump Account,3,3,0,5,4,0,0,11.65
+phi3.5:3.8b,mid-decade,1000,10,0.22,2,Trump Account,2,3,1,5,0,0,1,4.79
+phi3.5:3.8b,mid-long-low-bracket,2000,18,0.10,3,529 college savings plan,3,3,0,5,4,0,0,0.23
+phi3.5:3.8b,standard,2000,18,0.22,2,529 college savings plan,2,2,0,5,5,0,0,6.48
+phi3.5:3.8b,large-short-high-bracket,5000,5,0.32,1,529 college savings plan,3,1,1,0,5,1,0,0.86
+phi3.5:3.8b,large-long-high-bracket,3000,18,0.32,3,529 college savings plan,3,3,0,3,3,0,0,7.06
+qwen2.5:3b,seed-only,0,18,0.22,2,Trump Account,2,2,0,5,5,0,0,100.0
+qwen2.5:3b,small-short,500,5,0.10,1,Trump Account,3,1,1,0,4,0,0,29.87
+qwen2.5:3b,small-long-low-bracket,500,18,0.10,3,Trump Account,2,2,0,0,0,0,0,11.65
+qwen2.5:3b,mid-decade,1000,10,0.22,2,Trump Account,1,1,0,0,0,0,0,4.79
+qwen2.5:3b,mid-long-low-bracket,2000,18,0.10,3,529 college savings plan,3,3,0,5,5,0,0,0.23
+qwen2.5:3b,standard,2000,18,0.22,2,529 college savings plan,3,2,1,0,5,0,0,6.48
+qwen2.5:3b,large-short-high-bracket,5000,5,0.32,1,529 college savings plan,1,2,1,5,0,0,0,0.86
+qwen2.5:3b,large-long-high-bracket,3000,18,0.32,3,529 college savings plan,3,1,1,5,0,0,0,7.06

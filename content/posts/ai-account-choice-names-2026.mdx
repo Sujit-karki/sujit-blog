@@ -1,0 +1,492 @@
+---
+title: "I Asked Four AI Models Which College Account Wins. Then I Deleted the Names."
+description: "320 generations testing whether a local AI model computes the answer to a savings question or recites the familiar one. Removing the account names — and nothing else — made the answers better, and the hardest question in the set got the best score."
+seoTitle: "Do AI Models Compute Money Answers, or Recite Them?"
+seoDescription: "The same savings question asked with and without account names. The arithmetic is identical; the answers are not."
+date: "2026-09-08"
+category: "Personal Finance"
+tags: ["AI", "Local LLM", "Original Data", "529 Plan", "Trump Account", "Methodology"]
+author: "Sujit Karki"
+toc:
+  - { id: "computing-versus-reciting", title: "Computing versus reciting", level: 2 }
+  - { id: "the-only-difference-is-the-name", title: "The only difference is the name", level: 2 }
+  - { id: "the-eight-cases", title: "The eight cases", level: 2 }
+  - { id: "what-the-names-did", title: "What the names did", level: 2 }
+  - { id: "the-account-with-nothing-in-it", title: "The account with nothing in it", level: 2 }
+  - { id: "difficulty-did-not-predict-anything", title: "Difficulty did not predict anything", level: 2 }
+  - { id: "it-was-not-choosing-an-account", title: "It was not choosing an account", level: 2 }
+  - { id: "what-this-can-and-cannot-claim", title: "What this can and cannot claim", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "Can AI pick the best college savings account?"
+    a: "On this test, not reliably. Four small local models were given every rule needed to compute the answer — contribution, growth rate, tax treatment, time horizon — and picked correctly on 40% of the 160 generations where the accounts were named. Always guessing a single option number, without reading anything, scores 37.5% on the same eight cases."
+  - q: "Does removing account names change what an AI recommends?"
+    a: "Yes. The same eight cases scored 40.0% with the accounts named and 46.9% with the identical rules labelled only Option 1, 2 and 3. The answer changed between the two framings in 12 of 32 model-case pairs. The clearest shift is on the strictly worst option: models picked the taxable brokerage 15.6% of the time when it was named and 2.5% of the time when it was not."
+  - q: "Is a 529 or a Trump Account better for college savings?"
+    a: "It depends on the numbers, which is the point. In the eight cases here the Trump Account wins four and the 529 wins four. A $1,000 government seed compounding for eighteen years can outrun the 529's tax-free withdrawal when contributions are small or the withdrawal bracket is low; at larger contributions the 529's untaxed growth wins. Three cases are decided by under 1%."
+  - q: "What is the difference between a 529 and a Trump Account?"
+    a: "In this test's simplified terms: a 529's withdrawals spent on qualified education expenses are not taxed at all, while a Trump Account receives a one-time $1,000 government deposit that compounds but is taxed as ordinary income on the way out, along with all other growth above what you contributed. Real accounts carry contribution limits, state tax treatment and fees that this test deliberately excludes."
+---
+
+<KeyTakeaways items={[
+  "320 generations across four local AI models, choosing between three college savings accounts.",
+  "Every case was asked twice: once with the accounts named, once with the identical rules and numbers labelled only Option 1, 2 and 3.",
+  "Named: 40.0% correct. Anonymous: 46.9%. Guessing one option number every time, without reading, scores 37.5%.",
+  "Models picked the strictly worst option six times more often when it was labelled 'taxable brokerage account' than when it was unlabelled.",
+  "The easiest case in the set — where two accounts hold nothing at all — scored 25% under the named framing. The hardest, decided by 0.23%, scored 62.5%."
+]} />
+
+Every benchmark on this site so far has measured arithmetic: a number is right
+or wrong, and a script settles it. [Small local models failed the tax
+calculations badly](/posts/ai-tax-brackets-more-context-worse-2026), and
+[failed ordinary money math](/posts/local-ai-money-math-2026) more often than
+their fluency suggests.
+
+This one measures something people actually ask for. Not "what is 7% of
+$42,500" but "where should this money go?" — a recommendation, with a correct
+answer that has to be computed rather than recalled.
+
+That question has a problem built into it. When a model says *529 plan*, there
+are two entirely different things that could be happening, and from the outside
+they look identical:
+
+- **Computing** — working out the after-tax balance of each option and
+  comparing them.
+- **Reciting** — repeating the received wisdom that a 529 is the college
+  account.
+
+Both produce a confident, well-written paragraph. Both are frequently correct,
+because the received wisdom is usually right. The only way to tell them apart
+is to build a case where they disagree.
+
+## Computing versus reciting
+
+So I built one, and the trick is simple enough to describe in a sentence: ask
+the same question twice, once with the account names attached and once with
+them removed.
+
+Both versions state every rule needed to reach the answer. The anonymous
+version withholds nothing — same contribution, same growth rate, same tax
+treatment, same time horizon, in the same order. It just does not say which
+account is which.
+
+A model that is computing must answer both the same way. There is no
+information in the named version that the anonymous version lacks. Any gap
+between the two is the size of the label's pull on the answer.
+
+<InfoBox type="tip">
+Everything here ran on my own machine through Ollama — an Acer Nitro 5 with a
+GTX 1650 Ti, 4 GB of video memory and 7.8 GB of system RAM. Nothing was sent to
+an API, and nothing was paid for. These are models small enough to run on
+hardware plenty of people already own, which is the point: this is what the
+free, private, offline option actually does.
+</InfoBox>
+
+## The only difference is the name
+
+Here is one case in both framings — $2,000 a year for eighteen years, withdrawn
+in a 22% bracket.
+
+**Named:**
+
+```
+Option 1 -- taxable brokerage account
+- You contribute $2,000 at the end of each year for 18 years.
+- The balance grows at 7% per year.
+- At withdrawal, every dollar above the total you contributed is taxed at
+  the 15% long-term capital gains rate.
+
+Option 2 -- 529 college savings plan
+- You contribute $2,000 at the end of each year for 18 years.
+- The balance grows at 7% per year.
+- Withdrawals spent on qualified education expenses are not taxed at all.
+
+Option 3 -- Trump Account
+- A one-time $1,000 government deposit is made today and grows at 7% per
+  year alongside everything else.
+- You contribute $2,000 at the end of each year for 18 years.
+- The balance grows at 7% per year.
+- At withdrawal, every dollar above the total YOU contributed is taxed as
+  ordinary income at 22%. The $1,000 deposit counts as growth, not as your
+  own contribution.
+```
+
+**Anonymous:**
+
+```
+Option 1
+- You contribute $2,000 at the end of each year for 18 years.
+- The balance grows at 7% per year.
+- At withdrawal, every dollar above the total you contributed is taxed at
+  the 15% long-term capital gains rate.
+
+Option 2
+- You contribute $2,000 at the end of each year for 18 years.
+- The balance grows at 7% per year.
+- Withdrawals spent on qualified education expenses are not taxed at all.
+
+Option 3
+- A one-time $1,000 government deposit is made today and grows at 7% per
+  year alongside everything else.
+- ...
+```
+
+That is the entire difference. Three names deleted from three headings.
+
+The correct answer to both is Option 2, and reaching it needs no judgement:
+$2,000 a year growing at 7% for eighteen years is $67,998 in every account, and
+the only question is what tax comes off the end. The 529 pays none. The
+brokerage pays 15% on $31,998 of growth. The Trump Account starts $1,000 ahead
+but pays 22% on everything above the $36,000 contributed.
+
+## The eight cases
+
+The cases straddle the crossover rather than sitting on one side of it. This
+matters more than anything else in the design: if the 529 won every case, a
+model that always says "529" would score 100%, and the benchmark would be
+measuring received wisdom while claiming to measure arithmetic.
+
+<ComparisonTable
+  caption="The eight cases and their computed answers"
+  headers={["Case", "Per year", "Years", "Bracket", "Correct answer", "Wins by"]}
+  rows={[
+    ["seed-only", "$0", "18", "22%", "Trump Account", "only funded option"],
+    ["small-short", "$500", "5", "10%", "Trump Account", "29.87%"],
+    ["small-long-low-bracket", "$500", "18", "10%", "Trump Account", "11.65%"],
+    ["mid-decade", "$1,000", "10", "22%", "Trump Account", "4.79%"],
+    ["mid-long-low-bracket", "$2,000", "18", "10%", "529 plan", "0.23%"],
+    ["standard", "$2,000", "18", "22%", "529 plan", "6.48%"],
+    ["large-short-high-bracket", "$5,000", "5", "32%", "529 plan", "0.86%"],
+    ["large-long-high-bracket", "$3,000", "18", "32%", "529 plan", "7.06%"]
+  ]}
+/>
+
+Four go to the Trump Account and four to the 529. The reason is worth knowing
+independently of any AI: a free $1,000 seed compounding for eighteen years is
+worth $3,380, and when your own contributions are small or your withdrawal
+bracket is low, that seed outruns the tax the Trump Account pays on the way
+out. Raise the contributions or the bracket and the 529's untaxed growth wins
+instead.
+
+Three of the eight are decided by under 1% of the final balance. Those are the
+cases where a rule of thumb and an actual calculation come apart, and they are
+in the test on purpose.
+
+<InfoBox type="tip">
+The same arithmetic drives this site's
+[Trump Account vs 529 calculator](/tools/trump-account-vs-529), so any row in
+that table can be reproduced by hand. Ground truth was computed from the
+closed-form annuity formula and independently recomputed year by year in a
+loop; the code refuses to run if the two disagree by more than a cent.
+</InfoBox>
+
+## What the names did
+
+Deleting the names made the models better.
+
+<BarChart
+  title="Accuracy by framing"
+  description="Percentage of 160 generations that picked the correct option, named accounts versus anonymous options"
+  data={[
+    { framing: "Named", accuracy: 40.0 },
+    { framing: "Anonymous", accuracy: 46.9 }
+  ]}
+  xKey="framing"
+  series={[{ key: "accuracy", label: "Correct" }]}
+  unit="%"
+  colorByCategory
+/>
+
+Named, the four models were right on 64 of 160 generations. Anonymous, on 75 of
+160. Nothing was added to the anonymous prompts — the gap is what the labels
+cost.
+
+Three of the four models improved when the names came off. The fourth,
+`qwen2.5:3b`, moved from 20 correct to 19, which is noise.
+
+<BarChart
+  title="Accuracy by model and framing"
+  description="Each model answered the same eight cases twice, 40 generations per framing"
+  data={[
+    { model: "gemma2:2b", named: 25.0, anon: 37.5 },
+    { model: "llama3.2:3b", named: 27.5, anon: 37.5 },
+    { model: "qwen2.5:3b", named: 50.0, anon: 47.5 },
+    { model: "phi3.5:3.8b", named: 57.5, anon: 65.0 }
+  ]}
+  xKey="model"
+  series={[
+    { key: "named", label: "Named accounts" },
+    { key: "anon", label: "Anonymous options" }
+  ]}
+  unit="%"
+/>
+
+The sharpest effect is not in the accuracy at all. It is in which wrong answer
+the models chose.
+
+The taxable brokerage is a distractor, and a strict one. Under the stated
+assumptions — the whole balance spent on qualified education — it is dominated
+by the 529 outright: identical contributions, identical growth, and a
+capital-gains bill the 529 simply does not pay. There is no contribution level
+and no bracket in this test where picking it is defensible.
+
+Models picked it **25 times out of 160 when it was named** and **4 times out of
+159 when it was not**. Labelling the worst option "taxable brokerage account"
+made it six times more attractive.
+
+<InfoBox type="warning">
+That is the finding I would take away from this. The name did not merely fail
+to help — it actively pulled models toward an option that was strictly worse
+than one sitting directly beside it, described in full, in the same prompt.
+</InfoBox>
+
+## The account with nothing in it
+
+The `seed-only` case is the easiest question in the set. Contributions are
+zero, so the 529 and the brokerage both finish with nothing at all. Only the
+Trump Account has money in it, because only it receives the $1,000 government
+deposit. There is no arithmetic to do — one option is funded and two are empty.
+
+Named, the models got it right 5 times out of 20. Anonymous, 15 times out of
+20.
+
+Each model answered identically across all five repetitions, so this is not
+randomness. `gemma2:2b` and `llama3.2:3b` both chose the 529 — the account
+holding zero dollars. `phi3.5:3.8b` chose the empty brokerage. Only
+`qwen2.5:3b` chose the funded account.
+
+Here is how `llama3.2:3b` finished its working, verbatim. Option 1 is the 529,
+Option 2 the Trump Account, Option 3 the brokerage:
+
+```
+Option 3: taxable brokerage account
+- The balance grows at 7% per year for 18 years.
+- The final balance is $2,549.19 (calculated using the formula for compound
+  interest).
+- The total amount contributed is $0, since no contributions were made.
+- The amount above the contribution that is taxed is $2,549.19.
+- The tax paid is $382.17 (15% of $2,549.19).
+- The total amount withdrawn is $2,166.02 ($2,549.19 - $382.17).
+
+Comparing the three options, we can see that Option 1 leaves the most money
+to spend after tax, with a total amount withdrawn of $1,491.19.
+
+ANSWER: 1
+```
+
+Earlier in the same reply it had put the Trump Account at $2,206.81. So it
+finished holding three of its own figures — $1,491.19, $2,206.81, $2,166.02 —
+and announced that the first one was the largest.
+
+The comparison step is not a hard calculation that went wrong. It is three
+numbers and a "greater than", and the model reached past its own arithmetic for
+the familiar answer. (The $1,491.19 is itself invented: the 529 receives no
+contributions and no seed in this case, so its balance is zero.)
+
+## Difficulty did not predict anything
+
+If the models were computing, accuracy would track how close the cases are. A
+case decided by 30% should be easy; one decided by 0.23% should be hard.
+
+The opposite happened.
+
+<ComparisonTable
+  caption="Accuracy against how much the winning account wins by"
+  headers={["Case", "Decided by", "Correct", "Named", "Anonymous"]}
+  rows={[
+    ["seed-only", "only funded option", "50.0%", "5/20", "15/20"],
+    ["small-short", "29.87%", "10.0%", "0/20", "4/20"],
+    ["small-long-low-bracket", "11.65%", "22.5%", "5/20", "4/20"],
+    ["mid-decade", "4.79%", "25.0%", "10/20", "0/20"],
+    ["mid-long-low-bracket", "0.23%", "62.5%", "11/20", "14/20"],
+    ["standard", "6.48%", "87.5%", "15/20", "20/20"],
+    ["large-short-high-bracket", "0.86%", "50.0%", "10/20", "10/20"],
+    ["large-long-high-bracket", "7.06%", "40.0%", "8/20", "8/20"]
+  ]}
+/>
+
+The widest margin in the set after the empty case is `small-short`, where the
+Trump Account wins by 29.87%. It scored **10%** — the worst of the eight, and
+zero out of twenty under the named framing.
+
+The tightest is `mid-long-low-bracket`, decided by 0.23% of the final balance —
+a gap of about $155 on $67,998. It scored **62.5%**.
+
+The best-scoring case, at 87.5%, is `standard`: $2,000 a year for eighteen
+years, 22% bracket, answer 529. That is the canonical college-savings scenario,
+the one any writeup of 529 plans uses as its worked example.
+
+Accuracy did not follow the arithmetic. It followed how closely each case
+resembled the textbook one — which is what reciting looks like when you measure
+it.
+
+## It was not choosing an account
+
+Because the option order rotates between cases — the 529 is not Option 1
+throughout, and neither is anything else — the slot a model picks carries
+information its accuracy does not. Across the eight cases the correct answer is
+Option 1 twice, Option 2 three times and Option 3 three times.
+
+So a model that ignores the prompt and says "2" every single time scores
+37.5%.
+
+The four models scored 31.2%, 32.5%, 48.8% and 61.3% overall. Under the named
+framing the whole set managed 40.0%. Two of the four models are below the
+score you get for not reading the question, and the named framing as a whole is
+barely above it.
+
+The slot counts show why:
+
+<ComparisonTable
+  caption="Which option number each model picked, out of 40 generations per framing"
+  headers={["Model", "Framing", "Option 1", "Option 2", "Option 3", "Modal slot"]}
+  rows={[
+    ["gemma2:2b", "Named", "25", "10", "5", "1 on 62%"],
+    ["gemma2:2b", "Anonymous", "20", "15", "5", "1 on 50%"],
+    ["llama3.2:3b", "Named", "5", "34", "1", "2 on 85%"],
+    ["llama3.2:3b", "Anonymous", "10", "15", "15", "3 on 38%"],
+    ["qwen2.5:3b", "Named", "10", "10", "20", "3 on 50%"],
+    ["qwen2.5:3b", "Anonymous", "14", "20", "6", "2 on 50%"],
+    ["phi3.5:3.8b", "Named", "1", "11", "28", "3 on 70%"],
+    ["phi3.5:3.8b", "Anonymous", "8", "11", "20", "3 on 51%"]
+  ]}
+/>
+
+`llama3.2:3b` answered Option 2 on 85% of named prompts while the correct
+answer moved around underneath it. That is not a model choosing an account. It
+is a model with a favourite number.
+
+Every model has one, each model's differs, and — the part that gives the game
+away — the favourite *changes when the names come off*. `llama3.2:3b` goes from
+85% on slot 2 to a near-even spread. `qwen2.5:3b` moves its preference from
+slot 3 to slot 2. Whatever is producing these answers is sensitive to the
+labels and largely insensitive to the numbers.
+
+This is why the rotation is in the design. Without it, a model that always
+answers "2" would have scored respectably on any test bank where the right
+answer tended to sit in the middle, and nothing in its accuracy would have
+revealed that it was not reading the options at all.
+
+## What this can and cannot claim
+
+The honest limitation is that anonymising removes the *name*, not the
+recognisability.
+
+"Withdrawals spent on qualified education expenses are not taxed at all" is the
+529's defining feature. A model with real domain knowledge can identify the
+account from that line whether or not the heading says so. So the anonymous
+framing is not a clean-room test of pure arithmetic — it is a weaker
+intervention than that, and the 6.9-point gap should be read as a lower bound
+on the label's influence rather than a full measurement of it.
+
+A second limit: five repetitions per prompt, not the ten used in the earlier
+benchmarks. Valuing three accounts takes roughly four times the tokens of
+answering one arithmetic question, and 320 generations at up to 2,048 tokens
+each is already several hours on this hardware. Five is enough to distinguish a
+consistent answer from a coin flip — and the answers here were highly
+consistent, with most model-case cells identical across all five — but not
+enough to put a tight interval around a rate.
+
+Nor is this a test of the frontier models. It is a test of what runs free and
+offline on a cheap laptop, which is a different and smaller question. A
+$20-a-month model may well compute all eight of these correctly.
+
+What the result does support: presenting the same arithmetic with familiar
+names attached made four models measurably worse, made the strictly worst
+option six times more attractive, and produced a pattern of scores that tracks
+resemblance to the textbook case rather than the difficulty of the sum.
+
+<DatasetSignup
+  dataset="the account-choice results"
+  cadence="as new local models are released"
+  dataFile="allocation.csv"
+/>
+
+## Methodology
+
+**Models.** `llama3.2:3b`, `qwen2.5:3b`, `gemma2:2b` and `phi3.5:3.8b`, all at
+Q4_K_M quantisation, which is what `ollama pull` gives by default. One model
+resident at a time, on a GTX 1650 Ti with 4 GB of VRAM.
+
+**Design.** Eight parameter cases, each rendered in two framings — named and
+anonymous — for sixteen prompts, run five times per model. 320 generations.
+
+**The account rules.** Simplified from IRS
+[Publication 970](https://www.irs.gov/publications/p970) and the IRS's
+[Trump Accounts](https://www.irs.gov/trumpaccounts) guidance, then stated in
+full inside each prompt. The simplification is deliberate and total: the test is
+whether a model can compare three tax treatments it has just been handed, not
+whether it has memorised this year's rules. Contribution limits, eligibility,
+state treatment and fees are all excluded, which is why no row here should be
+read as guidance about a real account.
+
+**Determinism.** `temperature 0`, an explicit `num_ctx` of 2048 and an explicit
+seed on every call. Seeds 42 through 46, one per repetition, because repeating
+an identical call with an identical seed measures caching rather than
+stability. One warm-up generation per model is discarded, because the first
+call after a model loads reliably differs from later ones.
+
+**Token budget.** `num_predict` is 2,048, not the 1,024 used in earlier
+experiments. Valuing three accounts means three future-value calculations per
+reply, and at 1,024 the smoke test truncated generations mid-working —
+disproportionately on the *named* framing, where models spend tokens restating
+account names. Truncation landing harder on one arm of a paired comparison
+would have manufactured the finding outright. Every generation records Ollama's
+`done_reason`; 7 of 320 hit the token ceiling.
+
+**Grading.** Prompts require a final `ANSWER: <option number>` line. Where a
+model ignored the format, the parser falls back to the last "Option N" mention
+and then to the last bare digit, because a model that breaks the output format
+is still expressing a choice and should be scored on the choice. Reported
+separately from accuracy: 16 of 320 generations produced no `ANSWER` line, and
+1 could not be parsed at all.
+
+**Ground truth.** Computed from the closed-form annuity formula and
+independently recomputed year by year in a loop, with the module refusing to
+import if the two disagree by more than a cent. No model was consulted for a
+correct answer at any point.
+
+**Rotation.** The option order shifts by one position per case, identically in
+both framings, so the named/anonymous comparison is unaffected by it while no
+account sits in the same slot throughout.
+
+**One contended tail, re-run.** The final three generations of the run were
+produced while the machine was out of memory, and they collapsed: repetitive
+gibberish, two of them reporting zero evaluated tokens despite eighty and
+ninety-five seconds of wall time. One of the three was scored *correct*, because
+the bare-digit fallback found a stray "3" inside the garbage. Re-run on an idle
+machine, all three returned clean answers at 24 tokens per second, matching this
+model's median. The contended versions are published unchanged as
+`allocation-contended-tail.jsonl` rather than deleted, because a benchmark that
+quietly drops its bad runs is not reproducible — and because a scoring
+fallback that turns noise into a correct answer is worth showing.
+
+**Reproducibility.** The experiment is
+[`research/experiments/allocation.py`](https://github.com/Sujit-karki/sujit-blog/blob/main/research/experiments/allocation.py)
+and the harness is
+[`research/harness/experiment.py`](https://github.com/Sujit-karki/sujit-blog/blob/main/research/harness/experiment.py).
+Raw generations, including every full reply, are published as
+`allocation-raw.jsonl`; the paired per-case comparison is `allocation-pairs.csv`.
+
+**Disclosure.** The models here are the subject being measured, not the author.
+None of the four wrote any part of this post. The dataset was produced by
+running them against the test bank, and every figure and quoted transcript
+above comes from that dataset. The commentary was drafted with AI assistance;
+the experiment design, the ground-truth calculations and the conclusions are
+mine.
+
+<InfoBox type="warning">
+This is educational information, not financial advice. The account rules above
+are simplified figures supplied inside a prompt to test arithmetic — they omit
+contribution limits, state tax treatment, fees, and eligibility rules that
+decide real cases. Consult a licensed professional before choosing a savings
+vehicle.
+</InfoBox>
+
+<Sources items={[
+  { title: "Publication 970: Tax Benefits for Education", url: "https://www.irs.gov/publications/p970", publisher: "Internal Revenue Service" },
+  { title: "Trump Accounts", url: "https://www.irs.gov/trumpaccounts", publisher: "Internal Revenue Service" },
+  { title: "Ollama", url: "https://ollama.com", publisher: "Ollama" },
+  { title: "Account-choice results (CSV)", url: "/data/allocation.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Paired named/anonymous comparison (CSV)", url: "/data/allocation-pairs.csv", publisher: "Dataset published with this post", date: "2026" }
+]} />
