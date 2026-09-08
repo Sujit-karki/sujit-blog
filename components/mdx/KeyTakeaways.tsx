@@ -7,7 +7,7 @@ export default function KeyTakeaways({ items, title = "Key Takeaways" }: KeyTake
   return (
     <div className="not-prose my-8 rounded-xl border-l-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30 dark:border-emerald-400 p-6">
       <div className="flex items-center gap-2 mb-4">
-        <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        <svg className="w-5 h-5 text-emerald-700 dark:text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
         <h3 className="text-sm font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">

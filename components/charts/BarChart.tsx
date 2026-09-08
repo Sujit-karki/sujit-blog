@@ -116,7 +116,7 @@ export default function BarChart({
       {/* Visible data-table fallback. Chart.js draws to <canvas>, which is opaque
           to screen readers and to anything without JS, so this table is the
           accessible representation of the data — not a nicety. */}
-      <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div tabIndex={0} className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
         <table className="min-w-full text-sm">
           <caption className="sr-only">{title} — data table</caption>
           <thead className="bg-gray-100 dark:bg-gray-800">

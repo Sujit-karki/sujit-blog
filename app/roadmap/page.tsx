@@ -163,7 +163,7 @@ export default function RoadmapPage() {
                 $
               </div>
               <span className="text-xl font-extrabold tracking-tighter text-slate-900">
-                LAMP<span className="text-emerald-600">ARD</span>
+                LAMP<span className="text-emerald-700">ARD</span>
               </span>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -176,9 +176,9 @@ export default function RoadmapPage() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors hover:text-emerald-600 ${
+                  className={`text-sm font-medium transition-colors hover:text-emerald-700 ${
                     activeSection === item.id
-                      ? "text-emerald-600 border-b-2 border-emerald-600"
+                      ? "text-emerald-700 border-b-2 border-emerald-600"
                       : "text-slate-600"
                   }`}
                 >
@@ -193,7 +193,7 @@ export default function RoadmapPage() {
       <header className="py-12 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            The Digital Frontier of <span className="text-emerald-600">Market Intelligence</span>
+            The Digital Frontier of <span className="text-emerald-700">Market Intelligence</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             A comprehensive strategic report on building a world-class financial blog using Next.js 16, MDX, and performance-driven SEO.
@@ -212,7 +212,7 @@ export default function RoadmapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-                  <span className="text-emerald-600 font-bold mr-3">01</span>
+                  <span className="text-emerald-700 font-bold mr-3">01</span>
                   <div>
                     <h4 className="font-bold text-slate-900">Deep Research Focus</h4>
                     <p className="text-sm text-slate-600">Prioritizing 2,000+ word technical analyses over shallow daily news.</p>

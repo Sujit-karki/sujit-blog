@@ -8,7 +8,7 @@ export default function AcaCliffFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         The cliff mechanic
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -32,7 +32,7 @@ export default function AcaCliffFlow() {
           whileInView={reduce ? undefined : { opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-gray-400 text-xs font-mono mb-3"
+          className="text-gray-500 dark:text-gray-400 text-xs font-mono mb-3"
         >
           ↓ compared against 400% of the federal poverty level ↓
         </m.div>
@@ -61,7 +61,7 @@ export default function AcaCliffFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         There&apos;s no phase-out ramp at the top like there is with many tax credits — one dollar over the line and the entire subsidy disappears at once.
       </p>
     </ChartCard>

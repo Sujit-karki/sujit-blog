@@ -93,7 +93,7 @@ export default function FundTechExposureChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Approximate IT-sector look-through weight
       </p>
       <p className="font-serif text-xl mb-4 text-gray-900 dark:text-white">
@@ -115,7 +115,7 @@ export default function FundTechExposureChart() {
         </span>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         Illustrative, not a precise holdings-level analysis — for comparing relative tilt only. XOEF&apos;s figure is a rough estimate since it launched July 2025 and its sector mix will drift as it grows.
       </p>
     </ChartCard>

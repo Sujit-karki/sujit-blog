@@ -33,7 +33,7 @@ export default function StablecoinYieldGapCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · the GENIUS Act yield gap
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -42,7 +42,7 @@ export default function StablecoinYieldGapCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Balance held in stablecoins</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(balance)}</b>
           </div>
@@ -53,7 +53,7 @@ export default function StablecoinYieldGapCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Months held</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{months} mo</b>
           </div>
@@ -72,7 +72,7 @@ export default function StablecoinYieldGapCalculator() {
             <AnimatedNumber value={result.issuerEarned} format={money} startFromZero />
           </strong>{' '}
           in yield — money the GENIUS Act says legally can&apos;t come to you. The same balance in a
-          high-yield savings account would have earned <strong className="text-emerald-600 dark:text-emerald-400">
+          high-yield savings account would have earned <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.hysaForgone} format={money} startFromZero />
           </strong> instead.
         </p>
@@ -111,7 +111,7 @@ export default function StablecoinYieldGapCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Illustrative, monthly-compounded estimate. Issuer yield approximates BlackRock BUIDL&apos;s reported 2026 range; HYSA yield matches the top nationally available rate cited in our Fed-rate-hike coverage. Actual reserve income, HYSA rates, and your own opportunity cost will vary — not investment advice.
         </p>
       </div>

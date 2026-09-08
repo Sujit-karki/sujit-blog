@@ -40,7 +40,7 @@ export default function RasuwaSurgeSimulator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · illustrative model
       </p>
       <p className="font-serif text-xl mb-1 text-gray-900 dark:text-white">
@@ -52,7 +52,7 @@ export default function RasuwaSurgeSimulator() {
       </p>
 
       <div className="mb-6">
-        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
           <span>Minutes since the surge front arrived</span>
           <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
             {minutes} min
@@ -68,7 +68,7 @@ export default function RasuwaSurgeSimulator() {
           className="w-full accent-rose-600"
           aria-label="Minutes since the surge front arrived"
         />
-        <div className="flex justify-between font-mono text-[10px] text-gray-400 mt-1">
+        <div className="flex justify-between font-mono text-[10px] text-gray-500 dark:text-gray-400 mt-1">
           <span>0</span>
           <span>30 (reported peak)</span>
           <span>45</span>
@@ -98,7 +98,7 @@ export default function RasuwaSurgeSimulator() {
         {/* Readout */}
         <div className="flex flex-col justify-between gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400">
               River level above normal
             </p>
             {/* Deliberately not AnimatedNumber: this readout is driven by a
@@ -114,7 +114,7 @@ export default function RasuwaSurgeSimulator() {
           </div>
 
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-2">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">
               Under water at this level
             </p>
             {submerged.length === 0 ? (
@@ -130,7 +130,7 @@ export default function RasuwaSurgeSimulator() {
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" />
                     {mk.label}
-                    <span className="font-mono text-[10px] text-gray-400">{mk.m} m</span>
+                    <span className="font-mono text-[10px] text-gray-500 dark:text-gray-400">{mk.m} m</span>
                   </li>
                 ))}
               </ul>
@@ -139,7 +139,7 @@ export default function RasuwaSurgeSimulator() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         The entire useful evacuation window sits in the first few minutes of this slider. That is the whole
         argument for automated upstream sensing in this valley.
       </p>

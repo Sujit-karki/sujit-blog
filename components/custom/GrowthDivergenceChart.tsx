@@ -112,7 +112,7 @@ export default function GrowthDivergenceChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         IMF World Economic Outlook, July 2026
       </p>
       <p className="font-serif text-xl mb-1 text-gray-900 dark:text-white">
@@ -120,23 +120,23 @@ export default function GrowthDivergenceChart() {
       </p>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
         AI-hardware exporters beat Q1 2026 growth forecasts by{' '}
-        <AnimatedNumber value={4.4} format={v => `+${v.toFixed(1)}pp`} startFromZero className="font-semibold text-emerald-600 dark:text-emerald-400" />
+        <AnimatedNumber value={4.4} format={v => `+${v.toFixed(1)}pp`} startFromZero className="font-semibold text-emerald-700 dark:text-emerald-400" />
         {' '}while the rest of the world missed by{' '}
-        <AnimatedNumber value={-0.3} format={v => `${v.toFixed(1)}pp`} startFromZero className="font-semibold text-red-500 dark:text-red-400" />
+        <AnimatedNumber value={-0.3} format={v => `${v.toFixed(1)}pp`} startFromZero className="font-semibold text-red-600 dark:text-red-400 dark:text-red-400" />
       </p>
 
       <div className="h-28">
         <Bar data={surpriseData} options={baseOptions} />
       </div>
 
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mt-6 mb-3">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mt-6 mb-3">
         2026 GDP growth forecasts by economy
       </p>
       <div className="h-64">
         <Bar data={forecastData} options={baseOptions} />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Seasonally adjusted annualized growth surprise, Q1 2026 (top four net exporters of AI-related hardware: Taiwan, Korea, Thailand, Malaysia). Country forecasts are IMF July 2026 WEO update figures; euro area is a midpoint approximation. Source: IMF, July 8, 2026.
       </p>
     </ChartCard>

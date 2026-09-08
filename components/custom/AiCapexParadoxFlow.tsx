@@ -26,7 +26,7 @@ export default function AiCapexParadoxFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         The paradox, mapped
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -40,7 +40,7 @@ export default function AiCapexParadoxFlow() {
           viewport={{ once: true }}
           className="w-full rounded-xl border border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/30 px-5 py-3 text-center shadow-[0_6px_16px_-8px_rgba(5,150,105,0.35)]"
         >
-          <p className="font-mono text-[10px] uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Input</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Input</p>
           <p className="font-serif text-base font-semibold text-emerald-900 dark:text-emerald-100">
             AI capex hits record highs
           </p>
@@ -82,7 +82,7 @@ export default function AiCapexParadoxFlow() {
         </m.div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         When good news stops moving prices, it usually means expectations — and valuations — got ahead of the fundamentals. Figures are approximate, week of July 13-17, 2026.
       </p>
     </ChartCard>

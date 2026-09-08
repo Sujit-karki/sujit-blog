@@ -88,7 +88,7 @@ export default function TechConcentrationExplorer() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · S&amp;P 500 concentration
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -106,7 +106,7 @@ export default function TechConcentrationExplorer() {
               startFromZero
               className="font-serif text-3xl font-bold text-gray-900 dark:text-white"
             />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mt-1 text-center px-2">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1 text-center px-2">
               {activeSlice ? activeSlice.label : 'Information Technology'}
             </span>
           </div>
@@ -141,13 +141,13 @@ export default function TechConcentrationExplorer() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         GICS sector weights, S&amp;P Dow Jones Indices, approx. mid-July 2026. The Magnificent Seven alone were ~32.5% of the index; the concentration index (HHI) sits near 185–195 vs. ~123 at the March 2000 dot-com peak.
       </p>
 
       {/* Barbell allocator */}
       <div className="mt-6 pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
-        <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+        <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
           Try the barbell
         </p>
         <p className="font-serif text-lg mb-4 text-gray-900 dark:text-white">
@@ -155,7 +155,7 @@ export default function TechConcentrationExplorer() {
         </p>
 
         <div className="mb-5">
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>S&amp;P 500 core</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {corePct}%
@@ -180,7 +180,7 @@ export default function TechConcentrationExplorer() {
           <AnimatedNumber
             value={effectiveTech}
             format={pct}
-            className={effectiveTech < 25 ? 'font-bold text-emerald-600 dark:text-emerald-400' : 'font-bold text-gray-900 dark:text-white'}
+            className={effectiveTech < 25 ? 'font-bold text-emerald-700 dark:text-emerald-400' : 'font-bold text-gray-900 dark:text-white'}
           />
           {' '}— down from 33% in a plain S&amp;P 500 fund.
         </p>
@@ -194,7 +194,7 @@ export default function TechConcentrationExplorer() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
           Illustrative, using approximate IT-sector look-through weights per fund (S&amp;P 500 core ~33%, RSP ~14%, IJH ~18%, VEA ~9%, VTV ~9%). Not a precise holdings-level analysis — for building intuition about how diversifying across fund types dilutes concentration.
         </p>
       </div>

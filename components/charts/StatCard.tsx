@@ -29,7 +29,7 @@ export default function StatCard({
 }: StatCardProps) {
   return (
     <div className="not-prose inline-flex flex-col gap-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/60 px-5 py-4 my-2 mr-3">
-      <span className="font-mono text-[11px] uppercase tracking-widest text-gray-400">
+      <span className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400">
         {label}
       </span>
       <AnimatedNumber

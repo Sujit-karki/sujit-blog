@@ -64,7 +64,7 @@ export default function RasuwaResponseDashboard() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Dashboard · the official response
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -108,7 +108,7 @@ export default function RasuwaResponseDashboard() {
         ))}
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">{tab.footnote}</p>
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">{tab.footnote}</p>
     </div>
   )
 }

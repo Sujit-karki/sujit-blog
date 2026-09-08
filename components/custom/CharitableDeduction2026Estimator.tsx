@@ -37,7 +37,7 @@ export default function CharitableDeduction2026Estimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · estimate your 2026 charitable tax benefit
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -61,7 +61,7 @@ export default function CharitableDeduction2026Estimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Cash gift to a 501(c)(3) charity</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(giftCash)}</b>
           </div>
@@ -73,7 +73,7 @@ export default function CharitableDeduction2026Estimator() {
         </div>
         {itemizes && (
           <div>
-            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
               <span>Adjusted gross income</span>
               <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(agi)}</b>
             </div>
@@ -97,7 +97,7 @@ export default function CharitableDeduction2026Estimator() {
           </div>
         )}
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marginal federal tax bracket</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{rate}%</b>
           </div>
@@ -113,12 +113,12 @@ export default function CharitableDeduction2026Estimator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Of your {money(giftCash)} gift, {money(deductible)} is deductible — worth about{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">{money(savings)}</strong> at a {effectiveRate}% rate.
+          <strong className="text-emerald-700 dark:text-emerald-400">{money(savings)}</strong> at a {effectiveRate}% rate.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Deductible amount</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Deductible amount</p>
             <AnimatedNumber
               value={deductible}
               format={v => money(v)}
@@ -127,17 +127,17 @@ export default function CharitableDeduction2026Estimator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Estimated tax savings</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Estimated tax savings</p>
             <AnimatedNumber
               value={savings}
               format={v => money(v)}
               startFromZero
-              className="font-serif text-2xl font-bold text-emerald-600 dark:text-emerald-400"
+              className="font-serif text-2xl font-bold text-emerald-700 dark:text-emerald-400"
             />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">Estimate only, not tax advice; cash gifts to 501(c)(3) public charities only.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">Estimate only, not tax advice; cash gifts to 501(c)(3) public charities only.</p>
 
         <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
           <table className="min-w-full text-sm">

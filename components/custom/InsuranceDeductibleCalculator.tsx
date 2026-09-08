@@ -37,7 +37,7 @@ export default function InsuranceDeductibleCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · should you raise your deductible?
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -46,7 +46,7 @@ export default function InsuranceDeductibleCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Current annual premium</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(premium)}</b>
           </div>
@@ -58,7 +58,7 @@ export default function InsuranceDeductibleCalculator() {
         </div>
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Current deductible</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Current deductible</p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {TIERS.map(t => (
               <button
@@ -77,7 +77,7 @@ export default function InsuranceDeductibleCalculator() {
         </div>
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Considering raising it to</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Considering raising it to</p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {TIERS.map(t => (
               <button
@@ -96,7 +96,7 @@ export default function InsuranceDeductibleCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>You file a claim about once every</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{claimEveryYears} yrs</b>
           </div>
@@ -115,15 +115,15 @@ export default function InsuranceDeductibleCalculator() {
           ) : (
             <>
               Raising your deductible saves about{' '}
-              <strong className="text-emerald-600 dark:text-emerald-400">
+              <strong className="text-emerald-700 dark:text-emerald-400">
                 <AnimatedNumber value={result.annualSavings} format={v => money(v) + '/yr'} startFromZero />
               </strong>
               , but costs {money(result.extraRiskPerClaim)} more out of pocket per claim. Breakeven is about{' '}
               <strong>{result.breakevenYears.toFixed(1)} years</strong> between claims —{' '}
               {result.worthIt ? (
-                <strong className="text-emerald-600 dark:text-emerald-400">worth it at your claim frequency.</strong>
+                <strong className="text-emerald-700 dark:text-emerald-400">worth it at your claim frequency.</strong>
               ) : (
-                <strong className="text-red-500 dark:text-red-400">not worth it if you claim that often.</strong>
+                <strong className="text-red-600 dark:text-red-400 dark:text-red-400">not worth it if you claim that often.</strong>
               )}
             </>
           )}
@@ -151,7 +151,7 @@ export default function InsuranceDeductibleCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Deductible-tier discounts are illustrative industry-typical ranges, not a quote — insurers price this differently by state, carrier, and claims history. Default premium ({money(3057)}) is the Insurify 2026 national average home-insurance estimate. Get an actual quote before changing your policy.
         </p>
       </div>

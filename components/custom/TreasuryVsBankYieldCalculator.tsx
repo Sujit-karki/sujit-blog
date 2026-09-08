@@ -32,7 +32,7 @@ export default function TreasuryVsBankYieldCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · compare after-tax yield
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -41,35 +41,35 @@ export default function TreasuryVsBankYieldCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Treasury yield</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{treasuryYield.toFixed(2)}%</b>
           </div>
           <input type="range" min={0} max={10} step={0.01} value={treasuryYield} onChange={e => setTreasuryYield(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Bank / CD yield</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{bankYield.toFixed(2)}%</b>
           </div>
           <input type="range" min={0} max={10} step={0.01} value={bankYield} onChange={e => setBankYield(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Federal bracket</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{federalBracket}%</b>
           </div>
           <input type="range" min={0} max={37} step={1} value={federalBracket} onChange={e => setFederalBracket(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>State tax rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{stateRate.toFixed(1)}%</b>
           </div>
           <input type="range" min={0} max={15} step={0.5} value={stateRate} onChange={e => setStateRate(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Principal</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(principal)}</b>
           </div>
@@ -81,7 +81,7 @@ export default function TreasuryVsBankYieldCalculator() {
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           After tax, the Treasury yields <strong className="text-sky-600 dark:text-sky-400">{pct(afterTaxTreasury)}</strong> versus{' '}
           <strong>{pct(afterTaxBank)}</strong> for the bank account — on {money(principal)}, that&apos;s about{' '}
-          <strong className={dollarDiff >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}>
+          <strong className={dollarDiff >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}>
             {money(Math.abs(dollarDiff))} {dollarDiff >= 0 ? 'more' : 'less'}
           </strong>{' '}
           per year with the Treasury.
@@ -89,20 +89,20 @@ export default function TreasuryVsBankYieldCalculator() {
 
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">After-tax Treasury yield</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">After-tax Treasury yield</p>
             <AnimatedNumber value={afterTaxTreasury} format={pct} startFromZero className="font-serif text-xl font-bold text-gray-900 dark:text-white" />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">After-tax bank yield</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">After-tax bank yield</p>
             <AnimatedNumber value={afterTaxBank} format={pct} startFromZero className="font-serif text-xl font-bold text-gray-900 dark:text-white" />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Annual after-tax difference</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Annual after-tax difference</p>
             <AnimatedNumber value={dollarDiff} format={v => money(v)} startFromZero className="font-serif text-xl font-bold text-sky-600 dark:text-sky-400" />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">Estimate only — not financial or tax advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">Estimate only — not financial or tax advice.</p>
 
         <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
           <table className="min-w-full text-sm">

@@ -66,7 +66,7 @@ export default function RentVsBuyCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · find your break-even year
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -75,35 +75,35 @@ export default function RentVsBuyCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Home price</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(homePrice)}</b>
           </div>
           <input type="range" min={150000} max={1000000} step={5000} value={homePrice} onChange={e => setHomePrice(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Down payment</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{downPaymentPct}%</b>
           </div>
           <input type="range" min={0} max={50} step={1} value={downPaymentPct} onChange={e => setDownPaymentPct(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>30-year mortgage rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{mortgageRate.toFixed(2)}%</b>
           </div>
           <input type="range" min={4} max={9} step={0.05} value={mortgageRate} onChange={e => setMortgageRate(+e.target.value)} className="w-full accent-sky-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Comparable monthly rent</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(monthlyRent)}</b>
           </div>
           <input type="range" min={800} max={6000} step={50} value={monthlyRent} onChange={e => setMonthlyRent(+e.target.value)} className="w-full accent-amber-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Years you plan to stay</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{yearsStaying} yrs</b>
           </div>
@@ -119,9 +119,9 @@ export default function RentVsBuyCalculator() {
           </strong>
           . Your break-even year — where buying beats renting — is about{' '}
           {result.breakevenYear ? (
-            <strong className="text-emerald-600 dark:text-emerald-400">year {result.breakevenYear}</strong>
+            <strong className="text-emerald-700 dark:text-emerald-400">year {result.breakevenYear}</strong>
           ) : (
-            <strong className="text-red-500 dark:text-red-400">beyond 30 years at these inputs</strong>
+            <strong className="text-red-600 dark:text-red-400 dark:text-red-400">beyond 30 years at these inputs</strong>
           )}
           {result.breakevenYear && yearsStaying < result.breakevenYear && (
             <> — since you&apos;re planning {yearsStaying} years, renting comes out ahead in this model.</>
@@ -147,7 +147,7 @@ export default function RentVsBuyCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Assumes {PROPERTY_TAX_PCT}% property tax, {money(HOME_INSURANCE_MONTHLY)}/mo insurance, {CLOSING_COST_PCT}% closing costs, {HOME_APPRECIATION_PCT}%/yr appreciation, {SELLING_COST_PCT}% selling costs, and 3%/yr rent growth — illustrative assumptions, not a quote. Not financial advice.
         </p>
       </div>

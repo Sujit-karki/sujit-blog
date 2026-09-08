@@ -41,7 +41,7 @@ export default function MedicareTotalCostEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · compare estimated 2027 total cost
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -50,21 +50,21 @@ export default function MedicareTotalCostEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Medicare Advantage monthly premium</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(maPremium)}</b>
           </div>
           <input type="range" min={0} max={400} step={5} value={maPremium} onChange={e => setMaPremium(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Medigap monthly premium</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(medigapPremium)}</b>
           </div>
           <input type="range" min={0} max={500} step={5} value={medigapPremium} onChange={e => setMedigapPremium(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Medicare Advantage annual OOP maximum</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(maOopMax)}</b>
           </div>
@@ -85,16 +85,16 @@ export default function MedicareTotalCostEstimator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Medicare Advantage, est. annual</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Medicare Advantage, est. annual</p>
             <AnimatedNumber value={advantageAnnual} format={v => money(v)} startFromZero className="font-serif text-2xl font-bold text-gray-900 dark:text-white" />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Original + Medigap, est. annual</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Original + Medigap, est. annual</p>
             <AnimatedNumber value={originalAnnual} format={v => money(v)} startFromZero className="font-serif text-2xl font-bold text-gray-900 dark:text-white" />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
           Includes a projected 2027 Part B premium of {money(PART_B_PROJECTED_2027)}/month (2026 Medicare Trustees Report) —
           CMS has not yet confirmed the final figure as of this writing. Estimate only, not insurance advice; compare real
           plans at medicare.gov/plan-compare.

@@ -65,13 +65,13 @@ export default function CorrectionsPage() {
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-3">
                   <Link
                     href={`/posts/${c.slug}`}
-                    className="font-semibold text-gray-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    className="font-semibold text-gray-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                   >
                     {c.title}
                   </Link>
                   <time
                     dateTime={c.date}
-                    className="text-xs text-gray-400 dark:text-gray-500 tabular-nums shrink-0"
+                    className="text-xs text-gray-500 dark:text-gray-400 tabular-nums shrink-0"
                   >
                     {dateFormat.format(new Date(`${c.date}T00:00:00Z`))}
                   </time>
@@ -96,7 +96,7 @@ export default function CorrectionsPage() {
                   </div>
                 </dl>
 
-                <p className="text-xs text-gray-400 dark:text-gray-500 mt-3 mb-0">
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 mb-0">
                   {c.foundBy}
                 </p>
               </li>

@@ -24,7 +24,7 @@ export default function FlipMarginCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · what a flip actually pays
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@ export default function FlipMarginCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Sale price</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(sellPrice)}</b>
           </div>
@@ -41,7 +41,7 @@ export default function FlipMarginCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>What you paid for it</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(cost)}</b>
           </div>
@@ -49,7 +49,7 @@ export default function FlipMarginCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marketplace fee</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{feePct.toFixed(1)}%</b>
           </div>
@@ -57,7 +57,7 @@ export default function FlipMarginCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Shipping cost</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(shipping)}</b>
           </div>
@@ -68,7 +68,7 @@ export default function FlipMarginCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           That &quot;sticker profit&quot; of {money(sellPrice - cost)} shrinks to{' '}
-          <strong className={result.takeHome >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}>
+          <strong className={result.takeHome >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}>
             <AnimatedNumber value={result.takeHome} format={money} startFromZero />
           </strong>{' '}
           after fees, shipping, and self-employment tax — a true margin of{' '}
@@ -91,7 +91,7 @@ export default function FlipMarginCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Fees vary by marketplace and category — confirm the current schedule before pricing a real listing. Assumes net profit is taxed at the full 15.3% self-employment rate; your actual rate may differ.
         </p>
       </div>

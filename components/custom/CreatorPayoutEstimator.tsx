@@ -60,7 +60,7 @@ export default function CreatorPayoutEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · rough monthly payout estimate
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -69,7 +69,7 @@ export default function CreatorPayoutEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Platform</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Platform</p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {PLATFORMS.map((p) => (
               <button
@@ -86,14 +86,14 @@ export default function CreatorPayoutEstimator() {
             ))}
           </div>
           {platform === 'Instagram' && (
-            <p className="text-xs text-gray-400 mt-2">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
               Instagram has no standing per-view payout — its Reels bonus program has been invite-only and mostly paused for U.S. creators since early 2023. This is a rough, historical-rate estimate, not a live program.
             </p>
           )}
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Monthly views</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{views(monthlyViews)}</b>
           </div>
@@ -105,7 +105,7 @@ export default function CreatorPayoutEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Content niche</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{NICHE_LABELS[nicheLevel]}</b>
           </div>
@@ -114,14 +114,14 @@ export default function CreatorPayoutEstimator() {
             onChange={e => setNicheLevel(+e.target.value)}
             className="w-full accent-emerald-600"
           />
-          <p className="text-xs text-gray-400 mt-1">Advertiser demand (and RPM) is consistently higher in finance/business content and lower in music, gaming, and comedy.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Advertiser demand (and RPM) is consistently higher in finance/business content and lower in music, gaming, and comedy.</p>
         </div>
       </div>
 
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           At an estimated <strong>{money(rpm)}</strong> RPM on {platform}, {views(monthlyViews)} views/month is roughly{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={payout} format={v => money(v)} startFromZero />/month
           </strong>
           {' '}before taxes and any platform holds.
@@ -164,10 +164,10 @@ export default function CreatorPayoutEstimator() {
           </table>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           RPM ranges are illustrative midpoints from third-party creator trackers, not official platform data — YouTube, TikTok, and Meta do not publish per-view rates. Ignores brand deals, affiliate income, tips, and platform fees/holds, which for most working creators matter more than ad-share payouts.
         </p>
-        <p className="text-xs text-gray-400 mt-2">Estimate only — not financial or tax advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Estimate only — not financial or tax advice.</p>
       </div>
     </div>
   )

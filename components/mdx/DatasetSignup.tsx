@@ -41,7 +41,7 @@ export default function DatasetSignup({ dataset, cadence, dataFile }: DatasetSig
             The raw rows are here as{" "}
             <a
               href={`/data/${dataFile}`}
-              className="text-emerald-700 dark:text-emerald-400 hover:underline"
+              className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
               download
             >
               {dataFile}
@@ -53,7 +53,7 @@ export default function DatasetSignup({ dataset, cadence, dataFile }: DatasetSig
         )}
       </p>
       <NewsletterSignup />
-      <p className="text-xs text-gray-400 dark:text-gray-500 mt-3">
+      <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
         One email per update. Unsubscribe in one click.
       </p>
     </aside>

@@ -16,7 +16,7 @@ export default function CryptoRuleTimelineFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Regulatory timeline
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -51,7 +51,7 @@ export default function CryptoRuleTimelineFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Five steps, none of which is &ldquo;crypto is now in your 401(k).&rdquo; The rule is still a proposal as of July 2026.
       </p>
     </ChartCard>

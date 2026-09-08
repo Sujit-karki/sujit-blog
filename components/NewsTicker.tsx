@@ -21,9 +21,9 @@ export default function NewsTicker({ posts }: Props) {
   const doubled = [...posts, ...posts]
 
   const BADGE_COLORS = [
-    'bg-emerald-500 group-hover:bg-emerald-400',
-    'bg-blue-500 group-hover:bg-blue-400',
-    'bg-amber-500 group-hover:bg-amber-400',
+    'bg-emerald-700 group-hover:bg-emerald-600',
+    'bg-blue-600 group-hover:bg-blue-500',
+    'bg-amber-700 group-hover:bg-amber-600',
   ]
 
   return (

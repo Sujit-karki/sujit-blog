@@ -40,7 +40,7 @@ export default function PretaxHealthElectionPlanner() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · HSA vs. FSA election
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -49,7 +49,7 @@ export default function PretaxHealthElectionPlanner() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-4">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Your plan type</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Your plan type</p>
           <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {(['HDHP', 'PPO'] as PlanType[]).map((p) => (
               <button
@@ -64,7 +64,7 @@ export default function PretaxHealthElectionPlanner() {
         </div>
         {planType === 'HDHP' && (
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">HDHP coverage</p>
+            <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">HDHP coverage</p>
             <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
               {(['self', 'family'] as Coverage[]).map((c) => (
                 <button
@@ -82,14 +82,14 @@ export default function PretaxHealthElectionPlanner() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Predictable medical spend for the year</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(predictableSpend)}</b>
           </div>
           <input type="range" min={0} max={12000} step={100} value={predictableSpend} onChange={(e) => setPredictableSpend(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marginal tax rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{marginalRate}%</b>
           </div>
@@ -107,11 +107,11 @@ export default function PretaxHealthElectionPlanner() {
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Your {planType === 'HDHP' ? 'HSA' : 'FSA'} cap is{' '}
           <strong>{money(result.cap)}</strong>. Electing{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.recommendedElection} format={(v) => money(v)} startFromZero />
           </strong>{' '}
           saves roughly{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.taxSaved} format={(v) => money(v)} startFromZero />
           </strong>{' '}
           in taxes this year.
@@ -129,7 +129,7 @@ export default function PretaxHealthElectionPlanner() {
           unit="$"
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           HSA figures use the official 2027 IRS limits (Rev. Proc. 2026-24); FSA uses the 2026 limit — the IRS had not announced the 2027 FSA cap as of this writing. An HSA requires enrollment in a qualifying HDHP. Not tax advice.
         </p>
       </div>

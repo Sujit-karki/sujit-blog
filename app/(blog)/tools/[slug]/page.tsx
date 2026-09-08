@@ -100,7 +100,7 @@ export default async function ToolPage({ params }: Props) {
           <Breadcrumb items={breadcrumbItems} />
         </div>
 
-        <span className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+        <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
           {tool.category}
         </span>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">
@@ -126,7 +126,7 @@ export default async function ToolPage({ params }: Props) {
                 <li key={p.slug}>
                   <Link
                     href={`/posts/${p.slug}`}
-                    className="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline"
+                    className="text-sm font-medium text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
                   >
                     {p.title} &rarr;
                   </Link>

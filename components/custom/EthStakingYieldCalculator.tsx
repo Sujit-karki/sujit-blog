@@ -29,7 +29,7 @@ export default function EthStakingYieldCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · staking, gross vs. net
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -38,7 +38,7 @@ export default function EthStakingYieldCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>ETH held</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{ethAmount.toFixed(1)} ETH</b>
           </div>
@@ -46,7 +46,7 @@ export default function EthStakingYieldCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>ETH price</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(ethPrice)}</b>
           </div>
@@ -54,7 +54,7 @@ export default function EthStakingYieldCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Staked ETF fee (% of staking rewards)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{etfFeePct}%</b>
           </div>
@@ -69,11 +69,11 @@ export default function EthStakingYieldCalculator() {
             <AnimatedNumber value={result.grossYieldUsd} format={(v) => money(v) + '/yr'} startFromZero />
           </strong>{' '}
           before fees, but only{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.netYieldUsd} format={(v) => money(v) + '/yr'} startFromZero />
           </strong>{' '}
           net through a staked ETF at {etfFeePct}% — a net yield of{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.netApr} format={(v) => v.toFixed(2) + '%'} />
           </strong>
           .
@@ -101,7 +101,7 @@ export default function EthStakingYieldCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Models a representative staked-ETF fee structure, not a specific fund&apos;s current terms — check any fund&apos;s prospectus before investing. Not investment advice, and ETH&apos;s price and staking yield both change constantly.
         </p>
       </div>

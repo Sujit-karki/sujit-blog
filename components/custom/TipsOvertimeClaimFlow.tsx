@@ -16,7 +16,7 @@ export default function TipsOvertimeClaimFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Claiming it, step by step
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -47,7 +47,7 @@ export default function TipsOvertimeClaimFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Payroll tax (Social Security/Medicare) is withheld before any of this — the deduction only reduces federal income tax.
       </p>
     </ChartCard>

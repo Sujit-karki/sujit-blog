@@ -49,7 +49,7 @@ export default async function TagPage({ params }: Props) {
         <div className="mb-6"><Breadcrumb items={breadcrumbItems} /></div>
 
         <header className="mb-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">Tag</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 mb-2">Tag</p>
           <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">#{tag}</h1>
           <p className="text-gray-500 dark:text-gray-400">{posts.length} article{posts.length !== 1 ? "s" : ""}</p>
         </header>

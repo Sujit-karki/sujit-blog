@@ -46,7 +46,7 @@ export default function WinterHeatingEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · winter heating estimate
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -60,7 +60,7 @@ export default function WinterHeatingEstimator() {
 
       <div className="grid sm:grid-cols-3 gap-5 my-6">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Primary heating fuel</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Primary heating fuel</p>
           <select value={fuel} onChange={(e) => setFuel(e.target.value as Fuel)} className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm text-gray-900 dark:text-white px-3 py-2">
             {(Object.keys(FUEL_LABELS) as Fuel[]).map((f) => (
               <option key={f} value={f}>{FUEL_LABELS[f]}</option>
@@ -68,7 +68,7 @@ export default function WinterHeatingEstimator() {
           </select>
         </div>
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Home size</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Home size</p>
           <select value={homeSize} onChange={(e) => setHomeSize(e.target.value as HomeSize)} className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm text-gray-900 dark:text-white px-3 py-2">
             {(Object.keys(SIZE_LABELS) as HomeSize[]).map((s) => (
               <option key={s} value={s}>{SIZE_LABELS[s]}</option>
@@ -76,7 +76,7 @@ export default function WinterHeatingEstimator() {
           </select>
         </div>
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Region</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Region</p>
           <select value={region} onChange={(e) => setRegion(e.target.value as Region)} className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm text-gray-900 dark:text-white px-3 py-2">
             {(Object.keys(REGION_LABELS) as Region[]).map((r) => (
               <option key={r} value={r}>{REGION_LABELS[r]}</option>
@@ -88,7 +88,7 @@ export default function WinterHeatingEstimator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           A {SIZE_LABELS[homeSize].toLowerCase()} home in the {REGION_LABELS[region]} heated primarily with {FUEL_LABELS[fuel].toLowerCase()} might expect to spend around{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.estWinterSpend} format={(v) => money(v)} startFromZero />
           </strong>{' '}
           this winter.
@@ -104,7 +104,7 @@ export default function WinterHeatingEstimator() {
           colorByCategory
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Directional estimate only, not a bill projection — actual costs depend on your home&apos;s insulation, thermostat habits, local utility rates, and how cold the winter actually runs. Check the EIA&apos;s Winter Fuels Outlook once it&apos;s published.
         </p>
       </div>

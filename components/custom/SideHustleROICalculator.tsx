@@ -26,7 +26,7 @@ export default function SideHustleROICalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · real monthly math
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -35,7 +35,7 @@ export default function SideHustleROICalculator() {
 
       <div className="grid sm:grid-cols-3 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Hours / week</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{hoursPerWeek}</b>
           </div>
@@ -46,7 +46,7 @@ export default function SideHustleROICalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Target hourly rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(hourlyRate)}</b>
           </div>
@@ -57,7 +57,7 @@ export default function SideHustleROICalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Monthly tool costs</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(toolCosts)}</b>
           </div>
@@ -109,7 +109,7 @@ export default function SideHustleROICalculator() {
         <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
           <div className="flex justify-between font-mono text-[12px] mb-1.5">
             <span className="text-gray-700 dark:text-gray-300 font-medium">Real monthly take-home</span>
-            <span className="font-bold text-emerald-600 dark:text-emerald-400 text-base">
+            <span className="font-bold text-emerald-700 dark:text-emerald-400 text-base">
               <AnimatedNumber value={result.netMonthly} format={money} startFromZero />
             </span>
           </div>
@@ -122,7 +122,7 @@ export default function SideHustleROICalculator() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-4">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-4">
         Illustrative only. Assumes 4.33 weeks/month and a flat 15.3% self-employment tax reserve on revenue after tool costs — a conservative estimate since actual SE tax applies to 92.35% of net earnings and you may also owe regular income tax on top. Ignores marketplace fees (Upwork 0–15%, Fiverr 20%) and quarterly estimated payment timing. Set aside the reserve as you earn, not at tax time.
       </p>
     </div>

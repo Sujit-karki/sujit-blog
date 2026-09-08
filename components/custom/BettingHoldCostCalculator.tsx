@@ -24,7 +24,7 @@ export default function BettingHoldCostCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · a season of betting
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@ export default function BettingHoldCostCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Average bet size</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(perBet)}</b>
           </div>
@@ -41,7 +41,7 @@ export default function BettingHoldCostCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Bets per week</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{betsPerWeek}</b>
           </div>
@@ -49,7 +49,7 @@ export default function BettingHoldCostCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Weeks (season length)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{weeks}</b>
           </div>
@@ -57,7 +57,7 @@ export default function BettingHoldCostCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Sportsbook hold</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{holdPct}%</b>
           </div>
@@ -72,7 +72,7 @@ export default function BettingHoldCostCalculator() {
             <AnimatedNumber value={result.handle} format={money} startFromZero />
           </strong>
           , and at a {holdPct}% hold the house keeps roughly{' '}
-          <strong className="text-red-500 dark:text-red-400">
+          <strong className="text-red-600 dark:text-red-400 dark:text-red-400">
             <AnimatedNumber value={result.expectedLoss} format={money} startFromZero />
           </strong>{' '}
           of it on average — win or lose on any single bet.
@@ -100,7 +100,7 @@ export default function BettingHoldCostCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Models the average industry hold (AGA, 2025: ~10%). Any single bet can win or lose regardless — this is what the math says happens on average, over volume. Not betting advice.
         </p>
       </div>

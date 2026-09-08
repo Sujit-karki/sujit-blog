@@ -143,7 +143,7 @@ export default function MarketChartClient({ compact = false }: Props) {
       {/* Header */}
       <div className="flex items-start justify-between px-4 py-3.5 border-b border-gray-100 dark:border-gray-800">
         <div>
-          <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-0.5">
+          <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-0.5">
             Market Overview
           </p>
           {active ? (
@@ -153,19 +153,24 @@ export default function MarketChartClient({ compact = false }: Props) {
               </span>
               <span
                 className={`text-xs font-bold ${
-                  positive ? 'text-emerald-500' : 'text-red-500'
+                  positive ? 'text-emerald-500' : 'text-red-600 dark:text-red-400'
                 }`}
               >
                 {positive ? '▲' : '▼'}&nbsp;{Math.abs(active.change24h).toFixed(2)}%
               </span>
-              <span className="text-[10px] text-gray-400">24h</span>
+              <span className="text-[10px] text-gray-500 dark:text-gray-400">24h</span>
             </div>
           ) : (
             <div className="skeleton h-5 w-28 rounded mt-1" />
           )}
         </div>
+        {/* The symbol was a near-invisible watermark (gray-200 on white, 1.2:1).
+            aria-hidden does not rescue that — contrast is a problem for people
+            looking at the screen, not for screen readers, so axe rightly keeps
+            flagging it. Made legible instead of hidden: it still reads as
+            secondary, and now it is actually readable. */}
         {active && (
-          <span className="text-lg font-black text-gray-200 dark:text-gray-700 select-none">
+          <span className="text-sm font-bold text-gray-500 dark:text-gray-400 select-none">
             {active.symbol}
           </span>
         )}
@@ -179,8 +184,8 @@ export default function MarketChartClient({ compact = false }: Props) {
             onClick={() => setActiveId(a.id)}
             className={`shrink-0 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider transition-all duration-200 ${
               activeId === a.id
-                ? 'bg-emerald-600 text-white'
-                : 'text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                ? 'bg-emerald-700 text-white'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
           >
             {a.symbol}
@@ -197,15 +202,17 @@ export default function MarketChartClient({ compact = false }: Props) {
         {loading ? (
           <div className="h-full skeleton rounded-xl" />
         ) : pts.length > 1 ? (
-          <Line data={chartData} options={options} />
+          // react-chartjs-2 puts role="img" on the canvas itself, so without an
+          // explicit label this is an image announced with no name.
+          <Line data={chartData} options={options} aria-label="Market price history chart" />
         ) : (
-          <p className="h-full flex items-center justify-center text-xs text-gray-400">
+          <p className="h-full flex items-center justify-center text-xs text-gray-500 dark:text-gray-400">
             No data available
           </p>
         )}
       </div>
 
-      <p className="px-4 pb-2.5 text-[9px] text-gray-400 dark:text-gray-600 select-none">
+      <p className="px-4 pb-2.5 text-[9px] text-gray-500 dark:text-gray-500 select-none">
         7-day sparkline · refreshes every 30s · not financial advice
       </p>
     </div>

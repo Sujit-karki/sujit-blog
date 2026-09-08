@@ -22,7 +22,7 @@ export default function EarningsGrowthVsPriceViz() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · earnings vs. valuation
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -31,28 +31,28 @@ export default function EarningsGrowthVsPriceViz() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Projected EPS growth (YoY)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{epsGrowthQ3.toFixed(1)}%</b>
           </div>
           <input type="range" min={0} max={50} step={0.1} value={epsGrowthQ3} onChange={(e) => setEpsGrowthQ3(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Projected revenue growth (YoY)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{revGrowthQ3.toFixed(1)}%</b>
           </div>
           <input type="range" min={0} max={30} step={0.1} value={revGrowthQ3} onChange={(e) => setRevGrowthQ3(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Forward 12-month P/E</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{forwardPE.toFixed(1)}</b>
           </div>
           <input type="range" min={10} max={35} step={0.1} value={forwardPE} onChange={(e) => setForwardPE(+e.target.value)} className="w-full accent-indigo-500" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>10-year average P/E</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{avgPE.toFixed(1)}</b>
           </div>
@@ -63,7 +63,7 @@ export default function EarningsGrowthVsPriceViz() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           A forward P/E of {forwardPE.toFixed(1)} versus a 10-year average of {avgPE.toFixed(1)} means the market is paying a{' '}
-          <strong className={result.valuationPremiumPct > 0 ? 'text-amber-600 dark:text-amber-400' : 'text-emerald-600 dark:text-emerald-400'}>
+          <strong className={result.valuationPremiumPct > 0 ? 'text-amber-600 dark:text-amber-400' : 'text-emerald-700 dark:text-emerald-400'}>
             <AnimatedNumber value={Math.abs(result.valuationPremiumPct)} format={(v) => v.toFixed(1) + '%'} />
           </strong>{' '}
           {result.valuationPremiumPct > 0 ? 'premium' : 'discount'} to its historical multiple.
@@ -92,7 +92,7 @@ export default function EarningsGrowthVsPriceViz() {
           colorByCategory
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Analyst estimates, not guarantees — actual reported earnings routinely beat or miss projections. A high forward P/E doesn&apos;t predict a correction on any particular timeline. Not investment advice.
         </p>
       </div>

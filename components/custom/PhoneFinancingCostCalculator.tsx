@@ -28,7 +28,7 @@ export default function PhoneFinancingCostCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · financing vs. cash
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -37,7 +37,7 @@ export default function PhoneFinancingCostCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Phone price</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(phonePrice)}</b>
           </div>
@@ -45,7 +45,7 @@ export default function PhoneFinancingCostCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Trade-in credit</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(tradeInCredit)}</b>
           </div>
@@ -53,7 +53,7 @@ export default function PhoneFinancingCostCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Financing term</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{months} mo</b>
           </div>
@@ -61,7 +61,7 @@ export default function PhoneFinancingCostCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>APR (0 for a true 0% plan)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{apr.toFixed(1)}%</b>
           </div>
@@ -76,11 +76,11 @@ export default function PhoneFinancingCostCalculator() {
             <AnimatedNumber value={result.financed} format={money} startFromZero />
           </strong>{' '}
           at{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.monthlyPayment} format={(v) => money(v) + '/mo'} startFromZero />
           </strong>
           . Total interest over the term:{' '}
-          <strong className={result.interestCost > 0 ? 'text-red-500 dark:text-red-400' : 'text-emerald-600 dark:text-emerald-400'}>
+          <strong className={result.interestCost > 0 ? 'text-red-600 dark:text-red-400 dark:text-red-400' : 'text-emerald-700 dark:text-emerald-400'}>
             <AnimatedNumber value={result.interestCost} format={money} startFromZero />
           </strong>
           .
@@ -111,7 +111,7 @@ export default function PhoneFinancingCostCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           A true 0% plan costs the same as cash — the risk is the multi-year carrier commitment, not the APR. Not a specific carrier quote.
         </p>
       </div>

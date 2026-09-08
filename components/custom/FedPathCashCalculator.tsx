@@ -44,7 +44,7 @@ export default function FedPathCashCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · September FOMC scenario
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -53,7 +53,7 @@ export default function FedPathCashCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Cash in savings / money market</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(cashBalance)}</b>
           </div>
@@ -65,7 +65,7 @@ export default function FedPathCashCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Current APY</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{currentApy.toFixed(2)}%</b>
           </div>
@@ -77,7 +77,7 @@ export default function FedPathCashCalculator() {
         </div>
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             September 16 outcome
           </p>
           <div className="grid grid-cols-4 gap-2">
@@ -101,11 +101,11 @@ export default function FedPathCashCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           A {SCENARIOS.find((s) => s.id === scenario)?.label.toLowerCase()} at the September meeting would move your rate to roughly{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.projectedApy} format={(v) => v.toFixed(2) + '%'} />
           </strong>
           , which is{' '}
-          <strong className={isGain ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}>
+          <strong className={isGain ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}>
             <AnimatedNumber
               value={Math.abs(result.annualDelta)}
               format={(v) => (isGain ? '+' : '-') + money(v) + '/yr'}
@@ -141,7 +141,7 @@ export default function FedPathCashCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Models a national-average HYSA repricing roughly in line with a Fed move — your bank may lag or move less. Not a rate quote or financial advice.
         </p>
       </div>

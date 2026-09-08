@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
       <div className="mb-6"><Breadcrumb items={breadcrumbItems} /></div>
       <header className="mb-8">
         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-3">Financial Disclaimer</h1>
-        <p className="text-sm text-gray-400 dark:text-gray-500">Last updated: June 2026</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Last updated: June 2026</p>
       </header>
 
       <div className="prose prose-gray dark:prose-invert max-w-none">

@@ -30,7 +30,7 @@ export default function FaqAccordion({ items, title = "Frequently Asked Question
                 {item.q}
               </span>
               <svg
-                className={`w-4 h-4 text-gray-400 shrink-0 transition-transform duration-200 ${
+                className={`w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0 transition-transform duration-200 ${
                   openIndex === i ? "rotate-180" : ""
                 }`}
                 fill="none"

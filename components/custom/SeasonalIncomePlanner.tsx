@@ -24,7 +24,7 @@ export default function SeasonalIncomePlanner() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · seasonal work income
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@ export default function SeasonalIncomePlanner() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Hourly wage</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(hourlyWage)}/hr</b>
           </div>
@@ -41,7 +41,7 @@ export default function SeasonalIncomePlanner() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Hours per week</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{hoursPerWeek}</b>
           </div>
@@ -49,7 +49,7 @@ export default function SeasonalIncomePlanner() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Weeks worked</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{weeks}</b>
           </div>
@@ -81,11 +81,11 @@ export default function SeasonalIncomePlanner() {
           {is1099 && (
             <>
               . Set aside roughly{' '}
-              <strong className="text-red-500 dark:text-red-400">
+              <strong className="text-red-600 dark:text-red-400 dark:text-red-400">
                 <AnimatedNumber value={result.taxSetAside} format={money} startFromZero />
               </strong>{' '}
               for self-employment tax, leaving{' '}
-              <strong className="text-emerald-600 dark:text-emerald-400">
+              <strong className="text-emerald-700 dark:text-emerald-400">
                 <AnimatedNumber value={result.takeHome} format={money} startFromZero />
               </strong>
               .
@@ -108,7 +108,7 @@ export default function SeasonalIncomePlanner() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           W-2 pay still has income tax and payroll tax withheld by the employer — this models the SE-tax-specific gap for 1099 income. Not a substitute for a real tax estimate.
         </p>
       </div>

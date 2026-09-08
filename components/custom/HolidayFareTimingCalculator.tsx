@@ -34,7 +34,7 @@ export default function HolidayFareTimingCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · estimate your holiday flight budget
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -43,7 +43,7 @@ export default function HolidayFareTimingCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Typical fare on this route, booked early</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(baseFare)}</b>
           </div>
@@ -54,7 +54,7 @@ export default function HolidayFareTimingCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Travelers</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{travelers}</b>
           </div>
@@ -65,7 +65,7 @@ export default function HolidayFareTimingCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Days before the holiday you book</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{daysBeforeHoliday} days</b>
           </div>
@@ -88,12 +88,12 @@ export default function HolidayFareTimingCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           At {daysBeforeHoliday} days out for {travelers} traveler{travelers === 1 ? '' : 's'}, estimated total:{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">{money(total)}</strong>
+          <strong className="text-emerald-700 dark:text-emerald-400">{money(total)}</strong>
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Per ticket</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Per ticket</p>
             <AnimatedNumber
               value={perTicket}
               format={v => money(v)}
@@ -102,17 +102,17 @@ export default function HolidayFareTimingCalculator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Estimated total</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Estimated total</p>
             <AnimatedNumber
               value={total}
               format={v => money(v)}
               startFromZero
-              className="font-serif text-2xl font-bold text-emerald-600 dark:text-emerald-400"
+              className="font-serif text-2xl font-bold text-emerald-700 dark:text-emerald-400"
             />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
           Illustrative multipliers from published fare studies, not live prices — check Google Flights for your actual route.
         </p>
 

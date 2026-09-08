@@ -26,7 +26,7 @@ export default function IntervalGateExitCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · model a repurchase gate
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -35,7 +35,7 @@ export default function IntervalGateExitCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Your investment</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(investment)}</b>
           </div>
@@ -46,7 +46,7 @@ export default function IntervalGateExitCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Fund&apos;s quarterly repurchase gate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{gatePct}% of NAV</b>
           </div>
@@ -57,7 +57,7 @@ export default function IntervalGateExitCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Total redemption requests this quarter</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{totalRequestsPct}% of NAV</b>
           </div>
@@ -74,21 +74,21 @@ export default function IntervalGateExitCalculator() {
           {prorated ? (
             <>
               Requests exceed the gate, so you&apos;d get about{' '}
-              <strong className="text-emerald-600 dark:text-emerald-400">{money(redeemedThisQuarter)}</strong> this
+              <strong className="text-emerald-700 dark:text-emerald-400">{money(redeemedThisQuarter)}</strong> this
               quarter — full exit would take roughly{' '}
               <strong>{quartersToExit} quarter{quartersToExit === 1 ? '' : 's'}</strong> if the queue stays this long.
             </>
           ) : (
             <>
               Requests are under the gate, so you&apos;d get your{' '}
-              <strong className="text-emerald-600 dark:text-emerald-400">full {money(investment)}</strong> back this quarter.
+              <strong className="text-emerald-700 dark:text-emerald-400">full {money(investment)}</strong> back this quarter.
             </>
           )}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Redeemed this quarter</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Redeemed this quarter</p>
             <AnimatedNumber
               value={redeemedThisQuarter}
               format={v => money(v)}
@@ -97,7 +97,7 @@ export default function IntervalGateExitCalculator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Est. quarters to full exit</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Est. quarters to full exit</p>
             <AnimatedNumber
               value={quartersToExit}
               format={v => Math.round(v).toString()}
@@ -107,7 +107,7 @@ export default function IntervalGateExitCalculator() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
           Simplified model — actual proration rules, NAV changes, and manager top-ups vary by fund. Not investment advice.
         </p>
 

@@ -46,7 +46,7 @@ export default async function Footer() {
 
           {/* Categories */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3">
               Categories
             </p>
             <ul className="space-y-2">
@@ -54,7 +54,7 @@ export default async function Footer() {
                 <li key={cat}>
                   <Link
                     href={`/category/${slugifyCategory(cat)}`}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                   >
                     {cat}
                   </Link>
@@ -65,7 +65,7 @@ export default async function Footer() {
 
           {/* Site */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3">
               Site
             </p>
             <ul className="space-y-2">
@@ -80,7 +80,7 @@ export default async function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -91,7 +91,7 @@ export default async function Footer() {
 
           {/* Trust & Legal */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3">
               Trust &amp; Legal
             </p>
             <ul className="space-y-2">
@@ -106,7 +106,7 @@ export default async function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -116,11 +116,11 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400 dark:text-gray-500">
+        <div className="pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500 dark:text-gray-400">
           <p>&copy; {year} {siteConfig.name}. All rights reserved.</p>
           <p>
             Content for educational purposes only.{" "}
-            <Link href="/disclaimer" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors underline underline-offset-2">
+            <Link href="/disclaimer" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors underline underline-offset-2">
               See disclaimer.
             </Link>
           </p>

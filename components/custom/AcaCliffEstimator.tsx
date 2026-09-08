@@ -35,7 +35,7 @@ export default function AcaCliffEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · are you near the subsidy cliff?
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -44,7 +44,7 @@ export default function AcaCliffEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Household income (MAGI)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(householdIncome)}</b>
           </div>
@@ -56,7 +56,7 @@ export default function AcaCliffEstimator() {
         </div>
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Household size</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Household size</p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
               <button
@@ -83,11 +83,11 @@ export default function AcaCliffEstimator() {
           </strong>{' '}
           for a household of {householdSize}. The 400% cliff sits at {money(result.threshold)} —{' '}
           {result.overCliff ? (
-            <strong className="text-red-500 dark:text-red-400">you&apos;re over it, so you may not qualify for any premium subsidy.</strong>
+            <strong className="text-red-600 dark:text-red-400 dark:text-red-400">you&apos;re over it, so you may not qualify for any premium subsidy.</strong>
           ) : (
             <>
               you have about{' '}
-              <strong className="text-emerald-600 dark:text-emerald-400">
+              <strong className="text-emerald-700 dark:text-emerald-400">
                 <AnimatedNumber value={result.headroom} format={v => money(v)} startFromZero />
               </strong>{' '}
               of headroom before losing subsidy eligibility entirely.
@@ -106,13 +106,13 @@ export default function AcaCliffEstimator() {
               style={{ width: `${Math.min(100, (householdIncome / result.threshold) * 100)}%` }}
             />
           </div>
-          <div className="flex justify-between font-mono text-[11px] text-gray-400 mt-1">
+          <div className="flex justify-between font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-1">
             <span>$0</span>
             <span>400% FPL: {money(result.threshold)}</span>
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Uses the widely-cited 2026 figure of {money(FPL_400_SIZE_1)} as 400% FPL for a household of one, scaled by the standard per-person HHS increment. Poverty guidelines update every January — verify against the current healthcare.gov figures before making coverage decisions. Not tax or insurance advice.
         </p>
       </div>

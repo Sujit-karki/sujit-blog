@@ -73,7 +73,7 @@ export default function AssetDrawdownChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Peak (Oct 2025) to current (Jul 15, 2026)
       </p>
       <p className="font-serif text-xl mb-1 text-gray-900 dark:text-white">
@@ -89,7 +89,7 @@ export default function AssetDrawdownChart() {
         <Bar data={data} options={options} />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         Drawdowns are approximate and rounded, measured from each asset&apos;s October 2025 cycle peak to its July 15, 2026 price. Actual peak and trough timing varies slightly by asset and data source.
       </p>
     </ChartCard>

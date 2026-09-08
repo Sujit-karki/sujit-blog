@@ -54,7 +54,7 @@ export default function GameLaunchValueCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · napkin-math only
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -63,7 +63,7 @@ export default function GameLaunchValueCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Units sold assumption</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{units(unitsM)}</b>
           </div>
@@ -74,7 +74,7 @@ export default function GameLaunchValueCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Price point</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">${price.toFixed(2)}</b>
           </div>
@@ -83,10 +83,10 @@ export default function GameLaunchValueCalculator() {
             onChange={e => setPrice(+e.target.value)}
             className="w-full accent-emerald-600"
           />
-          <p className="text-xs text-gray-400 mt-1">GTA VI&apos;s confirmed standard price is $79.99; Ultimate Edition is $99.99.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">GTA VI&apos;s confirmed standard price is $79.99; Ultimate Edition is $99.99.</p>
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Estimated dev + marketing budget</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{moneyM(budgetM)}</b>
           </div>
@@ -95,7 +95,7 @@ export default function GameLaunchValueCalculator() {
             onChange={e => setBudgetM(+e.target.value)}
             className="w-full accent-emerald-600"
           />
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
             $2B is a media-reported estimate for GTA VI, not a figure confirmed in Take-Two&apos;s own filings.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function GameLaunchValueCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <div className="grid sm:grid-cols-3 gap-4 mb-5">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Estimated gross revenue</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Estimated gross revenue</p>
             <AnimatedNumber
               value={grossRevenueM}
               format={v => moneyB(v)}
@@ -113,7 +113,7 @@ export default function GameLaunchValueCalculator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Breakeven units</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Breakeven units</p>
             <AnimatedNumber
               value={breakevenUnitsM}
               format={v => units(v)}
@@ -122,12 +122,12 @@ export default function GameLaunchValueCalculator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Rough profit estimate</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Rough profit estimate</p>
             <AnimatedNumber
               value={profitM}
               format={v => (v < 0 ? '−' : '') + moneyB(Math.abs(v))}
               startFromZero
-              className={`font-serif text-xl sm:text-2xl font-bold ${profitM < 0 ? 'text-red-600 dark:text-red-400' : 'text-emerald-600 dark:text-emerald-400'}`}
+              className={`font-serif text-xl sm:text-2xl font-bold ${profitM < 0 ? 'text-red-600 dark:text-red-400' : 'text-emerald-700 dark:text-emerald-400'}`}
             />
           </div>
         </div>
@@ -144,10 +144,10 @@ export default function GameLaunchValueCalculator() {
           unit="M"
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Gross revenue is units × price, before any platform, distribution, tax, or currency effects. The profit estimate assumes a made-up {Math.round(ILLUSTRATIVE_NET_TAKE_RATE * 100)}% of gross revenue survives storefront cuts and non-development marketing costs — a simplification, not Take-Two&apos;s real margin structure — and it ignores years of post-launch spending inside the game (GTA Online-style microtransactions), which is where a lot of the real money has historically been made.
         </p>
-        <p className="text-xs text-gray-400 mt-2">Estimate only — not financial or investment advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Estimate only — not financial or investment advice.</p>
       </div>
     </div>
   )

@@ -54,7 +54,7 @@ export default function ConversionCliffEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · Roth conversion + IRMAA
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -68,28 +68,28 @@ export default function ConversionCliffEstimator() {
 
       <div className="grid sm:grid-cols-2 gap-5 my-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>MAGI before conversion</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(magiBefore)}</b>
           </div>
           <input type="range" min={0} max={400000} step={1000} value={magiBefore} onChange={(e) => setMagiBefore(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Roth conversion amount</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(conversion)}</b>
           </div>
           <input type="range" min={0} max={200000} step={1000} value={conversion} onChange={(e) => setConversion(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marginal tax rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{marginalRate}%</b>
           </div>
           <input type="range" min={10} max={37} step={1} value={marginalRate} onChange={(e) => setMarginalRate(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Filing status</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Filing status</p>
           <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {(['single', 'mfj'] as Filing[]).map((f) => (
               <button
@@ -120,7 +120,7 @@ export default function ConversionCliffEstimator() {
               in added Medicare premium surcharge, starting two years from now.
             </>
           ) : (
-            <span className="text-emerald-600 dark:text-emerald-400">This stays within your current IRMAA tier — no added surcharge modeled.</span>
+            <span className="text-emerald-700 dark:text-emerald-400">This stays within your current IRMAA tier — no added surcharge modeled.</span>
           )}
         </p>
 
@@ -148,7 +148,7 @@ export default function ConversionCliffEstimator() {
           </table>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           A Roth conversion is irreversible since the TCJA eliminated recharactization. IRMAA applies a two-year MAGI lookback, so 2026 income affects 2028 premiums. Not tax or Medicare advice — verify current thresholds at medicare.gov.
         </p>
       </div>

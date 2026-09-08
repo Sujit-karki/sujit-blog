@@ -16,7 +16,7 @@ export default function GDPReactionFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         From release to your wallet
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -51,7 +51,7 @@ export default function GDPReactionFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Illustrative chain of reasoning, not a forecast of what the Fed will actually do on any given date.
       </p>
     </ChartCard>

@@ -31,7 +31,7 @@ export default function StakingEtfNetYieldCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · staking ETF net yield
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -40,35 +40,35 @@ export default function StakingEtfNetYieldCalculator() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Investment</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(investment)}</b>
           </div>
           <input type="range" min={1000} max={100000} step={500} value={investment} onChange={(e) => setInvestment(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Gross staking reward rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{grossYield.toFixed(2)}%</b>
           </div>
           <input type="range" min={0} max={10} step={0.01} value={grossYield} onChange={(e) => setGrossYield(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Sponsor / expense ratio</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{expenseRatio.toFixed(2)}%</b>
           </div>
           <input type="range" min={0} max={1} step={0.01} value={expenseRatio} onChange={(e) => setExpenseRatio(+e.target.value)} className="w-full accent-red-500" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Staking fee (% of rewards)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{stakingFee}%</b>
           </div>
           <input type="range" min={0} max={10} step={0.5} value={stakingFee} onChange={(e) => setStakingFee(+e.target.value)} className="w-full accent-red-500" />
         </div>
         <div className="sm:col-span-2">
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Share of fund assets actually staked</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{pctStaked}%</b>
           </div>
@@ -80,11 +80,11 @@ export default function StakingEtfNetYieldCalculator() {
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           On {money(investment)}, a {grossYield.toFixed(2)}% gross reward rate would pay{' '}
           <strong>{money(result.grossIncome)}/yr</strong> before fees, but only{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.annualIncome} format={(v) => money(v) + '/yr'} startFromZero />
           </strong>{' '}
           net — a real yield of{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.netYieldPct} format={(v) => v.toFixed(2) + '%'} />
           </strong>
           .
@@ -104,7 +104,7 @@ export default function StakingEtfNetYieldCalculator() {
           unit="%"
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Staking yield and fund AUM move regularly — check the fund&apos;s own site for today&apos;s figures before relying on this. Ignores SOL price risk entirely, which typically dwarfs the yield. Not investment advice.
         </p>
       </div>

@@ -9,7 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test:unit": "vitest run",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --ignore-snapshots e2e/homepage.spec.ts e2e/a11y.spec.ts",
     "audit:posts": "node scripts/audit-posts.mjs",
     "audit:check": "node scripts/audit-posts.mjs --check",
     "project:brackets": "node scripts/project-brackets.mjs",
@@ -17,7 +17,11 @@
     "cpi:categories": "node scripts/cpi-categories.mjs",
     "audit:links": "node scripts/check-sources.mjs",
     "prebuild": "node scripts/publish-data.mjs",
-    "publish:data": "node scripts/publish-data.mjs"
+    "publish:data": "node scripts/publish-data.mjs",
+    "seo:indexnow": "node scripts/indexnow.mjs",
+    "size": "size-limit",
+    "lhci": "lhci autorun",
+    "test:visual": "playwright test e2e/visual.spec.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -40,7 +44,10 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.61.1",
+    "@size-limit/file": "^13.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -48,8 +55,21 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "size-limit": "^13.0.3",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.10"
-  }
+  },
+  "size-limit": [
+    {
+      "name": "All client JS",
+      "path": ".next/static/chunks/**/*.js",
+      "limit": "460 kB"
+    },
+    {
+      "name": "All CSS",
+      "path": ".next/static/**/*.css",
+      "limit": "40 kB"
+    }
+  ]
 }

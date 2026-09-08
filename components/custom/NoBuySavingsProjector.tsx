@@ -49,7 +49,7 @@ export default function NoBuySavingsProjector() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · project your own savings
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -63,7 +63,7 @@ export default function NoBuySavingsProjector() {
       <div className="space-y-5 mb-6">
         {categories.map(([label, value, setter, max]) => (
           <div key={label}>
-            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
               <span>{label}</span>
               <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(value)}/mo</b>
             </div>
@@ -92,10 +92,10 @@ export default function NoBuySavingsProjector() {
           </button>
         ))}
       </div>
-      <p className="text-xs text-gray-400 mb-5">{TIER_DEFAULTS[tier].desc}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400 mb-5">{TIER_DEFAULTS[tier].desc}</p>
 
       <div>
-        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
           <span>Reduction target (fine-tune it)</span>
           <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{reductionPct}%</b>
         </div>
@@ -109,13 +109,13 @@ export default function NoBuySavingsProjector() {
       <div className="pt-5 mt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Cutting {reductionPct}% of {money(totalDiscretionary)}/month in discretionary spend saves about{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">{money(monthlySavings)}/month</strong> —{' '}
+          <strong className="text-emerald-700 dark:text-emerald-400">{money(monthlySavings)}/month</strong> —{' '}
           <strong>{money(annualSavings)}/year</strong>.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Monthly savings</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Monthly savings</p>
             <AnimatedNumber
               value={monthlySavings}
               format={v => money(v)}
@@ -124,7 +124,7 @@ export default function NoBuySavingsProjector() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Annual savings</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Annual savings</p>
             <AnimatedNumber
               value={annualSavings}
               format={v => money(v)}
@@ -134,7 +134,7 @@ export default function NoBuySavingsProjector() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">Estimate only — not financial advice. Assumes you actually hold the line.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">Estimate only — not financial advice. Assumes you actually hold the line.</p>
 
         <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
           <table className="min-w-full text-sm">

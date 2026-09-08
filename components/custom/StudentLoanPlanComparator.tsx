@@ -82,7 +82,7 @@ export default function StudentLoanPlanComparator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · RAP vs. IBR vs. Standard
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -91,7 +91,7 @@ export default function StudentLoanPlanComparator() {
 
       <div className="grid sm:grid-cols-3 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Loan balance</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(balance)}</b>
           </div>
@@ -102,7 +102,7 @@ export default function StudentLoanPlanComparator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Annual income (AGI)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(income)}</b>
           </div>
@@ -113,7 +113,7 @@ export default function StudentLoanPlanComparator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Dependents</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{dependents}</b>
           </div>
@@ -130,7 +130,7 @@ export default function StudentLoanPlanComparator() {
           <div key={plan.key}>
             <div className="flex justify-between font-mono text-[12px] mb-1.5">
               <span className="text-gray-500 dark:text-gray-400">{plan.label}</span>
-              <span className={`font-medium ${plan.value === result.lowest ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-900 dark:text-white'}`}>
+              <span className={`font-medium ${plan.value === result.lowest ? 'text-emerald-700 dark:text-emerald-400' : 'text-gray-900 dark:text-white'}`}>
                 <AnimatedNumber value={plan.value} format={v => money(v) + '/mo'} startFromZero />
               </span>
             </div>
@@ -144,7 +144,7 @@ export default function StudentLoanPlanComparator() {
         ))}
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-4">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-4">
         Simplified public estimate only — not your servicer&apos;s official calculation. RAP models the 1–10% AGI schedule as marginal $10k brackets, minus $50/month per dependent, with a $10/month floor; IBR approximates 10% of discretionary income above 150% of the poverty line; Standard assumes a 10-year fixed amortization at ~6.53%. Real IBR/Standard/RAP terms vary by loan type, filing status, and servicer — confirm your exact payment at studentaid.gov.
       </p>
     </div>

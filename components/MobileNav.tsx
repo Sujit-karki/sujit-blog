@@ -99,7 +99,7 @@ export default function MobileNav({ categories }: MobileNavProps) {
                 </ul>
 
                 <div className="pt-3 border-t border-gray-100 dark:border-gray-800">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 px-3 mb-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 px-3 mb-2">
                     Categories
                   </p>
                   <ul className="grid grid-cols-2 gap-1">

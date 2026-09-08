@@ -58,6 +58,12 @@ const nextConfig = {
       "connect-src 'self'",
       ...(isDev ? ["ws://localhost:* http://localhost:*"] : []),
       "https://api.buttondown.email https://*.googlesyndication.com https://*.doubleclick.net",
+      // AdSense's ad-traffic-quality endpoints. Omitting these does not break
+      // the page visibly — it produces a console CSP violation on every ad
+      // impression while the slot still renders, which is exactly the kind of
+      // silent ad-serving fault that goes unnoticed for months. Found by the
+      // Lighthouse best-practices audit, not by looking at the site.
+      "https://ep1.adtrafficquality.google https://*.adtrafficquality.google",
     ].join(" ");
 
     const csp = [

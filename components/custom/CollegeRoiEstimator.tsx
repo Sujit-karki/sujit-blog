@@ -51,7 +51,7 @@ export default function CollegeRoiEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · run your own numbers
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -60,28 +60,28 @@ export default function CollegeRoiEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Total 4-year cost (tuition + living)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(totalCost)}</b>
           </div>
           <input type="range" min={20000} max={250000} step={5000} value={totalCost} onChange={e => setTotalCost(+e.target.value)} className="w-full accent-indigo-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Expected starting salary (with degree)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(startingSalary)}</b>
           </div>
           <input type="range" min={25000} max={150000} step={1000} value={startingSalary} onChange={e => setStartingSalary(+e.target.value)} className="w-full accent-indigo-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Comparable salary, high-school-only path</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(hsSalary)}</b>
           </div>
           <input type="range" min={20000} max={80000} step={1000} value={hsSalary} onChange={e => setHsSalary(+e.target.value)} className="w-full accent-indigo-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Years to project after graduation</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{years}</b>
           </div>
@@ -98,20 +98,20 @@ export default function CollegeRoiEstimator() {
 
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Annualized ROI</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Annualized ROI</p>
             <AnimatedNumber value={annualizedRoi} format={v => `${v.toFixed(1)}%`} startFromZero className="font-serif text-2xl font-bold text-gray-900 dark:text-white" />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Breakeven year</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Breakeven year</p>
             <p className="font-serif text-2xl font-bold text-gray-900 dark:text-white">{breakevenYear ?? `${years}+`}</p>
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Total &quot;invested&quot;</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Total &quot;invested&quot;</p>
             <AnimatedNumber value={totalInvestment} format={money} startFromZero className="font-serif text-2xl font-bold text-gray-900 dark:text-white" />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
           Simplified model, not the NY Fed&apos;s published methodology — assumes both salary paths grow {Math.round(WAGE_GROWTH * 100)}%/year, ignores loan interest, taxes, and investment returns on forgone tuition. Estimate only — not financial advice.
         </p>
 

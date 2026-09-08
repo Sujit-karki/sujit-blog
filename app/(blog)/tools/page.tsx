@@ -41,10 +41,10 @@ export default function ToolsPage() {
               href={`/tools/${tool.slug}`}
               className="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-md transition-all"
             >
-              <span className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+              <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
                 {tool.category}
               </span>
-              <h2 className="font-bold text-gray-900 dark:text-white mt-2 mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h2 className="font-bold text-gray-900 dark:text-white mt-2 mb-2 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 {tool.title}
               </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">

@@ -57,7 +57,7 @@ export default function BitcoinDrawdownCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · run your own numbers
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -66,7 +66,7 @@ export default function BitcoinDrawdownCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-3">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
             When did you start buying?
           </p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
@@ -91,7 +91,7 @@ export default function BitcoinDrawdownCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Monthly amount</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(monthlyAmount)}</b>
           </div>
@@ -107,7 +107,7 @@ export default function BitcoinDrawdownCalculator() {
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           On <AnimatedNumber value={result.totalInvested} format={money} startFromZero className="font-bold" /> invested,
           {' '}dollar-cost averaging would be worth about{' '}
-          <strong className={result.dcaValue >= result.totalInvested ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}>
+          <strong className={result.dcaValue >= result.totalInvested ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}>
             {money(result.dcaValue)}
           </strong>{' '}today ({gain(result.dcaValue) >= 0 ? '+' : ''}{gain(result.dcaValue).toFixed(0)}%).
         </p>
@@ -154,7 +154,7 @@ export default function BitcoinDrawdownCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Illustrative only, using approximate monthly BTC reference prices from Oct 2025 to Jul 15, 2026 ({money(CURRENT_PRICE)}). Past performance over one specific stretch of one specific asset says nothing about what happens next — this tool is for building intuition about DCA mechanics, not a return forecast. Ignores fees and taxes.
         </p>
       </div>

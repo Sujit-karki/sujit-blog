@@ -52,16 +52,16 @@ export default function PostCard({ post, featured = false, theme = "emerald", va
         <div className="min-w-0 flex-1">
           <Link
             href={categoryHref}
-            className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline mb-1 block"
+            className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline mb-1 block"
           >
             {post.category}
           </Link>
           <Link href={`/posts/${post.slug}`}>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white leading-snug mb-1.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white leading-snug mb-1.5 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
               {post.title}
             </h3>
           </Link>
-          <div className="flex items-center gap-2 text-xs text-gray-400">
+          <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
             <time dateTime={post.date}>{formatDateShort(post.date)}</time>
             <span>·</span>
             <span>{post.readingTime} min read</span>
@@ -76,18 +76,18 @@ export default function PostCard({ post, featured = false, theme = "emerald", va
       <div className="p-6 flex-1 flex flex-col">
         <Link
           href={categoryHref}
-          className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline mb-2 block w-fit"
+          className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline mb-2 block w-fit"
         >
           {post.category}
         </Link>
         <Link href={`/posts/${post.slug}`} className="flex-1 flex flex-col">
-          <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">
+          <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">
             {post.title}
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-3">
             {post.description}
           </p>
-          <div className="mt-auto flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500 pt-3 border-t border-gray-100 dark:border-gray-800">
+          <div className="mt-auto flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 pt-3 border-t border-gray-100 dark:border-gray-800">
             <span className="font-medium text-gray-600 dark:text-gray-400">{post.author}</span>
             <span>·</span>
             <time dateTime={post.date}>{formatDateShort(post.date)}</time>

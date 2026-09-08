@@ -140,7 +140,7 @@ export default function FinancialTicker() {
     >
       <div className="flex items-stretch">
         {/* LIVE badge */}
-        <div className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 z-10 border-r border-emerald-700">
+        <div className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 bg-emerald-700 z-10 border-r border-emerald-800">
           <span className="w-1.5 h-1.5 rounded-full bg-white" aria-hidden="true" />
           <span className="text-[10px] font-black uppercase tracking-widest text-white whitespace-nowrap select-none">
             Live

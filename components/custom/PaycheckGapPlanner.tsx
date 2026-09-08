@@ -29,7 +29,7 @@ export default function PaycheckGapPlanner() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · shutdown cash-flow gap
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -38,29 +38,29 @@ export default function PaycheckGapPlanner() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Net paycheck (biweekly)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(netPaycheck)}</b>
           </div>
           <input type="range" min={500} max={10000} step={50} value={netPaycheck} onChange={(e) => setNetPaycheck(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Weeks of lapse</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{weeksLapse}</b>
           </div>
           <input type="range" min={0} max={12} step={1} value={weeksLapse} onChange={(e) => setWeeksLapse(+e.target.value)} className="w-full accent-red-500" />
-          <p className="text-xs text-gray-400 mt-1">The 2025 shutdown ran 6 weeks (43 days) — the longest in modern history.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">The 2025 shutdown ran 6 weeks (43 days) — the longest in modern history.</p>
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Emergency fund on hand</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(emergencyFund)}</b>
           </div>
           <input type="range" min={0} max={30000} step={250} value={emergencyFund} onChange={(e) => setEmergencyFund(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Essential spending per week</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(essentialWeekly)}</b>
           </div>
@@ -79,7 +79,7 @@ export default function PaycheckGapPlanner() {
             <AnimatedNumber value={result.weeksFundLasts} format={(v) => v.toFixed(1) + ' weeks'} startFromZero />
           </strong>{' '}
           of essential spending, leaving a gap of{' '}
-          <strong className={result.shortfall > 0 ? 'text-red-600 dark:text-red-400' : 'text-emerald-600 dark:text-emerald-400'}>
+          <strong className={result.shortfall > 0 ? 'text-red-600 dark:text-red-400' : 'text-emerald-700 dark:text-emerald-400'}>
             <AnimatedNumber value={Math.abs(result.shortfall)} format={(v) => money(v)} startFromZero />
           </strong>{' '}
           {result.shortfall > 0 ? 'short' : 'in surplus'}.
@@ -99,7 +99,7 @@ export default function PaycheckGapPlanner() {
           colorByCategory
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Federal employees and back-pay-eligible contractors generally receive full back pay once a lapse ends under the Government Employee Fair Treatment Act — but not until then. Estimate only, not financial advice.
         </p>
       </div>

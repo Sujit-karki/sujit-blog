@@ -16,7 +16,7 @@ export default function FirstDollarStepFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         The whole guide, in five steps
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -47,7 +47,7 @@ export default function FirstDollarStepFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Every step below is covered in detail in its own section — this is the whole guide at a glance.
       </p>
     </ChartCard>

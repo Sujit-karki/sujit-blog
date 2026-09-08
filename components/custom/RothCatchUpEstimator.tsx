@@ -32,7 +32,7 @@ export default function RothCatchUpEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · check your own exposure
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -41,7 +41,7 @@ export default function RothCatchUpEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Your age in 2026</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{age}</b>
           </div>
@@ -52,7 +52,7 @@ export default function RothCatchUpEstimator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>2025 FICA wages (this employer)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(ficaWages)}</b>
           </div>
@@ -63,7 +63,7 @@ export default function RothCatchUpEstimator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Catch-up amount you plan to contribute</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(Math.min(catchUp, catchUpCap))}</b>
           </div>
@@ -72,12 +72,12 @@ export default function RothCatchUpEstimator() {
             onChange={e => setCatchUp(+e.target.value)}
             className="w-full accent-emerald-600"
           />
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
             {catchUpCap === 11250 ? "Age 60-63 'super catch-up' limit: $11,250" : 'Standard 50+ catch-up limit: $8,000'}
           </p>
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marginal federal tax bracket</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{bracket}%</b>
           </div>
@@ -95,25 +95,25 @@ export default function RothCatchUpEstimator() {
           {subject ? (
             <>
               At {money(ficaWages)} in FICA wages, your catch-up is{' '}
-              <strong className="text-emerald-600 dark:text-emerald-400">mandatory Roth</strong>. You&apos;ll pay about{' '}
+              <strong className="text-emerald-700 dark:text-emerald-400">mandatory Roth</strong>. You&apos;ll pay about{' '}
               <strong>{money(upfrontTax)}</strong> upfront on {money(Math.min(catchUp, catchUpCap))} of catch-up contributions.
             </>
           ) : (
             <>
-              At {money(ficaWages)} in FICA wages, you&apos;re <strong className="text-emerald-600 dark:text-emerald-400">not subject</strong> to the rule — your catch-up can still be pre-tax if you want.
+              At {money(ficaWages)} in FICA wages, you&apos;re <strong className="text-emerald-700 dark:text-emerald-400">not subject</strong> to the rule — your catch-up can still be pre-tax if you want.
             </>
           )}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Subject to Roth catch-up?</p>
-            <p className={`font-serif text-2xl font-bold ${subject ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-900 dark:text-white'}`}>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Subject to Roth catch-up?</p>
+            <p className={`font-serif text-2xl font-bold ${subject ? 'text-emerald-700 dark:text-emerald-400' : 'text-gray-900 dark:text-white'}`}>
               {subject ? 'Yes' : 'No'}
             </p>
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Upfront tax on Roth catch-up</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Upfront tax on Roth catch-up</p>
             <AnimatedNumber
               value={upfrontTax}
               format={v => money(v)}
@@ -123,7 +123,7 @@ export default function RothCatchUpEstimator() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">Estimate only — not financial or tax advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">Estimate only — not financial or tax advice.</p>
 
         <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
           <table className="min-w-full text-sm">

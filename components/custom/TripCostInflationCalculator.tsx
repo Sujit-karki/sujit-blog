@@ -53,7 +53,7 @@ export default function TripCostInflationCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · your trip vs. a year ago
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -62,7 +62,7 @@ export default function TripCostInflationCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Route type</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Route type</p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {ROUTES.map((r) => (
               <button
@@ -81,7 +81,7 @@ export default function TripCostInflationCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Month of travel</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{MONTHS[monthIdx]}</b>
           </div>
@@ -90,11 +90,11 @@ export default function TripCostInflationCalculator() {
             onChange={e => setMonthIdx(+e.target.value)}
             className="w-full accent-sky-600"
           />
-          <p className="text-xs text-gray-400 mt-1">Seasonal pattern is illustrative (summer and December holidays run higher) — not a BLS-published monthly series.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Seasonal pattern is illustrative (summer and December holidays run higher) — not a BLS-published monthly series.</p>
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>What you&apos;d expect to pay a year ago</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(lastYearFare)}</b>
           </div>
@@ -152,10 +152,10 @@ export default function TripCostInflationCalculator() {
           </table>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Applies one national YoY figure to a route- and season-adjusted starting fare — actual pricing varies enormously by airline, route, booking window, and demand. This is not a fare prediction or booking tool.
         </p>
-        <p className="text-xs text-gray-400 mt-2">Estimate only — not financial or travel-booking advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Estimate only — not financial or travel-booking advice.</p>
       </div>
     </div>
   )

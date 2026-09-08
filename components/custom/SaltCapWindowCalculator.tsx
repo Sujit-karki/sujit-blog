@@ -35,7 +35,7 @@ export default function SaltCapWindowCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · estimate your 2026 SALT deduction
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -61,7 +61,7 @@ export default function SaltCapWindowCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Your total state &amp; local taxes paid</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(salt)}</b>
           </div>
@@ -72,7 +72,7 @@ export default function SaltCapWindowCalculator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Modified AGI</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(magi)}</b>
           </div>
@@ -87,13 +87,13 @@ export default function SaltCapWindowCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Of your {money(salt)} in SALT, you can deduct{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">{money(allowed)}</strong> in 2026 — your cap
+          <strong className="text-emerald-700 dark:text-emerald-400">{money(allowed)}</strong> in 2026 — your cap
           at this MAGI is {money(reduced)}.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Your effective SALT cap</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Your effective SALT cap</p>
             <AnimatedNumber
               value={reduced}
               format={v => money(v)}
@@ -102,17 +102,17 @@ export default function SaltCapWindowCalculator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Amount you can deduct</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Amount you can deduct</p>
             <AnimatedNumber
               value={allowed}
               format={v => money(v)}
               startFromZero
-              className="font-serif text-2xl font-bold text-emerald-600 dark:text-emerald-400"
+              className="font-serif text-2xl font-bold text-emerald-700 dark:text-emerald-400"
             />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
           Estimate only — not tax advice. 2026 figures per OBBBA; verify against IRS instructions before filing.
         </p>
 

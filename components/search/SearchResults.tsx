@@ -22,7 +22,7 @@ export default function SearchResults() {
         onChange={(e) => setQuery(e.target.value)}
         autoFocus
         placeholder="Search posts…"
-        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 mb-8"
+        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 mb-8"
       />
 
       {query.trim() && results.length === 0 && (
@@ -35,7 +35,7 @@ export default function SearchResults() {
             <article className="p-5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">
               <Link
                 href={`/category/${slugifyCategory(r.category)}`}
-                className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400 hover:underline"
+                className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
               >
                 {r.category}
               </Link>

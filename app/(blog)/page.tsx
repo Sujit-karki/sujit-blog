@@ -85,7 +85,7 @@ export default function HomePage() {
               Every figure in these comes from a script in{" "}
               <a
                 href="https://github.com/Sujit-karki/sujit-blog#original-data"
-                className="text-emerald-700 dark:text-emerald-400 hover:underline"
+                className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
                 rel="noopener"
               >
                 the public repository
@@ -100,7 +100,7 @@ export default function HomePage() {
                     href={`/posts/${r.slug}`}
                     className="group block h-full rounded-xl bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 p-4 transition-colors hover:border-emerald-400 dark:hover:border-emerald-600"
                   >
-                    <p className="font-bold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <p className="font-bold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                       {r.title}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -121,7 +121,7 @@ export default function HomePage() {
               <section className="mb-14">
                 <FadeIn>
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                    <h2 className="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
                       Latest Articles
                     </h2>
                   </div>
@@ -148,7 +148,7 @@ export default function HomePage() {
                         <h2 className="text-lg font-bold text-gray-900 dark:text-white">{cat}</h2>
                         <Link
                           href={`/category/${slugifyCategory(cat)}`}
-                          className="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline underline-offset-2"
+                          className="text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:underline underline-offset-2"
                         >
                           View all →
                         </Link>
@@ -187,7 +187,7 @@ export default function HomePage() {
               {/* Browse by category */}
               <FadeIn delay={0.3}>
                 <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">
                     Browse Topics
                   </h3>
                   <ul className="space-y-1">
@@ -200,7 +200,7 @@ export default function HomePage() {
                             className="flex items-center justify-between py-2 px-3 rounded-lg text-sm text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
                           >
                             <span>{cat}</span>
-                            <span className="text-xs text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">
+                            <span className="text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">
                               {count}
                             </span>
                           </Link>

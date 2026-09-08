@@ -42,7 +42,7 @@ export default function OnChainMetricsDashboard() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         On-chain snapshot
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -83,7 +83,7 @@ export default function OnChainMetricsDashboard() {
         })}
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Bar position is an illustrative qualitative read of where each metric sits within its typical historical range, not a precise live data feed. See Glassnode and Look Into Bitcoin in the sources below for real-time values.
       </p>
     </ChartCard>

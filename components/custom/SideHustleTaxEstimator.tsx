@@ -34,7 +34,7 @@ export default function SideHustleTaxEstimator() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · plug in your numbers
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -44,7 +44,7 @@ export default function SideHustleTaxEstimator() {
       {/* Controls */}
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Average monthly side-hustle profit</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(monthly)}</b>
           </div>
@@ -56,7 +56,7 @@ export default function SideHustleTaxEstimator() {
         </div>
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-3">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
             Your income tax bracket (rough estimate)
           </p>
           <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
@@ -110,7 +110,7 @@ export default function SideHustleTaxEstimator() {
       {/* Readout cards */}
       <div className="grid grid-cols-2 gap-px bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Set aside per quarter</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Set aside per quarter</p>
           <AnimatedNumber
             value={perQuarter}
             format={money}
@@ -119,7 +119,7 @@ export default function SideHustleTaxEstimator() {
           />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Total tax reserve</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Total tax reserve</p>
           <AnimatedNumber
             value={reservePct}
             format={v => `${Math.round(v)}% of profit`}
@@ -129,7 +129,7 @@ export default function SideHustleTaxEstimator() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         Simplified estimate: self-employment tax at 15.3% of 92.35% of net profit, plus your selected income-tax bracket applied to the full amount. Ignores deductions, the QBI deduction, and the Social Security wage base cap — a real return will differ. Move a portion into a separate savings account the moment you&apos;re paid.
       </p>
     </ChartCard>

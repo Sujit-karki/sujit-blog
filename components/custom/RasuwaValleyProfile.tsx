@@ -42,7 +42,7 @@ export default function RasuwaValleyProfile() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Diagram · longitudinal profile
       </p>
       <p className="font-serif text-xl mb-1 text-gray-900 dark:text-white">
@@ -186,7 +186,7 @@ export default function RasuwaValleyProfile() {
         </svg>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Elevations are approximate settlement elevations, included for scale. Every place on this line
         received the flow within hours of the detachment.
       </p>

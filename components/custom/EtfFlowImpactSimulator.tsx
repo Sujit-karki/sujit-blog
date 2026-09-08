@@ -45,7 +45,7 @@ export default function EtfFlowImpactSimulator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · simplified illustration, not a forecast
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -54,7 +54,7 @@ export default function EtfFlowImpactSimulator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Daily net flow (negative = outflow)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {moneyM(dailyFlow)}/day
@@ -67,7 +67,7 @@ export default function EtfFlowImpactSimulator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Consecutive trading days</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{days}</b>
           </div>
@@ -78,7 +78,7 @@ export default function EtfFlowImpactSimulator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Starting BTC price</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(startPrice)}</b>
           </div>
@@ -93,7 +93,7 @@ export default function EtfFlowImpactSimulator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <div className="grid sm:grid-cols-2 gap-4 mb-5">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Cumulative net flow</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Cumulative net flow</p>
             <AnimatedNumber
               value={cumulativeFlowM}
               format={v => moneyM(v)}
@@ -102,7 +102,7 @@ export default function EtfFlowImpactSimulator() {
             />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">
               Illustrative price after {days}d
             </p>
             <AnimatedNumber
@@ -111,7 +111,7 @@ export default function EtfFlowImpactSimulator() {
               startFromZero
               className="font-serif text-2xl font-bold text-gray-900 dark:text-white"
             />
-            <p className="text-xs text-gray-400 mt-1">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {impactPct >= 0 ? '+' : ''}{impactPct.toFixed(1)}% vs. starting price (illustrative only)
             </p>
           </div>
@@ -154,10 +154,10 @@ export default function EtfFlowImpactSimulator() {
           </table>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           This is a simplified illustration, not a forecasting or causal model. ETF flows and BTC price have moved together at times, but flows do not mechanically set the price the way this slider implies — they are one input among leverage, macro rates, and sentiment that all move together. Treat the &quot;illustrative price&quot; purely as a way to feel the scale of the dollar figures, never as a prediction.
         </p>
-        <p className="text-xs text-gray-400 mt-2">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
           Estimate only — not financial or tax advice. Not investment advice. Crypto is highly volatile.
         </p>
       </div>

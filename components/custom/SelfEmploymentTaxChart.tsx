@@ -59,7 +59,7 @@ export default function SelfEmploymentTaxChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Where the 15.3% goes
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -77,7 +77,7 @@ export default function SelfEmploymentTaxChart() {
               startFromZero
               className="font-serif text-3xl font-bold text-gray-900 dark:text-white"
             />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mt-1 text-center px-2">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1 text-center px-2">
               {activeSlice ? activeSlice.label : 'Total SE Tax'}
             </span>
           </div>
@@ -102,7 +102,7 @@ export default function SelfEmploymentTaxChart() {
                 <span className="w-3 h-3 rounded-sm shrink-0" style={{ background: s.color }} />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{s.label}</p>
-                  <p className="text-[11px] text-gray-400 dark:text-gray-500">
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400">
                     {s.label === 'Social Security'
                       ? 'Capped at the $184,500 wage base (2026)'
                       : 'No income cap — applies to every dollar'}
@@ -117,7 +117,7 @@ export default function SelfEmploymentTaxChart() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Applied to 92.35% of your net self-employment earnings, not the full amount. High earners also owe an extra 0.9% Medicare surtax above $200,000 in net self-employment income (single filers).
       </p>
     </ChartCard>

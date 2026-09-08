@@ -20,7 +20,7 @@ export default function ContributionLimitMaxPlanner() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · pace your contributions
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -29,7 +29,7 @@ export default function ContributionLimitMaxPlanner() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Annual limit target</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(annualLimit)}</b>
           </div>
@@ -37,7 +37,7 @@ export default function ContributionLimitMaxPlanner() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Already contributed this year</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(alreadyContributed)}</b>
           </div>
@@ -45,7 +45,7 @@ export default function ContributionLimitMaxPlanner() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Paychecks remaining this year</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{paychecksLeft}</b>
           </div>
@@ -60,7 +60,7 @@ export default function ContributionLimitMaxPlanner() {
             <AnimatedNumber value={result.remaining} format={money} startFromZero />
           </strong>{' '}
           left to contribute over {paychecksLeft} paychecks, that&apos;s{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.perPaycheck} format={(v) => money(v) + '/paycheck'} startFromZero />
           </strong>
           .
@@ -81,7 +81,7 @@ export default function ContributionLimitMaxPlanner() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           The 2027 limit shown as a default is a Milliman forecast — the IRS typically confirms the official figure in November. Don&apos;t set payroll elections around a projection alone once the real number is out.
         </p>
       </div>

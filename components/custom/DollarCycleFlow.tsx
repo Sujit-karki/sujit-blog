@@ -25,7 +25,7 @@ export default function DollarCycleFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         The mechanism, mapped
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -77,7 +77,7 @@ export default function DollarCycleFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         The weak-dollar branch (highlighted) is the environment described as prevailing in 2026 in this analysis. Currency cycles reverse — this is a mechanism diagram, not a forecast.
       </p>
     </ChartCard>

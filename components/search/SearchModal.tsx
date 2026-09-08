@@ -82,7 +82,7 @@ export default function SearchModal() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
         </svg>
         <span className="hidden sm:inline">Search</span>
-        <kbd className="hidden sm:inline-block text-[10px] font-mono border border-gray-300 dark:border-gray-600 rounded px-1.5 py-0.5 text-gray-400">
+        <kbd className="hidden sm:inline-block text-[10px] font-mono border border-gray-300 dark:border-gray-600 rounded px-1.5 py-0.5 text-gray-500 dark:text-gray-400">
           &#8984;K
         </kbd>
       </button>
@@ -111,7 +111,7 @@ export default function SearchModal() {
               className="fixed left-1/2 top-24 -translate-x-1/2 w-[min(560px,92vw)] z-[101] rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-2xl overflow-hidden"
             >
               <div className="flex items-center gap-3 px-4 border-b border-gray-100 dark:border-gray-800">
-                <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
                 </svg>
                 <input
@@ -120,9 +120,9 @@ export default function SearchModal() {
                   onChange={(e) => onQueryChange(e.target.value)}
                   onKeyDown={onInputKeyDown}
                   placeholder="Search posts…"
-                  className="w-full py-3.5 bg-transparent text-sm text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none"
+                  className="w-full py-3.5 bg-transparent text-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:text-gray-400 focus:outline-none"
                 />
-                <kbd className="text-[10px] font-mono border border-gray-300 dark:border-gray-600 rounded px-1.5 py-0.5 text-gray-400 shrink-0">
+                <kbd className="text-[10px] font-mono border border-gray-300 dark:border-gray-600 rounded px-1.5 py-0.5 text-gray-500 dark:text-gray-400 shrink-0">
                   Esc
                 </kbd>
               </div>
@@ -144,7 +144,7 @@ export default function SearchModal() {
                         : ""
                     }`}
                   >
-                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
                       {r.category}
                     </span>
                     <span className="text-sm font-medium text-gray-900 dark:text-white">
@@ -165,7 +165,7 @@ export default function SearchModal() {
                       closeModal();
                       router.push(`/search?q=${encodeURIComponent(q)}`);
                     }}
-                    className="text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline"
+                    className="text-xs font-medium text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
                   >
                     View all results for &ldquo;{query}&rdquo; →
                   </button>

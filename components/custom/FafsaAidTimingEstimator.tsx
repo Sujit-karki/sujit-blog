@@ -24,7 +24,7 @@ export default function FafsaAidTimingEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · illustrative, not a guarantee
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@ export default function FafsaAidTimingEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Month you file</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{MONTHS[monthIndex]}</b>
           </div>
@@ -41,7 +41,7 @@ export default function FafsaAidTimingEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Illustrative aid pool you&apos;re eligible for</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(stateAidPool)}</b>
           </div>
@@ -52,7 +52,7 @@ export default function FafsaAidTimingEstimator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Filing in {MONTHS[monthIndex]} lands you in a period modeled at roughly{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.availabilityPct} format={(v) => v.toFixed(0) + '%'} />
           </strong>{' '}
           of first-come, first-served aid still available — an illustrative{' '}
@@ -75,7 +75,7 @@ export default function FafsaAidTimingEstimator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Illustrative only — a model of how first-come, first-served pools typically deplete, not a real allocation curve for any specific school or state. Your actual aid depends on your FAFSA, your school, and your state&apos;s rules.
         </p>
       </div>

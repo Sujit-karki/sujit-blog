@@ -102,7 +102,7 @@ export default function AboutPage() {
                 href={`/category/${slugifyCategory(item.cat)}`}
                 className="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-md transition-all"
               >
-                <h3 className="font-bold text-gray-900 dark:text-white mb-1.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1.5 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                   {item.cat}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 href={item.href}
                 className="group rounded-lg border border-gray-200 dark:border-gray-700 p-4 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors"
               >
-                <p className="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <p className="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                   {item.label}
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
@@ -165,7 +165,7 @@ export default function AboutPage() {
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
             Questions, collaboration requests, or feedback? I&apos;d love to hear from you.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline">
+          <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline">
             Contact us →
           </Link>
         </section>

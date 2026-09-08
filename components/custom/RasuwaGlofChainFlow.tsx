@@ -52,7 +52,7 @@ export default function RasuwaGlofChainFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Flowchart · the cascade
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -79,7 +79,7 @@ export default function RasuwaGlofChainFlow() {
               <div className="flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/60 px-4 py-3">
                 <div className="flex items-baseline justify-between gap-3 flex-wrap">
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">{s.label}</p>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-gray-400 shrink-0">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
                     {s.time}
                   </span>
                 </div>
@@ -90,7 +90,7 @@ export default function RasuwaGlofChainFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Every stage after the first is a physical process, not a weather forecast. That is why no rain warning
         existed to issue — and why stage 5 arrived before anyone downstream knew stage 2 had happened.
       </p>

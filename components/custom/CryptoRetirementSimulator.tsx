@@ -50,7 +50,7 @@ export default function CryptoRetirementSimulator() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · small-sleeve scenario model
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -59,7 +59,7 @@ export default function CryptoRetirementSimulator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Current portfolio value</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {money(portfolioValue)}
@@ -73,7 +73,7 @@ export default function CryptoRetirementSimulator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Crypto allocation</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {cryptoAllocationPct}%
@@ -87,7 +87,7 @@ export default function CryptoRetirementSimulator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Years to retirement</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {yearsToRetirement} yrs
@@ -104,7 +104,7 @@ export default function CryptoRetirementSimulator() {
       <div className="space-y-3 mb-6">
         {bars.map((bar) => (
           <div key={bar.label}>
-            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1.5">
+            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1.5">
               <span>{bar.label}</span>
               <span className="font-medium text-gray-900 dark:text-white normal-case tracking-normal">
                 {money(bar.value)}
@@ -124,7 +124,7 @@ export default function CryptoRetirementSimulator() {
 
       <div className="grid sm:grid-cols-3 gap-4 pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <div className="rounded-xl bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-900 p-4 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1">
             Bull (+{CRYPTO_BULL}%/yr crypto)
           </p>
           <AnimatedNumber
@@ -135,7 +135,7 @@ export default function CryptoRetirementSimulator() {
           />
         </div>
         <div className="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
             Flat ({CRYPTO_FLAT}%/yr crypto)
           </p>
           <AnimatedNumber
@@ -146,7 +146,7 @@ export default function CryptoRetirementSimulator() {
           />
         </div>
         <div className="rounded-xl bg-white dark:bg-gray-800 border border-red-200 dark:border-red-900 p-4 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-red-500 dark:text-red-400 mb-1">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-red-600 dark:text-red-400 dark:text-red-400 mb-1">
             Bear ({CRYPTO_BEAR}%/yr crypto)
           </p>
           <AnimatedNumber
@@ -159,7 +159,7 @@ export default function CryptoRetirementSimulator() {
       </div>
 
       <div className="mt-4 rounded-xl bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 p-4 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
           Flat-crypto scenario vs. a portfolio with 0% crypto
         </p>
         <AnimatedNumber
@@ -167,12 +167,12 @@ export default function CryptoRetirementSimulator() {
           format={(v) => (v >= 0 ? '+' : '−') + money(Math.abs(v))}
           startFromZero
           className={`font-serif text-xl sm:text-2xl font-bold block ${
-            result.diffVsNoCrypto >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'
+            result.diffVsNoCrypto >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'
           }`}
         />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Hypothetical illustration only, not financial advice. Assumes a diversified core growing {CORE_RETURN}%/yr and a crypto sleeve held flat for the {yearsToRetirement}-year horizon; bull and bear cases apply +{CRYPTO_BULL}%/yr and {CRYPTO_BEAR}%/yr respectively for the same period. Returns are assumptions, not forecasts — actual crypto outcomes can be worse, including total loss.
       </p>
     </ChartCard>

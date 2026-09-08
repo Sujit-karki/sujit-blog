@@ -89,7 +89,7 @@ export default function RothVsTraditionalScenarioChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Same $7,500, three tax futures
       </p>
       <p className="font-serif text-xl mb-4 text-gray-900 dark:text-white">
@@ -100,7 +100,7 @@ export default function RothVsTraditionalScenarioChart() {
         <Bar data={data} options={options} />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Illustrative: a single $7,500 contribution growing at 7%/year for 30 years (~$57,100 pre-tax), matching the calculator above. Roth is already taxed, so it keeps the full balance regardless of future rates; Traditional is taxed on withdrawal at the bracket shown. Not personalized tax advice.
       </p>
     </ChartCard>

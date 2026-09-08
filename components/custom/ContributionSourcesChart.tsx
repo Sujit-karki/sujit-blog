@@ -75,7 +75,7 @@ export default function ContributionSourcesChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Per-child dollar amounts
       </p>
       <p className="font-serif text-xl mb-1 text-gray-900 dark:text-white">
@@ -102,7 +102,7 @@ export default function ContributionSourcesChart() {
         </span>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         Charitable deposits vary by program and ZIP-code income eligibility; $250 is the common per-child figure across the Dell, Dalio, and Gerstner pledges. Employer contributions count toward, not on top of, the $5,000 combined annual cap.
       </p>
     </ChartCard>

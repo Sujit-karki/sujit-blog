@@ -1,8 +1,21 @@
 # Lampard
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22654387.svg)](https://doi.org/10.5281/zenodo.22654387)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-blue.svg)](./LICENSE-DATA)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-green.svg)](./LICENSE)
+
 A high-performance personal finance blog built with Next.js, MDX, and Tailwind CSS. Published at **[sujitkarki.com.np](https://www.sujitkarki.com.np)**.
 
 > Deep market research, investing guides, and money strategies — backed by rigorous data-driven analysis.
+
+The datasets behind the original-data posts are archived and citable:
+
+> Karki, Sujit (2026). *Original-data research datasets and measurement harness,
+> sujitkarki.com.np*. Zenodo. https://doi.org/10.5281/zenodo.22654387
+
+That is the concept DOI, which always resolves to the newest archived version.
+See [`research/README.md`](./research/README.md) for the harness, the method, and
+the per-release version DOIs.
 
 ---
 

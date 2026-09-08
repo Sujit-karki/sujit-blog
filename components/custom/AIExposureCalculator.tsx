@@ -29,7 +29,7 @@ export default function AIExposureCalculator() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · what your index fund actually owns
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -38,7 +38,7 @@ export default function AIExposureCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Your equity portfolio value</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {money(portfolioValue)}
@@ -52,7 +52,7 @@ export default function AIExposureCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Magnificent Seven weight in your S&amp;P 500 fund</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {mag7WeightPct.toFixed(1)}%
@@ -101,7 +101,7 @@ export default function AIExposureCalculator() {
       </div>
 
       <div className="mt-4 rounded-xl bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 p-4 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
           Extra Mag 7 dollars from cap-weighting alone
         </p>
         <AnimatedNumber
@@ -112,7 +112,7 @@ export default function AIExposureCalculator() {
         />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Estimate for illustration, not financial advice. Actual fund weights vary by index and change daily.
       </p>
     </ChartCard>

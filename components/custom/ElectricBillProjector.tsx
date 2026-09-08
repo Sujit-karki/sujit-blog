@@ -35,7 +35,7 @@ export default function ElectricBillProjector() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · project your own bill
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -44,7 +44,7 @@ export default function ElectricBillProjector() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Monthly usage</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {monthlyKwh.toLocaleString('en-US')} kWh
@@ -58,7 +58,7 @@ export default function ElectricBillProjector() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Current rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {currentRateCents.toFixed(1)}¢/kWh
@@ -72,7 +72,7 @@ export default function ElectricBillProjector() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Assumed annual rate increase</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {annualIncreasePct}%
@@ -86,7 +86,7 @@ export default function ElectricBillProjector() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Years to project</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
               {years} {years === 1 ? 'year' : 'years'}
@@ -102,7 +102,7 @@ export default function ElectricBillProjector() {
 
       <div className="grid grid-cols-3 gap-px bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden mb-5">
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">This year</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">This year</p>
           <AnimatedNumber
             value={result.currentAnnual}
             format={money}
@@ -111,7 +111,7 @@ export default function ElectricBillProjector() {
           />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
             Year {years}
           </p>
           <AnimatedNumber
@@ -122,7 +122,7 @@ export default function ElectricBillProjector() {
           />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Cumulative increase</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Cumulative increase</p>
           <AnimatedNumber
             value={result.cumulativeIncrease}
             format={money}
@@ -154,7 +154,7 @@ export default function ElectricBillProjector() {
         </table>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Estimate only; actual rates vary by utility, rate plan, and usage. Applies a constant annual increase compounded each year — real rate changes come in uneven steps set by state regulators.
       </p>
     </ChartCard>

@@ -27,7 +27,7 @@ export default function ColaBenefitEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · estimate your 2027 raise
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -36,7 +36,7 @@ export default function ColaBenefitEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Your current monthly benefit</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(currentBenefit)}</b>
           </div>
@@ -48,7 +48,7 @@ export default function ColaBenefitEstimator() {
         </div>
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">2027 COLA scenario</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">2027 COLA scenario</p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {SCENARIOS.map(s => (
               <button
@@ -67,7 +67,7 @@ export default function ColaBenefitEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Expected Medicare Part B increase</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(medicarePartB)}/mo</b>
           </div>
@@ -82,7 +82,7 @@ export default function ColaBenefitEstimator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           At a {cola}% COLA, your benefit would rise to{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.newBenefit} format={v => money(v) + '/mo'} startFromZero />
           </strong>
           {' '}— a raise of {money(result.monthlyRaise)}/mo, or{' '}
@@ -92,7 +92,7 @@ export default function ColaBenefitEstimator() {
           net of the Medicare Part B increase you set above.
         </p>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Illustrative only — the SSA doesn&apos;t announce the official 2027 COLA until October 2026, and the 2027 Medicare Part B premium isn&apos;t finalized until around November 2026. Not financial advice.
         </p>
       </div>

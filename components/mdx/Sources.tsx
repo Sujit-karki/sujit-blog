@@ -18,18 +18,18 @@ export default function Sources({ items }: SourcesProps) {
       <ol className="space-y-2">
         {items.map((s, i) => (
           <li key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
-            <span className="text-gray-400 shrink-0 w-5 text-right">{i + 1}.</span>
+            <span className="text-gray-500 dark:text-gray-400 shrink-0 w-5 text-right">{i + 1}.</span>
             <div className="min-w-0">
               <a
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium break-words"
+                className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline font-medium break-words"
               >
                 {s.title}
               </a>
               {(s.publisher || s.date) && (
-                <span className="text-gray-400 dark:text-gray-500">
+                <span className="text-gray-500 dark:text-gray-400">
                   {" "}— {[s.publisher, s.date].filter(Boolean).join(", ")}
                 </span>
               )}

@@ -62,7 +62,7 @@ export default function HarvestTaxSavingsCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · tax-loss harvesting
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -71,42 +71,42 @@ export default function HarvestTaxSavingsCalculator() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Short-term gains</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(stGains)}</b>
           </div>
           <input type="range" min={0} max={50000} step={500} value={stGains} onChange={(e) => setStGains(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Long-term gains</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(ltGains)}</b>
           </div>
           <input type="range" min={0} max={50000} step={500} value={ltGains} onChange={(e) => setLtGains(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Short-term losses to harvest</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(stLosses)}</b>
           </div>
           <input type="range" min={0} max={50000} step={500} value={stLosses} onChange={(e) => setStLosses(+e.target.value)} className="w-full accent-red-500" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Long-term losses to harvest</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(ltLosses)}</b>
           </div>
           <input type="range" min={0} max={50000} step={500} value={ltLosses} onChange={(e) => setLtLosses(+e.target.value)} className="w-full accent-red-500" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marginal tax rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{marginalRate}%</b>
           </div>
           <input type="range" min={10} max={37} step={1} value={marginalRate} onChange={(e) => setMarginalRate(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Long-term capital gains rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{ltcgRate}%</b>
           </div>
@@ -118,11 +118,11 @@ export default function HarvestTaxSavingsCalculator() {
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Harvesting these losses cuts your federal tax bill from{' '}
           <strong>{money(result.taxBefore)}</strong> to{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.taxAfter} format={(v) => money(v)} startFromZero />
           </strong>{' '}
           — a savings of{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.taxSaved} format={(v) => money(v)} startFromZero />
           </strong>
           {result.carryforward > 0 && (
@@ -163,7 +163,7 @@ export default function HarvestTaxSavingsCalculator() {
           </table>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Simplified federal-only model — ignores state taxes, the net investment income tax, AMT, and the 30-day wash-sale rule, which can disallow a loss entirely if you repurchase a substantially identical security. Estimate only — not tax advice.
         </p>
       </div>

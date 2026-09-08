@@ -45,7 +45,7 @@ export default function ProsCons({
         <ul className="space-y-2.5">
           {cons.map((item, i) => (
             <li key={i} className="flex items-start gap-2.5 text-sm text-red-900 dark:text-red-100">
-              <svg className="w-3.5 h-3.5 text-red-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-3.5 h-3.5 text-red-600 dark:text-red-400 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
               <span className="leading-snug">{item}</span>

@@ -58,7 +58,7 @@ export default function BudgetSplitDonutChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Every paycheck, split three ways
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -75,7 +75,7 @@ export default function BudgetSplitDonutChart() {
               startFromZero
               className="font-serif text-3xl font-bold text-gray-900 dark:text-white"
             />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mt-1 text-center px-2">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1 text-center px-2">
               {activeSlice ? activeSlice.label : 'Take-Home Pay'}
             </span>
           </div>
@@ -99,7 +99,7 @@ export default function BudgetSplitDonutChart() {
                 <span className="w-3 h-3 rounded-sm shrink-0" style={{ background: s.color }} />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{s.label}</p>
-                  <p className="text-[11px] text-gray-400 dark:text-gray-500">{s.detail}</p>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400">{s.detail}</p>
                 </div>
               </div>
               <span className="font-mono text-sm font-bold text-gray-900 dark:text-white shrink-0">{s.pct}%</span>
@@ -108,7 +108,7 @@ export default function BudgetSplitDonutChart() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Based on after-tax (take-home) income, not gross salary.
       </p>
     </ChartCard>

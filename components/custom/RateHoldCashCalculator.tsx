@@ -28,7 +28,7 @@ export default function RateHoldCashCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · what a rate hold costs you
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -37,7 +37,7 @@ export default function RateHoldCashCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Cash sitting in a low-yield account</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(cashBalance)}</b>
           </div>
@@ -49,7 +49,7 @@ export default function RateHoldCashCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Credit card balance you carry</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(cardBalance)}</b>
           </div>
@@ -64,11 +64,11 @@ export default function RateHoldCashCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Leaving that cash in a {NATIONAL_SAVINGS_APY}% account instead of a {HYSA_APY}% HYSA costs you{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.annualLostInterest} format={v => money(v) + '/yr'} startFromZero />
           </strong>
           . That card balance at {CARD_APR}% APR costs{' '}
-          <strong className="text-red-500 dark:text-red-400">
+          <strong className="text-red-600 dark:text-red-400 dark:text-red-400">
             <AnimatedNumber value={result.monthlyCardCost} format={v => money(v) + '/mo'} startFromZero />
           </strong>{' '}
           in interest — a Fed hold changes neither number.
@@ -99,7 +99,7 @@ export default function RateHoldCashCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Uses the FDIC national average savings rate ({NATIONAL_SAVINGS_APY}%), a representative top HYSA rate ({HYSA_APY}%), and the Fed&apos;s Q2 2026 average APR on interest-accruing card accounts ({CARD_APR}%) — not a quote for your specific accounts.
         </p>
       </div>

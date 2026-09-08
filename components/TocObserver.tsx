@@ -40,7 +40,7 @@ export default function TocObserver({ toc }: Props) {
 
   return (
     <nav aria-label="Table of contents">
-      <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
+      <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">
         Table of Contents
       </h3>
       <ol className="relative space-y-1.5">
@@ -69,7 +69,7 @@ export default function TocObserver({ toc }: Props) {
                 aria-current={active ? 'location' : undefined}
                 className={`block text-sm leading-snug transition-all duration-150 ${
                   active
-                    ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
+                    ? 'text-emerald-700 dark:text-emerald-400 font-semibold'
                     : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
                 }`}
               >

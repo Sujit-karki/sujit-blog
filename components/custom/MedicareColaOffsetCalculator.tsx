@@ -23,7 +23,7 @@ export default function MedicareColaOffsetCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · COLA vs. Part B
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -32,7 +32,7 @@ export default function MedicareColaOffsetCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Current monthly benefit</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(monthlyBenefit)}</b>
           </div>
@@ -40,7 +40,7 @@ export default function MedicareColaOffsetCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>COLA (projected)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{colaPct.toFixed(1)}%</b>
           </div>
@@ -55,11 +55,11 @@ export default function MedicareColaOffsetCalculator() {
             <AnimatedNumber value={result.grossRaise} format={(v) => money(v) + '/mo'} startFromZero />
           </strong>
           , but the projected Part B increase of{' '}
-          <strong className="text-red-500 dark:text-red-400">
+          <strong className="text-red-600 dark:text-red-400 dark:text-red-400">
             <AnimatedNumber value={result.partBincrease} format={(v) => money(v) + '/mo'} startFromZero />
           </strong>{' '}
           eats into it, leaving a net raise of{' '}
-          <strong className={result.netRaise >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}>
+          <strong className={result.netRaise >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}>
             <AnimatedNumber value={result.netRaise} format={(v) => money(v) + '/mo'} startFromZero />
           </strong>
           .
@@ -87,7 +87,7 @@ export default function MedicareColaOffsetCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           The 2027 Part B premium is a Trustees Report projection — CMS confirms the actual figure around November. IRMAA surcharges for higher earners aren&apos;t included here.
         </p>
       </div>

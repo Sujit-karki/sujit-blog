@@ -55,7 +55,7 @@ export default function PlatformTaxEstimator() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · gross payments to real tax bill
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -65,7 +65,7 @@ export default function PlatformTaxEstimator() {
       <div className="space-y-5 mb-6">
         {inputs.map((inp) => (
           <div key={inp.label}>
-            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
               <span>{inp.label}</span>
               <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">
                 {money(inp.value)}
@@ -84,7 +84,7 @@ export default function PlatformTaxEstimator() {
         ))}
 
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-3">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
             Your income tax bracket (rough estimate)
           </p>
           <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
@@ -106,7 +106,7 @@ export default function PlatformTaxEstimator() {
       </div>
 
       <div className="mb-6">
-        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1.5">
+        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1.5">
           <span>Gross payments (the 1099-K number)</span>
           <span className="font-medium text-gray-900 dark:text-white">{money(grossPayments)}</span>
         </div>
@@ -128,7 +128,7 @@ export default function PlatformTaxEstimator() {
 
       <div className="grid grid-cols-2 gap-px bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Taxable net profit</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Taxable net profit</p>
           <AnimatedNumber
             value={result.netProfit}
             format={money}
@@ -137,7 +137,7 @@ export default function PlatformTaxEstimator() {
           />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Self-employment tax</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Self-employment tax</p>
           <AnimatedNumber
             value={result.seTax}
             format={money}
@@ -146,7 +146,7 @@ export default function PlatformTaxEstimator() {
           />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Total estimated tax</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Total estimated tax</p>
           <AnimatedNumber
             value={result.totalEstimated}
             format={money}
@@ -155,17 +155,17 @@ export default function PlatformTaxEstimator() {
           />
         </div>
         <div className="bg-white dark:bg-gray-900 p-4 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-400 mb-1">Set aside per month</p>
+          <p className="font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Set aside per month</p>
           <AnimatedNumber
             value={result.monthlySetAside}
             format={money}
             startFromZero
-            className="font-serif text-xl sm:text-2xl font-semibold text-emerald-600 dark:text-emerald-400 block"
+            className="font-serif text-xl sm:text-2xl font-semibold text-emerald-700 dark:text-emerald-400 block"
           />
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         This is an estimate, not tax advice. It simplifies the deductible half of SE tax and ignores the QBI deduction, credits, and state tax. Confirm with a professional before filing.
       </p>
     </ChartCard>

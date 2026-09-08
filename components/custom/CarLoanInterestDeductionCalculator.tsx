@@ -51,7 +51,7 @@ export default function CarLoanInterestDeductionCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · run your own loan
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -60,28 +60,28 @@ export default function CarLoanInterestDeductionCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Loan amount</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(loanAmount)}</b>
           </div>
           <input type="range" min={0} max={150000} step={1000} value={loanAmount} onChange={e => setLoanAmount(+e.target.value)} className="w-full accent-orange-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>APR</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{apr.toFixed(1)}%</b>
           </div>
           <input type="range" min={0} max={30} step={0.5} value={apr} onChange={e => setApr(+e.target.value)} className="w-full accent-orange-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Loan term</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{termMonths} months</b>
           </div>
           <input type="range" min={12} max={96} step={6} value={termMonths} onChange={e => setTermMonths(+e.target.value)} className="w-full accent-orange-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>MAGI</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(magi)}</b>
           </div>
@@ -128,20 +128,20 @@ export default function CarLoanInterestDeductionCalculator() {
 
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">First-year interest</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">First-year interest</p>
             <AnimatedNumber value={interest} format={money} startFromZero className="font-serif text-xl font-bold text-gray-900 dark:text-white" />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Deductible after phase-out</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Deductible after phase-out</p>
             <AnimatedNumber value={deductible} format={money} startFromZero className="font-serif text-xl font-bold text-orange-600 dark:text-orange-400" />
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-400 mb-1">Estimated tax saving</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">Estimated tax saving</p>
             <AnimatedNumber value={taxSaving} format={money} startFromZero className="font-serif text-xl font-bold text-gray-900 dark:text-white" />
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">Estimate only — not financial or tax advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">Estimate only — not financial or tax advice.</p>
 
         <div className="overflow-x-auto mt-5 rounded-xl border border-gray-200 dark:border-gray-700">
           <table className="min-w-full text-sm">

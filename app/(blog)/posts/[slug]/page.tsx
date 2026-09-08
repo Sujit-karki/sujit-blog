@@ -227,12 +227,12 @@ export default async function PostPage({ params }: Props) {
                 prose-h2:mt-14 prose-h2:mb-4 prose-h2:pt-8
                 prose-h3:text-[1.3rem] prose-h3:font-bold prose-h3:mt-9 prose-h3:mb-3
                 prose-p:leading-[1.75] prose-p:text-gray-700 dark:prose-p:text-gray-300
-                prose-a:text-emerald-600 dark:prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
+                prose-a:text-emerald-700 dark:prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-gray-900 dark:prose-strong:text-white
                 prose-li:text-gray-700 dark:prose-li:text-gray-300
                 prose-li:leading-relaxed prose-ul:my-4 prose-ol:my-4
                 prose-blockquote:border-l-emerald-500 prose-blockquote:not-italic
-                prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400"
+                prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-500 dark:text-gray-400"
             >
               <PostContent />
             </article>
@@ -255,7 +255,7 @@ export default async function PostPage({ params }: Props) {
                   ) : (
                     <span
                       key={tag}
-                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-500"
+                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
                     >
                       #{tag}
                     </span>

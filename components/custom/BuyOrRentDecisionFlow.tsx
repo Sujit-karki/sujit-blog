@@ -20,7 +20,7 @@ export default function BuyOrRentDecisionFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         The one input that matters most
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -57,7 +57,7 @@ export default function BuyOrRentDecisionFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         These are general lean-directions, not thresholds — your actual break-even year depends on price, rate, and local rent, which is exactly what the calculator below computes.
       </p>
     </ChartCard>

@@ -57,7 +57,7 @@ function Gauge({ label, value, color, delay }: { label: string; value: number; c
             startFromZero
             className="font-serif text-2xl font-bold text-gray-900 dark:text-white"
           />
-          <span className="text-[9px] font-mono uppercase tracking-wider text-gray-400">HHI</span>
+          <span className="text-[9px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">HHI</span>
         </div>
       </div>
       <p className="text-xs font-medium text-gray-600 dark:text-gray-300 text-center mt-1">{label}</p>
@@ -68,7 +68,7 @@ function Gauge({ label, value, color, delay }: { label: string; value: number; c
 export default function ConcentrationGaugeChart() {
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Herfindahl-Hirschman Index (S&amp;P 500)
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -80,7 +80,7 @@ export default function ConcentrationGaugeChart() {
         <Gauge {...GAUGES[1]} delay={300} />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-6 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-6 leading-relaxed">
         HHI is the same concentration measure antitrust regulators use — higher means fewer companies control a bigger share of the index. Gauges scaled to a 0-{MAX_SCALE} range for visual comparison. Sources: Axios (2000 peak), Kobeissi Letter (2026), approximate.
       </p>
     </ChartCard>

@@ -16,7 +16,7 @@ export default function ColaCalculationFlow() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         How the number actually gets set
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -47,7 +47,7 @@ export default function ColaCalculationFlow() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-5 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
         Every estimate you see before October — 3.6%, 3.7%, 3.8% — is a forecast of step 3, made before steps 1–2 are even complete for Aug/Sep.
       </p>
     </ChartCard>

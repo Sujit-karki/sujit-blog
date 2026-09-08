@@ -37,7 +37,7 @@ export default function AffiliateNetPayoutEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · TikTok Shop affiliate payout
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -46,42 +46,42 @@ export default function AffiliateNetPayoutEstimator() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Product price</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(price)}</b>
           </div>
           <input type="range" min={5} max={200} step={1} value={price} onChange={(e) => setPrice(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Commission rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{commissionPct}%</b>
           </div>
           <input type="range" min={0} max={50} step={1} value={commissionPct} onChange={(e) => setCommissionPct(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Videos posted / month</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{videosMonth}</b>
           </div>
           <input type="range" min={1} max={60} step={1} value={videosMonth} onChange={(e) => setVideosMonth(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Average views / video</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{avgViews.toLocaleString('en-US')}</b>
           </div>
           <input type="range" min={500} max={500000} step={500} value={avgViews} onChange={(e) => setAvgViews(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Conversion rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{convRate.toFixed(2)}%</b>
           </div>
           <input type="range" min={0.05} max={3} step={0.05} value={convRate} onChange={(e) => setConvRate(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Return rate</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{returnRate}%</b>
           </div>
@@ -93,7 +93,7 @@ export default function AffiliateNetPayoutEstimator() {
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Roughly {result.orders.toFixed(1)} orders/month would generate{' '}
           <strong>{money(result.grossCommission)}</strong> in gross commission, but after returns and the platform&apos;s {platformFee}% referral fee, you&apos;d keep{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.netMonthly} format={(v) => money(v)} startFromZero />
           </strong>{' '}
           — an effective cost of sale near{' '}
@@ -113,7 +113,7 @@ export default function AffiliateNetPayoutEstimator() {
           unit="$"
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Assumes a fixed 6% platform referral fee and third-party-estimated commission/return rates — TikTok does not publish these as guarantees, and per-product commissions vary. Ignores income tax. Not financial advice.
         </p>
       </div>

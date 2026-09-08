@@ -54,7 +54,7 @@ export default function TipsOvertimeDeductionEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · estimate your deduction
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -63,7 +63,7 @@ export default function TipsOvertimeDeductionEstimator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Filing status</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Filing status</p>
           <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {(['single', 'joint'] as const).map(s => (
               <button
@@ -82,7 +82,7 @@ export default function TipsOvertimeDeductionEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Annual qualified tips</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(annualTips)}</b>
           </div>
@@ -94,7 +94,7 @@ export default function TipsOvertimeDeductionEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Overtime premium (&quot;half&quot;) pay</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(overtimePremium)}</b>
           </div>
@@ -106,7 +106,7 @@ export default function TipsOvertimeDeductionEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>MAGI</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(magi)}</b>
           </div>
@@ -118,7 +118,7 @@ export default function TipsOvertimeDeductionEstimator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Marginal tax rate (for savings estimate)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{marginalRate}%</b>
           </div>
@@ -133,7 +133,7 @@ export default function TipsOvertimeDeductionEstimator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           Your combined deduction after caps and phase-out is about{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.totalDeduction} format={v => money(v)} startFromZero />
           </strong>
           , an estimated{' '}
@@ -162,7 +162,7 @@ export default function TipsOvertimeDeductionEstimator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Simplified estimate, not tax advice — the phase-out mechanics shown here approximate IRS Schedule 1-A guidance and payroll tax (Social Security/Medicare) still applies regardless of this deduction. Confirm the exact phase-out formula and your eligibility with a tax professional or the current Schedule 1-A instructions.
         </p>
       </div>

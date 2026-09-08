@@ -64,7 +64,7 @@ export default async function CategoryPage({ params }: Props) {
         </div>
 
         <header className="mb-6">
-          <div className="inline-block text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">
+          <div className="inline-block text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 mb-2">
             Category
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-2">
@@ -104,8 +104,8 @@ export default async function CategoryPage({ params }: Props) {
           </>
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-400 dark:text-gray-500 text-lg mb-2">No articles yet</p>
-            <p className="text-sm text-gray-400 dark:text-gray-600">Check back soon — new {name} content is coming.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-lg mb-2">No articles yet</p>
+            <p className="text-sm text-gray-500 dark:text-gray-500">Check back soon — new {name} content is coming.</p>
           </div>
         )}
       </div>

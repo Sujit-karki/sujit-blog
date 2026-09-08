@@ -80,7 +80,7 @@ export default function GrowthVsSpendableChart() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · hover to explore, $5,000/yr maxed out
       </p>
       <p className="font-serif text-xl mb-4 text-gray-900 dark:text-white">
@@ -175,7 +175,7 @@ export default function GrowthVsSpendableChart() {
       </div>
 
       <div className="mt-5">
-        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+        <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
           <span>Tax bracket when withdrawn</span>
           <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{bracket}%</b>
         </div>
@@ -189,7 +189,7 @@ export default function GrowthVsSpendableChart() {
       <div className="grid grid-cols-3 gap-px mt-5 bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
         {readout.map(({ label, color, val }) => (
           <div key={label} className="bg-white dark:bg-gray-900 p-3 sm:p-4 text-center">
-            <div className="flex items-center justify-center gap-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-gray-400 mb-2">
+            <div className="flex items-center justify-center gap-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
               <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: color }} />
               <span className="hidden sm:inline leading-tight">{label}</span>
             </div>
@@ -200,7 +200,7 @@ export default function GrowthVsSpendableChart() {
         ))}
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         Models a maxed-out $5,000/yr contribution plus the $1,000 seed, growing at 7% annually for 18 years. &quot;Actually spendable&quot; applies your chosen ordinary-income tax rate to everything above your basis (contributions) — the gap between the grey and gold lines is the tax bill the headline balance doesn&apos;t show you.
       </p>
     </div>

@@ -89,16 +89,16 @@ export default function ResearchPage() {
               className="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-md transition-all"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+                <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
                   {post.method}
                 </span>
                 {post.dataset && (
-                  <span className="text-[10px] font-mono uppercase tracking-wide px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
+                  <span className="text-[10px] font-mono uppercase tracking-wide px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
                     raw data
                   </span>
                 )}
               </div>
-              <h2 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h2 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 {post.title}
               </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -119,11 +119,11 @@ export default function ResearchPage() {
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
             Models are the instrument, never the author. See the{" "}
-            <Link href="/methodology" className="text-emerald-600 dark:text-emerald-400 hover:underline">
+            <Link href="/methodology" className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline">
               methodology
             </Link>{" "}
             and{" "}
-            <Link href="/ai-disclosure" className="text-emerald-600 dark:text-emerald-400 hover:underline">
+            <Link href="/ai-disclosure" className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline">
               AI disclosure
             </Link>{" "}
             pages for how that rule is applied.
@@ -132,7 +132,7 @@ export default function ResearchPage() {
             Every script that produced these numbers is public in{" "}
             <a
               href="https://github.com/Sujit-karki/sujit-blog/tree/main/research"
-              className="text-emerald-600 dark:text-emerald-400 hover:underline"
+              className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
               rel="noopener"
             >
               the repository
@@ -141,7 +141,7 @@ export default function ResearchPage() {
             these turns out to be wrong, the fix is logged on the{" "}
             <Link
               href="/corrections"
-              className="text-emerald-600 dark:text-emerald-400 hover:underline"
+              className="text-emerald-700 dark:text-emerald-400 underline underline-offset-2 hover:no-underline"
             >
               corrections page
             </Link>{" "}

@@ -29,7 +29,7 @@ export default function EmbedSnippet({ url, title }: EmbedSnippetProps) {
         Free to embed — just copy the snippet below and paste it into your page.
       </p>
       <div className="relative group">
-        <pre className="bg-gray-950 text-gray-100 rounded-lg p-4 overflow-x-auto text-xs leading-relaxed">
+        <pre tabIndex={0} className="bg-gray-950 text-gray-100 rounded-lg p-4 overflow-x-auto text-xs leading-relaxed">
           {snippet}
         </pre>
         <button
@@ -37,7 +37,7 @@ export default function EmbedSnippet({ url, title }: EmbedSnippetProps) {
           className={`absolute top-2.5 right-2.5 px-2.5 py-1.5 rounded-md text-[11px] font-bold uppercase tracking-wider transition-colors ${
             copied
               ? "bg-emerald-600 text-white"
-              : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
+              : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white"
           }`}
         >
           {copied ? "Copied" : "Copy"}

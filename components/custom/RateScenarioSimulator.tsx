@@ -59,7 +59,7 @@ export default function RateScenarioSimulator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · July 28–29 FOMC scenario
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -67,7 +67,7 @@ export default function RateScenarioSimulator() {
       </p>
 
       <div className="mb-6">
-        <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-3">
+        <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
           Pick a scenario
         </p>
         <div className="inline-flex flex-wrap border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
@@ -89,7 +89,7 @@ export default function RateScenarioSimulator() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>HYSA balance</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(savings)}</b>
           </div>
@@ -100,7 +100,7 @@ export default function RateScenarioSimulator() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Mortgage balance</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(mortgageBalance)}</b>
           </div>
@@ -114,7 +114,7 @@ export default function RateScenarioSimulator() {
 
       <div className="grid sm:grid-cols-3 gap-4 pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <div className="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
             HYSA @ {result.hysaRate.toFixed(2)}%
           </p>
           <AnimatedNumber
@@ -129,7 +129,7 @@ export default function RateScenarioSimulator() {
         </div>
 
         <div className="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
             Mortgage @ {result.mortgageRate.toFixed(2)}%
           </p>
           <AnimatedNumber
@@ -144,10 +144,10 @@ export default function RateScenarioSimulator() {
         </div>
 
         <div className="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-1">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
             Core bond fund
           </p>
-          <span className={`font-serif text-2xl font-bold block ${result.bondChangePct >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}`}>
+          <span className={`font-serif text-2xl font-bold block ${result.bondChangePct >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}`}>
             {result.bondChangePct >= 0 ? '+' : ''}{result.bondChangePct.toFixed(1)}%
           </span>
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -156,7 +156,7 @@ export default function RateScenarioSimulator() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-4">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-4">
         Illustrative only. HYSA and mortgage baselines reflect published mid-July 2026 rates (Forbright ~4.15% APY; Freddie Mac 30-yr average 6.55%). Bond-fund move uses a simplified duration approximation (%Δprice ≈ −duration × Δyield), ignoring convexity, credit spreads, and fees. Not a rate forecast.
       </p>
     </div>

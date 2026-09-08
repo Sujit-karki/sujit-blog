@@ -66,7 +66,7 @@ export default function MarginalVsEffectiveTaxViz() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · marginal vs. effective rate
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -75,14 +75,14 @@ export default function MarginalVsEffectiveTaxViz() {
 
       <div className="grid sm:grid-cols-2 gap-5 mb-4">
         <div className="sm:col-span-2">
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Taxable income (gross)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(income)}</b>
           </div>
           <input type="range" min={20000} max={500000} step={1000} value={income} onChange={(e) => setIncome(+e.target.value)} className="w-full accent-emerald-600" />
         </div>
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Filing status</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Filing status</p>
           <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {(['single', 'mfj', 'hoh'] as Filing[]).map((f) => (
               <button
@@ -96,7 +96,7 @@ export default function MarginalVsEffectiveTaxViz() {
           </div>
         </div>
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">Tax year</p>
+          <p className="font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Tax year</p>
           <div className="inline-flex border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
             {([2026, 2027] as const).map((y) => (
               <button
@@ -125,7 +125,7 @@ export default function MarginalVsEffectiveTaxViz() {
             <AnimatedNumber value={result.marginalRate} format={(v) => v.toFixed(0) + '%'} />
           </strong>
           , but after the standard deduction and lower brackets, your effective rate on total income works out to just{' '}
-          <strong className="text-emerald-600 dark:text-emerald-400">
+          <strong className="text-emerald-700 dark:text-emerald-400">
             <AnimatedNumber value={result.effectiveRate} format={(v) => v.toFixed(1) + '%'} />
           </strong>{' '}
           — total tax of{' '}
@@ -144,7 +144,7 @@ export default function MarginalVsEffectiveTaxViz() {
           unit="$"
         />
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Federal income tax only — ignores payroll tax, state tax, credits, and the NIIT. Bracket thresholds are approximate to the nearest published figure; confirm exact cutoffs at irs.gov before filing. Not tax advice.
         </p>
       </div>

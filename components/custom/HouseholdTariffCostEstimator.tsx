@@ -49,7 +49,7 @@ export default function HouseholdTariffCostEstimator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · rough tariff pass-through by category
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -59,7 +59,7 @@ export default function HouseholdTariffCostEstimator() {
       <div className="space-y-5 mb-6">
         {CATEGORIES.map((c) => (
           <div key={c.key}>
-            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+            <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
               <span>{c.label} — annual spend</span>
               <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(spend[c.key])}</b>
             </div>
@@ -111,10 +111,10 @@ export default function HouseholdTariffCostEstimator() {
           </table>
         </div>
 
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
           Category pass-through rates are long-run estimates reported from The Budget Lab at Yale&apos;s tariff analysis and move as tariff policy and court rulings change (see Sources below) — this covers only these four goods categories, not your full household budget, and ignores services, which face much smaller indirect tariff effects.
         </p>
-        <p className="text-xs text-gray-400 mt-2">Estimate only — not financial advice.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Estimate only — not financial advice.</p>
       </div>
     </div>
   )

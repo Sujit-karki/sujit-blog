@@ -80,7 +80,7 @@ export default function LLCFeesChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         14x difference, same paperwork
       </p>
       <p className="font-serif text-xl mb-1 text-gray-900 dark:text-white">
@@ -105,7 +105,7 @@ export default function LLCFeesChart() {
         </span>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         One-time formation filing fee only. Some states add ongoing costs on top — California, for example, charges an $800 annual franchise tax regardless of the LLC&apos;s income, separate from its $70 filing fee. Always check your specific state&apos;s ongoing requirements before forming.
       </p>
     </ChartCard>

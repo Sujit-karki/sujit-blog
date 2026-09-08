@@ -42,7 +42,7 @@ export default function NewsletterSignup({ variant = "inline" }: NewsletterSignu
       <p
         className={
           variant === "footer"
-            ? "text-sm text-emerald-600 dark:text-emerald-400"
+            ? "text-sm text-emerald-700 dark:text-emerald-400"
             : "text-sm font-medium text-emerald-700 dark:text-emerald-300"
         }
       >
@@ -59,12 +59,12 @@ export default function NewsletterSignup({ variant = "inline" }: NewsletterSignu
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@email.com"
-        className="flex-1 min-w-0 px-3.5 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        className="flex-1 min-w-0 px-3.5 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white text-sm font-semibold transition-colors shrink-0"
+        className="px-4 py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 text-white text-sm font-semibold transition-colors shrink-0"
       >
         {status === "loading" ? "Subscribing…" : "Subscribe"}
       </button>

@@ -85,3 +85,99 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  bundle-budget:
+    name: Bundle Budget (size-limit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build
+        run: npm run build
+      # Budgets are aggregate because Turbopack content-hashes every chunk,
+      # leaving no stable per-file name to target. Set just above the measured
+      # size, so pulling in a second charting or date library trips this.
+      - name: Check bundle size
+        run: npm run size
+
+  lighthouse:
+    name: Lighthouse (Core Web Vitals budgets)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build
+        run: npm run build
+      # LCP, CLS and accessibility/SEO scores are asserted as errors; the
+      # performance and best-practices scores are warnings, because
+      # best-practices is capped by third-party ad cookies we do not control.
+      # Reports upload to temporary public storage — no token needed.
+      - name: Run Lighthouse CI
+        run: npm run lhci
+
+  dependency-audit:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # Production dependencies only. Dev-only advisories do not ship to a
+      # visitor, and failing the build on them trains people to ignore this.
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=critical
+
+  visual-regression:
+    name: Visual Regression (charts)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Snapshots are per-platform: canvas antialiasing and font rasterisation
+      # differ between Windows and Linux, so the committed -win32 baselines can
+      # never match this runner. Rather than fail every build until someone
+      # records a linux set, this job stays dormant until one is committed.
+      #
+      # To activate: run the Playwright container locally
+      #   docker run --rm -v ${PWD}:/w -w /w mcr.microsoft.com/playwright:v1.61.1-noble \
+      #     sh -c "npm ci && npx playwright test e2e/visual.spec.ts --update-snapshots"
+      # then commit the resulting *-linux.png files.
+      - name: Check for linux baselines
+        id: baselines
+        run: |
+          if ls e2e/visual.spec.ts-snapshots/*-linux.png >/dev/null 2>&1; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No linux snapshots committed yet — skipping. See the comment in this job."
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.baselines.outputs.found == 'true'
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+        if: steps.baselines.outputs.found == 'true'
+      - name: Install Playwright browsers
+        if: steps.baselines.outputs.found == 'true'
+        run: npx playwright install --with-deps chromium
+      - name: Compare against baselines
+        if: steps.baselines.outputs.found == 'true'
+        run: npm run test:visual
+      - name: Upload diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-diffs
+          path: test-results/
+          retention-days: 7

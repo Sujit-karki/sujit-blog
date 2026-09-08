@@ -69,7 +69,7 @@ export default function TaxTreatmentChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         A maxed-out account at 18, by tax treatment
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -86,7 +86,7 @@ export default function TaxTreatmentChart() {
               startFromZero
               className="font-serif text-2xl font-bold text-gray-900 dark:text-white text-center"
             />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mt-1 text-center">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1 text-center">
               {activeSlice ? activeSlice.label : 'Total balance at 18'}
             </span>
           </div>
@@ -110,7 +110,7 @@ export default function TaxTreatmentChart() {
                 <span className="w-3 h-3 rounded-sm shrink-0" style={{ background: s.color }} />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{s.label}</p>
-                  <p className="text-[11px] text-gray-400 dark:text-gray-500">
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400">
                     {i === 0 ? 'Withdrawn tax-free, like a Roth' : 'Taxed as ordinary income on withdrawal'}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function TaxTreatmentChart() {
         </div>
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Illustrative: $5,000/yr contributed for 18 years ($90,000 in basis) plus the $1,000 seed, growing to the White House Council of Economic Advisers&apos; own projected $303,800 maxed-out balance. Over two-thirds of that balance is the seed and growth &mdash; the part taxed as ordinary income, not capital gains, when withdrawn.
       </p>
     </ChartCard>

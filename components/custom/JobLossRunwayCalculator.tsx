@@ -24,7 +24,7 @@ export default function JobLossRunwayCalculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · your job-loss runway
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@ export default function JobLossRunwayCalculator() {
 
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Essential monthly expenses</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(monthlyEssentials)}</b>
           </div>
@@ -41,7 +41,7 @@ export default function JobLossRunwayCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Current savings</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(currentSavings)}</b>
           </div>
@@ -49,7 +49,7 @@ export default function JobLossRunwayCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Severance (months of pay)</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{severanceMonths}</b>
           </div>
@@ -57,7 +57,7 @@ export default function JobLossRunwayCalculator() {
         </div>
 
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Side income while job hunting</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(sideIncome)}/mo</b>
           </div>
@@ -68,7 +68,7 @@ export default function JobLossRunwayCalculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-lg sm:text-xl leading-snug mb-4 text-gray-900 dark:text-white">
           At this burn rate, your cushion covers roughly{' '}
-          <strong className={result.runwayMonths >= 6 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}>
+          <strong className={result.runwayMonths >= 6 ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-600 dark:text-red-400 dark:text-red-400'}>
             <AnimatedNumber value={result.runwayMonths} format={(v) => v.toFixed(1) + ' months'} />
           </strong>
           {result.gapToTarget > 0 && (
@@ -96,7 +96,7 @@ export default function JobLossRunwayCalculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           Uses a common 3–6 month emergency-fund benchmark. Your right number depends on job security, industry, and household situation — not a one-size formula.
         </p>
       </div>

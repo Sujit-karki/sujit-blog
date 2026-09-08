@@ -77,7 +77,7 @@ export default function CompoundGrowthChart() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · drag to explore
       </p>
       <p className="font-serif text-xl mb-4 text-gray-900 dark:text-white">
@@ -181,7 +181,7 @@ export default function CompoundGrowthChart() {
       {/* Slider controls */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Added each month</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">${pmt}</b>
           </div>
@@ -192,7 +192,7 @@ export default function CompoundGrowthChart() {
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
             <span>Years invested</span>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{years}</b>
           </div>
@@ -208,7 +208,7 @@ export default function CompoundGrowthChart() {
       <div className="grid grid-cols-3 gap-px mt-5 bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
         {payoffCards.map(({ label, color, val }) => (
           <div key={label} className="bg-white dark:bg-gray-900 p-3 sm:p-4 text-center">
-            <div className="flex items-center justify-center gap-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-gray-400 mb-2">
+            <div className="flex items-center justify-center gap-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
               <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: color }} />
               <span className="hidden sm:inline leading-tight">{label}</span>
             </div>
@@ -219,7 +219,7 @@ export default function CompoundGrowthChart() {
         ))}
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-3 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
         Assumes a 7.5% average annual return, compounded monthly — roughly the long-run average of a broad U.S. stock index. Markets don&apos;t move in straight lines; this shows the math of staying invested, not a guarantee.
       </p>
     </div>

@@ -35,7 +35,7 @@ export default function TrumpVs529Calculator() {
 
   return (
     <div className="not-prose my-8 p-5 sm:p-6 bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl">
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Interactive · set your situation
       </p>
       <p className="font-serif text-xl mb-5 text-gray-900 dark:text-white">
@@ -45,33 +45,36 @@ export default function TrumpVs529Calculator() {
       {/* Sliders */}
       <div className="space-y-5 mb-6">
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
-            <span>Your annual contribution</span>
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+            <label htmlFor="tv529-contribution">Your annual contribution</label>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{money(contribution)}</b>
           </div>
           <input
+            id="tv529-contribution"
             type="range" min={0} max={5000} step={250} value={contribution}
             onChange={e => setContribution(+e.target.value)}
             className="w-full accent-blue-600"
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
-            <span>Years until your kid needs it</span>
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+            <label htmlFor="tv529-years">Years until your kid needs it</label>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{years}</b>
           </div>
           <input
+            id="tv529-years"
             type="range" min={1} max={18} step={1} value={years}
             onChange={e => setYears(+e.target.value)}
             className="w-full accent-blue-600"
           />
         </div>
         <div>
-          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-400 mb-2">
-            <span>Tax bracket when withdrawn</span>
+          <div className="flex justify-between font-mono text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+            <label htmlFor="tv529-bracket">Tax bracket when withdrawn</label>
             <b className="text-base text-gray-900 dark:text-white normal-case tracking-normal">{bracket}%</b>
           </div>
           <input
+            id="tv529-bracket"
             type="range" min={10} max={32} step={1} value={bracket}
             onChange={e => setBracket(+e.target.value)}
             className="w-full accent-amber-600"
@@ -83,7 +86,7 @@ export default function TrumpVs529Calculator() {
       <div className="pt-5 border-t border-dashed border-gray-200 dark:border-gray-700">
         <p className="font-serif text-xl sm:text-2xl leading-snug mb-4 text-gray-900 dark:text-white">
           {the529Wins ? (
-            <>The <strong className="text-emerald-600 dark:text-emerald-400">529 plan</strong> wins — by about {money(diff)} spendable for college, even after the Trump Account&apos;s free {money(SEED)} seed.</>
+            <>The <strong className="text-emerald-700 dark:text-emerald-400">529 plan</strong> wins — by about {money(diff)} spendable for college, even after the Trump Account&apos;s free {money(SEED)} seed.</>
           ) : (
             <>The <strong className="text-blue-600 dark:text-blue-400">Trump Account</strong> edges ahead by about {money(diff)} — the free seed is outweighing a small contribution over a short horizon.</>
           )}
@@ -117,7 +120,7 @@ export default function TrumpVs529Calculator() {
           </div>
         </div>
 
-        <p className="font-mono text-[11px] text-gray-400 leading-relaxed mt-3">
+        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed mt-3">
           {`Both sides assume the same ${money(contribution)}/yr contribution growing at 7% annually. The Trump Account also gets a one-time ${money(SEED)} government seed, but its basis (your contributions) is the only part that comes out tax-free — the seed and all growth are taxed as ordinary income at your chosen bracket. The 529's qualified education withdrawals are 100% tax-free, with no seed money of its own.`}
         </p>
       </div>

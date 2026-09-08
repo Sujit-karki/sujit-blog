@@ -62,7 +62,7 @@ export default function Header() {
               <Link
                 key={cat}
                 href={`/category/${slugifyCategory(cat)}`}
-                className="px-3 py-1 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 rounded transition-colors whitespace-nowrap"
+                className="px-3 py-1 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 rounded transition-colors whitespace-nowrap"
               >
                 {cat}
               </Link>

@@ -43,6 +43,7 @@ export default function CodeBlock({ children }: Props) {
     <div className="relative group my-6">
       <pre
         ref={preRef}
+        tabIndex={0}
         className="bg-gray-950 text-gray-100 rounded-xl p-5 overflow-x-auto text-sm border border-gray-800 leading-relaxed"
       >
         {children}
@@ -59,7 +60,7 @@ export default function CodeBlock({ children }: Props) {
           ${
             copied
               ? 'bg-emerald-600 text-white scale-95'
-              : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
+              : 'bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-700 hover:text-white'
           }
         `}
       >

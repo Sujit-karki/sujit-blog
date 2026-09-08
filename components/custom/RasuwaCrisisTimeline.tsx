@@ -58,7 +58,7 @@ export default function RasuwaCrisisTimeline() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Timeline · 72 hours
       </p>
       <p className="font-serif text-xl mb-6 text-gray-900 dark:text-white">
@@ -76,7 +76,7 @@ export default function RasuwaCrisisTimeline() {
             className={`border-l-4 ${e.tone} bg-white dark:bg-gray-900/60 rounded-r-xl px-4 py-3`}
           >
             <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-gray-400">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400">
                 {e.when}
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5">

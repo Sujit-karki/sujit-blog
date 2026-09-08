@@ -98,7 +98,7 @@ export default function RetirementContributionChart() {
 
   return (
     <ChartCard>
-      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-400 mb-1">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-1">
         Max 2026 contribution by profit level
       </p>
       <p className="font-serif text-xl mb-4 text-gray-900 dark:text-white">
@@ -109,7 +109,7 @@ export default function RetirementContributionChart() {
         <Bar data={data} options={options} />
       </div>
 
-      <p className="font-mono text-[11px] text-gray-400 mt-4 leading-relaxed">
+      <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
         Simplified: SEP IRA modeled as 20% of net profit; Solo 401(k) modeled as a $24,500 employee deferral plus 20% employer contribution, both capped at $72,000 combined and at net profit. The gap is largest at lower profit because the Solo 401(k)&apos;s flat employee deferral doesn&apos;t depend on the 20% employer formula the way SEP contributions do.
       </p>
     </ChartCard>
