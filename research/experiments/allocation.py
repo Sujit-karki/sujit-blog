@@ -379,6 +379,29 @@ class AccountChoice(Experiment):
             print(f"\nanswer flipped between framings in {flips}/{pairs} model-case pairs "
                   f"({flips / pairs:.1%})")
 
+        # Which slot each model picks, per framing. This is the reason the
+        # option order rotates: a model that answers "2" whatever sits in slot
+        # 2 is not choosing an account at all, and without the rotation its
+        # answers would be indistinguishable from reasoning that happened to
+        # land there. Reported because it is the mechanism behind the accuracy,
+        # not a footnote to it.
+        print("\nslot picked, by model and framing (1/2/3, and the count of the modal slot):")
+        for model in sorted({r["model"] for r in rows}):
+            for framing in ("named", "anon"):
+                group = [
+                    r for r in rows
+                    if r["model"] == model and r["category"] == framing and r["parsed"] is not None
+                ]
+                if not group:
+                    continue
+                counts = collections.Counter(int(r["parsed"]) for r in group)
+                spread = " ".join(f"{slot}:{counts.get(slot, 0):>3}" for slot in (1, 2, 3))
+                top_slot, top_n = counts.most_common(1)[0]
+                print(
+                    f"  {model:<16} {framing:<6} {spread}   "
+                    f"modal slot {top_slot} on {top_n / len(group):.0%} of answers"
+                )
+
         # Format compliance and truncation, reported separately from accuracy
         # so a model is never marked wrong for a measurement artefact.
         cut = sum(1 for r in rows if r.get("truncated"))

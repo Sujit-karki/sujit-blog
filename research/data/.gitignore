@@ -8,3 +8,6 @@
 #                                 Kept because comparing the two is what
 #                                 demonstrates the reproducibility claim:
 #                                 240/240 answers identical across both.
+
+# Transient run locks, written by Experiment._acquire_lock.
+*.lock

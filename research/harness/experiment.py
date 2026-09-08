@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import abc
 import json
+import os
 import platform
 import time
 from dataclasses import asdict, dataclass, field
@@ -137,7 +138,40 @@ class Experiment(abc.ABC):
             handle.write(json.dumps(asdict(result)) + "\n")
             handle.flush()
 
+    def _acquire_lock(self) -> Path:
+        """Refuse to start if another run is already writing this dataset.
+
+        Two processes appending to the same JSONL do not crash and do not warn:
+        they interleave, and the file ends up with the same (model, scenario,
+        rep) key recorded twice. Nothing downstream notices, and the duplicated
+        scenarios quietly carry double weight in the published accuracy. This
+        happened once during the allocation run, so the guard exists.
+        """
+        lock = self.results_path.with_suffix(".lock")
+        stamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            # O_EXCL rather than exists()-then-write: two runs started in the
+            # same second would both pass a check-then-create test and both
+            # proceed, which is the failure this is here to prevent.
+            handle = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        except FileExistsError:
+            raise RuntimeError(
+                f"{lock} exists — another run is writing {self.results_path.name}. "
+                f"If no run is active, that is a stale lock from a killed process: "
+                f"delete it and rerun."
+            ) from None
+        with os.fdopen(handle, "w", encoding="utf-8") as fh:
+            fh.write(f"pid {os.getpid()} started {stamp}\n")
+        return lock
+
     def run(self, models: list[str], reps: int = 10, base_seed: int = 42) -> None:
+        lock = self._acquire_lock()
+        try:
+            self._run(models, reps, base_seed)
+        finally:
+            lock.unlink(missing_ok=True)
+
+    def _run(self, models: list[str], reps: int, base_seed: int) -> None:
         scenarios = self.scenarios()
         done = self._completed_keys()
         total = len(models) * len(scenarios) * reps
