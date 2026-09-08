@@ -1,0 +1,311 @@
+---
+title: "Etsy's Seller Fee Is 6.5%. Etsy Keeps 24.2%."
+description: "The fee a platform advertises and the share it actually collects are different numbers. Computed from eight companies' own annual reports, alongside the fees they publish to sellers — and the gap is between three and five times."
+seoTitle: "Etsy's Fee Is 6.5%. It Keeps 24.2% — The Real Take Rates"
+seoDescription: "What Etsy, eBay, Airbnb, Upwork and Fiverr actually keep per dollar sold, computed from their own SEC filings."
+date: "2026-09-08"
+category: "Side Hustles"
+tags: ["Gig Economy", "Side Hustle", "Etsy", "Original Data", "Platform Fees", "Methodology"]
+author: "Sujit Karki"
+toc:
+  - { id: "the-fee-is-not-the-take", title: "The fee is not the take", level: 2 }
+  - { id: "what-eight-platforms-actually-keep", title: "What eight platforms actually keep", level: 2 }
+  - { id: "advertised-against-realised", title: "Advertised against realised", level: 2 }
+  - { id: "where-the-other-eighteen-points-go", title: "Where the other eighteen points go", level: 2 }
+  - { id: "why-ubers-number-is-not-a-drivers-cut", title: "Why Uber's number is not a driver's cut", level: 2 }
+  - { id: "what-i-could-not-get", title: "What I could not get", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "What is a platform take rate?"
+    a: "Revenue divided by everything transacted through the platform. If sellers move $100 of goods and the platform books $24 of revenue from that activity, the take rate is 24%. It counts every way the platform earns — commission, payment processing, listing fees, advertising — not just the headline commission."
+  - q: "How much does Etsy actually keep?"
+    a: "24.2% of gross merchandise sales in the year ended December 2025, computed as $2.88 billion of revenue against $11.92 billion of GMS, both from Etsy's own 10-K. Etsy reports the same 24.2% figure itself. Its advertised seller transaction fee is 6.5%."
+  - q: "Which selling platform takes the smallest cut?"
+    a: "Of the marketplaces measured here, Airbnb at 13.4% and eBay at 13.9% keep the least per dollar transacted. Fiverr keeps the most at 40.2%. These are company-wide ratios, not the fee any individual seller pays."
+  - q: "Is the take rate the same as the fee I pay?"
+    a: "No, and the difference is the point of this piece. The take rate includes revenue from advertising, payment processing and subscriptions that sellers buy on top of the commission, and on some platforms it includes fees charged to the buyer rather than the seller. It measures what the platform captures per dollar of activity, not what appears on your invoice."
+---
+
+<KeyTakeaways items={[
+  "Etsy advertises a 6.5% transaction fee. Its revenue was 24.2% of everything sold on it last year — 3.7 times the headline number.",
+  "Airbnb advertises a 3% host service fee and collected 13.4% of gross bookings: 4.5 times.",
+  "Upwork's published freelancer fee tops out at 15%. It collected 19.6% of gross services volume — more than the maximum fee it charges freelancers.",
+  "Fiverr keeps the most of any platform measured, at 40.2% of marketplace volume.",
+  "Every figure is computed from the companies' own annual reports. Where a company publishes its own take rate, recomputing it reproduces their number exactly."
+]} />
+
+There are two numbers attached to every selling platform, and only one of them
+gets advertised.
+
+The first is the fee. Etsy's is 6.5%, stated plainly in its
+[fee policy](https://www.etsy.com/legal/fees/): "you will be charged a
+transaction fee of 6.5% of the price you display for each listing plus the
+amount you charge for shipping and gift wrapping."
+
+The second is what the company actually collects per dollar that moves through
+it — commission plus payment processing plus listing fees plus the advertising
+a seller buys to be found at all. That number is called the take rate, and
+because it is a headline metric for investors, it sits in the annual report
+every one of these companies files with the SEC.
+
+For Etsy, in the year ended December 2025, it was **24.2%**.
+
+## The fee is not the take
+
+Both numbers are true and they measure different things. 6.5% is what Etsy
+charges on a sale. 24.2% is Etsy's total revenue divided by Etsy's total gross
+merchandise sales — $2.88 billion against $11.92 billion.
+
+The gap is not hidden and it is not an accusation. It is the sum of everything
+else on the price list. Etsy charges $0.20 to list an item, again every four
+months whether or not it sells. It charges payment processing. It charges a
+Regulatory Operating fee in some countries. And it charges an Offsite Ads fee
+of 15% of the order — 12% for larger shops — which shops that have passed
+$10,000 in sales cannot opt out of.
+
+Add those together across every seller and you get 24.2%, not 6.5%.
+
+<InfoBox type="tip">
+Take rate is the right number for "what share of this economy does the platform
+capture" and the wrong number for "what will this cost me". No individual
+seller pays 24.2%. A seller who never buys ads, lists few items and sells them
+all pays close to the headline rate. The company-wide figure is what the
+average dollar experiences, and averages include the sellers buying ads.
+</InfoBox>
+
+## What eight platforms actually keep
+
+<BarChart
+  title="Revenue as a share of everything transacted, FY2025"
+  description="Computed from each company's annual report. Net-basis marketplaces and gross-basis delivery companies are not comparable with each other — see the caveat below."
+  data={[
+    { platform: "Fiverr", take: 40.16 },
+    { platform: "Lyft", take: 31.86 },
+    { platform: "Uber", take: 26.89 },
+    { platform: "Etsy", take: 24.20 },
+    { platform: "Upwork", take: 19.56 },
+    { platform: "eBay", take: 13.94 },
+    { platform: "DoorDash", take: 13.45 },
+    { platform: "Airbnb", take: 13.41 }
+  ]}
+  xKey="platform"
+  series={[{ key: "take", label: "Take rate" }]}
+  unit="%"
+  colorByCategory
+/>
+
+<ComparisonTable
+  caption="Fiscal year 2025. Gross volume is each company's own headline metric — GMS, GMV, GBV, GSV, Marketplace GOV or Gross Bookings."
+  headers={["Platform", "Gross volume", "Revenue", "Take rate", "Revenue basis"]}
+  rows={[
+    ["Fiverr", "$1.07B", "$0.43B", "40.2%", "net"],
+    ["Lyft", "$18.5B", "$5.90B", "31.9%", "gross"],
+    ["Uber", "$193.5B", "$52.0B", "26.9%", "gross"],
+    ["Etsy", "$11.9B", "$2.88B", "24.2%", "net"],
+    ["Upwork", "$4.03B", "$0.79B", "19.6%", "net"],
+    ["eBay", "$79.6B", "$11.1B", "13.9%", "net"],
+    ["DoorDash", "$102.0B", "$13.7B", "13.4%", "gross"],
+    ["Airbnb", "$91.3B", "$12.2B", "13.4%", "net"]
+  ]}
+/>
+
+Two of these are checkable against the companies themselves. Etsy publishes a
+"revenue take rate" and defines it as revenue divided by GMS — the same
+calculation — and reports 24.2%. eBay reports 13.94%. Recomputing both from
+the underlying figures reproduces them exactly, which is the only independent
+evidence available that the extraction is reading the right rows.
+
+## Advertised against realised
+
+For the marketplaces that publish a seller-facing fee, the two numbers can be
+put side by side. These fees were read from each platform's own policy page.
+
+<BarChart
+  title="The advertised fee against the realised take rate"
+  description="Advertised is the headline seller-facing fee, or the top of its published range where the platform gives one. Realised is FY2025 revenue over gross volume."
+  data={[
+    { platform: "Etsy", advertised: 6.5, realised: 24.20 },
+    { platform: "Airbnb", advertised: 3.0, realised: 13.41 },
+    { platform: "Upwork", advertised: 15.0, realised: 19.56 },
+    { platform: "eBay", advertised: 15.3, realised: 13.94 }
+  ]}
+  xKey="platform"
+  series={[
+    { key: "advertised", label: "Advertised fee" },
+    { key: "realised", label: "Realised take rate" }
+  ]}
+  unit="%"
+/>
+
+<ComparisonTable
+  caption="Advertised fees quoted from each platform's published policy, read September 2026"
+  headers={["Platform", "Advertised", "Realised", "Multiple", "What the policy says"]}
+  rows={[
+    ["Etsy", "6.5%", "24.2%", "3.7x", "\"a transaction fee of 6.5% of the price you display\""],
+    ["Airbnb", "3%", "13.4%", "4.5x", "\"Most hosts pay a 3% service fee, but some pay more.\""],
+    ["Upwork", "0–15%", "19.6%", "1.3x", "\"The fee ranges from 0% to 15% per contract\""],
+    ["eBay", "2.5–15.3%", "13.9%", "0.9x", "\"This final value fee ranges from 2.5% to 15.3%\""]
+  ]}
+/>
+
+Three things stand out.
+
+**Etsy and Airbnb are the widest gaps**, at 3.7 and 4.5 times. Both advertise a
+low, memorable commission and earn most of their revenue from everything
+around it.
+
+**Upwork collects more than its own maximum.** Its freelancer service fee tops
+out at 15% per contract, and it collected 19.6% of gross services volume. That
+is not a contradiction — Upwork also charges clients, and sells ads and
+subscriptions — but it does mean the number a freelancer sees quoted is
+structurally incapable of describing what the platform takes out of the work.
+
+**eBay is the honest one**, and it is the only platform here whose realised
+take lands inside its advertised range rather than above it. Its 13.9% sits
+just under the 15.3% top of its final-value-fee band.
+
+## Where the other eighteen points go
+
+Etsy's own fee policy is the clearest map of the gap, because it lists every
+charge in one place. Beyond the 6.5%:
+
+- **$0.20 per listing**, charged when you list and again on every four-month
+  renewal, "whether or not the listed item sells".
+- **Offsite Ads at 15%** of an attributed order, dropping to 12% once a shop
+  passes $10,000 in trailing sales — and at that point participation is
+  mandatory. A shop under the threshold may opt out; a shop over it may not,
+  "for the lifetime of your shop".
+- **Payment processing**, which varies by country.
+- **A Regulatory Operating fee**, a fixed percentage that also varies by
+  country.
+- **Etsy Plus** at $10 a month, and **Pattern** at $15 a month, both optional.
+- **A 2.5% currency conversion fee** if you list in a currency other than your
+  payment account's.
+
+None of this is concealed — it is all in the policy, which is exactly where I
+read it. But the 6.5% is the number in the marketing, and 24.2% is the number
+in the annual report.
+
+## Why Uber's number is not a driver's cut
+
+The delivery and rideshare companies are in the table and they should be read
+differently, which is why the "revenue basis" column exists.
+
+Etsy, eBay, Airbnb, Upwork and Fiverr book revenue **net** — broadly, their own
+cut. Uber, Lyft and DoorDash book substantial revenue **gross**, meaning
+amounts that pass through to drivers can be recognised as revenue depending on
+how each arrangement is structured. Uber's 26.9% is therefore not the share a
+driver loses, and it cannot be compared against Etsy's 24.2% as though the two
+measured the same thing.
+
+They are included rather than dropped because leaving them out would hide the
+incomparability instead of documenting it. Among the five net-basis
+marketplaces, the honest range is **13.4% to 40.2%**.
+
+## What I could not get
+
+Two gaps, both stated rather than papered over.
+
+**Fiverr has no advertised fee in this piece.** It has the highest take rate in
+the set at 40.2%, which makes its seller fee the most interesting one to quote,
+and I could not read it from a primary source: Fiverr returns an error to
+direct requests and its domain was not readable in the browser session used for
+the others. Its take rate comes from its 20-F, which is a filing and needs no
+scraping. The fee is simply absent, and I would rather leave a hole than quote
+a number I did not verify.
+
+**The original plan for this piece was broader and failed.** It was going to
+normalise payout thresholds, instant-cashout fees and payout schedules across a
+dozen gig platforms by fetching their help documentation. That is not possible.
+Every platform tried serves a bot wall: eBay's fee page returns 95 characters of
+text to an automated request, Gumroad's 39, Lyft's 74. Rendering the pages in a
+real browser engine did not help — eBay returned 817 characters, Etsy 259,
+Gumroad 32. The numbers are not in the HTML at all.
+
+That is why this piece is built on SEC filings, which are public by law and
+served to anyone who asks, and why the four advertised fees were read by hand
+in a browser rather than collected by a script. The take-rate half is
+reproducible by running one command. The fee half is not, and is dated and
+quoted so it can be checked.
+
+<DatasetSignup
+  dataset="the platform take rates"
+  cadence="each year as new annual reports are filed"
+  dataFile="platform-take.csv"
+/>
+
+## Methodology
+
+**Take rate.** Revenue divided by gross volume, for the most recent fiscal year
+in each company's latest annual report — all FY2025, ending December 2025.
+
+**Revenue** comes from XBRL company facts on `data.sec.gov`, which is
+structured data each company tagged itself, matched to the fiscal year by start
+and end date. **Gross volume** is not in XBRL — it is a non-GAAP operating
+metric that lives in the narrative under a different name at every company
+(GMS, GMV, GBV, GSV, Marketplace GOV, Gross Bookings) — so it is extracted from
+the filing text.
+
+**Three guards on the extraction**, because reading numbers out of prose is the
+part that goes wrong:
+
+1. The unit scale is declared per company and then checked against the scale
+   the filing itself states near the figure. Upwork reports in thousands and
+   everyone else in millions; getting that backwards is a factor of a thousand.
+2. Gross volume must exceed revenue.
+3. The resulting rate must fall in a plausible band.
+
+Any failure stops the run instead of writing a number.
+
+**Two bugs these checks caught**, both worth naming because both would have
+been invisible in the output:
+
+- Etsy's discussion contains the sentence "GMS was $10,460.7 million", which is
+  the Etsy marketplace alone, excluding Depop and Reverb — while revenue is
+  consolidated. Dividing all of the company's revenue by one segment's volume
+  gave 27.6% instead of 24.2%. The mismatch against Etsy's own reported take
+  rate is what exposed it.
+- DoorDash's metrics table runs 2023, 2024, 2025 across the columns, and
+  Airbnb's runs 2024, 2025. The first pattern took the leftmost figure and so
+  read the *oldest* year against the newest revenue, understating DoorDash by
+  seven points and overstating Airbnb by one and a half. Column order is not
+  consistent between companies: Uber's current year is second, Lyft's and
+  Etsy's is first, DoorDash's is third.
+
+**Cross-check.** Etsy and eBay both publish a take rate defined the same way
+this one is, and recomputing reproduces 24.2% and 13.94% exactly. Fiverr and
+Upwork publish a *marketplace* take rate — only the marketplace slice of
+revenue over the same denominator — so their published 27.7% and 18.7% are
+legitimately lower than the 40.2% and 19.6% computed here, and the script does
+not assert equality against them.
+
+**Advertised fees** were read in a browser from each platform's own policy page
+in September 2026 and are quoted verbatim with their source URLs in
+`platform-fees.json`. Etsy's policy was last updated 13 February 2026. This half
+is hand-collected and says so.
+
+**Reproducibility.** The script is
+[`research/platform_take.py`](https://github.com/Sujit-karki/sujit-blog/blob/main/research/platform_take.py).
+It caches each filing on first run. The dataset is `platform-take.csv`, and the
+hand-read fee quotes are in `platform-fees.json`.
+
+**Disclosure.** Figures are computed from primary filings by the script above;
+the analysis and conclusions are mine. The commentary was drafted with AI
+assistance. No language model produced any figure in this post.
+
+<InfoBox type="warning">
+This is educational information, not investment or business advice. Take rate is
+a company-wide ratio and does not predict what any individual seller will pay.
+Fee schedules change — the ones quoted here were read in September 2026, and the
+platform's current policy page is always the authority.
+</InfoBox>
+
+<Sources items={[
+  { title: "Etsy Fees & Payments Policy", url: "https://www.etsy.com/legal/fees/", publisher: "Etsy", date: "2026" },
+  { title: "eBay Seller fees", url: "https://www.ebay.com/sellercenter/selling/start-selling-on-ebay/seller-fees", publisher: "eBay" },
+  { title: "Airbnb service fees", url: "https://www.airbnb.com/help/article/1857", publisher: "Airbnb" },
+  { title: "Learn about the Freelancer Service Fee", url: "https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee", publisher: "Upwork" },
+  { title: "EDGAR company filings and XBRL company facts", url: "https://www.sec.gov/edgar/searchedgar/companysearch", publisher: "U.S. Securities and Exchange Commission" },
+  { title: "Platform take rates (CSV)", url: "/data/platform-take.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Advertised seller fees (JSON)", url: "/data/platform-fees.json", publisher: "Dataset published with this post", date: "2026" }
+]} />

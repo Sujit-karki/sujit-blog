@@ -11,3 +11,7 @@
 
 # Transient run locks, written by Experiment._acquire_lock.
 *.lock
+
+# Cached SEC filings, refetched on demand by platform_take.py (several MB of
+# primary documents that never change once filed).
+sec-cache/

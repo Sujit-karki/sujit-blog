@@ -86,6 +86,30 @@ python run.py summarise     # raw JSONL -> data/numeracy.csv
 | `advice` | properties of free-text answers to money questions | `data/advice-raw.jsonl` |
 | `allocation` | which account a model picks, named vs anonymous | `data/allocation.csv` |
 
+### Scripts that are not model experiments
+
+Some measurements here involve no model at all. They live alongside the harness
+because they produce datasets for the same posts, under the same rule: the
+figures come from primary documents, and every one is checked against something
+independent before it is published.
+
+| script | what it measures | dataset |
+|---|---|---|
+| `platform_take.py` | what selling platforms keep per dollar transacted, from SEC filings | `data/platform-take.csv` |
+| `readability.py` | reading difficulty of fetched documents | `data/readability.json` |
+| `policy_length.py` | length and reading time of privacy policies | `data/policy-length.json` |
+| `measure_energy.py` | GPU power draw during local inference | `data/energy.json` |
+
+`platform_take.py` takes revenue from XBRL, which is structured, and gross
+volume from the filing narrative, which is not. Reading numbers out of prose is
+the part that goes wrong, so it refuses to run rather than guess: the unit scale
+declared per company must match the scale the filing states near the figure,
+gross volume must exceed revenue, and the rate must be plausible. Where a
+company publishes its own take rate on the same basis — Etsy and eBay both do —
+recomputing it must reproduce their figure. That check caught a real error, and
+column order is the other trap: the current year is the first figure for Etsy
+and Lyft, the second for Uber and Airbnb, and the third for DoorDash.
+
 Default model set (Q4_K_M, which is what `ollama pull` gives by default):
 
 | model | on-disk | fits 4 GB VRAM |

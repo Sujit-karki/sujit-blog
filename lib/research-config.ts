@@ -20,6 +20,15 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "platform-take-rates-2026",
+    title: "Etsy's Seller Fee Is 6.5%. Etsy Keeps 24.2%.",
+    finding:
+      "Eight platforms' revenue against everything transacted through them, from their own annual reports. Etsy's realised take is 3.7 times its advertised fee, Airbnb's 4.5 times, and Upwork collects more than the maximum fee it charges freelancers.",
+    method: "SEC XBRL revenue over gross volume read from each 10-K, plus fees read by hand",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
     slug: "ai-account-choice-names-2026",
     title: "I Deleted the Account Names, and the AI Got Better",
     finding:

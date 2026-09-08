@@ -1,0 +1,68 @@
+{
+  "_about": "Advertised seller-facing fees, read by hand from each platform's own published policy. This file is NOT script-generated: every gig platform serves a bot wall to automated requests, so these were read in a browser and transcribed with the source quote, URL and retrieval date attached to each figure. The companion dataset platform-take.csv IS script-generated from SEC filings. The two measure different things on purpose: this is what a platform says it charges, that is what it actually earns per dollar transacted.",
+  "_retrieved": "2026-09-08",
+  "_method": "Read in a browser from the platform's own fee policy or seller centre. Each entry quotes the sentence the figure comes from, verbatim.",
+  "fees": [
+    {
+      "platform": "Etsy",
+      "headline_fee_pct": 6.5,
+      "headline_fee_label": "6.5% transaction fee",
+      "quote": "When you make a sale through Etsy.com, you will be charged a transaction fee of 6.5% of the price you display for each listing plus the amount you charge for shipping and gift wrapping.",
+      "other_fees": [
+        "$0.20 listing fee per item listed, charged whether or not the item sells, and again on every four-month renewal",
+        "Offsite Ads fee of 15% of the order, or 12% for shops that have made $10,000 or more in the prior 365 days — mandatory at that threshold",
+        "Payment processing fees that vary by country",
+        "Regulatory Operating fee, a fixed percentage that varies by country",
+        "Optional Etsy Plus subscription at $10/month"
+      ],
+      "source_url": "https://www.etsy.com/legal/fees/",
+      "policy_last_updated": "2026-02-13"
+    },
+    {
+      "platform": "eBay",
+      "headline_fee_pct": null,
+      "headline_fee_label": "2.5%–15.3% final value fee",
+      "quote": "If your item sells, eBay keeps a portion of the sale. This final value fee ranges from 2.5% to 15.3%",
+      "other_fees": [
+        "A per-order fee in addition to the percentage",
+        "Rate varies by product category"
+      ],
+      "source_url": "https://www.ebay.com/sellercenter/selling/start-selling-on-ebay/seller-fees",
+      "policy_last_updated": null
+    },
+    {
+      "platform": "Airbnb",
+      "headline_fee_pct": 3.0,
+      "headline_fee_label": "3% host service fee (split-fee structure)",
+      "quote": "Most hosts pay a 3% service fee, but some pay more.",
+      "other_fees": [
+        "4% for listings in Brazil and Mexico",
+        "Under the alternative single-fee structure, where the host absorbs the whole fee instead of splitting it with the guest, most hosts pay 15.5%"
+      ],
+      "source_url": "https://www.airbnb.com/help/article/1857",
+      "policy_last_updated": null
+    },
+    {
+      "platform": "Upwork",
+      "headline_fee_pct": null,
+      "headline_fee_label": "0%–15% freelancer service fee",
+      "quote": "The fee ranges from 0% to 15% per contract, and helps us provide you with payment protection, fraud prevention, dispute resolution, and all the tools that help you run your business more smoothly.",
+      "other_fees": [
+        "Rate is set per contract and fixed once the contract begins",
+        "Reduced on Direct Contracts; typically 10% with Enterprise clients; waived on Upwork Payroll and Any Hire contracts"
+      ],
+      "source_url": "https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee",
+      "policy_last_updated": null
+    }
+  ],
+  "excluded": [
+    {
+      "platform": "Fiverr",
+      "reason": "Blocks automated requests (HTTP error on direct fetch) and the domain was not readable in the browser session used for the others. Its take rate is still computed from its 20-F, but no advertised seller fee is quoted here because none was read from a primary source."
+    },
+    {
+      "platform": "Uber, Lyft, DoorDash",
+      "reason": "No advertised seller-side percentage to quote. Driver pay is set per trip or per order rather than as a published cut of a sale price, so a headline fee is not comparable to the marketplaces above."
+    }
+  ]
+}
