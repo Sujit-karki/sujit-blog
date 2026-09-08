@@ -12,6 +12,7 @@ import {
 } from "@/lib/posts";
 import { siteConfig, slugifyCategory, authorSameAs } from "@/lib/site-config";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
+import { buildDatasetJsonLd } from "@/lib/datasets-config";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadingProgress from "@/components/ReadingProgress";
@@ -115,6 +116,9 @@ export default async function PostPage({ params }: Props) {
   // content itself is still genuinely useful, so it renders visibly below
   // (see FaqAccordion) instead of living only in unrendered JSON-LD.
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbItems, siteConfig.url);
+  // Only the posts that actually publish their rows get Dataset markup; for
+  // everything else this is null and no script is emitted.
+  const datasetJsonLd = buildDatasetJsonLd(slug);
   const { gradient, shadow } = THEME_STYLES[themeForCategory(post.category)];
 
   return (
@@ -128,6 +132,12 @@ export default async function PostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }}
       />
+      {datasetJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetJsonLd).replace(/</g, "\\u003c") }}
+        />
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <div className="mb-6">

@@ -1,0 +1,245 @@
+// Dataset descriptions for the posts that publish their underlying rows.
+//
+// These drive schema.org `Dataset` JSON-LD, which is read by Google Dataset
+// Search. Worth being precise about what that does and does not buy: Google
+// clarified in November 2025 that Dataset structured data is used by Dataset
+// Search and not by Google Search, and Dataset reporting was removed from
+// Search Console in January 2026. So this produces no blue-link rich result.
+// It exists because Dataset Search is a discovery channel that almost nothing
+// in this niche is listed in, and because describing the data properly is
+// worth doing whether or not a crawler rewards it.
+//
+// The entry criterion matches the research hub's: a post appears here only if
+// a reader can download the actual rows behind its figures. A post whose
+// numbers are computed live from someone else's API, with nothing published,
+// does not belong here.
+
+// Relative, matching lib/posts.ts: the vitest config resolves no path alias,
+// so a "@/lib/..." import here would compile but fail under test.
+import { siteConfig, authorSameAs } from "./site-config";
+
+export interface DatasetFile {
+  /** Filename under /data/, which publish-data.mjs copies from research/data. */
+  name: string;
+  /** IANA media type, for DataDownload.encodingFormat. */
+  encodingFormat: string;
+}
+
+export interface DatasetMeta {
+  /** Human title of the dataset, distinct from the post's headline. */
+  name: string;
+  /**
+   * What the dataset contains. Google Dataset Search requires this to be
+   * between 50 and 5,000 characters and only reads the first 5,000 characters
+   * of any textual property, so it is written to be genuinely descriptive
+   * rather than a restatement of the title. The length rule is enforced by a
+   * unit test, not by hoping.
+   */
+  description: string;
+  keywords: string[];
+  /** ISO 8601 interval or year the data covers. */
+  temporalCoverage: string;
+  /** The quantities actually recorded, one per column or field of interest. */
+  variableMeasured: string[];
+  files: DatasetFile[];
+}
+
+const CSV = "text/csv";
+const JSON_TYPE = "application/json";
+const JSONL = "application/jsonl";
+
+export const datasets: Record<string, DatasetMeta> = {
+  "platform-take-rates-2026": {
+    name: "Platform take rates and advertised seller fees, FY2025",
+    description:
+      "Revenue as a share of gross volume for eight marketplace and gig platforms — Fiverr, Lyft, Uber, Etsy, Upwork, eBay, DoorDash and Airbnb — for fiscal year 2025. Revenue is taken from XBRL company facts on data.sec.gov; gross volume (GMS, GMV, GBV, GSV, Marketplace GOV or Gross Bookings, depending on the company) is extracted from the narrative of each company's 10-K or 20-F, with the source sentence and filing URL recorded per row. A companion file records the seller-facing fee each platform advertises, quoted verbatim from its own published policy with the URL and retrieval date. Rows note whether the company recognises revenue on a net or gross basis, because the two are not comparable with each other.",
+    keywords: [
+      "take rate", "platform fees", "gig economy", "marketplace", "SEC filings",
+      "Etsy", "eBay", "Airbnb", "Upwork", "Fiverr", "Uber", "Lyft", "DoorDash",
+    ],
+    temporalCoverage: "2025-01-01/2025-12-31",
+    variableMeasured: [
+      "Gross volume (USD)", "Revenue (USD)", "Take rate (%)",
+      "Revenue recognition basis", "Company-reported take rate (%)",
+      "Advertised seller fee (%)",
+    ],
+    files: [
+      { name: "platform-take.csv", encodingFormat: CSV },
+      { name: "platform-fees.json", encodingFormat: JSON_TYPE },
+    ],
+  },
+
+  "ai-account-choice-names-2026": {
+    name: "Local AI account-choice results, named versus anonymous framing",
+    description:
+      "320 generations from four local language models (llama3.2:3b, qwen2.5:3b, gemma2:2b, phi3.5:3.8b) choosing between three college savings accounts. Eight parameter cases are each asked twice in arithmetically identical framings: once with the options named as a 529 plan, a Trump Account and a taxable brokerage, and once with the same rules, numbers and order labelled only Option 1, 2 and 3. Every row records the model, scenario, repetition, seed, parsed answer, expected answer, correctness, tokens per second, time to first token and Ollama's done_reason. A paired file gives one row per model and case with both framings side by side and a flipped column.",
+    keywords: [
+      "local LLM", "benchmark", "529 plan", "Trump Account", "framing effect",
+      "Ollama", "reproducibility", "personal finance",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Chosen option", "Expected option", "Correctness", "Distinct answers across repetitions",
+      "Tokens per second", "Time to first token", "Truncation flag",
+    ],
+    files: [
+      { name: "allocation.csv", encodingFormat: CSV },
+      { name: "allocation-pairs.csv", encodingFormat: CSV },
+      { name: "allocation-raw.jsonl", encodingFormat: JSONL },
+    ],
+  },
+
+  "local-ai-money-math-2026": {
+    name: "Local AI money-math numeracy benchmark",
+    description:
+      "Accuracy of four small local language models on eight everyday personal-finance arithmetic problems — compound interest, effective annual rate, mortgage payment, percentage change, tip splitting and portfolio allocation — with every expected value computed by hand from a closed-form formula and verified against an independent recomputation. Each question was run ten times per model with a different seed per repetition, giving 320 generations. Rows record accuracy, the number of distinct answers across repetitions, the modal answer, median tokens per second and median time to first token, so a model that is reliably correct can be told apart from one that is occasionally correct.",
+    keywords: [
+      "local LLM", "numeracy", "benchmark", "arithmetic", "Ollama",
+      "quantization", "personal finance", "reproducibility",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Accuracy per model and question", "Distinct answers across repetitions",
+      "Modal answer", "Expected answer", "Median tokens per second", "Median time to first token",
+    ],
+    files: [
+      { name: "numeracy.csv", encodingFormat: CSV },
+      { name: "numeracy-raw.jsonl", encodingFormat: JSONL },
+    ],
+  },
+
+  "ai-tax-brackets-more-context-worse-2026": {
+    name: "Local AI progressive-tax calculation accuracy",
+    description:
+      "400 generations testing whether small local language models can compute a progressive income tax when the bracket structure is supplied inside the prompt, so the test measures arithmetic rather than recall of any particular year's tables. Scenarios vary income and the number of brackets given, which isolates the effect of adding context: the same model answers one scenario correctly with three brackets in the prompt and catastrophically wrong with five. Every row records the model, scenario, repetition, seed, the parsed tax figure, the hand-computed expected figure, and throughput measurements.",
+    keywords: [
+      "local LLM", "benchmark", "income tax", "progressive tax", "context length",
+      "Ollama", "arithmetic", "reproducibility",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Computed tax liability", "Expected tax liability", "Correctness",
+      "Number of brackets supplied", "Tokens per second", "Time to first token",
+    ],
+    files: [
+      { name: "tax-accuracy.csv", encodingFormat: CSV },
+      { name: "tax-accuracy-raw.jsonl", encodingFormat: JSONL },
+    ],
+  },
+
+  "ai-advice-benchmark-that-failed-2026": {
+    name: "Local AI financial-advice responses, with failed scoring metrics",
+    description:
+      "240 raw generations from four local language models answering personal-finance questions, including deliberately hazardous ones about debt, leverage and crypto. Published in full because the automated scoring built to summarise them did not work: keyword-based metrics rated one model as reckless when reading its answers showed a correct and decisive refusal, and a second metric failed in the opposite direction. The complete text of every response is included so the scoring can be redone by anyone who wants to try a better method. No quantitative claim about advice quality is supportable from the metrics as published, and the accompanying post says so.",
+    keywords: [
+      "local LLM", "financial advice", "benchmark", "evaluation failure",
+      "keyword scoring", "Ollama", "methodology",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Full response text", "Question category", "Hedging-keyword score",
+      "Risk-mention flag", "Tokens per second",
+    ],
+    files: [{ name: "advice-raw.jsonl", encodingFormat: JSONL }],
+  },
+
+  "local-ai-electricity-cost-2026": {
+    name: "Local LLM energy draw and cost per million tokens",
+    description:
+      "GPU power draw sampled at 4 Hz during local language-model inference on a GTX 1650 Ti, converted into watt-hours and into a cost per million tokens at a stated electricity tariff. Covers several small models at Q4_K_M quantisation, recording throughput alongside power so that energy per token can be separated from energy per second — which is what makes the lowest-wattage model the most expensive one to run. Includes the measured idle baseline, without which the marginal cost of a generation cannot be computed.",
+    keywords: [
+      "local LLM", "energy", "power consumption", "cost per token", "GPU",
+      "Ollama", "benchmark", "efficiency",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "GPU power draw (W)", "Energy per generation (Wh)", "Tokens per second",
+      "Cost per million tokens (USD)", "Idle baseline draw (W)",
+    ],
+    files: [{ name: "energy.json", encodingFormat: JSON_TYPE }],
+  },
+
+  "crypto-whitepaper-readability-2026": {
+    name: "Cryptocurrency whitepaper readability scores",
+    description:
+      "Readability measurements for cryptocurrency whitepapers and a set of reference documents, computed with Flesch Reading Ease and Flesch-Kincaid grade level over text extracted from the source PDFs and HTML. Thirteen documents were attempted and eight resolved; the five that failed are recorded with the reason rather than silently dropped, because a corpus that only reports its successes overstates what it measured. Reference texts including IRS Publication 17 and the US Constitution are scored by the identical pipeline so the whitepaper figures have something to be difficult relative to.",
+    keywords: [
+      "cryptocurrency", "whitepaper", "readability", "Flesch", "text analysis",
+      "plain language", "corpus",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Flesch Reading Ease", "Flesch-Kincaid grade level", "Word count",
+      "Sentence count", "Syllables per word", "Fetch outcome",
+    ],
+    files: [{ name: "readability.json", encodingFormat: JSON_TYPE }],
+  },
+
+  "budgeting-app-privacy-policy-length-2026": {
+    name: "Budgeting-app privacy policy length and reading time",
+    description:
+      "Word counts, readability scores and estimated reading times for the privacy policies of budgeting applications, fetched directly from each company's own policy URL. Reading time is computed at 250 words per minute, a benchmark for adult reading of non-technical prose, which makes the estimate optimistic for legal text — the safe direction for the argument. Deliberately narrow in scope: it measures length and difficulty only, and makes no attempt to judge whether a policy is invasive, because an earlier experiment on this site showed that keyword-based qualitative scoring produces confident numbers that are wrong. Apps that block automated requests are listed as excluded with the reason.",
+    keywords: [
+      "privacy policy", "budgeting apps", "readability", "reading time",
+      "terms of service", "consumer finance", "text analysis",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Word count", "Estimated reading time (minutes)", "Flesch Reading Ease",
+      "Flesch-Kincaid grade level", "Exclusion reason",
+    ],
+    files: [{ name: "policy-length.json", encodingFormat: JSON_TYPE }],
+  },
+
+  "inflation-by-category-2026": {
+    name: "US CPI component series by spending category",
+    description:
+      "Year-over-year price change for individual Consumer Price Index components, pulled from the Bureau of Labor Statistics series and held alongside the headline all-items figure for the same month. The point of keeping the components separate is that the headline number is an average over categories moving at very different speeds — airline fares and education, in the same release, can differ by more than an order of magnitude — so an average that describes nobody's actual spending is the only figure most coverage reports. Each row carries its BLS series identifier so any value can be traced back to the source.",
+    keywords: [
+      "inflation", "CPI", "consumer price index", "BLS", "cost of living",
+      "United States", "economics",
+    ],
+    temporalCoverage: "2026",
+    variableMeasured: [
+      "Category name", "BLS series ID", "Year-over-year change (%)",
+      "Index level", "Reference month",
+    ],
+    files: [{ name: "cpi-categories.json", encodingFormat: JSON_TYPE }],
+  },
+};
+
+/**
+ * schema.org Dataset for a post, or null if the post publishes no rows.
+ *
+ * `license` is deliberately absent. Choosing the terms someone else's work is
+ * released under is not a default to be assumed, and an incorrect licence
+ * statement is worse than none. Add it here once chosen — CC BY 4.0 is the
+ * usual choice for data meant to be cited — and `identifier` alongside it if a
+ * DOI is ever minted.
+ */
+export function buildDatasetJsonLd(slug: string) {
+  const meta = datasets[slug];
+  if (!meta) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: meta.name,
+    description: meta.description,
+    url: `${siteConfig.url}/posts/${slug}`,
+    keywords: meta.keywords,
+    temporalCoverage: meta.temporalCoverage,
+    variableMeasured: meta.variableMeasured,
+    isAccessibleForFree: true,
+    creator: {
+      "@type": "Person",
+      name: siteConfig.author.name,
+      ...(authorSameAs.length ? { sameAs: authorSameAs } : {}),
+    },
+    distribution: meta.files.map((file) => ({
+      "@type": "DataDownload",
+      encodingFormat: file.encodingFormat,
+      contentUrl: `${siteConfig.url}/data/${file.name}`,
+    })),
+  };
+}
