@@ -23,11 +23,15 @@ const CORRECTIONS_UPDATED = new Date(
   `${correctionsByDate()[0]?.date ?? "2026-08-20"}T00:00:00Z`
 );
 const AI_DISCLOSURE_UPDATED = new Date("2026-08-20");
-const CONTACT_UPDATED = new Date("2026-06-15");
+// Bumped 2026-09-08: rewritten from a 128-word stub to cover corrections,
+// scope limits, and who actually answers.
+const CONTACT_UPDATED = new Date("2026-09-08");
 const WORK_WITH_ME_UPDATED = new Date("2026-09-08");
 const DISCLAIMER_UPDATED = new Date("2026-06-17");
 const PRIVACY_POLICY_UPDATED = new Date("2026-06-12");
-const TOOLS_INDEX_UPDATED = new Date("2026-07-14");
+// Bumped 2026-09-08: added the framing prose explaining what these
+// calculators show and where they differ from the usual lead-gen kind.
+const TOOLS_INDEX_UPDATED = new Date("2026-09-08");
 const RESEARCH_INDEX_UPDATED = new Date("2026-09-07");
 // Bumped 2026-09-08: the how-to step list is rendered on tool pages again
 // (it had been written in tools-config but unreachable), so the body copy on
