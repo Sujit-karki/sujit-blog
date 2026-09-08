@@ -110,7 +110,9 @@ PLATFORMS = [
         # check below caught it.
         "label": r"GMS \(1\)\(2\)", "scale": "thousands",
         "basis": "net", "sells": "handmade and vintage goods",
-        "reported_take_rates": {2025: 24.2}, "reported_scope": "total",
+        # Etsy prints both years too ("Revenue take rate 24.2 % 22.3 %"),
+        # so FY2024 is a second, independent check on column alignment.
+        "reported_take_rates": {2025: 24.2, 2024: 22.3}, "reported_scope": "total",
     },
     {
         "name": "Upwork", "ticker": "UPWK", "cik": 1627475, "metric": "GSV",
