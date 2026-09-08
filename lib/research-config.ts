@@ -74,6 +74,15 @@ export const researchPosts: ResearchPost[] = [
     date: "2026-09-07",
   },
   {
+    slug: "solo-401k-vs-sep-ira-2026",
+    title: "A SEP Needs $124,162 More Profit for the Same Ceiling",
+    finding:
+      "Both plans cap at $72,000, and the Solo 401(k) advantage is described everywhere as shrinking with income. Computed from the IRS formulas it is a flat $24,500 from roughly $40,000 of profit to $252,316 — then the SEP does not catch up until $376,478.",
+    method: "npm run plans:self-employed, IRS Publication 560 worksheet",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
     slug: "insurance-affordability-crisis-2026",
     title: "Home Insurance Is 'Up 46%'. CPI Says 16%.",
     finding:

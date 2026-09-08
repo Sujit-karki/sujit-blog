@@ -268,6 +268,21 @@ const rawDatasets = {
     ],
     files: [{ name: "insurance-cpi.json", encodingFormat: JSON_TYPE }],
   },
+  "solo-401k-vs-sep-ira-2026": {
+    name: "Solo 401(k) and SEP IRA contribution ceilings by net profit, 2026",
+    description:
+      "Maximum allowable contribution to a Solo 401(k) and to a SEP IRA at each level of Schedule C net profit for tax year 2026, computed from the IRS Publication 560 deduction worksheet rather than approximated. Includes net earnings from self-employment at each point, the employer profit-sharing portion, and the difference between the two plans. The comparison exists because the difference is widely described as shrinking with income when it is in fact a flat amount equal to the elective deferral across most of the range, ending only where each plan meets the section 415(c) cap: $252,316 of net profit for a Solo 401(k) and $376,478 for a SEP IRA. Assumes a sole proprietor under age 50 with no employees.",
+    keywords: [
+      "Solo 401k", "SEP IRA", "self-employment", "retirement", "contribution limits",
+      "IRS", "taxes", "United States",
+    ],
+    temporalCoverage: "2026",
+    variableMeasured: [
+      "Net profit", "Net earnings from self-employment", "Employer profit-sharing portion",
+      "SEP IRA maximum", "Solo 401(k) maximum", "Solo 401(k) advantage",
+    ],
+    files: [{ name: "self-employed-plans.json", encodingFormat: JSON_TYPE }],
+  },
 };
 
 /**

@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-09-08",
+  "taxYear": 2026,
+  "entity": "Sole proprietor / single-member LLC filing Schedule C, under age 50",
+  "method": "IRS Publication 560 deduction worksheet: net earnings = net profit less one-half deductible SE tax; employer rate 0.25/1.25 = 0.20 applied to net earnings capped at the 401(a)(17) compensation limit; totals capped at the 415(c) limit.",
+  "statutoryFigures": {
+    "electiveDeferral": 24500,
+    "catchUp50": 8000,
+    "catchUp60to63": 11250,
+    "annualAdditions415c": 72000,
+    "annualAdditionsWithCatchUp50": 80000,
+    "annualAdditionsWithCatchUp60to63": 83250,
+    "compensationLimit401a17": 360000,
+    "socialSecurityWageBase": 184500
+  },
+  "sources": {
+    "electiveDeferral": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500",
+    "annualAdditionsAndCompensation": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits",
+    "socialSecurityWageBase": "https://www.irs.gov/taxtopics/tc751"
+  },
+  "crossovers": {
+    "soloReachesCapAtNetProfit": 252316,
+    "soloReachesCapAtNetEarnings": 237498,
+    "sepReachesCapAtNetProfit": 376478,
+    "sepReachesCapAtNetEarnings": 359998,
+    "extraProfitSepRequires": 124162,
+    "flatAdvantageBelowSoloCap": 24500,
+    "compensationLimitCalibratedTo415c": true
+  },
+  "sweep": [
+    {
+      "netProfit": 20000,
+      "netEarnings": 18587,
+      "employerPortion": 3717,
+      "sepMaximum": 3717,
+      "soloMaximum": 18587,
+      "soloAdvantage": 14870
+    },
+    {
+      "netProfit": 30000,
+      "netEarnings": 27881,
+      "employerPortion": 5576,
+      "sepMaximum": 5576,
+      "soloMaximum": 27881,
+      "soloAdvantage": 22304
+    },
+    {
+      "netProfit": 40000,
+      "netEarnings": 37174,
+      "employerPortion": 7435,
+      "sepMaximum": 7435,
+      "soloMaximum": 31935,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 50000,
+      "netEarnings": 46468,
+      "employerPortion": 9294,
+      "sepMaximum": 9294,
+      "soloMaximum": 33794,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 60000,
+      "netEarnings": 55761,
+      "employerPortion": 11152,
+      "sepMaximum": 11152,
+      "soloMaximum": 35652,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 75000,
+      "netEarnings": 69701,
+      "employerPortion": 13940,
+      "sepMaximum": 13940,
+      "soloMaximum": 38440,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 100000,
+      "netEarnings": 92935,
+      "employerPortion": 18587,
+      "sepMaximum": 18587,
+      "soloMaximum": 43087,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 125000,
+      "netEarnings": 116169,
+      "employerPortion": 23234,
+      "sepMaximum": 23234,
+      "soloMaximum": 47734,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 150000,
+      "netEarnings": 139403,
+      "employerPortion": 27881,
+      "sepMaximum": 27881,
+      "soloMaximum": 52381,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 175000,
+      "netEarnings": 162637,
+      "employerPortion": 32527,
+      "sepMaximum": 32527,
+      "soloMaximum": 57027,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 200000,
+      "netEarnings": 185883,
+      "employerPortion": 37177,
+      "sepMaximum": 37177,
+      "soloMaximum": 61677,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 250000,
+      "netEarnings": 235213,
+      "employerPortion": 47043,
+      "sepMaximum": 47043,
+      "soloMaximum": 71543,
+      "soloAdvantage": 24500
+    },
+    {
+      "netProfit": 275000,
+      "netEarnings": 259879,
+      "employerPortion": 51976,
+      "sepMaximum": 51976,
+      "soloMaximum": 72000,
+      "soloAdvantage": 20024
+    },
+    {
+      "netProfit": 300000,
+      "netEarnings": 284544,
+      "employerPortion": 56909,
+      "sepMaximum": 56909,
+      "soloMaximum": 72000,
+      "soloAdvantage": 15091
+    },
+    {
+      "netProfit": 350000,
+      "netEarnings": 333874,
+      "employerPortion": 66775,
+      "sepMaximum": 66775,
+      "soloMaximum": 72000,
+      "soloAdvantage": 5225
+    },
+    {
+      "netProfit": 400000,
+      "netEarnings": 383205,
+      "employerPortion": 72000,
+      "sepMaximum": 72000,
+      "soloMaximum": 72000,
+      "soloAdvantage": 0
+    },
+    {
+      "netProfit": 450000,
+      "netEarnings": 432535,
+      "employerPortion": 72000,
+      "sepMaximum": 72000,
+      "soloMaximum": 72000,
+      "soloAdvantage": 0
+    }
+  ],
+  "caveats": [
+    "Sole proprietor on Schedule C; an S-corp owner's base is W-2 wages, not net profit.",
+    "Under age 50 and no catch-up. Catch-up raises the 415(c) ceiling to $80,000 (50+) or $83,250 (60-63) and moves both crossovers.",
+    "Ignores state tax, the QBI deduction, and the presence of any employees.",
+    "The additional 0.9% Medicare tax is included in SE tax but excluded from the one-half deduction, per section 164(f)."
+  ]
+}

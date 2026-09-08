@@ -16,6 +16,7 @@
     "project:cola": "node scripts/project-cola.mjs",
     "cpi:categories": "node scripts/cpi-categories.mjs",
     "cpi:insurance": "node scripts/insurance-cpi.mjs",
+    "plans:self-employed": "node scripts/self-employed-plans.mjs",
     "audit:links": "node scripts/check-sources.mjs",
     "prebuild": "node scripts/publish-data.mjs",
     "publish:data": "node scripts/publish-data.mjs",
