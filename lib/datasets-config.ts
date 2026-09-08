@@ -95,6 +95,25 @@ export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
 export const ZENODO_CONCEPT_DOI = "https://doi.org/10.5281/zenodo.22654387";
 
 const rawDatasets = {
+  "platform-take-rate-trend-2026": {
+    name: "Platform take rates across three fiscal years, FY2023-FY2025",
+    description:
+      "Revenue as a share of gross volume for eight marketplace and gig platforms — Fiverr, Lyft, Uber, Etsy, Upwork, eBay, DoorDash and Airbnb — computed for each of fiscal years 2023, 2024 and 2025 from the companies' own annual reports. Revenue is taken from XBRL company facts on data.sec.gov; gross volume (GMS, GMV, GBV, GSV, Marketplace GOV or Gross Bookings, depending on the company) is extracted from the narrative of each 10-K or 20-F, with the source sentence and filing URL recorded per row. The fiscal year is selected by matching the columns of each key-metrics table against the years in its header rather than by a fixed column position, because column order differs between companies and between filings of the same company. Fiverr is absent before FY2024: it reported company-wide GMV of $1,134.7M for 2023 and narrower \"marketplace GMV\" from 2024, and no filing states the restated earlier figure, so the years are not a series and are not presented as one. Rows note whether revenue is recognised net or gross, because the two are not comparable with each other.",
+    keywords: [
+      "take rate", "platform fees", "gig economy", "marketplace", "SEC filings",
+      "time series", "Etsy", "eBay", "Airbnb", "Upwork", "Fiverr", "Uber", "Lyft", "DoorDash",
+    ],
+    temporalCoverage: "2023-01-01/2025-12-31",
+    variableMeasured: [
+      "Fiscal year", "Gross volume (USD)", "Revenue (USD)", "Take rate (%)",
+      "Revenue recognition basis", "Company-reported take rate (%)",
+    ],
+    files: [
+      { name: "platform-take.csv", encodingFormat: CSV },
+      { name: "platform-take-2024.csv", encodingFormat: CSV },
+      { name: "platform-take-2023.csv", encodingFormat: CSV },
+    ],
+  },
   "platform-take-rates-2026": {
     name: "Platform take rates and advertised seller fees, FY2025",
     description:
