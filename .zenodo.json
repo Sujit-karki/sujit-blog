@@ -1,0 +1,37 @@
+{
+  "upload_type": "dataset",
+  "title": "Original-data research datasets and measurement harness, sujitkarki.com.np",
+  "description": "<p>The datasets behind the original-data posts on sujitkarki.com.np, together with the code that produced them. Each dataset is published with the script that generated it, the raw rows behind every figure, and a methodology note in the accompanying post.</p><p>The collection covers three kinds of measurement. First, local language models used as instruments rather than authors: numeracy and progressive-tax benchmarks, a paired named-versus-anonymous account-choice study, a financial-advice benchmark published with its own failed scoring metrics, and energy draw per million tokens measured on consumer hardware. Second, figures computed from published formulas and government series, including CPI components by category. Third, values extracted from primary documents: platform take rates from SEC filings, privacy-policy length and readability, and cryptocurrency whitepaper readability.</p><p>Runs that failed are included rather than dropped. The archive contains a contended benchmark run kept as evidence of what memory pressure does to model output, and a duplicated-row incident kept as evidence of what two concurrent writers do to a JSONL checkpoint file. A benchmark that quietly discards its bad runs is not reproducible.</p><p>Datasets are licensed CC BY 4.0; the harness and site code are licensed MIT.</p>",
+  "creators": [
+    {
+      "name": "Karki, Sujit"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": [
+    "local language models",
+    "benchmark",
+    "reproducibility",
+    "personal finance",
+    "Ollama",
+    "SEC filings",
+    "take rate",
+    "consumer price index",
+    "readability",
+    "data journalism",
+    "open data"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://www.sujitkarki.com.np/research",
+      "relation": "isDocumentedBy",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://github.com/Sujit-karki/sujit-blog",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

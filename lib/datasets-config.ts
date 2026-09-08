@@ -48,6 +48,30 @@ const CSV = "text/csv";
 const JSON_TYPE = "application/json";
 const JSONL = "application/jsonl";
 
+/**
+ * Datasets are CC BY 4.0; the harness that produced them is MIT. See
+ * LICENSE-DATA and LICENSE. Attribution is the point — it is the mechanism
+ * that turns reuse into a citation.
+ */
+export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
+
+/**
+ * Concept DOI for the Zenodo archive of this repository, once minted.
+ *
+ * Zenodo issues two kinds: a concept DOI that always resolves to the newest
+ * version, and a version DOI fixed to one release. This is the concept DOI,
+ * because a reader arriving from a post should land on the current data; a
+ * reader who needs the exact rows behind a published figure wants the version
+ * DOI, which is on the Zenodo record itself.
+ *
+ * Empty until the archive exists. Minting it requires linking the repository
+ * on Zenodo with a GitHub account and then cutting a release — an
+ * authenticated step that cannot be done from here. Set this one constant and
+ * every dataset below gains an `identifier`; the test suite checks the shape
+ * if it is non-empty, so a malformed DOI fails rather than ships.
+ */
+export const ZENODO_CONCEPT_DOI = "";
+
 export const datasets: Record<string, DatasetMeta> = {
   "platform-take-rates-2026": {
     name: "Platform take rates and advertised seller fees, FY2025",
@@ -211,11 +235,9 @@ export const datasets: Record<string, DatasetMeta> = {
 /**
  * schema.org Dataset for a post, or null if the post publishes no rows.
  *
- * `license` is deliberately absent. Choosing the terms someone else's work is
- * released under is not a default to be assumed, and an incorrect licence
- * statement is worse than none. Add it here once chosen — CC BY 4.0 is the
- * usual choice for data meant to be cited — and `identifier` alongside it if a
- * DOI is ever minted.
+ * `identifier` appears only once a DOI exists. Emitting an empty or invented
+ * identifier is worse than omitting the property: it claims a permanent
+ * archive that nothing resolves to.
  */
 export function buildDatasetJsonLd(slug: string) {
   const meta = datasets[slug];
@@ -230,7 +252,14 @@ export function buildDatasetJsonLd(slug: string) {
     keywords: meta.keywords,
     temporalCoverage: meta.temporalCoverage,
     variableMeasured: meta.variableMeasured,
+    license: DATA_LICENSE,
     isAccessibleForFree: true,
+    ...(ZENODO_CONCEPT_DOI
+      ? {
+          identifier: ZENODO_CONCEPT_DOI,
+          citation: `Karki, Sujit (2026). ${meta.name}. ${ZENODO_CONCEPT_DOI}`,
+        }
+      : {}),
     creator: {
       "@type": "Person",
       name: siteConfig.author.name,

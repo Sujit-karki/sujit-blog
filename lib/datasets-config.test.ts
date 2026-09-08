@@ -1,7 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { datasets, buildDatasetJsonLd } from "./datasets-config";
+import {
+  datasets,
+  buildDatasetJsonLd,
+  DATA_LICENSE,
+  ZENODO_CONCEPT_DOI,
+} from "./datasets-config";
 import { getAllPosts } from "./posts";
 
 const RESEARCH_DATA = path.join(process.cwd(), "research", "data");
@@ -63,6 +68,39 @@ describe("buildDatasetJsonLd", () => {
       expect(download["@type"]).toBe("DataDownload");
       expect(download.contentUrl).toMatch(/^https:\/\/.+\/data\/.+/);
     }
+  });
+
+  it("declares the CC BY 4.0 licence the data ships under", () => {
+    const jsonLd = buildDatasetJsonLd(entries[0][0])!;
+    expect(jsonLd.license).toBe(DATA_LICENSE);
+    expect(fs.existsSync(path.join(process.cwd(), "LICENSE-DATA"))).toBe(true);
+    expect(fs.existsSync(path.join(process.cwd(), "LICENSE"))).toBe(true);
+  });
+
+  // The DOI is empty until a Zenodo archive exists. Either state is fine; a
+  // malformed one is not, and neither is claiming an identifier that resolves
+  // to nothing — so the property is present exactly when the constant is set.
+  it("emits an identifier only when a DOI has been minted", () => {
+    const jsonLd = buildDatasetJsonLd(entries[0][0])! as Record<string, unknown>;
+    if (ZENODO_CONCEPT_DOI) {
+      expect(ZENODO_CONCEPT_DOI).toMatch(/^https:\/\/doi\.org\/10\.\d{4,9}\/\S+$/);
+      expect(jsonLd.identifier).toBe(ZENODO_CONCEPT_DOI);
+      expect(jsonLd.citation).toContain(ZENODO_CONCEPT_DOI);
+    } else {
+      expect(jsonLd).not.toHaveProperty("identifier");
+      expect(jsonLd).not.toHaveProperty("citation");
+    }
+  });
+
+  it("keeps the Zenodo deposit metadata in step with the licence", () => {
+    const zenodo = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), ".zenodo.json"), "utf8")
+    );
+    expect(zenodo.license).toBe("cc-by-4.0");
+    expect(zenodo.upload_type).toBe("dataset");
+    expect(zenodo.creators.length).toBeGreaterThan(0);
+    // Zenodo rejects a deposit whose description is empty, and truncates hard.
+    expect(zenodo.description.length).toBeGreaterThan(50);
   });
 
   it("survives JSON serialisation with angle brackets escaped", () => {

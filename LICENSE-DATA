@@ -1,0 +1,55 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+SPDX-License-Identifier: CC-BY-4.0
+Copyright (c) 2026 Sujit Karki
+
+WHAT THIS COVERS
+
+Everything in research/data/ — the raw generations, the aggregated CSVs, and
+the JSON datasets published alongside the posts on sujitkarki.com.np. The code
+that produced them is licensed separately under MIT; see LICENSE.
+
+WHAT YOU MAY DO
+
+Share and adapt these datasets for any purpose, including commercially.
+
+ON ONE CONDITION
+
+Give appropriate credit, link to this licence, and indicate if you made
+changes. A citation like the following is enough:
+
+    Karki, Sujit (2026). Original-data research datasets, sujitkarki.com.np.
+    https://github.com/Sujit-karki/sujit-blog
+
+If a DOI has been minted for the release you used, cite that instead — it
+identifies the exact version of the data you worked from, which a repository
+link cannot.
+
+THE FULL LEGAL TEXT
+
+This file is a summary for readers, not a substitute for the licence. The
+binding terms are the Creative Commons Attribution 4.0 International Public
+License, published at:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+and summarised in plain language at:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+A NOTE ON WHAT IS BEING LICENSED
+
+These datasets are measurements produced here: model outputs generated on
+local hardware, figures computed from published formulas, and values extracted
+from primary documents. Where a dataset records material from a third-party
+source — a regulatory filing, a government statistical series, a company's own
+published policy — the underlying source carries its own terms, and this
+licence covers the compilation and the measurements rather than that source
+material. Each dataset records where its inputs came from so this is traceable
+rather than something you have to take on trust.
+
+NO WARRANTY
+
+The datasets are provided as-is. They document what was measured, including
+the runs that failed and the errors that were caught; read the methodology
+section of the accompanying post before relying on any figure.

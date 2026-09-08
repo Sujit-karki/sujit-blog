@@ -1,0 +1,38 @@
+# Renders as "Cite this repository" on the GitHub sidebar, and is what a
+# reference manager reads when someone imports this repo.
+#
+# When a Zenodo DOI is minted, add it under identifiers and set `doi:` so the
+# citation points at a fixed, archived version rather than a moving branch.
+cff-version: 1.2.0
+title: Original-data research datasets and measurement harness, sujitkarki.com.np
+message: If you use these datasets, please cite them.
+type: dataset
+authors:
+  - family-names: Karki
+    given-names: Sujit
+    website: https://www.sujitkarki.com.np
+repository-code: https://github.com/Sujit-karki/sujit-blog
+url: https://www.sujitkarki.com.np/research
+abstract: >-
+  Datasets behind the original-data posts on sujitkarki.com.np, published with
+  the code that produced them and the raw rows behind every figure. Covers
+  local language models used as measurement instruments (numeracy, progressive
+  tax, a paired named-versus-anonymous account-choice study, an advice
+  benchmark published with its failed scoring metrics, and energy per million
+  tokens on consumer hardware), figures computed from published formulas and
+  government series, and values extracted from primary documents including SEC
+  filings, privacy policies and cryptocurrency whitepapers. Failed and
+  contended runs are included as evidence rather than discarded.
+keywords:
+  - local language models
+  - benchmark
+  - reproducibility
+  - personal finance
+  - Ollama
+  - SEC filings
+  - consumer price index
+  - readability
+  - data journalism
+  - open data
+license: CC-BY-4.0
+license-url: https://creativecommons.org/licenses/by/4.0/
