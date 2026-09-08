@@ -133,10 +133,15 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Production dependencies only. Dev-only advisories do not ship to a
+      # Production dependencies only: dev-only advisories do not ship to a
       # visitor, and failing the build on them trains people to ignore this.
+      #
+      # Held at "high" rather than "critical" because production is currently
+      # clean — there is a line to hold. Two npm overrides keep it that way,
+      # both documented in package.json; if one of those transitive pins drifts
+      # back into a vulnerable range, this job is what catches it.
       - name: Audit production dependencies
-        run: npm audit --omit=dev --audit-level=critical
+        run: npm audit --omit=dev --audit-level=high
 
   visual-regression:
     name: Visual Regression (charts)
