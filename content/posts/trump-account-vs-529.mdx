@@ -4,8 +4,9 @@ description: "Trump Accounts launched July 4, 2026 with a free $1,000 for eligib
 seoTitle: "Trump Account vs 529 Plan: The $1,000 Tax Trap"
 seoDescription: "Trump Accounts launched July 4, 2026 with a free $1,000 for eligible kids. The tax trap most people miss, and why a 529 still usually wins."
 date: "2026-07-16"
+updated: "2026-09-08"
 category: "Personal Finance"
-tags: ["Trump Account", "529 Plan", "College Savings", "Tax Planning", "Investing for Kids", "IRA"]
+tags: ["Trump Account", "529 Plan", "College Savings", "Tax Planning", "Investing for Kids", "IRA", "Original Data"]
 author: "Sujit Karki"
 toc:
   - id: "first-what-actually-launched"
@@ -29,12 +30,15 @@ toc:
   - id: "run-your-own-numbers"
     title: "Run Your Own Numbers"
     level: 2
+  - id: "methodology"
+    title: "Methodology"
+    level: 2
   - id: "my-honest-bottom-line"
     title: "My Honest Bottom Line"
     level: 2
 faq:
   - q: "Is a Trump Account worth it?"
-    a: "For the free $1,000 seed (and any employer match), absolutely — it's free money with a long compounding runway. As your main college fund, no. The growth gets taxed as ordinary income on withdrawal, which makes it worse than a 529 for education and, per Cato's analysis, even worse than a plain brokerage account in some scenarios."
+    a: "For the free $1,000 seed (and any employer match), absolutely. As your main college fund it depends on two things, and I computed the whole surface rather than guessing: at $1,000 a year over five years it beats a 529 at every bracket in the tax code, while at $5,000 a year over eighteen years the 529 wins above a 5% withdrawal bracket. It falls behind a plain taxable brokerage account only at 24% and above. The seed is a fixed amount and the taxable growth is not, so the account favours whoever contributes least."
   - q: "How do I open a Trump Account?"
     a: "Sign in to your IRS online account with ID.me and file Form 4547, or use the portal at TrumpAccounts.gov. You elect the $1,000 seed on the same form if your child qualifies. You can also file Form 4547 with your tax return. The deadline is before January 1 of the year your child turns 18."
   - q: "What are the Trump Account tax rules?"
@@ -42,7 +46,7 @@ faq:
   - q: "Can I use a Trump Account for college?"
     a: "Yes, and the education exception waives the 10% early-withdrawal penalty. But you still owe ordinary income tax on the earnings, unlike a 529 where qualified withdrawals are fully tax-free. That's why the 529 is the better education tool."
   - q: "Which is better, a Trump Account or a 529?"
-    a: "For education, the 529 — tax-free qualified withdrawals, higher limits, state tax breaks, beneficiary flexibility, and now K-12 and trade school coverage. For a long-term retirement head start, the Trump Account with a future Roth conversion. Most families should use both, for different jobs."
+    a: "For education it is usually the 529, but not always: the crossover depends on how much you contribute and for how long. At $1,000 a year with five years to go, the Trump Account wins at every bracket. At $5,000 a year from birth, the 529 wins above a 5% withdrawal bracket. The published dataset gives the full grid of both."
   - q: "Do grandparents owe gift tax for contributing?"
     a: "Usually not. Under IRS Revenue Procedure 2026-25, contributions within the annual gift tax exclusion ($19,000 per person in 2026) generally don't trigger a gift tax return, thanks to a new safe harbor."
 ---
@@ -50,8 +54,9 @@ faq:
 <KeyTakeaways items={[
   "A one-time $1,000 government seed goes to eligible kids born 2025–2028, but only if a parent opts in via IRS Form 4547 — it isn't automatic",
   "Tax-deferred is not tax-free: the seed, employer money, charity deposits, and all investment growth are taxed as ordinary income on withdrawal, plus a 10% penalty before 59½ without an exception",
-  "Cato Institute found a $5,000 Trump Account contribution ends up $2,451 worse after 30 years than the same money in a plain taxable brokerage account, purely from the tax treatment",
-  "A 529 plan's qualified education withdrawals are 100% tax-free — for college specifically, it beats the Trump Account in almost every realistic scenario",
+  "The Trump Account only falls behind a plain taxable brokerage at a 24% withdrawal bracket and above — below that, the free seed more than covers the worse tax treatment",
+  "Computed across every bracket and horizon: at $1,000/yr over 5 years the Trump Account wins at every bracket in the code; at $5,000/yr over 18 years the 529 wins above a 5% bracket",
+  "The seed is a fixed $1,000 but the taxable growth scales with contributions — so the Trump Account is best for the families able to save least",
   "The smart move for most families: grab the free $1,000 seed and any employer match, but route real college savings to a 529"
 ]} />
 
@@ -115,6 +120,41 @@ A 529 is the specialist. It exists for one job — education — and it does tha
 
 That's the difference in one sentence. With a Trump Account, you're taxed on the growth when you use it for college. With a 529, you're not. The tax firm Taxes for Expats pegged the education advantage of a 529 at "15–25% tax savings on college expenses" — that's their own rule-of-thumb estimate, but the direction is dead on, and the nonpartisan Congressional Research Service agrees that 529 plans "generally offer a greater tax advantage than Trump Accounts" for education.
 
+### But "usually" is doing real work — here is where it flips
+
+Every write-up of these two accounts, this one included until now, runs a single scenario and reports a single answer. So I computed the whole surface instead: every combination of contribution size, time horizon and withdrawal bracket, with a plain taxable brokerage account as a third arm. [The script is published](https://github.com/Sujit-karki/sujit-blog/blob/main/scripts/trump-account-vs-529.mjs) and the dataset is below.
+
+The bracket at which the 529 overtakes the Trump Account:
+
+| You contribute | 5 years | 10 years | 15 years | 18 years |
+| --- | --- | --- | --- | --- |
+| $1,000/yr | never | 35% | 22% | 18% |
+| $2,000/yr | 49% | 21% | 12% | 10% |
+| $3,000/yr | 39% | 15% | 9% | 7% |
+| $5,000/yr | 28% | 10% | 6% | 5% |
+
+Read the top-left corner. **If you can only put in $1,000 a year and your kid is five years from college, the Trump Account wins at every bracket in the tax code.** At ten years it still wins for anyone under the 35% bracket.
+
+Now read the bottom-right. If you max out at $5,000 a year from birth, the 529 pulls ahead once your withdrawal bracket clears **5%** — which is to say, essentially always.
+
+The mechanism is worth stating plainly, because it inverts the usual advice: **the government seed is a fixed $1,000, but the taxable growth scales with everything you contribute.** The less you can afford to save, the larger that free $1,000 looms relative to the tax drag it drags along with it. The Trump Account is at its best for the families with the least to put in — and at its worst for exactly the affluent savers most likely to be reading a post like this one.
+
+### The brokerage comparison needs a caveat too
+
+The Cato figure above is real, but it is one scenario, and running the range shows it does not generalise as cleanly as I implied. At $2,000/yr over 18 years:
+
+| Withdrawal bracket | Trump Account | 529 plan | Taxable brokerage |
+| --- | --- | --- | --- |
+| 0% | $71,378 | $67,998 | $63,198 |
+| 12% | $67,133 | $67,998 | $63,198 |
+| 22% | **$63,595** | $67,998 | $63,198 |
+| 24% | $62,887 | $67,998 | **$63,198** |
+| 37% | $58,288 | $67,998 | $63,198 |
+
+The Trump Account only falls behind a plain brokerage account **at 24% and above**. Below that the seed more than covers the worse tax treatment. Cato ran a 24% ordinary rate, which is precisely where the crossover sits — so the finding is correct at the bracket they chose and reverses one bracket down. That is a much narrower claim than "worse than a brokerage account," and I should have checked it before repeating it.
+
+I could not reproduce Cato's exact $2,451 figure, because the growth rate behind it is not published. What is computable is the relationship: the gap between the two is the seed's after-tax value, less growth times the spread between your ordinary rate and the capital-gains rate. The script asserts that identity and refuses to run if the model drifts from it.
+
 And 529s got *better* in 2026. Thanks to the same big bill:
 
 - The **K-12 tuition** withdrawal cap doubled to **$20,000 per year**, and now covers tutoring, curriculum materials, testing fees, and more — not just tuition.
@@ -147,7 +187,21 @@ I don't want you taking my word for the tax math — plug in your own situation.
 
 *Want the full-page version to bookmark or share? Try the standalone [Trump Account vs 529 Calculator](/tools/trump-account-vs-529).*
 
-Play with the sliders. You'll see the 529 pull ahead for education in almost every realistic scenario, and you'll see exactly by how much — and how a shorter horizon or a smaller contribution is the only thing that lets the free seed tip the balance the other way.
+Play with the sliders. The calculator uses the same model as the table above, so you can find your own square on that surface — and a shorter horizon or a smaller contribution is exactly what tips the balance back toward the seed.
+
+## Methodology
+
+**The model.** All three vehicles receive the same annual contribution at the same 7% growth, so the comparison isolates tax treatment and nothing else. The Trump Account returns your basis tax-free and taxes the $1,000 seed plus all growth as ordinary income. The 529 receives no seed and is entirely tax-free for qualified education. The brokerage receives no seed, returns basis tax-free, and taxes growth at 15% long-term capital gains.
+
+**Verification.** Two checks, either of which stops the script rather than publishing a number it cannot stand behind. First, at a 0% withdrawal bracket nothing is taxed, so the Trump Account must beat the 529 by exactly the seed's future value — $3,380 over 18 years. Second, the Trump-versus-brokerage gap must equal the seed's after-tax value less growth times the spread between the ordinary and capital-gains rates, since the two accounts hold identical assets and differ only in the rate applied to growth.
+
+**What is not modelled**, each of which moves the answer in a direction worth knowing. No state 529 deduction or credit — around 40 states offer one, and every one of them widens the 529's lead beyond what is shown here. No employer or charitable deposits into the Trump Account, which would add to that side but land in the taxable bucket alongside the seed. A single flat growth rate and a single flat withdrawal bracket, where real withdrawals spread across years and can straddle brackets. And the whole surface assumes the money is spent on qualified education, which is the only condition under which a 529 is tax-free at all — a family that might spend it on something else is not on this map, and the Trump Account's lack of any such restriction is a real advantage the numbers here cannot show.
+
+<DatasetSignup
+  dataset="the Trump Account vs 529 crossover surface"
+  cadence="when the contribution cap or tax treatment changes"
+  dataFile="trump-account-vs-529.json"
+/>
 
 ## So Where Does the Trump Account Actually Make Sense?
 
@@ -196,11 +250,11 @@ Here's what I'd actually do if I had an eligible kid right now:
 Two accounts, two jobs. The mistake is using the retirement tool for the college goal and eating an ordinary-income tax bill you didn't need to. Grab the grand. Keep the college fund where it belongs.
 
 <FaqAccordion items={[
-  { q: "Is a Trump Account worth it?", a: "For the free $1,000 seed (and any employer match), absolutely — it's free money with a long compounding runway. As your main college fund, no. The growth gets taxed as ordinary income on withdrawal, which makes it worse than a 529 for education and, per Cato's analysis, even worse than a plain brokerage account in some scenarios." },
+  { q: "Is a Trump Account worth it?", a: "For the free $1,000 seed (and any employer match), absolutely. As your main college fund it depends on two things, and I computed the whole surface rather than guessing: at $1,000 a year over five years it beats a 529 at every bracket in the tax code, while at $5,000 a year over eighteen years the 529 wins above a 5% withdrawal bracket. It falls behind a plain taxable brokerage account only at 24% and above. The seed is a fixed amount and the taxable growth is not, so the account favours whoever contributes least." },
   { q: "How do I open a Trump Account?", a: "Sign in to your IRS online account with ID.me and file Form 4547, or use the portal at TrumpAccounts.gov. You elect the $1,000 seed on the same form if your child qualifies. You can also file Form 4547 with your tax return. The deadline is before January 1 of the year your child turns 18." },
   { q: "What are the Trump Account tax rules?", a: "Your after-tax contributions come out tax-free. The $1,000 seed, employer contributions, charitable deposits, and all investment earnings are taxed as ordinary income when withdrawn. Withdrawals before age 59½ get a 10% penalty unless an exception applies (education, first home up to $10,000, birth/adoption up to $5,000, disability, and a few others) — but those exceptions only kill the penalty, not the income tax." },
   { q: "Can I use a Trump Account for college?", a: "Yes, and the education exception waives the 10% early-withdrawal penalty. But you still owe ordinary income tax on the earnings, unlike a 529 where qualified withdrawals are fully tax-free. That's why the 529 is the better education tool." },
-  { q: "Which is better, a Trump Account or a 529?", a: "For education, the 529 — tax-free qualified withdrawals, higher limits, state tax breaks, beneficiary flexibility, and now K-12 and trade school coverage. For a long-term retirement head start, the Trump Account with a future Roth conversion. Most families should use both, for different jobs." },
+  { q: "Which is better, a Trump Account or a 529?", a: "For education it is usually the 529, but not always: the crossover depends on how much you contribute and for how long. At $1,000 a year with five years to go, the Trump Account wins at every bracket. At $5,000 a year from birth, the 529 wins above a 5% withdrawal bracket. The published dataset gives the full grid of both." },
   { q: "Do grandparents owe gift tax for contributing?", a: "Usually not. Under IRS Revenue Procedure 2026-25, contributions within the annual gift tax exclusion ($19,000 per person in 2026) generally don't trigger a gift tax return, thanks to a new safe harbor." }
 ]} />
 

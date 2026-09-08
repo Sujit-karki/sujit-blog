@@ -20,6 +20,15 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "platform-take-rate-trend-2026",
+    title: "Etsy Sold 9.5% Less. It Kept 3.3 Points More.",
+    finding:
+      "Three years of take rates for eight platforms. Among the four marketplaces comparable with each other, take-rate change ranks perfectly inverse to volume growth. Almost none of it is commission: 97.5% of Fiverr's rise and 58% of Etsy's came from services revenue.",
+    method: "SEC XBRL revenue over gross volume, fiscal year selected by matching the filing table header",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
     slug: "platform-take-rates-2026",
     title: "Etsy's Seller Fee Is 6.5%. Etsy Keeps 24.2%.",
     finding:
@@ -72,6 +81,15 @@ export const researchPosts: ResearchPost[] = [
     method: "400 generations, ground truth computed from the bracket structure",
     dataset: true,
     date: "2026-09-07",
+  },
+  {
+    slug: "trump-account-vs-529",
+    title: "The Trump Account Wins for Whoever Saves Least",
+    finding:
+      "Computed across every bracket and horizon rather than one scenario: at $1,000 a year over five years the Trump Account beats a 529 at every bracket in the tax code; at $5,000 a year over eighteen it loses above 5%. The seed is fixed and the taxable growth is not, so the account favours the families able to contribute least.",
+    method: "npm run compare:trump-529, three vehicles across 128 parameter combinations",
+    dataset: true,
+    date: "2026-09-08",
   },
   {
     slug: "solo-401k-vs-sep-ira-2026",

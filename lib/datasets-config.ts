@@ -283,6 +283,22 @@ const rawDatasets = {
     ],
     files: [{ name: "self-employed-plans.json", encodingFormat: JSON_TYPE }],
   },
+  "trump-account-vs-529": {
+    name: "Trump Account, 529 plan and taxable brokerage outcomes across brackets and horizons",
+    description:
+      "After-tax spendable value for college from three savings vehicles — a Trump Account, a 529 plan and a plain taxable brokerage account — computed across every combination of annual contribution ($1,000 to $5,000), time horizon (5 to 18 years) and ordinary withdrawal bracket (0% to 37%). Coverage of these accounts typically reports a single scenario; this is the whole surface, plus the two crossover boundaries derived from it: the bracket at which the 529 overtakes at each contribution and horizon, and the year at which it overtakes at each contribution and bracket. The boundary moves a long way. At $1,000 a year over five years the Trump Account wins at every bracket in the code, because the fixed $1,000 government seed dominates when contributions are small; at $5,000 a year over eighteen years the 529 wins above a 5% bracket. Assumes 7% growth and qualified education use, with no state 529 benefit and no employer or charitable deposits.",
+    keywords: [
+      "Trump Account", "529 plan", "college savings", "tax treatment",
+      "capital gains", "education", "United States",
+    ],
+    temporalCoverage: "2026",
+    variableMeasured: [
+      "Annual contribution", "Years to withdrawal", "Ordinary income bracket",
+      "Trump Account spendable value", "529 plan spendable value",
+      "Taxable brokerage spendable value", "Crossover bracket", "Crossover year",
+    ],
+    files: [{ name: "trump-account-vs-529.json", encodingFormat: JSON_TYPE }],
+  },
 };
 
 /**

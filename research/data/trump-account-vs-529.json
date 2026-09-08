@@ -1,0 +1,1652 @@
+{
+  "generatedAt": "2026-09-08",
+  "assumptions": {
+    "growthRate": 0.07,
+    "governmentSeed": 1000,
+    "annualContributionCap": 5000,
+    "capitalGainsRate": 15,
+    "use": "Qualified education expenses only, which is what makes the 529 tax-free"
+  },
+  "surface": [
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 0,
+      "trump": 7153,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 1403,
+      "trumpVsBrokerage": 1515,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 10,
+      "trump": 6938,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 1187,
+      "trumpVsBrokerage": 1300,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 12,
+      "trump": 6895,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 1144,
+      "trumpVsBrokerage": 1257,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 22,
+      "trump": 6680,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 929,
+      "trumpVsBrokerage": 1041,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 24,
+      "trump": 6637,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 886,
+      "trumpVsBrokerage": 998,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 32,
+      "trump": 6464,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 713,
+      "trumpVsBrokerage": 826,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 35,
+      "trump": 6400,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 649,
+      "trumpVsBrokerage": 762,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 5,
+      "ordinaryRate": 37,
+      "trump": 6357,
+      "plan529": 5751,
+      "brokerage": 5638,
+      "trumpVs529": 606,
+      "trumpVsBrokerage": 718,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 0,
+      "trump": 15784,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": 1967,
+      "trumpVsBrokerage": 2540,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 10,
+      "trump": 15205,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": 1389,
+      "trumpVsBrokerage": 1961,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 12,
+      "trump": 15090,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": 1273,
+      "trumpVsBrokerage": 1846,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 22,
+      "trump": 14511,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": 695,
+      "trumpVsBrokerage": 1267,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 24,
+      "trump": 14396,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": 579,
+      "trumpVsBrokerage": 1152,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 32,
+      "trump": 13933,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": 116,
+      "trumpVsBrokerage": 689,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 35,
+      "trump": 13759,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": -57,
+      "trumpVsBrokerage": 515,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "ordinaryRate": 37,
+      "trump": 13644,
+      "plan529": 13816,
+      "brokerage": 13244,
+      "trumpVs529": -173,
+      "trumpVsBrokerage": 400,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 0,
+      "trump": 27888,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": 2759,
+      "trumpVsBrokerage": 4278,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 10,
+      "trump": 26599,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": 1470,
+      "trumpVsBrokerage": 2990,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 12,
+      "trump": 26341,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": 1212,
+      "trumpVsBrokerage": 2732,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 22,
+      "trump": 25053,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": -76,
+      "trumpVsBrokerage": 1443,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 24,
+      "trump": 24795,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": -334,
+      "trumpVsBrokerage": 1185,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 32,
+      "trump": 23764,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": -1365,
+      "trumpVsBrokerage": 154,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 35,
+      "trump": 23377,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": -1752,
+      "trumpVsBrokerage": -232,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "ordinaryRate": 37,
+      "trump": 23119,
+      "plan529": 25129,
+      "brokerage": 23610,
+      "trumpVs529": -2010,
+      "trumpVsBrokerage": -490,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 0,
+      "trump": 37379,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": 3380,
+      "trumpVsBrokerage": 5780,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 10,
+      "trump": 35441,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": 1442,
+      "trumpVsBrokerage": 3842,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 12,
+      "trump": 35053,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": 1054,
+      "trumpVsBrokerage": 3454,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 22,
+      "trump": 33116,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": -883,
+      "trumpVsBrokerage": 1516,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 24,
+      "trump": 32728,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": -1271,
+      "trumpVsBrokerage": 1129,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 32,
+      "trump": 31178,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": -2821,
+      "trumpVsBrokerage": -421,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 35,
+      "trump": 30596,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": -3403,
+      "trumpVsBrokerage": -1003,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "ordinaryRate": 37,
+      "trump": 30209,
+      "plan529": 33999,
+      "brokerage": 31599,
+      "trumpVs529": -3790,
+      "trumpVsBrokerage": -1390,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 0,
+      "trump": 12904,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 1403,
+      "trumpVsBrokerage": 1628,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 10,
+      "trump": 12614,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 1112,
+      "trumpVsBrokerage": 1337,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 12,
+      "trump": 12556,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 1054,
+      "trumpVsBrokerage": 1279,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 22,
+      "trump": 12265,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 764,
+      "trumpVsBrokerage": 989,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 24,
+      "trump": 12207,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 706,
+      "trumpVsBrokerage": 931,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 32,
+      "trump": 11975,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 473,
+      "trumpVsBrokerage": 698,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 35,
+      "trump": 11888,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 386,
+      "trumpVsBrokerage": 611,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "ordinaryRate": 37,
+      "trump": 11830,
+      "plan529": 11501,
+      "brokerage": 11276,
+      "trumpVs529": 328,
+      "trumpVsBrokerage": 553,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 0,
+      "trump": 29600,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": 1967,
+      "trumpVsBrokerage": 3112,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 10,
+      "trump": 28640,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": 1007,
+      "trumpVsBrokerage": 2152,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 12,
+      "trump": 28448,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": 815,
+      "trumpVsBrokerage": 1960,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 22,
+      "trump": 27488,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": -145,
+      "trumpVsBrokerage": 1000,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 24,
+      "trump": 27296,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": -337,
+      "trumpVsBrokerage": 808,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 32,
+      "trump": 26528,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": -1105,
+      "trumpVsBrokerage": 40,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 35,
+      "trump": 26240,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": -1393,
+      "trumpVsBrokerage": -248,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "ordinaryRate": 37,
+      "trump": 26048,
+      "plan529": 27633,
+      "brokerage": 26488,
+      "trumpVs529": -1585,
+      "trumpVsBrokerage": -440,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 0,
+      "trump": 53017,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": 2759,
+      "trumpVsBrokerage": 5798,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 10,
+      "trump": 50715,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": 457,
+      "trumpVsBrokerage": 3496,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 12,
+      "trump": 50255,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": -3,
+      "trumpVsBrokerage": 3036,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 22,
+      "trump": 47953,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": -2305,
+      "trumpVsBrokerage": 734,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 24,
+      "trump": 47493,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": -2765,
+      "trumpVsBrokerage": 274,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 32,
+      "trump": 45652,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": -4606,
+      "trumpVsBrokerage": -1568,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 35,
+      "trump": 44961,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": -5297,
+      "trumpVsBrokerage": -2258,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "ordinaryRate": 37,
+      "trump": 44501,
+      "plan529": 50258,
+      "brokerage": 47219,
+      "trumpVs529": -5757,
+      "trumpVsBrokerage": -2719,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 0,
+      "trump": 71378,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": 3380,
+      "trumpVsBrokerage": 8180,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 10,
+      "trump": 67840,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -158,
+      "trumpVsBrokerage": 4642,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 12,
+      "trump": 67133,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -865,
+      "trumpVsBrokerage": 3934,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 22,
+      "trump": 63595,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -4403,
+      "trumpVsBrokerage": 396,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 24,
+      "trump": 62887,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -5111,
+      "trumpVsBrokerage": -311,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 32,
+      "trump": 60057,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -7941,
+      "trumpVsBrokerage": -3141,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 35,
+      "trump": 58996,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -9002,
+      "trumpVsBrokerage": -4203,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "ordinaryRate": 37,
+      "trump": 58288,
+      "plan529": 67998,
+      "brokerage": 63198,
+      "trumpVs529": -9710,
+      "trumpVsBrokerage": -4910,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 0,
+      "trump": 18655,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 1403,
+      "trumpVsBrokerage": 1740,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 10,
+      "trump": 18289,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 1037,
+      "trumpVsBrokerage": 1375,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 12,
+      "trump": 18216,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 964,
+      "trumpVsBrokerage": 1302,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 22,
+      "trump": 17851,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 599,
+      "trumpVsBrokerage": 936,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 24,
+      "trump": 17778,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 525,
+      "trumpVsBrokerage": 863,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 32,
+      "trump": 17485,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 233,
+      "trumpVsBrokerage": 571,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 35,
+      "trump": 17376,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 123,
+      "trumpVsBrokerage": 461,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "ordinaryRate": 37,
+      "trump": 17303,
+      "plan529": 17252,
+      "brokerage": 16914,
+      "trumpVs529": 50,
+      "trumpVsBrokerage": 388,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 0,
+      "trump": 43416,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": 1967,
+      "trumpVsBrokerage": 3685,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 10,
+      "trump": 42075,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": 626,
+      "trumpVsBrokerage": 2343,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 12,
+      "trump": 41807,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": 357,
+      "trumpVsBrokerage": 2075,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 22,
+      "trump": 40465,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": -984,
+      "trumpVsBrokerage": 733,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 24,
+      "trump": 40197,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": -1253,
+      "trumpVsBrokerage": 465,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 32,
+      "trump": 39123,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": -2326,
+      "trumpVsBrokerage": -609,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 35,
+      "trump": 38721,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": -2729,
+      "trumpVsBrokerage": -1011,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "ordinaryRate": 37,
+      "trump": 38452,
+      "plan529": 41449,
+      "brokerage": 39732,
+      "trumpVs529": -2997,
+      "trumpVsBrokerage": -1280,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 0,
+      "trump": 78146,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": 2759,
+      "trumpVsBrokerage": 7317,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 10,
+      "trump": 74831,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -556,
+      "trumpVsBrokerage": 4002,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 12,
+      "trump": 74169,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -1219,
+      "trumpVsBrokerage": 3340,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 22,
+      "trump": 70854,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -4533,
+      "trumpVsBrokerage": 25,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 24,
+      "trump": 70191,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -5196,
+      "trumpVsBrokerage": -638,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 32,
+      "trump": 67539,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -7848,
+      "trumpVsBrokerage": -3290,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 35,
+      "trump": 66545,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -8842,
+      "trumpVsBrokerage": -4284,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "ordinaryRate": 37,
+      "trump": 65882,
+      "plan529": 75387,
+      "brokerage": 70829,
+      "trumpVs529": -9505,
+      "trumpVsBrokerage": -4947,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 0,
+      "trump": 105377,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": 3380,
+      "trumpVsBrokerage": 10579,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 10,
+      "trump": 100239,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -1758,
+      "trumpVsBrokerage": 5442,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 12,
+      "trump": 99212,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -2785,
+      "trumpVsBrokerage": 4414,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 22,
+      "trump": 94074,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -7923,
+      "trumpVsBrokerage": -723,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 24,
+      "trump": 93047,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -8951,
+      "trumpVsBrokerage": -1751,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 32,
+      "trump": 88936,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -13061,
+      "trumpVsBrokerage": -5861,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 35,
+      "trump": 87395,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -14602,
+      "trumpVsBrokerage": -7402,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "ordinaryRate": 37,
+      "trump": 86368,
+      "plan529": 101997,
+      "brokerage": 94798,
+      "trumpVs529": -15630,
+      "trumpVsBrokerage": -8430,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 0,
+      "trump": 30156,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": 1403,
+      "trumpVsBrokerage": 1966,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 10,
+      "trump": 29641,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": 887,
+      "trumpVsBrokerage": 1450,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 12,
+      "trump": 29537,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": 784,
+      "trumpVsBrokerage": 1347,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 22,
+      "trump": 29022,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": 268,
+      "trumpVsBrokerage": 831,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 24,
+      "trump": 28919,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": 165,
+      "trumpVsBrokerage": 728,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 32,
+      "trump": 28506,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": -247,
+      "trumpVsBrokerage": 316,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 35,
+      "trump": 28352,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": -402,
+      "trumpVsBrokerage": 161,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "ordinaryRate": 37,
+      "trump": 28248,
+      "plan529": 28754,
+      "brokerage": 28191,
+      "trumpVs529": -505,
+      "trumpVsBrokerage": 58,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 0,
+      "trump": 71049,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": 1967,
+      "trumpVsBrokerage": 4829,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 10,
+      "trump": 68944,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -138,
+      "trumpVsBrokerage": 2725,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 12,
+      "trump": 68523,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -559,
+      "trumpVsBrokerage": 2304,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 22,
+      "trump": 66419,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -2664,
+      "trumpVsBrokerage": 199,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 24,
+      "trump": 65998,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -3085,
+      "trumpVsBrokerage": -222,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 32,
+      "trump": 64314,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -4769,
+      "trumpVsBrokerage": -1906,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 35,
+      "trump": 63682,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -5400,
+      "trumpVsBrokerage": -2538,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "ordinaryRate": 37,
+      "trump": 63261,
+      "plan529": 69082,
+      "brokerage": 66220,
+      "trumpVs529": -5821,
+      "trumpVsBrokerage": -2959,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 0,
+      "trump": 128404,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": 2759,
+      "trumpVsBrokerage": 10356,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 10,
+      "trump": 123064,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -2581,
+      "trumpVsBrokerage": 5015,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 12,
+      "trump": 121996,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -3649,
+      "trumpVsBrokerage": 3947,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 22,
+      "trump": 116655,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -8990,
+      "trumpVsBrokerage": -1393,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 24,
+      "trump": 115587,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -10058,
+      "trumpVsBrokerage": -2461,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 32,
+      "trump": 111315,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -14330,
+      "trumpVsBrokerage": -6734,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 35,
+      "trump": 109713,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -15932,
+      "trumpVsBrokerage": -8336,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "ordinaryRate": 37,
+      "trump": 108645,
+      "plan529": 125645,
+      "brokerage": 118048,
+      "trumpVs529": -17001,
+      "trumpVsBrokerage": -9404,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 0,
+      "trump": 173375,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": 3380,
+      "trumpVsBrokerage": 15379,
+      "winner": "Trump Account"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 10,
+      "trump": 165038,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -4958,
+      "trumpVsBrokerage": 7042,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 12,
+      "trump": 163370,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -6625,
+      "trumpVsBrokerage": 5374,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 22,
+      "trump": 155033,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -14963,
+      "trumpVsBrokerage": -2963,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 24,
+      "trump": 153365,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -16630,
+      "trumpVsBrokerage": -4631,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 32,
+      "trump": 146695,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -23300,
+      "trumpVsBrokerage": -11301,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 35,
+      "trump": 144194,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -25801,
+      "trumpVsBrokerage": -13802,
+      "winner": "529 plan"
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "ordinaryRate": 37,
+      "trump": 142526,
+      "plan529": 169995,
+      "brokerage": 157996,
+      "trumpVs529": -27469,
+      "trumpVsBrokerage": -15470,
+      "winner": "529 plan"
+    }
+  ],
+  "bracketCrossovers": [
+    {
+      "contribution": 1000,
+      "years": 5,
+      "crossoverBracketPct": null
+    },
+    {
+      "contribution": 1000,
+      "years": 10,
+      "crossoverBracketPct": 35
+    },
+    {
+      "contribution": 1000,
+      "years": 15,
+      "crossoverBracketPct": 22
+    },
+    {
+      "contribution": 1000,
+      "years": 18,
+      "crossoverBracketPct": 18
+    },
+    {
+      "contribution": 2000,
+      "years": 5,
+      "crossoverBracketPct": 49
+    },
+    {
+      "contribution": 2000,
+      "years": 10,
+      "crossoverBracketPct": 21
+    },
+    {
+      "contribution": 2000,
+      "years": 15,
+      "crossoverBracketPct": 12
+    },
+    {
+      "contribution": 2000,
+      "years": 18,
+      "crossoverBracketPct": 10
+    },
+    {
+      "contribution": 3000,
+      "years": 5,
+      "crossoverBracketPct": 39
+    },
+    {
+      "contribution": 3000,
+      "years": 10,
+      "crossoverBracketPct": 15
+    },
+    {
+      "contribution": 3000,
+      "years": 15,
+      "crossoverBracketPct": 9
+    },
+    {
+      "contribution": 3000,
+      "years": 18,
+      "crossoverBracketPct": 7
+    },
+    {
+      "contribution": 5000,
+      "years": 5,
+      "crossoverBracketPct": 28
+    },
+    {
+      "contribution": 5000,
+      "years": 10,
+      "crossoverBracketPct": 10
+    },
+    {
+      "contribution": 5000,
+      "years": 15,
+      "crossoverBracketPct": 6
+    },
+    {
+      "contribution": 5000,
+      "years": 18,
+      "crossoverBracketPct": 5
+    }
+  ],
+  "yearCrossovers": [
+    {
+      "contribution": 1000,
+      "ordinaryRate": 10,
+      "crossoverYear": null
+    },
+    {
+      "contribution": 1000,
+      "ordinaryRate": 12,
+      "crossoverYear": null
+    },
+    {
+      "contribution": 1000,
+      "ordinaryRate": 22,
+      "crossoverYear": 15
+    },
+    {
+      "contribution": 1000,
+      "ordinaryRate": 24,
+      "crossoverYear": 14
+    },
+    {
+      "contribution": 1000,
+      "ordinaryRate": 32,
+      "crossoverYear": 11
+    },
+    {
+      "contribution": 1000,
+      "ordinaryRate": 35,
+      "crossoverYear": 10
+    },
+    {
+      "contribution": 1000,
+      "ordinaryRate": 37,
+      "crossoverYear": 10
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 10,
+      "crossoverYear": 18
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 12,
+      "crossoverYear": 15
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 22,
+      "crossoverYear": 10
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 24,
+      "crossoverYear": 9
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 32,
+      "crossoverYear": 8
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 35,
+      "crossoverYear": 7
+    },
+    {
+      "contribution": 2000,
+      "ordinaryRate": 37,
+      "crossoverYear": 7
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 10,
+      "crossoverYear": 14
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 12,
+      "crossoverYear": 12
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 22,
+      "crossoverYear": 8
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 24,
+      "crossoverYear": 8
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 32,
+      "crossoverYear": 6
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 35,
+      "crossoverYear": 6
+    },
+    {
+      "contribution": 3000,
+      "ordinaryRate": 37,
+      "crossoverYear": 6
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 10,
+      "crossoverYear": 10
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 12,
+      "crossoverYear": 9
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 22,
+      "crossoverYear": 6
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 24,
+      "crossoverYear": 6
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 32,
+      "crossoverYear": 5
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 35,
+      "crossoverYear": 5
+    },
+    {
+      "contribution": 5000,
+      "ordinaryRate": 37,
+      "crossoverYear": 5
+    }
+  ],
+  "caveats": [
+    "Education use only; a 529's tax-free treatment is conditional on qualified expenses.",
+    "No state 529 deduction or credit, which around 40 states offer and which widens the 529's lead.",
+    "No employer or charitable deposits into the Trump Account.",
+    "Single flat growth rate and a single flat withdrawal bracket.",
+    "The brokerage arm assumes buy-and-hold with no annual dividend drag, flattering it slightly.",
+    "Published single-scenario comparisons of the Trump Account against a brokerage account cannot be reproduced exactly here, because the growth rate they assume is not stated. The relationship is computed instead: the gap is the seed's after-tax value less growth times the difference between the ordinary and capital-gains rates."
+  ]
+}

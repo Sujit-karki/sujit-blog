@@ -1,0 +1,251 @@
+---
+title: "Etsy Sold 9.5% Less. It Kept 3.3 Points More."
+description: "Three years of take rates for eight platforms, computed from their annual reports. Among the marketplaces that can be compared, the ones whose volume shrank are exactly the ones whose take rate rose — and almost none of it is the commission."
+seoTitle: "Platform Take Rates 2023-2025: Shrinking Marketplaces Take More"
+seoDescription: "Etsy, eBay, Airbnb and Upwork take rates across FY2023-FY2025 from SEC filings. Volume fell, take rates rose — and the increase came from services, not fees."
+date: "2026-09-08"
+category: "Side Hustles"
+tags: ["Gig Economy", "Side Hustle", "Etsy", "Original Data", "Platform Fees", "Methodology"]
+author: "Sujit Karki"
+toc:
+  - { id: "one-year-was-not-enough", title: "One year was not enough", level: 2 }
+  - { id: "three-years-eight-platforms", title: "Three years, eight platforms", level: 2 }
+  - { id: "the-four-that-can-be-compared", title: "The four that can be compared", level: 2 }
+  - { id: "it-is-not-the-commission", title: "It is not the commission", level: 2 }
+  - { id: "the-year-fiverr-does-not-have", title: "The year Fiverr does not have", level: 2 }
+  - { id: "what-would-change-my-mind", title: "What would change my mind", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "Are platform take rates going up?"
+    a: "Not uniformly. Across FY2023 to FY2025, the four comparable marketplaces split cleanly: Etsy rose 3.32 points and Upwork 2.92 points, while eBay moved 0.13 points and Airbnb fell 0.13. The two that rose are the two whose transaction volume shrank."
+  - q: "Did Etsy raise its fees?"
+    a: "Not principally. Etsy's take rate rose from 20.88% to 24.20% between FY2023 and FY2025, but 58% of the FY2025 increase came from services revenue — advertising, shipping labels, payments — rather than from the marketplace commission. Its marketplace revenue actually fell 0.7% that year."
+  - q: "Why did Fiverr's take rate jump so much?"
+    a: "Fiverr's total take rate went from 35.67% to 40.16% in FY2025, but 97.5% of that move was services revenue, which grew 50.9%. Its marketplace take rate — the cut on a transaction — was essentially flat at 27.61% to 27.72%, and marketplace revenue fell 1.8%."
+  - q: "Does a higher take rate mean sellers pay more?"
+    a: "Not necessarily. Take rate is company revenue divided by everything transacted, so it rises when a platform sells more advertising and subscriptions even if commissions never change. It also rises mechanically when transaction volume falls faster than revenue, which is what happened at Etsy."
+---
+
+<KeyTakeaways items={[
+  "Across FY2023-FY2025, the four comparable marketplaces rank perfectly inverse: the more volume shrank, the more take rate rose.",
+  "Etsy's gross merchandise sales fell 9.5% over two years while its take rate rose 3.32 points, to 24.20%.",
+  "Upwork's take rate rose 2.92 points on volume that fell 2.7% — a move a single year of data made look like noise.",
+  "Almost none of it is commission. 97.5% of Fiverr's FY2025 increase and 58% of Etsy's came from services revenue, not the cut on a sale.",
+  "eBay publishes its own take rate for all three years — 13.81%, 13.77%, 13.94% — and recomputing from the filings reproduces each one exactly."
+]} />
+
+[A previous piece](/posts/platform-take-rates-2026) measured what eight platforms
+keep per dollar transacted, for one year. One year cannot tell you whether a
+number is a trend or a coincidence. This is the same calculation run across
+three.
+
+The headline finding did not survive contact with the second and third years —
+not because it was wrong, but because it was incomplete in a way that mattered.
+
+## One year was not enough
+
+The FY2025 snapshot showed Fiverr keeping the most, at 40.2%, and it was
+tempting to read that as platforms tightening their grip. Adding FY2023 and
+FY2024 says something more specific and less dramatic.
+
+Take rates did not rise across the board. They rose at two companies, barely
+moved at four, and fell at two. What separates them is not size, sector or
+seniority. It is whether the business was growing.
+
+## Three years, eight platforms
+
+<BarChart
+  title="Take rate by fiscal year, FY2023 to FY2025"
+  description="Revenue as a share of gross volume, computed from each company's annual report. Fiverr has no FY2023 bar because it redefined the metric — see below. Net-basis and gross-basis companies are not comparable with each other."
+  data={[
+    { platform: "Fiverr", fy2024: 35.67, fy2025: 40.16 },
+    { platform: "Lyft", fy2023: 29.88, fy2024: 33.33, fy2025: 31.86 },
+    { platform: "Uber", fy2023: 27.04, fy2024: 27.02, fy2025: 26.89 },
+    { platform: "Etsy", fy2023: 20.88, fy2024: 22.31, fy2025: 24.20 },
+    { platform: "Upwork", fy2023: 16.64, fy2024: 19.19, fy2025: 19.56 },
+    { platform: "eBay", fy2023: 13.81, fy2024: 13.77, fy2025: 13.94 },
+    { platform: "DoorDash", fy2023: 12.93, fy2024: 13.36, fy2025: 13.45 },
+    { platform: "Airbnb", fy2023: 13.54, fy2024: 13.57, fy2025: 13.41 }
+  ]}
+  xKey="platform"
+  series={[
+    { key: "fy2023", label: "FY2023" },
+    { key: "fy2024", label: "FY2024" },
+    { key: "fy2025", label: "FY2025" }
+  ]}
+  unit="%"
+/>
+
+<ComparisonTable
+  caption="Take rate by fiscal year, with the change over the full period and the growth in gross volume across it. Gross volume is each company's own headline metric."
+  headers={["Platform", "FY2023", "FY2024", "FY2025", "Change", "Volume FY23→25", "Basis"]}
+  rows={[
+    ["Fiverr", "—", "35.67%", "40.16%", "—", "—", "net"],
+    ["Lyft", "29.88%", "33.33%", "31.86%", "+1.98", "+34.4%", "gross"],
+    ["Uber", "27.04%", "27.02%", "26.89%", "−0.15", "+40.3%", "gross"],
+    ["Etsy", "20.88%", "22.31%", "24.20%", "+3.32", "−9.5%", "net"],
+    ["Upwork", "16.64%", "19.19%", "19.56%", "+2.92", "−2.7%", "net"],
+    ["eBay", "13.81%", "13.77%", "13.94%", "+0.13", "+8.7%", "net"],
+    ["DoorDash", "12.93%", "13.36%", "13.45%", "+0.52", "+52.8%", "gross"],
+    ["Airbnb", "13.54%", "13.57%", "13.41%", "−0.13", "+24.6%", "net"]
+  ]}
+/>
+
+## The four that can be compared
+
+Only the net-basis marketplaces measure the same thing as each other. Uber,
+Lyft and DoorDash book substantial revenue gross, so their ratios are a
+different quantity wearing the same name, and mixing them into a comparison
+would be the error this whole exercise exists to avoid.
+
+That leaves four. Ordered by how much their take rate moved:
+
+<ComparisonTable
+  caption="Net-basis marketplaces only. Take-rate change in percentage points, FY2023 to FY2025, against growth in gross volume over the same period."
+  headers={["Platform", "Take rate change", "Volume growth"]}
+  rows={[
+    ["Etsy", "+3.32 pts", "−9.5%"],
+    ["Upwork", "+2.92 pts", "−2.7%"],
+    ["eBay", "+0.13 pts", "+8.7%"],
+    ["Airbnb", "−0.13 pts", "+24.6%"]
+  ]}
+/>
+
+The ordering is perfect and inverse. The most contracted business raised its
+take the most; the fastest-growing one is the only one that fell. There is no
+crossover, no exception, and the gap between the two groups is not marginal —
+roughly three points against roughly a tenth of a point.
+
+Upwork is the entry that a single year would have missed entirely. Between
+FY2024 and FY2025 its take rate moved 0.37 points, which reads as noise. Across
+the full period it moved 2.92, nearly all of it in FY2024. Measuring one year
+and calling it flat would have been wrong in a way no amount of care within that
+year could have caught.
+
+<InfoBox type="info">
+Four companies is not a law. It is a pattern with no counterexample in the set
+measured, which is a reason to look further rather than a reason to conclude.
+The section below on what would change my mind is not a formality.
+</InfoBox>
+
+## It is not the commission
+
+The obvious reading — shrinking platforms squeeze sellers harder — is wrong, and
+the companies' own filings say so. Both of the risers break revenue into a
+marketplace line and a services line, and the two moved in opposite directions.
+
+**Fiverr, FY2024 to FY2025.** Its marketplace take rate, the cut it takes on a
+transaction, went from 27.61% to 27.72%. That is 0.11 points, essentially flat.
+Services revenue over the same denominator went from 8.06% to 12.43%. Total take
+rose 4.49 points, and **97.5% of it was services**. Marketplace revenue actually
+fell 1.8% while services revenue grew 50.9%.
+
+Anyone writing "Fiverr raised its take rate" from the headline figure would be
+describing something that did not happen.
+
+**Etsy, FY2024 to FY2025.** The split is less extreme and more interesting.
+Marketplace take rose 0.79 points and services rose 1.10, so 58% of the increase
+came from services — advertising, shipping labels, payments — and 42% from the
+marketplace itself.
+
+But even Etsy's marketplace share is not a fee increase. Its marketplace revenue
+*fell* 0.7% that year. The ratio rose because gross merchandise sales fell 5.3%,
+faster than the revenue did. A denominator shrinking faster than its numerator
+raises a ratio without anyone changing a price.
+
+That is the mechanism behind most of this. A marketplace losing volume keeps
+more per remaining dollar partly because its costs of being a marketplace do not
+fall in step, and mostly because it sells sellers more things that are not
+commission.
+
+## The year Fiverr does not have
+
+Fiverr has no FY2023 bar, and the reason is worth more than the missing data
+point.
+
+Its FY2023 annual report gives company-wide "GMV" of $1,134.7 million. From
+FY2024 the metric is named "marketplace GMV" and reported as $1,097.6 million,
+described as down 2.0% on the prior year — which implies roughly $1,120 million
+for 2023 on the new basis, not $1,134.7 million. The definition narrowed, and no
+filing states the restated 2023 figure outright.
+
+Putting those two numbers in one series would have produced a 3% decline that
+never happened, in the very company whose FY2025 figure is the most eye-catching
+in the dataset. The extraction script now refuses to do it: the platform is
+excluded before FY2024 and the run prints the exclusion, because a gap nobody
+mentions reads as a company that did not exist.
+
+The general point is that a metric's name is not a promise of continuity.
+Multi-year comparisons of non-GAAP operating metrics are exposed to redefinition
+in a way that GAAP line items are not, and the only defence is reading the
+definition in each filing rather than trusting the label.
+
+## What would change my mind
+
+Four comparable companies, three years. The honest description is a consistent
+pattern in a small set, and here is what would break it:
+
+- **A shrinking marketplace with a falling take rate.** None exists in this set.
+  One would show the relationship is not general.
+- **Services growth at the growing platforms too.** If eBay and Airbnb are also
+  expanding services revenue but their take rates are flat because volume
+  outruns it, then the story is "everyone sells more services" rather than
+  "shrinking platforms do".
+- **A fourth year.** If Etsy's volume stabilises and its take rate keeps
+  climbing, the mechanism is pricing, not arithmetic.
+
+The dataset is published so that the first two can be checked by someone who
+disagrees with me.
+
+## Methodology
+
+Revenue comes from XBRL company facts on `data.sec.gov` — the figure each
+company tagged itself. Gross volume is not in XBRL: it is a non-GAAP operating
+metric stated in the narrative under a different name at every company, so it is
+extracted from the filing text with the source sentence and filing URL recorded
+on every row.
+
+**Selecting the year is the part that is easy to get wrong.** These key-metrics
+tables put two or three fiscal years side by side, and the column order is not
+consistent — Uber's runs 2024 then 2025, Etsy's runs 2025 then 2024, and eBay's
+FY2023 filing is a two-panel layout comparing 2023-vs-2022 and 2022-vs-2021 in
+the same row. An earlier version of the script hardcoded a column position per
+company, which is correct for exactly one filing and silently wrong for every
+other year. Columns are now matched against the fiscal years in the table header
+and selected by year, and if the cell count and the header years do not
+reconcile, the run stops instead of guessing.
+
+**The cross-check.** eBay publishes its own take rate, defined the same way, for
+every year here: 13.81%, 13.77% and 13.94%. Recomputing from the underlying
+figures reproduces all three exactly. Etsy publishes 24.2% and 22.3% for FY2025
+and FY2024 and both reproduce, but it did not publish a numeric take rate before
+its FY2025 filing, so FY2023 rests on eBay alone. Fiverr and Upwork publish a
+*marketplace* take rate — a narrower numerator over the same denominator — so
+their 27.7% and 18.7% are legitimately lower than the figures here, and the
+script does not assert equality against them.
+
+**Reproducibility.** The script is
+[`research/platform_take.py`](https://github.com/Sujit-karki/sujit-blog/blob/main/research/platform_take.py),
+run as `python platform_take.py --fiscal-year 2024`. It caches each filing on
+first run, keyed by year. The datasets are `platform-take.csv`,
+`platform-take-2024.csv` and `platform-take-2023.csv`.
+
+**Disclosure.** Figures are computed from primary filings by the script above;
+the analysis and conclusions are mine. The commentary was drafted with AI
+assistance. No language model produced any figure in this post.
+
+<InfoBox type="warning">
+This is educational information, not investment or business advice. Take rate is
+a company-wide ratio and does not predict what any individual seller pays. The
+comparison across companies is only valid within the same revenue-recognition
+basis, which is marked on every row of the data.
+</InfoBox>
+
+<DatasetSignup />
+
+<Sources items={[
+  { title: "EDGAR company filings and XBRL company facts", url: "https://www.sec.gov/edgar/searchedgar/companysearch", publisher: "U.S. Securities and Exchange Commission" },
+  { title: "Platform take rates, FY2025 (CSV)", url: "/data/platform-take.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Platform take rates, FY2024 (CSV)", url: "/data/platform-take-2024.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Platform take rates, FY2023 (CSV)", url: "/data/platform-take-2023.csv", publisher: "Dataset published with this post", date: "2026" }
+]} />
