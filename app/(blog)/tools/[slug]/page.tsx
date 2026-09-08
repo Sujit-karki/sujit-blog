@@ -144,6 +144,28 @@ export default async function ToolPage({ params }: Props) {
           </section>
         )}
 
+        {tool.explainer.length > 0 && (
+          <section className="my-10 space-y-8">
+            {tool.explainer.map((section) => (
+              <div key={section.heading}>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  {section.heading}
+                </h2>
+                <div className="space-y-4">
+                  {section.paragraphs.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-[0.95rem] text-gray-700 dark:text-gray-300 leading-[1.75]"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
+
         <FaqAccordion items={tool.faq} />
 
         <div className="my-8">
