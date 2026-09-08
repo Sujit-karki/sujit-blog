@@ -74,6 +74,15 @@ export const researchPosts: ResearchPost[] = [
     date: "2026-09-07",
   },
   {
+    slug: "insurance-affordability-crisis-2026",
+    title: "Home Insurance Is 'Up 46%'. CPI Says 16%.",
+    finding:
+      "The 46% every insurance article repeats is a comparison marketplace's quoted-premium average. The BLS price index for the same goods says 16.0% — below headline inflation of 23.2%. Motor vehicle insurance, written up as the calm half of the story, is the real outlier at 51.4%.",
+    method: "npm run cpi:insurance, three BLS CPI series",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
     slug: "inflation-by-category-2026",
     title: "Inflation Is 3.4%. It Is Also 25%.",
     finding:

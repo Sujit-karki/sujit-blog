@@ -252,6 +252,22 @@ const rawDatasets = {
     ],
     files: [{ name: "cpi-categories.json", encodingFormat: JSON_TYPE }],
   },
+  "insurance-affordability-crisis-2026": {
+    name: "CPI insurance price indexes vs marketplace premium averages",
+    description:
+      "Motor vehicle insurance and tenants' and household insurance from the US Consumer Price Index, held against the headline all-items figure over the same window, plus the divergence from the average-premium figure that insurance comparison marketplaces publish. The two quantities are routinely reported as if interchangeable: a price index holds coverage constant and measures what an identical policy costs, while a marketplace average also moves when the dwelling coverage amounts people buy move. Over 2021 to July 2026 they differ by about thirty percentage points for home insurance. Rows carry BLS series identifiers, both the annual-average and January baselines, and the months actually used for each annual figure, since October 2025 is missing from all three series and November 2025 from one.",
+    keywords: [
+      "insurance", "home insurance", "auto insurance", "CPI", "inflation",
+      "BLS", "premiums", "United States",
+    ],
+    temporalCoverage: "2021/2026-07",
+    variableMeasured: [
+      "BLS series ID", "CPI item name", "Index level",
+      "Percent change vs base-year average", "Percent change vs January baseline",
+      "Multiple of headline inflation", "Months used per annual average",
+    ],
+    files: [{ name: "insurance-cpi.json", encodingFormat: JSON_TYPE }],
+  },
 };
 
 /**

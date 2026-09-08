@@ -1,0 +1,190 @@
+{
+  "generatedAt": "2026-09-08",
+  "source": "US Bureau of Labor Statistics, CPI public API v2",
+  "basis": "CPI-U, US city average, not seasonally adjusted",
+  "window": {
+    "from": "2021 annual average",
+    "to": "2026-07"
+  },
+  "itemNamesFrom": "https://download.bls.gov/pub/time.series/cu/cu.item",
+  "rows": [
+    {
+      "seriesId": "CUUR0000SETE",
+      "item": "Motor vehicle insurance",
+      "baseYearAverage": 565.313,
+      "january2021": 551.552,
+      "latestValue": 856.08,
+      "pctChangeVsBaseYearAverage": 51.4,
+      "pctChangeVsJanuary": 55.2,
+      "multipleOfHeadline": 2.22,
+      "pointsVsHeadline": 28.2
+    },
+    {
+      "seriesId": "CUUR0000SEHD",
+      "item": "Tenants' and household insurance",
+      "baseYearAverage": 150.694,
+      "january2021": 152.493,
+      "latestValue": 174.868,
+      "pctChangeVsBaseYearAverage": 16,
+      "pctChangeVsJanuary": 14.7,
+      "multipleOfHeadline": 0.69,
+      "pointsVsHeadline": -7.2
+    },
+    {
+      "seriesId": "CUUR0000SA0",
+      "item": "All items",
+      "baseYearAverage": 270.97,
+      "january2021": 261.582,
+      "latestValue": 333.918,
+      "pctChangeVsBaseYearAverage": 23.2,
+      "pctChangeVsJanuary": 27.7,
+      "multipleOfHeadline": 1,
+      "pointsVsHeadline": 0
+    }
+  ],
+  "annualIndex": {
+    "note": "Annual average of monthly index values, rebased so 2021 = 100.",
+    "series": [
+      {
+        "year": 2021,
+        "monthsUsed": 12,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "complete": true,
+        "Motor vehicle insurance": 100,
+        "Tenants' and household insurance": 100,
+        "All items": 100
+      },
+      {
+        "year": 2022,
+        "monthsUsed": 12,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "complete": true,
+        "Motor vehicle insurance": 107.9,
+        "Tenants' and household insurance": 99.9,
+        "All items": 108
+      },
+      {
+        "year": 2023,
+        "monthsUsed": 12,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "complete": true,
+        "Motor vehicle insurance": 126.7,
+        "Tenants' and household insurance": 101.7,
+        "All items": 112.4
+      },
+      {
+        "year": 2024,
+        "monthsUsed": 12,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "complete": true,
+        "Motor vehicle insurance": 149.1,
+        "Tenants' and household insurance": 105,
+        "All items": 115.8
+      },
+      {
+        "year": 2025,
+        "monthsUsed": 10,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          12
+        ],
+        "complete": false,
+        "Motor vehicle insurance": 158,
+        "Tenants' and household insurance": 109.6,
+        "All items": 118.7
+      },
+      {
+        "year": 2026,
+        "monthsUsed": 7,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "complete": false,
+        "Motor vehicle insurance": 156,
+        "Tenants' and household insurance": 115.3,
+        "All items": 122.2
+      }
+    ]
+  },
+  "marketplaceComparison": {
+    "value": 46,
+    "what": "average home insurance premium, 2021 to 2026",
+    "source": "Insurify 2026 Home Insurance Rate Report",
+    "cpiHouseholdInsurancePct": 16,
+    "divergencePoints": 30,
+    "note": "A price index and an average quoted premium are different quantities. CPI prices constant coverage; a marketplace average also moves with the coverage amounts people buy. Both can be correct at once."
+  },
+  "caveats": [
+    "Tenants' and household insurance is 0.292% of the CPI basket (BLS, Dec 2025 relative importance).",
+    "CPI item names are BLS's own and are not synonyms for consumer-facing product names.",
+    "Recent months carry BLS revision flags and will move.",
+    "2025: annual average uses 10 months common to all series (1,2,3,4,5,6,7,8,9,12), not 12",
+    "2026: annual average uses 7 months common to all series (1,2,3,4,5,6,7), not 12"
+  ]
+}
