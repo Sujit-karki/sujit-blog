@@ -4,11 +4,11 @@ description: "OBBBA's new above-the-line auto loan interest deduction runs throu
 seoDescription: "OBBBA's new above-the-line auto loan interest deduction runs through 2028. Who qualifies, the income phase-out, and what it's worth against record prices."
 seoTitle: "The $10,000 Car-Loan Interest Deduction, Explained"
 date: "2026-07-30"
-updated: "2026-07-30"
+updated: "2026-09-08"
 author: "Sujit Karki"
 category: "Personal Finance"
 coverImage: "/images/car-loan-interest-deduction-2026.svg"
-tags: ["OBBBA", "car loan", "auto loan", "tax deduction", "taxes", "debt"]
+tags: ["OBBBA", "car loan", "auto loan", "tax deduction", "taxes", "debt", "Original Data"]
 toc:
   - { id: "what-the-deduction-actually-is", title: "What the deduction actually is", level: 2 }
   - { id: "who-qualifies-and-who-doesnt", title: "Who qualifies (and who doesn't)", level: 2 }
@@ -76,9 +76,44 @@ The deduction then phases out by income. For every $1,000 (or fraction) your mod
 
 ## What it's actually worth
 
-Here's the honest arithmetic. Suppose you finance $40,000 at roughly 7% over 60 months. Your first-year interest is somewhere around $2,600, declining each year as the balance falls. At a 22% marginal rate, deducting $2,600 saves you about $572 in year one — less in later years. Over the life of a typical loan you might save a few hundred to maybe $1,000-plus in total, concentrated in the early years.
+I ran the amortisation rather than estimating it. Take the average new vehicle at **$49,758** (Cox Automotive, June 2026), put 20% down, and finance the remaining **$39,806** over 72 months. First-year interest — the largest year, since interest falls as the balance amortises:
 
-To actually hit the $10,000 annual interest ceiling, you'd need a very large, very high-rate loan — well outside what most households carry. So treat the $10,000 as a ceiling almost nobody reaches, not a target.
+| APR | Monthly payment | Year-1 interest | Share of the $10,000 cap | Worth at 22% | At 24% |
+| --- | --- | --- | --- | --- | --- |
+| 4% | $623 | $1,483 | 14.8% | $326 | $356 |
+| 6% | $660 | $2,234 | 22.3% | $491 | $536 |
+| 7% | $679 | $2,611 | **26.1%** | $574 | $627 |
+| 9% | $718 | $3,370 | 33.7% | $741 | $809 |
+| 11% | $758 | $4,134 | 41.3% | $909 | $992 |
+
+At a realistic new-car rate the average buyer uses about **a quarter of the cap** and collects **$574**. Not nothing — but it is a tank of petrol a month, not the four figures the headline implies.
+
+### The loan you would need to actually reach $10,000
+
+This is the number the coverage never puts a figure on. Solving for the principal whose first-year interest hits the cap:
+
+| APR | 48 months | 60 months | 72 months | 84 months |
+| --- | --- | --- | --- | --- |
+| 4% | $279,967 | $272,892 | $268,377 | $265,247 |
+| 7% | $159,010 | $155,000 | **$152,447** | $150,683 |
+| 9% | $123,190 | $120,091 | $118,124 | $116,768 |
+| 11% | $100,408 | $97,892 | $96,299 | $95,205 |
+
+At a typical 7% you would need to borrow **$152,447** on a new car with US final assembly. At 4% you would need **$268,377**. The cap is not a target most buyers fall short of — it is a threshold that requires financing a supercar, and the deduction is capped at $10,000 of *interest* precisely so that it never pays out at that level to anyone ordinary.
+
+### Then the phase-out takes some of it back
+
+The remaining benefit erodes across the MAGI band. Same $39,806 loan at 7%, single filer:
+
+| MAGI | Deduction retained | Deductible interest | Worth at 22% |
+| --- | --- | --- | --- |
+| $100,000 | 100% | $2,611 | $574 |
+| $110,000 | 80% | $2,089 | $460 |
+| $125,000 | 50% | $1,306 | $287 |
+| $140,000 | 20% | $522 | $115 |
+| $150,000 | 0% | $0 | $0 |
+
+So the realistic range for a household buying an average new car is roughly **$100 to $900 in year one**, falling every year after. Take it — it is free and it is above the line, so you get it without itemising. Just do not let it move the decision about whether to buy the car.
 
 ## The backdrop: record prices, rising delinquencies
 
@@ -130,6 +165,22 @@ I've written before about the broader squeeze on households from the [insurance 
   { q: "What's the income limit?", a: "The deduction phases out starting at $100,000 MAGI for single filers and $200,000 for joint filers, dropping $200 for every $1,000 above the threshold, reaching zero at $150,000 single / $250,000 joint." },
   { q: "How long does the deduction last?", a: "It applies to tax years 2025 through 2028 unless Congress extends it." }
 ]} />
+
+## Methodology
+
+**Amortisation.** Standard fixed-rate schedule: monthly payment `P·r / (1 − (1+r)^−n)`, each month's interest is the outstanding balance times the monthly rate, and the first twelve are summed. First-year interest is the largest year, since interest falls as the balance amortises.
+
+**Sourcing, in two halves, because they differ.** The $10,000 annual cap is stated directly in the IRS newsroom guidance cited below. The MAGI phase-out bands are an **input** carried from that same guidance package as reported by the sources below — this script does not derive them, and `uscode.house.gov` was unreachable when this was written, so the statute text itself was not read. The amortisation needs no source; it is arithmetic.
+
+**Verification.** Three checks, any of which stops the run: the schedule must close (total payments equal principal plus interest, and the loan must retire), a 0% APR must produce exactly zero interest, and the phase-out must be continuous at both band edges.
+
+**Not modelled.** Sales tax, registration, insurance and depreciation — all larger than the interest. State income tax, which this federal deduction does not reduce. And the assumption throughout is that the loan is outstanding for the full first year.
+
+<DatasetSignup
+  dataset="the deduction sweep"
+  cadence="when the IRS updates the guidance or the cap"
+  dataFile="car-loan-deduction.json"
+/>
 
 <Sources items={[
   { title: "Treasury, IRS provide guidance on the new deduction for car loan interest under the One, Big, Beautiful Bill", url: "https://www.irs.gov/newsroom/treasury-irs-provide-guidance-on-the-new-deduction-for-car-loan-interest-under-the-one-big-beautiful-bill", publisher: "Internal Revenue Service", date: "2026" },

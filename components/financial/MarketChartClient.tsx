@@ -153,7 +153,9 @@ export default function MarketChartClient({ compact = false }: Props) {
               </span>
               <span
                 className={`text-xs font-bold ${
-                  positive ? 'text-emerald-500' : 'text-red-600 dark:text-red-400'
+                  positive
+                    ? 'text-emerald-700 dark:text-emerald-400'
+                    : 'text-red-600 dark:text-red-400'
                 }`}
               >
                 {positive ? '▲' : '▼'}&nbsp;{Math.abs(active.change24h).toFixed(2)}%

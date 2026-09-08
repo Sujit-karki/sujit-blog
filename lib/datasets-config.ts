@@ -318,6 +318,69 @@ const rawDatasets = {
     ],
     files: [{ name: "trump-account-vs-529.json", encodingFormat: JSON_TYPE }],
   },
+  "car-loan-interest-deduction-2026": {
+    name: "Car-loan interest deduction value by loan size, rate and term",
+    description:
+      "First-year and lifetime interest on fixed-rate car loans across a grid of principal, APR and term, with the resulting OBBBA deduction and its cash value at four marginal rates. Computed from an amortisation schedule rather than from the headline cap, because the $10,000 figure is a ceiling on deductible interest and not a benefit: at the June 2026 average new-vehicle price of $49,758 with 20 percent down, first-year interest at 7 percent is $2,611, about a quarter of the cap. A companion table solves for the principal whose first-year interest actually reaches the cap, which at 7 percent over 72 months is $152,447. Includes the MAGI phase-out, which is carried from the cited IRS guidance rather than derived here.",
+    keywords: [
+      "car loan", "auto loan", "OBBBA", "tax deduction", "amortisation",
+      "interest", "United States",
+    ],
+    temporalCoverage: "2025/2028",
+    variableMeasured: [
+      "Loan principal", "APR", "Term in months", "Monthly payment",
+      "First-year interest", "Total interest", "Deductible interest",
+      "Tax value by bracket", "Principal required to reach the cap",
+    ],
+    files: [{ name: "car-loan-deduction.json", encodingFormat: JSON_TYPE }],
+  },
+  "record-home-price-buy-or-rent-2026": {
+    name: "Buy versus rent break-even by mortgage rate, rent and appreciation",
+    description:
+      "Month-by-month net worth for two households over thirty years, one buying at the record $440,600 median price and one renting and investing the difference, with the break-even month at which buying overtakes renting. Swept across mortgage rates from 4 to 7.5 percent, monthly rents from $1,600 to $2,800, and annual appreciation from 0 to 5 percent. The buyer pays interest, principal, property tax, insurance and maintenance and sells with 6 percent costs; the renter keeps the down payment and closing costs invested at 7 percent. The widely repeated five-year rule reproduces only at a 4 percent mortgage rate: at 6.55 percent with $2,100 rent and 3 percent appreciation, buying does not break even within thirty years. No mortgage-interest deduction and no capital-gains tax on the portfolio, two omissions that push in opposite directions.",
+    keywords: [
+      "housing", "buy vs rent", "mortgage", "break-even", "home prices",
+      "affordability", "United States",
+    ],
+    temporalCoverage: "2026",
+    variableMeasured: [
+      "Mortgage rate", "Monthly payment", "Monthly rent", "Annual appreciation",
+      "Buyer net worth by year", "Renter net worth by year", "Break-even years",
+    ],
+    files: [{ name: "buy-vs-rent.json", encodingFormat: JSON_TYPE }],
+  },
+  "the-20000-1099k-rule-is-back": {
+    name: "Form 1099-K reporting threshold by average sale price",
+    description:
+      "Where the restored Form 1099-K reporting threshold actually falls, computed from its own structure. The rule requires gross payments exceeding $20,000 and more than 200 transactions on a single platform, and because both must be crossed the threshold is a boundary in two dimensions rather than a revenue line. Dividing one by the other gives an exact pivot at a $100 average sale price: above it the transaction count binds, below it the dollar amount does. The consequence is that a seller averaging $2,000 a sale can take $402,000 through one platform before a form is required, while a seller averaging $100 receives one at $20,100. Includes worked cases of high-revenue and high-volume sellers who receive no form at all.",
+    keywords: [
+      "1099-K", "IRS", "reporting threshold", "resale", "side hustle",
+      "marketplace", "taxes", "United States",
+    ],
+    temporalCoverage: "2026",
+    variableMeasured: [
+      "Average sale price", "Sales required to trigger reporting",
+      "Revenue at the trigger point", "Binding constraint",
+      "Reporting outcome for worked cases",
+    ],
+    files: [{ name: "form-1099k-threshold.json", encodingFormat: JSON_TYPE }],
+  },
+  "roth-ira-vs-traditional-ira": {
+    name: "Roth versus Traditional IRA outcomes at the contribution limit",
+    description:
+      "After-tax outcomes for a maxed Roth and a maxed Traditional IRA compared at equal after-tax cost, across marginal rates from 12 to 37 percent and horizons from 10 to 40 years. The familiar result that equal tax rates make the two accounts identical assumes both receive the same pre-tax contribution, which the nominal $7,500 limit makes impossible: $7,500 of already-taxed Roth money is a larger real contribution, equivalent to $9,868 pre-tax at a 24 percent rate. Funding the Traditional to the same limit leaves a tax saving that cannot enter the IRA and must sit in a taxable account, where its growth is taxed. At equal rates over thirty years the Roth is ahead by exactly the capital-gains tax on that side account. Applies only to savers who contribute the maximum; below the limit the classic tie holds.",
+    keywords: [
+      "Roth IRA", "Traditional IRA", "contribution limit", "retirement",
+      "tax planning", "IRS", "United States",
+    ],
+    temporalCoverage: "2026",
+    variableMeasured: [
+      "Marginal rate now", "Marginal rate in retirement", "Years to withdrawal",
+      "Roth ending value", "Traditional ending value", "Taxable side account value",
+      "Roth advantage", "Pre-tax equivalent of the Roth limit",
+    ],
+    files: [{ name: "roth-vs-traditional-limit.json", encodingFormat: JSON_TYPE }],
+  },
 };
 
 /**

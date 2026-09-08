@@ -1,0 +1,400 @@
+{
+  "generatedAt": "2026-09-08",
+  "assumptions": {
+    "iraLimit": 7500,
+    "iraLimitSource": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500",
+    "growthRate": 0.07,
+    "capitalGainsRate": 0.15,
+    "comparisonBasis": "Equal after-tax cost, with the nominal contribution limit binding on both"
+  },
+  "shelter": [
+    {
+      "rate": 12,
+      "nominalLimit": 7500,
+      "preTaxEquivalent": 8523,
+      "extraShelterPct": 13.6
+    },
+    {
+      "rate": 22,
+      "nominalLimit": 7500,
+      "preTaxEquivalent": 9615,
+      "extraShelterPct": 28.2
+    },
+    {
+      "rate": 24,
+      "nominalLimit": 7500,
+      "preTaxEquivalent": 9868,
+      "extraShelterPct": 31.6
+    },
+    {
+      "rate": 32,
+      "nominalLimit": 7500,
+      "preTaxEquivalent": 11029,
+      "extraShelterPct": 47.1
+    },
+    {
+      "rate": 35,
+      "nominalLimit": 7500,
+      "preTaxEquivalent": 11538,
+      "extraShelterPct": 53.8
+    },
+    {
+      "rate": 37,
+      "nominalLimit": 7500,
+      "preTaxEquivalent": 11905,
+      "extraShelterPct": 58.7
+    }
+  ],
+  "equalRates": [
+    {
+      "rateNow": 12,
+      "rateLater": 12,
+      "years": 10,
+      "roth": 14754,
+      "traditionalIra": 12983,
+      "sideAccountNet": 1640,
+      "traditional": 14623,
+      "rothAdvantage": 131,
+      "preTaxEquivalentOfRothLimit": 8523,
+      "extraShelterPct": 13.6,
+      "sideAccountTax": 131
+    },
+    {
+      "rateNow": 12,
+      "rateLater": 12,
+      "years": 20,
+      "roth": 29023,
+      "traditionalIra": 25540,
+      "sideAccountNet": 3095,
+      "traditional": 28635,
+      "rothAdvantage": 387,
+      "preTaxEquivalentOfRothLimit": 8523,
+      "extraShelterPct": 13.6,
+      "sideAccountTax": 387
+    },
+    {
+      "rateNow": 12,
+      "rateLater": 12,
+      "years": 30,
+      "roth": 57092,
+      "traditionalIra": 50241,
+      "sideAccountNet": 5958,
+      "traditional": 56199,
+      "rothAdvantage": 893,
+      "preTaxEquivalentOfRothLimit": 8523,
+      "extraShelterPct": 13.6,
+      "sideAccountTax": 893
+    },
+    {
+      "rateNow": 12,
+      "rateLater": 12,
+      "years": 40,
+      "roth": 112308,
+      "traditionalIra": 98831,
+      "sideAccountNet": 11590,
+      "traditional": 110422,
+      "rothAdvantage": 1887,
+      "preTaxEquivalentOfRothLimit": 8523,
+      "extraShelterPct": 13.6,
+      "sideAccountTax": 1887
+    },
+    {
+      "rateNow": 22,
+      "rateLater": 22,
+      "years": 10,
+      "roth": 14754,
+      "traditionalIra": 11508,
+      "sideAccountNet": 3006,
+      "traditional": 14514,
+      "rothAdvantage": 239,
+      "preTaxEquivalentOfRothLimit": 9615,
+      "extraShelterPct": 28.2,
+      "sideAccountTax": 239
+    },
+    {
+      "rateNow": 22,
+      "rateLater": 22,
+      "years": 20,
+      "roth": 29023,
+      "traditionalIra": 22638,
+      "sideAccountNet": 5675,
+      "traditional": 28312,
+      "rothAdvantage": 710,
+      "preTaxEquivalentOfRothLimit": 9615,
+      "extraShelterPct": 28.2,
+      "sideAccountTax": 710
+    },
+    {
+      "rateNow": 22,
+      "rateLater": 22,
+      "years": 30,
+      "roth": 57092,
+      "traditionalIra": 44532,
+      "sideAccountNet": 10924,
+      "traditional": 55455,
+      "rothAdvantage": 1637,
+      "preTaxEquivalentOfRothLimit": 9615,
+      "extraShelterPct": 28.2,
+      "sideAccountTax": 1637
+    },
+    {
+      "rateNow": 22,
+      "rateLater": 22,
+      "years": 40,
+      "roth": 112308,
+      "traditionalIra": 87601,
+      "sideAccountNet": 21249,
+      "traditional": 108850,
+      "rothAdvantage": 3459,
+      "preTaxEquivalentOfRothLimit": 9615,
+      "extraShelterPct": 28.2,
+      "sideAccountTax": 3459
+    },
+    {
+      "rateNow": 24,
+      "rateLater": 24,
+      "years": 10,
+      "roth": 14754,
+      "traditionalIra": 11213,
+      "sideAccountNet": 3280,
+      "traditional": 14493,
+      "rothAdvantage": 261,
+      "preTaxEquivalentOfRothLimit": 9868,
+      "extraShelterPct": 31.6,
+      "sideAccountTax": 261
+    },
+    {
+      "rateNow": 24,
+      "rateLater": 24,
+      "years": 20,
+      "roth": 29023,
+      "traditionalIra": 22057,
+      "sideAccountNet": 6191,
+      "traditional": 28248,
+      "rothAdvantage": 775,
+      "preTaxEquivalentOfRothLimit": 9868,
+      "extraShelterPct": 31.6,
+      "sideAccountTax": 775
+    },
+    {
+      "rateNow": 24,
+      "rateLater": 24,
+      "years": 30,
+      "roth": 57092,
+      "traditionalIra": 43390,
+      "sideAccountNet": 11917,
+      "traditional": 55307,
+      "rothAdvantage": 1785,
+      "preTaxEquivalentOfRothLimit": 9868,
+      "extraShelterPct": 31.6,
+      "sideAccountTax": 1785
+    },
+    {
+      "rateNow": 24,
+      "rateLater": 24,
+      "years": 40,
+      "roth": 112308,
+      "traditionalIra": 85354,
+      "sideAccountNet": 23181,
+      "traditional": 108535,
+      "rothAdvantage": 3773,
+      "preTaxEquivalentOfRothLimit": 9868,
+      "extraShelterPct": 31.6,
+      "sideAccountTax": 3773
+    },
+    {
+      "rateNow": 32,
+      "rateLater": 32,
+      "years": 10,
+      "roth": 14754,
+      "traditionalIra": 10032,
+      "sideAccountNet": 4373,
+      "traditional": 14405,
+      "rothAdvantage": 348,
+      "preTaxEquivalentOfRothLimit": 11029,
+      "extraShelterPct": 47.1,
+      "sideAccountTax": 348
+    },
+    {
+      "rateNow": 32,
+      "rateLater": 32,
+      "years": 20,
+      "roth": 29023,
+      "traditionalIra": 19735,
+      "sideAccountNet": 8254,
+      "traditional": 27990,
+      "rothAdvantage": 1033,
+      "preTaxEquivalentOfRothLimit": 11029,
+      "extraShelterPct": 47.1,
+      "sideAccountTax": 1033
+    },
+    {
+      "rateNow": 32,
+      "rateLater": 32,
+      "years": 30,
+      "roth": 57092,
+      "traditionalIra": 38823,
+      "sideAccountNet": 15889,
+      "traditional": 54712,
+      "rothAdvantage": 2380,
+      "preTaxEquivalentOfRothLimit": 11029,
+      "extraShelterPct": 47.1,
+      "sideAccountTax": 2380
+    },
+    {
+      "rateNow": 32,
+      "rateLater": 32,
+      "years": 40,
+      "roth": 112308,
+      "traditionalIra": 76370,
+      "sideAccountNet": 30908,
+      "traditional": 107278,
+      "rothAdvantage": 5031,
+      "preTaxEquivalentOfRothLimit": 11029,
+      "extraShelterPct": 47.1,
+      "sideAccountTax": 5031
+    },
+    {
+      "rateNow": 35,
+      "rateLater": 35,
+      "years": 10,
+      "roth": 14754,
+      "traditionalIra": 9590,
+      "sideAccountNet": 4783,
+      "traditional": 14373,
+      "rothAdvantage": 381,
+      "preTaxEquivalentOfRothLimit": 11538,
+      "extraShelterPct": 53.8,
+      "sideAccountTax": 381
+    },
+    {
+      "rateNow": 35,
+      "rateLater": 35,
+      "years": 20,
+      "roth": 29023,
+      "traditionalIra": 18865,
+      "sideAccountNet": 9028,
+      "traditional": 27893,
+      "rothAdvantage": 1130,
+      "preTaxEquivalentOfRothLimit": 11538,
+      "extraShelterPct": 53.8,
+      "sideAccountTax": 1130
+    },
+    {
+      "rateNow": 35,
+      "rateLater": 35,
+      "years": 30,
+      "roth": 57092,
+      "traditionalIra": 37110,
+      "sideAccountNet": 17379,
+      "traditional": 54488,
+      "rothAdvantage": 2604,
+      "preTaxEquivalentOfRothLimit": 11538,
+      "extraShelterPct": 53.8,
+      "sideAccountTax": 2604
+    },
+    {
+      "rateNow": 35,
+      "rateLater": 35,
+      "years": 40,
+      "roth": 112308,
+      "traditionalIra": 73000,
+      "sideAccountNet": 33806,
+      "traditional": 106806,
+      "rothAdvantage": 5502,
+      "preTaxEquivalentOfRothLimit": 11538,
+      "extraShelterPct": 53.8,
+      "sideAccountTax": 5502
+    },
+    {
+      "rateNow": 37,
+      "rateLater": 37,
+      "years": 10,
+      "roth": 14754,
+      "traditionalIra": 9295,
+      "sideAccountNet": 5056,
+      "traditional": 14351,
+      "rothAdvantage": 403,
+      "preTaxEquivalentOfRothLimit": 11905,
+      "extraShelterPct": 58.7,
+      "sideAccountTax": 403
+    },
+    {
+      "rateNow": 37,
+      "rateLater": 37,
+      "years": 20,
+      "roth": 29023,
+      "traditionalIra": 18284,
+      "sideAccountNet": 9544,
+      "traditional": 27828,
+      "rothAdvantage": 1195,
+      "preTaxEquivalentOfRothLimit": 11905,
+      "extraShelterPct": 58.7,
+      "sideAccountTax": 1195
+    },
+    {
+      "rateNow": 37,
+      "rateLater": 37,
+      "years": 30,
+      "roth": 57092,
+      "traditionalIra": 35968,
+      "sideAccountNet": 18372,
+      "traditional": 54340,
+      "rothAdvantage": 2752,
+      "preTaxEquivalentOfRothLimit": 11905,
+      "extraShelterPct": 58.7,
+      "sideAccountTax": 2752
+    },
+    {
+      "rateNow": 37,
+      "rateLater": 37,
+      "years": 40,
+      "roth": 112308,
+      "traditionalIra": 70754,
+      "sideAccountNet": 35737,
+      "traditional": 106492,
+      "rothAdvantage": 5817,
+      "preTaxEquivalentOfRothLimit": 11905,
+      "extraShelterPct": 58.7,
+      "sideAccountTax": 5817
+    }
+  ],
+  "crossover": [
+    {
+      "rateNow": 12,
+      "rothWinsAtOrAboveRetirementRate": 11,
+      "pointsOfDropThatRescueTraditional": 2
+    },
+    {
+      "rateNow": 22,
+      "rothWinsAtOrAboveRetirementRate": 20,
+      "pointsOfDropThatRescueTraditional": 3
+    },
+    {
+      "rateNow": 24,
+      "rothWinsAtOrAboveRetirementRate": 21,
+      "pointsOfDropThatRescueTraditional": 4
+    },
+    {
+      "rateNow": 32,
+      "rothWinsAtOrAboveRetirementRate": 28,
+      "pointsOfDropThatRescueTraditional": 5
+    },
+    {
+      "rateNow": 35,
+      "rothWinsAtOrAboveRetirementRate": 31,
+      "pointsOfDropThatRescueTraditional": 5
+    },
+    {
+      "rateNow": 37,
+      "rothWinsAtOrAboveRetirementRate": 33,
+      "pointsOfDropThatRescueTraditional": 5
+    }
+  ],
+  "caveats": [
+    "A single contribution at a single growth rate to a single horizon.",
+    "The taxable side account is buy-and-hold, taxed once at the end; annual dividend drag would widen the Roth's lead.",
+    "Ignores RMDs, IRMAA, state tax and the Saver's Credit — all of which push toward Roth and none of which are modelled.",
+    "Applies only to savers who actually max out. Below the limit the classic tie holds exactly, and that is the majority case."
+  ]
+}

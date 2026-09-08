@@ -4,8 +4,9 @@ seoTitle: "Roth IRA vs Traditional IRA: Which Saves You More?"
 description: "A plain-English breakdown of Roth vs Traditional IRA — with an interactive tool that shows which account likely wins for your tax situation and roughly by how much."
 seoDescription: "A plain-English breakdown of Roth vs Traditional IRA, with an interactive tool that shows which account likely wins for your tax situation."
 date: "2026-06-25"
+updated: "2026-09-08"
 category: "Investing"
-tags: ["Investing", "Personal Finance", "Retirement", "Roth IRA", "Tax Planning"]
+tags: ["Investing", "Personal Finance", "Retirement", "Roth IRA", "Tax Planning", "Original Data"]
 author: "Sujit Karki"
 toc:
   - id: "the-simple-rule-of-thumb"
@@ -87,6 +88,45 @@ Strip away the math and it comes down to this: **contribute to a Roth when your 
 
 The Traditional IRA tends to win for high earners in their peak years (the 32%, 35%, or 37% brackets) who expect to drop into a lower bracket once they stop working. The upfront deduction is simply worth more when your rate is high.
 
+## The "It's a Tie at Equal Rates" Result Is False If You Max Out
+
+Every version of this comparison, including the calculator further down this site, arrives at the same tidy result: Roth is `C × (1 − rate now) × growth`, Traditional is `C × growth × (1 − rate later)`, and since multiplication does not care about order, **equal rates make the two identical**. That is correct, and it is also incomplete in a way that matters for anyone contributing the maximum.
+
+The identity assumes both accounts receive the same *pre-tax* amount. The contribution limit is not a pre-tax amount. It is a nominal $7,500 that applies to both — and $7,500 of already-taxed Roth money is a bigger real contribution than $7,500 of pre-tax Traditional money.
+
+| Your rate | Nominal limit | Pre-tax equivalent of a maxed Roth | Extra shelter |
+| --- | --- | --- | --- |
+| 12% | $7,500 | $8,523 | 13.6% |
+| 22% | $7,500 | $9,615 | 28.2% |
+| 24% | $7,500 | $9,868 | **31.6%** |
+| 32% | $7,500 | $11,029 | 47.1% |
+| 37% | $7,500 | $11,905 | 58.7% |
+
+At 24%, maxing a Roth shelters about **32% more** real money than maxing a Traditional, for the same nominal limit.
+
+So compare them at equal *after-tax cost* instead. A $7,500 Traditional contribution costs only $5,700 after tax at 24% — the $1,800 saved has to go somewhere, and it cannot go into the IRA, because the limit is already used. It goes into a taxable account, where its growth is taxed. Over 30 years at 7%, with tax rates **identical** now and later:
+
+| Rate (both) | Roth | Traditional + side account | Roth ahead by |
+| --- | --- | --- | --- |
+| 12% | $57,092 | $56,199 | $893 |
+| 22% | $57,092 | $55,455 | $1,637 |
+| 24% | $57,092 | $55,307 | **$1,785** |
+| 32% | $57,092 | $54,712 | $2,380 |
+| 37% | $57,092 | $54,340 | $2,752 |
+
+The Roth wins at every rate, at equal rates, where the textbook says it should tie. And the margin is not arbitrary — it is **exactly** the capital-gains tax paid on the side account's growth. [The script](https://github.com/Sujit-karki/sujit-blog/blob/main/scripts/roth-vs-traditional-limit.mjs) asserts that identity and refuses to run if it ever fails to hold.
+
+Which resets the rule of thumb. Traditional does not win when your retirement rate merely *equals* today's — it needs a genuine fall:
+
+| Rate today | Roth wins at a retirement rate of | Traditional needs a drop of |
+| --- | --- | --- |
+| 22% | 20% and up | more than 3 points |
+| 24% | 21% and up | more than 4 points |
+| 32% | 28% and up | more than 5 points |
+| 37% | 33% and up | more than 5 points |
+
+**The important caveat:** all of this applies only if you actually contribute the maximum. Below the limit there is no spillover, nothing lands in a taxable account, and the classic tie holds exactly — which is the situation most savers are in. This is a finding about people at the cap, not about everyone.
+
 ## Why Beginners Often Pick Wrong
 
 The most common mistake is over-valuing the deduction. A $7,500 Traditional contribution in the 12% bracket saves you $900 on this year's taxes — which feels great today. But you've signed up to pay tax on that money *and decades of growth* later, possibly at a higher rate. People chase the visible reward now and ignore the larger, invisible bill later.
@@ -126,6 +166,24 @@ One decision that builds directly on this one: converting Traditional balances t
   { q: "At what age do Required Minimum Distributions start?", a: "Traditional IRAs require you to start taking minimum withdrawals at age 73. Roth IRAs have no required minimum distributions during the account owner's lifetime, making them useful for people who want to pass wealth to heirs or simply don't need the money at 73." },
   { q: "Is a Roth IRA or Traditional IRA better for a young person just starting out?", a: "For most people early in their careers — especially those in the 10%, 12%, or 22% federal tax brackets — a Roth IRA is usually the better choice. You're paying tax at what's likely the lowest rate you'll ever face, and every dollar of future growth is permanently sheltered from taxes." }
 ]} />
+
+## Methodology
+
+**The comparison basis.** Equal after-tax cost, with the nominal $7,500 limit binding on both sides. The Roth takes the full limit in already-taxed dollars. The Traditional takes the same nominal limit pre-tax — which costs less after tax — and the difference goes to a taxable brokerage account, because the IRA limit is already used. That side account is the entire mechanism.
+
+**Verification.** Three checks, any of which stops the run. The classic tie must still hold when the limit does *not* bind — equal pre-tax contributions must come out identical at equal rates, or the model has broken the textbook result and is wrong. At equal rates with the limit binding, the Roth's advantage must equal the capital-gains tax on the side account's growth *exactly*, to the dollar, which is the finding stated as an identity. And the advantage must be positive at equal rates.
+
+**The $7,500 limit** is the IRS 2026 figure, cited below.
+
+**Not modelled**, all pushing the same way: RMDs, IRMAA surcharges, state income tax and the Saver's Credit. Including any of them would widen the Roth's lead, so leaving them out is the conservative choice.
+
+**Who this applies to.** Only savers who actually contribute the maximum. Below the limit nothing spills into a taxable account and the classic tie holds exactly — which is where most savers are.
+
+<DatasetSignup
+  dataset="the contribution-limit comparison"
+  cadence="when the IRS publishes new annual limits"
+  dataFile="roth-vs-traditional-limit.json"
+/>
 
 <Sources items={[
   { title: "IRS Publication 590-A: Contributions to Individual Retirement Arrangements", url: "https://www.irs.gov/publications/p590a" },

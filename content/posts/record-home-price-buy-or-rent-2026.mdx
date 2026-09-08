@@ -3,10 +3,10 @@ title: "A Record $440,600 Home at 6.55%: Should You Buy Now or Keep Renting?"
 seoTitle: "A Record $440,600 Home: Buy Now or Keep Renting?"
 description: "Home prices hit a record $440,600 in June while mortgage rates rose to 6.55%. Here's the honest buy-vs-rent math for mid-2026, with a break-even calculator."
 date: "2026-07-23"
-updated: "2026-09-07"
+updated: "2026-09-08"
 author: "Sujit Karki"
 category: "Personal Finance"
-tags: ["housing", "mortgage rates", "home buying", "rent vs buy", "affordability"]
+tags: ["housing", "mortgage rates", "home buying", "rent vs buy", "affordability", "Original Data"]
 toc:
   - { id: "the-numbers-as-of-july-2026", title: "The numbers as of July 2026", level: 2 }
   - { id: "why-it-feels-worse-than-the-numbers", title: "Why it feels worse than the numbers", level: 2 }
@@ -86,6 +86,36 @@ negotiating position than any national figure will.
 
 Timing the market is a losing game. The decision that actually matters is **how long you'll stay**, because buying carries big up-front costs — closing costs typically run 2%–5% of the loan — that only amortize over years.
 
+### The five-year rule is a 4%-mortgage artifact
+
+"Buy if you'll stay five years" gets repeated everywhere without conditions. I built the actual month-by-month comparison — two households, same money, one buying and one renting-and-investing-the-difference — and ran the break-even at this year's price and rate. [The script is published](https://github.com/Sujit-karki/sujit-blog/blob/main/scripts/buy-vs-rent.mjs).
+
+The renter starts with the down payment and closing costs still invested, and invests the gap whenever the owner's monthly outlay is higher. The buyer pays interest, principal, property tax, insurance and maintenance, and sells at the horizon with 6% selling costs. Break-even is the first month the buyer's net worth overtakes the renter's.
+
+| Mortgage rate | Monthly P&I | Break-even |
+| --- | --- | --- |
+| 4% | $1,683 | **6.8 years** |
+| 5% | $1,892 | 16.2 years |
+| 5.5% | $2,001 | never |
+| 6.55% | $2,240 | **never** |
+| 7.5% | $2,465 | never |
+
+At $440,600 against $2,100 rent and 3% appreciation, buying **never breaks even inside thirty years** at today's rate. The familiar five-to-seven-year answer reappears at 4% and nowhere above 5%. It was never a property of housing — it was a property of the rate environment the advice was written in.
+
+### What actually moves it
+
+Not the holding period. Rent and appreciation:
+
+| Appreciation | Rent $1,800 | Rent $2,100 | Rent $2,400 | Rent $2,800 |
+| --- | --- | --- | --- | --- |
+| 0% | never | never | 28.8 yr | 16.5 yr |
+| 3% | never | never | 17.1 yr | **6.0 yr** |
+| 5% | never | 8.4 yr | 4.5 yr | 2.9 yr |
+
+Read the columns, not the rows. Moving rent from $2,100 to $2,800 does more than any plausible change in how long you stay. **The buy-or-rent question at this rate is really a question about what renting costs you locally** — the national price and the national rate barely enter it.
+
+Two honest asymmetries, since they cut opposite ways: I model no mortgage-interest deduction, because after the OBBBA standard deduction most buyers do not itemise — that understates buying for those who do. And I apply no capital-gains tax to the renter's portfolio, which flatters renting by a similar order. Neither is netted silently; both are in the dataset.
+
 <BuyOrRentDecisionFlow />
 
 ### Where a typical payment actually goes
@@ -127,6 +157,24 @@ Rates hinge on the Fed and inflation — see my <a href="/posts/fed-meeting-july
   { q: "Should I wait for rates to drop?", a: "Maybe, but you can refinance a rate later; you can't renegotiate a price you overpaid today. Buy when the total math and your timeline work, not when you're guessing at a bottom." },
   { q: "How much inventory is there?", a: "A 4.6-month supply as of June 2026 — more choice than a year ago, though still below the 5-to-6-month level considered a balanced market." }
 ]} />
+
+## Methodology
+
+**The comparison.** Two households, same money, month by month for thirty years. The buyer's down payment and closing costs leave the portfolio; each month splits into interest and principal, with property tax (1.1%), insurance (0.5%) and maintenance (1.0%) paid on the home's value on top; at the horizon the house sells with 6% selling costs and the mortgage is retired. The renter keeps the down payment and closing costs invested at 7%, pays rent growing at 3.5%, and invests the difference whenever the owner's monthly outlay is higher. Break-even is the first month the buyer's net worth overtakes the renter's.
+
+Every dollar is counted once: the interest, tax, maintenance and transaction costs are real money leaving the buyer, and the foregone return on the down payment is real money the renter keeps earning. Comparisons that drop either side are why the published answer varies so wildly.
+
+**Verification.** Three checks, any of which stops the run: the degenerate scenario must still produce a finite number, a higher mortgage rate must never *shorten* the break-even, and faster appreciation must never *lengthen* it. Both monotonicity checks are properties the model must have, so a violation means the loop is wrong rather than the world being surprising.
+
+**The two asymmetries, stated rather than netted.** No mortgage-interest or property-tax deduction, because after the OBBBA standard deduction most buyers do not itemise — this understates buying for the minority who do. And no capital-gains tax on the renter's portfolio, which flatters renting by roughly the same order. They push in opposite directions and both are in the dataset.
+
+**Not modelled.** The value of security of tenure, and the cost of being unable to move.
+
+<DatasetSignup
+  dataset="the break-even simulation"
+  cadence="when rates or the median price move materially"
+  dataFile="buy-vs-rent.json"
+/>
 
 <Sources items={[
   { title: "New Residential Sales — median and average sales price", url: "https://www.census.gov/construction/nrs/index.html", publisher: "U.S. Census Bureau", date: "2026" },

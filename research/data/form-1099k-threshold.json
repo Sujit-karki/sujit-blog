@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-09-08",
+  "rule": {
+    "dollarThreshold": 20000,
+    "transactionThreshold": 200,
+    "logic": "AND — both must be exceeded",
+    "quote": "when the total amount of payments you receive for goods or services through the platform exceeds $20,000 in more than 200 transactions",
+    "source": "https://www.irs.gov/businesses/understanding-your-form-1099-k"
+  },
+  "pivotAverageSalePrice": 100,
+  "byPrice": [
+    {
+      "averageSalePrice": 5,
+      "salesToTriggerForm": 4001,
+      "revenueAtThatPoint": 20005,
+      "bindingConstraint": "dollar amount"
+    },
+    {
+      "averageSalePrice": 10,
+      "salesToTriggerForm": 2001,
+      "revenueAtThatPoint": 20010,
+      "bindingConstraint": "dollar amount"
+    },
+    {
+      "averageSalePrice": 25,
+      "salesToTriggerForm": 801,
+      "revenueAtThatPoint": 20025,
+      "bindingConstraint": "dollar amount"
+    },
+    {
+      "averageSalePrice": 50,
+      "salesToTriggerForm": 401,
+      "revenueAtThatPoint": 20050,
+      "bindingConstraint": "dollar amount"
+    },
+    {
+      "averageSalePrice": 75,
+      "salesToTriggerForm": 267,
+      "revenueAtThatPoint": 20025,
+      "bindingConstraint": "dollar amount"
+    },
+    {
+      "averageSalePrice": 100,
+      "salesToTriggerForm": 201,
+      "revenueAtThatPoint": 20100,
+      "bindingConstraint": "both at once"
+    },
+    {
+      "averageSalePrice": 150,
+      "salesToTriggerForm": 201,
+      "revenueAtThatPoint": 30150,
+      "bindingConstraint": "transaction count"
+    },
+    {
+      "averageSalePrice": 250,
+      "salesToTriggerForm": 201,
+      "revenueAtThatPoint": 50250,
+      "bindingConstraint": "transaction count"
+    },
+    {
+      "averageSalePrice": 500,
+      "salesToTriggerForm": 201,
+      "revenueAtThatPoint": 100500,
+      "bindingConstraint": "transaction count"
+    },
+    {
+      "averageSalePrice": 1000,
+      "salesToTriggerForm": 201,
+      "revenueAtThatPoint": 201000,
+      "bindingConstraint": "transaction count"
+    },
+    {
+      "averageSalePrice": 2000,
+      "salesToTriggerForm": 201,
+      "revenueAtThatPoint": 402000,
+      "bindingConstraint": "transaction count"
+    }
+  ],
+  "highRevenueNoForm": [
+    {
+      "transactions": 50,
+      "averagePrice": 2000,
+      "revenue": 100000,
+      "reported": false
+    },
+    {
+      "transactions": 100,
+      "averagePrice": 900,
+      "revenue": 90000,
+      "reported": false
+    },
+    {
+      "transactions": 150,
+      "averagePrice": 600,
+      "revenue": 90000,
+      "reported": false
+    },
+    {
+      "transactions": 200,
+      "averagePrice": 450,
+      "revenue": 90000,
+      "reported": false
+    },
+    {
+      "transactions": 12,
+      "averagePrice": 7500,
+      "revenue": 90000,
+      "reported": false
+    }
+  ],
+  "highVolumeNoForm": [
+    {
+      "transactions": 400,
+      "averagePrice": 15,
+      "revenue": 6000,
+      "reported": false
+    },
+    {
+      "transactions": 600,
+      "averagePrice": 25,
+      "revenue": 15000,
+      "reported": false
+    },
+    {
+      "transactions": 900,
+      "averagePrice": 20,
+      "revenue": 18000,
+      "reported": false
+    }
+  ],
+  "caveats": [
+    "Measured per platform; a seller across three marketplaces is measured three times separately.",
+    "Gross payments before fees, refunds and shipping — not profit, and not even net revenue.",
+    "Platforms may issue a form below the threshold, and several do.",
+    "Receiving no form changes nothing about what is owed; the income is reportable either way."
+  ]
+}

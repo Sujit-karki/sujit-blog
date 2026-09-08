@@ -83,6 +83,42 @@ export const researchPosts: ResearchPost[] = [
     date: "2026-09-07",
   },
   {
+    slug: "record-home-price-buy-or-rent-2026",
+    title: "The Five-Year Rule Is a 4%-Mortgage Artifact",
+    finding:
+      "Simulated month by month, buying at $440,600 against $2,100 rent never breaks even inside thirty years at 6.55%. The familiar five-to-seven-year answer reappears at a 4% rate and nowhere above 5%.",
+    method: "npm run compare:buy-rent, two households over 360 months",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
+    slug: "the-20000-1099k-rule-is-back",
+    title: "$402,000 Through a Platform, No 1099-K",
+    finding:
+      "The threshold is an AND, so it is a boundary in two dimensions with an exact pivot at a $100 average sale. Above it the transaction count binds: a seller averaging $2,000 clears $402,000 before a form is required.",
+    method: "npm run threshold:1099k, from the rule's own structure",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
+    slug: "car-loan-interest-deduction-2026",
+    title: "You Need a $152,447 Car Loan to Use the $10,000 Cap",
+    finding:
+      "Amortised rather than estimated: the average new vehicle financed at 7% generates $2,611 of first-year interest, a quarter of the cap, worth $574. Reaching the cap takes a $152,447 loan.",
+    method: "npm run deduction:car-loan, amortisation across 168 loan configurations",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
+    slug: "roth-ira-vs-traditional-ira",
+    title: "At the Limit, Equal Tax Rates Are Not a Tie",
+    finding:
+      "The textbook tie assumes equal pre-tax contributions, which the nominal limit forbids. Compared at equal after-tax cost, the Roth wins at every rate, by exactly the capital-gains tax on the money the Traditional cannot shelter.",
+    method: "npm run compare:roth-limit, identity-checked against the classic result",
+    dataset: true,
+    date: "2026-09-08",
+  },
+  {
     slug: "trump-account-vs-529",
     title: "The Trump Account Wins for Whoever Saves Least",
     finding:

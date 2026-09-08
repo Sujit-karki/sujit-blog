@@ -1,0 +1,417 @@
+{
+  "generatedAt": "2026-09-08",
+  "assumptions": {
+    "price": 440600,
+    "mortgageRate": 6.55,
+    "termYears": 30,
+    "downPaymentPct": 20,
+    "closingCostBuyPct": 3,
+    "closingCostSellPct": 6,
+    "propertyTaxPct": 1.1,
+    "insurancePct": 0.5,
+    "maintenancePct": 1,
+    "baselineMonthlyRent": 2100,
+    "rentGrowthPct": 3.5,
+    "investmentReturnPct": 7
+  },
+  "baseline": {
+    "monthlyPayment": 2240,
+    "breakEvenYears": null,
+    "netWorthByYear": [
+      {
+        "year": 1,
+        "buyerNetWorth": 78011,
+        "renterNetWorth": 121728,
+        "gap": -43716
+      },
+      {
+        "year": 2,
+        "buyerNetWorth": 94975,
+        "renterNetWorth": 142980,
+        "gap": -48005
+      },
+      {
+        "year": 3,
+        "buyerNetWorth": 112604,
+        "renterNetWorth": 165133,
+        "gap": -52530
+      },
+      {
+        "year": 4,
+        "buyerNetWorth": 130928,
+        "renterNetWorth": 188229,
+        "gap": -57300
+      },
+      {
+        "year": 5,
+        "buyerNetWorth": 149980,
+        "renterNetWorth": 212308,
+        "gap": -62328
+      },
+      {
+        "year": 6,
+        "buyerNetWorth": 169794,
+        "renterNetWorth": 237417,
+        "gap": -67623
+      },
+      {
+        "year": 7,
+        "buyerNetWorth": 190405,
+        "renterNetWorth": 263603,
+        "gap": -73198
+      },
+      {
+        "year": 8,
+        "buyerNetWorth": 211851,
+        "renterNetWorth": 290915,
+        "gap": -79063
+      },
+      {
+        "year": 9,
+        "buyerNetWorth": 234172,
+        "renterNetWorth": 319404,
+        "gap": -85232
+      },
+      {
+        "year": 10,
+        "buyerNetWorth": 257409,
+        "renterNetWorth": 349126,
+        "gap": -91717
+      },
+      {
+        "year": 11,
+        "buyerNetWorth": 281607,
+        "renterNetWorth": 380137,
+        "gap": -98530
+      },
+      {
+        "year": 12,
+        "buyerNetWorth": 306811,
+        "renterNetWorth": 412499,
+        "gap": -105687
+      },
+      {
+        "year": 13,
+        "buyerNetWorth": 333073,
+        "renterNetWorth": 446273,
+        "gap": -113201
+      },
+      {
+        "year": 14,
+        "buyerNetWorth": 360442,
+        "renterNetWorth": 481528,
+        "gap": -121086
+      },
+      {
+        "year": 15,
+        "buyerNetWorth": 388975,
+        "renterNetWorth": 518332,
+        "gap": -129357
+      },
+      {
+        "year": 16,
+        "buyerNetWorth": 418729,
+        "renterNetWorth": 556761,
+        "gap": -138032
+      },
+      {
+        "year": 17,
+        "buyerNetWorth": 449765,
+        "renterNetWorth": 596890,
+        "gap": -147125
+      },
+      {
+        "year": 18,
+        "buyerNetWorth": 482149,
+        "renterNetWorth": 638803,
+        "gap": -156654
+      },
+      {
+        "year": 19,
+        "buyerNetWorth": 515949,
+        "renterNetWorth": 682585,
+        "gap": -166636
+      },
+      {
+        "year": 20,
+        "buyerNetWorth": 551237,
+        "renterNetWorth": 728326,
+        "gap": -177090
+      },
+      {
+        "year": 21,
+        "buyerNetWorth": 588089,
+        "renterNetWorth": 776123,
+        "gap": -188033
+      },
+      {
+        "year": 22,
+        "buyerNetWorth": 626588,
+        "renterNetWorth": 826075,
+        "gap": -199486
+      },
+      {
+        "year": 23,
+        "buyerNetWorth": 666819,
+        "renterNetWorth": 878289,
+        "gap": -211469
+      },
+      {
+        "year": 24,
+        "buyerNetWorth": 708873,
+        "renterNetWorth": 932876,
+        "gap": -224003
+      },
+      {
+        "year": 25,
+        "buyerNetWorth": 752846,
+        "renterNetWorth": 989954,
+        "gap": -237109
+      },
+      {
+        "year": 26,
+        "buyerNetWorth": 798839,
+        "renterNetWorth": 1049648,
+        "gap": -250809
+      },
+      {
+        "year": 27,
+        "buyerNetWorth": 846962,
+        "renterNetWorth": 1112089,
+        "gap": -265127
+      },
+      {
+        "year": 28,
+        "buyerNetWorth": 897329,
+        "renterNetWorth": 1177415,
+        "gap": -280086
+      },
+      {
+        "year": 29,
+        "buyerNetWorth": 950060,
+        "renterNetWorth": 1245771,
+        "gap": -295711
+      },
+      {
+        "year": 30,
+        "buyerNetWorth": 1005285,
+        "renterNetWorth": 1317314,
+        "gap": -312029
+      }
+    ]
+  },
+  "byAppreciation": [
+    {
+      "appreciation": 0,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 2,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 3,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 4,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 5,
+      "breakEvenYears": 8.4
+    }
+  ],
+  "byRate": [
+    {
+      "rate": 4,
+      "monthlyPayment": 1683,
+      "breakEvenYears": 6.8
+    },
+    {
+      "rate": 5,
+      "monthlyPayment": 1892,
+      "breakEvenYears": 16.2
+    },
+    {
+      "rate": 5.5,
+      "monthlyPayment": 2001,
+      "breakEvenYears": null
+    },
+    {
+      "rate": 6,
+      "monthlyPayment": 2113,
+      "breakEvenYears": null
+    },
+    {
+      "rate": 6.55,
+      "monthlyPayment": 2240,
+      "breakEvenYears": null
+    },
+    {
+      "rate": 7,
+      "monthlyPayment": 2345,
+      "breakEvenYears": null
+    },
+    {
+      "rate": 7.5,
+      "monthlyPayment": 2465,
+      "breakEvenYears": null
+    }
+  ],
+  "byRent": [
+    {
+      "rent": 1600,
+      "breakEvenYears": null
+    },
+    {
+      "rent": 1800,
+      "breakEvenYears": null
+    },
+    {
+      "rent": 2100,
+      "breakEvenYears": null
+    },
+    {
+      "rent": 2400,
+      "breakEvenYears": 17.1
+    },
+    {
+      "rent": 2800,
+      "breakEvenYears": 6
+    }
+  ],
+  "matrix": [
+    {
+      "appreciation": 0,
+      "rent": 1600,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 0,
+      "rent": 1800,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 0,
+      "rent": 2100,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 0,
+      "rent": 2400,
+      "breakEvenYears": 28.8
+    },
+    {
+      "appreciation": 0,
+      "rent": 2800,
+      "breakEvenYears": 16.5
+    },
+    {
+      "appreciation": 2,
+      "rent": 1600,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 2,
+      "rent": 1800,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 2,
+      "rent": 2100,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 2,
+      "rent": 2400,
+      "breakEvenYears": 25
+    },
+    {
+      "appreciation": 2,
+      "rent": 2800,
+      "breakEvenYears": 9.6
+    },
+    {
+      "appreciation": 3,
+      "rent": 1600,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 3,
+      "rent": 1800,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 3,
+      "rent": 2100,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 3,
+      "rent": 2400,
+      "breakEvenYears": 17.1
+    },
+    {
+      "appreciation": 3,
+      "rent": 2800,
+      "breakEvenYears": 6
+    },
+    {
+      "appreciation": 4,
+      "rent": 1600,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 4,
+      "rent": 1800,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 4,
+      "rent": 2100,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 4,
+      "rent": 2400,
+      "breakEvenYears": 7.8
+    },
+    {
+      "appreciation": 4,
+      "rent": 2800,
+      "breakEvenYears": 3.9
+    },
+    {
+      "appreciation": 5,
+      "rent": 1600,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 5,
+      "rent": 1800,
+      "breakEvenYears": null
+    },
+    {
+      "appreciation": 5,
+      "rent": 2100,
+      "breakEvenYears": 8.4
+    },
+    {
+      "appreciation": 5,
+      "rent": 2400,
+      "breakEvenYears": 4.5
+    },
+    {
+      "appreciation": 5,
+      "rent": 2800,
+      "breakEvenYears": 2.9
+    }
+  ],
+  "caveats": [
+    "No mortgage-interest or property-tax deduction; after the OBBBA standard deduction most buyers do not itemise.",
+    "No capital-gains tax on the renter's portfolio. This and the previous omission push in opposite directions.",
+    "Constant annual price and rent growth, which is never how either behaves.",
+    "Ignores the value of security of tenure, and the cost of being unable to move."
+  ]
+}

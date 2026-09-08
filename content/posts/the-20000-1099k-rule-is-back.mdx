@@ -4,9 +4,10 @@ description: "The 1099-K threshold reverted to $20,000 and 200 transactions unde
 seoTitle: "The $20,000 1099-K Rule Is Back: What to Report in 2026"
 seoDescription: "The 1099-K threshold reverted to $20,000 and 200 transactions under the OBBBA. What it means for your Venmo, eBay, and Etsy income, and the tax you owe."
 date: "2026-07-24"
+updated: "2026-09-08"
 author: "Sujit Karki"
 category: "Side Hustles"
-tags: ["1099-K", "side hustle taxes", "gig economy", "OBBBA", "self-employment"]
+tags: ["1099-K", "side hustle taxes", "gig economy", "OBBBA", "self-employment", "Original Data"]
 coverImage: "/images/the-20000-1099k-rule-is-back.svg"
 toc:
   - { id: "what-actually-changed", title: "What actually changed", level: 2 }
@@ -42,6 +43,36 @@ Here's the situation. For four years, resellers and freelancers heard a scary he
 The IRS revised its Form 1099-K FAQs in Fact Sheet 2025-8 on October 23, 2025 to reflect OBBBA. The bottom line: a third-party settlement organization (TPSO) — think PayPal, Venmo, eBay, Etsy, StubHub — is only required to file a Form 1099-K when your gross payments **exceed $20,000 AND the number of transactions exceeds 200**. Both conditions. On a single platform.
 
 That $600-versus-$20,000 whiplash was real. The American Rescue Plan Act of 2021 dropped the threshold to $600; the IRS then delayed it repeatedly, announcing a $5,000 threshold for 2024 and a $2,500 threshold for 2025, with $600 due to hit in 2026. OBBBA erased all of it and put the pre-2022 rule back permanently.
+
+### The AND is the whole rule, and $100 is the pivot
+
+Almost every write-up treats the two numbers as alternatives. They are not, and the consequence is not small. Because both lines must be crossed, the threshold is not a revenue line at all — it is a line in two dimensions, and which half binds depends entirely on your average sale price.
+
+Divide one by the other and the pivot is exact: **$20,000 / 200 = $100.** Above a $100 average sale you hit the dollar figure long before the transaction count, so the count is what holds the form off. Below $100, the reverse. [I computed the whole grid](https://github.com/Sujit-karki/sujit-blog/blob/main/scripts/form-1099k-threshold.mjs):
+
+| Average sale | Sales before a form | Revenue at that point | What binds |
+| --- | --- | --- | --- |
+| $10 | 2,001 | $20,010 | dollar amount |
+| $50 | 401 | $20,050 | dollar amount |
+| $100 | 201 | $20,100 | **both at once** |
+| $250 | 201 | $50,250 | transaction count |
+| $500 | 201 | $100,500 | transaction count |
+| $2,000 | 201 | **$402,000** | transaction count |
+
+Read the last row. A seller whose average sale is $2,000 can take **$402,000** through a single platform before the reporting threshold is met, because 201 is the first count that clears "more than 200." Meanwhile a seller moving 201 items at $100 gets a form at $20,100.
+
+### Real money, no form
+
+The corollary catches people out in both directions:
+
+| Sales | Average price | Revenue | Form issued? |
+| --- | --- | --- | --- |
+| 12 | $7,500 | $90,000 | no |
+| 50 | $2,000 | $100,000 | no |
+| 200 | $450 | $90,000 | no |
+| 900 | $20 | $18,000 | no |
+
+Every row is a real seller with real income and no 1099-K. Which brings up the thing that matters more than any of this: **the form is not the tax.** All of that income is reportable whether or not a platform tells the IRS about it. If you have been treating "no form arrived" as "nothing to report," the restored threshold has just made that mistake considerably easier to make.
 
 ## A form is not a tax bill
 
@@ -111,6 +142,20 @@ Use the calculator to turn a scary gross number into the figure you'll actually 
   { q: "Do card payments have a threshold?", a: "No. Payment-card transactions are reportable from the first dollar; the $20,000/200 threshold only applies to third-party settlement organizations like PayPal or Venmo." },
   { q: "What about the 1099-NEC threshold?", a: "For payments made in 2026, the 1099-NEC and 1099-MISC reporting threshold rose from $600 to $2,000, indexed for inflation thereafter." }
 ]} />
+
+## Methodology
+
+**The rule, quoted.** From the IRS: a platform must report "when the total amount of payments you receive for goods or services through the platform exceeds $20,000 in more than 200 transactions." Both conditions, joined by AND — which is the entire basis of everything above.
+
+**Verification.** Three checks, any of which stops the run. At the $100 pivot both lines must be crossed by the same transaction, which is what makes it the pivot. The counterexample must hold: 50 sales at $2,000 is $100,000 of revenue and no form — if that ever reports as reportable, the AND has been implemented as an OR and every figure here is wrong. And below the pivot the dollar line must bind while above it the count must, which is the finding itself, asserted rather than assumed.
+
+**Limits.** Measured per platform, so a seller across three marketplaces is measured three times and may cross on none while crossing easily in aggregate. The figures are gross payments before fees, refunds and shipping — not profit, not even net revenue. Platforms may issue a form below the threshold and several do. And receiving no form changes nothing about what is owed.
+
+<DatasetSignup
+  dataset="the threshold grid"
+  cadence="if the reporting threshold changes again"
+  dataFile="form-1099k-threshold.json"
+/>
 
 <Sources items={[
   { title: "Understanding your Form 1099-K", url: "https://www.irs.gov/businesses/understanding-your-form-1099-k", publisher: "Internal Revenue Service", date: "2026" },
