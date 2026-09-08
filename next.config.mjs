@@ -53,6 +53,11 @@ const nextConfig = {
       "script-src 'self' 'unsafe-inline'",
       ...(isDev ? ["'unsafe-eval'"] : []),
       "https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net",
+      // sodar2.js is served from ep2.adtrafficquality.google. Allowing the
+      // domain in connect-src only was a half-fix: the fetch was permitted but
+      // loading the script itself still violated script-src, so the console
+      // error persisted on every page carrying an ad.
+      "https://*.adtrafficquality.google",
     ].join(" ");
     const connectSrc = [
       "connect-src 'self'",
@@ -70,10 +75,15 @@ const nextConfig = {
       "default-src 'self'",
       scriptSrc,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net",
+      "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google",
       "font-src 'self' data:",
       connectSrc,
-      "frame-src https://*.googlesyndication.com https://*.doubleclick.net",
+      // AdSense's fraud checks frame three origins, and allowing one at a
+      // time simply moves the console error to the next: sodar frames
+      // ep2.adtrafficquality.google (which it also scripts and fetches from,
+      // hence the same domain in script-src and connect-src), and the ad
+      // loader frames www.google.com. All are documented AdSense requirements.
+      "frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google https://www.google.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self' https://api.buttondown.email",
