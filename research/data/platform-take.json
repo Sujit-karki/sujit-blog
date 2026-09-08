@@ -28,7 +28,7 @@
     "revenue_xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
     "reported_take_rate_pct": null,
     "reported_take_rate_scope": null,
-    "source_quote": "Gross Bookings $ 18,507.0 $ 16,099.4 15% Adjusted EBITDA (2) $ 528.8 $ 382.4 38% Net incom",
+    "source_quote": "Gross Bookings $ 18,507.0 $ 16,099.4 Net income as a percentage of Gross Bookings 15.4 % 0",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1759509/000162828026006960/lyft-20251231.htm"
   },
   {
