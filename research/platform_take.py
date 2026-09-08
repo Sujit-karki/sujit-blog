@@ -96,6 +96,16 @@ PLATFORMS = [
     {
         "name": "Fiverr", "ticker": "FVRR", "cik": 1762301, "metric": "GMV",
         # Prose, not a table: "GMV was $1,073.0 million, down 2.2%".
+        #
+        # Fiverr renamed and narrowed the metric for FY2024. The FY2023 20-F
+        # reports company-wide "GMV" of $1,134.7M; FY2024 onward reports
+        # "marketplace GMV" of $1,097.6M, described as down 2.0% on 2023 --
+        # implying roughly $1,120M for 2023, not $1,134.7M. Those are different
+        # denominators, and no filing states the restated 2023 figure outright,
+        # so it could only be back-computed from a rounded percentage. Earlier
+        # years are excluded rather than spliced: a series that changes
+        # definition mid-way invents a decline that did not happen.
+        "metric_valid_from": 2024,
         "pattern": r"GMV was \$([\d,]+\.?\d*) million", "scale": "millions",
         "basis": "net", "sells": "freelance services",
         "reported_take_rates": {2025: 27.7}, "reported_scope": "marketplace",
@@ -136,7 +146,7 @@ PLATFORMS = [
         # eBay prints both years in the same row ("Take rate 13.94 % 13.77 %"),
         # so both are gates: FY2024 checks that the year alignment picked the
         # right column, which an ordinal could never verify.
-        "reported_take_rates": {2025: 13.94, 2024: 13.77}, "reported_scope": "total",
+        "reported_take_rates": {2025: 13.94, 2024: 13.77, 2023: 13.81}, "reported_scope": "total",
     },
     {
         "name": "DoorDash", "ticker": "DASH", "cik": 1792789, "metric": "Marketplace GOV",
@@ -273,7 +283,12 @@ def _check_scale(platform: dict, text: str, start: int, end: int) -> None:
     if inline:
         stated = [inline.group(1).lower() + "s"]
     else:
-        window = text[max(0, start - 700):start]
+        # 2,500 rather than 700: some key-metrics tables put a good deal of
+        # narrative between the '(in millions)' header and the row being read,
+        # and Lyft's FY2023 filing is one. Widening is strictly additive --
+        # the nearest statement still wins, so this only changes cases that
+        # previously found nothing at all and stopped.
+        window = text[max(0, start - 2500):start]
         stated = re.findall(r"in (thousands|millions|billions)", window, re.I)
     if not stated:
         raise SystemExit(
@@ -327,8 +342,22 @@ def _gross_volume_from_table(
         if not years:
             continue
 
-        kept = [c for i, c in enumerate(cells) if i not in platform.get("drop_columns", [])]
-        if len(kept) != len(years):
+        # Alignment is attempted twice: as-is, then with drop_columns applied.
+        # Companies restructure these tables between filings -- eBay's FY2025
+        # GMV row is as-reported / FX effect / FX-neutral / prior year, while
+        # its FY2023 row is a two-panel 2023-vs-2022, 2022-vs-2021 in which
+        # every cell IS a fiscal year. A drop rule that is right for one is
+        # wrong for the other, so it is a fallback rather than a fixed law.
+        # Both paths still have to reconcile cell count against header years,
+        # and the published take rate still has to come out right, so neither
+        # can quietly select the wrong column.
+        drops = platform.get('drop_columns', [])
+        candidates = [cells]
+        if drops:
+            candidates.append([c for i, c in enumerate(cells) if i not in drops])
+
+        kept = next((k for k in candidates if len(k) == len(years)), None)
+        if kept is None:
             continue
         if fiscal_year not in years:
             continue
@@ -411,9 +440,23 @@ def main() -> int:
     args = parser.parse_args()
 
     rows = []
+    excluded = []
     for platform in PLATFORMS:
         text, period, url = annual_report(platform, args.fiscal_year)
         year = int(period[:4])
+
+        # A platform that redefined its gross-volume metric is dropped for
+        # years before the change rather than compared against itself on two
+        # different bases. Recorded and printed, because an absence nobody
+        # mentions reads as a platform that did not exist.
+        valid_from = platform.get('metric_valid_from')
+        if valid_from is not None and year < valid_from:
+            excluded.append(
+                f"{platform['name']}: {platform['metric']} was defined "
+                f"differently before FY{valid_from}; excluded rather than spliced"
+            )
+            continue
+
         gross, quote = gross_volume(platform, text, year)
         rev, tag = revenue(platform, period)
 
@@ -492,6 +535,11 @@ def main() -> int:
             f"{row['take_rate_pct']:>6.1f}%  {row['revenue_basis']}"
         )
     print(f"\nwrote {csv_path}")
+
+    if excluded:
+        print()
+        for note in excluded:
+            print(f'excluded -- {note}')
 
     net = [r for r in rows if r["revenue_basis"] == "net"]
     print(
