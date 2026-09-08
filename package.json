@@ -22,6 +22,8 @@
     "compare:buy-rent": "node scripts/buy-vs-rent.mjs",
     "threshold:1099k": "node scripts/form-1099k-threshold.mjs",
     "compare:roth-limit": "node scripts/roth-vs-traditional-limit.mjs",
+    "hiring:seasonal": "node scripts/seasonal-retail-hiring.mjs",
+    "debt:credit-card": "node scripts/credit-card-real-terms.mjs",
     "audit:links": "node scripts/check-sources.mjs",
     "prebuild": "node scripts/publish-data.mjs",
     "publish:data": "node scripts/publish-data.mjs",

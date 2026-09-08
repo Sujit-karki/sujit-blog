@@ -1,0 +1,704 @@
+{
+  "generatedAt": "2026-09-08",
+  "sources": {
+    "balances": "https://www.newyorkfed.org/medialibrary/interactives/householdcredit/data/xls/HHD_C_Report_2026Q2.xlsx",
+    "deflator": "BLS CPI-U, US city average, NSA (CUUR0000SA0), averaged to quarters"
+  },
+  "baseQuarter": "2026Q2",
+  "series": [
+    {
+      "quarter": "2003Q1",
+      "year": 2003,
+      "nominalTrillions": 0.688,
+      "cpi": 183,
+      "realTrillions": 1.2558
+    },
+    {
+      "quarter": "2003Q2",
+      "year": 2003,
+      "nominalTrillions": 0.693,
+      "cpi": 183.667,
+      "realTrillions": 1.2603
+    },
+    {
+      "quarter": "2003Q3",
+      "year": 2003,
+      "nominalTrillions": 0.693,
+      "cpi": 184.567,
+      "realTrillions": 1.2542
+    },
+    {
+      "quarter": "2003Q4",
+      "year": 2003,
+      "nominalTrillions": 0.698,
+      "cpi": 184.6,
+      "realTrillions": 1.263
+    },
+    {
+      "quarter": "2004Q1",
+      "year": 2004,
+      "nominalTrillions": 0.695,
+      "cpi": 186.267,
+      "realTrillions": 1.2463
+    },
+    {
+      "quarter": "2004Q2",
+      "year": 2004,
+      "nominalTrillions": 0.697,
+      "cpi": 188.933,
+      "realTrillions": 1.2323
+    },
+    {
+      "quarter": "2004Q3",
+      "year": 2004,
+      "nominalTrillions": 0.706,
+      "cpi": 189.6,
+      "realTrillions": 1.2438
+    },
+    {
+      "quarter": "2004Q4",
+      "year": 2004,
+      "nominalTrillions": 0.717,
+      "cpi": 190.733,
+      "realTrillions": 1.2557
+    },
+    {
+      "quarter": "2005Q1",
+      "year": 2005,
+      "nominalTrillions": 0.71,
+      "cpi": 191.933,
+      "realTrillions": 1.2357
+    },
+    {
+      "quarter": "2005Q2",
+      "year": 2005,
+      "nominalTrillions": 0.717,
+      "cpi": 194.5,
+      "realTrillions": 1.2314
+    },
+    {
+      "quarter": "2005Q3",
+      "year": 2005,
+      "nominalTrillions": 0.732,
+      "cpi": 196.867,
+      "realTrillions": 1.242
+    },
+    {
+      "quarter": "2005Q4",
+      "year": 2005,
+      "nominalTrillions": 0.736,
+      "cpi": 197.867,
+      "realTrillions": 1.2425
+    },
+    {
+      "quarter": "2006Q1",
+      "year": 2006,
+      "nominalTrillions": 0.723,
+      "cpi": 198.933,
+      "realTrillions": 1.214
+    },
+    {
+      "quarter": "2006Q2",
+      "year": 2006,
+      "nominalTrillions": 0.739,
+      "cpi": 202.3,
+      "realTrillions": 1.2202
+    },
+    {
+      "quarter": "2006Q3",
+      "year": 2006,
+      "nominalTrillions": 0.754,
+      "cpi": 203.433,
+      "realTrillions": 1.238
+    },
+    {
+      "quarter": "2006Q4",
+      "year": 2006,
+      "nominalTrillions": 0.767,
+      "cpi": 201.7,
+      "realTrillions": 1.2702
+    },
+    {
+      "quarter": "2007Q1",
+      "year": 2007,
+      "nominalTrillions": 0.764,
+      "cpi": 203.756,
+      "realTrillions": 1.2525
+    },
+    {
+      "quarter": "2007Q2",
+      "year": 2007,
+      "nominalTrillions": 0.796,
+      "cpi": 207.662,
+      "realTrillions": 1.2804
+    },
+    {
+      "quarter": "2007Q3",
+      "year": 2007,
+      "nominalTrillions": 0.817,
+      "cpi": 208.235,
+      "realTrillions": 1.3106
+    },
+    {
+      "quarter": "2007Q4",
+      "year": 2007,
+      "nominalTrillions": 0.839,
+      "cpi": 209.716,
+      "realTrillions": 1.3363
+    },
+    {
+      "quarter": "2008Q1",
+      "year": 2008,
+      "nominalTrillions": 0.837,
+      "cpi": 212.1,
+      "realTrillions": 1.3182
+    },
+    {
+      "quarter": "2008Q2",
+      "year": 2008,
+      "nominalTrillions": 0.85,
+      "cpi": 216.757,
+      "realTrillions": 1.3099
+    },
+    {
+      "quarter": "2008Q3",
+      "year": 2008,
+      "nominalTrillions": 0.858,
+      "cpi": 219.278,
+      "realTrillions": 1.307
+    },
+    {
+      "quarter": "2008Q4",
+      "year": 2008,
+      "nominalTrillions": 0.866,
+      "cpi": 213.075,
+      "realTrillions": 1.3576
+    },
+    {
+      "quarter": "2009Q1",
+      "year": 2009,
+      "nominalTrillions": 0.843,
+      "cpi": 212.015,
+      "realTrillions": 1.3282
+    },
+    {
+      "quarter": "2009Q2",
+      "year": 2009,
+      "nominalTrillions": 0.824,
+      "cpi": 214.263,
+      "realTrillions": 1.2846
+    },
+    {
+      "quarter": "2009Q3",
+      "year": 2009,
+      "nominalTrillions": 0.812,
+      "cpi": 215.718,
+      "realTrillions": 1.2574
+    },
+    {
+      "quarter": "2009Q4",
+      "year": 2009,
+      "nominalTrillions": 0.795,
+      "cpi": 216.152,
+      "realTrillions": 1.2286
+    },
+    {
+      "quarter": "2010Q1",
+      "year": 2010,
+      "nominalTrillions": 0.7624,
+      "cpi": 217.02,
+      "realTrillions": 1.1735
+    },
+    {
+      "quarter": "2010Q2",
+      "year": 2010,
+      "nominalTrillions": 0.7444,
+      "cpi": 218.051,
+      "realTrillions": 1.1403
+    },
+    {
+      "quarter": "2010Q3",
+      "year": 2010,
+      "nominalTrillions": 0.7311,
+      "cpi": 218.254,
+      "realTrillions": 1.1189
+    },
+    {
+      "quarter": "2010Q4",
+      "year": 2010,
+      "nominalTrillions": 0.7296,
+      "cpi": 218.898,
+      "realTrillions": 1.1133
+    },
+    {
+      "quarter": "2011Q1",
+      "year": 2011,
+      "nominalTrillions": 0.6964,
+      "cpi": 221.666,
+      "realTrillions": 1.0494
+    },
+    {
+      "quarter": "2011Q2",
+      "year": 2011,
+      "nominalTrillions": 0.6943,
+      "cpi": 225.531,
+      "realTrillions": 1.0283
+    },
+    {
+      "quarter": "2011Q3",
+      "year": 2011,
+      "nominalTrillions": 0.6933,
+      "cpi": 226.452,
+      "realTrillions": 1.0227
+    },
+    {
+      "quarter": "2011Q4",
+      "year": 2011,
+      "nominalTrillions": 0.704,
+      "cpi": 226.108,
+      "realTrillions": 1.04
+    },
+    {
+      "quarter": "2012Q1",
+      "year": 2012,
+      "nominalTrillions": 0.6788,
+      "cpi": 227.907,
+      "realTrillions": 0.9949
+    },
+    {
+      "quarter": "2012Q2",
+      "year": 2012,
+      "nominalTrillions": 0.672,
+      "cpi": 229.793,
+      "realTrillions": 0.9768
+    },
+    {
+      "quarter": "2012Q3",
+      "year": 2012,
+      "nominalTrillions": 0.674,
+      "cpi": 230.297,
+      "realTrillions": 0.9776
+    },
+    {
+      "quarter": "2012Q4",
+      "year": 2012,
+      "nominalTrillions": 0.679,
+      "cpi": 230.38,
+      "realTrillions": 0.9845
+    },
+    {
+      "quarter": "2013Q1",
+      "year": 2013,
+      "nominalTrillions": 0.66,
+      "cpi": 231.74,
+      "realTrillions": 0.9513
+    },
+    {
+      "quarter": "2013Q2",
+      "year": 2013,
+      "nominalTrillions": 0.668,
+      "cpi": 232.993,
+      "realTrillions": 0.9577
+    },
+    {
+      "quarter": "2013Q3",
+      "year": 2013,
+      "nominalTrillions": 0.672,
+      "cpi": 233.874,
+      "realTrillions": 0.9598
+    },
+    {
+      "quarter": "2013Q4",
+      "year": 2013,
+      "nominalTrillions": 0.683,
+      "cpi": 233.221,
+      "realTrillions": 0.9782
+    },
+    {
+      "quarter": "2014Q1",
+      "year": 2014,
+      "nominalTrillions": 0.659,
+      "cpi": 234.997,
+      "realTrillions": 0.9367
+    },
+    {
+      "quarter": "2014Q2",
+      "year": 2014,
+      "nominalTrillions": 0.669,
+      "cpi": 237.772,
+      "realTrillions": 0.9398
+    },
+    {
+      "quarter": "2014Q3",
+      "year": 2014,
+      "nominalTrillions": 0.68,
+      "cpi": 238.044,
+      "realTrillions": 0.9542
+    },
+    {
+      "quarter": "2014Q4",
+      "year": 2014,
+      "nominalTrillions": 0.7,
+      "cpi": 236.132,
+      "realTrillions": 0.9902
+    },
+    {
+      "quarter": "2015Q1",
+      "year": 2015,
+      "nominalTrillions": 0.684,
+      "cpi": 234.849,
+      "realTrillions": 0.9729
+    },
+    {
+      "quarter": "2015Q2",
+      "year": 2015,
+      "nominalTrillions": 0.703,
+      "cpi": 237.681,
+      "realTrillions": 0.988
+    },
+    {
+      "quarter": "2015Q3",
+      "year": 2015,
+      "nominalTrillions": 0.714,
+      "cpi": 238.305,
+      "realTrillions": 1.0008
+    },
+    {
+      "quarter": "2015Q4",
+      "year": 2015,
+      "nominalTrillions": 0.733,
+      "cpi": 237.233,
+      "realTrillions": 1.0321
+    },
+    {
+      "quarter": "2016Q1",
+      "year": 2016,
+      "nominalTrillions": 0.712,
+      "cpi": 237.386,
+      "realTrillions": 1.0019
+    },
+    {
+      "quarter": "2016Q2",
+      "year": 2016,
+      "nominalTrillions": 0.729,
+      "cpi": 240.169,
+      "realTrillions": 1.0139
+    },
+    {
+      "quarter": "2016Q3",
+      "year": 2016,
+      "nominalTrillions": 0.747,
+      "cpi": 240.968,
+      "realTrillions": 1.0355
+    },
+    {
+      "quarter": "2016Q4",
+      "year": 2016,
+      "nominalTrillions": 0.779,
+      "cpi": 241.505,
+      "realTrillions": 1.0775
+    },
+    {
+      "quarter": "2017Q1",
+      "year": 2017,
+      "nominalTrillions": 0.764,
+      "cpi": 243.414,
+      "realTrillions": 1.0484
+    },
+    {
+      "quarter": "2017Q2",
+      "year": 2017,
+      "nominalTrillions": 0.784,
+      "cpi": 244.737,
+      "realTrillions": 1.07
+    },
+    {
+      "quarter": "2017Q3",
+      "year": 2017,
+      "nominalTrillions": 0.808,
+      "cpi": 245.708,
+      "realTrillions": 1.0984
+    },
+    {
+      "quarter": "2017Q4",
+      "year": 2017,
+      "nominalTrillions": 0.834,
+      "cpi": 246.619,
+      "realTrillions": 1.1296
+    },
+    {
+      "quarter": "2018Q1",
+      "year": 2018,
+      "nominalTrillions": 0.815,
+      "cpi": 248.804,
+      "realTrillions": 1.0942
+    },
+    {
+      "quarter": "2018Q2",
+      "year": 2018,
+      "nominalTrillions": 0.829,
+      "cpi": 251.374,
+      "realTrillions": 1.1016
+    },
+    {
+      "quarter": "2018Q3",
+      "year": 2018,
+      "nominalTrillions": 0.844,
+      "cpi": 252.197,
+      "realTrillions": 1.1179
+    },
+    {
+      "quarter": "2018Q4",
+      "year": 2018,
+      "nominalTrillions": 0.87,
+      "cpi": 252.052,
+      "realTrillions": 1.153
+    },
+    {
+      "quarter": "2019Q1",
+      "year": 2019,
+      "nominalTrillions": 0.848,
+      "cpi": 252.897,
+      "realTrillions": 1.1201
+    },
+    {
+      "quarter": "2019Q2",
+      "year": 2019,
+      "nominalTrillions": 0.868,
+      "cpi": 255.928,
+      "realTrillions": 1.1329
+    },
+    {
+      "quarter": "2019Q3",
+      "year": 2019,
+      "nominalTrillions": 0.881,
+      "cpi": 256.629,
+      "realTrillions": 1.1467
+    },
+    {
+      "quarter": "2019Q4",
+      "year": 2019,
+      "nominalTrillions": 0.927,
+      "cpi": 257.176,
+      "realTrillions": 1.204
+    },
+    {
+      "quarter": "2020Q1",
+      "year": 2020,
+      "nominalTrillions": 0.893,
+      "cpi": 258.255,
+      "realTrillions": 1.155
+    },
+    {
+      "quarter": "2020Q2",
+      "year": 2020,
+      "nominalTrillions": 0.817,
+      "cpi": 256.86,
+      "realTrillions": 1.0625
+    },
+    {
+      "quarter": "2020Q3",
+      "year": 2020,
+      "nominalTrillions": 0.807,
+      "cpi": 259.766,
+      "realTrillions": 1.0377
+    },
+    {
+      "quarter": "2020Q4",
+      "year": 2020,
+      "nominalTrillions": 0.819,
+      "cpi": 260.364,
+      "realTrillions": 1.0507
+    },
+    {
+      "quarter": "2021Q1",
+      "year": 2021,
+      "nominalTrillions": 0.77,
+      "cpi": 263.158,
+      "realTrillions": 0.9774
+    },
+    {
+      "quarter": "2021Q2",
+      "year": 2021,
+      "nominalTrillions": 0.787,
+      "cpi": 269.315,
+      "realTrillions": 0.9761
+    },
+    {
+      "quarter": "2021Q3",
+      "year": 2021,
+      "nominalTrillions": 0.804,
+      "cpi": 273.627,
+      "realTrillions": 0.9815
+    },
+    {
+      "quarter": "2021Q4",
+      "year": 2021,
+      "nominalTrillions": 0.856,
+      "cpi": 277.78,
+      "realTrillions": 1.0293
+    },
+    {
+      "quarter": "2022Q1",
+      "year": 2022,
+      "nominalTrillions": 0.841,
+      "cpi": 284.123,
+      "realTrillions": 0.9887
+    },
+    {
+      "quarter": "2022Q2",
+      "year": 2022,
+      "nominalTrillions": 0.887,
+      "cpi": 292.572,
+      "realTrillions": 1.0127
+    },
+    {
+      "quarter": "2022Q3",
+      "year": 2022,
+      "nominalTrillions": 0.925,
+      "cpi": 296.418,
+      "realTrillions": 1.0424
+    },
+    {
+      "quarter": "2022Q4",
+      "year": 2022,
+      "nominalTrillions": 0.986,
+      "cpi": 297.507,
+      "realTrillions": 1.1071
+    },
+    {
+      "quarter": "2023Q1",
+      "year": 2023,
+      "nominalTrillions": 0.986,
+      "cpi": 300.615,
+      "realTrillions": 1.0956
+    },
+    {
+      "quarter": "2023Q2",
+      "year": 2023,
+      "nominalTrillions": 1.031,
+      "cpi": 304.2,
+      "realTrillions": 1.1321
+    },
+    {
+      "quarter": "2023Q3",
+      "year": 2023,
+      "nominalTrillions": 1.079,
+      "cpi": 306.835,
+      "realTrillions": 1.1746
+    },
+    {
+      "quarter": "2023Q4",
+      "year": 2023,
+      "nominalTrillions": 1.129,
+      "cpi": 307.156,
+      "realTrillions": 1.2278
+    },
+    {
+      "quarter": "2024Q1",
+      "year": 2024,
+      "nominalTrillions": 1.115,
+      "cpi": 310.358,
+      "realTrillions": 1.2
+    },
+    {
+      "quarter": "2024Q2",
+      "year": 2024,
+      "nominalTrillions": 1.142,
+      "cpi": 313.931,
+      "realTrillions": 1.2151
+    },
+    {
+      "quarter": "2024Q3",
+      "year": 2024,
+      "nominalTrillions": 1.166,
+      "cpi": 314.879,
+      "realTrillions": 1.2369
+    },
+    {
+      "quarter": "2024Q4",
+      "year": 2024,
+      "nominalTrillions": 1.211,
+      "cpi": 315.587,
+      "realTrillions": 1.2818
+    },
+    {
+      "quarter": "2025Q1",
+      "year": 2025,
+      "nominalTrillions": 1.182,
+      "cpi": 318.851,
+      "realTrillions": 1.2383
+    },
+    {
+      "quarter": "2025Q2",
+      "year": 2025,
+      "nominalTrillions": 1.209,
+      "cpi": 321.607,
+      "realTrillions": 1.2557
+    },
+    {
+      "quarter": "2025Q3",
+      "year": 2025,
+      "nominalTrillions": 1.233,
+      "cpi": 323.941,
+      "realTrillions": 1.2714
+    },
+    {
+      "quarter": "2025Q4",
+      "year": 2025,
+      "nominalTrillions": 1.277,
+      "cpi": 324.088,
+      "realTrillions": 1.3162
+    },
+    {
+      "quarter": "2026Q1",
+      "year": 2026,
+      "nominalTrillions": 1.242,
+      "cpi": 327.417,
+      "realTrillions": 1.2671
+    },
+    {
+      "quarter": "2026Q2",
+      "year": 2026,
+      "nominalTrillions": 1.263,
+      "cpi": 334.032,
+      "realTrillions": 1.263
+    }
+  ],
+  "nominalPeak": {
+    "quarter": "2025Q4",
+    "year": 2025,
+    "nominalTrillions": 1.277,
+    "cpi": 324.088,
+    "realTrillions": 1.3162
+  },
+  "realPeak": {
+    "quarter": "2008Q4",
+    "year": 2008,
+    "nominalTrillions": 0.866,
+    "cpi": 213.075,
+    "realTrillions": 1.3576
+  },
+  "latest": {
+    "quarter": "2026Q2",
+    "year": 2026,
+    "nominalTrillions": 1.263,
+    "cpi": 334.032,
+    "realTrillions": 1.263
+  },
+  "findings": {
+    "latestIsNominalRecord": false,
+    "latestIsRealRecord": false,
+    "realPeakQuarter": "2008Q4",
+    "gapToRealPeakTrillions": 0.0946,
+    "percentBelowRealPeak": 7
+  },
+  "caveats": [
+    "Aggregate, not per household — population growth means a flat real aggregate is a falling real average, which cuts further against the headline.",
+    "CPI-U is a general deflator; there is no consumer-credit-specific price index.",
+    "Balances are outstanding amounts, not borrowing; a 0% balance and a 24% balance count the same.",
+    "Buy-now-pay-later is largely absent by construction, since most of it is not furnished to the credit bureaus this series is built from.",
+    "CPI quarter averaged over fewer than three months: 2025Q4 (2/3 months)",
+    "CPI quarter averaged over fewer than three months: 2026Q3 (1/3 months)"
+  ]
+}

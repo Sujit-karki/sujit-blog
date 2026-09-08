@@ -83,6 +83,24 @@ export const researchPosts: ResearchPost[] = [
     date: "2026-09-07",
   },
   {
+    slug: "credit-card-bnpl-debt-2026",
+    title: "The Record Credit Card Debt Is a Nominal Record",
+    finding:
+      "Deflated with CPI, the real peak in US credit card balances was Q4 2008, not now. Households owe about 7% less in today's money than they did then — the annual record headline mostly measures the dollar.",
+    method: "npm run debt:credit-card, NY Fed workbook parsed directly, CPI-deflated",
+    dataset: true,
+    date: "2026-09-09",
+  },
+  {
+    slug: "seasonal-holiday-work-2026",
+    title: "Holiday Hiring Did Not Move to Warehouses",
+    finding:
+      "As a share of the October base, 2025 was the second-weakest holiday hiring season since 1939. And warehousing seasonal hiring fell 89% from its 2020 peak against retail's 28%, so the jobs did not relocate — they went away.",
+    method: "npm run hiring:seasonal, 87 seasons of BLS payroll data",
+    dataset: true,
+    date: "2026-09-09",
+  },
+  {
     slug: "record-home-price-buy-or-rent-2026",
     title: "The Five-Year Rule Is a 4%-Mortgage Artifact",
     finding:

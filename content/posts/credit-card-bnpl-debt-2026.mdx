@@ -4,10 +4,10 @@ description: "American credit card debt just set a record, the average balance i
 seoTitle: "Credit Card Debt Hit $1.277 Trillion: The Payoff Math"
 seoDescription: "US credit card debt just hit a record; the average balance is $6,519 at 21% APR. The real payoff math: avalanche vs. snowball, with your own numbers."
 date: "2026-07-22"
-updated: "2026-07-22"
+updated: "2026-09-08"
 author: "Sujit Karki"
 category: "Personal Finance"
-tags: ["credit card debt", "BNPL", "debt payoff", "avalanche vs snowball", "personal finance 2026"]
+tags: ["credit card debt", "BNPL", "debt payoff", "avalanche vs snowball", "personal finance 2026", "Original Data"]
 coverImage: "/images/credit-card-bnpl-debt-2026.svg"
 toc:
   - { id: "the-number-that-should-actually-scare-you", title: "The Number That Should Actually Scare You", level: 2 }
@@ -21,7 +21,7 @@ faq:
   - q: "How much credit card debt does the average American have?"
     a: "The average individual balance was $6,519 in Q1 2026, up 2.3% from a year earlier, according to LendingTree's analysis of New York Fed data. Total US credit card debt sits at $1.252 trillion, just off the all-time record of $1.277 trillion set in Q4 2025."
   - q: "Is credit card debt at an all-time high?"
-    a: "Total balances hit a record $1.277 trillion in Q4 2025 — the highest since the New York Fed started tracking in 1999 — before easing slightly to $1.252 trillion in Q1 2026, which is the normal seasonal pattern after holiday spending gets paid down. Adjusted for population and inflation it's not the worst it's ever been, but in raw dollars, it's the biggest pile of card debt Americans have ever carried."
+    a: "In raw dollars yes — $1.277 trillion in Q4 2025, easing to $1.263 trillion in Q2 2026. Adjusted for inflation, no, and not by a little: deflating the New York Fed series with CPI puts the real peak at Q4 2008, equivalent to $1.358 trillion in today's money. Households currently owe about 7% less in real terms than they did then. The nominal record is real enough as a number; as a statement about household borrowing it mostly measures the dollar."
   - q: "Is Buy Now, Pay Later bad for your credit?"
     a: "It can be. FICO started folding BNPL history into its Score 10 BNPL model in fall 2025, so late BNPL payments can now hit your credit report in a way they mostly didn't before. LendingTree found 47% of BNPL users paid late at least once in the past year, up from 41% in 2025 — and the CFPB rescinded its BNPL consumer-protection rule in May 2025, so the safety net is thinner than it used to be."
   - q: "Avalanche or snowball — which debt payoff method is better?"
@@ -29,7 +29,8 @@ faq:
 ---
 
 <KeyTakeaways items={[
-  "Total US credit card debt hit a record $1.277 trillion in Q4 2025 before easing slightly to $1.252 trillion in Q1 2026 (NY Fed / LendingTree)",
+  "The $1.277 trillion record is nominal — deflated with CPI, the real peak was Q4 2008 and households now owe about 7% less than that",
+  "Balances eased to $1.263 trillion in Q2 2026, the latest quarter the New York Fed has published",
   "The average individual balance is $6,519 at roughly 21% APR — a number more relevant to your life than the trillion-dollar headline",
   "Americans paid $253.37 billion in card interest and fees in 2025 alone, well above the decade average of $162.08 billion",
   "47% of Buy Now, Pay Later users paid late at least once in the past year, and FICO now factors BNPL history into some credit scores",
@@ -48,7 +49,28 @@ Total balances are a headline. **$6,519 at 21% APR** is a life. That's the avera
 
 Run that $6,519 balance at 21% and only pay the minimum, and you're not looking at a bill you'll shake off in a few months. You're looking at a **multi-year financial commitment** you didn't sign up for on purpose — nobody opens a credit card intending to carry it for a decade. It just happens one "I'll pay it off next month" at a time.
 
-Zoom out for a second, because the trend matters too: total US card debt hit an all-time record of **$1.277 trillion in Q4 2025** — the highest since the New York Fed began tracking this in 1999 — before dipping to **$1.252 trillion in Q1 2026** as people paid down holiday spending, which is the normal seasonal pattern. Since the pandemic-era low of $770 billion in Q1 2021, total card debt is up **63%**.
+Zoom out for a second, because the trend matters too: total US card debt hit an all-time record of **$1.277 trillion in Q4 2025** before easing to **$1.263 trillion in Q2 2026**, the latest quarter the New York Fed has published. Since the pandemic-era low of $770 billion in Q1 2021, total card debt is up more than 60%.
+
+### But that record is nominal, and the real one belongs to 2008
+
+Every one of those headlines quotes a nominal figure. Over twenty years of inflation a nominal series sets records almost by construction, which makes the headline close to uninformative. So I parsed the New York Fed's published workbook directly and deflated the series with BLS CPI. [The script is published](https://github.com/Sujit-karki/sujit-blog/blob/main/scripts/credit-card-real-terms.mjs), including the spreadsheet reader, since the Fed publishes this only as an .xlsx.
+
+In constant 2026 Q2 dollars:
+
+| Quarter | Nominal | Real (2026 Q2 $) |
+| --- | --- | --- |
+| 2008 Q4 | $0.866T | **$1.358T** |
+| 2012 Q4 | $0.679T | $0.985T |
+| 2019 Q4 | $0.927T | $1.204T |
+| 2021 Q4 | $0.856T | $1.029T |
+| 2025 Q4 | **$1.277T** | $1.316T |
+| 2026 Q2 | $1.263T | $1.263T |
+
+The nominal record is 2025 Q4. **The real record is 2008 Q4, and nothing since has come close to it.** Measured in today's money, American households owe about **$95 billion less** on credit cards than they did at the 2008 peak — roughly **7% below** it.
+
+That does not make the debt harmless. It does mean the annual "record debt" headline is telling you about the value of the dollar at least as much as it is telling you about household borrowing. And there are two things pushing the real picture further in the reassuring direction: this is an *aggregate*, so a flat real total across a growing population is a falling real average per household; and the balance says nothing about the rate attached to it.
+
+There is one thing pushing hard the other way, and it is the reason the next section exists. **Buy-now-pay-later is largely invisible to this series.** Most BNPL is not furnished to the credit bureaus the New York Fed builds this report from, so the measured total understates what households actually owe — by an amount this data structurally cannot show.
 
 <LineChart
   title="Total US Credit Card Debt, 2021–2026"
@@ -167,6 +189,22 @@ If income is the real lever for you, my [guide to starting a side hustle](/posts
 <InfoBox type="warning">
 Educational content, not financial or credit-counseling advice. Payoff math above uses standard amortization and illustrative assumptions; your card's actual minimum-payment formula, fees, and promotional terms may differ. If you're feeling overwhelmed by debt, a nonprofit credit counselor (NFCC.org) can review your actual accounts for free.
 </InfoBox>
+
+## Methodology
+
+**Balances.** Federal Reserve Bank of New York, Household Debt and Credit Report, quarterly, in trillions, taken from the "Page 3 Data" sheet of the published workbook. The Fed distributes this only as an .xlsx, so the script parses the file directly rather than transcribing figures by hand — the reader is dependency-free, walking the ZIP central directory and inflating the sheet XML with Node's built-in zlib. The composition table in this workbook begins at 2003 Q1.
+
+**Deflator.** BLS CPI-U, US city average, not seasonally adjusted (`CUUR0000SA0`), averaged to quarters to match. October 2025 is missing from the published CPI series, so 2025 Q4 is averaged over two months rather than three; the script reports that rather than hiding it.
+
+**Verification.** Two checks, either of which stops the run. The base quarter must deflate to itself exactly, and — since CPI rises across this whole period — every earlier quarter's real value must exceed its nominal value. A single quarter deflating *downward* would mean the CPI ratio had been applied upside down, which is the classic way to get this exact calculation backwards, so the script refuses rather than publishing a plausible-looking inversion.
+
+**Limits.** Aggregate rather than per household, so a flat real total across a growing population is a falling real average — that cuts further against the headline, not toward it. CPI-U is a general deflator; there is no consumer-credit-specific price index and inventing one would be a stranger claim. Balances are outstanding amounts, not borrowing: a balance carried at 0% and one revolving at 24% count the same here. And BNPL is largely absent by construction.
+
+<DatasetSignup
+  dataset="the nominal and real balance series"
+  cadence="each quarter, when the New York Fed publishes"
+  dataFile="credit-card-real-terms.json"
+/>
 
 <Sources items={[
   { title: "Credit Card Debt Statistics", url: "https://www.lendingtree.com/credit-cards/credit-card-debt-statistics/", publisher: "LendingTree (analysis of NY Fed data)", date: "2026-05" },

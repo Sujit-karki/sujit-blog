@@ -1,0 +1,1174 @@
+{
+  "generatedAt": "2026-09-08",
+  "source": "US Bureau of Labor Statistics, CES flat files (download.bls.gov)",
+  "basis": "All employees, not seasonally adjusted, in thousands",
+  "definition": "Seasonal hiring = peak of November/December minus October, same year",
+  "series": {
+    "CEU4200000001": "Retail trade",
+    "CEU4349300001": "Warehousing and storage"
+  },
+  "retailSeasons": [
+    {
+      "year": 1939,
+      "october": 3241.9,
+      "peak": 3554.2,
+      "peakMonth": "December",
+      "seasonalHires": 312300,
+      "shareOfOctoberBase": 9.63,
+      "complete": true
+    },
+    {
+      "year": 1940,
+      "october": 3425.6,
+      "peak": 3786.6,
+      "peakMonth": "December",
+      "seasonalHires": 361000,
+      "shareOfOctoberBase": 10.54,
+      "complete": true
+    },
+    {
+      "year": 1941,
+      "october": 3668.3,
+      "peak": 3979.7,
+      "peakMonth": "December",
+      "seasonalHires": 311400,
+      "shareOfOctoberBase": 8.49,
+      "complete": true
+    },
+    {
+      "year": 1942,
+      "october": 3559.5,
+      "peak": 3850.9,
+      "peakMonth": "December",
+      "seasonalHires": 291400,
+      "shareOfOctoberBase": 8.19,
+      "complete": true
+    },
+    {
+      "year": 1943,
+      "october": 3537.1,
+      "peak": 3819.1,
+      "peakMonth": "December",
+      "seasonalHires": 282000,
+      "shareOfOctoberBase": 7.97,
+      "complete": true
+    },
+    {
+      "year": 1944,
+      "october": 3580,
+      "peak": 3871.7,
+      "peakMonth": "December",
+      "seasonalHires": 291700,
+      "shareOfOctoberBase": 8.15,
+      "complete": true
+    },
+    {
+      "year": 1945,
+      "october": 3734,
+      "peak": 4108.6,
+      "peakMonth": "December",
+      "seasonalHires": 374600,
+      "shareOfOctoberBase": 10.03,
+      "complete": true
+    },
+    {
+      "year": 1946,
+      "october": 4265.4,
+      "peak": 4669.8,
+      "peakMonth": "December",
+      "seasonalHires": 404400,
+      "shareOfOctoberBase": 9.48,
+      "complete": true
+    },
+    {
+      "year": 1947,
+      "october": 4519.4,
+      "peak": 4905.8,
+      "peakMonth": "December",
+      "seasonalHires": 386400,
+      "shareOfOctoberBase": 8.55,
+      "complete": true
+    },
+    {
+      "year": 1948,
+      "october": 4597.7,
+      "peak": 4994.3,
+      "peakMonth": "December",
+      "seasonalHires": 396600,
+      "shareOfOctoberBase": 8.63,
+      "complete": true
+    },
+    {
+      "year": 1949,
+      "october": 4550.8,
+      "peak": 4963.8,
+      "peakMonth": "December",
+      "seasonalHires": 413000,
+      "shareOfOctoberBase": 9.08,
+      "complete": true
+    },
+    {
+      "year": 1950,
+      "october": 4688.1,
+      "peak": 5115.1,
+      "peakMonth": "December",
+      "seasonalHires": 427000,
+      "shareOfOctoberBase": 9.11,
+      "complete": true
+    },
+    {
+      "year": 1951,
+      "october": 4818.7,
+      "peak": 5271.9,
+      "peakMonth": "December",
+      "seasonalHires": 453200,
+      "shareOfOctoberBase": 9.41,
+      "complete": true
+    },
+    {
+      "year": 1952,
+      "october": 4989.3,
+      "peak": 5463.4,
+      "peakMonth": "December",
+      "seasonalHires": 474100,
+      "shareOfOctoberBase": 9.5,
+      "complete": true
+    },
+    {
+      "year": 1953,
+      "october": 5080.9,
+      "peak": 5504,
+      "peakMonth": "December",
+      "seasonalHires": 423100,
+      "shareOfOctoberBase": 8.33,
+      "complete": true
+    },
+    {
+      "year": 1954,
+      "october": 5029.3,
+      "peak": 5529.6,
+      "peakMonth": "December",
+      "seasonalHires": 500300,
+      "shareOfOctoberBase": 9.95,
+      "complete": true
+    },
+    {
+      "year": 1955,
+      "october": 5263.6,
+      "peak": 5792.9,
+      "peakMonth": "December",
+      "seasonalHires": 529300,
+      "shareOfOctoberBase": 10.06,
+      "complete": true
+    },
+    {
+      "year": 1956,
+      "october": 5353,
+      "peak": 5820.3,
+      "peakMonth": "December",
+      "seasonalHires": 467300,
+      "shareOfOctoberBase": 8.73,
+      "complete": true
+    },
+    {
+      "year": 1957,
+      "october": 5363.5,
+      "peak": 5785.7,
+      "peakMonth": "December",
+      "seasonalHires": 422200,
+      "shareOfOctoberBase": 7.87,
+      "complete": true
+    },
+    {
+      "year": 1958,
+      "october": 5329.5,
+      "peak": 5802.7,
+      "peakMonth": "December",
+      "seasonalHires": 473200,
+      "shareOfOctoberBase": 8.88,
+      "complete": true
+    },
+    {
+      "year": 1959,
+      "october": 5530.2,
+      "peak": 5989.7,
+      "peakMonth": "December",
+      "seasonalHires": 459500,
+      "shareOfOctoberBase": 8.31,
+      "complete": true
+    },
+    {
+      "year": 1960,
+      "october": 5628.8,
+      "peak": 6018.4,
+      "peakMonth": "December",
+      "seasonalHires": 389600,
+      "shareOfOctoberBase": 6.92,
+      "complete": true
+    },
+    {
+      "year": 1961,
+      "october": 5596.2,
+      "peak": 6053.7,
+      "peakMonth": "December",
+      "seasonalHires": 457500,
+      "shareOfOctoberBase": 8.18,
+      "complete": true
+    },
+    {
+      "year": 1962,
+      "october": 5718,
+      "peak": 6164.8,
+      "peakMonth": "December",
+      "seasonalHires": 446800,
+      "shareOfOctoberBase": 7.81,
+      "complete": true
+    },
+    {
+      "year": 1963,
+      "october": 5834.1,
+      "peak": 6304,
+      "peakMonth": "December",
+      "seasonalHires": 469900,
+      "shareOfOctoberBase": 8.05,
+      "complete": true
+    },
+    {
+      "year": 1964,
+      "october": 6051.6,
+      "peak": 6555.7,
+      "peakMonth": "December",
+      "seasonalHires": 504100,
+      "shareOfOctoberBase": 8.33,
+      "complete": true
+    },
+    {
+      "year": 1965,
+      "october": 6341.8,
+      "peak": 6876.2,
+      "peakMonth": "December",
+      "seasonalHires": 534400,
+      "shareOfOctoberBase": 8.43,
+      "complete": true
+    },
+    {
+      "year": 1966,
+      "october": 6600.6,
+      "peak": 7103.3,
+      "peakMonth": "December",
+      "seasonalHires": 502700,
+      "shareOfOctoberBase": 7.62,
+      "complete": true
+    },
+    {
+      "year": 1967,
+      "october": 6772.5,
+      "peak": 7321.3,
+      "peakMonth": "December",
+      "seasonalHires": 548800,
+      "shareOfOctoberBase": 8.1,
+      "complete": true
+    },
+    {
+      "year": 1968,
+      "october": 7094.9,
+      "peak": 7597.6,
+      "peakMonth": "December",
+      "seasonalHires": 502700,
+      "shareOfOctoberBase": 7.09,
+      "complete": true
+    },
+    {
+      "year": 1969,
+      "october": 7400.9,
+      "peak": 7881.1,
+      "peakMonth": "December",
+      "seasonalHires": 480200,
+      "shareOfOctoberBase": 6.49,
+      "complete": true
+    },
+    {
+      "year": 1970,
+      "october": 7512.5,
+      "peak": 7962.3,
+      "peakMonth": "December",
+      "seasonalHires": 449800,
+      "shareOfOctoberBase": 5.99,
+      "complete": true
+    },
+    {
+      "year": 1971,
+      "october": 7748.7,
+      "peak": 8230.5,
+      "peakMonth": "December",
+      "seasonalHires": 481800,
+      "shareOfOctoberBase": 6.22,
+      "complete": true
+    },
+    {
+      "year": 1972,
+      "october": 8154.7,
+      "peak": 8664.1,
+      "peakMonth": "December",
+      "seasonalHires": 509400,
+      "shareOfOctoberBase": 6.25,
+      "complete": true
+    },
+    {
+      "year": 1973,
+      "october": 8485.1,
+      "peak": 8903,
+      "peakMonth": "December",
+      "seasonalHires": 417900,
+      "shareOfOctoberBase": 4.93,
+      "complete": true
+    },
+    {
+      "year": 1974,
+      "october": 8671.9,
+      "peak": 8935,
+      "peakMonth": "December",
+      "seasonalHires": 263100,
+      "shareOfOctoberBase": 3.03,
+      "complete": true
+    },
+    {
+      "year": 1975,
+      "october": 8729.8,
+      "peak": 9136.3,
+      "peakMonth": "December",
+      "seasonalHires": 406500,
+      "shareOfOctoberBase": 4.66,
+      "complete": true
+    },
+    {
+      "year": 1976,
+      "october": 9082.2,
+      "peak": 9466.2,
+      "peakMonth": "December",
+      "seasonalHires": 384000,
+      "shareOfOctoberBase": 4.23,
+      "complete": true
+    },
+    {
+      "year": 1977,
+      "october": 9529.2,
+      "peak": 10004.3,
+      "peakMonth": "December",
+      "seasonalHires": 475100,
+      "shareOfOctoberBase": 4.99,
+      "complete": true
+    },
+    {
+      "year": 1978,
+      "october": 10048.2,
+      "peak": 10490.5,
+      "peakMonth": "December",
+      "seasonalHires": 442300,
+      "shareOfOctoberBase": 4.4,
+      "complete": true
+    },
+    {
+      "year": 1979,
+      "october": 10259.2,
+      "peak": 10663.2,
+      "peakMonth": "December",
+      "seasonalHires": 404000,
+      "shareOfOctoberBase": 3.94,
+      "complete": true
+    },
+    {
+      "year": 1980,
+      "october": 10273.9,
+      "peak": 10655.4,
+      "peakMonth": "December",
+      "seasonalHires": 381500,
+      "shareOfOctoberBase": 3.71,
+      "complete": true
+    },
+    {
+      "year": 1981,
+      "october": 10433,
+      "peak": 10696.1,
+      "peakMonth": "December",
+      "seasonalHires": 263100,
+      "shareOfOctoberBase": 2.52,
+      "complete": true
+    },
+    {
+      "year": 1982,
+      "october": 10417.2,
+      "peak": 10729,
+      "peakMonth": "December",
+      "seasonalHires": 311800,
+      "shareOfOctoberBase": 2.99,
+      "complete": true
+    },
+    {
+      "year": 1983,
+      "october": 10839.4,
+      "peak": 11262.3,
+      "peakMonth": "December",
+      "seasonalHires": 422900,
+      "shareOfOctoberBase": 3.9,
+      "complete": true
+    },
+    {
+      "year": 1984,
+      "october": 11424,
+      "peak": 11865.7,
+      "peakMonth": "December",
+      "seasonalHires": 441700,
+      "shareOfOctoberBase": 3.87,
+      "complete": true
+    },
+    {
+      "year": 1985,
+      "october": 11866.9,
+      "peak": 12262.2,
+      "peakMonth": "December",
+      "seasonalHires": 395300,
+      "shareOfOctoberBase": 3.33,
+      "complete": true
+    },
+    {
+      "year": 1986,
+      "october": 12236.2,
+      "peak": 12614.4,
+      "peakMonth": "December",
+      "seasonalHires": 378200,
+      "shareOfOctoberBase": 3.09,
+      "complete": true
+    },
+    {
+      "year": 1987,
+      "october": 12573.6,
+      "peak": 12984.6,
+      "peakMonth": "December",
+      "seasonalHires": 411000,
+      "shareOfOctoberBase": 3.27,
+      "complete": true
+    },
+    {
+      "year": 1988,
+      "october": 12912.6,
+      "peak": 13352.3,
+      "peakMonth": "December",
+      "seasonalHires": 439700,
+      "shareOfOctoberBase": 3.41,
+      "complete": true
+    },
+    {
+      "year": 1989,
+      "october": 13146.9,
+      "peak": 13537.2,
+      "peakMonth": "December",
+      "seasonalHires": 390300,
+      "shareOfOctoberBase": 2.97,
+      "complete": true
+    },
+    {
+      "year": 1990,
+      "october": 13183.6,
+      "peak": 13670.7,
+      "peakMonth": "December",
+      "seasonalHires": 487100,
+      "shareOfOctoberBase": 3.69,
+      "complete": true
+    },
+    {
+      "year": 1991,
+      "october": 12881.7,
+      "peak": 13387,
+      "peakMonth": "December",
+      "seasonalHires": 505300,
+      "shareOfOctoberBase": 3.92,
+      "complete": true
+    },
+    {
+      "year": 1992,
+      "october": 12884.5,
+      "peak": 13405.4,
+      "peakMonth": "December",
+      "seasonalHires": 520900,
+      "shareOfOctoberBase": 4.04,
+      "complete": true
+    },
+    {
+      "year": 1993,
+      "october": 13166.9,
+      "peak": 13747.4,
+      "peakMonth": "December",
+      "seasonalHires": 580500,
+      "shareOfOctoberBase": 4.41,
+      "complete": true
+    },
+    {
+      "year": 1994,
+      "october": 13716.3,
+      "peak": 14370.3,
+      "peakMonth": "December",
+      "seasonalHires": 654000,
+      "shareOfOctoberBase": 4.77,
+      "complete": true
+    },
+    {
+      "year": 1995,
+      "october": 13994.6,
+      "peak": 14576.4,
+      "peakMonth": "December",
+      "seasonalHires": 581800,
+      "shareOfOctoberBase": 4.16,
+      "complete": true
+    },
+    {
+      "year": 1996,
+      "october": 14314.1,
+      "peak": 14941.9,
+      "peakMonth": "December",
+      "seasonalHires": 627800,
+      "shareOfOctoberBase": 4.39,
+      "complete": true
+    },
+    {
+      "year": 1997,
+      "october": 14517.5,
+      "peak": 15160.6,
+      "peakMonth": "December",
+      "seasonalHires": 643100,
+      "shareOfOctoberBase": 4.43,
+      "complete": true
+    },
+    {
+      "year": 1998,
+      "october": 14728,
+      "peak": 15370.6,
+      "peakMonth": "December",
+      "seasonalHires": 642600,
+      "shareOfOctoberBase": 4.36,
+      "complete": true
+    },
+    {
+      "year": 1999,
+      "october": 15116.1,
+      "peak": 15792.2,
+      "peakMonth": "December",
+      "seasonalHires": 676100,
+      "shareOfOctoberBase": 4.47,
+      "complete": true
+    },
+    {
+      "year": 2000,
+      "october": 15361.1,
+      "peak": 16005.7,
+      "peakMonth": "December",
+      "seasonalHires": 644600,
+      "shareOfOctoberBase": 4.2,
+      "complete": true
+    },
+    {
+      "year": 2001,
+      "october": 15200.5,
+      "peak": 15689.5,
+      "peakMonth": "December",
+      "seasonalHires": 489000,
+      "shareOfOctoberBase": 3.22,
+      "complete": true
+    },
+    {
+      "year": 2002,
+      "october": 15007.2,
+      "peak": 15549.7,
+      "peakMonth": "December",
+      "seasonalHires": 542500,
+      "shareOfOctoberBase": 3.61,
+      "complete": true
+    },
+    {
+      "year": 2003,
+      "october": 14982.4,
+      "peak": 15476.7,
+      "peakMonth": "December",
+      "seasonalHires": 494300,
+      "shareOfOctoberBase": 3.3,
+      "complete": true
+    },
+    {
+      "year": 2004,
+      "october": 15124.3,
+      "peak": 15676.2,
+      "peakMonth": "December",
+      "seasonalHires": 551900,
+      "shareOfOctoberBase": 3.65,
+      "complete": true
+    },
+    {
+      "year": 2005,
+      "october": 15316.7,
+      "peak": 15905.6,
+      "peakMonth": "December",
+      "seasonalHires": 588900,
+      "shareOfOctoberBase": 3.84,
+      "complete": true
+    },
+    {
+      "year": 2006,
+      "october": 15352,
+      "peak": 15948.1,
+      "peakMonth": "December",
+      "seasonalHires": 596100,
+      "shareOfOctoberBase": 3.88,
+      "complete": true
+    },
+    {
+      "year": 2007,
+      "october": 15493,
+      "peak": 16125.6,
+      "peakMonth": "December",
+      "seasonalHires": 632600,
+      "shareOfOctoberBase": 4.08,
+      "complete": true
+    },
+    {
+      "year": 2008,
+      "october": 15099.7,
+      "peak": 15385.2,
+      "peakMonth": "December",
+      "seasonalHires": 285500,
+      "shareOfOctoberBase": 1.89,
+      "complete": true
+    },
+    {
+      "year": 2009,
+      "october": 14373.1,
+      "peak": 14822.5,
+      "peakMonth": "December",
+      "seasonalHires": 449400,
+      "shareOfOctoberBase": 3.13,
+      "complete": true
+    },
+    {
+      "year": 2010,
+      "october": 14468.6,
+      "peak": 14965.7,
+      "peakMonth": "December",
+      "seasonalHires": 497100,
+      "shareOfOctoberBase": 3.44,
+      "complete": true
+    },
+    {
+      "year": 2011,
+      "october": 14707.2,
+      "peak": 15251.8,
+      "peakMonth": "December",
+      "seasonalHires": 544600,
+      "shareOfOctoberBase": 3.7,
+      "complete": true
+    },
+    {
+      "year": 2012,
+      "october": 14831.6,
+      "peak": 15415.9,
+      "peakMonth": "December",
+      "seasonalHires": 584300,
+      "shareOfOctoberBase": 3.94,
+      "complete": true
+    },
+    {
+      "year": 2013,
+      "october": 15163.9,
+      "peak": 15790.6,
+      "peakMonth": "December",
+      "seasonalHires": 626700,
+      "shareOfOctoberBase": 4.13,
+      "complete": true
+    },
+    {
+      "year": 2014,
+      "october": 15431.8,
+      "peak": 15996.7,
+      "peakMonth": "December",
+      "seasonalHires": 564900,
+      "shareOfOctoberBase": 3.66,
+      "complete": true
+    },
+    {
+      "year": 2015,
+      "october": 15644.3,
+      "peak": 16168.2,
+      "peakMonth": "December",
+      "seasonalHires": 523900,
+      "shareOfOctoberBase": 3.35,
+      "complete": true
+    },
+    {
+      "year": 2016,
+      "october": 15844.7,
+      "peak": 16338.2,
+      "peakMonth": "December",
+      "seasonalHires": 493500,
+      "shareOfOctoberBase": 3.11,
+      "complete": true
+    },
+    {
+      "year": 2017,
+      "october": 15762.6,
+      "peak": 16248.1,
+      "peakMonth": "December",
+      "seasonalHires": 485500,
+      "shareOfOctoberBase": 3.08,
+      "complete": true
+    },
+    {
+      "year": 2018,
+      "october": 15650.1,
+      "peak": 16136.8,
+      "peakMonth": "December",
+      "seasonalHires": 486700,
+      "shareOfOctoberBase": 3.11,
+      "complete": true
+    },
+    {
+      "year": 2019,
+      "october": 15542.8,
+      "peak": 16040.1,
+      "peakMonth": "December",
+      "seasonalHires": 497300,
+      "shareOfOctoberBase": 3.2,
+      "complete": true
+    },
+    {
+      "year": 2020,
+      "october": 15102.5,
+      "peak": 15608.7,
+      "peakMonth": "December",
+      "seasonalHires": 506200,
+      "shareOfOctoberBase": 3.35,
+      "complete": true
+    },
+    {
+      "year": 2021,
+      "october": 15367.1,
+      "peak": 15801.5,
+      "peakMonth": "December",
+      "seasonalHires": 434400,
+      "shareOfOctoberBase": 2.83,
+      "complete": true
+    },
+    {
+      "year": 2022,
+      "october": 15527.7,
+      "peak": 15900.7,
+      "peakMonth": "December",
+      "seasonalHires": 373000,
+      "shareOfOctoberBase": 2.4,
+      "complete": true
+    },
+    {
+      "year": 2023,
+      "october": 15556.4,
+      "peak": 15954.3,
+      "peakMonth": "December",
+      "seasonalHires": 397900,
+      "shareOfOctoberBase": 2.56,
+      "complete": true
+    },
+    {
+      "year": 2024,
+      "october": 15460.8,
+      "peak": 15859.1,
+      "peakMonth": "December",
+      "seasonalHires": 398300,
+      "shareOfOctoberBase": 2.58,
+      "complete": true
+    },
+    {
+      "year": 2025,
+      "october": 15444.5,
+      "peak": 15807.1,
+      "peakMonth": "December",
+      "seasonalHires": 362600,
+      "shareOfOctoberBase": 2.35,
+      "complete": true
+    }
+  ],
+  "warehousingSeasons": [
+    {
+      "year": 1990,
+      "october": 417.6,
+      "peak": 421.9,
+      "peakMonth": "December",
+      "seasonalHires": 4300,
+      "shareOfOctoberBase": 1.03,
+      "complete": true
+    },
+    {
+      "year": 1991,
+      "october": 415,
+      "peak": 422.7,
+      "peakMonth": "December",
+      "seasonalHires": 7700,
+      "shareOfOctoberBase": 1.86,
+      "complete": true
+    },
+    {
+      "year": 1992,
+      "october": 416.9,
+      "peak": 424.7,
+      "peakMonth": "December",
+      "seasonalHires": 7800,
+      "shareOfOctoberBase": 1.87,
+      "complete": true
+    },
+    {
+      "year": 1993,
+      "october": 427,
+      "peak": 434.9,
+      "peakMonth": "December",
+      "seasonalHires": 7900,
+      "shareOfOctoberBase": 1.85,
+      "complete": true
+    },
+    {
+      "year": 1994,
+      "october": 448,
+      "peak": 459.9,
+      "peakMonth": "December",
+      "seasonalHires": 11900,
+      "shareOfOctoberBase": 2.66,
+      "complete": true
+    },
+    {
+      "year": 1995,
+      "october": 454.4,
+      "peak": 464.8,
+      "peakMonth": "December",
+      "seasonalHires": 10400,
+      "shareOfOctoberBase": 2.29,
+      "complete": true
+    },
+    {
+      "year": 1996,
+      "october": 462.9,
+      "peak": 472.9,
+      "peakMonth": "December",
+      "seasonalHires": 10000,
+      "shareOfOctoberBase": 2.16,
+      "complete": true
+    },
+    {
+      "year": 1997,
+      "october": 475.3,
+      "peak": 485.8,
+      "peakMonth": "December",
+      "seasonalHires": 10500,
+      "shareOfOctoberBase": 2.21,
+      "complete": true
+    },
+    {
+      "year": 1998,
+      "october": 488.4,
+      "peak": 500.1,
+      "peakMonth": "December",
+      "seasonalHires": 11700,
+      "shareOfOctoberBase": 2.4,
+      "complete": true
+    },
+    {
+      "year": 1999,
+      "october": 509.3,
+      "peak": 524.8,
+      "peakMonth": "December",
+      "seasonalHires": 15500,
+      "shareOfOctoberBase": 3.04,
+      "complete": true
+    },
+    {
+      "year": 2000,
+      "october": 526.1,
+      "peak": 539.9,
+      "peakMonth": "December",
+      "seasonalHires": 13800,
+      "shareOfOctoberBase": 2.62,
+      "complete": true
+    },
+    {
+      "year": 2001,
+      "october": 513.1,
+      "peak": 517.2,
+      "peakMonth": "December",
+      "seasonalHires": 4100,
+      "shareOfOctoberBase": 0.8,
+      "complete": true
+    },
+    {
+      "year": 2002,
+      "october": 533.1,
+      "peak": 536.8,
+      "peakMonth": "December",
+      "seasonalHires": 3700,
+      "shareOfOctoberBase": 0.69,
+      "complete": true
+    },
+    {
+      "year": 2003,
+      "october": 545.1,
+      "peak": 550.7,
+      "peakMonth": "November",
+      "seasonalHires": 5600,
+      "shareOfOctoberBase": 1.03,
+      "complete": true
+    },
+    {
+      "year": 2004,
+      "october": 583.7,
+      "peak": 586.9,
+      "peakMonth": "November",
+      "seasonalHires": 3200,
+      "shareOfOctoberBase": 0.55,
+      "complete": true
+    },
+    {
+      "year": 2005,
+      "october": 618.5,
+      "peak": 629.2,
+      "peakMonth": "December",
+      "seasonalHires": 10700,
+      "shareOfOctoberBase": 1.73,
+      "complete": true
+    },
+    {
+      "year": 2006,
+      "october": 659.5,
+      "peak": 670.6,
+      "peakMonth": "December",
+      "seasonalHires": 11100,
+      "shareOfOctoberBase": 1.68,
+      "complete": true
+    },
+    {
+      "year": 2007,
+      "october": 688.8,
+      "peak": 692.9,
+      "peakMonth": "November",
+      "seasonalHires": 4100,
+      "shareOfOctoberBase": 0.6,
+      "complete": true
+    },
+    {
+      "year": 2008,
+      "october": 680.4,
+      "peak": 680.2,
+      "peakMonth": "November",
+      "seasonalHires": -200,
+      "shareOfOctoberBase": -0.03,
+      "complete": true
+    },
+    {
+      "year": 2009,
+      "october": 637.4,
+      "peak": 640.8,
+      "peakMonth": "November",
+      "seasonalHires": 3400,
+      "shareOfOctoberBase": 0.53,
+      "complete": true
+    },
+    {
+      "year": 2010,
+      "october": 650,
+      "peak": 658.5,
+      "peakMonth": "November",
+      "seasonalHires": 8500,
+      "shareOfOctoberBase": 1.31,
+      "complete": true
+    },
+    {
+      "year": 2011,
+      "october": 673.1,
+      "peak": 681,
+      "peakMonth": "December",
+      "seasonalHires": 7900,
+      "shareOfOctoberBase": 1.17,
+      "complete": true
+    },
+    {
+      "year": 2012,
+      "october": 712.5,
+      "peak": 728.5,
+      "peakMonth": "December",
+      "seasonalHires": 16000,
+      "shareOfOctoberBase": 2.25,
+      "complete": true
+    },
+    {
+      "year": 2013,
+      "october": 734,
+      "peak": 746.7,
+      "peakMonth": "December",
+      "seasonalHires": 12700,
+      "shareOfOctoberBase": 1.73,
+      "complete": true
+    },
+    {
+      "year": 2014,
+      "october": 778.3,
+      "peak": 799,
+      "peakMonth": "December",
+      "seasonalHires": 20700,
+      "shareOfOctoberBase": 2.66,
+      "complete": true
+    },
+    {
+      "year": 2015,
+      "october": 874.9,
+      "peak": 908.6,
+      "peakMonth": "December",
+      "seasonalHires": 33700,
+      "shareOfOctoberBase": 3.85,
+      "complete": true
+    },
+    {
+      "year": 2016,
+      "october": 968.5,
+      "peak": 997.6,
+      "peakMonth": "December",
+      "seasonalHires": 29100,
+      "shareOfOctoberBase": 3,
+      "complete": true
+    },
+    {
+      "year": 2017,
+      "october": 1074.8,
+      "peak": 1120,
+      "peakMonth": "December",
+      "seasonalHires": 45200,
+      "shareOfOctoberBase": 4.21,
+      "complete": true
+    },
+    {
+      "year": 2018,
+      "october": 1182.9,
+      "peak": 1205.7,
+      "peakMonth": "November",
+      "seasonalHires": 22800,
+      "shareOfOctoberBase": 1.93,
+      "complete": true
+    },
+    {
+      "year": 2019,
+      "october": 1283.4,
+      "peak": 1322,
+      "peakMonth": "December",
+      "seasonalHires": 38600,
+      "shareOfOctoberBase": 3.01,
+      "complete": true
+    },
+    {
+      "year": 2020,
+      "october": 1536.2,
+      "peak": 1615.9,
+      "peakMonth": "December",
+      "seasonalHires": 79700,
+      "shareOfOctoberBase": 5.19,
+      "complete": true
+    },
+    {
+      "year": 2021,
+      "october": 1830.6,
+      "peak": 1897.4,
+      "peakMonth": "December",
+      "seasonalHires": 66800,
+      "shareOfOctoberBase": 3.65,
+      "complete": true
+    },
+    {
+      "year": 2022,
+      "october": 1921.9,
+      "peak": 1922.4,
+      "peakMonth": "November",
+      "seasonalHires": 500,
+      "shareOfOctoberBase": 0.03,
+      "complete": true
+    },
+    {
+      "year": 2023,
+      "october": 1853.2,
+      "peak": 1873.7,
+      "peakMonth": "December",
+      "seasonalHires": 20500,
+      "shareOfOctoberBase": 1.11,
+      "complete": true
+    },
+    {
+      "year": 2024,
+      "october": 1901.1,
+      "peak": 1924.5,
+      "peakMonth": "December",
+      "seasonalHires": 23400,
+      "shareOfOctoberBase": 1.23,
+      "complete": true
+    },
+    {
+      "year": 2025,
+      "october": 1873.4,
+      "peak": 1882.2,
+      "peakMonth": "November",
+      "seasonalHires": 8800,
+      "shareOfOctoberBase": 0.47,
+      "complete": true
+    }
+  ],
+  "latestCompleteSeason": {
+    "year": 2025,
+    "october": 15444.5,
+    "peak": 15807.1,
+    "peakMonth": "December",
+    "seasonalHires": 362600,
+    "shareOfOctoberBase": 2.35,
+    "complete": true
+  },
+  "ranking": {
+    "yearsCovered": 87,
+    "rankOfLatestWeakestFirst": 11,
+    "weakestSeason": {
+      "year": 1974,
+      "october": 8671.9,
+      "peak": 8935,
+      "peakMonth": "December",
+      "seasonalHires": 263100,
+      "shareOfOctoberBase": 3.03,
+      "complete": true
+    },
+    "strongestSeason": {
+      "year": 1999,
+      "october": 15116.1,
+      "peak": 15792.2,
+      "peakMonth": "December",
+      "seasonalHires": 676100,
+      "shareOfOctoberBase": 4.47,
+      "complete": true
+    },
+    "mostRecentWeakerSeason": 2008,
+    "yearsSinceWeaker": 17,
+    "rankOfLatestByShareWeakestFirst": 2,
+    "weakestByShare": {
+      "year": 2008,
+      "october": 15099.7,
+      "peak": 15385.2,
+      "peakMonth": "December",
+      "seasonalHires": 285500,
+      "shareOfOctoberBase": 1.89,
+      "complete": true
+    },
+    "mostRecentWeakerByShare": 2008,
+    "everWeakerByShare": true
+  },
+  "incompleteSeasons": [],
+  "caveats": [
+    "Retail trade only; warehousing and courier hiring is not in this series and is pulled alongside for comparison.",
+    "Net change, not gross hires — a store hiring twenty and losing five shows as fifteen.",
+    "Series come from the BLS flat files rather than the JSON API, which caps unregistered callers at 25 requests a day and truncates ranges beyond ten years.",
+    "A season is complete only once December is published; the current year is reported separately and not ranked.",
+    "Challenger, Gray & Christmas counts announced hiring plans, which is a different quantity from payroll counts and is not comparable to these figures."
+  ]
+}

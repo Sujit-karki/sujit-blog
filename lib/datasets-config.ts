@@ -381,6 +381,37 @@ const rawDatasets = {
     ],
     files: [{ name: "roth-vs-traditional-limit.json", encodingFormat: JSON_TYPE }],
   },
+  "seasonal-holiday-work-2026": {
+    name: "Seasonal retail and warehousing hiring by season, 1939 onward",
+    description:
+      "Seasonal holiday hiring measured from payroll counts rather than from hiring forecasts, for every season from 1939 to the last completed one. Seasonal hiring is defined as the rise in employment from October to the November or December peak on the not-seasonally-adjusted series, since the adjusted series removes this effect by construction. Each season carries the October base, the peak, the jobs added, and the share of the October base — the share being the only comparison that holds across a period in which retail employment tripled. On that basis the 2025 season is the second weakest of 87, behind only 2008. The identical calculation is run on warehousing and storage to test the common claim that seasonal hiring moved to fulfilment; it did not, with warehousing down about 89 percent from its 2020 peak against retail's 28 percent.",
+    keywords: [
+      "seasonal hiring", "retail employment", "holiday jobs", "warehousing",
+      "BLS", "labour market", "United States",
+    ],
+    temporalCoverage: "1939/2025",
+    variableMeasured: [
+      "Season year", "October employment base", "Holiday peak employment",
+      "Peak month", "Seasonal jobs added", "Share of October base",
+      "Rank by count", "Rank by share",
+    ],
+    files: [{ name: "seasonal-retail-hiring.json", encodingFormat: JSON_TYPE }],
+  },
+  "credit-card-bnpl-debt-2026": {
+    name: "US credit card balances, nominal and inflation-adjusted, 2003 onward",
+    description:
+      "Quarterly US credit card balances from the Federal Reserve Bank of New York's Household Debt and Credit Report, parsed directly from the published workbook, alongside the same series deflated to constant dollars with the BLS CPI-U. Coverage of this series reports the nominal figure, which sets a record most quarters almost by construction after twenty years of inflation. In real terms the peak is not recent: the highest quarter on record is the fourth of 2008, equivalent to about 1.358 trillion in 2026 Q2 dollars, against 1.263 trillion in 2026 Q2 itself, so households owe roughly 7 percent less in real terms than at that peak. Each row carries the nominal balance, the CPI level used, and the deflated balance. Buy-now-pay-later is largely absent from the underlying series because most of it is not furnished to the credit bureaus.",
+    keywords: [
+      "credit card debt", "household debt", "inflation adjusted", "BNPL",
+      "New York Fed", "CPI", "United States",
+    ],
+    temporalCoverage: "2003/2026",
+    variableMeasured: [
+      "Quarter", "Nominal balance (trillions)", "CPI-U level",
+      "Real balance in base-quarter dollars", "Nominal peak", "Real peak",
+    ],
+    files: [{ name: "credit-card-real-terms.json", encodingFormat: JSON_TYPE }],
+  },
 };
 
 /**

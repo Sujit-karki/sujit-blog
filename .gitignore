@@ -60,3 +60,4 @@ public/data/
 # Lighthouse CI run output and its Windows temp workaround
 .lighthouseci/
 .lhtmp/
+research/data/bls-cache/

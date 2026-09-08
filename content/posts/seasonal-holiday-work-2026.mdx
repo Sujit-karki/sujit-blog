@@ -1,33 +1,36 @@
 ---
-title: "Seasonal Retail Hiring Is Near a 16-Year Low — Where the Holiday Work Money Actually Is"
-description: "Retailers are projected to add far fewer seasonal workers this holiday season than in 2024, with hiring shifting toward logistics and warehousing. Here's where the jobs and the pay actually are, and how to plan the income."
-seoTitle: "Seasonal Retail Hiring at a 16-Year Low: Where the Money Is"
-seoDescription: "Retailers plan far fewer seasonal hires this year, with jobs shifting to logistics and warehousing. Where the jobs and pay actually are this season."
+title: "Seasonal Retail Hiring Is at a 17-Year Low — and It Did Not Move to Warehousing"
+description: "Measured from BLS payrolls as a share of the October base, the 2025 season was the second weakest since 1939, behind only 2008. And warehousing seasonal hiring fell harder, not softer, so the jobs did not move."
+seoTitle: "Seasonal Retail Hiring: a 17-Year Low, Measured"
+seoDescription: "BLS payrolls put the 2025 season second weakest since 1939 as a share of the base. Warehousing fell harder, so the jobs did not move there."
 date: "2026-08-12"
+updated: "2026-09-08"
 author: "Sujit Karki"
 category: "Side Hustles"
-tags: ["Seasonal Work", "Holiday Jobs", "Side Hustles", "Gig Work", "Taxes"]
+tags: ["Seasonal Work", "Holiday Jobs", "Side Hustles", "Gig Work", "Taxes", "Original Data"]
 toc:
   - { id: "the-hiring-slowdown", title: "The hiring slowdown", level: 2 }
-  - { id: "where-the-jobs-actually-moved", title: "Where the jobs actually moved", level: 2 }
+  - { id: "the-jobs-did-not-move-i-checked", title: "The jobs did not move — I checked", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
   - { id: "w-2-vs-1099-seasonal-work", title: "W-2 vs. 1099 seasonal work", level: 2 }
   - { id: "stacking-a-seasonal-gig-with-something-else", title: "Stacking a seasonal gig with something else", level: 2 }
   - { id: "plan-your-seasonal-income", title: "Plan your seasonal income", level: 2 }
   - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
 faq:
   - q: "Is seasonal retail hiring down this year?"
-    a: "Yes — forecasts point to meaningfully fewer seasonal retail hires than in 2024, continuing a multi-year slide as retailers lean more on existing staff, automation, and logistics workers rather than large temporary in-store headcounts."
+    a: "Yes, and measured rather than forecast. BLS payrolls show 362,600 seasonal retail jobs added in the 2025 season against 398,300 in 2024. As a share of the October employment base — the only comparison that holds across 87 seasons, since retail has tripled in size since 1939 — that is 2.35%, the second-weakest on record behind the 1.89% of 2008."
   - q: "Do seasonal workers pay different taxes than regular employees?"
     a: "A W-2 seasonal employee has income and payroll taxes withheld just like any other employee. A 1099 seasonal or gig worker is responsible for self-employment tax on top of income tax, and nothing is withheld automatically — that's the gap people miss."
   - q: "Where is holiday hiring actually growing?"
-    a: "Warehousing, fulfillment, and logistics roles have been absorbing a growing share of seasonal hiring even as traditional in-store retail seasonal headcount shrinks, reflecting the continued shift toward e-commerce fulfillment."
+    a: "They have not, and I had this wrong until I measured it. Running the same October-to-peak calculation on the BLS warehousing and storage series gives 8,800 seasonal jobs added in 2025 against 79,700 in 2020 — a fall of about 89%, steeper than retail's 28% over the same period. Both are contracting, and warehousing is contracting faster."
 ---
 
-Seasonal hiring headlines this year lean gloomy, and the underlying data backs that up — retail seasonal hiring has been trending down for years. But "fewer retail jobs" isn't the same as "less seasonal money available." Here's where it actually is.
+Seasonal hiring headlines this year lean gloomy, and when I checked them against payroll data they were right — more right than the figure being quoted, in fact. What did not survive the check was the reassuring half of the story: that the jobs moved to warehouses rather than disappearing. Here is what the numbers actually show, and where the seasonal money still is.
 
 <KeyTakeaways items={[
-  "Retail seasonal hiring forecasts have trended down for several years, continuing into this holiday season.",
-  "Warehousing and logistics roles have picked up a growing share of seasonal hiring as e-commerce fulfillment grows.",
+  "The widely quoted 16-year-low figure counts announced hiring plans; payroll data puts the last weaker season 17 years back, in 2008.",
+  "Measured as a share of the October base — the only fair comparison across 87 seasons — 2025 is the second-weakest since 1939, behind only 2008.",
+  "Warehousing seasonal hiring fell 89% from its 2020 peak against retail's 28% — the jobs did not shift to logistics, they went away.",
   "A W-2 seasonal job has taxes withheld automatically; a 1099 gig does not, and you owe self-employment tax on top of income tax.",
   "Seasonal income can be stacked with an existing side hustle or gig work to meaningfully extend the earning window.",
   "The restored $20,000/200-transaction 1099-K threshold changes what gets reported, not what's actually taxable."
@@ -35,29 +38,73 @@ Seasonal hiring headlines this year lean gloomy, and the underlying data backs t
 
 ## The hiring slowdown
 
-Seasonal retail hiring forecasts have been trending down for several years, and this holiday season continues that pattern — projections point to notably fewer seasonal retail hires than in 2024, and well below the peaks seen earlier in the decade.
+Seasonal retail hiring has fallen for years, and unlike most coverage of this I am going to use payroll counts rather than hiring forecasts. The measured series runs from a 2007 peak of 633,000 jobs added to 363,000 in 2025 — a fall of 43%, and as a share of the workforce it is the second-weakest season since 1939.
 
 <BarChart
-  title="Projected seasonal retail hires by year (illustrative trend)"
+  title="Seasonal retail jobs added, measured from BLS payrolls"
+  description="October to the November/December peak, retail trade, not seasonally adjusted (CEU4200000001)"
   data={[
-    { year: "2021", hires: 685 },
-    { year: "2022", hires: 654 },
-    { year: "2023", hires: 590 },
-    { year: "2024", hires: 543 },
-    { year: "2025", hires: 480 }
+    { year: "2007", hires: 633 },
+    { year: "2008", hires: 286 },
+    { year: "2013", hires: 627 },
+    { year: "2019", hires: 497 },
+    { year: "2021", hires: 434 },
+    { year: "2022", hires: 373 },
+    { year: "2023", hires: 398 },
+    { year: "2024", hires: 398 },
+    { year: "2025", hires: 363 }
   ]}
   xKey="year"
-  series={[{ key: "hires", label: "Thousands of hires" }]}
+  series={[{ key: "hires", label: "Thousands of jobs added" }]}
 />
 
-The reasons aren't mysterious: retailers have gotten better at using existing staff more efficiently, automation has picked up some of the slack, and the growth in online shopping means more of the "seasonal surge" happens in a warehouse rather than a storefront.
+The usual explanation is that retailers use existing staff more efficiently, automation absorbs some of the load, and the seasonal surge has moved from the storefront into the warehouse. The first two are plausible and I cannot test them here. The third is testable, and it turns out to be wrong.
 
-## Where the jobs actually moved
+## The jobs did not move — I checked
 
-That last point is the one worth acting on. Even as traditional in-store retail seasonal headcount has shrunk, **warehousing, fulfillment, and logistics** roles have absorbed a growing share of seasonal hiring. Large fulfillment operators have specifically called out competitive seasonal starting pay to attract workers for peak season — some pay floors in this space are meaningfully above minimum wage.
+I believed this when I first wrote it, and then I measured it, and it is not true.
+
+The "16-year low" figure everyone repeats — this post included — comes from Challenger, Gray & Christmas, an outplacement firm that counts *announced hiring plans*. The Bureau of Labor Statistics counts people actually on payrolls. So I pulled the payroll series and computed seasonal hiring directly as the rise from October to the holiday peak, on the not-seasonally-adjusted series. [The script is published](https://github.com/Sujit-karki/sujit-blog/blob/main/scripts/seasonal-retail-hiring.mjs).
+
+**The headline claim holds, and on the right measure it is understated.** The 2025 season added **362,600** retail jobs.
+
+Raw job counts are the wrong way to rank this, though, and it is worth saying why: retail employed 5.7 million people in 1962 and 15.4 million in 2025. Ranking absolute hiring across eighty-seven seasons compares a different-sized industry with itself, and by that measure 2025 looks middling — eleventh weakest, behind 1974, 1981 and the war years.
+
+Measured as a **share of the October base**, which is the only comparison that survives across that much change:
+
+| Season | Share of October base | Jobs added |
+| --- | --- | --- |
+| 2008 | **1.89%** | 285,500 |
+| **2025** | **2.35%** | **362,600** |
+| 2022 | 2.40% | 373,000 |
+| 1981 | 2.52% | 263,100 |
+| 2023 | 2.56% | 397,900 |
+| 2024 | 2.58% | 398,300 |
+| 2021 | 2.83% | 434,400 |
+
+**2025 is the second-weakest holiday hiring season since 1939** — 87 seasons — beaten only by the winter of the financial crisis. Both measures agree on the part that matters most: the last season weaker than 2025 was **2008, seventeen years ago**.
+
+### But the "it moved to warehousing" explanation does not survive contact with the data
+
+This is the part I had wrong. Run the identical calculation on warehousing and storage:
+
+| Season | Seasonal warehousing jobs added |
+| --- | --- |
+| 2020 | 79,700 |
+| 2021 | 66,800 |
+| 2022 | 500 |
+| 2023 | 20,500 |
+| 2024 | 23,400 |
+| **2025** | **8,800** |
+
+Warehousing seasonal hiring did not absorb the retail decline. It **collapsed harder** — down about 89% from its 2020 peak, against retail's 28% fall over the same span. Both are shrinking, and warehousing is shrinking faster.
+
+So the comforting story — that the jobs moved rather than disappeared — is not supported. What the payroll data shows is a genuine, broad contraction in temporary holiday work across both the storefront and the fulfilment centre. That is a worse finding than the one this post originally carried, and it changes the advice: do not assume a fulfilment centre near you is quietly hiring the people the mall no longer needs.
+
+Large fulfillment operators do still advertise competitive seasonal starting pay, and pay floors in that space remain meaningfully above minimum wage — the roles that exist are worth having. There are simply fewer of them being added each season, not more.
 
 <InfoBox type="tip">
-If your local mall seems to be hiring less than you remember, check nearby fulfillment centers and logistics operations directly — that's often where the volume actually went, and the pay can be better than a traditional retail floor role.
+It is still worth applying to fulfillment centres directly — the pay often beats a retail floor role, and the roles that exist are real. Just do not go in expecting the mall's missing headcount to be waiting there. On the payroll numbers it is not.
 </InfoBox>
 
 ## W-2 vs. 1099 seasonal work
@@ -100,10 +147,28 @@ For the broader side-hustle income landscape, see [student side hustles that can
 ## FAQ
 
 <FaqAccordion items={[
-  { q: "Is seasonal retail hiring down this year?", a: "Yes — forecasts point to meaningfully fewer seasonal retail hires than in 2024, continuing a multi-year slide as retailers lean more on existing staff, automation, and logistics workers rather than large temporary in-store headcounts." },
+  { q: "Is seasonal retail hiring down this year?", a: "Yes, and measured rather than forecast. BLS payrolls show 362,600 seasonal retail jobs added in the 2025 season against 398,300 in 2024. As a share of the October employment base — the only comparison that holds across 87 seasons, since retail has tripled in size since 1939 — that is 2.35%, the second-weakest on record behind the 1.89% of 2008." },
   { q: "Do seasonal workers pay different taxes than regular employees?", a: "A W-2 seasonal employee has income and payroll taxes withheld just like any other employee. A 1099 seasonal or gig worker is responsible for self-employment tax on top of income tax, and nothing is withheld automatically — that's the gap people miss." },
-  { q: "Where is holiday hiring actually growing?", a: "Warehousing, fulfillment, and logistics roles have been absorbing a growing share of seasonal hiring even as traditional in-store retail seasonal headcount shrinks, reflecting the continued shift toward e-commerce fulfillment." }
+  { q: "Where is holiday hiring actually growing?", a: "They have not, and I had this wrong until I measured it. Running the same October-to-peak calculation on the BLS warehousing and storage series gives 8,800 seasonal jobs added in 2025 against 79,700 in 2020 — a fall of about 89%, steeper than retail's 28% over the same period. Both are contracting, and warehousing is contracting faster." }
 ]} />
+
+## Methodology
+
+**The measurement.** Seasonal hiring is the rise in employment from October to the holiday peak, taken as the larger of November and December, on the **not seasonally adjusted** payroll series. It is ranked two ways: by raw job count, and by share of the October base. The share is the one to trust across this much history — retail employed 5.7 million in 1962 and 15.4 million in 2025, so an absolute ranking silently flatters the present. Quoting only the count would have made 2025 look eleventh-weakest rather than second. The adjusted series is built specifically to remove this effect and would report roughly zero every year. Series `CEU4200000001` (retail trade) and `CEU4349300001` (warehousing and storage), all employees, in thousands.
+
+**Why this differs from the number in circulation.** Challenger, Gray & Christmas counts *announced hiring plans*; BLS counts people on payrolls. They are different quantities and are not comparable, which is why this post no longer cites one as though it corroborated the other.
+
+**Verification.** Seasonal hiring must be positive in every complete season — retail employment rises into the holidays in every year on record — so the script refuses to publish if any complete season comes back non-positive. That is the signature of accidentally pulling the seasonally adjusted series, which is the single most likely way to get this wrong.
+
+**Why flat files, not the API.** The BLS JSON API caps an unregistered caller at 25 requests a day and silently truncates any range beyond ten years. Using it here would have limited the comparison to twenty seasons — which is exactly the mistake that made 2025 look like a twenty-year story rather than an eighty-seven-year one. The flat files at download.bls.gov carry the full history from 1939, have no quota, and come from the same publisher. They are cached locally for a day.
+
+**Limits.** Retail trade only, and net rather than gross — a store hiring twenty and losing five shows as fifteen. A season counts as complete only once December is published, so the current year is reported separately and never ranked.
+
+<DatasetSignup
+  dataset="the seasonal hiring series"
+  cadence="each January, once December payrolls are published"
+  dataFile="seasonal-retail-hiring.json"
+/>
 
 <Sources items={[
   { title: "Seasonal hiring reports", url: "https://www.challengergray.com/blog/category/seasonal-hiring/", publisher: "Challenger, Gray & Christmas", date: "2026" },
