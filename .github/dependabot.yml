@@ -1,0 +1,61 @@
+# Keeps dependencies current so the audit gate in CI stays green without
+# anyone watching for advisories.
+#
+# The stale `next` pin is the case this exists to prevent: 16.2.9 sat here long
+# enough to accumulate nine high-severity advisories, and the fix turned out to
+# be a non-major bump that had been available the whole time. Nothing surfaced
+# that until someone ran an audit by hand.
+#
+# Security updates are separate from the schedule below — GitHub opens those as
+# soon as an advisory lands, regardless of `interval`.
+#
+# NOTE: two transitive pins are held by `overrides` in package.json (js-yaml and
+# nanoid). Dependabot does not manage overrides, so if `gray-matter` or
+# `postcss` ever ship versions that carry the fixes themselves, those overrides
+# should be removed by hand rather than left to drift.
+
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    # Grouped so a quiet week is one PR to review rather than fifteen. Ungrouped
+    # updates are how dependency PRs start getting rubber-stamped.
+    groups:
+      production:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      development:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    # Majors arrive individually: they are the ones that need a migration guide
+    # read and the full gate suite run, so they should never be batched with
+    # routine patches.
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps(dev)"
+    labels:
+      - dependencies
+
+  # The workflow actions pin to major tags (actions/checkout@v4), which silently
+  # stop receiving fixes once a new major ships.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "ci"
+    labels:
+      - dependencies
