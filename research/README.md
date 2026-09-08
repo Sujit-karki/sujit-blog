@@ -97,14 +97,22 @@ split — it is the mechanism that turns someone else's reuse into a citation.
 reference manager reads. `.zenodo.json` is the deposit metadata Zenodo uses
 when it archives a release.
 
-To mint a DOI: link this repository on
-[zenodo.org/account/settings/github](https://zenodo.org/account/settings/github),
-then cut a GitHub release. Zenodo archives the tagged snapshot and issues a
-concept DOI that always resolves to the newest version, plus a version DOI
-fixed to that release. Put the concept DOI in `ZENODO_CONCEPT_DOI` in
-`lib/datasets-config.ts` and every dataset's structured data gains an
-`identifier`; the test suite checks its shape, and until it is set the property
-is omitted rather than emitted empty.
+These datasets are archived on Zenodo and citable:
+
+> Karki, Sujit (2026). *Original-data research datasets and measurement
+> harness, sujitkarki.com.np*. Zenodo. https://doi.org/10.5281/zenodo.22654387
+
+That is the **concept DOI**, which always resolves to the newest archived
+version. Each release also gets a **version DOI** fixed to that snapshot —
+v2026.09.0 is `10.5281/zenodo.22654388`. Cite the concept DOI when pointing at
+the data in general, and the version DOI when a figure depends on the exact
+rows you used.
+
+**To publish a new version:** cut a GitHub release. Zenodo is wired to the
+repository and archives each tagged snapshot automatically, issuing a fresh
+version DOI while the concept DOI follows along. Bump `version` and
+`date-released` in `CITATION.cff` first so the archived snapshot describes
+itself correctly.
 
 ### Scripts that are not model experiments
 

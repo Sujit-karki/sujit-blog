@@ -64,13 +64,11 @@ export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
  * reader who needs the exact rows behind a published figure wants the version
  * DOI, which is on the Zenodo record itself.
  *
- * Empty until the archive exists. Minting it requires linking the repository
- * on Zenodo with a GitHub account and then cutting a release — an
- * authenticated step that cannot be done from here. Set this one constant and
- * every dataset below gains an `identifier`; the test suite checks the shape
- * if it is non-empty, so a malformed DOI fails rather than ships.
+ * Minted 2026-09-08 from release v2026.09.0. The version DOI for that specific
+ * release is 10.5281/zenodo.22654388, and each future release gets its own;
+ * this concept DOI resolves to whichever is newest.
  */
-export const ZENODO_CONCEPT_DOI = "";
+export const ZENODO_CONCEPT_DOI = "https://doi.org/10.5281/zenodo.22654387";
 
 export const datasets: Record<string, DatasetMeta> = {
   "platform-take-rates-2026": {

@@ -1,8 +1,8 @@
 # Renders as "Cite this repository" on the GitHub sidebar, and is what a
 # reference manager reads when someone imports this repo.
 #
-# When a Zenodo DOI is minted, add it under identifiers and set `doi:` so the
-# citation points at a fixed, archived version rather than a moving branch.
+# `doi` is the concept DOI: it always resolves to the newest archived version.
+# The version DOI for a specific release is on that release's Zenodo record.
 cff-version: 1.2.0
 title: Original-data research datasets and measurement harness, sujitkarki.com.np
 message: If you use these datasets, please cite them.
@@ -11,6 +11,7 @@ authors:
   - family-names: Karki
     given-names: Sujit
     website: https://www.sujitkarki.com.np
+doi: 10.5281/zenodo.22654387
 version: 2026.09.0
 date-released: "2026-09-08"
 repository-code: https://github.com/Sujit-karki/sujit-blog
