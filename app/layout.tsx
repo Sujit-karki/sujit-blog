@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./(blog)/globals.css";
 import { siteConfig, authorSameAs } from "@/lib/site-config";
 import { MotionProvider } from "./providers";
@@ -118,6 +119,8 @@ const websiteJsonLd = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full`} suppressHydrationWarning>
       <head>
@@ -149,6 +152,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
       </body>
+      {/* GA4. Gated on the env var so a missing ID is a no-op rather than a
+          broken tag. Search Console measures Google search only; the referral
+          traffic a dataset launch produces is invisible without this. The
+          component defers the loader until after hydration.
+          The CSP in next.config.mjs must allow googletagmanager.com and
+          google-analytics.com, or this fails silently — the page renders
+          normally and no hit is ever sent. */}
+      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }

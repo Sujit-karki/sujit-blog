@@ -53,6 +53,10 @@ const nextConfig = {
       "script-src 'self' 'unsafe-inline'",
       ...(isDev ? ["'unsafe-eval'"] : []),
       "https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net",
+      // GA4 via @next/third-parties. Without this the tag mounts, the page
+      // renders normally, and not one hit is ever sent — the failure is
+      // invisible except as a permanently empty Analytics dashboard.
+      "https://www.googletagmanager.com",
       // sodar2.js is served from ep2.adtrafficquality.google. Allowing the
       // domain in connect-src only was a half-fix: the fetch was permitted but
       // loading the script itself still violated script-src, so the console
@@ -63,6 +67,8 @@ const nextConfig = {
       "connect-src 'self'",
       ...(isDev ? ["ws://localhost:* http://localhost:*"] : []),
       "https://api.buttondown.email https://*.googlesyndication.com https://*.doubleclick.net",
+      // GA4 beacons. gtag.js posts to both hosts depending on transport.
+      "https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
       // AdSense's ad-traffic-quality endpoints. Omitting these does not break
       // the page visibly — it produces a console CSP violation on every ad
       // impression while the slot still renders, which is exactly the kind of
@@ -75,7 +81,8 @@ const nextConfig = {
       "default-src 'self'",
       scriptSrc,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google",
+      // GA4 still falls back to a pixel when sendBeacon/fetch are unavailable.
+      "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google https://*.google-analytics.com https://www.googletagmanager.com",
       "font-src 'self' data:",
       connectSrc,
       // AdSense's fraud checks frame three origins, and allowing one at a

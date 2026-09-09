@@ -31,20 +31,24 @@ export default function PrivacyPolicyPage() {
         <p>
           We use a single localStorage key (<code>theme</code>) to remember your dark/light mode
           preference. This is not a tracking cookie and is never sent to any server.
-          If we display third-party advertisements in the future, those providers may use cookies
-          per their own privacy policies.
+          Google Analytics and Google AdSense, described below, set their own cookies under
+          their respective privacy policies, subject to the choices you make in our consent
+          banner.
         </p>
 
         <h2>Third-Party Services</h2>
         <p>
-          We may use Google Analytics (or similar) to analyze site traffic. These services may
-          collect anonymous usage data per their own privacy policies. We do not sell or share
-          personally identifiable information with third parties.
+          We use Google Analytics 4 to measure site traffic — page views, referring site,
+          approximate location, and device and browser type. We use it to understand which
+          articles and datasets people find useful and where readers arrive from, not to
+          identify you. We also use Vercel Speed Insights, which records page performance
+          timings and sets no cookies. Both operate under their own privacy policies. We do
+          not sell or share personally identifiable information with third parties.
         </p>
 
         <h2>Advertising</h2>
         <p>
-          This site may display advertisements served by Google AdSense or similar ad networks.
+          This site displays advertisements served by Google AdSense.
           These networks may use cookies to serve ads based on your prior visits to this website
           and other websites. You can opt out of personalized advertising by visiting
           Google&apos;s Ad Settings.
