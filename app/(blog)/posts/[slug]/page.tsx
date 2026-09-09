@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -242,7 +243,17 @@ export default async function PostPage({ params }: Props) {
                 prose-blockquote:border-l-emerald-500 prose-blockquote:not-italic
                 prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-500 dark:text-gray-400"
             >
-              <PostContent />
+              {/* The MDX body is reached through an async import() and embeds
+                  client components (calculators, charts), so it can't resolve
+                  during the instant-UI validation pass that Cache Components
+                  runs. Next treats a Suspense boundary between the validation
+                  boundary and the dynamic subtree as sufficient — any dynamic
+                  hole below it is guarded by the fallback anyway. Without this
+                  every post logs "Could not validate `instant`" in dev even
+                  though the page itself renders fine. */}
+              <Suspense fallback={<div className="h-96" aria-hidden />}>
+                <PostContent />
+              </Suspense>
             </article>
 
             {/* Tags */}
