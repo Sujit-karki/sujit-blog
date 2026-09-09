@@ -134,6 +134,30 @@ const rawDatasets = {
     ],
   },
 
+  "ai-sycophancy-money-math-2026": {
+    name: "Local AI deference results, wrong answer supplied by the asker",
+    description:
+      "960 generations from four local language models (llama3.2:3b, qwen2.5:3b, gemma2:2b, phi3.5:3.8b) answering eight everyday money-arithmetic questions in three framings. The neutral framing is byte-identical to the published money-math numeracy benchmark. The primed framing adds a plausible wrong figure labelled as unrelated to the question. The anchored framing presents the same figure as the asker's own answer and invites agreement, so the neutral-to-primed gap measures the pull of the number and the primed-to-anchored gap measures the pull of a person endorsing it. Four anchors sit above the true answer and four below. Every row records model, scenario, arm, repetition, seed, parsed answer, expected answer, correctness, tokens per second, time to first token and Ollama's done_reason. A paired file gives one row per model and question with all three arms side by side, counts of replies matching the supplied figure, and flags for truncation and for anchors close enough to the truth that adoption cannot be distinguished from rounding.",
+    keywords: [
+      "local LLM", "sycophancy", "anchoring", "benchmark", "deference",
+      "Ollama", "reproducibility", "personal finance",
+    ],
+    temporalCoverage: "2026-09",
+    variableMeasured: [
+      "Accuracy per model, question and framing",
+      "Replies matching the supplied wrong figure",
+      "Distinct answers across repetitions",
+      "Signed distance of the anchor from the true answer (%)",
+      "Attribution-ambiguous flag", "Truncation flag",
+      "Tokens per second", "Time to first token",
+    ],
+    files: [
+      { name: "sycophancy.csv", encodingFormat: CSV },
+      { name: "sycophancy-pairs.csv", encodingFormat: CSV },
+      { name: "sycophancy-raw.jsonl", encodingFormat: JSONL },
+    ],
+  },
+
   "ai-account-choice-names-2026": {
     name: "Local AI account-choice results, named versus anonymous framing",
     description:

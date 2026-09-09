@@ -20,6 +20,16 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "ai-sycophancy-money-math-2026",
+    title: "I Told Four AI Models My Wrong Answer Was Right. Three Got Worse.",
+    finding:
+      "A wrong figure sitting in the prompt did no harm — 51.6% correct against 46.9% for the bare question. Claiming it as the asker's own answer dropped accuracy to 42.3%, costing three of four models 12.5, 12.9 and 12.5 points. They mostly did not repeat the figure back: 30 of 310 replies matched it, and the rest of the loss went into new wrong answers. phi3.5:3.8b scored 62.5% in all three framings and never adopted it.",
+    method:
+      "960 generations, each question asked bare, with a wrong figure present, and with that figure endorsed by the asker",
+    dataset: true,
+    date: "2026-09-09",
+  },
+  {
     slug: "platform-take-rate-trend-2026",
     title: "Etsy Sold 9.5% Less. It Kept 3.3 Points More.",
     finding:
