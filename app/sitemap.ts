@@ -3,6 +3,7 @@ import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { siteConfig, categories, slugifyCategory } from "@/lib/site-config";
 import { tools } from "@/lib/tools-config";
 import { correctionsByDate } from "@/lib/corrections";
+import { researchPosts } from "@/lib/research-config";
 
 const url = siteConfig.url;
 
@@ -32,7 +33,15 @@ const PRIVACY_POLICY_UPDATED = new Date("2026-06-12");
 // Bumped 2026-09-08: added the framing prose explaining what these
 // calculators show and where they differ from the usual lead-gen kind.
 const TOOLS_INDEX_UPDATED = new Date("2026-09-08");
-const RESEARCH_INDEX_UPDATED = new Date("2026-09-07");
+// Derived, for the same reason as CORRECTIONS_UPDATED above: /research renders
+// researchPosts, so the page changes exactly when an entry is added. A
+// hand-set constant here went stale the first time that happened — the
+// 2026-09-10 study landed while this still read 2026-09-07 — which is the
+// failure mode the corrections note already warns about.
+const RESEARCH_INDEX_UPDATED = researchPosts.reduce((latest, post) => {
+  const d = new Date(`${post.date}T00:00:00Z`);
+  return d > latest ? d : latest;
+}, new Date(0));
 // Bumped 2026-09-08: the how-to step list is rendered on tool pages again
 // (it had been written in tools-config but unreachable), so the body copy on
 // all six genuinely changed.
