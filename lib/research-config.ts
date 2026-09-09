@@ -20,6 +20,16 @@ export interface ResearchPost {
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "local-ai-refuses-what-it-knows-2026",
+    title: "In 160 Answers, Not One Number Was Wrong. Only Ten Were Numbers.",
+    finding:
+      "Apple announced the iPhone 18 Pro the day before, so no local model could know its price. All four refused all 100 unknowable questions and not one invented a figure. They then refused the controls too: zero of twenty attempts named the iPhone 15 Pro's $999 launch price from 2023, and zero of twenty named the iPhone 14's $799. Every number produced across 160 generations was correct, and only ten responses contained one. llama3.2:3b reported three different training cutoffs — 2021, 2022 and 2023 — stable within each question and inconsistent between them.",
+    method:
+      "160 generations across four local models: five questions unanswerable before 9 September 2026, three controls verified against Apple's own newsroom releases",
+    dataset: true,
+    date: "2026-09-10",
+  },
+  {
     slug: "ai-sycophancy-money-math-2026",
     title: "I Told Four AI Models My Wrong Answer Was Right. Three Got Worse.",
     finding:

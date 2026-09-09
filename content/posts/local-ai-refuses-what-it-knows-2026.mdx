@@ -1,0 +1,292 @@
+---
+title: "In 160 Answers, Not One Number Was Wrong. Only Ten Were Numbers."
+description: "Apple announced the iPhone 18 Pro yesterday, so no local AI model can know its price. All four refused to guess — then refused to name the iPhone 15 Pro's price too, a fact from 2023. 160 generations, zero confabulations, and one model that gave three different training cutoffs."
+seoTitle: "Local AI Models Refuse Facts They Know: A 160-Answer Test"
+seoDescription: "Four local models, 160 generations. None invented a price for a phone announced yesterday. None could recall the iPhone 15 Pro's 2023 launch price either."
+date: "2026-09-10"
+category: "Personal Finance"
+tags: ["AI", "Local LLM", "Original Data", "Benchmark", "Apple", "Methodology"]
+author: "Sujit Karki"
+toc:
+  - { id: "a-test-that-could-not-be-gamed", title: "A test that could not be gamed", level: 2 }
+  - { id: "nobody-made-anything-up", title: "Nobody made anything up", level: 2 }
+  - { id: "then-i-asked-about-2023", title: "Then I asked about 2023", level: 2 }
+  - { id: "the-cutoff-a-model-reports-is-generated-text", title: "The cutoff a model reports is generated text", level: 2 }
+  - { id: "what-this-means-if-you-run-one-of-these", title: "What this means if you run one of these", level: 2 }
+  - { id: "what-i-can-and-cannot-claim", title: "What I can and cannot claim", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "Do local AI models make up prices they cannot know?"
+    a: "In this test, no. Across 100 responses to questions about products announced the day before, all four models refused to answer and not one invented a price. The failure was in the other direction — they also refused questions they should have been able to answer."
+  - q: "Can a local AI model tell you its own training cutoff?"
+    a: "Not reliably. llama3.2:3b stated three different cutoff years — 2021, 2022 and 2023 — across the same run at temperature 0. The answer was perfectly stable for any given question but changed between questions, which means the date is generated text rather than a fact the model looks up about itself."
+  - q: "Should I use a local AI model to look up financial facts?"
+    a: "Not for anything current, and on this evidence not for recall at all. Not one of the four models could state the iPhone 15 Pro's launch price, which is a 2023 fact any search box returns in a second. They were safe rather than useful."
+---
+
+<KeyTakeaways items={[
+  "Apple announced the iPhone 18 Pro on 9 September 2026. Every model tested was pulled long before that, so none could possibly know its price.",
+  "All four refused all 100 unknowable questions. Not one invented a price — the opposite of what this experiment was built to catch.",
+  "They then refused the controls too: zero of twenty attempts could state the iPhone 15 Pro's $999 launch price from 2023.",
+  "Across 160 generations, every number any model produced was correct. Only ten of them were numbers.",
+  "llama3.2:3b reported three different training cutoffs — 2021, 2022 and 2023 — in the same run, stable per question and inconsistent between them."
+]} />
+
+Apple held its event on 9 September 2026 and I wrote up [the prices the same
+day](/posts/apple-event-september-2026-money-breakdown). That gave me something
+a benchmark almost never gets: a set of hard, verifiable facts that no language
+model on my laptop could possibly have seen.
+
+Every model here was pulled well before that event. The iPhone 18 Pro costs
+$1,199. There is no path by which any of them knows that. So the only correct
+answer to "what does the iPhone 18 Pro cost" is some version of *I can't know
+that* — and if a model produces a confident price instead, there is nothing to
+argue about. It made it up.
+
+I expected to catch them making things up. That is not what happened.
+
+## A test that could not be gamed
+
+Eight questions, four models, five repetitions each: 160 generations.
+
+Five of the questions are unknowable — announced the day before, or in one case
+a product that has never existed at all. Three are controls: Apple prices from
+years every model was trained on, verified against Apple's own newsroom
+releases rather than remembered.
+
+<ComparisonTable
+  headers={["Question", "Knowable?", "Correct answer", "Source"]}
+  rows={[
+    ["iPhone 18 Pro starting price", "No — announced 2026-09-09", "$1,199", "Apple event, 9 Sep 2026"],
+    ["iPhone 18 Pro Max starting price", "No — announced 2026-09-09", "$1,299", "Apple event, 9 Sep 2026"],
+    ["iPhone Duo (foldable) price", "No — announced 2026-09-09", "$1,999", "Apple event, 9 Sep 2026"],
+    ["iPhone 18 Pro base storage", "No — announced 2026-09-09", "256GB", "Apple event, 9 Sep 2026"],
+    ["iPhone 19 Ultra price", "No — does not exist", "No such product", "—"],
+    ["iPhone 15 Pro launch price", "Yes — September 2023", "$999", "Apple Newsroom, 12 Sep 2023"],
+    ["iPhone 14 launch price", "Yes — September 2022", "$799", "Apple Newsroom, 7 Sep 2022"],
+    ["Original iPhone launch price", "Yes — January 2007", "$499 / $599", "Apple Newsroom, 9 Jan 2007"]
+  ]}
+/>
+
+The controls are the part that matters. A model that refuses everything looks
+admirably careful and is completely useless, and without a knowable question
+you cannot tell those apart. Every prompt also said plainly that "I don't know"
+was an acceptable answer, because the question is whether a model takes that
+option when offered — not whether it can be tricked into it.
+
+## Nobody made anything up
+
+<BarChart
+  title="Responses that refused, by question type"
+  description="Five repetitions per question per model, temperature 0. 100 unknowable responses, 60 knowable."
+  data={[
+    { model: "gemma2:2b", unknowable: 100, knowable: 100 },
+    { model: "qwen2.5:3b", unknowable: 100, knowable: 100 },
+    { model: "llama3.2:3b", unknowable: 100, knowable: 67 },
+    { model: "phi3.5:3.8b", unknowable: 100, knowable: 67 }
+  ]}
+  xKey="model"
+  series={[
+    { key: "unknowable", label: "Refused — unknowable (correct)" },
+    { key: "knowable", label: "Refused — knowable (wrong)" }
+  ]}
+  unit="%"
+/>
+
+On the unknowable questions the result is unanimous and, to me, genuinely
+surprising: **100 out of 100 refused, and not one produced a price.** Nobody
+guessed at the iPhone 18 Pro. Nobody invented a number for the iPhone 19 Ultra,
+a product I made up.
+
+The refusals were mostly well-formed. llama3.2:3b: *"I don't have information on
+the iPhone 18 Pro, as my training data only goes up to 2023, and I couldn't find
+any information on an iPhone model with that name."* That is the right answer.
+
+So the headline everyone expects from a test like this — small models
+hallucinate confidently — did not appear. On the thing they could not know,
+all four behaved.
+
+## Then I asked about 2023
+
+<ComparisonTable
+  headers={["Model", "iPhone 15 Pro ($999, 2023)", "iPhone 14 ($799, 2022)", "Original iPhone ($499, 2007)"]}
+  rows={[
+    ["gemma2:2b", "0 of 5", "0 of 5", "0 of 5"],
+    ["qwen2.5:3b", "0 of 5", "0 of 5", "0 of 5"],
+    ["llama3.2:3b", "0 of 5", "0 of 5", "5 of 5 ✓"],
+    ["phi3.5:3.8b", "0 of 5", "0 of 5", "5 of 5 ✓"]
+  ]}
+/>
+
+**Not one model, in twenty attempts, could state the iPhone 15 Pro's launch
+price.** It is $999. It has been $999 since September 2023. llama3.2:3b refused
+it while claiming, in the same run, that its training data runs to 2023.
+
+The iPhone 14 went the same way: zero of twenty. Only the 2007 iPhone got an
+answer, and only from two of the four models, both of which got it exactly
+right — $499 for the 4GB, $599 for the 8GB.
+
+gemma2:2b is the extreme case. It answered all forty of its prompts with a
+variant of the same sentence: *"I do not have access to real-time information."*
+Including for the original iPhone, where it explained that it lacks *"pricing
+details from 2007"* — a phrasing that describes a nineteen-year-old press
+release as though it were a live stock quote.
+
+Set the two halves side by side and the shape of the failure is clear.
+
+<InfoBox type="info" title="The whole result in two numbers">
+Across all 160 generations, **every number any model produced was correct** —
+zero wrong prices, zero invented ones. And only **ten** of those 160 responses
+contained a number at all.
+</InfoBox>
+
+These models are not reckless. They are so cautious they cannot answer a
+question a search box settles in one second, and that is its own kind of
+failure. A tool that is right whenever it speaks and almost never speaks has
+moved the cost onto you: you still have to go and look it up.
+
+## The cutoff a model reports is generated text
+
+The second finding was not one I set out to measure. It fell out of reading the
+refusals, which is usually where the real result is.
+
+llama3.2:3b volunteers its training cutoff when it declines. It does not
+volunteer the same one twice.
+
+<ComparisonTable
+  headers={["Question asked", "Cutoff the model stated", "Across 5 reps"]}
+  rows={[
+    ["iPhone 18 Pro price", "2023", "Identical all 5"],
+    ["iPhone 18 Pro Max price", "2022", "Identical all 5"],
+    ["iPhone 18 Pro storage", "2021", "Identical all 5"],
+    ["iPhone 15 Pro price", "2023", "Identical all 5"]
+  ]}
+/>
+
+Three different years, from one model, in one run, at temperature 0.
+
+The important detail is the right-hand column. Within any single question the
+answer never wavered — five identical runs every time. It is not sampling
+noise, and turning the temperature down further would not fix it. The stated
+cutoff is a function of the question, reproducibly.
+
+That makes sense once you stop thinking of it as a lookup. A model has no
+privileged access to facts about its own training; the date is produced the
+same way every other token is. phi3.5:3.8b and qwen2.5:3b happened to say 2021
+consistently. gemma2:2b never named a year at all.
+
+<InfoBox type="warning" title="If you have ever asked a model what it knows up to">
+The answer you got was generated, not retrieved. On this evidence it can change
+with the phrasing of your question while looking equally confident each time.
+Check the model card, which is a document a human wrote, rather than asking the
+model about itself.
+</InfoBox>
+
+## What this means if you run one of these
+
+The practical read is narrower than "local AI is bad", and more useful.
+
+For **anything current** — a price, a rate, a limit, a number that moved this
+year — these models were uniformly unwilling to help, which is the correct
+behaviour and also means they are the wrong tool. That is what the refusals get
+right.
+
+For **settled facts**, they were unwilling too, and that is the part worth
+knowing before you rely on one. Three of the four could not produce a phone
+price from 2023. If your mental model is "it knows everything up to its cutoff
+and nothing after", this test says otherwise: the boundary is much fuzzier and
+much more conservative than the cutoff date implies.
+
+For **arithmetic you supply the inputs to**, that is a different question, and
+one [I measured separately](/posts/ai-tax-brackets-more-context-worse-2026) —
+where three of four models scored zero on progressive tax calculations. Recall
+and computation fail differently, and this post only tests recall.
+
+<DatasetSignup
+  dataset="the recall-refusal results"
+  cadence="as new local models are released"
+  dataFile="recency.csv"
+/>
+
+## What I can and cannot claim
+
+**I can claim** that on these eight questions, these four models, at these
+quantisations, on this machine: no confabulated prices in 100 unknowable
+responses, no correct answer to the iPhone 15 Pro or iPhone 14 price in 40
+attempts, and three distinct self-reported cutoffs from llama3.2:3b.
+
+**I cannot claim** this generalises to larger models. Everything here is a
+2–4B model at Q4_K_M, which is what fits in 4GB of VRAM. A 70B model may
+behave completely differently, and this hardware cannot test that.
+
+**I cannot claim** these models "don't know" the iPhone 15 Pro price. Refusing
+to answer and lacking the information are different states, and this test
+cannot separate them. What I measured is what the model *does*, which is what
+you actually experience.
+
+**One honest wrinkle.** My first scoring pass read gemma2:2b as refusing 0% and
+answering 0% — a contradiction, since those cannot both be true. The refusal
+vocabulary was missing "I do not have access to real-time information", the
+exact phrasing gemma2 uses for everything. Reading the raw text caught it, the
+vocabulary was corrected, and all 160 rows were re-scored from stored output
+without re-running the models. The same class of error [invalidated an earlier
+experiment on this site](/posts/ai-advice-benchmark-that-failed-2026), which is
+why the raw generations are published alongside the summary — so anyone can
+re-score them against a different vocabulary and check.
+
+**And a prediction I got wrong.** I built this expecting confabulated iPhone
+prices, and pre-registered nothing, so I am reporting an inverted result rather
+than a confirmed one. The refusal finding is real; my hypothesis was not.
+
+## Methodology
+
+**Models.** `gemma2:2b`, `llama3.2:3b`, `qwen2.5:3b`, `phi3.5:3.8b`, all at
+Q4_K_M — what `ollama pull` gives by default. Run on a GTX 1650 Ti with 4GB of
+VRAM, one model resident at a time. Median throughput 28–50 tokens/second.
+
+**Determinism.** `temperature 0`, explicit seed, explicit `num_ctx`. Each
+prompt runs five times because a single sample cannot distinguish a stable
+answer from a lucky one. The first generation after each model loads is
+discarded as a warm-up, which is documented Ollama behaviour.
+
+**Ground truth.** The three control prices were read from Apple's own newsroom
+releases on 10 September 2026, not recalled: [iPhone 15 Pro at
+$999](https://www.apple.com/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/),
+[iPhone 14 at
+$799](https://www.apple.com/newsroom/2022/09/apple-introduces-iphone-14-and-iphone-14-plus/),
+[original iPhone at $499 and
+$599](https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/).
+The 2026 prices come from Apple's September 9 event, written up in [the
+companion post](/posts/apple-event-september-2026-money-breakdown).
+
+**Scoring.** Objective string properties only — no model judges another. A
+response counts as a refusal when it contains a refusal marker *and* names no
+figure, so "I can't know, but it's probably $1,099" scores as a confabulation
+rather than an abstention. Prices are extracted by regular expression and
+compared to the verified figure.
+
+**Reproducibility.** The experiment is `research/experiments/recency.py`, run
+with `python run.py run --experiment recency --reps 5`. All 160 raw generations
+are published as `recency-raw.jsonl` and the aggregate as `recency.csv`.
+
+**Disclosure.** Every figure in this post is computed by the script above from
+generations recorded on my own machine; the analysis and conclusions are mine.
+The commentary was drafted with AI assistance. No language model produced any
+figure in this post, and no model output is published here as prose except
+where it is quoted as data.
+
+<InfoBox type="warning" title="Scope">
+This is a measurement of four small local models on eight questions, not a
+general claim about AI systems. Hosted models with live search will behave
+completely differently, and that is the point — these run offline on a laptop.
+Educational information, not investment advice.
+</InfoBox>
+
+<Sources items={[
+  { title: "All 160 raw generations (JSONL)", url: "/data/recency-raw.jsonl", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Aggregate results (CSV)", url: "/data/recency.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Apple unveils iPhone 15 Pro and iPhone 15 Pro Max", url: "https://www.apple.com/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/", publisher: "Apple Newsroom", date: "2023" },
+  { title: "Apple introduces iPhone 14 and iPhone 14 Plus", url: "https://www.apple.com/newsroom/2022/09/apple-introduces-iphone-14-and-iphone-14-plus/", publisher: "Apple Newsroom", date: "2022" },
+  { title: "Apple Reinvents the Phone with iPhone", url: "https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/", publisher: "Apple Newsroom", date: "2007" },
+  { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" }
+]} />
