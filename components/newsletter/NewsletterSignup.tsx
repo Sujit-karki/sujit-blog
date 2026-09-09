@@ -1,11 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 interface NewsletterSignupProps {
   variant?: "inline" | "footer";
+}
+
+// GA4 is loaded only when NEXT_PUBLIC_GA_ID is set (see app/layout.tsx), so the
+// same guard applies here. Without it sendGAEvent logs "GA has not been
+// initialized" to the console on every local signup — a warning that trains you
+// to ignore console output, which is where the real failures show up.
+function trackSignup(variant: NewsletterSignupProps["variant"]) {
+  if (!process.env.NEXT_PUBLIC_GA_ID) return;
+  // gtag argument form: ('event', <name>, <params>). The event name is what
+  // appears verbatim in Reports -> Engagement -> Events, and is what gets
+  // marked as a key event in Admin -> Events.
+  sendGAEvent("event", "newsletter_signup", { variant });
 }
 
 export default function NewsletterSignup({ variant = "inline" }: NewsletterSignupProps) {
@@ -27,6 +40,11 @@ export default function NewsletterSignup({ variant = "inline" }: NewsletterSignu
       const data = await res.json();
       if (data.ok) {
         setStatus("success");
+        // Only a genuinely new subscriber counts. The API deliberately reports
+        // an existing subscriber as ok:true so the reader isn't scolded for
+        // re-submitting, but counting that as a signup would inflate the key
+        // event every time someone forgets they already joined.
+        if (!data.alreadySubscribed) trackSignup(variant);
       } else {
         setStatus("error");
         setError(data.error ?? "Something went wrong.");
