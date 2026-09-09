@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/generate-post-registry.mjs && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -25,13 +25,14 @@
     "hiring:seasonal": "node scripts/seasonal-retail-hiring.mjs",
     "debt:credit-card": "node scripts/credit-card-real-terms.mjs",
     "audit:links": "node scripts/check-sources.mjs",
-    "prebuild": "node scripts/publish-data.mjs",
+    "prebuild": "node scripts/publish-data.mjs && node scripts/generate-post-registry.mjs",
     "publish:data": "node scripts/publish-data.mjs",
     "seo:indexnow": "node scripts/indexnow.mjs",
     "size": "size-limit",
     "lhci": "lhci autorun",
     "test:visual": "playwright test e2e/visual.spec.ts",
-    "em:dollar": "node scripts/em-dollar-cycle.mjs"
+    "em:dollar": "node scripts/em-dollar-cycle.mjs",
+    "gen:posts": "node scripts/generate-post-registry.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

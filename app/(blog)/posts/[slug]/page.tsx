@@ -11,6 +11,7 @@ import {
   tagHasPage,
 } from "@/lib/posts";
 import { siteConfig, slugifyCategory, authorSameAs } from "@/lib/site-config";
+import { postModules } from "@/content/posts-registry";
 import Breadcrumb, { buildBreadcrumbJsonLd } from "@/components/Breadcrumb";
 import { buildDatasetJsonLd } from "@/lib/datasets-config";
 import AuthorBio from "@/components/AuthorBio";
@@ -71,7 +72,14 @@ export default async function PostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const { default: PostContent } = await import(`@/content/posts/${slug}.mdx`);
+  // Looked up in the statically-listed registry rather than built from the
+  // slug here. A template-literal import is invisible to the bundler, so the
+  // client components inside the MDX had no registered client reference and
+  // Next 16's `instant` validation failed in dev on every post. See
+  // scripts/generate-post-registry.mjs.
+  const loadPost = postModules[slug];
+  if (!loadPost) notFound();
+  const { default: PostContent } = await loadPost();
   const related = getRelatedPosts(slug, post.category);
 
   const breadcrumbItems = [
