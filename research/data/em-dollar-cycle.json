@@ -1,0 +1,2139 @@
+{
+  "generatedAt": "2026-09-09T03:27:12.773Z",
+  "source": {
+    "em": {
+      "publisher": "Yahoo Finance (iShares underlying)",
+      "ticker": "EEM",
+      "basis": "adjusted close, monthly, dividends reinvested"
+    },
+    "dollar": {
+      "publisher": "Federal Reserve via FRED",
+      "series": "DTWEXBGS",
+      "name": "Nominal Broad U.S. Dollar Index",
+      "basis": "daily, averaged to monthly"
+    }
+  },
+  "coverage": {
+    "firstMonth": "2006-02",
+    "lastMonth": "2026-09",
+    "months": 248,
+    "skippedForGaps": 1
+  },
+  "fullPeriodCorrelation": -0.1599,
+  "rSquared": 0.0256,
+  "rollingWindowMonths": 36,
+  "rollingCorrelation": {
+    "min": -0.4622,
+    "max": 0.1129,
+    "mean": -0.1788,
+    "windowsNegative": 177,
+    "windowsTotal": 213,
+    "series": [
+      {
+        "month": "2009-01",
+        "correlation": -0.2538
+      },
+      {
+        "month": "2009-02",
+        "correlation": -0.272
+      },
+      {
+        "month": "2009-03",
+        "correlation": -0.1614
+      },
+      {
+        "month": "2009-04",
+        "correlation": -0.1862
+      },
+      {
+        "month": "2009-05",
+        "correlation": -0.2889
+      },
+      {
+        "month": "2009-06",
+        "correlation": -0.2933
+      },
+      {
+        "month": "2009-07",
+        "correlation": -0.3185
+      },
+      {
+        "month": "2009-08",
+        "correlation": -0.3205
+      },
+      {
+        "month": "2009-09",
+        "correlation": -0.3433
+      },
+      {
+        "month": "2009-10",
+        "correlation": -0.342
+      },
+      {
+        "month": "2009-11",
+        "correlation": -0.3578
+      },
+      {
+        "month": "2009-12",
+        "correlation": -0.3537
+      },
+      {
+        "month": "2010-01",
+        "correlation": -0.3506
+      },
+      {
+        "month": "2010-02",
+        "correlation": -0.3047
+      },
+      {
+        "month": "2010-03",
+        "correlation": -0.1064
+      },
+      {
+        "month": "2010-04",
+        "correlation": -0.1044
+      },
+      {
+        "month": "2010-05",
+        "correlation": -0.0934
+      },
+      {
+        "month": "2010-06",
+        "correlation": -0.0956
+      },
+      {
+        "month": "2010-07",
+        "correlation": -0.1191
+      },
+      {
+        "month": "2010-08",
+        "correlation": -0.1238
+      },
+      {
+        "month": "2010-09",
+        "correlation": -0.1407
+      },
+      {
+        "month": "2010-10",
+        "correlation": -0.1361
+      },
+      {
+        "month": "2010-11",
+        "correlation": -0.1363
+      },
+      {
+        "month": "2010-12",
+        "correlation": -0.1316
+      },
+      {
+        "month": "2011-01",
+        "correlation": -0.1408
+      },
+      {
+        "month": "2011-02",
+        "correlation": -0.14
+      },
+      {
+        "month": "2011-03",
+        "correlation": -0.1346
+      },
+      {
+        "month": "2011-04",
+        "correlation": -0.1355
+      },
+      {
+        "month": "2011-05",
+        "correlation": -0.1282
+      },
+      {
+        "month": "2011-06",
+        "correlation": -0.1321
+      },
+      {
+        "month": "2011-07",
+        "correlation": -0.1302
+      },
+      {
+        "month": "2011-08",
+        "correlation": -0.1426
+      },
+      {
+        "month": "2011-09",
+        "correlation": -0.1142
+      },
+      {
+        "month": "2011-10",
+        "correlation": -0.037
+      },
+      {
+        "month": "2011-11",
+        "correlation": -0.0167
+      },
+      {
+        "month": "2011-12",
+        "correlation": -0.0297
+      },
+      {
+        "month": "2012-01",
+        "correlation": -0.1195
+      },
+      {
+        "month": "2012-02",
+        "correlation": -0.0692
+      },
+      {
+        "month": "2012-03",
+        "correlation": -0.1303
+      },
+      {
+        "month": "2012-04",
+        "correlation": -0.1187
+      },
+      {
+        "month": "2012-05",
+        "correlation": -0.0442
+      },
+      {
+        "month": "2012-06",
+        "correlation": -0.025
+      },
+      {
+        "month": "2012-07",
+        "correlation": 0.0041
+      },
+      {
+        "month": "2012-08",
+        "correlation": 0.0068
+      },
+      {
+        "month": "2012-09",
+        "correlation": 0.0186
+      },
+      {
+        "month": "2012-10",
+        "correlation": 0.0199
+      },
+      {
+        "month": "2012-11",
+        "correlation": 0.0468
+      },
+      {
+        "month": "2012-12",
+        "correlation": 0.0576
+      },
+      {
+        "month": "2013-01",
+        "correlation": 0.0563
+      },
+      {
+        "month": "2013-02",
+        "correlation": 0.0626
+      },
+      {
+        "month": "2013-03",
+        "correlation": -0.1325
+      },
+      {
+        "month": "2013-04",
+        "correlation": -0.1274
+      },
+      {
+        "month": "2013-05",
+        "correlation": -0.1268
+      },
+      {
+        "month": "2013-06",
+        "correlation": -0.1454
+      },
+      {
+        "month": "2013-07",
+        "correlation": -0.0916
+      },
+      {
+        "month": "2013-08",
+        "correlation": -0.0901
+      },
+      {
+        "month": "2013-09",
+        "correlation": -0.0635
+      },
+      {
+        "month": "2013-10",
+        "correlation": -0.0576
+      },
+      {
+        "month": "2013-11",
+        "correlation": -0.0697
+      },
+      {
+        "month": "2013-12",
+        "correlation": -0.0792
+      },
+      {
+        "month": "2014-01",
+        "correlation": -0.0779
+      },
+      {
+        "month": "2014-02",
+        "correlation": -0.0987
+      },
+      {
+        "month": "2014-03",
+        "correlation": -0.1004
+      },
+      {
+        "month": "2014-04",
+        "correlation": -0.081
+      },
+      {
+        "month": "2014-05",
+        "correlation": -0.1088
+      },
+      {
+        "month": "2014-06",
+        "correlation": -0.0942
+      },
+      {
+        "month": "2014-07",
+        "correlation": -0.1068
+      },
+      {
+        "month": "2014-08",
+        "correlation": -0.0473
+      },
+      {
+        "month": "2014-09",
+        "correlation": -0.0587
+      },
+      {
+        "month": "2014-10",
+        "correlation": -0.0753
+      },
+      {
+        "month": "2014-11",
+        "correlation": -0.0764
+      },
+      {
+        "month": "2014-12",
+        "correlation": -0.0626
+      },
+      {
+        "month": "2015-01",
+        "correlation": 0.0169
+      },
+      {
+        "month": "2015-02",
+        "correlation": -0.0018
+      },
+      {
+        "month": "2015-03",
+        "correlation": 0.0045
+      },
+      {
+        "month": "2015-04",
+        "correlation": 0.0338
+      },
+      {
+        "month": "2015-05",
+        "correlation": 0.0263
+      },
+      {
+        "month": "2015-06",
+        "correlation": -0.0392
+      },
+      {
+        "month": "2015-07",
+        "correlation": -0.0105
+      },
+      {
+        "month": "2015-08",
+        "correlation": -0.0802
+      },
+      {
+        "month": "2015-09",
+        "correlation": -0.0098
+      },
+      {
+        "month": "2015-10",
+        "correlation": -0.0275
+      },
+      {
+        "month": "2015-11",
+        "correlation": -0.0251
+      },
+      {
+        "month": "2015-12",
+        "correlation": -0.091
+      },
+      {
+        "month": "2016-01",
+        "correlation": 0.0267
+      },
+      {
+        "month": "2016-02",
+        "correlation": 0.0265
+      },
+      {
+        "month": "2016-03",
+        "correlation": 0.046
+      },
+      {
+        "month": "2016-04",
+        "correlation": 0.0395
+      },
+      {
+        "month": "2016-05",
+        "correlation": 0.0344
+      },
+      {
+        "month": "2016-06",
+        "correlation": 0.074
+      },
+      {
+        "month": "2016-07",
+        "correlation": 0.0561
+      },
+      {
+        "month": "2016-08",
+        "correlation": 0.067
+      },
+      {
+        "month": "2016-09",
+        "correlation": 0.0958
+      },
+      {
+        "month": "2016-10",
+        "correlation": 0.102
+      },
+      {
+        "month": "2016-11",
+        "correlation": 0.1129
+      },
+      {
+        "month": "2016-12",
+        "correlation": 0.1115
+      },
+      {
+        "month": "2017-01",
+        "correlation": 0.0535
+      },
+      {
+        "month": "2017-02",
+        "correlation": 0.0855
+      },
+      {
+        "month": "2017-03",
+        "correlation": 0.0808
+      },
+      {
+        "month": "2017-04",
+        "correlation": 0.0753
+      },
+      {
+        "month": "2017-05",
+        "correlation": 0.0761
+      },
+      {
+        "month": "2017-06",
+        "correlation": 0.0698
+      },
+      {
+        "month": "2017-07",
+        "correlation": 0.0389
+      },
+      {
+        "month": "2017-08",
+        "correlation": 0.0338
+      },
+      {
+        "month": "2017-09",
+        "correlation": 0.0103
+      },
+      {
+        "month": "2017-10",
+        "correlation": 0.0133
+      },
+      {
+        "month": "2017-11",
+        "correlation": 0.0083
+      },
+      {
+        "month": "2017-12",
+        "correlation": 0.0337
+      },
+      {
+        "month": "2018-01",
+        "correlation": -0.0107
+      },
+      {
+        "month": "2018-02",
+        "correlation": -0.0276
+      },
+      {
+        "month": "2018-03",
+        "correlation": -0.0113
+      },
+      {
+        "month": "2018-04",
+        "correlation": -0.0604
+      },
+      {
+        "month": "2018-05",
+        "correlation": -0.0805
+      },
+      {
+        "month": "2018-06",
+        "correlation": -0.0894
+      },
+      {
+        "month": "2018-07",
+        "correlation": -0.1225
+      },
+      {
+        "month": "2018-08",
+        "correlation": -0.097
+      },
+      {
+        "month": "2018-09",
+        "correlation": -0.1065
+      },
+      {
+        "month": "2018-10",
+        "correlation": -0.1044
+      },
+      {
+        "month": "2018-11",
+        "correlation": -0.1319
+      },
+      {
+        "month": "2018-12",
+        "correlation": -0.1032
+      },
+      {
+        "month": "2019-01",
+        "correlation": -0.2775
+      },
+      {
+        "month": "2019-02",
+        "correlation": -0.3064
+      },
+      {
+        "month": "2019-03",
+        "correlation": -0.3605
+      },
+      {
+        "month": "2019-04",
+        "correlation": -0.3622
+      },
+      {
+        "month": "2019-05",
+        "correlation": -0.3321
+      },
+      {
+        "month": "2019-06",
+        "correlation": -0.327
+      },
+      {
+        "month": "2019-07",
+        "correlation": -0.2825
+      },
+      {
+        "month": "2019-08",
+        "correlation": -0.3098
+      },
+      {
+        "month": "2019-09",
+        "correlation": -0.3063
+      },
+      {
+        "month": "2019-10",
+        "correlation": -0.3042
+      },
+      {
+        "month": "2019-11",
+        "correlation": -0.3163
+      },
+      {
+        "month": "2019-12",
+        "correlation": -0.3044
+      },
+      {
+        "month": "2020-01",
+        "correlation": -0.2431
+      },
+      {
+        "month": "2020-02",
+        "correlation": -0.2877
+      },
+      {
+        "month": "2020-03",
+        "correlation": -0.4127
+      },
+      {
+        "month": "2020-04",
+        "correlation": -0.3878
+      },
+      {
+        "month": "2020-05",
+        "correlation": -0.3887
+      },
+      {
+        "month": "2020-06",
+        "correlation": -0.3697
+      },
+      {
+        "month": "2020-07",
+        "correlation": -0.3742
+      },
+      {
+        "month": "2020-08",
+        "correlation": -0.3754
+      },
+      {
+        "month": "2020-09",
+        "correlation": -0.3716
+      },
+      {
+        "month": "2020-10",
+        "correlation": -0.38
+      },
+      {
+        "month": "2020-11",
+        "correlation": -0.4432
+      },
+      {
+        "month": "2020-12",
+        "correlation": -0.4234
+      },
+      {
+        "month": "2021-01",
+        "correlation": -0.4023
+      },
+      {
+        "month": "2021-02",
+        "correlation": -0.3664
+      },
+      {
+        "month": "2021-03",
+        "correlation": -0.3711
+      },
+      {
+        "month": "2021-04",
+        "correlation": -0.3581
+      },
+      {
+        "month": "2021-05",
+        "correlation": -0.3646
+      },
+      {
+        "month": "2021-06",
+        "correlation": -0.3395
+      },
+      {
+        "month": "2021-07",
+        "correlation": -0.2991
+      },
+      {
+        "month": "2021-08",
+        "correlation": -0.2757
+      },
+      {
+        "month": "2021-09",
+        "correlation": -0.2595
+      },
+      {
+        "month": "2021-10",
+        "correlation": -0.2598
+      },
+      {
+        "month": "2021-11",
+        "correlation": -0.2241
+      },
+      {
+        "month": "2021-12",
+        "correlation": -0.228
+      },
+      {
+        "month": "2022-01",
+        "correlation": -0.188
+      },
+      {
+        "month": "2022-02",
+        "correlation": -0.1766
+      },
+      {
+        "month": "2022-03",
+        "correlation": -0.2171
+      },
+      {
+        "month": "2022-04",
+        "correlation": -0.2167
+      },
+      {
+        "month": "2022-05",
+        "correlation": -0.256
+      },
+      {
+        "month": "2022-06",
+        "correlation": -0.2855
+      },
+      {
+        "month": "2022-07",
+        "correlation": -0.3064
+      },
+      {
+        "month": "2022-08",
+        "correlation": -0.2916
+      },
+      {
+        "month": "2022-09",
+        "correlation": -0.238
+      },
+      {
+        "month": "2022-10",
+        "correlation": -0.2398
+      },
+      {
+        "month": "2022-11",
+        "correlation": -0.318
+      },
+      {
+        "month": "2022-12",
+        "correlation": -0.3268
+      },
+      {
+        "month": "2023-01",
+        "correlation": -0.3745
+      },
+      {
+        "month": "2023-02",
+        "correlation": -0.3839
+      },
+      {
+        "month": "2023-03",
+        "correlation": -0.2688
+      },
+      {
+        "month": "2023-04",
+        "correlation": -0.2862
+      },
+      {
+        "month": "2023-05",
+        "correlation": -0.2603
+      },
+      {
+        "month": "2023-06",
+        "correlation": -0.284
+      },
+      {
+        "month": "2023-07",
+        "correlation": -0.2539
+      },
+      {
+        "month": "2023-08",
+        "correlation": -0.3012
+      },
+      {
+        "month": "2023-09",
+        "correlation": -0.296
+      },
+      {
+        "month": "2023-10",
+        "correlation": -0.2985
+      },
+      {
+        "month": "2023-11",
+        "correlation": -0.2556
+      },
+      {
+        "month": "2023-12",
+        "correlation": -0.2843
+      },
+      {
+        "month": "2024-01",
+        "correlation": -0.2368
+      },
+      {
+        "month": "2024-02",
+        "correlation": -0.2433
+      },
+      {
+        "month": "2024-03",
+        "correlation": -0.2251
+      },
+      {
+        "month": "2024-04",
+        "correlation": -0.2231
+      },
+      {
+        "month": "2024-05",
+        "correlation": -0.2241
+      },
+      {
+        "month": "2024-06",
+        "correlation": -0.2358
+      },
+      {
+        "month": "2024-07",
+        "correlation": -0.2745
+      },
+      {
+        "month": "2024-08",
+        "correlation": -0.2835
+      },
+      {
+        "month": "2024-09",
+        "correlation": -0.3509
+      },
+      {
+        "month": "2024-10",
+        "correlation": -0.3554
+      },
+      {
+        "month": "2024-11",
+        "correlation": -0.3682
+      },
+      {
+        "month": "2024-12",
+        "correlation": -0.3712
+      },
+      {
+        "month": "2025-01",
+        "correlation": -0.3807
+      },
+      {
+        "month": "2025-02",
+        "correlation": -0.3806
+      },
+      {
+        "month": "2025-03",
+        "correlation": -0.356
+      },
+      {
+        "month": "2025-04",
+        "correlation": -0.3581
+      },
+      {
+        "month": "2025-05",
+        "correlation": -0.3759
+      },
+      {
+        "month": "2025-06",
+        "correlation": -0.3879
+      },
+      {
+        "month": "2025-07",
+        "correlation": -0.3861
+      },
+      {
+        "month": "2025-08",
+        "correlation": -0.3592
+      },
+      {
+        "month": "2025-09",
+        "correlation": -0.4622
+      },
+      {
+        "month": "2025-10",
+        "correlation": -0.4557
+      },
+      {
+        "month": "2025-11",
+        "correlation": -0.3435
+      },
+      {
+        "month": "2025-12",
+        "correlation": -0.3153
+      },
+      {
+        "month": "2026-01",
+        "correlation": -0.2988
+      },
+      {
+        "month": "2026-02",
+        "correlation": -0.2091
+      },
+      {
+        "month": "2026-03",
+        "correlation": -0.3291
+      },
+      {
+        "month": "2026-04",
+        "correlation": -0.3188
+      },
+      {
+        "month": "2026-05",
+        "correlation": -0.3816
+      },
+      {
+        "month": "2026-06",
+        "correlation": -0.3832
+      },
+      {
+        "month": "2026-07",
+        "correlation": -0.3692
+      },
+      {
+        "month": "2026-08",
+        "correlation": -0.297
+      },
+      {
+        "month": "2026-09",
+        "correlation": -0.3341
+      }
+    ]
+  },
+  "byDollarDirection": {
+    "dollarDown": {
+      "months": 126,
+      "meanEmReturnPct": 1.562
+    },
+    "dollarUp": {
+      "months": 122,
+      "meanEmReturnPct": -0.314
+    }
+  },
+  "monthly": [
+    {
+      "month": "2006-02",
+      "emReturnPct": -3.85,
+      "dollarChangePct": 0.2112
+    },
+    {
+      "month": "2006-03",
+      "emReturnPct": 2.1672,
+      "dollarChangePct": 0.2165
+    },
+    {
+      "month": "2006-04",
+      "emReturnPct": 6.5151,
+      "dollarChangePct": -0.6817
+    },
+    {
+      "month": "2006-05",
+      "emReturnPct": -11.1427,
+      "dollarChangePct": -2.2374
+    },
+    {
+      "month": "2006-06",
+      "emReturnPct": 0.2134,
+      "dollarChangePct": 1.2111
+    },
+    {
+      "month": "2006-07",
+      "emReturnPct": 2.3429,
+      "dollarChangePct": -0.2574
+    },
+    {
+      "month": "2006-08",
+      "emReturnPct": 1.5817,
+      "dollarChangePct": -0.7364
+    },
+    {
+      "month": "2006-09",
+      "emReturnPct": -0.8707,
+      "dollarChangePct": 0.2739
+    },
+    {
+      "month": "2006-10",
+      "emReturnPct": 7.058,
+      "dollarChangePct": 0.3412
+    },
+    {
+      "month": "2006-11",
+      "emReturnPct": 5.9846,
+      "dollarChangePct": -0.8161
+    },
+    {
+      "month": "2006-12",
+      "emReturnPct": 5.4598,
+      "dollarChangePct": -0.7365
+    },
+    {
+      "month": "2007-01",
+      "emReturnPct": 0.1138,
+      "dollarChangePct": -3.3214
+    },
+    {
+      "month": "2007-02",
+      "emReturnPct": -3.2371,
+      "dollarChangePct": 4.1636
+    },
+    {
+      "month": "2007-03",
+      "emReturnPct": 5.3346,
+      "dollarChangePct": -0.4767
+    },
+    {
+      "month": "2007-04",
+      "emReturnPct": 3.7253,
+      "dollarChangePct": -1.422
+    },
+    {
+      "month": "2007-05",
+      "emReturnPct": 5.0645,
+      "dollarChangePct": -0.9512
+    },
+    {
+      "month": "2007-06",
+      "emReturnPct": 3.6784,
+      "dollarChangePct": -0.2931
+    },
+    {
+      "month": "2007-07",
+      "emReturnPct": 0.7141,
+      "dollarChangePct": -1.3119
+    },
+    {
+      "month": "2007-08",
+      "emReturnPct": 1.041,
+      "dollarChangePct": 0.5948
+    },
+    {
+      "month": "2007-09",
+      "emReturnPct": 11.5715,
+      "dollarChangePct": -1.4118
+    },
+    {
+      "month": "2007-10",
+      "emReturnPct": 11.8702,
+      "dollarChangePct": -2.203
+    },
+    {
+      "month": "2007-11",
+      "emReturnPct": -7.65,
+      "dollarChangePct": -1.4902
+    },
+    {
+      "month": "2007-12",
+      "emReturnPct": -1.4067,
+      "dollarChangePct": 1.069
+    },
+    {
+      "month": "2008-01",
+      "emReturnPct": -8.9222,
+      "dollarChangePct": -0.6753
+    },
+    {
+      "month": "2008-02",
+      "emReturnPct": 1.9943,
+      "dollarChangePct": -0.8431
+    },
+    {
+      "month": "2008-03",
+      "emReturnPct": -3.753,
+      "dollarChangePct": -2.0346
+    },
+    {
+      "month": "2008-04",
+      "emReturnPct": 9.1383,
+      "dollarChangePct": -0.3366
+    },
+    {
+      "month": "2008-05",
+      "emReturnPct": 3.1638,
+      "dollarChangePct": 0.32
+    },
+    {
+      "month": "2008-06",
+      "emReturnPct": -9.2695,
+      "dollarChangePct": 0.286
+    },
+    {
+      "month": "2008-07",
+      "emReturnPct": -5.504,
+      "dollarChangePct": -0.711
+    },
+    {
+      "month": "2008-08",
+      "emReturnPct": -6.3158,
+      "dollarChangePct": 2.8816
+    },
+    {
+      "month": "2008-09",
+      "emReturnPct": -14.6817,
+      "dollarChangePct": 2.6085
+    },
+    {
+      "month": "2008-10",
+      "emReturnPct": -25.578,
+      "dollarChangePct": 7.4233
+    },
+    {
+      "month": "2008-11",
+      "emReturnPct": -9.7523,
+      "dollarChangePct": 2.7812
+    },
+    {
+      "month": "2008-12",
+      "emReturnPct": 10.3336,
+      "dollarChangePct": -1.096
+    },
+    {
+      "month": "2009-01",
+      "emReturnPct": -9.2912,
+      "dollarChangePct": -13.0386
+    },
+    {
+      "month": "2009-02",
+      "emReturnPct": -6.2693,
+      "dollarChangePct": 12.8737
+    },
+    {
+      "month": "2009-03",
+      "emReturnPct": 16.863,
+      "dollarChangePct": 5.7395
+    },
+    {
+      "month": "2009-04",
+      "emReturnPct": 15.5583,
+      "dollarChangePct": -2.633
+    },
+    {
+      "month": "2009-05",
+      "emReturnPct": 15.94,
+      "dollarChangePct": -7.7541
+    },
+    {
+      "month": "2009-06",
+      "emReturnPct": -2.2495,
+      "dollarChangePct": 3.3755
+    },
+    {
+      "month": "2009-07",
+      "emReturnPct": 11.0145,
+      "dollarChangePct": -4.7283
+    },
+    {
+      "month": "2009-08",
+      "emReturnPct": -1.3136,
+      "dollarChangePct": 3.1384
+    },
+    {
+      "month": "2009-09",
+      "emReturnPct": 10.1954,
+      "dollarChangePct": -5.2628
+    },
+    {
+      "month": "2009-10",
+      "emReturnPct": -3.4438,
+      "dollarChangePct": -1.499
+    },
+    {
+      "month": "2009-11",
+      "emReturnPct": 7.852,
+      "dollarChangePct": -5.6882
+    },
+    {
+      "month": "2009-12",
+      "emReturnPct": 3.2758,
+      "dollarChangePct": 1.4199
+    },
+    {
+      "month": "2010-01",
+      "emReturnPct": -7.759,
+      "dollarChangePct": -0.7119
+    },
+    {
+      "month": "2010-02",
+      "emReturnPct": 1.7764,
+      "dollarChangePct": -15.8082
+    },
+    {
+      "month": "2010-03",
+      "emReturnPct": 8.1109,
+      "dollarChangePct": 32.287
+    },
+    {
+      "month": "2010-04",
+      "emReturnPct": -0.1662,
+      "dollarChangePct": -0.5484
+    },
+    {
+      "month": "2010-05",
+      "emReturnPct": -9.3936,
+      "dollarChangePct": -1.7892
+    },
+    {
+      "month": "2010-06",
+      "emReturnPct": -1.3986,
+      "dollarChangePct": 5.5825
+    },
+    {
+      "month": "2010-07",
+      "emReturnPct": 10.9325,
+      "dollarChangePct": -6.1413
+    },
+    {
+      "month": "2010-08",
+      "emReturnPct": -3.2367,
+      "dollarChangePct": 3.9052
+    },
+    {
+      "month": "2010-09",
+      "emReturnPct": 11.7573,
+      "dollarChangePct": -5.4825
+    },
+    {
+      "month": "2010-10",
+      "emReturnPct": 3.0154,
+      "dollarChangePct": -2.9517
+    },
+    {
+      "month": "2010-11",
+      "emReturnPct": -2.9055,
+      "dollarChangePct": -4.2488
+    },
+    {
+      "month": "2010-12",
+      "emReturnPct": 7.2778,
+      "dollarChangePct": 1.1826
+    },
+    {
+      "month": "2011-01",
+      "emReturnPct": -3.8413,
+      "dollarChangePct": 3.0818
+    },
+    {
+      "month": "2011-02",
+      "emReturnPct": -0.0437,
+      "dollarChangePct": -1.041
+    },
+    {
+      "month": "2011-03",
+      "emReturnPct": 6.2896,
+      "dollarChangePct": 4.1923
+    },
+    {
+      "month": "2011-04",
+      "emReturnPct": 2.7327,
+      "dollarChangePct": -1.7696
+    },
+    {
+      "month": "2011-05",
+      "emReturnPct": -2.94,
+      "dollarChangePct": -4.518
+    },
+    {
+      "month": "2011-06",
+      "emReturnPct": -0.9355,
+      "dollarChangePct": 4.7557
+    },
+    {
+      "month": "2011-07",
+      "emReturnPct": -1.0294,
+      "dollarChangePct": -5.4449
+    },
+    {
+      "month": "2011-08",
+      "emReturnPct": -9.255,
+      "dollarChangePct": 5.7061
+    },
+    {
+      "month": "2011-09",
+      "emReturnPct": -17.8947,
+      "dollarChangePct": -1.4401
+    },
+    {
+      "month": "2011-10",
+      "emReturnPct": 16.2678,
+      "dollarChangePct": 0.7569
+    },
+    {
+      "month": "2011-11",
+      "emReturnPct": -1.9603,
+      "dollarChangePct": -3.8554
+    },
+    {
+      "month": "2011-12",
+      "emReturnPct": -4.2648,
+      "dollarChangePct": 6.0823
+    },
+    {
+      "month": "2012-01",
+      "emReturnPct": 10.991,
+      "dollarChangePct": -5.3396
+    },
+    {
+      "month": "2012-02",
+      "emReturnPct": 5.2719,
+      "dollarChangePct": 2.8349
+    },
+    {
+      "month": "2012-03",
+      "emReturnPct": -3.113,
+      "dollarChangePct": 5.6428
+    },
+    {
+      "month": "2012-04",
+      "emReturnPct": -1.6997,
+      "dollarChangePct": 0.3363
+    },
+    {
+      "month": "2012-05",
+      "emReturnPct": -10.7058,
+      "dollarChangePct": -2.5813
+    },
+    {
+      "month": "2012-06",
+      "emReturnPct": 5.0354,
+      "dollarChangePct": 6.1144
+    },
+    {
+      "month": "2012-07",
+      "emReturnPct": -0.0256,
+      "dollarChangePct": -5.0281
+    },
+    {
+      "month": "2012-08",
+      "emReturnPct": 0.409,
+      "dollarChangePct": 3.7773
+    },
+    {
+      "month": "2012-09",
+      "emReturnPct": 5.2189,
+      "dollarChangePct": -6.5894
+    },
+    {
+      "month": "2012-10",
+      "emReturnPct": -0.4355,
+      "dollarChangePct": -8.6917
+    },
+    {
+      "month": "2012-11",
+      "emReturnPct": 1.5553,
+      "dollarChangePct": 5.3731
+    },
+    {
+      "month": "2012-12",
+      "emReturnPct": 6.8036,
+      "dollarChangePct": 4.0808
+    },
+    {
+      "month": "2013-01",
+      "emReturnPct": -0.2931,
+      "dollarChangePct": -4.1883
+    },
+    {
+      "month": "2013-02",
+      "emReturnPct": -2.284,
+      "dollarChangePct": 4.8786
+    },
+    {
+      "month": "2013-03",
+      "emReturnPct": -1.0183,
+      "dollarChangePct": 1.1949
+    },
+    {
+      "month": "2013-04",
+      "emReturnPct": 1.2158,
+      "dollarChangePct": 4.5849
+    },
+    {
+      "month": "2013-05",
+      "emReturnPct": -4.8279,
+      "dollarChangePct": -3.8478
+    },
+    {
+      "month": "2013-06",
+      "emReturnPct": -5.3258,
+      "dollarChangePct": 5.3981
+    },
+    {
+      "month": "2013-07",
+      "emReturnPct": 1.3247,
+      "dollarChangePct": -3.7441
+    },
+    {
+      "month": "2013-08",
+      "emReturnPct": -2.5378,
+      "dollarChangePct": 4.37
+    },
+    {
+      "month": "2013-09",
+      "emReturnPct": 7.2067,
+      "dollarChangePct": -5.0102
+    },
+    {
+      "month": "2013-10",
+      "emReturnPct": 4.1707,
+      "dollarChangePct": -0.6089
+    },
+    {
+      "month": "2013-11",
+      "emReturnPct": -0.259,
+      "dollarChangePct": -4.5171
+    },
+    {
+      "month": "2013-12",
+      "emReturnPct": -0.4066,
+      "dollarChangePct": 0.651
+    },
+    {
+      "month": "2014-01",
+      "emReturnPct": -8.6364,
+      "dollarChangePct": 1.4342
+    },
+    {
+      "month": "2014-02",
+      "emReturnPct": 3.3778,
+      "dollarChangePct": -6.7265
+    },
+    {
+      "month": "2014-03",
+      "emReturnPct": 3.8754,
+      "dollarChangePct": 6.2123
+    },
+    {
+      "month": "2014-04",
+      "emReturnPct": 0.7803,
+      "dollarChangePct": 10.0052
+    },
+    {
+      "month": "2014-05",
+      "emReturnPct": 2.9519,
+      "dollarChangePct": -4.876
+    },
+    {
+      "month": "2014-06",
+      "emReturnPct": 2.4018,
+      "dollarChangePct": 4.9379
+    },
+    {
+      "month": "2014-07",
+      "emReturnPct": 1.3648,
+      "dollarChangePct": -4.5757
+    },
+    {
+      "month": "2014-08",
+      "emReturnPct": 2.8298,
+      "dollarChangePct": 5.6366
+    },
+    {
+      "month": "2014-09",
+      "emReturnPct": -7.7674,
+      "dollarChangePct": -2.9912
+    },
+    {
+      "month": "2014-10",
+      "emReturnPct": 1.4196,
+      "dollarChangePct": 1.5818
+    },
+    {
+      "month": "2014-11",
+      "emReturnPct": -1.5422,
+      "dollarChangePct": -4.2916
+    },
+    {
+      "month": "2014-12",
+      "emReturnPct": -3.9635,
+      "dollarChangePct": 3.8336
+    },
+    {
+      "month": "2015-01",
+      "emReturnPct": -0.6872,
+      "dollarChangePct": 1.8408
+    },
+    {
+      "month": "2015-02",
+      "emReturnPct": 4.408,
+      "dollarChangePct": 0.3432
+    },
+    {
+      "month": "2015-03",
+      "emReturnPct": -1.4973,
+      "dollarChangePct": 8.2754
+    },
+    {
+      "month": "2015-04",
+      "emReturnPct": 6.8528,
+      "dollarChangePct": 3.774
+    },
+    {
+      "month": "2015-05",
+      "emReturnPct": -4.1045,
+      "dollarChangePct": -5.6088
+    },
+    {
+      "month": "2015-06",
+      "emReturnPct": -2.9308,
+      "dollarChangePct": 5.7695
+    },
+    {
+      "month": "2015-07",
+      "emReturnPct": -6.3099,
+      "dollarChangePct": -2.596
+    },
+    {
+      "month": "2015-08",
+      "emReturnPct": -8.8362,
+      "dollarChangePct": 6.3373
+    },
+    {
+      "month": "2015-09",
+      "emReturnPct": -3.1324,
+      "dollarChangePct": -3.7864
+    },
+    {
+      "month": "2015-10",
+      "emReturnPct": 6.3758,
+      "dollarChangePct": -0.8549
+    },
+    {
+      "month": "2015-11",
+      "emReturnPct": -2.5237,
+      "dollarChangePct": -3.6734
+    },
+    {
+      "month": "2015-12",
+      "emReturnPct": -3.8198,
+      "dollarChangePct": 6.7565
+    },
+    {
+      "month": "2016-01",
+      "emReturnPct": -5.0326,
+      "dollarChangePct": -18.617
+    },
+    {
+      "month": "2016-02",
+      "emReturnPct": -0.8178,
+      "dollarChangePct": 23.9666
+    },
+    {
+      "month": "2016-03",
+      "emReturnPct": 12.9617,
+      "dollarChangePct": 2.8056
+    },
+    {
+      "month": "2016-04",
+      "emReturnPct": 0.4088,
+      "dollarChangePct": -1.6769
+    },
+    {
+      "month": "2016-05",
+      "emReturnPct": -3.6929,
+      "dollarChangePct": -3.5707
+    },
+    {
+      "month": "2016-06",
+      "emReturnPct": 4.5591,
+      "dollarChangePct": 5.157
+    },
+    {
+      "month": "2016-07",
+      "emReturnPct": 5.3842,
+      "dollarChangePct": -3.9785
+    },
+    {
+      "month": "2016-08",
+      "emReturnPct": 0.8837,
+      "dollarChangePct": 4.0301
+    },
+    {
+      "month": "2016-09",
+      "emReturnPct": 2.5185,
+      "dollarChangePct": -3.793
+    },
+    {
+      "month": "2016-10",
+      "emReturnPct": -0.8278,
+      "dollarChangePct": 0.8018
+    },
+    {
+      "month": "2016-11",
+      "emReturnPct": -4.4157,
+      "dollarChangePct": -2.3307
+    },
+    {
+      "month": "2016-12",
+      "emReturnPct": -0.2527,
+      "dollarChangePct": 6.6254
+    },
+    {
+      "month": "2017-01",
+      "emReturnPct": 6.6553,
+      "dollarChangePct": -9.6152
+    },
+    {
+      "month": "2017-02",
+      "emReturnPct": 1.7407,
+      "dollarChangePct": 8.4447
+    },
+    {
+      "month": "2017-03",
+      "emReturnPct": 3.6852,
+      "dollarChangePct": 4.8421
+    },
+    {
+      "month": "2017-04",
+      "emReturnPct": 1.7009,
+      "dollarChangePct": -0.7661
+    },
+    {
+      "month": "2017-05",
+      "emReturnPct": 2.8457,
+      "dollarChangePct": -4.7734
+    },
+    {
+      "month": "2017-06",
+      "emReturnPct": 0.9266,
+      "dollarChangePct": 3.174
+    },
+    {
+      "month": "2017-07",
+      "emReturnPct": 5.8227,
+      "dollarChangePct": -6.1975
+    },
+    {
+      "month": "2017-08",
+      "emReturnPct": 2.3516,
+      "dollarChangePct": 3.9083
+    },
+    {
+      "month": "2017-09",
+      "emReturnPct": -0.0446,
+      "dollarChangePct": -5.6732
+    },
+    {
+      "month": "2017-10",
+      "emReturnPct": 3.2805,
+      "dollarChangePct": 2.1009
+    },
+    {
+      "month": "2017-11",
+      "emReturnPct": -0.3889,
+      "dollarChangePct": -4.5263
+    },
+    {
+      "month": "2017-12",
+      "emReturnPct": 3.7615,
+      "dollarChangePct": 4.4908
+    },
+    {
+      "month": "2018-01",
+      "emReturnPct": 8.298,
+      "dollarChangePct": -6.3085
+    },
+    {
+      "month": "2018-02",
+      "emReturnPct": -5.8985,
+      "dollarChangePct": 3.369
+    },
+    {
+      "month": "2018-03",
+      "emReturnPct": 0.5414,
+      "dollarChangePct": -4.0421
+    },
+    {
+      "month": "2018-04",
+      "emReturnPct": -2.8169,
+      "dollarChangePct": 9.9961
+    },
+    {
+      "month": "2018-05",
+      "emReturnPct": -2.6215,
+      "dollarChangePct": -1.5975
+    },
+    {
+      "month": "2018-06",
+      "emReturnPct": -4.5457,
+      "dollarChangePct": 6.2376
+    },
+    {
+      "month": "2018-07",
+      "emReturnPct": 3.531,
+      "dollarChangePct": -4.3635
+    },
+    {
+      "month": "2018-08",
+      "emReturnPct": -3.7673,
+      "dollarChangePct": 5.4773
+    },
+    {
+      "month": "2018-09",
+      "emReturnPct": -0.5791,
+      "dollarChangePct": -4.7938
+    },
+    {
+      "month": "2018-10",
+      "emReturnPct": -8.7605,
+      "dollarChangePct": 1.3507
+    },
+    {
+      "month": "2018-11",
+      "emReturnPct": 4.903,
+      "dollarChangePct": -3.8514
+    },
+    {
+      "month": "2018-12",
+      "emReturnPct": -3.4889,
+      "dollarChangePct": -0.4396
+    },
+    {
+      "month": "2019-01",
+      "emReturnPct": 10.3431,
+      "dollarChangePct": -5.3534
+    },
+    {
+      "month": "2019-02",
+      "emReturnPct": -1.5313,
+      "dollarChangePct": 3.4733
+    },
+    {
+      "month": "2019-03",
+      "emReturnPct": 1.131,
+      "dollarChangePct": 11.4709
+    },
+    {
+      "month": "2019-04",
+      "emReturnPct": 2.3533,
+      "dollarChangePct": 0.1047
+    },
+    {
+      "month": "2019-05",
+      "emReturnPct": -7.3299,
+      "dollarChangePct": -3.4707
+    },
+    {
+      "month": "2019-06",
+      "emReturnPct": 6.2077,
+      "dollarChangePct": 4.0673
+    },
+    {
+      "month": "2019-07",
+      "emReturnPct": -2.6567,
+      "dollarChangePct": -4.6374
+    },
+    {
+      "month": "2019-08",
+      "emReturnPct": -3.7826,
+      "dollarChangePct": 6.3831
+    },
+    {
+      "month": "2019-09",
+      "emReturnPct": 1.692,
+      "dollarChangePct": -4.5801
+    },
+    {
+      "month": "2019-10",
+      "emReturnPct": 4.184,
+      "dollarChangePct": -0.0597
+    },
+    {
+      "month": "2019-11",
+      "emReturnPct": -0.0939,
+      "dollarChangePct": -5.5626
+    },
+    {
+      "month": "2019-12",
+      "emReturnPct": 7.7303,
+      "dollarChangePct": -0.0817
+    },
+    {
+      "month": "2020-01",
+      "emReturnPct": -6.1511,
+      "dollarChangePct": -0.1113
+    },
+    {
+      "month": "2020-02",
+      "emReturnPct": -3.7758,
+      "dollarChangePct": 5.3393
+    },
+    {
+      "month": "2020-03",
+      "emReturnPct": -15.77,
+      "dollarChangePct": 9.1524
+    },
+    {
+      "month": "2020-04",
+      "emReturnPct": 7.3542,
+      "dollarChangePct": 1.8654
+    },
+    {
+      "month": "2020-05",
+      "emReturnPct": 2.9749,
+      "dollarChangePct": -5.2759
+    },
+    {
+      "month": "2020-06",
+      "emReturnPct": 6.6049,
+      "dollarChangePct": 2.4837
+    },
+    {
+      "month": "2020-07",
+      "emReturnPct": 8.2521,
+      "dollarChangePct": -5.1363
+    },
+    {
+      "month": "2020-08",
+      "emReturnPct": 2.8875,
+      "dollarChangePct": 3.0087
+    },
+    {
+      "month": "2020-09",
+      "emReturnPct": -1.0103,
+      "dollarChangePct": -5.037
+    },
+    {
+      "month": "2020-10",
+      "emReturnPct": 1.4062,
+      "dollarChangePct": -0.4842
+    },
+    {
+      "month": "2020-11",
+      "emReturnPct": 8.9913,
+      "dollarChangePct": -11.5081
+    },
+    {
+      "month": "2020-12",
+      "emReturnPct": 7.1294,
+      "dollarChangePct": 4.4686
+    },
+    {
+      "month": "2021-01",
+      "emReturnPct": 3.174,
+      "dollarChangePct": -6.468
+    },
+    {
+      "month": "2021-02",
+      "emReturnPct": 0.7878,
+      "dollarChangePct": 11.36
+    },
+    {
+      "month": "2021-03",
+      "emReturnPct": -0.7259,
+      "dollarChangePct": 6.5032
+    },
+    {
+      "month": "2021-04",
+      "emReturnPct": 1.1998,
+      "dollarChangePct": -0.6215
+    },
+    {
+      "month": "2021-05",
+      "emReturnPct": 1.6488,
+      "dollarChangePct": -5.9626
+    },
+    {
+      "month": "2021-06",
+      "emReturnPct": 0.9504,
+      "dollarChangePct": 5.345
+    },
+    {
+      "month": "2021-07",
+      "emReturnPct": -6.437,
+      "dollarChangePct": -3.2745
+    },
+    {
+      "month": "2021-08",
+      "emReturnPct": 1.5698,
+      "dollarChangePct": 5.0762
+    },
+    {
+      "month": "2021-09",
+      "emReturnPct": -3.8733,
+      "dollarChangePct": -4.5108
+    },
+    {
+      "month": "2021-10",
+      "emReturnPct": 1.0718,
+      "dollarChangePct": 0.3183
+    },
+    {
+      "month": "2021-11",
+      "emReturnPct": -4.0848,
+      "dollarChangePct": -3.7703
+    },
+    {
+      "month": "2021-12",
+      "emReturnPct": 1.5071,
+      "dollarChangePct": 1.1464
+    },
+    {
+      "month": "2022-01",
+      "emReturnPct": -0.0205,
+      "dollarChangePct": 3.6173
+    },
+    {
+      "month": "2022-02",
+      "emReturnPct": -4.3202,
+      "dollarChangePct": -0.2843
+    },
+    {
+      "month": "2022-03",
+      "emReturnPct": -3.3811,
+      "dollarChangePct": 6.4468
+    },
+    {
+      "month": "2022-04",
+      "emReturnPct": -6.1351,
+      "dollarChangePct": 0.755
+    },
+    {
+      "month": "2022-05",
+      "emReturnPct": 0.6135,
+      "dollarChangePct": -2.4864
+    },
+    {
+      "month": "2022-06",
+      "emReturnPct": -5.1577,
+      "dollarChangePct": 0.2753
+    },
+    {
+      "month": "2022-07",
+      "emReturnPct": -0.3491,
+      "dollarChangePct": 2.0388
+    },
+    {
+      "month": "2022-08",
+      "emReturnPct": -1.3263,
+      "dollarChangePct": 4.6292
+    },
+    {
+      "month": "2022-09",
+      "emReturnPct": -11.5394,
+      "dollarChangePct": -1.9883
+    },
+    {
+      "month": "2022-10",
+      "emReturnPct": -1.9782,
+      "dollarChangePct": 1.2715
+    },
+    {
+      "month": "2022-11",
+      "emReturnPct": 15.5894,
+      "dollarChangePct": -6.5132
+    },
+    {
+      "month": "2022-12",
+      "emReturnPct": -2.6375,
+      "dollarChangePct": 2.798
+    },
+    {
+      "month": "2023-01",
+      "emReturnPct": 9.1293,
+      "dollarChangePct": -6.6508
+    },
+    {
+      "month": "2023-02",
+      "emReturnPct": -7.5677,
+      "dollarChangePct": 4.9346
+    },
+    {
+      "month": "2023-03",
+      "emReturnPct": 3.2174,
+      "dollarChangePct": 5.6452
+    },
+    {
+      "month": "2023-04",
+      "emReturnPct": -0.8363,
+      "dollarChangePct": -1.2422
+    },
+    {
+      "month": "2023-05",
+      "emReturnPct": -2.4023,
+      "dollarChangePct": -4.0397
+    },
+    {
+      "month": "2023-06",
+      "emReturnPct": 4.3989,
+      "dollarChangePct": -0.4838
+    },
+    {
+      "month": "2023-07",
+      "emReturnPct": 6.0414,
+      "dollarChangePct": -1.2703
+    },
+    {
+      "month": "2023-08",
+      "emReturnPct": -6.6269,
+      "dollarChangePct": 6.6074
+    },
+    {
+      "month": "2023-09",
+      "emReturnPct": -3.1146,
+      "dollarChangePct": -3.3402
+    },
+    {
+      "month": "2023-10",
+      "emReturnPct": -3.2938,
+      "dollarChangePct": 1.7529
+    },
+    {
+      "month": "2023-11",
+      "emReturnPct": 7.7929,
+      "dollarChangePct": -6.5164
+    },
+    {
+      "month": "2023-12",
+      "emReturnPct": 3.5653,
+      "dollarChangePct": 3.5615
+    },
+    {
+      "month": "2024-01",
+      "emReturnPct": -4.5263,
+      "dollarChangePct": -3.8151
+    },
+    {
+      "month": "2024-02",
+      "emReturnPct": 4.1678,
+      "dollarChangePct": 5.0359
+    },
+    {
+      "month": "2024-03",
+      "emReturnPct": 2.7257,
+      "dollarChangePct": 4.6469
+    },
+    {
+      "month": "2024-04",
+      "emReturnPct": -0.2191,
+      "dollarChangePct": 1.2299
+    },
+    {
+      "month": "2024-05",
+      "emReturnPct": 1.9517,
+      "dollarChangePct": -4.5706
+    },
+    {
+      "month": "2024-06",
+      "emReturnPct": 2.618,
+      "dollarChangePct": 0.8269
+    },
+    {
+      "month": "2024-07",
+      "emReturnPct": 0.8453,
+      "dollarChangePct": 0.4203
+    },
+    {
+      "month": "2024-08",
+      "emReturnPct": 0.9779,
+      "dollarChangePct": 3.8941
+    },
+    {
+      "month": "2024-09",
+      "emReturnPct": 5.7413,
+      "dollarChangePct": -5.3281
+    },
+    {
+      "month": "2024-10",
+      "emReturnPct": -3.0746,
+      "dollarChangePct": 1.8442
+    },
+    {
+      "month": "2024-11",
+      "emReturnPct": -2.6772,
+      "dollarChangePct": -3.3326
+    },
+    {
+      "month": "2024-12",
+      "emReturnPct": -1.6967,
+      "dollarChangePct": 6.5585
+    },
+    {
+      "month": "2025-01",
+      "emReturnPct": 2.1521,
+      "dollarChangePct": -3.4022
+    },
+    {
+      "month": "2025-02",
+      "emReturnPct": 1.147,
+      "dollarChangePct": 3.2714
+    },
+    {
+      "month": "2025-03",
+      "emReturnPct": 1.134,
+      "dollarChangePct": 3.9191
+    },
+    {
+      "month": "2025-04",
+      "emReturnPct": 0.1373,
+      "dollarChangePct": -1.6657
+    },
+    {
+      "month": "2025-05",
+      "emReturnPct": 4.0219,
+      "dollarChangePct": -5.928
+    },
+    {
+      "month": "2025-06",
+      "emReturnPct": 7.002,
+      "dollarChangePct": -1.6525
+    },
+    {
+      "month": "2025-07",
+      "emReturnPct": 0.6634,
+      "dollarChangePct": 0.034
+    },
+    {
+      "month": "2025-08",
+      "emReturnPct": 2.6771,
+      "dollarChangePct": 4.9486
+    },
+    {
+      "month": "2025-09",
+      "emReturnPct": 7.0999,
+      "dollarChangePct": -4.9783
+    },
+    {
+      "month": "2025-10",
+      "emReturnPct": 3.5581,
+      "dollarChangePct": 0.8188
+    },
+    {
+      "month": "2025-11",
+      "emReturnPct": -1.7722,
+      "dollarChangePct": -5.398
+    },
+    {
+      "month": "2025-12",
+      "emReturnPct": 2.1593,
+      "dollarChangePct": 5.2041
+    },
+    {
+      "month": "2026-01",
+      "emReturnPct": 8.0241,
+      "dollarChangePct": -5.7166
+    },
+    {
+      "month": "2026-02",
+      "emReturnPct": 5.8883,
+      "dollarChangePct": 3.3398
+    },
+    {
+      "month": "2026-03",
+      "emReturnPct": -9.2522,
+      "dollarChangePct": 7.0611
+    },
+    {
+      "month": "2026-04",
+      "emReturnPct": 12.6783,
+      "dollarChangePct": -0.7368
+    },
+    {
+      "month": "2026-05",
+      "emReturnPct": 7.2042,
+      "dollarChangePct": -4.9676
+    },
+    {
+      "month": "2026-06",
+      "emReturnPct": 0.2414,
+      "dollarChangePct": 1.3278
+    },
+    {
+      "month": "2026-07",
+      "emReturnPct": -6.3149,
+      "dollarChangePct": 0.6356
+    },
+    {
+      "month": "2026-08",
+      "emReturnPct": 4.5717,
+      "dollarChangePct": 3.032
+    },
+    {
+      "month": "2026-09",
+      "emReturnPct": 2.7007,
+      "dollarChangePct": -0.4245
+    }
+  ],
+  "spreadPoints": 1.876
+}

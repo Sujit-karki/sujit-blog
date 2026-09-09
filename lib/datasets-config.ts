@@ -256,6 +256,23 @@ const rawDatasets = {
     files: [{ name: "policy-length.json", encodingFormat: JSON_TYPE }],
   },
 
+  "emerging-market-opportunities-2026": {
+    name: "Emerging-market equity returns against the broad US dollar, 2006-2026",
+    description:
+      "Monthly total return for the iShares MSCI Emerging Markets ETF (EEM, adjusted close, dividends reinvested) paired with the monthly change in the Federal Reserve Nominal Broad U.S. Dollar Index (FRED series DTWEXBGS, daily observations averaged to the month), covering February 2006 through September 2026. Includes the full-period Pearson correlation, a rolling 36-month correlation series, and the mean EM return split by whether the dollar rose or fell that month. The pairing exists because the inverse dollar-EM relationship is asserted as mechanism throughout emerging-market commentary and almost never quantified: measured here it is real in direction but weak in strength, with the dollar tracking about 2.6 percent of the variance in monthly EM returns and rolling windows that turn positive in 36 of 213 three-year periods. The broad trade-weighted index is used in place of the more commonly quoted DXY, which is 58 percent euro by weight and therefore a poor instrument for a claim about emerging markets. Months are dropped rather than bridged where either series lacks the immediately preceding calendar month, so no gap is read as a one-month move.",
+    keywords: [
+      "emerging markets", "US dollar", "trade-weighted dollar", "EEM",
+      "correlation", "asset allocation", "FRED", "equities",
+    ],
+    temporalCoverage: "2006-02/2026-09",
+    variableMeasured: [
+      "Month", "EM monthly total return (%)", "Broad dollar index monthly change (%)",
+      "Rolling 36-month correlation", "Mean EM return by dollar direction",
+      "Full-period correlation", "R-squared",
+    ],
+    files: [{ name: "em-dollar-cycle.json", encodingFormat: JSON_TYPE }],
+  },
+
   "inflation-by-category-2026": {
     name: "US CPI component series by spending category",
     description:

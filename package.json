@@ -30,7 +30,8 @@
     "seo:indexnow": "node scripts/indexnow.mjs",
     "size": "size-limit",
     "lhci": "lhci autorun",
-    "test:visual": "playwright test e2e/visual.spec.ts"
+    "test:visual": "playwright test e2e/visual.spec.ts",
+    "em:dollar": "node scripts/em-dollar-cycle.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
