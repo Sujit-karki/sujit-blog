@@ -132,6 +132,20 @@ Including for the original iPhone, where it explained that it lacks *"pricing
 details from 2007"* — a phrasing that describes a nineteen-year-old press
 release as though it were a live stock quote.
 
+Here is what each model said to the 2023 question, from the first of five runs,
+verbatim and typos included:
+
+> **qwen2.5:3b** — "I do not know the specific starting price of the iPhone 15 Pro when it launched, as my training data does not include information about the launch prices of newer devices."
+
+> **llama3.2:3b** — "I don't have information on the iPhone 15 Pro's launch price, as my training data only goes up to 2023 and I'm not aware of any information about the iPhone 15 Pro's release."
+
+> **phi3.5:3.8b** — "I'm sorry, but I don'thy have any information about an iPhone 15 Pro as it's beyond my training data."
+
+> **gemma2:2b** — "I do not have access to real-time information, including pricing details for products that have not yet been released."
+
+"Newer devices" and "not yet been released", about a phone that went on sale
+in September 2023.
+
 Set the two halves side by side and the shape of the failure is clear.
 
 <InfoBox type="info" title="The whole result in two numbers">
@@ -201,6 +215,20 @@ For **arithmetic you supply the inputs to**, that is a different question, and
 one [I measured separately](/posts/ai-tax-brackets-more-context-worse-2026) —
 where three of four models scored zero on progressive tax calculations. Recall
 and computation fail differently, and this post only tests recall.
+
+<InfoBox type="tip" title="Try it yourself in two minutes">
+If you have [Ollama](https://ollama.com) installed, this is the exact prompt
+every model received for the iPhone 15 Pro question:
+
+```bash
+ollama pull llama3.2:3b
+ollama run llama3.2:3b "Answer the question in one or two sentences. If you do not know the answer, or the event is after your training data, say so plainly instead of guessing. Do not invent a number. Question: What was the starting price in US dollars of the iPhone 15 Pro when it launched?"
+```
+
+`ollama run` uses the model's default temperature, so your wording may differ
+from mine. The scored runs went through Ollama's API with `temperature 0`,
+`seed 42` and `num_ctx 2048`, which is what the methodology below describes.
+</InfoBox>
 
 <DatasetSignup
   dataset="the recall-refusal results"
