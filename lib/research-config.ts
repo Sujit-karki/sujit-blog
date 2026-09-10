@@ -16,7 +16,41 @@ export interface ResearchPost {
   /** Whether the underlying rows are published, not just the conclusions. */
   dataset: boolean;
   date: string;
+  /** Which body of work it belongs to. Groups the hub page. */
+  kind: ResearchKind;
+  /** The one figure a reader should leave with, copied from `finding` — never a new number. */
+  stat: { value: string; label: string };
 }
+
+export type ResearchKind = "ai" | "public-data" | "rules" | "documents";
+
+// Hub sections, in display order. A kind with no posts is skipped, so adding
+// one here before its first post ships is harmless.
+export const researchKinds: { id: ResearchKind; title: string; blurb: string }[] = [
+  {
+    id: "ai",
+    title: "Local AI benchmarks",
+    blurb:
+      "Open models run offline through Ollama on a laptop with a 4 GB GPU. Every answer is scored by script against hand-computed ground truth, never by another model.",
+  },
+  {
+    id: "public-data",
+    title: "Government and company data",
+    blurb:
+      "BLS, SEC XBRL, New York Fed and Social Security series pulled directly and run through each agency's own formula, instead of repeating the headline built on them.",
+  },
+  {
+    id: "rules",
+    title: "Money rules, computed",
+    blurb:
+      "Tax-code and loan rules simulated across every bracket, rate and horizon, instead of the single worked example most explainers stop at.",
+  },
+  {
+    id: "documents",
+    title: "Documents, measured",
+    blurb: "Policies and whitepapers fetched and scored with standard readability formulas.",
+  },
+];
 
 export const researchPosts: ResearchPost[] = [
   {
@@ -28,6 +62,8 @@ export const researchPosts: ResearchPost[] = [
       "160 generations across four local models: five questions unanswerable before 9 September 2026, three controls verified against Apple's own newsroom releases",
     dataset: true,
     date: "2026-09-10",
+    kind: "ai",
+    stat: { value: "0 of 20", label: "attempts named the iPhone 15 Pro's $999 launch price from 2023" },
   },
   {
     slug: "ai-sycophancy-money-math-2026",
@@ -38,6 +74,8 @@ export const researchPosts: ResearchPost[] = [
       "960 generations, each question asked bare, with a wrong figure present, and with that figure endorsed by the asker",
     dataset: true,
     date: "2026-09-09",
+    kind: "ai",
+    stat: { value: "42.3%", label: "correct once the asker claimed a wrong answer, from 46.9% bare" },
   },
   {
     slug: "platform-take-rate-trend-2026",
@@ -47,6 +85,8 @@ export const researchPosts: ResearchPost[] = [
     method: "SEC XBRL revenue over gross volume, fiscal year selected by matching the filing table header",
     dataset: true,
     date: "2026-09-08",
+    kind: "public-data",
+    stat: { value: "97.5%", label: "of Fiverr's take-rate rise came from services, not commission" },
   },
   {
     slug: "platform-take-rates-2026",
@@ -56,6 +96,8 @@ export const researchPosts: ResearchPost[] = [
     method: "SEC XBRL revenue over gross volume read from each 10-K, plus fees read by hand",
     dataset: true,
     date: "2026-09-08",
+    kind: "public-data",
+    stat: { value: "3.7×", label: "Etsy's realised take against its advertised seller fee" },
   },
   {
     slug: "ai-account-choice-names-2026",
@@ -65,6 +107,8 @@ export const researchPosts: ResearchPost[] = [
     method: "320 generations, each case asked twice in arithmetically identical framings",
     dataset: true,
     date: "2026-09-08",
+    kind: "ai",
+    stat: { value: "46.9%", label: "correct with the account names removed, against 40.0% with them" },
   },
   {
     slug: "budgeting-app-privacy-policy-length-2026",
@@ -74,6 +118,8 @@ export const researchPosts: ResearchPost[] = [
     method: "Fetched policies, word count and Flesch formulas",
     dataset: true,
     date: "2026-09-07",
+    kind: "documents",
+    stat: { value: "25,579", label: "words across four budgeting-app privacy policies" },
   },
   {
     slug: "crypto-whitepaper-readability-2026",
@@ -83,6 +129,8 @@ export const researchPosts: ResearchPost[] = [
     method: "Flesch formulas over thirteen fetched documents, five of which 404",
     dataset: true,
     date: "2026-09-07",
+    kind: "documents",
+    stat: { value: "7 of 8", label: "whitepapers harder to read than IRS Publication 17" },
   },
   {
     slug: "ai-advice-benchmark-that-failed-2026",
@@ -92,6 +140,8 @@ export const researchPosts: ResearchPost[] = [
     method: "240 generations, two failed metrics, published anyway",
     dataset: true,
     date: "2026-09-07",
+    kind: "ai",
+    stat: { value: "240", label: "generations scored by a metric that counted words, not meaning" },
   },
   {
     slug: "ai-tax-brackets-more-context-worse-2026",
@@ -101,6 +151,8 @@ export const researchPosts: ResearchPost[] = [
     method: "400 generations, ground truth computed from the bracket structure",
     dataset: true,
     date: "2026-09-07",
+    kind: "ai",
+    stat: { value: "3 of 4", label: "models scored zero across 100 tax calculations each" },
   },
   {
     slug: "credit-card-bnpl-debt-2026",
@@ -110,6 +162,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run debt:credit-card, NY Fed workbook parsed directly, CPI-deflated",
     dataset: true,
     date: "2026-09-09",
+    kind: "public-data",
+    stat: { value: "Q4 2008", label: "the real peak in card balances once CPI is applied" },
   },
   {
     slug: "seasonal-holiday-work-2026",
@@ -119,6 +173,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run hiring:seasonal, 87 seasons of BLS payroll data",
     dataset: true,
     date: "2026-09-09",
+    kind: "public-data",
+    stat: { value: "−89%", label: "warehouse seasonal hiring since its 2020 peak, against retail's −28%" },
   },
   {
     slug: "record-home-price-buy-or-rent-2026",
@@ -128,6 +184,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run compare:buy-rent, two households over 360 months",
     dataset: true,
     date: "2026-09-08",
+    kind: "rules",
+    stat: { value: "Never", label: "does buying at $440,600 break even inside 30 years at 6.55%" },
   },
   {
     slug: "the-20000-1099k-rule-is-back",
@@ -137,6 +195,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run threshold:1099k, from the rule's own structure",
     dataset: true,
     date: "2026-09-08",
+    kind: "rules",
+    stat: { value: "$402,000", label: "through a platform with no 1099-K, at a $2,000 average sale" },
   },
   {
     slug: "car-loan-interest-deduction-2026",
@@ -146,6 +206,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run deduction:car-loan, amortisation across 168 loan configurations",
     dataset: true,
     date: "2026-09-08",
+    kind: "rules",
+    stat: { value: "$152,447", label: "loan needed to use the full $10,000 interest cap" },
   },
   {
     slug: "roth-ira-vs-traditional-ira",
@@ -155,6 +217,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run compare:roth-limit, identity-checked against the classic result",
     dataset: true,
     date: "2026-09-08",
+    kind: "rules",
+    stat: { value: "Every rate", label: "Roth beats Traditional at every tax rate once compared at equal after-tax cost" },
   },
   {
     slug: "trump-account-vs-529",
@@ -164,6 +228,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run compare:trump-529, three vehicles across 128 parameter combinations",
     dataset: true,
     date: "2026-09-08",
+    kind: "rules",
+    stat: { value: "Every bracket", label: "Trump Account beats a 529 in every tax bracket, saving $1,000 a year for five years" },
   },
   {
     slug: "solo-401k-vs-sep-ira-2026",
@@ -173,6 +239,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run plans:self-employed, IRS Publication 560 worksheet",
     dataset: true,
     date: "2026-09-08",
+    kind: "rules",
+    stat: { value: "$124,162", label: "more profit a SEP needs to reach the Solo 401(k)'s ceiling" },
   },
   {
     slug: "insurance-affordability-crisis-2026",
@@ -182,6 +250,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run cpi:insurance, three BLS CPI series",
     dataset: true,
     date: "2026-09-08",
+    kind: "public-data",
+    stat: { value: "16.0%", label: "home insurance price rise in BLS CPI, not the quoted 46%" },
   },
   {
     slug: "inflation-by-category-2026",
@@ -191,6 +261,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run cpi:categories, twelve BLS series",
     dataset: false,
     date: "2026-09-07",
+    kind: "public-data",
+    stat: { value: "46×", label: "gap between the fastest and slowest CPI categories in one month" },
   },
   {
     slug: "local-ai-electricity-cost-2026",
@@ -200,6 +272,8 @@ export const researchPosts: ResearchPost[] = [
     method: "GPU power sampled at 4 Hz during generation",
     dataset: true,
     date: "2026-09-07",
+    kind: "ai",
+    stat: { value: "5–8¢", label: "per million tokens of local inference, from measured GPU draw" },
   },
   {
     slug: "local-ai-money-math-2026",
@@ -209,6 +283,8 @@ export const researchPosts: ResearchPost[] = [
     method: "320 generations, ten repetitions per question",
     dataset: true,
     date: "2026-09-01",
+    kind: "ai",
+    stat: { value: "12.5–75%", label: "accuracy range, and every model failed the tax and mortgage questions" },
   },
   {
     slug: "2027-tax-brackets-projected",
@@ -218,6 +294,8 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run project:brackets, live BLS data",
     dataset: false,
     date: "2026-08-13",
+    kind: "public-data",
+    stat: { value: "3.0%", label: "upper bound on the 2027 bracket adjustment from the chained-CPI formula" },
   },
   {
     slug: "social-security-cola-2027",
@@ -227,5 +305,7 @@ export const researchPosts: ResearchPost[] = [
     method: "npm run project:cola, back-tested against a known year",
     dataset: false,
     date: "2026-07-23",
+    kind: "public-data",
+    stat: { value: "3.1%", label: "2027 COLA from the SSA's own formula, below the 3.6–3.8% forecasts" },
   },
 ];

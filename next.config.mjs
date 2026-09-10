@@ -34,6 +34,17 @@ const nextConfig = {
         destination: "/posts/how-to-invest-first-1000",
         permanent: true,
       },
+      // A /posts/ link copied out of a sentence often keeps the punctuation that
+      // ended it ("…-2026." or "…-2026)"), and dynamicParams=false turns that
+      // into a 404 on a post that exists. Slugs are [a-z0-9-] only, so a trailing
+      // run of anything else is never part of one and can be dropped safely.
+      // Matching runs on the encoded path, so "|" arrives as %7C and a closing
+      // quote as %22: a percent-escape counts as one foreign character.
+      {
+        source: "/posts/:slug([a-z0-9-]+):trail((?:[^a-z0-9/%-]|%[0-9A-Fa-f]{2})+)",
+        destination: "/posts/:slug",
+        permanent: true,
+      },
     ];
   },
   async headers() {
