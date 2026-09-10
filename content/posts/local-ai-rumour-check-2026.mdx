@@ -1,0 +1,336 @@
+---
+title: "I Asked Four AI Models Which iPhone Rumours Came True. They Said None Did. Two Had."
+description: "Handed Apple's announcement, four local AI models read the right price 60 times out of 60 and never took a rumour's side. Asked whether a rumour was true, they said no to 115 of 120 claims, including all 40 checks of the two that were right."
+seoTitle: "Can a Local AI Tell If a Rumour Is True? A 420-Answer Test"
+seoDescription: "Four local AI models, real iPhone 18 rumours and Apple's own announcement. They read the source well, and called every claim false, including the true ones."
+date: "2026-09-10"
+category: "Personal Finance"
+tags: ["AI", "Local LLM", "Original Data", "Benchmark", "Apple", "Methodology"]
+author: "Sujit Karki"
+toc:
+  - { id: "the-rumours-and-what-apple-actually-said", title: "The rumours, and what Apple actually said", level: 2 }
+  - { id: "give-them-the-source-and-they-read-it", title: "Give them the source and they read it", level: 2 }
+  - { id: "the-rumour-never-won", title: "The rumour never won", level: 2 }
+  - { id: "then-i-asked-whether-the-rumour-was-true", title: "Then I asked whether the rumour was true", level: 2 }
+  - { id: "no-to-a-sum-they-had-just-done", title: "No, to a sum they had just done", level: 2 }
+  - { id: "what-this-means-if-you-use-one", title: "What this means if you use one", level: 2 }
+  - { id: "what-i-can-and-cannot-claim", title: "What I can and cannot claim", level: 2 }
+  - { id: "methodology", title: "Methodology", level: 2 }
+faq:
+  - q: "Can a local AI model tell whether a tech rumour was true?"
+    a: "Not on this evidence. Given a pre-event claim and Apple's announcement side by side, four small local models called 115 of 120 claims false. They were right about the false ones 75 times out of 80, but said no to all 40 checks of the two claims that were actually correct, so their no carries no information."
+  - q: "Will a local AI repeat a rumour as fact if I paste it in?"
+    a: "In this test, no. Given only a pre-event estimate, all four models repeated the figure in all 60 replies, and all 60 labelled it as an estimate or a report rather than the price. When Apple's announcement was also present, none of the 120 replies took the rumour's figure over Apple's."
+  - q: "Is a local AI model good for pulling a price out of a document?"
+    a: "Mostly. With Apple's press release in the prompt, all four models named the right price 60 times out of 60. With the rumour alongside, they managed 105 of 120. The misses were misreading which phone a figure in Apple's sentence belonged to, or declining to answer, never choosing the rumour."
+---
+
+<KeyTakeaways items={[
+  "Asked cold about Apple's 9 September 2026 lineup, four local AI models refused all 60 times. They cannot know a price announced after they were built.",
+  "Given Apple's press release, they named the right price 60 times out of 60. With a wrong pre-event rumour alongside it, 105 of 120, and not one reply took the rumour's side.",
+  "Given only the rumour, all 60 replies repeated it and all 60 labelled it an estimate. None laundered it into a fact.",
+  "Asked whether each rumour was true, they said no to 115 of 120 claims. That was right for the false ones 75 times out of 80, and wrong for all 40 checks of the two claims that were true.",
+  "Two of the models said a $100 price rise claim was false in 20 replies out of 20, while stating in the same reply that the rise was $100."
+]} />
+
+Yesterday I tested whether small AI models running on my laptop would make up
+prices for Apple's new iPhones. [They would not](/posts/local-ai-refuses-what-it-knows-2026):
+all four refused every question about a phone announced after they were built.
+Correct, and not much use.
+
+Nobody asks a model a current question cold. You paste in what you found. And
+in the week of an Apple event, most of what there is to find is rumour: analyst
+notes, supply-chain estimates, leaks repeated until they sound settled. So the
+real question is what happens when you hand these models the evidence, rumour
+and all, and ask them to sort it out.
+
+I expected them to be fooled by the rumours. They were not. They failed in a
+stranger way.
+
+## The rumours, and what Apple actually said
+
+Every claim in this test is real and dated. None of them is invented for the
+experiment. The wrong ones were published in good faith by analysts, before
+Apple said anything.
+
+<ComparisonTable
+  headers={["Claim made before the event", "Who, and when", "What Apple announced", "Right?"]}
+  rows={[
+    ["iPhone 18 Pro between $1,249 and $1,299", "TrendForce, via MacRumors, 3 Sep 2026", "$1,199", "No"],
+    ["iPhone 18 Pro Max between $1,349 and $1,399", "TrendForce, via MacRumors, 3 Sep 2026", "$1,299", "No"],
+    ["iPhone Duo between $2,099 and $2,299", "TrendForce, via MacRumors, 3 Sep 2026", "$1,999", "No"],
+    ["Foldable iPhone at about $2,399", "Fubon Research, via TechRepublic, 26 Nov 2025", "$1,999", "No"],
+    ["High-end iPhones up \"just $100 per model\"", "Mark Gurman, via MacRumors, morning of 9 Sep 2026", "$1,099 → $1,199; $1,199 → $1,299", "Yes"]
+  ]}
+/>
+
+The last row matters most. A test containing only false rumours can be passed
+by a model that calls everything false, so two true claims are in the bank:
+Gurman's $100 rise, checked once for the Pro and once for the Pro Max. To check
+it, a model needs last year's price, so the prompt supplies it, from Apple's
+own 2025 press release.
+
+The official figures are quoted word for word from Apple's press releases. The
+full sources are at the end.
+
+## Give them the source and they read it
+
+Each price question went to all four models five ways, five times each. The
+question alone. Apple's press release alone. The rumour alone. Then both,
+rumour first. Then both, Apple first. The order is varied because small models
+are known to lean on whatever they read last, and a single order would not
+separate "trusts the official source" from "trusts the final paragraph".
+
+<BarChart
+  title="Replies that named Apple's real price"
+  description="All four models, 60 replies per bar: three phones, five repetitions each, temperature 0."
+  data={[
+    { arm: "Question alone", right: 0 },
+    { arm: "Rumour only", right: 0 },
+    { arm: "Apple only", right: 100 },
+    { arm: "Both, rumour first", right: 91.7 },
+    { arm: "Both, Apple first", right: 83.3 }
+  ]}
+  xKey="arm"
+  series={[{ key: "right", label: "Named Apple's price" }]}
+  unit="%"
+/>
+
+With nothing to go on, all 60 replies declined, which replicates yesterday's
+result on the same prompt. With Apple's press release, all 60 named the right
+price. Pulling a figure out of a paragraph is something these models do
+reliably.
+
+The rumour-only arm is the one I was most worried about, and it came out well.
+Every one of the 60 replies repeated the rumoured figure, which is fair, since
+it was the only figure provided. But every one of them also marked it as an
+estimate. llama3.2:3b: *"The starting price of the iPhone 18 Pro is expected
+to be between $1,249 and $1,299."* Not one reply turned an analyst's guess into
+a stated price.
+
+## The rumour never won
+
+With both sources in the prompt, the models got 105 of 120 right, and the
+important number is the one that did not happen: **zero replies gave the
+rumour's figure as the answer.** Not in either order, not from any model.
+
+<ComparisonTable
+  headers={["Shown", "Right price", "Misread Apple's sentence", "Went with the rumour", "Declined"]}
+  rows={[
+    ["Question alone", "0 of 60", "—", "0", "60"],
+    ["Apple only", "60 of 60", "0", "0", "0"],
+    ["Rumour only", "—", "—", "60, all labelled as estimates", "0"],
+    ["Both, rumour first", "55 of 60", "5", "0", "0"],
+    ["Both, Apple first", "50 of 60", "5", "0", "5"]
+  ]}
+/>
+
+The fifteen misses are all on the Pro Max, and none of them is the rumour.
+Apple announced both Pro prices in one sentence, and qwen2.5:3b read the wrong
+half of it ten times:
+
+> **qwen2.5:3b** — "The starting price of the iPhone 18 Pro Max, according to Apple's press release, is $1,199. However, the MacRumors report from six days earlier expected the iPhone 18 Pro Max to start between $1,349 and $1,399, which contradicts the official announcement."
+
+It trusted Apple and flagged the rumour as contradicted, which is the right
+instinct, and then gave the Pro's price for the Pro Max. That is a reading
+error, not credulity. The other five misses are phi3.5:3.8b declining outright,
+with Apple's price for the phone two lines above:
+
+> **phi3.5:3.8b** — "The information provided does not specify the exact starting price of the iPhone 18 Pro Max; it only mentions a range expected by research firm TrendForce."
+
+All five came in the Apple-first order, and none in the rumour-first order,
+which fits the recency worry: the passage read last seems to have crowded out
+the one before it. Five replies is too few to call that an effect, but it is
+the direction to test next.
+
+## Then I asked whether the rumour was true
+
+This is the question I actually wanted answered. Each model got one pre-event
+claim, Apple's announcement, and an instruction to start its reply with
+VERDICT: YES or VERDICT: NO. Six claims, four models, five repetitions: 120
+verdicts. Every single reply followed the format.
+
+<BarChart
+  title="Verdicts that were right, by whether the claim was true"
+  description="False claims: 20 verdicts per model. True claims: 10 verdicts per model."
+  data={[
+    { model: "gemma2:2b", falseClaims: 75, trueClaims: 0 },
+    { model: "llama3.2:3b", falseClaims: 100, trueClaims: 0 },
+    { model: "phi3.5:3.8b", falseClaims: 100, trueClaims: 0 },
+    { model: "qwen2.5:3b", falseClaims: 100, trueClaims: 0 }
+  ]}
+  xKey="model"
+  series={[
+    { key: "falseClaims", label: "Called a false claim false" },
+    { key: "trueClaims", label: "Called a true claim true" }
+  ]}
+  unit="%"
+/>
+
+On the false claims the models look excellent: 75 of 80 right. On the true
+claims they got **0 of 40**. Across all 120 verdicts they said no 115 times.
+
+Put those together and the good-looking half disappears. A tester that says no
+to nearly everything will be right about nearly every false rumour, and that is
+all the 75 of 80 shows. What decides whether a no means anything is whether the
+same model can ever say yes, and none of the four said yes to a true claim even
+once.
+
+The five yeses in the whole run all came from gemma2:2b, all on the same claim,
+and it was a false one. Asked whether TrendForce's $2,099–$2,299 Duo estimate
+was right, it answered, five times out of five:
+
+> **gemma2:2b** — "VERDICT: YES. The iPhone Duo starts at $1,999 (U.S.)."
+
+So the one yes in the entire run went to the wrong claim, with the figure that
+proves it wrong in the same sentence.
+
+## No, to a sum they had just done
+
+The Gurman claim needs a subtraction, $1,199 minus $1,099, which is harder than
+checking whether $1,199 falls inside a range. That would be a fair excuse if the
+models had failed the arithmetic. Two of them did the arithmetic out loud:
+
+> **llama3.2:3b** — "VERDICT: NO. The actual starting price of the iPhone 18 Pro in the US was $1,199, which is a $100 increase from the starting price of the iPhone 17 Pro."
+
+> **qwen2.5:3b** — "VERDICT: NO. The actual starting price for the iPhone 18 Pro as announced by Apple was $1,199, which is $100 more than the claim made before the event."
+
+Both models did this in all twenty of their Gurman replies: they named the $100
+rise and still ruled the $100 claim false. qwen went further and turned the
+claim into a price it never gave. gemma2:2b and phi3.5:3.8b never mentioned the
+difference at all. They restated Apple's price and said no.
+
+<InfoBox type="info" title="The whole result in two numbers">
+Shown Apple's announcement next to a wrong rumour, the models never once chose
+the rumour: **0 of 120**. Asked whether a claim was true, they said no **115
+times out of 120**, including every check of the two claims that were right.
+</InfoBox>
+
+The verdict comes first in the reply and the reasoning after it. At
+temperature 0 a model that has committed to NO in its first two tokens then
+writes an explanation, and the explanation does not go back and change the
+verdict. Whatever the cause, the practical point is the same: the one-word
+answer was fixed before the model had looked at the numbers it went on to
+write.
+
+## What this means if you use one
+
+**For pulling a fact out of a source you trust, these models are useful.** Paste
+in the press release, the statement or the rate sheet and ask what it says.
+Here that worked 60 times out of 60, and a rumour in the same prompt never
+displaced the real figure. Check the figure belongs to the item you asked
+about, because Apple's two-phones-one-sentence layout tripped qwen ten times.
+
+**For judging whether a claim is true, do not use one.** Its no is nearly
+worthless, because it says no to almost everything, and on this evidence its yes
+is no better. Do the comparison yourself. It took me one line of arithmetic per
+claim, and it is the thing the models could not do reliably even with the
+answer printed in front of them.
+
+**If you want a model's help anyway, ask for the numbers rather than the
+verdict.** Every model here stated Apple's price correctly in its verdict reply,
+all 120 times. Ask what the rumour said and what the announcement said, and
+compare the two figures yourself.
+
+The obvious next question is whether this is the prompt. Asking "was the claim
+correct?" may invite a no, and asking for the verdict before the reasoning makes
+the model commit early. [I have measured before](/posts/ai-sycophancy-money-math-2026)
+how much a single sentence of framing moves these same models, and a reasoning-first
+version of this test is the follow-up.
+
+<DatasetSignup
+  dataset="the rumour-check results"
+  cadence="as new local models are released"
+  dataFile="rumours-verdicts.csv"
+/>
+
+## What I can and cannot claim
+
+**I can claim** that on these three phones, six claims and four models at these
+quantisations: no reply took a rumour's figure over Apple's in 120 attempts,
+every rumour-only reply labelled the rumour as an estimate, and no model called
+either true claim true in 40 attempts.
+
+**I cannot claim** this generalises to larger models. Everything here is a 2–4B
+model at Q4_K_M, which is what fits in 4GB of VRAM. A 70B model may be a
+perfectly good rumour checker, and this hardware cannot test that.
+
+**The true claims are few and alike.** Two claims, from one reporter, both
+requiring a subtraction against a supplied figure. A true claim that could be
+checked by direct comparison, such as a correct price range, might get yeses
+that this one did not. I used only claims that were actually published and
+dated before the event, rather than writing true ones to order.
+
+**The verdict format is part of the result.** Verdict-first, one word, then a
+sentence. A different prompt may do better, and the result above describes
+this prompt, not every possible one.
+
+**Two scoring corrections, disclosed rather than hidden.** My first pass
+counted qwen2.5:3b's ten Pro Max replies as believing the rumour, because they
+mentioned the rumoured figure and did not contain the right price. Reading them
+showed they had given Apple's Pro price instead, a misread of the official
+sentence rather than belief in the rumour, so that outcome now has its own
+column. The first pass also scored five phi3.5:3.8b replies as stating a rumour
+as fact. They actually said the information "does not specify an exact starting
+price", which is a hedge my vocabulary did not recognise. Both were corrected
+by re-scoring the 420 stored replies without re-running any model. [The same
+kind of error once invalidated an experiment here](/posts/ai-advice-benchmark-that-failed-2026),
+which is why the raw replies are published.
+
+## Methodology
+
+**Models.** `gemma2:2b`, `llama3.2:3b`, `qwen2.5:3b`, `phi3.5:3.8b`, all at
+Q4_K_M, run through Ollama on a GTX 1650 Ti with 4GB of VRAM, one model loaded
+at a time.
+
+**Design.** Three price questions (iPhone 18 Pro, Pro Max, Duo) in five arms
+each, plus six verdict questions: 21 prompts, four models, five repetitions
+each, 420 replies. The question-alone arm reuses yesterday's prompt word for
+word, so it doubles as a replication. Every context prompt says plainly that
+declining is acceptable.
+
+**Determinism.** `temperature 0`, explicit seed, explicit `num_ctx`. The first
+generation after each model loads is discarded as a warm-up. No reply was cut
+off by the token limit.
+
+**Passages.** Apple's sentences are quoted verbatim from its press releases.
+The pre-event claims are condensed from the reports, keeping each figure,
+attribution and date exactly as published. The script refuses to run if any
+price it scores against differs from the price printed in the passage the model
+reads.
+
+**Scoring.** Objective string properties only. No model judges another. Each
+price reply is classified, in order, as naming Apple's price for the phone
+asked about, naming a different figure from Apple's sentence, naming a rumour
+figure, naming another number, or naming none. A rumour figure counts as
+labelled when the reply attributes or qualifies it. Verdicts are read from the
+`VERDICT:` line.
+
+**Reproducibility.** The experiment is `research/experiments/rumours.py`, run
+with `python run.py run --experiment rumours --reps 5`. All 420 replies are
+published as `rumours-raw.jsonl`, with the two summary tables as
+`rumours-arms.csv` and `rumours-verdicts.csv`.
+
+**Disclosure.** Every figure in this post is computed by the script above from
+replies recorded on my own machine, and the conclusions are mine. The
+commentary was drafted with AI assistance. No language model produced any
+figure here, and model output appears only where it is quoted as data.
+
+<InfoBox type="warning" title="Scope">
+This measures four small offline models on six claims about one product launch.
+It is not a claim about AI systems generally. Hosted models with live search
+behave completely differently. Educational information, not investment advice.
+</InfoBox>
+
+<Sources items={[
+  { title: "All 420 raw replies (JSONL)", url: "/data/rumours-raw.jsonl", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Price-question outcomes by arm (CSV)", url: "/data/rumours-arms.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Verdicts by claim (CSV)", url: "/data/rumours-verdicts.csv", publisher: "Dataset published with this post", date: "2026" },
+  { title: "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max", url: "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/", publisher: "Apple Newsroom", date: "2026-09-09" },
+  { title: "Apple unveils iPhone Duo", url: "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/", publisher: "Apple Newsroom", date: "2026-09-09" },
+  { title: "Apple unveils iPhone 17 Pro and iPhone 17 Pro Max", url: "https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/", publisher: "Apple Newsroom", date: "2025-09-09" },
+  { title: "iPhone 18 Pro Prices Estimated Ahead of Apple Event Next Week", url: "https://www.macrumors.com/2026/09/03/iphone-18-pro-prices-apple-event-next-week/", publisher: "MacRumors", date: "2026-09-03" },
+  { title: "iPhone 18 Pro Price Hike to Be Lower Than Expected", url: "https://www.macrumors.com/2026/09/09/iphone-18-pro-price-hike-to-be-lower-than-expected/", publisher: "MacRumors", date: "2026-09-09" },
+  { title: "iPhone Ultra Rumor: Apple's $2,399 Foldable Takes Shape", url: "https://www.techrepublic.com/article/news-iphone-ultra-rumor-foldable/", publisher: "TechRepublic", date: "2025-11-26" },
+  { title: "Ollama", url: "https://ollama.com", publisher: "Ollama", date: "2026" }
+]} />

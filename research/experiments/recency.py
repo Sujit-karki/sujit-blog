@@ -22,10 +22,8 @@ has never existed at all. Four outcomes are then distinguishable:
 The model is the instrument, not the author: this file produces a dataset, and
 the prose written around it is written by hand.
 
-GROUND TRUTH FOR THE CONTROLS IS NOT YET VERIFIED. The launch prices below are
-placeholders carrying the value this project believes to be right; each must be
-checked against Apple's own newsroom release before any number derived from
-them is published. Nothing here is published until that is done.
+Ground truth for the three controls was read from Apple's own newsroom releases
+on 2026-09-10, and each QUESTIONS entry below quotes the line it came from.
 """
 
 from __future__ import annotations

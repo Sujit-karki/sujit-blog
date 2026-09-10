@@ -54,6 +54,18 @@ export const researchKinds: { id: ResearchKind; title: string; blurb: string }[]
 
 export const researchPosts: ResearchPost[] = [
   {
+    slug: "local-ai-rumour-check-2026",
+    title: "I Asked Four AI Models Which iPhone Rumours Came True. They Said None Did. Two Had.",
+    finding:
+      "Shown Apple's announcement beside a wrong pre-event rumour, four local models never once gave the rumour's figure: 105 of 120 replies named the right price, and the fifteen misses were ten misreadings of Apple's own sentence and five refusals. Asked whether each claim was true, they said no to 115 of 120, which was right for the false claims 75 times out of 80 and wrong for all 40 checks of the two true ones. llama3.2:3b and qwen2.5:3b ruled a $100 rise false in 20 replies of 20 while stating in the same reply that the rise was $100.",
+    method:
+      "420 generations across four local models: three price questions in five arms, and six real pre-event claims, four false and two true, each judged against Apple's press releases",
+    dataset: true,
+    date: "2026-09-10",
+    kind: "ai",
+    stat: { value: "0 of 40", label: "verdicts accepted the two pre-event claims that were true" },
+  },
+  {
     slug: "local-ai-refuses-what-it-knows-2026",
     title: "In 160 Answers, Not One Number Was Wrong. Only Ten Were Numbers.",
     finding:

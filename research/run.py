@@ -28,6 +28,7 @@ from experiments.tax_accuracy import TaxAccuracy  # noqa: E402
 from experiments.advice import FinancialAdvice  # noqa: E402
 from experiments.allocation import AccountChoice  # noqa: E402
 from experiments.recency import RecencyRefusal  # noqa: E402
+from experiments.rumours import RumourCheck  # noqa: E402
 from experiments.sycophancy import Sycophancy  # noqa: E402
 from harness.client import OllamaClient, OllamaError  # noqa: E402
 
@@ -40,6 +41,7 @@ EXPERIMENTS = {
     "allocation": AccountChoice,
     "sycophancy": Sycophancy,
     "recency": RecencyRefusal,
+    "rumours": RumourCheck,
 }
 
 DATA_DIR = Path(__file__).parent / "data"
