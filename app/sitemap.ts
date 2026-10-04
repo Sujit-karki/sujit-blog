@@ -29,7 +29,8 @@ const AI_DISCLOSURE_UPDATED = new Date("2026-08-20");
 const CONTACT_UPDATED = new Date("2026-09-08");
 const WORK_WITH_ME_UPDATED = new Date("2026-09-08");
 const DISCLAIMER_UPDATED = new Date("2026-06-17");
-const PRIVACY_POLICY_UPDATED = new Date("2026-06-12");
+// Bumped 2026-09-09: rewritten to name GA4 and AdSense as in use, not "may".
+const PRIVACY_POLICY_UPDATED = new Date("2026-09-09");
 // Bumped 2026-09-08: added the framing prose explaining what these
 // calculators show and where they differ from the usual lead-gen kind.
 const TOOLS_INDEX_UPDATED = new Date("2026-09-08");
