@@ -4,7 +4,7 @@ description: "The S&P 500 is now roughly a third tech and a third Magnificent Se
 seoTitle: "Tech Concentration Crisis: How to De-Risk Your Portfolio"
 seoDescription: "The S&P 500 is now roughly a third tech — the most concentrated since the dot-com peak. Four strategies to dilute that risk without bailing on AI."
 date: "2026-07-19"
-updated: "2026-07-19"
+updated: "2026-10-04"
 category: "Investing"
 tags: ["S&P 500", "ETFs", "Diversification", "AI", "Asset Allocation", "Equal Weight"]
 author: "Sujit Karki"
@@ -17,6 +17,9 @@ toc:
     level: 2
   - id: "your-index-fund-is-a-tech-fund-now"
     title: "Your Index Fund Is a Tech Fund Now"
+    level: 2
+  - id: "the-725-billion-underneath-it"
+    title: "The $725 Billion Underneath It"
     level: 2
   - id: "four-ways-to-dilute-the-tech-without-dumping-it"
     title: "Four Ways to Dilute the Tech (Without Dumping It)"
@@ -37,6 +40,8 @@ toc:
     title: "My Take: Dilute, Don't Abandon"
     level: 2
 faq:
+  - q: "How much are the big tech companies spending on AI in 2026?"
+    a: "Amazon, Alphabet, Microsoft, and Meta collectively guided roughly $725 billion in 2026 capex, up about 77% from around $410 billion in 2025 — and a growing share is funded with debt rather than operating cash flow."
   - q: "Is the S&P 500 too concentrated in tech in 2026?"
     a: "By historical standards, yes. The GICS Information Technology sector alone is roughly a third of the index, the Magnificent Seven were about 32.5% as of mid-July 2026, and the top 10 holdings are around 37-38%. The S&P 500's Herfindahl-Hirschman Index — a formal concentration measure — sits near 185-195 in 2026 versus about 123 at the March 2000 dot-com peak. That doesn't guarantee a crash, but it does mean a market-cap S&P 500 fund is a much bigger bet on a handful of tech names than most people realize."
   - q: "What's the best equal-weight ETF in 2026?"
@@ -106,6 +111,37 @@ Now, before the "it's different this time" crowd and the "it's exactly like 2000
 But — and this is the part the bulls skip — the *math* of concentration doesn't care how good the companies are. When a third of your index rides on seven stocks, a synchronized stumble in those names drags down every 401(k), every target-date fund, and every "diversified" index fund in the country at the same time. You saw a preview this week. When the mega-caps coughed, the equal-weight version of the same index (RSP) barely moved while the cap-weighted one fell.
 
 If you own a plain S&P 500 fund, you're running a tech portfolio with 490 also-rans along for the ride. That's not a criticism of index investing — index funds still beat most active managers over time. It's just a fact about *this* index at *this* moment.
+
+## The $725 Billion Underneath It
+
+The concentration has an engine, and it's a spending number. Four companies — Amazon, Alphabet, Microsoft, and Meta — collectively guided roughly **$725 billion** in 2026 capital expenditure, up about 77% from around $410 billion in 2025. If you own an S&P 500 fund, you're a co-signer on that bet whether you meant to be or not.
+
+<BarChart
+  title="2026 guided AI capital expenditure, by company"
+  description="Combined guidance across these four companies is roughly $725 billion, up about 77% from around $410 billion in 2025. Meta's figure is the midpoint of its $115–135B guided range; Alphabet's is the midpoint of its $175–185B range. Individually they sum to about $695B, close to but not identical to the ~$725B analyst aggregate."
+  data={[
+    { company: "Amazon", capex: 200 },
+    { company: "Alphabet", capex: 180 },
+    { company: "Microsoft", capex: 190 },
+    { company: "Meta", capex: 125 }
+  ]}
+  xKey="company"
+  series={[{ key: "capex", label: "2026 guided capex" }]}
+  unit="B"
+  colorByCategory
+/>
+
+The question that separates a healthy buildout from a fragile one is how it's paid for, and the answer changed in 2026. For years the hyperscalers funded capex out of operating cash flow. Now they're borrowing: Amazon returned to the investment-grade bond market in July 2026 to raise at least $25 billion, and its free cash flow is projected to turn negative this year. Bank of America research flagged consensus estimates showing AI capex reaching roughly 94% of operating cash flow (minus dividends and buybacks) in 2025 and 2026, up from 76% in 2024.
+
+<InfoBox type="warning" title="Cash flow vs. debt">
+When capex is funded by cash flow, a bad year means slower growth. When it's funded by debt, a bad year means interest payments that don't care whether the AI revenue showed up on schedule. That's the difference that matters for the durability of these companies' earnings — and therefore your index returns.
+</InfoBox>
+
+Two honest caveats. Debt isn't automatically bad; borrowing at reasonable rates to build productive assets is normal. And the bull case is real: Google Cloud's contract backlog reached $460 billion, roughly double the $240 billion reported at the end of Q4 2025 — booked demand, not a hope. The signal to track each earnings season is the funding mix — debt issuance and free cash flow — not the headline capex number.
+
+Enter your equity portfolio value and this estimates how much of your money effectively rides on the Magnificent Seven under a cap-weighted index versus an equal-weight approach:
+
+<AIExposureCalculator />
 
 ## Four Ways to Dilute the Tech (Without Dumping It)
 
@@ -193,9 +229,8 @@ A word on the crypto angle, since it always comes up when people talk about "con
 
 Diversification isn't exciting. It will, by design, always leave you with something in your portfolio that's underperforming — that's proof it's working, not evidence it's broken. The goal isn't to beat the S&P 500 next quarter. It's to still be invested, and still sane, when the concentration everyone's ignoring finally matters.
 
-Concentration risk and earnings expectations are two sides of the same coin heading into Q3 reporting — see [what Q3 2026 earnings season means for an index investor](/posts/q3-2026-earnings-preview) for how the valuation side of this story is shaping up.
-
 <FaqAccordion items={[
+  {q: "How much are the big tech companies spending on AI in 2026?", a: "Amazon, Alphabet, Microsoft, and Meta collectively guided roughly $725 billion in 2026 capex, up about 77% from around $410 billion in 2025 — and a growing share is funded with debt rather than operating cash flow."},
   {q: "Is the S&P 500 too concentrated in tech in 2026?", a: "By historical standards, yes. The GICS Information Technology sector alone is roughly a third of the index, the Magnificent Seven were about 32.5% as of mid-July 2026, and the top 10 holdings are around 37-38%. The S&P 500's Herfindahl-Hirschman Index — a formal concentration measure — sits near 185-195 in 2026 versus about 123 at the March 2000 dot-com peak. That doesn't guarantee a crash, but it does mean a market-cap S&P 500 fund is a much bigger bet on a handful of tech names than most people realize."},
   {q: "What's the best equal-weight ETF in 2026?", a: "The Invesco S&P 500 Equal Weight ETF (RSP) is the largest and most established, with roughly $89-95B in assets, a 0.20% expense ratio, and about 0.2% in each of the 500 names. If you'd rather balance at the sector level than the stock level, the ALPS Equal Sector Weight ETF (EQL) puts about 9% in each of the 11 GICS sectors. RSP is the default; EQL is the more sector-diversified alternative."},
   {q: "How do I reduce tech exposure inside my index funds?", a: "You don't have to sell your whole S&P 500 position. The cleaner move is to keep a market-cap core and add satellites that structurally own less tech: an equal-weight fund (RSP), a value fund (VTV), a mid-cap fund (IJH), and developed international (VEA). Each one is underweight or nearly absent the mega-cap tech names, so blending them dilutes your effective tech weight without abandoning the sector."},
@@ -204,6 +239,10 @@ Concentration risk and earnings expectations are two sides of the same coin head
 ]} />
 
 <Sources items={[
+  { title: "EDGAR Full-Text Search (10-K/10-Q capital expenditure disclosures)", url: "https://www.sec.gov/edgar/search/", publisher: "U.S. Securities and Exchange Commission", date: "2026" },
+  { title: "Tech AI spending approaches $700 billion in 2026, cash taking big hit", url: "https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html", publisher: "CNBC", date: "2026-02-06" },
+  { title: "Amazon raising at least $25 billion in bond sale", url: "https://www.cnbc.com/2026/07/07/amazon-bond-sale-ai-debt.html", publisher: "CNBC", date: "2026-07-07" },
+  { title: "Bond Issuance Backing AI Investment Tops $250 Billion", url: "https://www.morningstar.com/bonds/bond-issuance-backing-ai-investment-tops-250b-testing-limits-voracious-investor-demand", publisher: "Morningstar", date: "2026-07" },
   { title: "Financial Stability Report", url: "https://www.federalreserve.gov/publications/financial-stability-report.htm", publisher: "Board of Governors of the Federal Reserve System", date: "2026-05" },
   {title: "World Economic Outlook Update, July 2026: Global Economy in Crosscurrents of War and Technology", url: "https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026", publisher: "International Monetary Fund"},
   {title: "Invesco S&P 500 Equal Weight ETF (RSP)", url: "https://www.invesco.com/us/en/financial-products/etfs/invesco-sp-500-equal-weight-etf.html", publisher: "Invesco"},

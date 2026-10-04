@@ -25,6 +25,14 @@ const nextConfig = {
         destination: "/posts/bitcoin-crash-2026-buy-or-wait",
         permanent: true,
       },
+      // AdSense "low value content" cleanup (Oct 2026): dated event posts folded
+      // into the evergreen guide that now carries their money mechanics and
+      // calculator, and two overlapping pieces merged into their stronger pair.
+      { source: "/posts/fed-meeting-july-2026-what-a-hold-means", destination: "/posts/understanding-federal-reserve-policy", permanent: true },
+      { source: "/posts/jackson-hole-september-fomc-2026", destination: "/posts/understanding-federal-reserve-policy", permanent: true },
+      { source: "/posts/fed-rate-hike-2026-savings-mortgage", destination: "/posts/understanding-federal-reserve-policy", permanent: true },
+      { source: "/posts/ethereum-2026-staking-etf", destination: "/posts/solana-staking-etf-yield-2026", permanent: true },
+      { source: "/posts/big-tech-725-billion-ai-index-fund", destination: "/posts/tech-concentration-crisis-2026", permanent: true },
       // Orphaned standalone HTML in public/ that duplicated the MDX post at
       // /posts/how-to-invest-first-1000 (unlinked, absent from the sitemap, but
       // crawlable). File removed; this folds any existing crawl equity into the

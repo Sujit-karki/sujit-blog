@@ -4,7 +4,7 @@ seoTitle: "Understanding Federal Reserve Policy for Investors"
 description: "A deep dive into how Federal Reserve monetary policy decisions ripple through equity markets, bond yields, and the broader economy — and how to position your portfolio accordingly."
 seoDescription: "How Federal Reserve monetary policy decisions ripple through equity markets, bond yields, and the broader economy — and how to position your portfolio."
 date: "2026-06-10"
-updated: "2026-06-12"
+updated: "2026-10-04"
 category: "Market Analysis"
 tags: ["Monetary Policy", "Federal Reserve", "Investing", "Macroeconomics"]
 author: "Sujit Karki"
@@ -18,13 +18,21 @@ toc:
   - id: "quantitative-tightening"
     title: "Quantitative Tightening and the Balance Sheet"
     level: 2
+  - id: "what-a-fed-decision-does-to-your-money"
+    title: "What a Fed Decision Does to Your Own Money"
+    level: 2
   - id: "positioning-your-portfolio"
     title: "Positioning Your Portfolio"
     level: 2
   - id: "key-metrics"
     title: "Key Metrics to Watch"
     level: 2
+  - id: "where-rates-stood-in-2026"
+    title: "Where Rates Stood in 2026"
+    level: 2
 faq:
+  - q: "Does a Fed rate decision change my existing mortgage?"
+    a: "Not if it's fixed-rate — it's locked and doesn't reprice. New mortgage rates key off the 10-year Treasury, which trades on expectations and can move before, or even opposite to, what the Fed actually does. Credit cards and HELOCs are different: they're tied to the prime rate and reprice almost immediately."
   - q: "How does the Fed's interest rate decision affect the stock market?"
     a: "Higher rates raise the discount rate used to value future cash flows, which compresses price-to-earnings multiples — growth stocks, which derive more of their value from earnings far in the future, are hit hardest. Lower rates work in reverse, supporting higher valuations."
   - q: "What is the Fed dot plot?"
@@ -102,6 +110,47 @@ Beyond rate changes, the Fed's $7+ trillion balance sheet is a second major leve
 
 The practical impact: QT reduces the money supply, pushes up term premiums on long-duration bonds, and can tighten financial conditions even when the policy rate holds steady.
 
+## What a Fed Decision Does to Your Own Money
+
+Markets are one half of the story. The other half is the money in your checking account and the balance on your card, and here the mechanics are more predictable than the headlines suggest.
+
+<ComparisonTable
+  headers={["Your money", "On a hold", "On a cut"]}
+  rows={[
+    ["High-yield savings / money market", "Stays roughly where it is (~4.15% best-in-class in mid-2026)", "Drifts down by close to the cut size, over several weeks"],
+    ["Credit card APR", "No relief — the prime rate doesn't move", "Trims slightly; still elevated (22%+ average on interest-accruing balances in Q2 2026)"],
+    ["Fixed-rate mortgage you already have", "No change", "No change"],
+    ["New mortgage shopping", "Tracks the 10-year Treasury, not the Fed directly", "Often moves before the decision, on expectations"],
+  ]}
+  highlightCol={1}
+/>
+
+The line people skip is the third one. An existing fixed-rate mortgage does not reprice when the Fed moves — it's locked. New mortgage rates key off the 10-year Treasury, which trades on expectations and can move well before, or even opposite to, the Fed. If you're shopping for a mortgage, watch the bond market, not the FOMC calendar.
+
+That's also why so much Fed coverage fixates on a small slice of household debt. Total U.S. household debt hit **$18.8 trillion in Q1 2026** per the New York Fed, and the mix decides who actually feels a decision:
+
+<PieChart
+  title="U.S. household debt, by type (Q1 2026)"
+  data={[
+    { label: "Mortgages", value: 70, color: "#059669" },
+    { label: "Auto loans", value: 9, color: "#f59e0b" },
+    { label: "Student loans", value: 9, color: "#6366f1" },
+    { label: "Credit cards", value: 7, color: "#ef4444" },
+    { label: "HELOCs & other", value: 5, color: "#6b7280" }
+  ]}
+  unit="%"
+/>
+
+Mortgages are 70% of the pile, and most are long-term fixed-rate loans a Fed move barely touches. The credit-card and HELOC slices — well under 15% combined — reprice almost immediately with the prime rate. That's the part that moves in real time, and it's the part worth acting on: at 22%+ on an accruing balance, paying a card down earns that rate back risk-free, which nothing in the market reliably beats. On the savings side, the gap between a 0.38% FDIC national-average account and a ~4.15% high-yield account was worth more to most households in 2026 than any single Fed decision.
+
+Model what a hold, a cut or a hike does to your own cash:
+
+<FedPathCashCalculator />
+
+<InfoBox type="warning" title="Don't trade the press conference">
+A single sentence from the Fed Chair can swing markets for a day. That volatility is a trader's problem, not a saver's. If a plan changes because of one line at a press conference, the plan was too fragile to begin with.
+</InfoBox>
+
 ## Positioning Your Portfolio Around the Fed Cycle
 
 Historically, different asset classes outperform at different phases of the rate cycle:
@@ -142,11 +191,16 @@ Successful Fed-watching means tracking the same data the FOMC monitors:
 - **Yield curve shape** — inversion has preceded every recession since the 1950s
 - **Financial conditions indices** — Goldman Sachs FCI and Chicago Fed NFCI capture broad tightening beyond the policy rate
 
+## Where Rates Stood in 2026
+
+For context on the numbers above: Kevin Warsh was sworn in as Fed Chair on May 22, 2026. At the June 16–17 meeting the Committee held the target range at **3.50%–3.75%** unanimously, and it held again on July 29, keeping the prime rate at **6.75%** (Federal Reserve H.15). June's CPI fell 0.4% on the month, bringing annual inflation to 3.5% with core at 2.6% — while energy was still up 15.7% over twelve months, which is why "inflation is cooling" and "your gas bill is up" were both true at once. Check the Fed's own calendar for every decision since; the mechanics in this guide don't change when the rate does.
+
 ## Bottom Line
 
 The Fed doesn't operate in a vacuum, and neither should your portfolio. Understanding the rate cycle — where we are, where the committee signals we're going, and what the data says — is foundational to informed investing. The investors who navigate rate cycles best aren't those who predict the Fed perfectly, but those who understand the transmission mechanisms and adjust their risk exposures accordingly.
 
 <FaqAccordion items={[
+  {q: "Does a Fed rate decision change my existing mortgage?", a: "Not if it's fixed-rate — it's locked and doesn't reprice. New mortgage rates key off the 10-year Treasury, which trades on expectations and can move before, or even opposite to, what the Fed actually does. Credit cards and HELOCs are different: they're tied to the prime rate and reprice almost immediately."},
   {q: "How does the Fed's interest rate decision affect the stock market?", a: "Higher rates raise the discount rate used to value future cash flows, which compresses price-to-earnings multiples — growth stocks, which derive more of their value from earnings far in the future, are hit hardest. Lower rates work in reverse, supporting higher valuations."},
   {q: "What is the Fed dot plot?", a: "It's part of the quarterly Summary of Economic Projections: a scatter chart showing each FOMC member's own rate expectations over the next few years. Markets watch the median projection, the dispersion between members, and how it shifted from the prior quarter to gauge the Fed's reaction function."},
   {q: "What is quantitative tightening and how does it affect my portfolio?", a: "Quantitative tightening (QT) is when the Fed lets its Treasury and mortgage-backed securities holdings mature without reinvesting, draining reserves from the financial system. It reduces the money supply and pushes up term premiums on long-duration bonds, tightening financial conditions even if the policy rate itself doesn't move."},
@@ -157,6 +211,13 @@ The Fed doesn't operate in a vacuum, and neither should your portfolio. Understa
   {title: "Federal Open Market Committee", url: "https://www.federalreserve.gov/monetarypolicy/fomc.htm", publisher: "Federal Reserve"},
   {title: "Summary of Economic Projections", url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm", publisher: "Federal Reserve"},
   {title: "Factors Affecting Reserve Balances (H.4.1) — Balance Sheet Data", url: "https://www.federalreserve.gov/releases/h41/", publisher: "Federal Reserve"},
+  {title: "FOMC Minutes, June 16–17, 2026", url: "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm", publisher: "Federal Reserve"},
+  {title: "Kevin Warsh takes oath of office as Fed chairman", url: "https://www.federalreserve.gov/newsevents/pressreleases/other20260522a.htm", publisher: "Federal Reserve"},
+  {title: "Selected Interest Rates (H.15) — Prime Rate", url: "https://www.federalreserve.gov/releases/h15/", publisher: "Federal Reserve"},
+  {title: "Consumer Credit (G.19)", url: "https://www.federalreserve.gov/releases/g19/current/", publisher: "Federal Reserve"},
+  {title: "Household Debt Balances Rise Slightly as Delinquency Transition Rates Hold Steady", url: "https://www.newyorkfed.org/newsevents/news/research/2026/20260512", publisher: "Federal Reserve Bank of New York"},
+  {title: "Consumer Price Index Summary — June 2026", url: "https://www.bls.gov/news.release/cpi.nr0.htm", publisher: "U.S. Bureau of Labor Statistics"},
+  {title: "National Rates and Rate Caps", url: "https://www.fdic.gov/national-rates-and-rate-caps", publisher: "FDIC"},
   {title: "Chicago Fed National Financial Conditions Index", url: "https://www.chicagofed.org/research/data/nfci/current-data", publisher: "Federal Reserve Bank of Chicago"}
 ]} />
 

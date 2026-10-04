@@ -1,7 +1,8 @@
 ---
-title: "Solana Staking ETFs: The Yield After Fees (2026)"
-description: "US Solana ETFs launched with staking built in. Here's the real net yield after sponsor and staking fees — and how it compares to holding SOL directly."
+title: "Staking ETFs After Fees: What Solana and Ethereum Funds Actually Pay (2026)"
+description: "US Solana ETFs launched with staking built in, and staked Ethereum funds followed. Here's the real net yield after sponsor and staking fees for both — and why it's small next to the price risk."
 date: "2026-08-13"
+updated: "2026-10-04"
 author: "Sujit Karki"
 category: "Crypto"
 tags: ["Solana", "SOL", "Staking", "ETF", "Crypto", "BSOL"]
@@ -10,14 +11,16 @@ toc:
   - { id: "the-math", title: "The math for one person", level: 2 }
   - { id: "counterpoint", title: "The case against chasing yield", level: 2 }
   - { id: "calculator", title: "Run your own numbers", level: 2 }
+  - { id: "ethereum", title: "Ethereum: the same fee math, a thinner yield", level: 2 }
   - { id: "what-id-do", title: "Here's What I'd Actually Do", level: 2 }
 faq:
   - { q: "Do Solana ETFs pay staking yield?", a: "Yes. Unlike US Bitcoin and Ethereum ETFs, US spot Solana ETFs launched in October 2025 with staking enabled from day one, so they pass through staking rewards. As of August 2026, Bitwise's BSOL reported a net staking reward rate of 5.84% before its 0.20% sponsor fee." }
   - { q: "What's the difference between BSOL, VSOL, and GSOL?", a: "They're competing spot Solana ETFs from different issuers — Bitwise (BSOL), VanEck (VSOL), and Grayscale (GSOL) — with different fees, staked percentages, and asset sizes. BSOL and VSOL both stake close to 100% and 72% of assets respectively; fees and net yields vary between them and change over time, so compare current figures rather than relying on any single snapshot." }
+  - { q: "What is ETH's staking yield, and how much reaches an ETF holder?", a: "The base protocol staking yield has been running near 2.6% APR in 2026, down from north of 5% in 2023 as more ETH is staked. Staked-ETH ETFs typically keep a share of gross staking rewards as a staking fee — often in the high teens as a percentage — on top of the management fee, so the net figure is noticeably lower." }
   - { q: "Is staking yield the main reason to buy a Solana ETF?", a: "It shouldn't be. SOL's price has moved by more in single months than a full year of staking yield could offset in either direction. The yield is a real, differentiating feature versus non-staked crypto ETFs, but it's a secondary consideration behind the price and volatility risk of holding SOL at all." }
 ---
 
-I've covered Bitcoin's ETF flows and Ethereum's staking economics on this site. Solana's spot ETFs are the newer story, and the interesting part isn't that they exist — it's that they launched with staking built in from day one, which neither of the bigger two managed at launch. That's a real structural difference, and it's worth doing the actual fee math instead of taking the marketing number at face value.
+I've covered Bitcoin's ETF flows on this site. Solana's spot ETFs are the newer story, and the interesting part isn't that they exist — it's that they launched with staking built in from day one, which neither of the bigger two managed at launch. That's a real structural difference, and it's worth doing the actual fee math instead of taking the marketing number at face value.
 
 <KeyTakeaways items={[
   "US spot Solana ETFs began trading October 28, 2025, with staking enabled from launch — a feature Bitcoin and Ethereum ETFs lacked when they first launched.",
@@ -68,7 +71,28 @@ There's also a genuine tradeoff against self-custody staking: doing it yourself 
 
 <StakingEtfNetYieldCalculator />
 
-For the equivalent staking mechanics on Ethereum, where the fee-drag story is similar but the specific numbers differ, see [Ethereum's 2026 staking and ETF picture](/posts/ethereum-2026-staking-etf). For how ETF flows mechanically move a coin's price independent of staking, see [Bitcoin ETF flows explained](/posts/bitcoin-etf-flows-explained-2026). And if you're weighing whether crypto belongs in a retirement account at all, [crypto coming to 401(k)s — but not yet](/posts/crypto-coming-to-401k-not-yet) covers where that stands.
+## Ethereum: the same fee math, a thinner yield
+
+Ethereum's staking story runs on the same mechanics with different numbers. Roughly **a third of all ETH supply** is now staked — tens of millions of ETH across hundreds of thousands of active validators, removed from liquid supply and earning a yield instead of sitting idle.
+
+<PieChart
+  title="ETH supply: staked vs. liquid (approximate, 2026)"
+  data={[
+    { label: "Staked", value: 34, color: "#059669" },
+    { label: "Liquid / unstaked", value: 66, color: "#6b7280" }
+  ]}
+  unit="%"
+/>
+
+The catch is that more validators split the same reward pool. The base staking APR has drifted down to around **2.6%**, well below the 5%+ levels seen in 2023 — so ETH starts from a thinner gross yield than SOL before any fund takes its cut.
+
+And the cut is bigger in shape. Staked-ETH ETFs don't pass 100% of staking rewards through: representative fund filings describe an aggregate staking fee equal to a meaningful share of gross staking rewards — often in the high teens as a percentage — layered on top of the ordinary management fee. A ~2.6% gross yield minus an ~18%-of-rewards staking fee minus a management fee leaves a net figure noticeably below the headline. Attractive versus zero, but not the number in the marketing.
+
+Meanwhile ETH has traded well below its 2025 all-time high of roughly $4,946 for most of 2026, and its price can move double digits on crypto-wide sentiment alone. A 2–3% annual yield doesn't offset swings of that size in either direction — the same lesson as SOL, with less yield to soften it.
+
+<EthStakingYieldCalculator />
+
+For how ETF flows mechanically move a coin's price independent of staking, see [Bitcoin ETF flows explained](/posts/bitcoin-etf-flows-explained-2026). And if you're weighing whether crypto belongs in a retirement account at all, [crypto coming to 401(k)s — but not yet](/posts/crypto-coming-to-401k-not-yet) covers where that stands.
 
 ## Here's What I'd Actually Do
 
@@ -84,11 +108,12 @@ For the equivalent staking mechanics on Ethereum, where the fee-drag story is si
 <FaqAccordion items={[
   { q: "Do Solana ETFs pay staking yield?", a: "Yes. Unlike US Bitcoin and Ethereum ETFs, US spot Solana ETFs launched in October 2025 with staking enabled from day one, so they pass through staking rewards. As of August 2026, Bitwise's BSOL reported a net staking reward rate of 5.84% before its 0.20% sponsor fee." },
   { q: "What's the difference between BSOL, VSOL, and GSOL?", a: "They're competing spot Solana ETFs from different issuers — Bitwise (BSOL), VanEck (VSOL), and Grayscale (GSOL) — with different fees, staked percentages, and asset sizes. BSOL and VSOL both stake close to 100% and 72% of assets respectively; fees and net yields vary between them and change over time, so compare current figures rather than relying on any single snapshot." },
+  { q: "What is ETH's staking yield, and how much reaches an ETF holder?", a: "The base protocol staking yield has been running near 2.6% APR in 2026, down from north of 5% in 2023 as more ETH is staked. Staked-ETH ETFs typically keep a share of gross staking rewards as a staking fee — often in the high teens as a percentage — on top of the management fee, so the net figure is noticeably lower." },
   { q: "Is staking yield the main reason to buy a Solana ETF?", a: "It shouldn't be. SOL's price has moved by more in single months than a full year of staking yield could offset in either direction. The yield is a real, differentiating feature versus non-staked crypto ETFs, but it's a secondary consideration behind the price and volatility risk of holding SOL at all." }
 ]} />
 
 <InfoBox type="warning">
-SOL price, fund AUM, fees, and staked percentages all change frequently — every figure here is labeled as-of a specific date and should be re-verified before you rely on it. Not investment advice; crypto is volatile and speculative.
+SOL and ETH prices, fund AUM, fees, and staked percentages all change frequently — every figure here is labeled as-of a specific date and should be re-verified before you rely on it. Not investment advice; crypto is volatile and speculative.
 </InfoBox>
 
 <Sources items={[
@@ -97,5 +122,8 @@ SOL price, fund AUM, fees, and staked percentages all change frequently — ever
   { title: "Grayscale Solana Trust ETF fee filing", url: "https://etfs.grayscale.com", publisher: "Grayscale / SEC 424B3", date: "June 25, 2026" },
   { title: "Solana ETF flow tracker", url: "https://farside.co.uk/sol/", publisher: "Farside Investors", date: "Through Aug 4, 2026" },
   { title: "SOL price", url: "https://coinmarketcap.com/currencies/solana/", publisher: "CoinMarketCap", date: "Aug 11, 2026" },
+  { title: "Ethereum staking dashboard", url: "https://www.validatorqueue.com/", publisher: "EthStaker / beaconcha.in", date: "2026" },
+  { title: "Ethereum staking yield", url: "https://www.stakingrewards.com/asset/ethereum-2-0", publisher: "Staking Rewards", date: "2026" },
+  { title: "Ethereum ETF Flow Tracker", url: "https://farside.co.uk/eth/", publisher: "Farside Investors", date: "2026" },
   { title: "SEC generic listing standards for crypto ETPs", url: "https://www.sec.gov", publisher: "SEC", date: "September 18, 2025" }
 ]} />

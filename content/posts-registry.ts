@@ -1,6 +1,6 @@
 // GENERATED FILE — do not edit by hand.
 // Regenerate with: npm run gen:posts
-// Source: content/posts/*.mdx  (89 posts)
+// Source: content/posts/*.mdx  (83 posts)
 //
 // See scripts/generate-post-registry.mjs for why these imports are listed
 // statically instead of built from the slug at request time.
@@ -22,7 +22,6 @@ export const postModules: Record<string, () => Promise<PostModule>> = {
   "apple-event-september-2026-money-breakdown": () => import("./posts/apple-event-september-2026-money-breakdown.mdx"),
   "august-jobs-report-recession-proof-2026": () => import("./posts/august-jobs-report-recession-proof-2026.mdx"),
   "back-to-school-spending-2026": () => import("./posts/back-to-school-spending-2026.mdx"),
-  "big-tech-725-billion-ai-index-fund": () => import("./posts/big-tech-725-billion-ai-index-fund.mdx"),
   "bitcoin-crash-2026-buy-or-wait": () => import("./posts/bitcoin-crash-2026-buy-or-wait.mdx"),
   "bitcoin-etf-flows-explained-2026": () => import("./posts/bitcoin-etf-flows-explained-2026.mdx"),
   "bnpl-credit-score-2026": () => import("./posts/bnpl-credit-score-2026.mdx"),
@@ -36,10 +35,7 @@ export const postModules: Record<string, () => Promise<PostModule>> = {
   "crypto-coming-to-401k-not-yet": () => import("./posts/crypto-coming-to-401k-not-yet.mdx"),
   "crypto-whitepaper-readability-2026": () => import("./posts/crypto-whitepaper-readability-2026.mdx"),
   "emerging-market-opportunities-2026": () => import("./posts/emerging-market-opportunities-2026.mdx"),
-  "ethereum-2026-staking-etf": () => import("./posts/ethereum-2026-staking-etf.mdx"),
   "fafsa-2027-28-aid-strategy": () => import("./posts/fafsa-2027-28-aid-strategy.mdx"),
-  "fed-meeting-july-2026-what-a-hold-means": () => import("./posts/fed-meeting-july-2026-what-a-hold-means.mdx"),
-  "fed-rate-hike-2026-savings-mortgage": () => import("./posts/fed-rate-hike-2026-savings-mortgage.mdx"),
   "fifa-finance-explorer": () => import("./posts/fifa-finance-explorer.mdx"),
   "fixed-income-sleeve-2026": () => import("./posts/fixed-income-sleeve-2026.mdx"),
   "gig-delivery-real-pay-2026": () => import("./posts/gig-delivery-real-pay-2026.mdx"),
@@ -57,8 +53,6 @@ export const postModules: Record<string, () => Promise<PostModule>> = {
   "insurance-affordability-crisis-2026": () => import("./posts/insurance-affordability-crisis-2026.mdx"),
   "iphone-financing-cost-2026": () => import("./posts/iphone-financing-cost-2026.mdx"),
   "is-college-worth-it-2026": () => import("./posts/is-college-worth-it-2026.mdx"),
-  "jackson-hole-september-fomc-2026": () => import("./posts/jackson-hole-september-fomc-2026.mdx"),
-  "lampard-is-now-on-google-adsense": () => import("./posts/lampard-is-now-on-google-adsense.mdx"),
   "local-ai-electricity-cost-2026": () => import("./posts/local-ai-electricity-cost-2026.mdx"),
   "local-ai-money-math-2026": () => import("./posts/local-ai-money-math-2026.mdx"),
   "local-ai-refuses-what-it-knows-2026": () => import("./posts/local-ai-refuses-what-it-knows-2026.mdx"),
