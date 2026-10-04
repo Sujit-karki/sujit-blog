@@ -45,15 +45,15 @@
     "chart.js": "^4.5.1",
     "fuse.js": "^7.5.0",
     "gray-matter": "^4.0.3",
-    "motion": "^13.2.0",
+    "motion": "^13.5.0",
     "next": "16.3.8",
-    "react": "19.2.8",
+    "react": "19.3.0",
     "react-chartjs-2": "^5.3.1",
-    "react-dom": "19.2.8",
+    "react-dom": "19.3.0",
     "rehype-slug": "^6.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
-    "zod": "^4.5.4"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
