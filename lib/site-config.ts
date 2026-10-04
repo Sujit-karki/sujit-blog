@@ -60,6 +60,7 @@ export const categories = [
   "Crypto",
   "Side Hustles",
   "Market Analysis",
+  "AI Research",
 ] as const;
 
 export type Category = (typeof categories)[number];

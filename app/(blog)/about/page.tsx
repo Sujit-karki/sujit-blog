@@ -96,6 +96,7 @@ export default function AboutPage() {
               { cat: "Crypto", desc: "Cryptocurrency market analysis, Bitcoin research, and DeFi explained." },
               { cat: "Side Hustles", desc: "Practical strategies for building additional income streams." },
               { cat: "Market Analysis", desc: "Macroeconomic research, Fed policy, and global market trends." },
+              { cat: "AI Research", desc: "Offline AI models tested on money math and financial claims, scored by script." },
             ].map((item) => (
               <Link
                 key={item.cat}

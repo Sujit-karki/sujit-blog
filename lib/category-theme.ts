@@ -14,6 +14,7 @@ const CATEGORY_THEME: Record<string, ThemeName> = {
   "Personal Finance": "sunset",
   "Market Analysis": "ocean",
   "Side Hustles": "gold",
+  "AI Research": "violet",
 };
 
 export function themeForCategory(category: string): ThemeName {

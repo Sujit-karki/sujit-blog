@@ -48,10 +48,14 @@ export default function PrivacyPolicyPage() {
 
         <h2>Advertising</h2>
         <p>
-          This site displays advertisements served by Google AdSense.
-          These networks may use cookies to serve ads based on your prior visits to this website
-          and other websites. You can opt out of personalized advertising by visiting
-          Google&apos;s Ad Settings.
+          This site displays advertisements served by Google AdSense. Third-party vendors,
+          including Google, use cookies to serve ads based on your prior visits to this website
+          or other websites. Google&apos;s use of advertising cookies enables it and its partners
+          to serve ads to you based on your visits to this site and/or other sites on the
+          Internet. You can opt out of personalized advertising by visiting{" "}
+          <a href="https://www.google.com/settings/ads">Google Ads Settings</a>, or opt out of
+          some third-party vendors&apos; use of cookies for personalized advertising at{" "}
+          <a href="https://www.aboutads.info/choices/">www.aboutads.info</a>.
         </p>
 
         <h2>Links to Other Websites</h2>

@@ -73,6 +73,10 @@ export default async function PostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  // A noindexed post is one we've judged not worth Google's index — off-topic,
+  // or a tragedy under the Sensitive-events policy — so it gets no ad units either.
+  const showAds = ADS_ENABLED && !post.noindex;
+
   // Looked up in the statically-listed registry rather than built from the
   // slug here. A template-literal import is invisible to the bundler, so the
   // client components inside the MDX had no registered client reference and
@@ -221,7 +225,7 @@ export default async function PostPage({ params }: Props) {
             {/* In-content top ad — the wrapper (and its "Ad" label) only
                 renders when ads are actually on; otherwise it's just dead
                 space with a misleading label. */}
-            {ADS_ENABLED && (
+            {showAds && (
               <div className="mb-8 ad-reveal ad-label relative">
                 <GoogleAdSense slot="1122334455" format="horizontal" />
               </div>
@@ -312,7 +316,7 @@ export default async function PostPage({ params }: Props) {
               )}
 
               {/* Sidebar AdSense */}
-              {ADS_ENABLED && (
+              {showAds && (
                 <div className="ad-label relative">
                   <GoogleAdSense
                     slot="5566778899"

@@ -22,6 +22,8 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     "Gig work, affiliate income, and creator payouts — the real math on what side hustles actually pay after taxes, fees, and returns.",
   "Market Analysis":
     "Fed policy, jobs reports, earnings season, and market concentration — data-driven market analysis for everyday index-fund investors.",
+  "AI Research":
+    "Open AI models run offline and scored by script against hand-computed answers — what they get right and wrong about money math, tax rules and financial claims.",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
