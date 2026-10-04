@@ -84,6 +84,11 @@ const nextConfig = {
       // loading the script itself still violated script-src, so the console
       // error persisted on every page carrying an ad.
       "https://*.adtrafficquality.google",
+      // Google's certified consent message (AdSense Privacy & messaging) for
+      // EEA/UK/Swiss visitors. The AdSense loader injects it from this host;
+      // without it here the banner is blocked silently and those visitors get
+      // no consent prompt at all — invisible from Nepal, where it never shows.
+      "https://fundingchoicesmessages.google.com",
     ].join(" ");
     const connectSrc = [
       "connect-src 'self'",
@@ -97,6 +102,8 @@ const nextConfig = {
       // silent ad-serving fault that goes unnoticed for months. Found by the
       // Lighthouse best-practices audit, not by looking at the site.
       "https://ep1.adtrafficquality.google https://*.adtrafficquality.google",
+      // Consent message: fetches its config and records the visitor's choice.
+      "https://fundingchoicesmessages.google.com",
     ].join(" ");
 
     const csp = [
@@ -104,15 +111,16 @@ const nextConfig = {
       scriptSrc,
       "style-src 'self' 'unsafe-inline'",
       // GA4 still falls back to a pixel when sendBeacon/fetch are unavailable.
-      "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google https://*.google-analytics.com https://www.googletagmanager.com",
-      "font-src 'self' data:",
+      "img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google https://*.google-analytics.com https://www.googletagmanager.com https://fundingchoicesmessages.google.com",
+      // The consent message renders in Google's own font, served from gstatic.
+      "font-src 'self' data: https://fonts.gstatic.com",
       connectSrc,
       // AdSense's fraud checks frame three origins, and allowing one at a
       // time simply moves the console error to the next: sodar frames
       // ep2.adtrafficquality.google (which it also scripts and fetches from,
       // hence the same domain in script-src and connect-src), and the ad
       // loader frames www.google.com. All are documented AdSense requirements.
-      "frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google https://www.google.com",
+      "frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google https://www.google.com https://fundingchoicesmessages.google.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self' https://api.buttondown.email",
