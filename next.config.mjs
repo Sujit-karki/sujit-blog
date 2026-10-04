@@ -33,6 +33,9 @@ const nextConfig = {
       { source: "/posts/fed-rate-hike-2026-savings-mortgage", destination: "/posts/understanding-federal-reserve-policy", permanent: true },
       { source: "/posts/ethereum-2026-staking-etf", destination: "/posts/solana-staking-etf-yield-2026", permanent: true },
       { source: "/posts/big-tech-725-billion-ai-index-fund", destination: "/posts/tech-concentration-crisis-2026", permanent: true },
+      // Pre-event financing post; its plan comparison, trade-in math and 0% test
+      // now live in the Apple event post, recomputed at the real $1,199 price.
+      { source: "/posts/iphone-financing-cost-2026", destination: "/posts/apple-event-september-2026-money-breakdown", permanent: true },
       // Orphaned standalone HTML in public/ that duplicated the MDX post at
       // /posts/how-to-invest-first-1000 (unlinked, absent from the sitemap, but
       // crawlable). File removed; this folds any existing crawl equity into the

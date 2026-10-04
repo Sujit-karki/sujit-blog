@@ -1,6 +1,6 @@
 // GENERATED FILE — do not edit by hand.
 // Regenerate with: npm run gen:posts
-// Source: content/posts/*.mdx  (83 posts)
+// Source: content/posts/*.mdx  (82 posts)
 //
 // See scripts/generate-post-registry.mjs for why these imports are listed
 // statically instead of built from the slug at request time.
@@ -51,7 +51,6 @@ export const postModules: Record<string, () => Promise<PostModule>> = {
   "index-fund-investing-guide": () => import("./posts/index-fund-investing-guide.mdx"),
   "inflation-by-category-2026": () => import("./posts/inflation-by-category-2026.mdx"),
   "insurance-affordability-crisis-2026": () => import("./posts/insurance-affordability-crisis-2026.mdx"),
-  "iphone-financing-cost-2026": () => import("./posts/iphone-financing-cost-2026.mdx"),
   "is-college-worth-it-2026": () => import("./posts/is-college-worth-it-2026.mdx"),
   "local-ai-electricity-cost-2026": () => import("./posts/local-ai-electricity-cost-2026.mdx"),
   "local-ai-money-math-2026": () => import("./posts/local-ai-money-math-2026.mdx"),

@@ -4,6 +4,7 @@ description: "Apple raised iPhone Pro prices $100 and launched a $1,999 foldable
 seoDescription: "Apple's Sept 9, 2026 event: iPhone 18 Pro at $1,199, Duo foldable at $1,999-$3,199. Full price ladder, segment revenue, margin math, and why prices rose."
 seoTitle: "Apple Event 2026: Every Price, and Which Product Earns Most"
 date: "2026-09-10"
+updated: "2026-10-04"
 author: "Sujit Karki"
 category: "Market Analysis"
 tags: ["Apple", "AAPL", "iPhone 18 Pro", "iPhone Duo", "Consumer Tech", "Market Analysis", "Pricing"]
@@ -20,6 +21,9 @@ toc:
   - { id: "what-apple-did-not-raise-and-why-that-matters", title: "What Apple did not raise, and why that matters", level: 2 }
   - { id: "confirmed-versus-not-confirmed", title: "Confirmed versus not confirmed", level: 2 }
   - { id: "what-this-costs-you-not-apple", title: "What this costs you, not Apple", level: 2 }
+  - { id: "four-ways-to-pay-and-what-each-really-costs", title: "Four ways to pay, and what each really costs", level: 3 }
+  - { id: "the-trade-in-credit-is-a-contract", title: "The trade-in credit is a contract", level: 3 }
+  - { id: "when-0-is-actually-free", title: "When 0% is actually free", level: 3 }
   - { id: "what-to-watch-next", title: "What to watch next", level: 2 }
   - { id: "heres-what-id-actually-do", title: "Here's What I'd Actually Do", level: 2 }
   - { id: "faq", title: "FAQ", level: 2 }
@@ -28,6 +32,7 @@ faq:
   - { q: "How much is Apple's foldable iPhone Duo?", a: "The iPhone Duo starts at $1,999 for 256GB, $2,199 for 512GB, $2,599 for 1TB, and $3,199 for 2TB in the US. Pre-orders open October 16, 2026 at 5 a.m. Pacific, with release on October 23 in the US and more than 70 other countries." }
   - { q: "Which Apple product makes the most money?", a: "By revenue, iPhone is still the largest single line: $54.3 billion in Apple's fiscal Q3 2026 quarter ended June 27, 2026, out of $109.4 billion total. But by gross profit, Services is arguably the bigger earner. Services generated $30.7 billion of revenue at a 75.6% gross margin, roughly $23.2 billion of gross profit, while the entire Products side ran at a 40.1% margin." }
   - { q: "Why did Apple raise iPhone prices in 2026?", a: "Apple has not published a line-item explanation. The documented cost pressures are the move to a 2-nanometer process for the A20 Pro chip, higher memory prices, tariff exposure that Apple's own Q3 2026 results flagged, and a new 2TB storage ceiling that pushes the top of the ladder higher. Treat any single-cause explanation as a guess." }
+  - { q: "Do carrier trade-in deals actually save money?", a: "Sometimes, but the credit is usually spread over 24–36 monthly bill credits, so you only get full value if you keep that carrier and plan the whole time. Leave early and you typically forfeit the remaining credits. Check what the phone would fetch on a resale marketplace before accepting." }
   - { q: "Did Apple raise Apple Watch and AirPods prices too?", a: "No. The Apple Watch Series 12 held at $399, the same as the prior generation, and AirPods 5 start at $129 ($149 with the wireless charging case) with active noise cancellation now standard. The price increases at this event were confined to the iPhone Pro line." }
 ---
 
@@ -325,6 +330,50 @@ Run your own numbers rather than trusting mine:
 
 The pattern that shows up when you play with it: the sticker price difference between configurations is almost always smaller than the difference financing terms make. Choosing 512GB over 256GB is a $200 decision. Choosing a 36-month carrier plan with an interest rate over a 24-month interest-free plan can be a larger one. If you are optimizing anything, optimize the terms before you optimize the storage tier.
 
+### Four ways to pay, and what each really costs
+
+There are four common ways to pay for a new phone, and they are not equivalent.
+
+**Pay cash.** Simplest and cheapest. You own it outright, no strings attached.
+
+**Apple's own installments.** Typically a genuine 0% monthly plan through a financing partner. If it's truly 0% and the payment fits your budget, it costs the same as cash.
+
+**Carrier installment plus "deal."** The phone's cost is split over 24–36 months of bill credits. The headline "free phone" is almost always contingent on staying on a specific plan for the full term.
+
+**Buy now, pay later.** Splitting a phone across four payments or a longer BNPL loan. Consumer regulators have repeatedly flagged that BNPL can encourage overextension, and some plans carry fees or interest the ads don't lead with.
+
+Here is what the same $1,199 iPhone 18 Pro costs in total under each, paid over 24 months:
+
+<BarChart
+  title="Total paid for a $1,199 iPhone 18 Pro over 24 months, by plan"
+  description="Standard amortized loan payments: 15% APR is $58.14 a month, 26% APR is $64.60 a month. The carrier row assumes you stay on the required plan for the full term."
+  data={[
+    { plan: "Cash / true 0%", total: 1199 },
+    { plan: "Carrier 24mo @ 0%*", total: 1199 },
+    { plan: "BNPL @ 15% APR", total: 1395 },
+    { plan: "Store card @ 26% APR", total: 1550 }
+  ]}
+  xKey="plan"
+  series={[{ key: "total", label: "Total paid ($)" }]}
+  colorByCategory
+/>
+
+*Leave the carrier early and the math changes — see the next section.
+
+The spread between the best and worst row is $351, three and a half times Apple's $100 price increase. That is the concrete version of "optimize the terms first."
+
+### The trade-in credit is a contract
+
+Here's the mechanic that trips people up. A "$1,000 trade-in credit" is rarely $1,000 off at the register. It's usually **$1,000 spread across 36 monthly bill credits** — about $27.78 a month. Switch carriers, pay off the phone early, or change plans, and you typically forfeit the unused credits. The "deal" functions as a 36-month loyalty contract, priced to look like a discount.
+
+Before accepting one, check what your current phone would fetch on a resale marketplace. Selling it yourself sometimes beats the carrier credit — and it doesn't chain you to anyone.
+
+### When 0% is actually free
+
+A 0% plan is genuinely free **only if two things are true**: you were going to buy the phone regardless, and the monthly payment fits your budget without crowding out savings or a credit card balance. If financing is what *lets* you buy a phone you couldn't otherwise afford, the plan isn't free — it's the thing enabling an overspend.
+
+The fair counterargument: if you'd earn more keeping your cash in a high-yield account, 0% financing can make sense even when you have the cash. True, but modest — the interest on roughly $1,200 over a year is a few tens of dollars. The bigger risk is the multi-year carrier lock-in, not the financing rate. And stacking BNPL installments on a purchase this size is how a want turns into [credit card debt](/posts/credit-card-bnpl-debt-2026); BNPL is also [starting to show up on credit scores](/posts/bnpl-credit-score-2026).
+
 <InfoBox type="tip" title="The upgrade question, honestly">
 If you are coming from an iPhone 17 Pro, a variable-aperture camera and a faster GPU are not $1,199 worth of improvement for most people, and one-year upgrade cycles have poor economics regardless of what launched. If you are coming from something three or more generations back, you are looking at doubled base storage, a substantially better camera system, a much better battery figure, and years of additional software support — a materially different calculation. The $100 increase is close to irrelevant either way; the number of years since your last phone is the variable that actually matters.
 </InfoBox>
@@ -355,6 +404,7 @@ If you want to know whether any of this worked, three things will tell you, and 
   { q: "How much is Apple's foldable iPhone Duo?", a: "The iPhone Duo starts at $1,999 for 256GB, $2,199 for 512GB, $2,599 for 1TB, and $3,199 for 2TB in the US. Pre-orders open October 16, 2026 at 5 a.m. Pacific, with release on October 23 in the US and more than 70 other countries." },
   { q: "Which Apple product makes the most money?", a: "By revenue, iPhone is still the largest single line: $54.3 billion in Apple's fiscal Q3 2026 quarter ended June 27, 2026, out of $109.4 billion total. But by gross profit, Services is arguably the bigger earner. Services generated $30.7 billion of revenue at a 75.6% gross margin, roughly $23.2 billion of gross profit, while the entire Products side ran at a 40.1% margin." },
   { q: "Why did Apple raise iPhone prices in 2026?", a: "Apple has not published a line-item explanation. The documented cost pressures are the move to a 2-nanometer process for the A20 Pro chip, higher memory prices, tariff exposure that Apple's own Q3 2026 results flagged, and a new 2TB storage ceiling that pushes the top of the ladder higher. Treat any single-cause explanation as a guess." },
+  { q: "Do carrier trade-in deals actually save money?", a: "Sometimes, but the credit is usually spread over 24–36 monthly bill credits, so you only get full value if you keep that carrier and plan the whole time. Leave early and you typically forfeit the remaining credits. Check what the phone would fetch on a resale marketplace before accepting." },
   { q: "Did Apple raise Apple Watch and AirPods prices too?", a: "No. The Apple Watch Series 12 held at $399, the same as the prior generation, and AirPods 5 start at $129 ($149 with the wireless charging case) with active noise cancellation now standard. The price increases at this event were confined to the iPhone Pro line." },
   { q: "Is the iPhone 18 Pro really $200 more expensive than the iPhone 16 Pro?", a: "Only if you compare different configurations. The iPhone 16 Pro was $999 for 128GB; the iPhone 18 Pro is $1,199 for 256GB. A 256GB iPhone 16 Pro cost $1,099, so the like-for-like two-year increase is $100, roughly 4.5% a year. The larger number comes from comparing a 128GB phone to a 256GB one." },
   { q: "Was there an iPhone 18 without the Pro branding?", a: "Not at this event. Apple's September 9, 2026 lineup consisted of three premium devices — iPhone 18 Pro, iPhone 18 Pro Max, and the foldable iPhone Duo. The absence of a lower-priced new model raises Apple's average selling price without any individual price changing." },
@@ -362,6 +412,8 @@ If you want to know whether any of this worked, three things will tell you, and 
 ]} />
 
 <Sources items={[
+  { title: "Consumer use of Buy Now, Pay Later", url: "https://www.consumerfinance.gov/", publisher: "Consumer Financial Protection Bureau", date: "2026" },
+  { title: "G.19 Consumer Credit — interest rates on consumer loans", url: "https://www.federalreserve.gov/releases/g19/current/", publisher: "Federal Reserve Board", date: "2026" },
   { title: "Apple reports third quarter results (fiscal 2026)", url: "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/", publisher: "Apple Newsroom", date: "2026-07-30" },
   { title: "Condensed Consolidated Statements of Operations, FY26 Q3", url: "https://www.apple.com/newsroom/pdfs/fy2026q3/FY26_Q3_Consolidated_Financial_Statements.pdf", publisher: "Apple", date: "2026-07-30" },
   { title: "Apple Inc. Form 10-Q, quarter ended June 27, 2026", url: "https://www.sec.gov/Archives/edgar/data/0000320193/000032019326000020/aapl-20260627.htm", publisher: "U.S. Securities and Exchange Commission", date: "2026-07" },
