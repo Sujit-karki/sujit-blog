@@ -58,7 +58,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@lhci/cli": "^0.15.1",
-    "@playwright/test": "^1.63.0",
+    "@playwright/test": "^1.64.0",
     "@size-limit/file": "^13.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24.13.3",
@@ -66,11 +66,11 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.3.8",
+    "eslint-config-next": "16.4.0",
     "size-limit": "^13.0.3",
     "tailwindcss": "^4.3.3",
     "typescript": "^5",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.3"
   },
   "size-limit": [
     {
